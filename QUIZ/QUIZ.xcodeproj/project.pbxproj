@@ -319,7 +319,6 @@
 		82A1D8C427FB25490044EEA6 /* DeleteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82A1D8C327FB25490044EEA6 /* DeleteTableViewCell.swift */; };
 		82A1D8C827FB4C3D0044EEA6 /* PhotoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82A1D8C727FB4C3D0044EEA6 /* PhotoTableViewCell.swift */; };
 		82A4588027C12C2F0082BE4C /* QuizIQ.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82A4587F27C12C2E0082BE4C /* QuizIQ.swift */; };
-		82A458B127C232090082BE4C /* Gradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82A458B027C232090082BE4C /* Gradient.swift */; };
 		82A9796E27F8CB2C001EBF1C /* QuizLiterature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82A9796D27F8CB2C001EBF1C /* QuizLiterature.swift */; };
 		82AFAF6827FA3C25001B04A0 /* ExitTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82AFAF6727FA3C25001B04A0 /* ExitTableViewCell.swift */; };
 		82B760EA27CA75E800540E0F /* QuizModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82B760E927CA75E800540E0F /* QuizModel.swift */; };
@@ -340,11 +339,12 @@
 		82C2B5A327BD0E5700C66946 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82C2B5A227BD0E5700C66946 /* ViewController.swift */; };
 		82C2B5A527BD115A00C66946 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82C2B5A427BD115A00C66946 /* ProfileViewController.swift */; };
 		82C2B5B327BD2F8800C66946 /* AnimationsClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82C2B5B227BD2F8800C66946 /* AnimationsClass.swift */; };
+		82C996BE2879C5390082921A /* click sound.wav in Resources */ = {isa = PBXBuildFile; fileRef = 82C996BD2879C5390082921A /* click sound.wav */; };
 		82CBE7E9287093C50045616B /* NewsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82CBE7E5287093C50045616B /* NewsTableViewController.swift */; };
-		82CBE7EA287093C50045616B /* NewsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82CBE7E6287093C50045616B /* NewsViewModel.swift */; };
+		82CBE7EA287093C50045616B /* NewsListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82CBE7E6287093C50045616B /* NewsListViewModel.swift */; };
 		82CBE7EB287093C50045616B /* NewsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82CBE7E7287093C50045616B /* NewsModel.swift */; };
 		82CBE7EC287093C50045616B /* NewsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82CBE7E8287093C50045616B /* NewsTableViewCell.swift */; };
-		82CBE7F1287094D40045616B /* NewsTableViewCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82CBE7F0287094D40045616B /* NewsTableViewCellModel.swift */; };
+		82CBE7F1287094D40045616B /* NewsTableViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82CBE7F0287094D40045616B /* NewsTableViewCellViewModel.swift */; };
 		82CBE7F92870A8F30045616B /* CategoriesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82CBE7F82870A8F30045616B /* CategoriesViewModel.swift */; };
 		82CBE7FB2870A94E0045616B /* CategoriesTableViewCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82CBE7FA2870A94E0045616B /* CategoriesTableViewCellModel.swift */; };
 		82CBE8032870D4B40045616B /* TasksViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82CBE8022870D4B40045616B /* TasksViewModel.swift */; };
@@ -838,7 +838,6 @@
 		82A1D8C327FB25490044EEA6 /* DeleteTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteTableViewCell.swift; sourceTree = "<group>"; };
 		82A1D8C727FB4C3D0044EEA6 /* PhotoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoTableViewCell.swift; sourceTree = "<group>"; };
 		82A4587F27C12C2E0082BE4C /* QuizIQ.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizIQ.swift; sourceTree = "<group>"; };
-		82A458B027C232090082BE4C /* Gradient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gradient.swift; sourceTree = "<group>"; };
 		82A9796D27F8CB2C001EBF1C /* QuizLiterature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizLiterature.swift; sourceTree = "<group>"; };
 		82AFAF6727FA3C25001B04A0 /* ExitTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExitTableViewCell.swift; sourceTree = "<group>"; };
 		82B760E927CA75E800540E0F /* QuizModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizModel.swift; sourceTree = "<group>"; };
@@ -859,11 +858,12 @@
 		82C2B5A227BD0E5700C66946 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		82C2B5A427BD115A00C66946 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		82C2B5B227BD2F8800C66946 /* AnimationsClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationsClass.swift; sourceTree = "<group>"; };
+		82C996BD2879C5390082921A /* click sound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "click sound.wav"; path = "../../../../Downloads/QUIZ-2022-quiz-2022 2/QUIZ/sounds/click sound.wav"; sourceTree = "<group>"; };
 		82CBE7E5287093C50045616B /* NewsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsTableViewController.swift; sourceTree = "<group>"; };
-		82CBE7E6287093C50045616B /* NewsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsViewModel.swift; sourceTree = "<group>"; };
+		82CBE7E6287093C50045616B /* NewsListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsListViewModel.swift; sourceTree = "<group>"; };
 		82CBE7E7287093C50045616B /* NewsModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsModel.swift; sourceTree = "<group>"; };
 		82CBE7E8287093C50045616B /* NewsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsTableViewCell.swift; sourceTree = "<group>"; };
-		82CBE7F0287094D40045616B /* NewsTableViewCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsTableViewCellModel.swift; sourceTree = "<group>"; };
+		82CBE7F0287094D40045616B /* NewsTableViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsTableViewCellViewModel.swift; sourceTree = "<group>"; };
 		82CBE7F82870A8F30045616B /* CategoriesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesViewModel.swift; sourceTree = "<group>"; };
 		82CBE7FA2870A94E0045616B /* CategoriesTableViewCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesTableViewCellModel.swift; sourceTree = "<group>"; };
 		82CBE8022870D4B40045616B /* TasksViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksViewModel.swift; sourceTree = "<group>"; };
@@ -1081,7 +1081,6 @@
 				8267494027EB66060051977C /* Wheather API */,
 				827F8BF227E8185100F6D7B3 /* sounds */,
 				82C039C927CEC2EF00E69661 /* image */,
-				82A458B027C232090082BE4C /* Gradient.swift */,
 				82C2B5B127BD2F7000C66946 /* Animations */,
 				820C62A427BBDA7B004894FA /* Models */,
 				820C627D27BBA3CA004894FA /* QUIZ */,
@@ -1508,6 +1507,7 @@
 		827F8BF227E8185100F6D7B3 /* sounds */ = {
 			isa = PBXGroup;
 			children = (
+				82C996BD2879C5390082921A /* click sound.wav */,
 				82EA1E96286BCB3100E49D0F /* future click sound.wav */,
 				82173C432829EA3300E15F22 /* selected sound.wav */,
 				823D9F742825694800EC0FE7 /* lock_sound.mp3 */,
@@ -1878,9 +1878,9 @@
 		82CBE7E4287093890045616B /* News MVVM */ = {
 			isa = PBXGroup;
 			children = (
+				82CBE7ED287093CC0045616B /* Model */,
 				82CBE7EF287093ED0045616B /* ViewModel */,
 				82CBE7EE287093DA0045616B /* View */,
-				82CBE7ED287093CC0045616B /* Model */,
 			);
 			path = "News MVVM";
 			sourceTree = "<group>";
@@ -1905,8 +1905,8 @@
 		82CBE7EF287093ED0045616B /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				82CBE7E6287093C50045616B /* NewsViewModel.swift */,
-				82CBE7F0287094D40045616B /* NewsTableViewCellModel.swift */,
+				82CBE7E6287093C50045616B /* NewsListViewModel.swift */,
+				82CBE7F0287094D40045616B /* NewsTableViewCellViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -2266,6 +2266,7 @@
 				829408D227CEC93100AFF603 /* history5.jpeg in Resources */,
 				8243A6202820810E00427553 /* physics17.jpeg in Resources */,
 				82EA1F2A286BCC9700E49D0F /* geography13.jpeg in Resources */,
+				82C996BE2879C5390082921A /* click sound.wav in Resources */,
 				829408D427CEC93100AFF603 /* history8.jpeg in Resources */,
 				82EA1EC1286BCB7C00E49D0F /* roadtraffic10.jpeg in Resources */,
 				82848D0B281C6F4C0068A4AE /* random.jpeg in Resources */,
@@ -2635,7 +2636,6 @@
 				82900D632801AB9D00742925 /* MusicTableViewCell.swift in Sources */,
 				822B235D27C868390067ED13 /* Player.swift in Sources */,
 				8267494727EB66860051977C /* WeatherViewController.swift in Sources */,
-				82A458B127C232090082BE4C /* Gradient.swift in Sources */,
 				82B760F527CAA04D00540E0F /* CategoryTableViewCell.swift in Sources */,
 				82A1D8C827FB4C3D0044EEA6 /* PhotoTableViewCell.swift in Sources */,
 				821120E92822EE5E009C2801 /* CurrentCategoryTableViewCell.swift in Sources */,
@@ -2673,7 +2673,7 @@
 				823A8EB927FF06F600C7965B /* MicrophoneTableViewCell.swift in Sources */,
 				8288F08A2872601600C6A182 /* QuizChess.swift in Sources */,
 				820C62AE27BC22AA004894FA /* QuizPlanets.swift in Sources */,
-				82CBE7F1287094D40045616B /* NewsTableViewCellModel.swift in Sources */,
+				82CBE7F1287094D40045616B /* NewsTableViewCellViewModel.swift in Sources */,
 				82A4588027C12C2F0082BE4C /* QuizIQ.swift in Sources */,
 				82C2B5A527BD115A00C66946 /* ProfileViewController.swift in Sources */,
 				82CBE7FB2870A94E0045616B /* CategoriesTableViewCellModel.swift in Sources */,
@@ -2683,7 +2683,7 @@
 				8261BC2227E10F1B0089CC94 /* TotalTableViewController.swift in Sources */,
 				822F6C1927BD4AFC0033803A /* BaseTotalQuizViewController.swift in Sources */,
 				82EA02A528240872008A0240 /* RestartTableViewCell.swift in Sources */,
-				82CBE7EA287093C50045616B /* NewsViewModel.swift in Sources */,
+				82CBE7EA287093C50045616B /* NewsListViewModel.swift in Sources */,
 				82B760EA27CA75E800540E0F /* QuizModel.swift in Sources */,
 				82CBE7EB287093C50045616B /* NewsModel.swift in Sources */,
 				82AFAF6827FA3C25001B04A0 /* ExitTableViewCell.swift in Sources */,
