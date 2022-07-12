@@ -344,26 +344,26 @@
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kZe-2C-vtn">
-                                            <rect key="frame" x="152" y="19" width="240" height="21"/>
-                                            <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="17"/>
+                                            <rect key="frame" x="152" y="19" width="240" height="23"/>
+                                            <fontDescription key="fontDescription" type="system" weight="black" pointSize="19"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9f0-ar-XKj">
-                                            <rect key="frame" x="152" y="61" width="46" height="21"/>
-                                            <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="17"/>
+                                            <rect key="frame" x="152" y="61.333333333333343" width="52.666666666666657" height="23"/>
+                                            <fontDescription key="fontDescription" type="system" weight="black" pointSize="19"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="52f-C4-Yad">
-                                            <rect key="frame" x="152" y="107" width="46" height="20.333333333333329"/>
-                                            <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="17"/>
+                                            <rect key="frame" x="152" y="104.33333333333333" width="52.666666666666657" height="23"/>
+                                            <fontDescription key="fontDescription" type="system" weight="black" pointSize="19"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="52f-C4-Yad" firstAttribute="top" secondItem="9f0-ar-XKj" secondAttribute="bottom" constant="25" id="0Ey-9f-ftu"/>
+                                        <constraint firstItem="52f-C4-Yad" firstAttribute="top" secondItem="9f0-ar-XKj" secondAttribute="bottom" constant="20" id="0Ey-9f-ftu"/>
                                         <constraint firstItem="52f-C4-Yad" firstAttribute="leading" secondItem="kZe-2C-vtn" secondAttribute="leading" id="0OX-fW-j02"/>
                                         <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="52f-C4-Yad" secondAttribute="trailing" constant="20" symbolic="YES" id="Iay-0H-Iqv"/>
                                         <constraint firstItem="aqf-ok-zKw" firstAttribute="top" secondItem="7nw-jm-f00" secondAttribute="topMargin" constant="8" id="P5w-Jj-GBf"/>
@@ -415,7 +415,7 @@
                     </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="ZVb-tp-CnA">
-                        <rect key="frame" x="0.0" y="44" width="428" height="96"/>
+                        <rect key="frame" x="0.0" y="44" width="428" height="103.66666666666666"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -436,7 +436,7 @@
                     </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="Mze-v6-U77">
-                        <rect key="frame" x="0.0" y="44" width="428" height="103.66666666666666"/>
+                        <rect key="frame" x="0.0" y="44" width="428" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <textAttributes key="largeTitleTextAttributes">
                             <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -631,7 +631,7 @@
                     </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="BBW-Fp-iCQ">
-                        <rect key="frame" x="0.0" y="44" width="428" height="96"/>
+                        <rect key="frame" x="0.0" y="44" width="428" height="103.66666666666666"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>

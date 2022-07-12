@@ -53,8 +53,8 @@
 		821C69E128739845004FD9E1 /* chess19.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 821C69DF28739845004FD9E1 /* chess19.jpeg */; };
 		821C69E228739845004FD9E1 /* chess18.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 821C69E028739845004FD9E1 /* chess18.jpeg */; };
 		821C69E42873995C004FD9E1 /* chess20.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 821C69E32873995C004FD9E1 /* chess20.jpeg */; };
-		821C69E828739E32004FD9E1 /* PlayerTableViewCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 821C69E628739E32004FD9E1 /* PlayerTableViewCellModel.swift */; };
-		821C69E928739E32004FD9E1 /* PlayerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 821C69E728739E32004FD9E1 /* PlayerViewModel.swift */; };
+		821C69E828739E32004FD9E1 /* PlayersTableViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 821C69E628739E32004FD9E1 /* PlayersTableViewCellViewModel.swift */; };
+		821C69E928739E32004FD9E1 /* PlayersListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 821C69E728739E32004FD9E1 /* PlayersListViewModel.swift */; };
 		822139102874E72D0065A0C3 /* example_5s0_hand_model.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 8221390F2874E72D0065A0C3 /* example_5s0_hand_model.mlmodel */; };
 		822139122874E75B0065A0C3 /* anatomy music.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 822139112874E75B0065A0C3 /* anatomy music.mp3 */; };
 		822139142874E7630065A0C3 /* chemistry music.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 822139132874E7630065A0C3 /* chemistry music.mp3 */; };
@@ -571,8 +571,8 @@
 		821C69DF28739845004FD9E1 /* chess19.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = chess19.jpeg; sourceTree = "<group>"; };
 		821C69E028739845004FD9E1 /* chess18.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = chess18.jpeg; sourceTree = "<group>"; };
 		821C69E32873995C004FD9E1 /* chess20.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = chess20.jpeg; sourceTree = "<group>"; };
-		821C69E628739E32004FD9E1 /* PlayerTableViewCellModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerTableViewCellModel.swift; sourceTree = "<group>"; };
-		821C69E728739E32004FD9E1 /* PlayerViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerViewModel.swift; sourceTree = "<group>"; };
+		821C69E628739E32004FD9E1 /* PlayersTableViewCellViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayersTableViewCellViewModel.swift; sourceTree = "<group>"; };
+		821C69E728739E32004FD9E1 /* PlayersListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayersListViewModel.swift; sourceTree = "<group>"; };
 		8221390F2874E72D0065A0C3 /* example_5s0_hand_model.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = example_5s0_hand_model.mlmodel; sourceTree = "<group>"; };
 		822139112874E75B0065A0C3 /* anatomy music.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "anatomy music.mp3"; sourceTree = "<group>"; };
 		822139132874E7630065A0C3 /* chemistry music.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "chemistry music.mp3"; sourceTree = "<group>"; };
@@ -1070,12 +1070,12 @@
 		820C627227BBA3CA004894FA = {
 			isa = PBXGroup;
 			children = (
+				8283D15227FA217200A71545 /* FBAuth.swift */,
 				8209F79A2847F2390093147A /* SplashScreen */,
 				82CBE8062870DE1A0045616B /* Players League MVVM */,
 				82CBE7FC2870D3AA0045616B /* Quiz Tasks MVVM */,
 				82CBE7F22870A8480045616B /* Quiz Categories MVVM */,
 				82CBE7E4287093890045616B /* News MVVM */,
-				8283D15227FA217200A71545 /* FBAuth.swift */,
 				825F0D0927F9FF5100E7BF4D /* Shim */,
 				82E91ECD27F6840B003D7E80 /* ml */,
 				8267494027EB66060051977C /* Wheather API */,
@@ -1200,8 +1200,8 @@
 		821C69E528739E1A004FD9E1 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				821C69E628739E32004FD9E1 /* PlayerTableViewCellModel.swift */,
-				821C69E728739E32004FD9E1 /* PlayerViewModel.swift */,
+				821C69E728739E32004FD9E1 /* PlayersListViewModel.swift */,
+				821C69E628739E32004FD9E1 /* PlayersTableViewCellViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -1986,8 +1986,8 @@
 		82CBE8062870DE1A0045616B /* Players League MVVM */ = {
 			isa = PBXGroup;
 			children = (
-				821C69E528739E1A004FD9E1 /* ViewModel */,
 				82CBE8092870DE370045616B /* Model */,
+				821C69E528739E1A004FD9E1 /* ViewModel */,
 				82CBE8082870DE350045616B /* View */,
 			);
 			path = "Players League MVVM";
@@ -2690,7 +2690,7 @@
 				82CBE7E9287093C50045616B /* NewsTableViewController.swift in Sources */,
 				8213BF7127D6AAC800D07512 /* QuizPhysics.swift in Sources */,
 				8243F16527C25A1200CD9CE4 /* TaskModel.swift in Sources */,
-				821C69E828739E32004FD9E1 /* PlayerTableViewCellModel.swift in Sources */,
+				821C69E828739E32004FD9E1 /* PlayersTableViewCellViewModel.swift in Sources */,
 				82DC6E1C27E65E790077D107 /* StartViewController.swift in Sources */,
 				82747F8C28050121001E994A /* AttemptsTableViewCell.swift in Sources */,
 				821120E72822EC4D009C2801 /* PauseTableViewController.swift in Sources */,
@@ -2700,7 +2700,7 @@
 				8244DCE827E39C1700F5C59B /* QuizInformatics.swift in Sources */,
 				8237D98E286D02230097FE69 /* QuizUnderwater.swift in Sources */,
 				8209462D27FA676000F44E83 /* RoadTraffic.swift in Sources */,
-				821C69E928739E32004FD9E1 /* PlayerViewModel.swift in Sources */,
+				821C69E928739E32004FD9E1 /* PlayersListViewModel.swift in Sources */,
 				820C628127BBA3CA004894FA /* SceneDelegate.swift in Sources */,
 				82A1D8C427FB25490044EEA6 /* DeleteTableViewCell.swift in Sources */,
 				82CBE7F92870A8F30045616B /* CategoriesViewModel.swift in Sources */,
