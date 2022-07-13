@@ -24,6 +24,13 @@ class NewsTableViewController: UITableViewController {
         GetNews()
     }
     
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let vc = storyboard?.instantiateViewController(withIdentifier: "URLViewController") as? URLViewController {
+            vc.url = newsViewModel.news.value?[indexPath.row].url ?? ""
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
+    }
+    
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows

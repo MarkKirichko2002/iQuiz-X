@@ -205,12 +205,12 @@
         <scene sceneID="WlZ-s0-qh2">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="hzq-6I-Ltf" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Категории" image="category" selectedImage="category selected" id="QnA-IZ-4hT">
+                    <tabBarItem key="tabBarItem" title="Категории" image="categories" selectedImage="categories selected" id="QnA-IZ-4hT">
                         <color key="badgeColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="ehL-FL-StP">
-                        <rect key="frame" x="0.0" y="44" width="428" height="103.66666666666666"/>
+                        <rect key="frame" x="0.0" y="44" width="428" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -415,7 +415,7 @@
                     </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="ZVb-tp-CnA">
-                        <rect key="frame" x="0.0" y="44" width="428" height="103.66666666666666"/>
+                        <rect key="frame" x="0.0" y="44" width="428" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -436,7 +436,7 @@
                     </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="Mze-v6-U77">
-                        <rect key="frame" x="0.0" y="44" width="428" height="96"/>
+                        <rect key="frame" x="0.0" y="44" width="428" height="103.66666666666666"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <textAttributes key="largeTitleTextAttributes">
                             <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -631,7 +631,7 @@
                     </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="BBW-Fp-iCQ">
-                        <rect key="frame" x="0.0" y="44" width="428" height="103.66666666666666"/>
+                        <rect key="frame" x="0.0" y="44" width="428" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -893,7 +893,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="22A-W6-7Cn" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="8612" y="-1787"/>
+            <point key="canvasLocation" x="10848" y="-2594"/>
         </scene>
         <!--ПАУЗА-->
         <scene sceneID="nAB-OZ-REq">
@@ -1101,7 +1101,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rxg-Nz-CSZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7780" y="-1787"/>
+            <point key="canvasLocation" x="9600" y="-2594"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="TMh-bg-JRY">
@@ -1394,7 +1394,7 @@
         <!--Настройки -->
         <scene sceneID="5dZ-OC-wQl">
             <objects>
-                <tableViewController clearsSelectionOnViewWillAppear="NO" id="7sJ-j1-mfY" customClass="SettingsTableViewController" customModule="QUIZ" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController hidesBottomBarWhenPushed="YES" clearsSelectionOnViewWillAppear="NO" id="7sJ-j1-mfY" customClass="SettingsTableViewController" customModule="QUIZ" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="g5K-eg-u10">
                         <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -2355,13 +2355,48 @@
             </objects>
             <point key="canvasLocation" x="6561" y="-1787"/>
         </scene>
+        <!--URL View Controller-->
+        <scene sceneID="N7a-b9-MUR">
+            <objects>
+                <viewController storyboardIdentifier="URLViewController" hidesBottomBarWhenPushed="YES" id="c2E-D4-Aqx" customClass="URLViewController" customModule="QUIZ" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="bcn-Hb-Ffh">
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DKE-wh-DR8">
+                                <rect key="frame" x="0.0" y="44" width="428" height="848"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Vzy-b4-M4e"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Vzy-b4-M4e" firstAttribute="bottom" secondItem="DKE-wh-DR8" secondAttribute="bottom" id="IsL-la-Zgk"/>
+                            <constraint firstItem="DKE-wh-DR8" firstAttribute="leading" secondItem="Vzy-b4-M4e" secondAttribute="leading" id="Kiu-lm-x0g"/>
+                            <constraint firstItem="Vzy-b4-M4e" firstAttribute="trailing" secondItem="DKE-wh-DR8" secondAttribute="trailing" id="OmF-Nr-uVp"/>
+                            <constraint firstItem="DKE-wh-DR8" firstAttribute="top" secondItem="Vzy-b4-M4e" secondAttribute="top" id="ha9-tb-oSP"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="n5I-FN-6cG"/>
+                    <connections>
+                        <outlet property="WVWEBview" destination="DKE-wh-DR8" id="LcU-5K-vAe"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="czl-PW-QnN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="7737" y="-1787"/>
+        </scene>
     </scenes>
     <resources>
         <image name="FACE ID.png" width="384" height="384"/>
         <image name="attempts.png" width="384" height="384"/>
         <image name="bar-chart.png" width="409.60000610351562" height="409.60000610351562"/>
-        <image name="category" width="24" height="24"/>
-        <image name="category selected" width="24" height="24"/>
+        <image name="categories" width="24" height="24"/>
+        <image name="categories selected" width="24" height="24"/>
         <image name="chess.png" width="384" height="384"/>
         <image name="delete.png" width="405.09890747070312" height="405.09890747070312"/>
         <image name="exit.png" width="409.60000610351562" height="409.60000610351562"/>
