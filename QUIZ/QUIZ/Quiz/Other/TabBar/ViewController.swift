@@ -18,7 +18,8 @@ class ViewController: UITabBarController {
     let speechReconizer = SFSpeechRecognizer(locale: Locale.init(identifier: "ru-RU"))
     let request = SFSpeechAudioBufferRecognitionRequest()
     var task: SFSpeechRecognitionTask?
-  
+    var quizViewModel = CategoriesViewModel()
+    
     // Override selectedViewController for User initiated changes
     override var selectedViewController: UIViewController? {
         didSet {
@@ -45,6 +46,8 @@ class ViewController: UITabBarController {
         switch sender.isSelected {
             
         case false:
+            
+            button.frame = CGRect(x: 0, y: 0, width: 150, height: 150)
             
             node.installTap(onBus: 0, bufferSize: 1024, format: recordingFormat) { (buffer, _) in
                 self.request.append(buffer)
@@ -108,6 +111,101 @@ class ViewController: UITabBarController {
                     self.selectedIndex = 4
                 }
                 
+                // Выбор категории викторины
+                
+                DispatchQueue.main.async {
+                    
+                    if self.text.contains("Планеты")  || self.text.contains("планеты") {
+                        self.quizViewModel.goToQuize(quiz: QuizPlanets(), storyboard: self.storyboard, view: self.view)
+                        self.cancelSpeechRecognization()
+                    }
+                    
+                    if self.text.contains("История")  || self.text.contains("история") {
+                        self.quizViewModel.goToQuize(quiz: QuizHistory(), storyboard: self.storyboard, view: self.view)
+                        self.cancelSpeechRecognization()
+                    }
+                    
+                    if self.text.contains("Анатомия")  || self.text.contains("анатомия") {
+                        self.quizViewModel.goToQuize(quiz: QuizAnatomy(), storyboard: self.storyboard, view: self.view)
+                        self.cancelSpeechRecognization()
+                    }
+                    
+                    if self.text.contains("Спорт")  || self.text.contains("спорт") {
+                        self.quizViewModel.goToQuize(quiz: QuizSport(), storyboard: self.storyboard, view: self.view)
+                        self.cancelSpeechRecognization()
+                    }
+                    
+                    if self.text.contains("Игры")  || self.text.contains("игры") {
+                        self.quizViewModel.goToQuize(quiz: QuizGames(), storyboard: self.storyboard, view: self.view)
+                        self.cancelSpeechRecognization()
+                    }
+                    
+                    if self.text.contains("Интеллект")  || self.text.contains("интеллект") {
+                        self.quizViewModel.goToQuize(quiz: QuizIQ(), storyboard: self.storyboard, view: self.view)
+                        self.cancelSpeechRecognization()
+                    }
+                    
+                    if self.text.contains("Экономика")  || self.text.contains("экономика") {
+                        self.quizViewModel.goToQuize(quiz: QuizEconomy(), storyboard: self.storyboard, view: self.view)
+                        self.cancelSpeechRecognization()
+                    }
+                    
+                    if self.text.contains("География")  || self.text.contains("география") {
+                        self.quizViewModel.goToQuize(quiz: QuizGeography(), storyboard: self.storyboard, view: self.view)
+                        self.cancelSpeechRecognization()
+                    }
+                    
+                    if self.text.contains("Экология")  || self.text.contains("экология") {
+                        self.quizViewModel.goToQuize(quiz: QuizEcology(), storyboard: self.storyboard, view: self.view)
+                        self.cancelSpeechRecognization()
+                    }
+                    
+                    if self.text.contains("Физика")  || self.text.contains("физика") {
+                        self.quizViewModel.goToQuize(quiz: QuizPhysics(), storyboard: self.storyboard, view: self.view)
+                        self.cancelSpeechRecognization()
+                    }
+                    
+                    if self.text.contains("Химия")  || self.text.contains("химия") {
+                        self.quizViewModel.goToQuize(quiz: QuizChemistry(), storyboard: self.storyboard, view: self.view)
+                        self.cancelSpeechRecognization()
+                    }
+                    
+                    if self.text.contains("Информатика")  || self.text.contains("информатика") {
+                        self.quizViewModel.goToQuize(quiz: QuizInformatics(), storyboard: self.storyboard, view: self.view)
+                        self.cancelSpeechRecognization()
+                    }
+                    
+                    if self.text.contains("Литература")  || self.text.contains("литература") {
+                        self.quizViewModel.goToQuize(quiz: QuizLiterature(), storyboard: self.storyboard, view: self.view)
+                        self.cancelSpeechRecognization()
+                    }
+                    
+                    if self.text.contains("Дорога")  || self.text.contains("дорога") {
+                        self.quizViewModel.goToQuize(quiz: QuizRoadTraffic(), storyboard: self.storyboard, view: self.view)
+                        self.cancelSpeechRecognization()
+                    }
+                    
+                    if self.text.contains("Swift")  || self.text.contains("swift") {
+                        self.quizViewModel.goToQuize(quiz: QuizSwift(), storyboard: self.storyboard, view: self.view)
+                        self.cancelSpeechRecognization()
+                    }
+                    
+                    if self.text.contains("Море")  || self.text.contains("море") {
+                        self.quizViewModel.goToQuize(quiz: QuizUnderwater(), storyboard: self.storyboard, view: self.view)
+                        self.cancelSpeechRecognization()
+                    }
+                    
+                    if self.text.contains("Шахматы")  || self.text.contains("шахматы") {
+                        self.quizViewModel.goToQuize(quiz: QuizChess(), storyboard: self.storyboard, view: self.view)
+                        self.cancelSpeechRecognization()
+                    }
+                    
+                    if self.text.contains("Рандом")  || self.text.contains("рандом") {
+                        self.quizViewModel.PresentRandomQuiz(storyboard: self.storyboard, view: self.view)
+                        self.cancelSpeechRecognization()
+                    }
+                    
+                }
             }))
             
         case true:
