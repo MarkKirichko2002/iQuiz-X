@@ -97,7 +97,7 @@
         <scene sceneID="0aj-Hk-zFi">
             <objects>
                 <tabBarController storyboardIdentifier="ViewController" id="kPv-pD-Bcd" customClass="ViewController" customModule="QUIZ" customModuleProvider="target" sceneMemberID="viewController">
-                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="qYE-Fz-mX3">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="qYE-Fz-mX3" customClass="CustomTabBar" customModule="QUIZ" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -105,14 +105,33 @@
                     </tabBar>
                     <connections>
                         <segue destination="VDK-Dg-Uht" kind="relationship" relationship="viewControllers" id="xBM-bX-Mc6"/>
-                        <segue destination="2iF-fV-SI2" kind="relationship" relationship="viewControllers" id="4c1-xb-XlH"/>
-                        <segue destination="QOz-9p-B2e" kind="relationship" relationship="viewControllers" id="fdm-z7-wor"/>
-                        <segue destination="b5L-Ka-mKS" kind="relationship" relationship="viewControllers" id="DKO-e2-ams"/>
+                        <segue destination="2iF-fV-SI2" kind="relationship" relationship="viewControllers" id="2KL-hp-Qo4"/>
+                        <segue destination="Kiz-qx-pJn" kind="relationship" relationship="viewControllers" id="hc9-Bk-t2P"/>
+                        <segue destination="QOz-9p-B2e" kind="relationship" relationship="viewControllers" id="oTT-sr-7HK"/>
+                        <segue destination="b5L-Ka-mKS" kind="relationship" relationship="viewControllers" id="BhU-nz-Zsa"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GfM-dw-1dz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3642.0560747663549" y="-490.49676025917933"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="HTZ-M4-5de">
+            <objects>
+                <viewController id="Kiz-qx-pJn" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="TBb-Dh-Lqd">
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="sgD-8w-215"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" tag="3" title="" id="T4w-eD-DQx">
+                        <inset key="imageInsets" minX="0.0" minY="220" maxX="0.0" maxY="220"/>
+                    </tabBarItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="W0o-uo-brg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4555" y="-689"/>
         </scene>
         <!--Quiz Segmented View Controller-->
         <scene sceneID="zfV-gS-vlh">
@@ -226,19 +245,18 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6vT-jD-yOV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6561" y="-1030"/>
+            <point key="canvasLocation" x="7618" y="-1030"/>
         </scene>
         <!--Категории-->
         <scene sceneID="WlZ-s0-qh2">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="244-fk-FoF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="hzq-6I-Ltf" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Категории" image="categories" selectedImage="categories selected" id="QnA-IZ-4hT">
                         <color key="badgeColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="ehL-FL-StP">
-                        <rect key="frame" x="0.0" y="44" width="428" height="103.66666666666666"/>
+                        <rect key="frame" x="0.0" y="44" width="428" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -246,8 +264,9 @@
                         <segue destination="6wf-vL-2tv" kind="relationship" relationship="rootViewController" id="yyj-Gd-22d"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="244-fk-FoF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5505" y="-1030"/>
+            <point key="canvasLocation" x="6561" y="-1030"/>
         </scene>
         <!--Задания-->
         <scene sceneID="TCN-V7-UY3">
@@ -323,7 +342,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tVA-Ge-64k" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7460.7476635514013" y="-233.26133909287259"/>
+            <point key="canvasLocation" x="7618" y="-228"/>
         </scene>
         <!--Задания-->
         <scene sceneID="xkS-Xk-ICf">
@@ -334,7 +353,7 @@
                     </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="1EA-1C-7wQ">
-                        <rect key="frame" x="0.0" y="44" width="428" height="96"/>
+                        <rect key="frame" x="0.0" y="44" width="428" height="103.66666666666666"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -344,7 +363,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CUI-br-fq2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6403.7383177570091" y="-233.26133909287259"/>
+            <point key="canvasLocation" x="6561" y="-228"/>
         </scene>
         <!--Лига Игроков 🏆-->
         <scene sceneID="0qz-ua-avC">
@@ -431,18 +450,18 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Z7v-74-Nee" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7460.7476635514013" y="572.7861771058316"/>
+            <point key="canvasLocation" x="6561" y="573"/>
         </scene>
         <!--Лига Игроков-->
         <scene sceneID="9WV-TL-Gn0">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="QOz-9p-B2e" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Лига Игроков" image="league" selectedImage="league selected" id="vGo-zW-Wyq">
+                    <tabBarItem key="tabBarItem" tag="4" title="Лига Игроков" image="league" selectedImage="league selected" id="vGo-zW-Wyq">
                         <color key="badgeColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="ZVb-tp-CnA">
-                        <rect key="frame" x="0.0" y="44" width="428" height="103.66666666666666"/>
+                        <rect key="frame" x="0.0" y="44" width="428" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -452,13 +471,13 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xkp-0h-Tci" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6403.7383177570091" y="572.7861771058316"/>
+            <point key="canvasLocation" x="5504" y="573"/>
         </scene>
         <!--Профиль-->
         <scene sceneID="ntl-5j-dcY">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="b5L-Ka-mKS" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Профиль" image="profile" selectedImage="profile selected" id="3AI-bi-Pdq">
+                    <tabBarItem key="tabBarItem" tag="5" title="Профиль" image="profile" selectedImage="profile selected" id="3AI-bi-Pdq">
                         <color key="badgeColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBarItem>
                     <toolbarItems/>
@@ -653,7 +672,7 @@
         <scene sceneID="a6Q-Wr-8m7">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="VDK-Dg-Uht" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Сегодня" image="today" selectedImage="today selected" id="CPh-La-1fA">
+                    <tabBarItem key="tabBarItem" tag="1" title="Сегодня" image="today" selectedImage="today selected" id="CPh-La-1fA">
                         <color key="badgeColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBarItem>
                     <toolbarItems/>
@@ -2421,7 +2440,7 @@
         <scene sceneID="6U2-UF-4kn">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="2iF-fV-SI2" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Викторина" image="categories" selectedImage="categories selected" id="bJb-Ka-8Cg"/>
+                    <tabBarItem key="tabBarItem" tag="2" title="Викторина" image="categories" selectedImage="categories selected" id="bJb-Ka-8Cg"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Jls-dM-Ufx">
                         <rect key="frame" x="0.0" y="44" width="428" height="44"/>
