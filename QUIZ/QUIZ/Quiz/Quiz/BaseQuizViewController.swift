@@ -400,7 +400,6 @@ class BaseQuizViewController: UIViewController {
         
         CheckChoiceNumber()
         
-        
         let checkvoice = quiz?.checkAnswer(check2)
         
         if !sender.isSelected{
@@ -865,22 +864,6 @@ class BaseQuizViewController: UIViewController {
             }
         }
     }
-    
-    
-    var stopmusic = UserDefaults.standard.object(forKey: "stopmusic") as? Bool
-    
-//    func stopCurrentMusic(id: Int, resource: String) {
-//        if OnOffButton != nil {
-//            if quiz?.checkid() == id {
-//                player.StopSound(resource: resource)
-//                isPlaying = false
-//                OnOffButton.setTitle(" \(resource)", for: .normal)
-//                OnOffButton.setImage(UIImage(named: "music button"), for: .normal)
-//            }
-//        }
-//    }
-    
-    
     
     func CurrentMusic(id: Int, resource: String) {
         OnOffButton.setTitle(resource, for: .normal)
