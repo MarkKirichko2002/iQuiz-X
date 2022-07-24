@@ -37,7 +37,7 @@ class ViewController: UITabBarController {
     
     // handle new selection
     func tabChangedTo(selectedIndex: Int) {
-        
+        UserDefaults.standard.set(selectedIndex, forKey: "index")
     }
     
     func startSpeechRecognization(){
@@ -90,21 +90,21 @@ class ViewController: UITabBarController {
             
             
             if self.text.contains("Новости")  || self.text.contains("новости") {
-                self.selectedIndex = 0
+                    self.selectedIndex = 0
             }
-            
+                
             if self.text.contains("Категории")  || self.text.contains("категории") {
-                self.selectedIndex = 1
+                    self.selectedIndex = 1
             }
-            
+                
             if self.text.contains("Игроков")  || self.text.contains("игроков") {
-                self.selectedIndex = 3
+                    self.selectedIndex = 3
             }
-            
+                
             if self.text.contains("Профиль")  || self.text.contains("профиль") {
-                self.selectedIndex = 4
+                    self.selectedIndex = 4
             }
-            
+                
             // Выбор категории викторины
             
             if self.text.contains("Планеты")  || self.text.contains("планеты") {
@@ -228,6 +228,7 @@ class ViewController: UITabBarController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        selectedIndex = UserDefaults.standard.object(forKey: "index") as? Int ?? 0
         button.setImage(UIImage(named: "quiz"), for: .normal)
         button.frame = CGRect(x: 0, y: 0, width: 44, height: 44)
         button.layer.borderWidth = 2

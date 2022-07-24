@@ -1210,6 +1210,14 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		82222A2B288C801900C1954D /* segmented controll */ = {
+			isa = PBXGroup;
+			children = (
+				82CD6BF328885DFF00716443 /* QuizSegmentedViewController.swift */,
+			);
+			path = "segmented controll";
+			sourceTree = "<group>";
+		};
 		822F6C1127BD3DE60033803A /* Total */ = {
 			isa = PBXGroup;
 			children = (
@@ -2053,7 +2061,7 @@
 		82DF98E427BCE73700548B38 /* Other */ = {
 			isa = PBXGroup;
 			children = (
-				82CD6BF328885DFF00716443 /* QuizSegmentedViewController.swift */,
+				82222A2B288C801900C1954D /* segmented controll */,
 				823CFF6D27FA10DC001FF6D9 /* Settings */,
 				8290FCA327FCC15B00E05DDA /* TabBar */,
 				823CFF7027FA1117001FF6D9 /* Start */,

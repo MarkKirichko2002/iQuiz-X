@@ -95,7 +95,7 @@ class PlayerBoardTableViewController: UITableViewController {
                         self.playersArray.append(Player(name: name ?? "", counter: bestscore , email: email ?? "", CorrectAnswersCounter: CorrectAnswersCounter ?? 0, category: category , image: photo ?? "", background: background ?? ""))
                         
                         self.playersViewModel.players.value = self.playersArray.compactMap({
-                            PlayersTableViewCellViewModel(name: $0.name , counter: $0.counter , email: $0.email, CorrectAnswersCounter: $0.CorrectAnswersCounter, category: $0.category ?? "", image: $0.image ?? "", background: $0.background ?? "")
+                            PlayersTableViewCellViewModel(name: $0.name , counter: $0.counter , email: $0.email, CorrectAnswersCounter: $0.CorrectAnswersCounter, category: $0.category , image: $0.image ?? "", background: $0.background ?? "")
                         })
                     }
                     self.playersViewModel.players.value?.sort(by: { $0.counter > $1.counter })
