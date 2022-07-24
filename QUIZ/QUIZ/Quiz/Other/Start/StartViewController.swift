@@ -24,12 +24,7 @@ class StartViewController: UIViewController {
     
     var player = SoundClass()
     
-    func StartTimer() {
-        timer.invalidate()
-//        let everyMinuteTimer = Timer.scheduledTimer(timeInterval: 0, target: self,
-//                                                    selector: #selector(UpdateTime), userInfo: nil, repeats: true)
-    }
-    
+
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
         timer.invalidate()
@@ -38,10 +33,8 @@ class StartViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //self.StartTimer()
-        
-        let everyMinuteTimer = Timer.scheduledTimer(timeInterval: 0, target: self,
-                                                    selector: #selector(UpdateTime), userInfo: nil, repeats: true)
+//    let everyMinuteTimer = Timer.scheduledTimer(timeInterval: 0, target: self,
+//                                                    selector: #selector(UpdateTime), userInfo: nil, repeats: true)
         
         //everyMinuteTimer.invalidate()
         
@@ -240,14 +233,11 @@ class StartViewController: UIViewController {
             
         }
         
-        
-        
         if hourString == "00" && minutesString == "0" && seconds == "0" {
             self.GenerateRandomIndex()
             self.dailyquiz()
         }
         
-        //self.TitleName.text = ("Сегодня \(currentday)")
     }
     
     func CheckTime() {
@@ -443,6 +433,24 @@ class StartViewController: UIViewController {
             self.scrollView.backgroundColor = UIColor(patternImage: UIImage(named: "Swift.background.jpeg")!)
             self.view2.backgroundColor = UIColor(patternImage: UIImage(named: "Swift.background.jpeg")!)
             self.Image.image = UIImage(named: "Swift.jpeg")
+            
+        case 16:
+            print("underwater")
+            self.TodayQuizButton.setTitle("подводный мир", for: .normal)
+            //self.TodayQuizButton.backgroundColor = UIColor(patternImage: UIImage(named: "Swift.background.jpeg")!)
+            self.view.backgroundColor = UIColor(patternImage: UIImage(named: "underwater.background.jpeg")!)
+            self.scrollView.backgroundColor = UIColor(patternImage: UIImage(named: "underwater.background.jpeg")!)
+            self.view2.backgroundColor = UIColor(patternImage: UIImage(named: "underwater.background.jpeg")!)
+            self.Image.image = UIImage(named: "underwater.png")
+            
+        case 17:
+            print("chess")
+            self.TodayQuizButton.setTitle("шахматы", for: .normal)
+            //self.TodayQuizButton.backgroundColor = UIColor(patternImage: UIImage(named: "Swift.background.jpeg")!)
+            self.view.backgroundColor = UIColor(patternImage: UIImage(named: "chess.background.jpeg")!)
+            self.scrollView.backgroundColor = UIColor(patternImage: UIImage(named: "chess.background.jpeg")!)
+            self.view2.backgroundColor = UIColor(patternImage: UIImage(named: "chess.background.jpeg")!)
+            self.Image.image = UIImage(named: "chess.png")
             
         default:
             print("other")

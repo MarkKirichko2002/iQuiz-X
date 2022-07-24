@@ -25,7 +25,7 @@ class CategoriesTableViewCellModel {
                     
                     if let category = document[quizpath] as? [String: Any] {
                         let complete = category["complete"] as? Bool ?? false
-                        let bestscore = category["bestscore"] as? Int ?? 228
+                        let bestscore = category["bestscore"] as? Int ?? 0
                         
                         CategoryScore.text = "\(bestscore ?? 0)/100 баллов"
                         isComplete.text = "\(complete)"

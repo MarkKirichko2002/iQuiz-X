@@ -38,7 +38,7 @@ class BaseTotalQuizViewController: UIViewController {
                         let CorrectAnswersCounter = category["CorrectAnswersCounter"] as? Int
                         let image = category["image"] as? String
                         let background = category["background"] as? String
-                        let bestscore = category["bestscore"] as? Int ?? 228
+                        let bestscore = category["bestscore"] as? Int ?? 0
                         let category = category["category"] as? String ?? "lol"
                         self.ScoreLabel.text = ("Лучший счет: \(String(bestscore)) баллов")
                         self.CorrectAnswers.text = "Количество правильных ответов: \(CorrectAnswersCounter ?? 0)/20"

@@ -128,7 +128,7 @@ class FBAuth {
     
     
     func SignOutAction() {
-        try?Auth.auth().signOut()
+        try? Auth.auth().signOut()
     }
     
     func LoadUserInfo(username: UILabel, useremail: UILabel, userimage: UIImageView, highscore: UILabel, view: UIView) {
@@ -160,7 +160,7 @@ class FBAuth {
                     if let category = document["lastquiz"] as? [String: Any] {
                         let background = category["background"] as? String
                         let image = category["image"] as? String
-                        let bestscore = category["bestscore"] as? Int ?? 228
+                        let bestscore = category["bestscore"] as? Int ?? 0
                         let category = category["category"] as? String ?? "lol"
                         highscore.text = "Лучший счет: \(bestscore) баллов (\(category))"
                         print(category)

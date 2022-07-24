@@ -20,7 +20,6 @@ class CurrentCategoryTableViewCell: UITableViewCell {
     
     static let identifier = "CurrentCategoryTableViewCell"
     
-    
     func configure() {
         
         CurrentScore.text = "счет: \(currentscore ?? 0)/100"

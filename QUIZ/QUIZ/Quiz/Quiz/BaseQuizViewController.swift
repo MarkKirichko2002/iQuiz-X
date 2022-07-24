@@ -16,7 +16,7 @@ import Vision
 class BaseQuizViewController: UIViewController {
     
     var pl = AVAudioPlayer()
-    
+    var music = UserDefaults.standard.object(forKey: "music") as? Bool
     var GestureRecording = true
     var VoiceRecording = true
     var HintsStatus = true
@@ -24,7 +24,7 @@ class BaseQuizViewController: UIViewController {
     var MusicStatus = true
     var TimerStatus = true
     var AttemptsStatus = true
-    
+    var isTalking = false
     let synthesizer = AVSpeechSynthesizer()
     
     enum RemoteCommand: String {
@@ -68,7 +68,6 @@ class BaseQuizViewController: UIViewController {
     var captureDevice: AVCaptureDevice!
     var devicePosition: AVCaptureDevice.Position = .front
     
-    // видинье
     var requests = [VNRequest]()
     
     
@@ -107,165 +106,7 @@ class BaseQuizViewController: UIViewController {
     @IBOutlet weak var recognizeButton: UIButton!
     @IBOutlet weak var MusicButton: UIButton!
     
-    
-    func checkSpeachSetting() {
-        var isSpeachOn = UserDefaults.standard.object(forKey: "onstatusspeach") as? Bool
-        
-        print(isSpeachOn)
-        
-        if isSpeachOn == true {
-            print("speach now")
-        } else if isSpeachOn == false {
-            print("speach not now")
-            self.SpeachStatus = false
-        }
-        
-        if self.SpeachStatus == false {
-            print("speach doesnt working")
-            self.SayQuestionButton.isEnabled = false
-            self.SayQuestionButton.removeFromSuperview()
-        } else {}
-    }
-    
-    func checkHintsSetting() {
-        var isHintsOn = UserDefaults.standard.object(forKey: "onstatushints") as? Bool
-        
-        print(isHintsOn)
-        
-        if isHintsOn == true {
-            print("hints now")
-        } else if isHintsOn == false {
-            print("hints not now")
-            //self.captureSession.stopRunning()
-            self.HintsStatus = false
-        }
-        
-        if self.HintsStatus == false {
-            print("hints doesnt working")
-            self.AnswersButton.isEnabled = false
-            self.AnswersButton.removeFromSuperview()
-            //timer.invalidate()
-        } else {
-            //timer.fire()
-        }
-    }
-    
-    func checkGestureSetting() {
-        
-        var isRecordOnn = UserDefaults.standard.object(forKey: "onstatus") as? Bool
-        
-        if isRecordOnn == true {
-            print("record now")
-        } else if isRecordOnn == false {
-            print("record not now")
-            //self.captureSession.stopRunning()
-            self.GestureRecording = false
-        }
-        
-        if self.GestureRecording == false {
-            //timer.invalidate()
-            print("time out")
-            self.captureSession.stopRunning()
-        }
-    }
-    
-    func checkAudioSetting() {
-        var isRecordOnAudio = UserDefaults.standard.object(forKey: "onstatusaudio") as? Bool
-        
-        print(isRecordOnAudio)
-        
-        if isRecordOnAudio == true {
-            print("record audio now")
-        } else if isRecordOnAudio == false {
-            print("record audio not now")
-            //self.captureSession.stopRunning()
-            self.VoiceRecording = false
-        }
-        
-        if self.VoiceRecording == false {
-            print("audio doesnt working")
-            self.recognizeButton.isEnabled = false
-            self.recognizeButton.removeFromSuperview()
-            //timer.invalidate()
-        } else {
-            //timer.fire()
-        }
-    }
-    
-    
-    func checkMusicSetting() {
-        var isMusicOn = UserDefaults.standard.object(forKey: "onstatusmusic") as? Bool
-        
-        print("Музыка \(isMusicOn)")
-        
-        if isMusicOn == true {
-            print("music now")
-        } else if isMusicOn == false {
-            print("music not now")
-            //self.captureSession.stopRunning()
-            self.MusicStatus = false
-        }
-        
-        if self.MusicStatus == false {
-            print("music doesnt working")
-            self.StopMusicOption(id: 1, resource: "space music.mp3")
-            self.StopMusicOption(id: 2, resource: "history music.mp3")
-            self.StopMusicOption(id: 3, resource: "anatomy music.mp3")
-            self.StopMusicOption(id: 4, resource: "sport music.mp3")
-            self.StopMusicOption(id: 5, resource: "games music.mp3")
-            self.StopMusicOption(id: 6, resource: "IQ music.mp3")
-            self.StopMusicOption(id: 7, resource: "economy music.mp3")
-            self.StopMusicOption(id: 8, resource: "geography music.mp3")
-            self.StopMusicOption(id: 9, resource: "ecology music.mp3")
-            self.StopMusicOption(id: 10, resource: "physics music.mp3")
-            self.StopMusicOption(id: 11, resource: "chemistry music.mp3")
-            self.StopMusicOption(id: 12, resource: "informatics music.mp3")
-            self.StopMusicOption(id: 13, resource: "literature music.mp3")
-            self.StopMusicOption(id: 14, resource: "drive music.mp3")
-            self.StopMusicOption(id: 15, resource: "Swift music.mp3")
-            self.StopMusicOption(id: 16, resource: "underwater music.mp3")
-            self.StopMusicOption(id: 17, resource: "chess music.mp3")
-        } else {
-            print("music working")
-        }
-    }
-    
-    func checkTimerSetting() {
-        var isTimerOn = UserDefaults.standard.object(forKey: "onstatustimer") as? Bool
-        
-        print(isTimerOn)
-        
-        if isTimerOn == true {
-            print("timer now")
-        } else if isTimerOn == false {
-            print("timer not now")
-            //self.captureSession.stopRunning()
-            self.TimerStatus = false
-        }
-    }
-    
-    func checkAttemptsSetting() {
-        var isAttemptsOn = UserDefaults.standard.object(forKey: "onstatusattempts") as? Bool
-        
-        print(isAttemptsOn)
-        
-        if isAttemptsOn == true {
-            print("attempts now")
-        } else if isAttemptsOn == false {
-            print("attempts not now")
-            //self.captureSession.stopRunning()
-            self.AttemptsStatus = false
-        }
-        
-        if self.AttemptsStatus == false {
-            self.Attempts.removeFromSuperview()
-        }
-    }
-    
-    @objc func ShowAnswers() {
-        SCLAlertView().showInfo("варианты ответов", subTitle: "1)\(quiz?.checkChoices()[0] ?? "") 2)\(quiz?.checkChoices()[1] ?? "") 3)\(quiz?.checkChoices()[2] ?? "")")
-    }
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         self.checkHintsSetting()
@@ -313,88 +154,7 @@ class BaseQuizViewController: UIViewController {
         AnswersButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 17)
     }
     
-    
-    func CheckChoiceNumber() {
-        
-        
-        if check2.contains("один") || check2.contains("Один") {
-            //check2 = "1"
-            check2 = quiz?.checkChoices()[0] ?? ""
-            questionText.text = ("Ваш ответ: \(check2)")
-        }
-        
-        if check2.contains("два") || check2.contains("Два") {
-            //check2 = "1"
-            check2 = quiz?.checkChoices()[1] ?? ""
-            questionText.text = ("Ваш ответ: \(check2)")
-        }
-        
-        if check2.contains("три") || check2.contains("Три") {
-            //check2 = "1"
-            check2 = quiz?.checkChoices()[2] ?? ""
-            questionText.text = ("Ваш ответ: \(check2)")
-        }
-        
-        if check2.contains("первый") || check2.contains("Первый") {
-            //check2 = "1"
-            check2 = quiz?.checkChoices()[0] ?? ""
-            questionText.text = ("Ваш ответ: \(check2)")
-        }
-        
-        if check2.contains("второй") || check2.contains("Второй") {
-            //check2 = "1"
-            check2 = quiz?.checkChoices()[1] ?? ""
-            questionText.text = ("Ваш ответ: \(check2)")
-        }
-        
-        if check2.contains("третий") || check2.contains("Третий") {
-            //check2 = "1"
-            check2 = quiz?.checkChoices()[2] ?? ""
-            questionText.text = ("Ваш ответ: \(check2)")
-        }
-        
-        
-    }
-    
-    
-    func stop() {
-        var timeLeft = 6
-        Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { timer in
-            print("timer fired!")
-            
-            timeLeft -= 1
-            
-            
-            self.recognizeButton.setTitle(String(timeLeft), for: .normal)
-            self.animation.springLabel(label: self.recognizeButton.titleLabel!)
-            
-            print(timeLeft)
-            
-            
-            if(timeLeft==0){
-                self.recognizeButton.setTitle(String(timeLeft), for: .normal)
-                
-                timer.invalidate()
-                self.audioEngine.stop()
-                self.request.endAudio()
-                self.recognitionTask?.cancel()
-                self.audioEngine.inputNode.removeTap(onBus: 0)
-                //stop = sender.isSelected
-                
-                self.recognizeButton.setImage(UIImage(named: "microphone"), for: .normal)
-                self.recognizeButton.sendActions(for: .touchUpInside)
-            }
-            
-            
-        }
-        
-        //self.recognizeButton.sendActions(for: .touchUpInside)
-    }
-    
-    
-    
     @IBAction func RecordAnswer(_ sender: UIButton) {
-        
         
         configureAudioSession()
         
@@ -462,7 +222,6 @@ class BaseQuizViewController: UIViewController {
             SCLAlertView().showSuccess("Правильно 👍👍👍!!!", subTitle: check2)
             Timer.scheduledTimer(timeInterval:0.2, target: self, selector: #selector(updateUI), userInfo: nil, repeats: false)
         }
-        
         
         
         if recognizeButton.isSelected && checkvoice == false && self.Attempts != nil && check2 != "" {
@@ -545,6 +304,248 @@ class BaseQuizViewController: UIViewController {
         
         sender.isSelected = !sender.isSelected
         
+    }
+    
+
+    @IBAction func sayquestion() {
+        say()
+    }
+    
+    
+    @IBAction func OnOffSound() {
+        self.stopMusic(id: 1, resource: "space music.mp3")
+        self.stopMusic(id: 2, resource: "history music.mp3")
+        self.stopMusic(id: 3, resource: "anatomy music.mp3")
+        self.stopMusic(id: 4, resource: "sport music.mp3")
+        self.stopMusic(id: 5, resource: "games music.mp3")
+        self.stopMusic(id: 6, resource: "IQ music.mp3")
+        self.stopMusic(id: 7, resource: "economy music.mp3")
+        self.stopMusic(id: 8, resource: "geography music.mp3")
+        self.stopMusic(id: 9, resource: "ecology music.mp3")
+        self.stopMusic(id: 10, resource: "physics music.mp3")
+        self.stopMusic(id: 11, resource: "chemistry music.mp3")
+        self.stopMusic(id: 12, resource: "informatics music.mp3")
+        self.stopMusic(id: 13, resource: "literature music.mp3")
+        self.stopMusic(id: 14, resource: "drive music.mp3")
+        self.stopMusic(id: 15, resource: "Swift music.mp3")
+        self.stopMusic(id: 16, resource: "underwater music.mp3")
+        self.stopMusic(id: 17, resource: "chess music.mp3")
+        
+    }
+    
+    @IBAction func answerSelected(_ sender: UIButton) {
+        
+        let userAnswer = sender.currentTitle!
+        let check = quiz?.checkAnswer(userAnswer)
+        
+        
+        if  check! && counter < 100 {
+            
+            RestartTimer()
+            
+            if quiz?.questionNumber == 19 {
+                PresentTotalScreen()
+                write(id: 1, quizpath: "quizplanets", category: "planets")
+                write(id: 2, quizpath: "quizhistory", category: "history")
+                write(id: 3, quizpath: "quizanatomy", category: "anatomy")
+                write(id: 4, quizpath: "quizsport", category: "sport")
+                write(id: 5, quizpath: "quizgames", category: "games")
+                write(id: 6, quizpath: "quiziq", category: "IQ")
+                write(id: 7, quizpath: "quizeconomy", category: "economy")
+                write(id: 8, quizpath: "quizgeography", category: "geography")
+                write(id: 9, quizpath: "quizecology", category: "ecology")
+                write(id: 10, quizpath: "quizphysics", category: "physics")
+                write(id: 11, quizpath: "quizchemistry", category: "chemistry")
+                write(id: 12, quizpath: "quizinformatics", category: "informatics")
+                write(id: 13, quizpath: "quizliterature", category: "literature")
+                write(id: 14, quizpath: "quizroadtraffic", category: "roadtraffic")
+                write(id: 15, quizpath: "quizswift", category: "Swift")
+                write(id: 16, quizpath: "quizunderwater", category: "underwater")
+                write(id: 17, quizpath: "quizchess", category: "chess")
+            }
+            
+            sender.backgroundColor = UIColor.green;
+            SCLAlertView().showSuccess("Правильно", subTitle: "правильный ответ: \(quiz?.checkAnswer() ?? "")")
+            //player.Sound(resource: "victory_sound.mp3")
+            
+            counter += 5
+            CorrectAnswersCounter += 1
+            
+            Score.text = ("Счет: \(String(counter))")
+            animation.springLabel(label: Score)
+            
+            write(id: 1, quizpath: "quizplanets", category: "planets")
+            write(id: 2, quizpath: "quizhistory", category: "history")
+            write(id: 3, quizpath: "quizanatomy", category: "anatomy")
+            write(id: 4, quizpath: "quizsport", category: "sport")
+            write(id: 5, quizpath: "quizgames", category: "games")
+            write(id: 6, quizpath: "quiziq", category: "IQ")
+            write(id: 7, quizpath: "quizeconomy", category: "economy")
+            write(id: 8, quizpath: "quizgeography", category: "geography")
+            write(id: 9, quizpath: "quizecology", category: "ecology")
+            write(id: 10, quizpath: "quizphysics", category: "physics")
+            write(id: 11, quizpath: "quizchemistry", category: "chemistry")
+            write(id: 12, quizpath: "quizinformatics", category: "informatics")
+            write(id: 13, quizpath: "quizliterature", category: "literature")
+            write(id: 14, quizpath: "quizroadtraffic", category: "roadtraffic")
+            write(id: 15, quizpath: "quizswift", category: "Swift")
+            write(id: 16, quizpath: "quizunderwater", category: "underwater")
+            write(id: 17, quizpath: "quizchess", category: "chess")
+            
+        } else if !check! {
+            
+            
+            RestartTimer()
+            
+            if quiz?.questionNumber == 19 {
+                PresentTotalScreen()
+            }
+            
+            if AttemptsCounter == 0 && self.AttemptsStatus == true {
+                PresentTotalScreen()
+            }
+            
+            if counter == 0 && self.Attempts != nil {
+                sender.backgroundColor = UIColor.red;
+                SCLAlertView().showError("не правильно", subTitle: "правильный ответ: \(quiz?.checkAnswer() ?? "")")
+                //player.Sound(resource: "fail2.mp3")
+                counter = 0
+                AttemptsCounter -= 1
+                UnCorrectAnswersCounter += 1
+                Score.text = ("Счет: \(String(counter))")
+                Attempts.text = ("Попыток осталось: \(String(AttemptsCounter))")
+                animation.springLabel(label: Attempts)
+                
+                write(id: 1, quizpath: "quizplanets", category: "planets")
+                write(id: 2, quizpath: "quizhistory", category: "history")
+                write(id: 3, quizpath: "quizanatomy", category: "anatomy")
+                write(id: 4, quizpath: "quizsport", category: "sport")
+                write(id: 5, quizpath: "quizgames", category: "games")
+                write(id: 6, quizpath: "quiziq", category: "IQ")
+                write(id: 7, quizpath: "quizeconomy", category: "economy")
+                write(id: 8, quizpath: "quizgeography", category: "geography")
+                write(id: 9, quizpath: "quizecology", category: "ecology")
+                write(id: 10, quizpath: "quizphysics", category: "physics")
+                write(id: 11, quizpath: "quizchemistry", category: "chemistry")
+                write(id: 12, quizpath: "quizinformatics", category: "informatics")
+                write(id: 13, quizpath: "quizliterature", category: "literature")
+                write(id: 14, quizpath: "quizroadtraffic", category: "roadtraffic")
+                write(id: 15, quizpath: "quizswift", category: "Swift")
+                write(id: 16, quizpath: "quizunderwater", category: "underwater")
+                write(id: 17, quizpath: "quizchess", category: "chess")
+                
+            } else if counter > 0 && self.Attempts != nil {
+                sender.backgroundColor = UIColor.red;
+                SCLAlertView().showError("не правильно", subTitle: "правильный ответ:  \(quiz?.checkAnswer() ?? "")")
+                //player.Sound(resource: "fail2.mp3")
+                AttemptsCounter -= 1
+                UnCorrectAnswersCounter += 1
+                Score.text = ("Счет: \(String(counter))")
+                Attempts.text = ("Попыток осталось: \(String(AttemptsCounter))")
+                animation.springLabel(label: Attempts)
+                
+                write(id: 1, quizpath: "quizplanets", category: "planets")
+                write(id: 2, quizpath: "quizhistory", category: "history")
+                write(id: 3, quizpath: "quizanatomy", category: "anatomy")
+                write(id: 4, quizpath: "quizsport", category: "sport")
+                write(id: 5, quizpath: "quizgames", category: "games")
+                write(id: 6, quizpath: "quiziq", category: "IQ")
+                write(id: 7, quizpath: "quizeconomy", category: "economy")
+                write(id: 8, quizpath: "quizgeography", category: "geography")
+                write(id: 9, quizpath: "quizecology", category: "ecology")
+                write(id: 10, quizpath: "quizphysics", category: "physics")
+                write(id: 11, quizpath: "quizchemistry", category: "chemistry")
+                write(id: 12, quizpath: "quizinformatics", category: "informatics")
+                write(id: 13, quizpath: "quizliterature", category: "literature")
+                write(id: 14, quizpath: "quizroadtraffic", category: "roadtraffic")
+                write(id: 15, quizpath: "quizswift", category: "Swift")
+                write(id: 16, quizpath: "quizunderwater", category: "underwater")
+                write(id: 17, quizpath: "quizchess", category: "chess")
+            }
+        }
+        
+        write(id: 1, quizpath: "quizplanets", category: "planets")
+        write(id: 2, quizpath: "quizhistory", category: "history")
+        write(id: 3, quizpath: "quizanatomy", category: "anatomy")
+        write(id: 4, quizpath: "quizsport", category: "sport")
+        write(id: 5, quizpath: "quizgames", category: "games")
+        write(id: 6, quizpath: "quiziq", category: "IQ")
+        write(id: 7, quizpath: "quizeconomy", category: "economy")
+        write(id: 8, quizpath: "quizgeography", category: "geography")
+        write(id: 9, quizpath: "quizecology", category: "ecology")
+        write(id: 10, quizpath: "quizphysics", category: "physics")
+        write(id: 11, quizpath: "quizchemistry", category: "chemistry")
+        write(id: 12, quizpath: "quizinformatics", category: "informatics")
+        write(id: 13, quizpath: "quizliterature", category: "literature")
+        write(id: 14, quizpath: "quizroadtraffic", category: "roadtraffic")
+        write(id: 15, quizpath: "quizswift", category: "Swift")
+        write(id: 16, quizpath: "quizunderwater", category: "underwater")
+        write(id: 17, quizpath: "quizchess", category: "chess")
+        quiz?.nextQuestion()
+        
+        
+        Timer.scheduledTimer(timeInterval:0.2, target: self, selector: #selector(updateUI), userInfo: nil, repeats: false)
+    }
+    
+    @IBAction func PresentСategoryScreen() {
+        self.captureSession.stopRunning()
+        pause()
+        player.Sound(resource: "pause_sound.mp3")
+    }
+    
+    @IBAction func showAnswer() {
+        
+        if AnswersCounter <= 0 {
+            SCLAlertView().showWarning("У вас осталось 0 подсказок", subTitle: "решайте сами")
+            AnswersCounter = 0
+            AnswersButton.setTitle(" \(AnswersCounter)", for: .normal)
+            AnswersButton.isUserInteractionEnabled = false
+        } else {
+            AnswersCounter = AnswersCounter - 1
+            AnswersButton.setTitle(" \(AnswersCounter)", for: .normal)
+            //SCLAlertView().showWarning("Ответ", subTitle: "правильный ответ: \(quiz?.checkAnswer() ?? "")")
+            if Choice1.titleLabel?.text != quiz?.checkAnswer() {
+                //Choice1.isEnabled = false
+                Choice1.layer.borderColor = UIColor.clear.cgColor
+                //Choice1.titleLabel?.textColor = UIColor.clear
+                Choice1.setTitle("", for: .normal)
+            }
+            
+            if Choice2.titleLabel?.text != quiz?.checkAnswer() {
+                //Choice2.isEnabled = false
+                Choice2.layer.borderColor = UIColor.clear.cgColor
+                //Choice1.titleLabel?.textColor = UIColor.clear
+                Choice2.setTitle("", for: .normal)
+            }
+            
+            if Choice3.titleLabel?.text != quiz?.checkAnswer() {
+                //Choice3.isEnabled = false
+                Choice3.layer.borderColor = UIColor.clear.cgColor
+                //Choice1.titleLabel?.textColor = UIColor.clear
+                Choice3.setTitle("", for: .normal)
+            }
+        }
+        
+        print(AnswersCounter)
+    }
+    
+}
+
+
+extension BaseQuizViewController: AVCaptureVideoDataOutputSampleBufferDelegate {
+    
+    func say() {
+        if isTalking == false {
+            self.SayQuestionButton.setImage(UIImage(named: "synthesizer selected"), for: .normal)
+            let utterance = AVSpeechUtterance(string: "\(quiz?.checkQuestion() ?? "")\(quiz?.checkChoices() ?? [""]) ")
+            utterance.voice = AVSpeechSynthesisVoice(language: "ru-RU")
+            synthesizer.speak(utterance)
+            isTalking = true
+        } else {
+            synthesizer.stopSpeaking(at: .immediate)
+            isTalking = false
+            self.SayQuestionButton.setImage(UIImage(named: "synthesizer"), for: .normal)
+        }
     }
     
     fileprivate func startRecognition () {
@@ -836,24 +837,83 @@ class BaseQuizViewController: UIViewController {
         } catch { }
     }
     
-    
-    var isTalking = false
-    
-    
-    @IBAction func sayquestion() {
+    func CheckChoiceNumber() {
         
-        if isTalking == false {
-            self.SayQuestionButton.setImage(UIImage(named: "synthesizer selected"), for: .normal)
-            let utterance = AVSpeechUtterance(string: "\(quiz?.checkQuestion() ?? "")\(quiz?.checkChoices() ?? [""]) ")
-            utterance.voice = AVSpeechSynthesisVoice(language: "ru-RU")
-            synthesizer.speak(utterance)
-            isTalking = true
-        } else {
-            synthesizer.stopSpeaking(at: .immediate)
-            isTalking = false
-            self.SayQuestionButton.setImage(UIImage(named: "synthesizer"), for: .normal)
+        
+        if check2.contains("один") || check2.contains("Один") {
+            //check2 = "1"
+            check2 = quiz?.checkChoices()[0] ?? ""
+            questionText.text = ("Ваш ответ: \(check2)")
         }
+        
+        if check2.contains("два") || check2.contains("Два") {
+            //check2 = "1"
+            check2 = quiz?.checkChoices()[1] ?? ""
+            questionText.text = ("Ваш ответ: \(check2)")
+        }
+        
+        if check2.contains("три") || check2.contains("Три") {
+            //check2 = "1"
+            check2 = quiz?.checkChoices()[2] ?? ""
+            questionText.text = ("Ваш ответ: \(check2)")
+        }
+        
+        if check2.contains("первый") || check2.contains("Первый") {
+            //check2 = "1"
+            check2 = quiz?.checkChoices()[0] ?? ""
+            questionText.text = ("Ваш ответ: \(check2)")
+        }
+        
+        if check2.contains("второй") || check2.contains("Второй") {
+            //check2 = "1"
+            check2 = quiz?.checkChoices()[1] ?? ""
+            questionText.text = ("Ваш ответ: \(check2)")
+        }
+        
+        if check2.contains("третий") || check2.contains("Третий") {
+            //check2 = "1"
+            check2 = quiz?.checkChoices()[2] ?? ""
+            questionText.text = ("Ваш ответ: \(check2)")
+        }
+        
+        
     }
+    
+    
+    func stop() {
+        var timeLeft = 6
+        Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { timer in
+            print("timer fired!")
+            
+            timeLeft -= 1
+            
+            
+            self.recognizeButton.setTitle(String(timeLeft), for: .normal)
+            self.animation.springLabel(label: self.recognizeButton.titleLabel!)
+            
+            print(timeLeft)
+            
+            
+            if(timeLeft==0){
+                self.recognizeButton.setTitle(String(timeLeft), for: .normal)
+                
+                timer.invalidate()
+                self.audioEngine.stop()
+                self.request.endAudio()
+                self.recognitionTask?.cancel()
+                self.audioEngine.inputNode.removeTap(onBus: 0)
+                //stop = sender.isSelected
+                
+                self.recognizeButton.setImage(UIImage(named: "microphone"), for: .normal)
+                self.recognizeButton.sendActions(for: .touchUpInside)
+            }
+            
+            
+        }
+        
+        //self.recognizeButton.sendActions(for: .touchUpInside)
+    }
+    
     
     func StopMusicOption(id: Int, resource: String) {
         if quiz?.checkid() == id {
@@ -887,226 +947,166 @@ class BaseQuizViewController: UIViewController {
             }
         }
     }
+
     
-    @IBAction func OnOffSound() {
-        self.stopMusic(id: 1, resource: "space music.mp3")
-        self.stopMusic(id: 2, resource: "history music.mp3")
-        self.stopMusic(id: 3, resource: "anatomy music.mp3")
-        self.stopMusic(id: 4, resource: "sport music.mp3")
-        self.stopMusic(id: 5, resource: "games music.mp3")
-        self.stopMusic(id: 6, resource: "IQ music.mp3")
-        self.stopMusic(id: 7, resource: "economy music.mp3")
-        self.stopMusic(id: 8, resource: "geography music.mp3")
-        self.stopMusic(id: 9, resource: "ecology music.mp3")
-        self.stopMusic(id: 10, resource: "physics music.mp3")
-        self.stopMusic(id: 11, resource: "chemistry music.mp3")
-        self.stopMusic(id: 12, resource: "informatics music.mp3")
-        self.stopMusic(id: 13, resource: "literature music.mp3")
-        self.stopMusic(id: 14, resource: "drive music.mp3")
-        self.stopMusic(id: 15, resource: "Swift music.mp3")
-        self.stopMusic(id: 16, resource: "underwater music.mp3")
-        self.stopMusic(id: 17, resource: "chess music.mp3")
-        
-    }
     
-    @IBAction func answerSelected(_ sender: UIButton) {
+    func checkSpeachSetting() {
+        var isSpeachOn = UserDefaults.standard.object(forKey: "onstatusspeach") as? Bool
         
-        let userAnswer = sender.currentTitle!
-        let check = quiz?.checkAnswer(userAnswer)
+        print(isSpeachOn)
         
-        
-        if  check! && counter < 100 {
-            
-            RestartTimer()
-            
-            if quiz?.questionNumber == 19 {
-                PresentTotalScreen()
-                write(id: 1, quizpath: "quizplanets", category: "planets")
-                write(id: 2, quizpath: "quizhistory", category: "history")
-                write(id: 3, quizpath: "quizanatomy", category: "anatomy")
-                write(id: 4, quizpath: "quizsport", category: "sport")
-                write(id: 5, quizpath: "quizgames", category: "games")
-                write(id: 6, quizpath: "quiziq", category: "IQ")
-                write(id: 7, quizpath: "quizeconomy", category: "economy")
-                write(id: 8, quizpath: "quizgeography", category: "geography")
-                write(id: 9, quizpath: "quizecology", category: "ecology")
-                write(id: 10, quizpath: "quizphysics", category: "physics")
-                write(id: 11, quizpath: "quizchemistry", category: "chemistry")
-                write(id: 12, quizpath: "quizinformatics", category: "informatics")
-                write(id: 13, quizpath: "quizliterature", category: "literature")
-                write(id: 14, quizpath: "quizroadtraffic", category: "roadtraffic")
-                write(id: 15, quizpath: "quizswift", category: "Swift")
-                write(id: 16, quizpath: "quizunderwater", category: "underwater")
-                write(id: 17, quizpath: "quizchess", category: "chess")
-            }
-            
-            sender.backgroundColor = UIColor.green;
-            SCLAlertView().showSuccess("Правильно", subTitle: "правильный ответ: \(quiz?.checkAnswer() ?? "")")
-            //player.Sound(resource: "victory_sound.mp3")
-            
-            counter += 5
-            CorrectAnswersCounter += 1
-            
-            Score.text = ("Счет: \(String(counter))")
-            animation.springLabel(label: Score)
-            
-            write(id: 1, quizpath: "quizplanets", category: "planets")
-            write(id: 2, quizpath: "quizhistory", category: "history")
-            write(id: 3, quizpath: "quizanatomy", category: "anatomy")
-            write(id: 4, quizpath: "quizsport", category: "sport")
-            write(id: 5, quizpath: "quizgames", category: "games")
-            write(id: 6, quizpath: "quiziq", category: "IQ")
-            write(id: 7, quizpath: "quizeconomy", category: "economy")
-            write(id: 8, quizpath: "quizgeography", category: "geography")
-            write(id: 9, quizpath: "quizecology", category: "ecology")
-            write(id: 10, quizpath: "quizphysics", category: "physics")
-            write(id: 11, quizpath: "quizchemistry", category: "chemistry")
-            write(id: 12, quizpath: "quizinformatics", category: "informatics")
-            write(id: 13, quizpath: "quizliterature", category: "literature")
-            write(id: 14, quizpath: "quizroadtraffic", category: "roadtraffic")
-            write(id: 15, quizpath: "quizswift", category: "Swift")
-            write(id: 16, quizpath: "quizunderwater", category: "underwater")
-            write(id: 17, quizpath: "quizchess", category: "chess")
-            
-        } else if !check! {
-            
-            
-            RestartTimer()
-            
-            if quiz?.questionNumber == 19 {
-                PresentTotalScreen()
-            }
-            
-            if AttemptsCounter == 0 && self.AttemptsStatus == true {
-                PresentTotalScreen()
-            }
-            
-            if counter == 0 && self.Attempts != nil {
-                sender.backgroundColor = UIColor.red;
-                SCLAlertView().showError("не правильно", subTitle: "правильный ответ: \(quiz?.checkAnswer() ?? "")")
-                //player.Sound(resource: "fail2.mp3")
-                counter = 0
-                AttemptsCounter -= 1
-                UnCorrectAnswersCounter += 1
-                Score.text = ("Счет: \(String(counter))")
-                Attempts.text = ("Попыток осталось: \(String(AttemptsCounter))")
-                animation.springLabel(label: Attempts)
-                
-                write(id: 1, quizpath: "quizplanets", category: "planets")
-                write(id: 2, quizpath: "quizhistory", category: "history")
-                write(id: 3, quizpath: "quizanatomy", category: "anatomy")
-                write(id: 4, quizpath: "quizsport", category: "sport")
-                write(id: 5, quizpath: "quizgames", category: "games")
-                write(id: 6, quizpath: "quiziq", category: "IQ")
-                write(id: 7, quizpath: "quizeconomy", category: "economy")
-                write(id: 8, quizpath: "quizgeography", category: "geography")
-                write(id: 9, quizpath: "quizecology", category: "ecology")
-                write(id: 10, quizpath: "quizphysics", category: "physics")
-                write(id: 11, quizpath: "quizchemistry", category: "chemistry")
-                write(id: 12, quizpath: "quizinformatics", category: "informatics")
-                write(id: 13, quizpath: "quizliterature", category: "literature")
-                write(id: 14, quizpath: "quizroadtraffic", category: "roadtraffic")
-                write(id: 15, quizpath: "quizswift", category: "Swift")
-                write(id: 16, quizpath: "quizunderwater", category: "underwater")
-                write(id: 17, quizpath: "quizchess", category: "chess")
-                
-            } else if counter > 0 && self.Attempts != nil {
-                sender.backgroundColor = UIColor.red;
-                SCLAlertView().showError("не правильно", subTitle: "правильный ответ:  \(quiz?.checkAnswer() ?? "")")
-                //player.Sound(resource: "fail2.mp3")
-                AttemptsCounter -= 1
-                UnCorrectAnswersCounter += 1
-                Score.text = ("Счет: \(String(counter))")
-                Attempts.text = ("Попыток осталось: \(String(AttemptsCounter))")
-                animation.springLabel(label: Attempts)
-                
-                write(id: 1, quizpath: "quizplanets", category: "planets")
-                write(id: 2, quizpath: "quizhistory", category: "history")
-                write(id: 3, quizpath: "quizanatomy", category: "anatomy")
-                write(id: 4, quizpath: "quizsport", category: "sport")
-                write(id: 5, quizpath: "quizgames", category: "games")
-                write(id: 6, quizpath: "quiziq", category: "IQ")
-                write(id: 7, quizpath: "quizeconomy", category: "economy")
-                write(id: 8, quizpath: "quizgeography", category: "geography")
-                write(id: 9, quizpath: "quizecology", category: "ecology")
-                write(id: 10, quizpath: "quizphysics", category: "physics")
-                write(id: 11, quizpath: "quizchemistry", category: "chemistry")
-                write(id: 12, quizpath: "quizinformatics", category: "informatics")
-                write(id: 13, quizpath: "quizliterature", category: "literature")
-                write(id: 14, quizpath: "quizroadtraffic", category: "roadtraffic")
-                write(id: 15, quizpath: "quizswift", category: "Swift")
-                write(id: 16, quizpath: "quizunderwater", category: "underwater")
-                write(id: 17, quizpath: "quizchess", category: "chess")
-            }
+        if isSpeachOn == true {
+            print("speach now")
+        } else if isSpeachOn == false {
+            print("speach not now")
+            self.SpeachStatus = false
         }
         
-        write(id: 1, quizpath: "quizplanets", category: "planets")
-        write(id: 2, quizpath: "quizhistory", category: "history")
-        write(id: 3, quizpath: "quizanatomy", category: "anatomy")
-        write(id: 4, quizpath: "quizsport", category: "sport")
-        write(id: 5, quizpath: "quizgames", category: "games")
-        write(id: 6, quizpath: "quiziq", category: "IQ")
-        write(id: 7, quizpath: "quizeconomy", category: "economy")
-        write(id: 8, quizpath: "quizgeography", category: "geography")
-        write(id: 9, quizpath: "quizecology", category: "ecology")
-        write(id: 10, quizpath: "quizphysics", category: "physics")
-        write(id: 11, quizpath: "quizchemistry", category: "chemistry")
-        write(id: 12, quizpath: "quizinformatics", category: "informatics")
-        write(id: 13, quizpath: "quizliterature", category: "literature")
-        write(id: 14, quizpath: "quizroadtraffic", category: "roadtraffic")
-        write(id: 15, quizpath: "quizswift", category: "Swift")
-        write(id: 16, quizpath: "quizunderwater", category: "underwater")
-        write(id: 17, quizpath: "quizchess", category: "chess")
-        quiz?.nextQuestion()
-        
-        
-        Timer.scheduledTimer(timeInterval:0.2, target: self, selector: #selector(updateUI), userInfo: nil, repeats: false)
+        if self.SpeachStatus == false {
+            print("speach doesnt working")
+            self.SayQuestionButton.isEnabled = false
+            self.SayQuestionButton.removeFromSuperview()
+        } else {}
     }
     
-    @IBAction func PresentСategoryScreen() {
-        self.captureSession.stopRunning()
-        pause()
-        player.Sound(resource: "pause_sound.mp3")
-    }
-    
-    
-    @IBAction func showAnswer() {
+    func checkHintsSetting() {
+        var isHintsOn = UserDefaults.standard.object(forKey: "onstatushints") as? Bool
         
-        if AnswersCounter <= 0 {
-            SCLAlertView().showWarning("У вас осталось 0 подсказок", subTitle: "решайте сами")
-            AnswersCounter = 0
-            AnswersButton.setTitle(" \(AnswersCounter)", for: .normal)
-            AnswersButton.isUserInteractionEnabled = false
+        print(isHintsOn)
+        
+        if isHintsOn == true {
+            print("hints now")
+        } else if isHintsOn == false {
+            print("hints not now")
+            //self.captureSession.stopRunning()
+            self.HintsStatus = false
+        }
+        
+        if self.HintsStatus == false {
+            print("hints doesnt working")
+            self.AnswersButton.isEnabled = false
+            self.AnswersButton.removeFromSuperview()
+            //timer.invalidate()
         } else {
-            AnswersCounter = AnswersCounter - 1
-            AnswersButton.setTitle(" \(AnswersCounter)", for: .normal)
-            //SCLAlertView().showWarning("Ответ", subTitle: "правильный ответ: \(quiz?.checkAnswer() ?? "")")
-            if Choice1.titleLabel?.text != quiz?.checkAnswer() {
-                //Choice1.isEnabled = false
-                Choice1.layer.borderColor = UIColor.clear.cgColor
-                //Choice1.titleLabel?.textColor = UIColor.clear
-                Choice1.setTitle("", for: .normal)
-            }
-            
-            if Choice2.titleLabel?.text != quiz?.checkAnswer() {
-                //Choice2.isEnabled = false
-                Choice2.layer.borderColor = UIColor.clear.cgColor
-                //Choice1.titleLabel?.textColor = UIColor.clear
-                Choice2.setTitle("", for: .normal)
-            }
-            
-            if Choice3.titleLabel?.text != quiz?.checkAnswer() {
-                //Choice3.isEnabled = false
-                Choice3.layer.borderColor = UIColor.clear.cgColor
-                //Choice1.titleLabel?.textColor = UIColor.clear
-                Choice3.setTitle("", for: .normal)
-            }
+            //timer.fire()
         }
-        
-        print(AnswersCounter)
     }
     
-    var music = UserDefaults.standard.object(forKey: "music") as? Bool
+    func checkGestureSetting() {
+        
+        var isRecordOnn = UserDefaults.standard.object(forKey: "onstatus") as? Bool
+        
+        if isRecordOnn == true {
+            print("record now")
+        } else if isRecordOnn == false {
+            print("record not now")
+            //self.captureSession.stopRunning()
+            self.GestureRecording = false
+        }
+        
+        if self.GestureRecording == false {
+            //timer.invalidate()
+            print("time out")
+            self.captureSession.stopRunning()
+        }
+    }
+    
+    func checkAudioSetting() {
+        var isRecordOnAudio = UserDefaults.standard.object(forKey: "onstatusaudio") as? Bool
+        
+        print(isRecordOnAudio)
+        
+        if isRecordOnAudio == true {
+            print("record audio now")
+        } else if isRecordOnAudio == false {
+            print("record audio not now")
+            //self.captureSession.stopRunning()
+            self.VoiceRecording = false
+        }
+        
+        if self.VoiceRecording == false {
+            print("audio doesnt working")
+            self.recognizeButton.isEnabled = false
+            self.recognizeButton.removeFromSuperview()
+            //timer.invalidate()
+        } else {
+            //timer.fire()
+        }
+    }
+    
+    
+    func checkMusicSetting() {
+        var isMusicOn = UserDefaults.standard.object(forKey: "onstatusmusic") as? Bool
+        
+        print("Музыка \(isMusicOn)")
+        
+        if isMusicOn == true {
+            print("music now")
+        } else if isMusicOn == false {
+            print("music not now")
+            //self.captureSession.stopRunning()
+            self.MusicStatus = false
+        }
+        
+        if self.MusicStatus == false {
+            print("music doesnt working")
+            self.StopMusicOption(id: 1, resource: "space music.mp3")
+            self.StopMusicOption(id: 2, resource: "history music.mp3")
+            self.StopMusicOption(id: 3, resource: "anatomy music.mp3")
+            self.StopMusicOption(id: 4, resource: "sport music.mp3")
+            self.StopMusicOption(id: 5, resource: "games music.mp3")
+            self.StopMusicOption(id: 6, resource: "IQ music.mp3")
+            self.StopMusicOption(id: 7, resource: "economy music.mp3")
+            self.StopMusicOption(id: 8, resource: "geography music.mp3")
+            self.StopMusicOption(id: 9, resource: "ecology music.mp3")
+            self.StopMusicOption(id: 10, resource: "physics music.mp3")
+            self.StopMusicOption(id: 11, resource: "chemistry music.mp3")
+            self.StopMusicOption(id: 12, resource: "informatics music.mp3")
+            self.StopMusicOption(id: 13, resource: "literature music.mp3")
+            self.StopMusicOption(id: 14, resource: "drive music.mp3")
+            self.StopMusicOption(id: 15, resource: "Swift music.mp3")
+            self.StopMusicOption(id: 16, resource: "underwater music.mp3")
+            self.StopMusicOption(id: 17, resource: "chess music.mp3")
+        } else {
+            print("music working")
+        }
+    }
+    
+    func checkTimerSetting() {
+        var isTimerOn = UserDefaults.standard.object(forKey: "onstatustimer") as? Bool
+        
+        print(isTimerOn)
+        
+        if isTimerOn == true {
+            print("timer now")
+        } else if isTimerOn == false {
+            print("timer not now")
+            //self.captureSession.stopRunning()
+            self.TimerStatus = false
+        }
+    }
+    
+    func checkAttemptsSetting() {
+        var isAttemptsOn = UserDefaults.standard.object(forKey: "onstatusattempts") as? Bool
+        
+        print(isAttemptsOn)
+        
+        if isAttemptsOn == true {
+            print("attempts now")
+        } else if isAttemptsOn == false {
+            print("attempts not now")
+            //self.captureSession.stopRunning()
+            self.AttemptsStatus = false
+        }
+        
+        if self.AttemptsStatus == false {
+            self.Attempts.removeFromSuperview()
+        }
+    }
+    
+    @objc func ShowAnswers() {
+        SCLAlertView().showInfo("варианты ответов", subTitle: "1)\(quiz?.checkChoices()[0] ?? "") 2)\(quiz?.checkChoices()[1] ?? "") 3)\(quiz?.checkChoices()[2] ?? "")")
+    }
     
     func pause() {
         
@@ -1117,25 +1117,8 @@ class BaseQuizViewController: UIViewController {
         self.synthesizer.stopSpeaking(at: .immediate)
         
         self.CurrentQuiz()
-        
-//        if music == false {
-//            self.stopCurrentMusic(id: 1, resource: "space music.mp3")
-//            self.stopCurrentMusic(id: 2, resource: "history music.mp3")
-//            self.stopCurrentMusic(id: 3, resource: "anatomy music.mp3")
-//            self.stopCurrentMusic(id: 4, resource: "sport music.mp3")
-//            self.stopCurrentMusic(id: 5, resource: "games music.mp3")
-//            self.stopCurrentMusic(id: 6, resource: "IQ music.mp3")
-//            self.stopCurrentMusic(id: 7, resource: "economy music.mp3")
-//            self.stopCurrentMusic(id: 8, resource: "geography music.mp3")
-//            self.stopCurrentMusic(id: 9, resource: "ecology music.mp3")
-//            self.stopCurrentMusic(id: 10, resource: "physics music.mp3")
-//            self.stopCurrentMusic(id: 11, resource: "chemistry music.mp3")
-//            self.stopCurrentMusic(id: 12, resource: "informatics music.mp3")
-//            self.stopCurrentMusic(id: 13, resource: "literature music.mp3")
-//            self.stopCurrentMusic(id: 14, resource: "drive music.mp3")
-//            self.stopCurrentMusic(id: 15, resource: "Swift music.mp3")
-//        } else {}
 }
+    
     func PresentTotalScreen() {
         
         self.VoiceRecording = false
@@ -1149,31 +1132,29 @@ class BaseQuizViewController: UIViewController {
             self.captureSession.stopRunning()
             print("В данный момент: \(self.captureSession.isRunning)")
             
-            self.stopMusic(id: 1, resource: "space music.mp3")
-            self.stopMusic(id: 2, resource: "history music.mp3")
-            self.stopMusic(id: 3, resource: "history music.mp3")
-            self.stopMusic(id: 4, resource: "sport music.mp3")
-            self.stopMusic(id: 5, resource: "games music.mp3")
-            self.stopMusic(id: 6, resource: "IQ music.mp3")
-            self.stopMusic(id: 7, resource: "economy music.mp3")
-            self.stopMusic(id: 8, resource: "geography music.mp3")
-            self.stopMusic(id: 9, resource: "ecology music.mp3")
-            self.stopMusic(id: 10, resource: "physics music.mp3")
-            self.stopMusic(id: 11, resource: "chemistry music.mp3")
-            self.stopMusic(id: 12, resource: "informatics music.mp3")
-            self.stopMusic(id: 13, resource: "literature music.mp3")
-            self.stopMusic(id: 14, resource: "drive music.mp3")
-            self.stopMusic(id: 15, resource: "Swift music.mp3")
-            self.stopMusic(id: 16, resource: "underwater music.mp3")
-            self.stopMusic(id: 17, resource: "chess music.mp3")
+//            self.stopMusic(id: 1, resource: "space music.mp3")
+//            self.stopMusic(id: 2, resource: "history music.mp3")
+//            self.stopMusic(id: 3, resource: "history music.mp3")
+//            self.stopMusic(id: 4, resource: "sport music.mp3")
+//            self.stopMusic(id: 5, resource: "games music.mp3")
+//            self.stopMusic(id: 6, resource: "IQ music.mp3")
+//            self.stopMusic(id: 7, resource: "economy music.mp3")
+//            self.stopMusic(id: 8, resource: "geography music.mp3")
+//            self.stopMusic(id: 9, resource: "ecology music.mp3")
+//            self.stopMusic(id: 10, resource: "physics music.mp3")
+//            self.stopMusic(id: 11, resource: "chemistry music.mp3")
+//            self.stopMusic(id: 12, resource: "informatics music.mp3")
+//            self.stopMusic(id: 13, resource: "literature music.mp3")
+//            self.stopMusic(id: 14, resource: "drive music.mp3")
+//            self.stopMusic(id: 15, resource: "Swift music.mp3")
+//            self.stopMusic(id: 16, resource: "underwater music.mp3")
+//            self.stopMusic(id: 17, resource: "chess music.mp3")
             
             guard let vc = self.storyboard?.instantiateViewController(identifier: "BaseTotalQuizViewController") else {return}
             guard let window = self.view.window else {return}
             window.rootViewController = vc
         }
     }
-    
-    
     
     @objc func updateUI(){
         
@@ -1218,10 +1199,6 @@ class BaseQuizViewController: UIViewController {
         
     }
     
-}
-
-
-extension BaseQuizViewController: AVCaptureVideoDataOutputSampleBufferDelegate {
     
     func setupVision() {
         guard let visionModel = try? VNCoreMLModel(for: example_5s0_hand_model().model) else {return}
@@ -1337,13 +1314,7 @@ extension BaseQuizViewController: AVCaptureVideoDataOutputSampleBufferDelegate {
     
     
     func isRecordingNow() {
-        
-        
-        //var isRecordOnn = UserDefaults.standard.object(forKey: "onstatus") as? Bool
-        
-        //print(isRecordOnn ?? "")
-        //print(isRecordOff ?? "")
-        
+    
         DispatchQueue.main.async {
             
             self.checkGestureSetting()

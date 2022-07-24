@@ -26,7 +26,7 @@ class TasksTableViewCellModel {
                     
                     if let category = document[quizpath] as? [String: Any] {
                         let complete = category["complete"] as? Bool ?? false
-                        let bestscore = category["bestscore"] as? Int ?? 228
+                        let bestscore = category["bestscore"] as? Int ?? 0
                         
                         TaskStatus.text = "\(complete)"
                         

@@ -81,43 +81,41 @@ class ViewController: UITabBarController {
             print("Message : \(message)")
             self.text = message
             
-            let lastString: String = ""
             for segment in response.bestTranscription.segments {
                 let indexTo = message.index(message.startIndex, offsetBy: segment.substringRange.location)
-                //lastString = String(message[indexTo...])
                 self.text = String(message[indexTo...])
             }
             
             
-            if self.text.contains("Новости")  || self.text.contains("новости") {
+            if self.text.contains("Новост")  || self.text.contains("новост") {
                     self.selectedIndex = 0
             }
                 
-            if self.text.contains("Категории")  || self.text.contains("категории") {
+            if self.text.contains("Категори")  || self.text.contains("категори") {
                     self.selectedIndex = 1
             }
                 
-            if self.text.contains("Игроков")  || self.text.contains("игроков") {
+            if self.text.contains("Куб")  || self.text.contains("куб") {
                     self.selectedIndex = 3
             }
                 
-            if self.text.contains("Профиль")  || self.text.contains("профиль") {
+            if self.text.contains("Проф")  || self.text.contains("проф") {
                     self.selectedIndex = 4
             }
-                
+            
             // Выбор категории викторины
             
-            if self.text.contains("Планеты")  || self.text.contains("планеты") {
+            if self.text.contains("Планет")  || self.text.contains("планет") {
                 self.quizViewModel.goToQuize(quiz: QuizPlanets(), storyboard: self.storyboard, view: self.view)
                 self.cancelSpeechRecognization()
             }
             
-            if self.text.contains("История")  || self.text.contains("история") {
+            if self.text.contains("Истори")  || self.text.contains("истори") {
                 self.quizViewModel.goToQuize(quiz: QuizHistory(), storyboard: self.storyboard, view: self.view)
                 self.cancelSpeechRecognization()
             }
             
-            if self.text.contains("Анатомия")  || self.text.contains("анатомия") {
+            if self.text.contains("Анатоми")  || self.text.contains("анатоми") {
                 self.quizViewModel.goToQuize(quiz: QuizAnatomy(), storyboard: self.storyboard, view: self.view)
                 self.cancelSpeechRecognization()
             }
@@ -127,7 +125,7 @@ class ViewController: UITabBarController {
                 self.cancelSpeechRecognization()
             }
             
-            if self.text.contains("Игры")  || self.text.contains("игры") {
+            if self.text.contains("Игр")  || self.text.contains("игр") {
                 self.quizViewModel.goToQuize(quiz: QuizGames(), storyboard: self.storyboard, view: self.view)
                 self.cancelSpeechRecognization()
             }
@@ -137,42 +135,42 @@ class ViewController: UITabBarController {
                 self.cancelSpeechRecognization()
             }
             
-            if self.text.contains("Экономика")  || self.text.contains("экономика") {
+            if self.text.contains("Экономик")  || self.text.contains("экономик") {
                 self.quizViewModel.goToQuize(quiz: QuizEconomy(), storyboard: self.storyboard, view: self.view)
                 self.cancelSpeechRecognization()
             }
             
-            if self.text.contains("География")  || self.text.contains("география") {
+            if self.text.contains("Географи")  || self.text.contains("географи") {
                 self.quizViewModel.goToQuize(quiz: QuizGeography(), storyboard: self.storyboard, view: self.view)
                 self.cancelSpeechRecognization()
             }
             
-            if self.text.contains("Экология")  || self.text.contains("экология") {
+            if self.text.contains("Экологи")  || self.text.contains("экологи") {
                 self.quizViewModel.goToQuize(quiz: QuizEcology(), storyboard: self.storyboard, view: self.view)
                 self.cancelSpeechRecognization()
             }
             
-            if self.text.contains("Физика")  || self.text.contains("физика") {
+            if self.text.contains("Физик")  || self.text.contains("физик") {
                 self.quizViewModel.goToQuize(quiz: QuizPhysics(), storyboard: self.storyboard, view: self.view)
                 self.cancelSpeechRecognization()
             }
             
-            if self.text.contains("Химия")  || self.text.contains("химия") {
+            if self.text.contains("Хими")  || self.text.contains("хими") {
                 self.quizViewModel.goToQuize(quiz: QuizChemistry(), storyboard: self.storyboard, view: self.view)
                 self.cancelSpeechRecognization()
             }
             
-            if self.text.contains("Информатика")  || self.text.contains("информатика") {
+            if self.text.contains("Информатик")  || self.text.contains("информатик") {
                 self.quizViewModel.goToQuize(quiz: QuizInformatics(), storyboard: self.storyboard, view: self.view)
                 self.cancelSpeechRecognization()
             }
             
-            if self.text.contains("Литература")  || self.text.contains("литература") {
+            if self.text.contains("Литератур")  || self.text.contains("литератур") {
                 self.quizViewModel.goToQuize(quiz: QuizLiterature(), storyboard: self.storyboard, view: self.view)
                 self.cancelSpeechRecognization()
             }
             
-            if self.text.contains("Дорога")  || self.text.contains("дорога") {
+            if self.text.contains("Дорог")  || self.text.contains("дорог") {
                 self.quizViewModel.goToQuize(quiz: QuizRoadTraffic(), storyboard: self.storyboard, view: self.view)
                 self.cancelSpeechRecognization()
             }
@@ -182,12 +180,12 @@ class ViewController: UITabBarController {
                 self.cancelSpeechRecognization()
             }
             
-            if self.text.contains("Море")  || self.text.contains("море") {
+            if self.text.contains("Мор")  || self.text.contains("мор") {
                 self.quizViewModel.goToQuize(quiz: QuizUnderwater(), storyboard: self.storyboard, view: self.view)
                 self.cancelSpeechRecognization()
             }
             
-            if self.text.contains("Шахматы")  || self.text.contains("шахматы") {
+            if self.text.contains("Шахмат")  || self.text.contains("шахмат") {
                 self.quizViewModel.goToQuize(quiz: QuizChess(), storyboard: self.storyboard, view: self.view)
                 self.cancelSpeechRecognization()
             }

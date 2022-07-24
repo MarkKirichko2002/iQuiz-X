@@ -49,7 +49,7 @@ class NewsTableViewController: UITableViewController {
     
     func GetNews() {
         
-        AF.request("https://newsapi.org/v2/top-headlines?country=ru&category=technology&apiKey=c6fb14909d524ae68ea631e5cb55ae67").responseData { response in
+        AF.request("https://newsapi.org/v2/top-headlines?country=ru&category=science&apiKey=c6fb14909d524ae68ea631e5cb55ae67").responseData { response in
                   
             print(response.request as Any)
             print(response.response as Any)
