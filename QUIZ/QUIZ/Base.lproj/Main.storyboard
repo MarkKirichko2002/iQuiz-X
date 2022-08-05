@@ -97,7 +97,7 @@
         <scene sceneID="0aj-Hk-zFi">
             <objects>
                 <tabBarController storyboardIdentifier="ViewController" id="kPv-pD-Bcd" customClass="ViewController" customModule="QUIZ" customModuleProvider="target" sceneMemberID="viewController">
-                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="qYE-Fz-mX3" customClass="CustomTabBar" customModule="QUIZ" customModuleProvider="target">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="qYE-Fz-mX3">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -246,7 +246,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6vT-jD-yOV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7618" y="-1030"/>
+            <point key="canvasLocation" x="7737" y="-1030"/>
         </scene>
         <!--Категории-->
         <scene sceneID="WlZ-s0-qh2">
@@ -257,7 +257,7 @@
                     </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="ehL-FL-StP">
-                        <rect key="frame" x="0.0" y="44" width="428" height="96"/>
+                        <rect key="frame" x="0.0" y="44" width="428" height="103.66666666666666"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -343,7 +343,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tVA-Ge-64k" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7618" y="-228"/>
+            <point key="canvasLocation" x="7737" y="-228"/>
         </scene>
         <!--Задания-->
         <scene sceneID="xkS-Xk-ICf">
@@ -483,7 +483,7 @@
                     </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="Mze-v6-U77">
-                        <rect key="frame" x="0.0" y="44" width="428" height="103.66666666666666"/>
+                        <rect key="frame" x="0.0" y="44" width="428" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <textAttributes key="largeTitleTextAttributes">
                             <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -667,7 +667,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="k82-2E-kkf" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="8611.6822429906533" y="-1030.2375809935206"/>
+            <point key="canvasLocation" x="8657" y="-1030"/>
         </scene>
         <!--Сегодня-->
         <scene sceneID="a6Q-Wr-8m7">
@@ -678,7 +678,7 @@
                     </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="BBW-Fp-iCQ">
-                        <rect key="frame" x="0.0" y="44" width="428" height="103.66666666666666"/>
+                        <rect key="frame" x="0.0" y="44" width="428" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>

@@ -10,7 +10,7 @@ import UIKit
 
 class CategoriesViewModel {
     
-    var quizes = [QuizPlanets(), QuizHistory(), QuizAnatomy(), QuizSport(), QuizGames(), QuizIQ(), QuizEconomy(), QuizGeography(), QuizEconomy(), QuizPhysics(), QuizChemistry(), QuizInformatics(), QuizUnderwater()]
+    var quizes = [QuizPlanets(), QuizHistory(), QuizAnatomy(), QuizSport(), QuizGames(), QuizIQ(), QuizEconomy(), QuizGeography(), QuizEcology(), QuizPhysics(), QuizChemistry(), QuizInformatics(), QuizLiterature(), QuizRoadTraffic(), QuizSwift(), QuizUnderwater(), QuizChess()]
     
     var categories = [QuizModel(name: "планеты", image: "planets.jpeg", complete: false, id: 1, score: 0), QuizModel(name: "история", image: "history.jpeg", complete: false, id: 2, score: 0), QuizModel(name: "анатомия", image: "anatomy.jpeg", complete: false, id: 3, score: 0), QuizModel(name: "спорт", image: "sport.jpeg", complete: false, id: 4, score: 0), QuizModel(name: "игры", image: "games.jpeg", complete: false, id: 5, score: 0), QuizModel(name: "IQ", image: "IQ.jpeg", complete: false, id: 6, score: 0),
         QuizModel(name: "экономика", image: "economy.jpeg", complete: false, id: 7, score: 0),
