@@ -42,6 +42,7 @@
 		8213BF8A27D6AC0100D07512 /* physics9.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 8213BF8027D6AC0100D07512 /* physics9.jpeg */; };
 		8216FE3027E560AB00DFB0CF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 820C628727BBA3CB004894FA /* Assets.xcassets */; };
 		82173C462829EA3400E15F22 /* selected sound.wav in Resources */ = {isa = PBXBuildFile; fileRef = 82173C432829EA3300E15F22 /* selected sound.wav */; };
+		821AC779289DC12400D04D55 /* trophy.png in Resources */ = {isa = PBXBuildFile; fileRef = 821AC778289DC12400D04D55 /* trophy.png */; };
 		821C69CE287385FE004FD9E1 /* chess music.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 821C69CD287385FE004FD9E1 /* chess music.mp3 */; };
 		821C69D028738F69004FD9E1 /* chess11.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 821C69CF28738F69004FD9E1 /* chess11.jpeg */; };
 		821C69D228739079004FD9E1 /* chess12.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 821C69D128739079004FD9E1 /* chess12.jpeg */; };
@@ -562,6 +563,7 @@
 		8213BF7F27D6ABF000D07512 /* physics6.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = physics6.jpeg; sourceTree = "<group>"; };
 		8213BF8027D6AC0100D07512 /* physics9.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = physics9.jpeg; sourceTree = "<group>"; };
 		82173C432829EA3300E15F22 /* selected sound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "selected sound.wav"; sourceTree = "<group>"; };
+		821AC778289DC12400D04D55 /* trophy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = trophy.png; sourceTree = "<group>"; };
 		821C69CD287385FE004FD9E1 /* chess music.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "chess music.mp3"; sourceTree = "<group>"; };
 		821C69CF28738F69004FD9E1 /* chess11.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = chess11.jpeg; sourceTree = "<group>"; };
 		821C69D128739079004FD9E1 /* chess12.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = chess12.jpeg; sourceTree = "<group>"; };
@@ -1375,6 +1377,7 @@
 				8277D8C8281F14DC00185632 /* lock.png */,
 				82EA02A6282409FF008A0240 /* retry.png */,
 				82C18EED2832ECEA00348599 /* key.png */,
+				821AC778289DC12400D04D55 /* trophy.png */,
 			);
 			path = "other images";
 			sourceTree = "<group>";
@@ -2354,6 +2357,7 @@
 				8237D9A1286D15D50097FE69 /* underwater7.jpeg in Resources */,
 				822139332874E8650065A0C3 /* Swift11.jpeg in Resources */,
 				829408E327CECA2F00AFF603 /* anatomy5.jpeg in Resources */,
+				821AC779289DC12400D04D55 /* trophy.png in Resources */,
 				82EA1ECC286BCBC400E49D0F /* TOUCH ID.png in Resources */,
 				82EA1EC3286BCB8D00E49D0F /* attempts.png in Resources */,
 				821C69E228739845004FD9E1 /* chess18.jpeg in Resources */,

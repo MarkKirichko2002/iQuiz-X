@@ -61,7 +61,7 @@ class BaseTotalQuizViewController: UIViewController {
                             self.ExitButton.flash()
                             self.player.Sound(resource: "victory_sound.mp3")
                             self.CommentLabel.text = "категория \(category) 100%"
-                            //self.Image.layer.borderColor = UIColor.systemYellow.cgColor
+                            self.Image.image = UIImage(named: "trophy.png")
                             self.Image.flash()
                         }
                         
@@ -71,8 +71,6 @@ class BaseTotalQuizViewController: UIViewController {
                         let photo = category["photo"] as? String
                         let imageURL = URL(string: photo ?? "")
                         self.Image.sd_setImage(with: imageURL)
-                        print(photo)
-                        
                     }
                     
                 }

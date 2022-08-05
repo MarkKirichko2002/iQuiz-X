@@ -15,7 +15,7 @@ class QuizSport: QuizBase {
     
     override func questions() -> [Question] {
         return [
-        Question(question: "Чем поливают друг друга победители этапа «Формулы-1» в Бахрейне?", choices: ["Газировкой", "Шампанским", "Отваром лепестков роз"], answer: "Газировкой", image: "sport1.jpeg", levelOfdifficulty: .easy),
+        Question(question: "Чем поливают друг друга победители этапа «Формулы-1» в Бахрейне?", choices: ["Газировкой", "Шампанским", "Другой вариант ответа"], answer: "Газировкой", image: "sport1.jpeg", levelOfdifficulty: .easy),
         Question(question: "Какой вид спорта входит в программу зимних Олимпиад?", choices: ["Бейсбол", "Биатлон", "Триатлон"], answer: "Биатлон", image: "sport2.jpeg", levelOfdifficulty: .normal),
         Question(question: "Что делают с коньками перед соревнованиями?", choices: ["Отбрасывают", "Режут", "Точат"], answer: "Точат", image: "sport3.jpeg", levelOfdifficulty: .hard),
         Question(question: "Какой вид лыжного спорта не является дисциплиной фристайла?", choices: ["Слалом", "Лыжная акробатика", "Лыжный балет"], answer: "Слалом", image: "sport4.jpeg", levelOfdifficulty: .easy),
