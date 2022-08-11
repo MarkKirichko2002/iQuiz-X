@@ -33,10 +33,8 @@ class StartViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//    let everyMinuteTimer = Timer.scheduledTimer(timeInterval: 0, target: self,
-//                                                    selector: #selector(UpdateTime), userInfo: nil, repeats: true)
-        
-        //everyMinuteTimer.invalidate()
+        let everyMinuteTimer = Timer.scheduledTimer(timeInterval: 0, target: self,
+                                                    selector: #selector(UpdateTime), userInfo: nil, repeats: true)
         
         self.CheckTime()
         

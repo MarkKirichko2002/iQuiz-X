@@ -363,6 +363,7 @@
 		82CC60DC27BEA32A00038618 /* QuizSport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82CC60DB27BEA32A00038618 /* QuizSport.swift */; };
 		82CD6BF2288851FB00716443 /* click sound.wav in Resources */ = {isa = PBXBuildFile; fileRef = 82CD6BF1288851FB00716443 /* click sound.wav */; };
 		82CD6BF428885DFF00716443 /* QuizSegmentedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82CD6BF328885DFF00716443 /* QuizSegmentedViewController.swift */; };
+		82CF0D3A28A583D9006B53F4 /* QuizStartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82CF0D3928A583D9006B53F4 /* QuizStartViewController.swift */; };
 		82DBCA2728303EDE009DD1EE /* EditProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82DBCA2628303EDE009DD1EE /* EditProfileTableViewCell.swift */; };
 		82DC6E1C27E65E790077D107 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82DC6E1B27E65E790077D107 /* StartViewController.swift */; };
 		82DF98EC27BCEB4A00548B38 /* QuizAnatomy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82DF98EB27BCEB4A00548B38 /* QuizAnatomy.swift */; };
@@ -885,6 +886,7 @@
 		82CC60DB27BEA32A00038618 /* QuizSport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizSport.swift; sourceTree = "<group>"; };
 		82CD6BF1288851FB00716443 /* click sound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "click sound.wav"; sourceTree = "<group>"; };
 		82CD6BF328885DFF00716443 /* QuizSegmentedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizSegmentedViewController.swift; sourceTree = "<group>"; };
+		82CF0D3928A583D9006B53F4 /* QuizStartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizStartViewController.swift; sourceTree = "<group>"; };
 		82DBCA2628303EDE009DD1EE /* EditProfileTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileTableViewCell.swift; sourceTree = "<group>"; };
 		82DC6E1B27E65E790077D107 /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
 		82DF98EB27BCEB4A00548B38 /* QuizAnatomy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizAnatomy.swift; sourceTree = "<group>"; };
@@ -1993,8 +1995,8 @@
 		82CBE8012870D4530045616B /* View */ = {
 			isa = PBXGroup;
 			children = (
-				8243F16E27C2841B00CD9CE4 /* TasksTableViewCell.swift */,
 				8243F16C27C27A9300CD9CE4 /* TasksTableViewController.swift */,
+				8243F16E27C2841B00CD9CE4 /* TasksTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -2053,6 +2055,14 @@
 			path = Ecology;
 			sourceTree = "<group>";
 		};
+		82CF0D3828A583C3006B53F4 /* StartQuiz */ = {
+			isa = PBXGroup;
+			children = (
+				82CF0D3928A583D9006B53F4 /* QuizStartViewController.swift */,
+			);
+			path = StartQuiz;
+			sourceTree = "<group>";
+		};
 		82DF98E327BCE71400548B38 /* Quiz */ = {
 			isa = PBXGroup;
 			children = (
@@ -2064,6 +2074,7 @@
 		82DF98E427BCE73700548B38 /* Other */ = {
 			isa = PBXGroup;
 			children = (
+				82CF0D3828A583C3006B53F4 /* StartQuiz */,
 				82222A2B288C801900C1954D /* segmented controll */,
 				823CFF6D27FA10DC001FF6D9 /* Settings */,
 				8290FCA327FCC15B00E05DDA /* TabBar */,
@@ -2710,6 +2721,7 @@
 				82CBE7E9287093C50045616B /* NewsTableViewController.swift in Sources */,
 				8213BF7127D6AAC800D07512 /* QuizPhysics.swift in Sources */,
 				8243F16527C25A1200CD9CE4 /* TaskModel.swift in Sources */,
+				82CF0D3A28A583D9006B53F4 /* QuizStartViewController.swift in Sources */,
 				821C69E828739E32004FD9E1 /* PlayersTableViewCellViewModel.swift in Sources */,
 				82DC6E1C27E65E790077D107 /* StartViewController.swift in Sources */,
 				82747F8C28050121001E994A /* AttemptsTableViewCell.swift in Sources */,

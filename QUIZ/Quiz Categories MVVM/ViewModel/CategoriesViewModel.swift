@@ -24,13 +24,21 @@ class CategoriesViewModel {
         QuizModel(name: "Swift", image: "swift.jpeg", complete: false, id: 15, score: 0),
         QuizModel(name: "подводный мир", image: "underwater.png", complete: false, id: 16, score: 0),
         QuizModel(name: "шахматы", image: "chess.png", complete: false, id: 17, score: 0),
-        QuizModel(name: "рандом", image: "random.jpeg", complete: false, id: 18, score: 0)
-    ]
+        QuizModel(name: "рандом", image: "random.jpeg", complete: false, id: 18, score: 0)]
     
     func goToQuize(quiz: QuizBase, storyboard: UIStoryboard?, view: UIView) {
         DispatchQueue.main.async {
             guard let vc = storyboard?.instantiateViewController(identifier: "BaseQuizViewController") else {return}
             (vc as? BaseQuizViewController)?.setQuizeModel(quiz: quiz)
+            guard let window = view.window else {return}
+            window.rootViewController = vc
+        }
+    }
+    
+    func GoToStart(quiz: QuizBase, storyboard: UIStoryboard?, view: UIView) {
+        DispatchQueue.main.async {
+            guard let vc = storyboard?.instantiateViewController(identifier: "QuizStartViewController") else {return}
+            (vc as? QuizStartViewController)?.base = quiz
             guard let window = view.window else {return}
             window.rootViewController = vc
         }

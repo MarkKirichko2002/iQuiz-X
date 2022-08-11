@@ -9,7 +9,6 @@ import Foundation
 
 class QuizBase {
     
-    
     func questions() -> [Question] {
        return []
     }
