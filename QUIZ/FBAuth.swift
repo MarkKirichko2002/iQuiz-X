@@ -161,7 +161,7 @@ class FBAuth {
                         let background = category["background"] as? String
                         let image = category["image"] as? String
                         let bestscore = category["bestscore"] as? Int ?? 0
-                        let category = category["category"] as? String ?? "lol"
+                        let category = category["category"] as? String ?? ""
                         highscore.text = "Лучший счет: \(bestscore) баллов (\(category))"
                         print(category)
                         highscore.textColor = UIColor.white

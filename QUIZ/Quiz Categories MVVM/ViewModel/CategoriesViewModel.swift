@@ -50,12 +50,10 @@ class CategoriesViewModel {
         var random = quizes[randomindex]
         
         if lastindex == randomindex {
-            print("first time?")
             print(randomindex)
             print(lastindex)
             goToQuize(quiz: random, storyboard: storyboard, view: view)
         } else {
-            print("other quiz")
             print(randomindex)
             print(lastindex)
             goToQuize(quiz: random, storyboard: storyboard, view: view)

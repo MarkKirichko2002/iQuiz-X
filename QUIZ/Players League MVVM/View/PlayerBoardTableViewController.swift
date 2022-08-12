@@ -90,7 +90,7 @@ class PlayerBoardTableViewController: UITableViewController {
                         let CorrectAnswersCounter = category["CorrectAnswersCounter"] as? Int
                         let background = category["background"] as? String
                         let bestscore = category["bestscore"] as? Int ?? 0
-                        let category = category["category"] as? String ?? "lol"
+                        let category = category["category"] as? String ?? ""
                         
                         self.playersArray.append(Player(name: name ?? "", counter: bestscore , email: email ?? "", CorrectAnswersCounter: CorrectAnswersCounter ?? 0, category: category , image: photo ?? "", background: background ?? ""))
                         
