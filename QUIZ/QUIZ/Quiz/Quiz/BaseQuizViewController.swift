@@ -311,6 +311,15 @@ class BaseQuizViewController: UIViewController {
         say()
     }
     
+    @IBAction func SkipQuestion() {
+        self.quiz?.questionNumber += 1
+        self.updateUI()
+        
+        if self.quiz?.questionNumber == 19 {
+            SCLAlertView().showWarning("Внимание!", subTitle: "Это последний вопрос")
+        }
+    }
+    
     
     @IBAction func OnOffSound() {
         self.stopMusic(id: 1, resource: "space music.mp3")
@@ -337,7 +346,6 @@ class BaseQuizViewController: UIViewController {
         
         let userAnswer = sender.currentTitle!
         let check = quiz?.checkAnswer(userAnswer)
-        
         
         if  check! && counter < 100 {
             
