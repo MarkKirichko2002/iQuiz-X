@@ -7,7 +7,7 @@
 
 import Foundation
 
-class QuizHistory: QuizBase {
+class QuizHistory: QuizBaseViewModel {
     
     override func ids() -> [QuizModel] {
         return [QuizModel(name: "история", image: "history.jpeg", complete: false, id: 2, score: 0)]

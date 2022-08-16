@@ -23,7 +23,7 @@ class StartViewController: UIViewController {
     @IBOutlet weak var view2: UIView!
     
     var player = SoundClass()
-    
+    var viewModel = CategoriesViewModel()
 
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
@@ -33,8 +33,8 @@ class StartViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let everyMinuteTimer = Timer.scheduledTimer(timeInterval: 0, target: self,
-                                                    selector: #selector(UpdateTime), userInfo: nil, repeats: true)
+//        let everyMinuteTimer = Timer.scheduledTimer(timeInterval: 0, target: self,
+//                                                    selector: #selector(UpdateTime), userInfo: nil, repeats: true)
         
         self.CheckTime()
         
@@ -463,20 +463,20 @@ class StartViewController: UIViewController {
         var randomindex = UserDefaults.standard.object(forKey: "index") as? Int
         var c = quizes[randomindex!]
         
-        goToQuize(quiz: c)
+        viewModel.goToQuize(quiz: c, storyboard: self.storyboard, view: self.view)
         
     }
     
     var timer = Timer()
     
-    func goToQuize(quiz: QuizBase) {
-        DispatchQueue.main.async {
-            guard let vc = self.storyboard?.instantiateViewController(identifier: "BaseQuizViewController") else {return}
-            (vc as? BaseQuizViewController)?.setQuizeModel(quiz: quiz)
-            guard let window = self.view.window else {return}
-            window.rootViewController = vc
-        }
-    }
+//    func goToQuize(quiz: QuizBaseViewModel) {
+//        DispatchQueue.main.async {
+//            guard let vc = self.storyboard?.instantiateViewController(identifier: "BaseQuizViewController") else {return}
+//            (vc as? BaseQuizViewController)?.setQuizeModel(quiz: quiz)
+//            guard let window = self.view.window else {return}
+//            window.rootViewController = vc
+//        }
+//    }
     
     
     @objc func GoToQuizApp() {

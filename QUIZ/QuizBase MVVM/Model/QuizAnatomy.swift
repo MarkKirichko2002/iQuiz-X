@@ -7,7 +7,7 @@
 
 import Foundation
 
-class QuizAnatomy: QuizBase {
+class QuizAnatomy: QuizBaseViewModel {
     
     override func ids() -> [QuizModel] {
         return [QuizModel(name: "анатомия", image: "anatomy.jpeg", complete: false, id: 3, score: 0)]

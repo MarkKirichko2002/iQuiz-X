@@ -26,6 +26,7 @@ class BaseTotalQuizViewController: UIViewController {
     
     var player = SoundClass()
     var viewModel = CategoriesViewModel()
+    var category: QuizModel?
     
     func loadScore() {
         let docRef = db.collection("users").document((Auth.auth().currentUser?.email)!)

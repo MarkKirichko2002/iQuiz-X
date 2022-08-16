@@ -7,7 +7,7 @@
 
 import Foundation
 
-class QuizEconomy: QuizBase {
+class QuizEconomy: QuizBaseViewModel {
     
     override func ids() -> [QuizModel] {
         return [QuizModel(name: "экономика", image: "economy.jpeg", complete: false, id: 7, score: 0)]

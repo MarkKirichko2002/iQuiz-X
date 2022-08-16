@@ -11,7 +11,14 @@ import AVFoundation
 
 class PauseTableViewController: UITableViewController {
     
-    var currentquiz = UserDefaults.standard.object(forKey: "currentquiz") as? Int
+    var currentquiz: QuizBaseViewModel?
+    
+    var viewModel = QuizBaseViewModel()
+    var categoryViewModel = CategoriesViewModel()
+    
+    var icon = ""
+    var score = 0
+    var questionNumber = 0
     
     var timer = Timer()
     
@@ -37,58 +44,8 @@ class PauseTableViewController: UITableViewController {
     }
     
     func restart() {
-        
-        switch currentquiz {
-            
-        case 1: RestartQuiz(quiz: QuizPlanets())
-            
-        case 2: RestartQuiz(quiz: QuizHistory())
-            
-        case 3: RestartQuiz(quiz: QuizAnatomy())
-            
-        case 4: RestartQuiz(quiz: QuizSport())
-            
-        case 5: RestartQuiz(quiz: QuizGames())
-            
-        case 6: RestartQuiz(quiz: QuizIQ())
-            
-        case 7: RestartQuiz(quiz: QuizEconomy())
-            
-        case 8: RestartQuiz(quiz: QuizGeography())
-            
-        case 9: RestartQuiz(quiz: QuizEcology())
-            
-        case 10: RestartQuiz(quiz: QuizPhysics())
-            
-        case 11: RestartQuiz(quiz: QuizChemistry())
-            
-        case 12: RestartQuiz(quiz: QuizInformatics())
-            
-        case 13: RestartQuiz(quiz: QuizLiterature())
-            
-        case 14: RestartQuiz(quiz: QuizRoadTraffic())
-            
-        case 15: RestartQuiz(quiz: QuizSwift())
-            
-        case 16: RestartQuiz(quiz: QuizUnderwater())
-           
-        case 17: RestartQuiz(quiz: QuizChess())
-        
-        default: break
-            
-        }
+        categoryViewModel.goToQuize(quiz: currentquiz ?? QuizPlanets(), storyboard: self.storyboard, view: self.view)
     }
-    
-    
-    func RestartQuiz(quiz: QuizBase) {
-        DispatchQueue.main.async {
-            guard let vc = self.storyboard?.instantiateViewController(identifier: "BaseQuizViewController") else {return}
-            (vc as? BaseQuizViewController)?.setQuizeModel(quiz: quiz)
-            guard let window = self.view.window else {return}
-            window.rootViewController = vc
-        }
-    }
-    
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 3
@@ -110,15 +67,15 @@ class PauseTableViewController: UITableViewController {
         }
     }
     
-    
-    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         if indexPath.row == 0  {
             
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "CurrentCategoryTableViewCell") as? CurrentCategoryTableViewCell
             else { return UITableViewCell() }
-            cell.configure()
+            cell.CurrentImage.image = UIImage(named: "planets.jpeg")
+            cell.CurrentScore.text = "счет: \(score)/100"
+            cell.CurrentQuestion.text = "вопрос: \(questionNumber)/20"
             return cell
             
         } else if indexPath.row == 1  {

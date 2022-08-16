@@ -7,7 +7,7 @@
 
 import Foundation
 
-class QuizRoadTraffic: QuizBase {
+class QuizRoadTraffic: QuizBaseViewModel {
     
     
     override func ids() -> [QuizModel] {

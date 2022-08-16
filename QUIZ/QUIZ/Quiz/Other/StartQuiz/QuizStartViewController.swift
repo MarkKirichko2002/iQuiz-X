@@ -14,7 +14,7 @@ class QuizStartViewController: UIViewController {
     @IBOutlet weak var TimerLabeL: UILabel!
     
     var viewModel = CategoriesViewModel()
-    var base: QuizBase?
+    var base: QuizBaseViewModel?
     var seconds = 6 {
         didSet {
             animation.springLabel(label: TimerLabeL)

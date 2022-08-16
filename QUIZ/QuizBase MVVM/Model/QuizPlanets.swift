@@ -7,7 +7,7 @@
 
 import Foundation
 
-class QuizPlanets: QuizBase {
+class QuizPlanets: QuizBaseViewModel {
     
     override func ids() -> [QuizModel] {
         return [QuizModel(name: "планеты", image: "planets.jpeg", complete: false, id: 1, score: 0)]

@@ -7,7 +7,7 @@
 
 import Foundation
 
-class QuizSwift: QuizBase {
+class QuizSwift: QuizBaseViewModel {
     
     
     override func ids() -> [QuizModel] {

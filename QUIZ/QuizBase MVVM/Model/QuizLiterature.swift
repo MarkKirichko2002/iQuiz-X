@@ -7,7 +7,7 @@
 
 import Foundation
 
-class QuizLiterature: QuizBase {
+class QuizLiterature: QuizBaseViewModel {
     
     
     override func ids() -> [QuizModel] {
