@@ -8,6 +8,6 @@
 import Foundation
 
 struct PlayersListViewModel {
-    var players: Observable<[PlayersTableViewCellViewModel]> = Observable([])
+    var players: PlayerObserver<[PlayersTableViewCellViewModel]> = PlayerObserver([])
 }
 

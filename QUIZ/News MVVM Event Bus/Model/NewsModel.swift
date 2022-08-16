@@ -6,16 +6,10 @@
 //
 
 import Foundation
-import DynamicJSON
-
-// MARK: - News
-struct News: Codable {
-    let status: String
-    let totalResults: Int
-    let response: NewsResponse
-}
 
 struct NewsResponse: Codable {
+    let status: String
+    let totalResults: Int
     let articles: [Article]
 }
 
@@ -29,14 +23,6 @@ struct Article: Codable {
     let urlToImage: String?
     //let publishedAt: Date
     //let content: String?
-
-    init(json: JSON) {
-        self.author = json["author"] as! String
-        self.title =  json["title"] as! String
-        self.description = json["description"] as! String
-        self.url = json["url"] as! String
-        self.urlToImage = json["urlToImage"] as! String
-    }
 }
 
 // MARK: - Source

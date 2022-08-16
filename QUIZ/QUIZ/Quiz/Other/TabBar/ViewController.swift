@@ -40,7 +40,7 @@ class ViewController: UITabBarController {
         UserDefaults.standard.set(selectedIndex, forKey: "index")
     }
     
-    func startSpeechRecognization(){
+    func startSpeechRecognization() {
         
         let node = audioEngine.inputNode
         let recordingFormat = node.outputFormat(forBus: 0)

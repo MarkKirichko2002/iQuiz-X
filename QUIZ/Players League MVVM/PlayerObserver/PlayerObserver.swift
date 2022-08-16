@@ -1,17 +1,15 @@
 //
-//  NewsAPI.swift
+//  Observable.swift
 //  QUIZ
 //
-//  Created by Марк Киричко on 29.06.2022.
+//  Created by Марк Киричко on 17.08.2022.
 //
 
 import Foundation
-import Alamofire
-import DynamicJSON
 
 // Observable
 
-class Observable<T> {
+class PlayerObserver<T> {
     var value: T? {
         didSet {
             listeners.forEach {
@@ -31,10 +29,3 @@ class Observable<T> {
         self.listeners.append(listener)
     }
 }
-
-
-struct NewsListViewModel {
-    var news: Observable<[NewsTableViewCellViewModel]> = Observable([])
-}
-
-
