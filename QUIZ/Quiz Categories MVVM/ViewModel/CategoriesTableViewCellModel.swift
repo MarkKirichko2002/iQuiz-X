@@ -9,6 +9,7 @@ import Foundation
 import UIKit
 import Firebase
 
+
 class CategoriesTableViewCellModel {
     
     let db = Firestore.firestore()

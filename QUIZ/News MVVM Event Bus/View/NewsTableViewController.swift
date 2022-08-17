@@ -9,7 +9,6 @@ import UIKit
 import Alamofire
 import SDWebImage
 
-
 class NewsTableViewController: UITableViewController {
     
     var newsViewModel = NewsListViewModel()

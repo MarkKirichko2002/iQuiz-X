@@ -48,8 +48,7 @@
 		821C69E128739845004FD9E1 /* chess19.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 821C69DF28739845004FD9E1 /* chess19.jpeg */; };
 		821C69E228739845004FD9E1 /* chess18.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 821C69E028739845004FD9E1 /* chess18.jpeg */; };
 		821C69E42873995C004FD9E1 /* chess20.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 821C69E32873995C004FD9E1 /* chess20.jpeg */; };
-		821C69E828739E32004FD9E1 /* PlayersTableViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 821C69E628739E32004FD9E1 /* PlayersTableViewCellViewModel.swift */; };
-		821C69E928739E32004FD9E1 /* PlayersListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 821C69E728739E32004FD9E1 /* PlayersListViewModel.swift */; };
+		821C69E928739E32004FD9E1 /* PlayersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 821C69E728739E32004FD9E1 /* PlayersViewModel.swift */; };
 		822139102874E72D0065A0C3 /* example_5s0_hand_model.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 8221390F2874E72D0065A0C3 /* example_5s0_hand_model.mlmodel */; };
 		822139122874E75B0065A0C3 /* anatomy music.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 822139112874E75B0065A0C3 /* anatomy music.mp3 */; };
 		822139142874E7630065A0C3 /* chemistry music.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 822139132874E7630065A0C3 /* chemistry music.mp3 */; };
@@ -356,7 +355,6 @@
 		82DBCA2728303EDE009DD1EE /* EditProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82DBCA2628303EDE009DD1EE /* EditProfileTableViewCell.swift */; };
 		82DC6E1C27E65E790077D107 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82DC6E1B27E65E790077D107 /* StartViewController.swift */; };
 		82DF98EC27BCEB4A00548B38 /* QuizAnatomy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82DF98EB27BCEB4A00548B38 /* QuizAnatomy.swift */; };
-		82E0EC7B28AC59E1004AA2E3 /* PlayerObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82E0EC7A28AC59E1004AA2E3 /* PlayerObserver.swift */; };
 		82E0EC8028AC5AA7004AA2E3 /* Bus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82E0EC7F28AC5AA7004AA2E3 /* Bus.swift */; };
 		82E0EC8228AC5ABA004AA2E3 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82E0EC8128AC5ABA004AA2E3 /* Event.swift */; };
 		82E4C6DD282F025900379856 /* roadtraffic13.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 82E4C6D3282F025000379856 /* roadtraffic13.jpeg */; };
@@ -561,8 +559,7 @@
 		821C69DF28739845004FD9E1 /* chess19.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = chess19.jpeg; sourceTree = "<group>"; };
 		821C69E028739845004FD9E1 /* chess18.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = chess18.jpeg; sourceTree = "<group>"; };
 		821C69E32873995C004FD9E1 /* chess20.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = chess20.jpeg; sourceTree = "<group>"; };
-		821C69E628739E32004FD9E1 /* PlayersTableViewCellViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayersTableViewCellViewModel.swift; sourceTree = "<group>"; };
-		821C69E728739E32004FD9E1 /* PlayersListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayersListViewModel.swift; sourceTree = "<group>"; };
+		821C69E728739E32004FD9E1 /* PlayersViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayersViewModel.swift; sourceTree = "<group>"; };
 		8221390F2874E72D0065A0C3 /* example_5s0_hand_model.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = example_5s0_hand_model.mlmodel; sourceTree = "<group>"; };
 		822139112874E75B0065A0C3 /* anatomy music.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "anatomy music.mp3"; sourceTree = "<group>"; };
 		822139132874E7630065A0C3 /* chemistry music.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "chemistry music.mp3"; sourceTree = "<group>"; };
@@ -869,7 +866,6 @@
 		82DBCA2628303EDE009DD1EE /* EditProfileTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileTableViewCell.swift; sourceTree = "<group>"; };
 		82DC6E1B27E65E790077D107 /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
 		82DF98EB27BCEB4A00548B38 /* QuizAnatomy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizAnatomy.swift; sourceTree = "<group>"; };
-		82E0EC7A28AC59E1004AA2E3 /* PlayerObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerObserver.swift; sourceTree = "<group>"; };
 		82E0EC7F28AC5AA7004AA2E3 /* Bus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bus.swift; sourceTree = "<group>"; };
 		82E0EC8128AC5ABA004AA2E3 /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		82E4C6D3282F025000379856 /* roadtraffic13.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = roadtraffic13.jpeg; sourceTree = "<group>"; };
@@ -1056,7 +1052,7 @@
 				82E91ECD27F6840B003D7E80 /* ml */,
 				8209F79A2847F2390093147A /* SplashScreen */,
 				82A82AE128A92BB100011B6F /* QuizBase MVVM Observable */,
-				82CBE8062870DE1A0045616B /* Players League MVVM */,
+				82CBE8062870DE1A0045616B /* Players MVVM Combine */,
 				82CBE7FC2870D3AA0045616B /* Quiz Tasks MVVM */,
 				82CBE7F22870A8480045616B /* Quiz Categories MVVM */,
 				82CBE7E4287093890045616B /* News MVVM Event Bus */,
@@ -1131,8 +1127,7 @@
 		821C69E528739E1A004FD9E1 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				821C69E728739E32004FD9E1 /* PlayersListViewModel.swift */,
-				821C69E628739E32004FD9E1 /* PlayersTableViewCellViewModel.swift */,
+				821C69E728739E32004FD9E1 /* PlayersViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -1957,15 +1952,14 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		82CBE8062870DE1A0045616B /* Players League MVVM */ = {
+		82CBE8062870DE1A0045616B /* Players MVVM Combine */ = {
 			isa = PBXGroup;
 			children = (
-				82E0EC7C28AC5A42004AA2E3 /* PlayerObserver */,
 				82CBE8092870DE370045616B /* Model */,
 				821C69E528739E1A004FD9E1 /* ViewModel */,
 				82CBE8082870DE350045616B /* View */,
 			);
-			path = "Players League MVVM";
+			path = "Players MVVM Combine";
 			sourceTree = "<group>";
 		};
 		82CBE8082870DE350045616B /* View */ = {
@@ -2033,14 +2027,6 @@
 				823CFF7327FA1149001FF6D9 /* Profile */,
 			);
 			path = Other;
-			sourceTree = "<group>";
-		};
-		82E0EC7C28AC5A42004AA2E3 /* PlayerObserver */ = {
-			isa = PBXGroup;
-			children = (
-				82E0EC7A28AC59E1004AA2E3 /* PlayerObserver.swift */,
-			);
-			path = PlayerObserver;
 			sourceTree = "<group>";
 		};
 		82E0EC7D28AC5A8E004AA2E3 /* Event */ = {
@@ -2661,7 +2647,6 @@
 				8243F16D27C27A9400CD9CE4 /* TasksTableViewController.swift in Sources */,
 				828F0DD127C82D4C0016D337 /* PlayerTableViewCell.swift in Sources */,
 				82251C34287E661F00723057 /* URLViewController.swift in Sources */,
-				82E0EC7B28AC59E1004AA2E3 /* PlayerObserver.swift in Sources */,
 				82B760EF27CA9C2E00540E0F /* CategoryTableViewController.swift in Sources */,
 				8243F16B27C266F800CD9CE4 /* BaseQuizViewController.swift in Sources */,
 				82CBE7EC287093C50045616B /* NewsTableViewCell.swift in Sources */,
@@ -2686,7 +2671,6 @@
 				8213BF7127D6AAC800D07512 /* QuizPhysics.swift in Sources */,
 				8243F16527C25A1200CD9CE4 /* TaskModel.swift in Sources */,
 				82CF0D3A28A583D9006B53F4 /* QuizStartViewController.swift in Sources */,
-				821C69E828739E32004FD9E1 /* PlayersTableViewCellViewModel.swift in Sources */,
 				82DC6E1C27E65E790077D107 /* StartViewController.swift in Sources */,
 				82747F8C28050121001E994A /* AttemptsTableViewCell.swift in Sources */,
 				821120E72822EC4D009C2801 /* PauseTableViewController.swift in Sources */,
@@ -2696,7 +2680,7 @@
 				8244DCE827E39C1700F5C59B /* QuizInformatics.swift in Sources */,
 				8237D98E286D02230097FE69 /* QuizUnderwater.swift in Sources */,
 				8209462D27FA676000F44E83 /* RoadTraffic.swift in Sources */,
-				821C69E928739E32004FD9E1 /* PlayersListViewModel.swift in Sources */,
+				821C69E928739E32004FD9E1 /* PlayersViewModel.swift in Sources */,
 				820C628127BBA3CA004894FA /* SceneDelegate.swift in Sources */,
 				82A1D8C427FB25490044EEA6 /* DeleteTableViewCell.swift in Sources */,
 				82CBE7F92870A8F30045616B /* CategoriesViewModel.swift in Sources */,
