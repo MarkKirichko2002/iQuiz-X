@@ -21,7 +21,6 @@ class BaseQuizViewController: UIViewController {
     @IBOutlet weak var PauseButton: UIButton!
     @IBOutlet weak var AnswersButton: UIButton!
     @IBOutlet weak var SayQuestionButton: UIButton!
-    @IBOutlet weak var recognizeButton: UIButton!
     @IBOutlet weak var MusicButton: UIButton!
     
     var quiz: QuizBaseViewModel?
@@ -169,21 +168,6 @@ class BaseQuizViewController: UIViewController {
                 self.view.backgroundColor = viewStatus
             }
         })
-        
-        // Speech recognition
-        
-        quiz?.recognizeButtonStatusText.bind({(recognizeButtonStatusText) in
-            DispatchQueue.main.async {
-                self.recognizeButton.setTitle(recognizeButtonStatusText, for: .normal)
-            }
-        })
-        
-        quiz?.recognizeButtonStatus.bind({(recognizeButtonStatus) in
-            DispatchQueue.main.async {
-                self.recognizeButton.setImage(UIImage(named: recognizeButtonStatus), for: .normal)
-            }
-        })
-        
     }
     
     override func viewDidLoad() {
@@ -191,14 +175,12 @@ class BaseQuizViewController: UIViewController {
         self.BindViewModel()
         self.quiz?.SetQuizTheme()
         self.quiz?.checkHintsSetting(sender: AnswersButton)
-        self.quiz?.checkAudioSetting(sender: recognizeButton)
         self.quiz?.checkGestureSetting()
         self.quiz?.checkSpeachSetting(sender: SayQuestionButton)
+        self.quiz?.configureAudioSession()
+        self.quiz?.checkAudioSetting()
         self.quiz?.checkTimerSetting()
         self.quiz?.checkAttemptsSetting()
-        let tap = UITapGestureRecognizer(target: self, action: #selector(self.quiz?.ShowAnswers))
-        self.Image.isUserInteractionEnabled = true
-        self.Image.addGestureRecognizer(tap)
         self.quiz?.isRecordingNow()
         self.quiz?.setupVision()
         self.quiz?.startTimer()
@@ -234,15 +216,17 @@ class BaseQuizViewController: UIViewController {
         quiz?.prepareCamera()
     }
     
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        quiz?.captureSession.stopRunning()
+        quiz?.stopSpeechRecognition()
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         var vc = segue.destination as! PauseTableViewController
         vc.currentquiz = quiz
         vc.score = quiz?.score ?? 100
         vc.questionNumber = (quiz?.questionNumber ?? 0) + 1
-    }
-    
-    @IBAction func RecordAnswer(_ sender: UIButton) {
-        self.quiz?.RecordAnswer(sender: sender)
     }
     
     @IBAction func sayquestion() {

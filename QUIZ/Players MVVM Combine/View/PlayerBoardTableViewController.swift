@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import SDWebImage
 import Combine
 
 class PlayerBoardTableViewController: UITableViewController {

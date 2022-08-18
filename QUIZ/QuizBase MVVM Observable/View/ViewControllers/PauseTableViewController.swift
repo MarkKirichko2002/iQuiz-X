@@ -33,7 +33,7 @@ class PauseTableViewController: UITableViewController {
         super.viewDidLoad()
     }
     
-    
+
     func exit() {
         DispatchQueue.main.async {
             guard let vc = self.storyboard?.instantiateViewController(identifier: "ViewController") else {return}

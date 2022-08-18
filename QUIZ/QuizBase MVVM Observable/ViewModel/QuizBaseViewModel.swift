@@ -25,7 +25,8 @@ class QuizBaseViewModel {
     var AttemptsStatus = true
     var isTalking = false
     let synthesizer = AVSpeechSynthesizer()
-   
+    var isRecordOn = UserDefaults.standard.object(forKey: "onstatus") as? Bool
+    
     enum RemoteCommand: String {
         case none
         case one = "FIVE-UB-RHand"
@@ -87,8 +88,6 @@ class QuizBaseViewModel {
     // Binding
     
     // status
-    var recognizeButtonStatus = QuizBaseObserver("")
-    var recognizeButtonStatusText = QuizBaseObserver("")
     var RecordVideoStatus = QuizBaseObserver("")
     var RecordVideoStatusColor = QuizBaseObserver(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1))
     var OnOffButtonStatus = QuizBaseObserver("")
@@ -106,7 +105,6 @@ class QuizBaseViewModel {
     var TimeStatusColor = QuizBaseObserver(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1))
     var ImageStatus = QuizBaseObserver("")
     var AttemptsCountStatus = QuizBaseObserver("")
-    var recognizeButtonText = QuizBaseObserver("")
     var AnswersButtonStatus = QuizBaseObserver("")
     var viewStatus = QuizBaseObserver(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1))
     var ScoreStatusColor = QuizBaseObserver(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1))
@@ -120,7 +118,7 @@ class QuizBaseViewModel {
     
     // buttons
     var OnOffButton = QuizBaseObserver(UIButton())
-   
+    
     // storyboard and view
     var storyboard: UIStoryboard?
     var view: UIView?
@@ -154,29 +152,16 @@ class QuizBaseViewModel {
         base?.quiztheme(id: 17, background: "chess.background.jpeg", music: "chess music.mp3")
     }
     
-    func RecordAnswer(sender: UIButton) {
-        
-        configureAudioSession()
-        
-        CheckChoiceNumber()
+    func AdvancedSpeechRecognition() {
         
         let checkvoice = base?.checkAnswer(check2)
         
-        if !sender.isSelected{
-            recognizeButtonStatus.value = "microphone selected"
-            questionTextStatus.value = "Говорите ответ..."
-            sender.isUserInteractionEnabled = false
-            stop(recognizeButton: sender)
-        } else {
-            recognizeButtonStatus.value = "microphone"
-            questionTextStatus.value = ("Вопрос №\(base?.checkQuestionNumber() ?? 0) \(base?.checkQuestion() ?? "")")
-            sender.isUserInteractionEnabled = true
-        }
-        
-        if sender.isSelected && checkvoice == true && counter < 100 {
+        if checkvoice == true && check2 != "" && counter < 100  {
             
-            if base?.questionNumber == 19 {
-                PresentTotalScreen()
+            stopSpeechRecognition()
+            
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                self.startRecognition()
             }
             
             if Choice1Status.value == check2 {
@@ -216,11 +201,22 @@ class QuizBaseViewModel {
             write(id: 16, quizpath: "quizunderwater", category: "underwater")
             write(id: 17, quizpath: "quizchess", category: "chess")
             
-            SCLAlertView().showSuccess("Правильно 👍👍👍!!!", subTitle: check2)
+            questionTextStatus.value = "Правильно 👍👍👍!!!"
+            
             Timer.scheduledTimer(timeInterval:0.2, target: self, selector: #selector(updateUI), userInfo: nil, repeats: false)
         }
         
-        if sender.isSelected && checkvoice == false && self.Attempts != nil && check2 != "" {
+        if checkvoice == false && self.Attempts.value != nil && check2 != "" {
+            
+            stopSpeechRecognition()
+            
+            if AttemptsCounter == 0 && self.AttemptsStatus == true {
+                PresentTotalScreen()
+            }
+            
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                self.startRecognition()
+            }
             
             if Choice1Status.value == check2 {
                 Choice1StatusColor.value = UIColor.systemRed
@@ -260,7 +256,7 @@ class QuizBaseViewModel {
             write(id: 16, quizpath: "quizunderwater", category: "underwater")
             write(id: 17, quizpath: "quizchess", category: "chess")
             
-            SCLAlertView().showError("\(check2) не верный ответ 👎👎👎!!!", subTitle: "попробуйте еще раз")
+            questionTextStatus.value = ("\(check2) не верный ответ 👎👎👎!!!")
             Timer.scheduledTimer(timeInterval:0.2, target: self, selector: #selector(updateUI), userInfo: nil, repeats: false)
         }
         
@@ -274,7 +270,7 @@ class QuizBaseViewModel {
             case .authorized:
                 DispatchQueue.main.async {
                     [unowned self] in
-                    sender.isEnabled = true
+                    // sender.isEnabled = true
                 }
             case .denied:
                 print("statu denied")
@@ -284,21 +280,10 @@ class QuizBaseViewModel {
                 print("statu restricted")
             }
         }
-        
-        if sender.isSelected {
-            audioEngine.stop()
-            request.endAudio()
-            recognitionTask?.cancel()
-            audioEngine.inputNode.removeTap(onBus: 0)
-        } else {
-            startRecognition()
-        }
-        
-        sender.isSelected = !sender.isSelected
     }
     
     func questions() -> [Question] {
-       return []
+        return []
     }
     
     func ids() -> [QuizModel] {
@@ -398,6 +383,7 @@ class QuizBaseViewModel {
             
             self.isRecordingNow()
             
+            
             DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {
                 self.captureSession.startRunning()
                 self.isRecordingNow()
@@ -462,7 +448,6 @@ class QuizBaseViewModel {
             
             DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {
                 self.captureSession.startRunning()
-                self.isRecordingNow()
             }
             
             if base?.questionNumber == 19 {
@@ -544,7 +529,7 @@ class QuizBaseViewModel {
             
             sender.backgroundColor = UIColor.green;
             SCLAlertView().showSuccess("Правильно", subTitle: "правильный ответ: \(base?.checkAnswer() ?? "")")
-          
+            
             counter += 5
             CorrectAnswersCounter += 1
             
@@ -661,7 +646,7 @@ class QuizBaseViewModel {
     }
     
     func isRecordingNow() {
-    
+        
         DispatchQueue.main.async {
             
             self.checkGestureSetting()
@@ -781,7 +766,7 @@ class QuizBaseViewModel {
             }
         }
     }
-
+    
     func checkSpeachSetting(sender: UIButton) {
         var isSpeachOn = UserDefaults.standard.object(forKey: "onstatusspeach") as? Bool
         
@@ -817,17 +802,15 @@ class QuizBaseViewModel {
             print("hints doesnt working")
             sender.removeFromSuperview()
         } else {
-          
+            
         }
     }
     
     func checkGestureSetting() {
         
-        var isRecordOnn = UserDefaults.standard.object(forKey: "onstatus") as? Bool
-        
-        if isRecordOnn == true {
+        if isRecordOn == true {
             print("record now")
-        } else if isRecordOnn == false {
+        } else if isRecordOn == false {
             print("record not now")
             //self.captureSession.stopRunning()
             self.GestureRecording = false
@@ -839,24 +822,24 @@ class QuizBaseViewModel {
         }
     }
     
-    func checkAudioSetting(sender: UIButton) {
-        var isRecordOnAudio = UserDefaults.standard.object(forKey: "onstatusaudio") as? Bool
+    var isRecordOnAudio = UserDefaults.standard.object(forKey: "onstatusaudio") as? Bool
+    
+    func checkAudioSetting() {
         
         print(isRecordOnAudio)
         
         if isRecordOnAudio == true {
             print("record audio now")
+            startRecognition()
         } else if isRecordOnAudio == false {
             print("record audio not now")
-            //self.captureSession.stopRunning()
             self.VoiceRecording = false
         }
         
         if self.VoiceRecording == false {
             print("audio doesnt working")
-            sender.removeFromSuperview()
         } else {
-            //timer.fire()
+            
         }
     }
     
@@ -934,7 +917,7 @@ class QuizBaseViewModel {
         SCLAlertView().showInfo("варианты ответов", subTitle: "1)\(base?.checkChoices()[0] ?? "") 2)\(base?.checkChoices()[1] ?? "") 3)\(base?.checkChoices()[2] ?? "")")
     }
     
-
+    
     func PresentTotalScreen() {
         
         self.VoiceRecording = false
@@ -1066,69 +1049,97 @@ class QuizBaseViewModel {
         }
     }
     
-    func stop(recognizeButton: UIButton) {
-        var timeLeft = 6
-        Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { timer in
-            print("timer fired!")
+    func CheckVoiceCommands() {
+        
+        switch check2 {
             
-            timeLeft -= 1
+        case "один":
+            check2 = base?.checkChoices()[0] ?? ""
+            questionTextStatus.value = ("Ваш ответ: \(check2)")
             
-            self.recognizeButtonStatusText.value = String(timeLeft)
-            self.animation.springLabel(label: recognizeButton.titleLabel!)
+        case "Один":
+            check2 = base?.checkChoices()[0] ?? ""
+            questionTextStatus.value = ("Ваш ответ: \(check2)")
             
-            print(timeLeft)
+        case "два":
+            check2 = base?.checkChoices()[1] ?? ""
+            questionTextStatus.value = ("Ваш ответ: \(check2)")
             
-            if(timeLeft==0){
-                self.recognizeButtonStatus.value = String(timeLeft)
-                
-                timer.invalidate()
-                self.audioEngine.stop()
-                self.request.endAudio()
-                self.recognitionTask?.cancel()
-                self.audioEngine.inputNode.removeTap(onBus: 0)
-                
-                self.recognizeButtonStatus.value = "microphone"
-                recognizeButton.sendActions(for: .touchUpInside)
-            }
+        case "Два":
+            check2 = base?.checkChoices()[1] ?? ""
+            questionTextStatus.value = ("Ваш ответ: \(check2)")
+            
+        case "три":
+            check2 = base?.checkChoices()[2] ?? ""
+            questionTextStatus.value = ("Ваш ответ: \(check2)")
+            
+        case "Три":
+            check2 = base?.checkChoices()[2] ?? ""
+            questionTextStatus.value = ("Ваш ответ: \(check2)")
+            
+        case "первый":
+            check2 = base?.checkChoices()[0] ?? ""
+            questionTextStatus.value = ("Ваш ответ: \(check2)")
+            
+        case "Первый":
+            check2 = base?.checkChoices()[0] ?? ""
+            questionTextStatus.value = ("Ваш ответ: \(check2)")
+            
+        case "второй":
+            check2 = base?.checkChoices()[1] ?? ""
+            questionTextStatus.value = ("Ваш ответ: \(check2)")
+            
+        case "Второй":
+            check2 = base?.checkChoices()[1] ?? ""
+            questionTextStatus.value = ("Ваш ответ: \(check2)")
+            
+        case "третий":
+            check2 = base?.checkChoices()[2] ?? ""
+            questionTextStatus.value = ("Ваш ответ: \(check2)")
+            
+        case "Третий":
+            check2 = base?.checkChoices()[2] ?? ""
+            questionTextStatus.value = ("Ваш ответ: \(check2)")
+            
+        case "стоп":
+            self.stopSpeechRecognition()
+            
+        case "Стоп":
+            self.stopSpeechRecognition()
+            
+        case "ответ":
+            self.ShowAnswer()
+            
+        case "Ответ":
+            self.ShowAnswer()
+            
+        case "далее":
+            self.SkipQuestion()
+            
+        case "Далее":
+            self.SkipQuestion()
+            
+            
+        default:
+            break
         }
+        
+        DispatchQueue.main.async {
+            self.AdvancedSpeechRecognition()
+        }
+        
     }
     
-    func CheckChoiceNumber() {
+    func stopSpeechRecognition() {
+        recognitionTask?.finish()
+        recognitionTask?.cancel()
+        recognitionTask  = nil
         
-        if check2.contains("один") || check2.contains("Один") {
-            //check2 = "1"
-            check2 = base?.checkChoices()[0] ?? ""
-            questionTextStatus.value = ("Ваш ответ: \(check2)")
-        }
+        request.endAudio()
+        audioEngine.stop()
         
-        if check2.contains("два") || check2.contains("Два") {
-            //check2 = "1"
-            check2 = base?.checkChoices()[1] ?? ""
-            questionTextStatus.value = ("Ваш ответ: \(check2)")
-        }
-        
-        if check2.contains("три") || check2.contains("Три") {
-            //check2 = "1"
-            check2 = base?.checkChoices()[2] ?? ""
-            questionTextStatus.value = ("Ваш ответ: \(check2)")
-        }
-        
-        if check2.contains("первый") || check2.contains("Первый") {
-            //check2 = "1"
-            check2 = base?.checkChoices()[0] ?? ""
-            questionTextStatus.value = ("Ваш ответ: \(check2)")
-        }
-        
-        if check2.contains("второй") || check2.contains("Второй") {
-            //check2 = "1"
-            check2 = base?.checkChoices()[1] ?? ""
-            questionTextStatus.value = ("Ваш ответ: \(check2)")
-        }
-        
-        if check2.contains("третий") || check2.contains("Третий") {
-            //check2 = "1"
-            check2 = base?.checkChoices()[2] ?? ""
-            questionTextStatus.value = ("Ваш ответ: \(check2)")
+        if audioEngine.inputNode.numberOfInputs > 0 {
+            audioEngine.inputNode.removeTap(onBus: 0)
         }
     }
     
@@ -1166,9 +1177,9 @@ class QuizBaseViewModel {
         recognitionTask = speechRecognizer?.recognitionTask(with: request, resultHandler: {
             [unowned self] (result, error) in
             if let res = result?.bestTranscription {
-                DispatchQueue.main.async { [unowned self] in
-                    check2 = res.formattedString
-                    CheckChoiceNumber()
+                DispatchQueue.main.async {
+                    self.check2 = res.formattedString
+                    self.CheckVoiceCommands()
                 }
             } else if let error = error {
                 print("\(error.localizedDescription)")
@@ -1412,7 +1423,7 @@ class QuizBaseViewModel {
         }
     }
     
-   func configureAudioSession() {
+    func configureAudioSession() {
         
         do {
             try AVAudioSession.sharedInstance().setCategory(AVAudioSession.Category.playAndRecord, options: .mixWithOthers)
