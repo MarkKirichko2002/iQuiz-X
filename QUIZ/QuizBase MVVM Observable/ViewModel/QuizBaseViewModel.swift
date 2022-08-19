@@ -160,7 +160,11 @@ class QuizBaseViewModel {
             
             stopSpeechRecognition()
             
-            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+            if base?.questionNumber == 19 {
+                self.PresentTotalScreen()
+            }
+            
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
                 self.startRecognition()
             }
             
@@ -202,6 +206,7 @@ class QuizBaseViewModel {
             write(id: 17, quizpath: "quizchess", category: "chess")
             
             questionTextStatus.value = "Правильно 👍👍👍!!!"
+            sayComment(comment: "Правильно")
             
             Timer.scheduledTimer(timeInterval:0.2, target: self, selector: #selector(updateUI), userInfo: nil, repeats: false)
         }
@@ -214,7 +219,11 @@ class QuizBaseViewModel {
                 PresentTotalScreen()
             }
             
-            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+            if base?.questionNumber == 19 {
+                self.PresentTotalScreen()
+            }
+            
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
                 self.startRecognition()
             }
             
@@ -257,6 +266,7 @@ class QuizBaseViewModel {
             write(id: 17, quizpath: "quizchess", category: "chess")
             
             questionTextStatus.value = ("\(check2) не верный ответ 👎👎👎!!!")
+            sayComment(comment: "Не правильно")
             Timer.scheduledTimer(timeInterval:0.2, target: self, selector: #selector(updateUI), userInfo: nil, repeats: false)
         }
         
@@ -383,17 +393,12 @@ class QuizBaseViewModel {
             
             self.isRecordingNow()
             
-            
             DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {
                 self.captureSession.startRunning()
                 self.isRecordingNow()
             }
             
             if base?.questionNumber == 19 {
-                PresentTotalScreen()
-            }
-            
-            if AttemptsCounter == 0 && self.AttemptsStatus == true {
                 PresentTotalScreen()
             }
             
@@ -432,7 +437,7 @@ class QuizBaseViewModel {
             write(id: 16, quizpath: "quizunderwater", category: "underwater")
             write(id: 17, quizpath: "quizchess", category: "chess")
             
-            //SCLAlertView().showSuccess("Правильно 👍👍👍!!!", subTitle: check2)
+            sayComment(comment: "Правильно")
             Timer.scheduledTimer(timeInterval:0.2, target: self, selector: #selector(updateUI), userInfo: nil, repeats: false)
         }
         
@@ -493,7 +498,7 @@ class QuizBaseViewModel {
             write(id: 16, quizpath: "quizunderwater", category: "underwater")
             write(id: 17, quizpath: "quizchess", category: "chess")
             
-            //SCLAlertView().showError("\(check2) не верный ответ 👎👎👎!!!", subTitle: "попробуйте еще раз")
+            sayComment(comment: "Не Правильно")
             Timer.scheduledTimer(timeInterval:0.2, target: self, selector: #selector(updateUI), userInfo: nil, repeats: false)
         }
     }
@@ -505,6 +510,8 @@ class QuizBaseViewModel {
         if  check! && counter < 100 {
             
             RestartTimer()
+            
+            sayComment(comment: "Правильно")
             
             if base?.questionNumber == 19 {
                 PresentTotalScreen()
@@ -528,7 +535,7 @@ class QuizBaseViewModel {
             }
             
             sender.backgroundColor = UIColor.green;
-            SCLAlertView().showSuccess("Правильно", subTitle: "правильный ответ: \(base?.checkAnswer() ?? "")")
+            questionTextStatus.value = "Правильно!"
             
             counter += 5
             CorrectAnswersCounter += 1
@@ -558,6 +565,8 @@ class QuizBaseViewModel {
             
             RestartTimer()
             
+            sayComment(comment: "Не правильно")
+            
             if base?.questionNumber == 19 {
                 PresentTotalScreen()
             }
@@ -568,7 +577,7 @@ class QuizBaseViewModel {
             
             if counter == 0 && self.Attempts != nil {
                 sender.backgroundColor = UIColor.red;
-                SCLAlertView().showError("не правильно", subTitle: "правильный ответ: \(base?.checkAnswer() ?? "")")
+                questionTextStatus.value = "Не правильно!"
                 counter = 0
                 AttemptsCounter -= 1
                 UnCorrectAnswersCounter += 1
@@ -595,8 +604,8 @@ class QuizBaseViewModel {
                 write(id: 17, quizpath: "quizchess", category: "chess")
                 
             } else if counter > 0 && self.Attempts != nil {
+                
                 sender.backgroundColor = UIColor.red
-                SCLAlertView().showError("не правильно", subTitle: "правильный ответ:  \(base?.checkAnswer() ?? "")")
                 AttemptsCounter -= 1
                 UnCorrectAnswersCounter += 1
                 ScoreStatus.value = ("Счет: \(String(counter))")
@@ -620,6 +629,7 @@ class QuizBaseViewModel {
                 write(id: 15, quizpath: "quizswift", category: "Swift")
                 write(id: 16, quizpath: "quizunderwater", category: "underwater")
                 write(id: 17, quizpath: "quizchess", category: "chess")
+                
             }
         }
         
@@ -640,6 +650,8 @@ class QuizBaseViewModel {
         write(id: 15, quizpath: "quizswift", category: "Swift")
         write(id: 16, quizpath: "quizunderwater", category: "underwater")
         write(id: 17, quizpath: "quizchess", category: "chess")
+        
+
         base?.nextQuestion()
         
         Timer.scheduledTimer(timeInterval:0.2, target: self, selector: #selector(updateUI), userInfo: nil, repeats: false)
@@ -1143,6 +1155,12 @@ class QuizBaseViewModel {
         }
     }
     
+    func sayComment(comment: String) {
+            let utterance = AVSpeechUtterance(string: comment)
+            utterance.voice = AVSpeechSynthesisVoice(language: "ru-RU")
+            synthesizer.speak(utterance)
+    }
+    
     func say() {
         if isTalking == false {
             self.SayQuestionButtonStatus.value = "synthesizer selected"
@@ -1173,6 +1191,8 @@ class QuizBaseViewModel {
             print("\(error.localizedDescription)")
             return
         }
+        
+        player2?.volume = 10
         
         recognitionTask = speechRecognizer?.recognitionTask(with: request, resultHandler: {
             [unowned self] (result, error) in
@@ -1426,9 +1446,10 @@ class QuizBaseViewModel {
     func configureAudioSession() {
         
         do {
-            try AVAudioSession.sharedInstance().setCategory(AVAudioSession.Category.playAndRecord, options: .mixWithOthers)
-            try AVAudioSession.sharedInstance().setActive(true)
-        } catch { }
+            try? AVAudioSession.sharedInstance().setCategory(.playAndRecord, mode: .default, policy: .default, options: .defaultToSpeaker)
+           } catch  {
+               
+        }
     }
     
     func ShowAnswer() {
