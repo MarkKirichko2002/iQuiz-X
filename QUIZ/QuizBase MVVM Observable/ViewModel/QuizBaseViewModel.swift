@@ -206,6 +206,7 @@ class QuizBaseViewModel {
             write(id: 17, quizpath: "quizchess", category: "chess")
             
             questionTextStatus.value = "Правильно 👍👍👍!!!"
+            
             sayComment(comment: "Правильно")
             
             Timer.scheduledTimer(timeInterval:0.2, target: self, selector: #selector(updateUI), userInfo: nil, repeats: false)
@@ -1159,6 +1160,10 @@ class QuizBaseViewModel {
             let utterance = AVSpeechUtterance(string: comment)
             utterance.voice = AVSpeechSynthesisVoice(language: "ru-RU")
             synthesizer.speak(utterance)
+        
+        if SpeachStatus == false {
+            synthesizer.stopSpeaking(at: .immediate)
+        }
     }
     
     func say() {
