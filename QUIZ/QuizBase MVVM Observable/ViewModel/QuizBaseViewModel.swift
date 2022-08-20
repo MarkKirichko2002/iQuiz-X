@@ -159,13 +159,15 @@ class QuizBaseViewModel {
         
         if checkvoice == true && check2 != "" && counter < 100  {
             
+            sayComment(comment: "Правильно")
+            
             stopSpeechRecognition()
             
             if base?.questionNumber == 19 {
                 self.PresentTotalScreen()
             }
             
-            DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
                 self.startRecognition()
             }
             
@@ -207,13 +209,12 @@ class QuizBaseViewModel {
             write(id: 17, quizpath: "quizchess", category: "chess")
             
             questionTextStatus.value = "Правильно 👍👍👍!!!"
-            
-            sayComment(comment: "Правильно")
-            
             Timer.scheduledTimer(timeInterval:0.2, target: self, selector: #selector(updateUI), userInfo: nil, repeats: false)
         }
         
         if checkvoice == false && self.Attempts.value != nil && check2 != "" {
+            
+            sayComment(comment: "Не правильно")
             
             stopSpeechRecognition()
             
@@ -225,7 +226,7 @@ class QuizBaseViewModel {
                 self.PresentTotalScreen()
             }
             
-            DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
                 self.startRecognition()
             }
             
@@ -268,7 +269,6 @@ class QuizBaseViewModel {
             write(id: 17, quizpath: "quizchess", category: "chess")
             
             questionTextStatus.value = ("\(check2) не верный ответ 👎👎👎!!!")
-            sayComment(comment: "Не правильно")
             Timer.scheduledTimer(timeInterval:0.2, target: self, selector: #selector(updateUI), userInfo: nil, repeats: false)
         }
         
@@ -513,7 +513,13 @@ class QuizBaseViewModel {
             
             RestartTimer()
             
+            stopSpeechRecognition()
+            
             sayComment(comment: "Правильно")
+            
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
+                self.startRecognition()
+            }
             
             if base?.questionNumber == 19 {
                 PresentTotalScreen()
@@ -567,7 +573,13 @@ class QuizBaseViewModel {
             
             RestartTimer()
             
-            sayComment(comment: "Не правильно")
+            stopSpeechRecognition()
+            
+            sayComment(comment: "Правильно")
+            
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
+                self.startRecognition()
+            }
             
             if base?.questionNumber == 19 {
                 PresentTotalScreen()
