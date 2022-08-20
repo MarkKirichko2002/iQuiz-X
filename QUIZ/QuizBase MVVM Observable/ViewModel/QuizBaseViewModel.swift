@@ -159,9 +159,9 @@ class QuizBaseViewModel {
         
         if checkvoice == true && check2 != "" && counter < 100  {
             
-            sayComment(comment: "Правильно")
-            
             stopSpeechRecognition()
+            
+            sayComment(comment: "Правильно")
             
             if base?.questionNumber == 19 {
                 self.PresentTotalScreen()
@@ -214,9 +214,9 @@ class QuizBaseViewModel {
         
         if checkvoice == false && self.Attempts.value != nil && check2 != "" {
             
-            sayComment(comment: "Не правильно")
-            
             stopSpeechRecognition()
+            
+            sayComment(comment: "Не правильно")
             
             if AttemptsCounter == 0 && self.AttemptsStatus == true {
                 PresentTotalScreen()
@@ -575,7 +575,7 @@ class QuizBaseViewModel {
             
             stopSpeechRecognition()
             
-            sayComment(comment: "Правильно")
+            sayComment(comment: "Не Правильно")
             
             DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
                 self.startRecognition()
@@ -1078,82 +1078,51 @@ class QuizBaseViewModel {
     func CheckVoiceCommands() {
         
         switch check2 {
-            
+
         case "один":
             check2 = base?.checkChoices()[0] ?? ""
             questionTextStatus.value = ("Ваш ответ: \(check2)")
-            
+
         case "Один":
             check2 = base?.checkChoices()[0] ?? ""
             questionTextStatus.value = ("Ваш ответ: \(check2)")
-            
+
         case "два":
             check2 = base?.checkChoices()[1] ?? ""
             questionTextStatus.value = ("Ваш ответ: \(check2)")
-            
+
         case "Два":
             check2 = base?.checkChoices()[1] ?? ""
             questionTextStatus.value = ("Ваш ответ: \(check2)")
-            
+
         case "три":
             check2 = base?.checkChoices()[2] ?? ""
             questionTextStatus.value = ("Ваш ответ: \(check2)")
-            
+
         case "Три":
             check2 = base?.checkChoices()[2] ?? ""
             questionTextStatus.value = ("Ваш ответ: \(check2)")
-            
-        case "первый":
-            check2 = base?.checkChoices()[0] ?? ""
-            questionTextStatus.value = ("Ваш ответ: \(check2)")
-            
-        case "Первый":
-            check2 = base?.checkChoices()[0] ?? ""
-            questionTextStatus.value = ("Ваш ответ: \(check2)")
-            
-        case "второй":
-            check2 = base?.checkChoices()[1] ?? ""
-            questionTextStatus.value = ("Ваш ответ: \(check2)")
-            
-        case "Второй":
-            check2 = base?.checkChoices()[1] ?? ""
-            questionTextStatus.value = ("Ваш ответ: \(check2)")
-            
-        case "третий":
-            check2 = base?.checkChoices()[2] ?? ""
-            questionTextStatus.value = ("Ваш ответ: \(check2)")
-            
-        case "Третий":
-            check2 = base?.checkChoices()[2] ?? ""
-            questionTextStatus.value = ("Ваш ответ: \(check2)")
-            
-        case "стоп":
-            self.stopSpeechRecognition()
-            
-        case "Стоп":
-            self.stopSpeechRecognition()
-            
-        case "ответ":
-            self.ShowAnswer()
-            
-        case "Ответ":
-            self.ShowAnswer()
-            
-        case "далее":
-            self.SkipQuestion()
-            
-        case "Далее":
-            self.SkipQuestion()
-            
-            
+
         default:
             break
         }
         
-        DispatchQueue.main.async {
-            self.AdvancedSpeechRecognition()
+        if check2.contains("перв") || check2.contains("Перв") {
+            check2 = base?.checkChoices()[0] ?? ""
+            questionTextStatus.value = ("Ваш ответ: \(check2)")
         }
         
+        if check2.contains("втор") || check2.contains("Втор") {
+            check2 = base?.checkChoices()[1] ?? ""
+            questionTextStatus.value = ("Ваш ответ: \(check2)")
+        }
+        
+        if check2.contains("трет") || check2.contains("Трет") {
+            check2 = base?.checkChoices()[2] ?? ""
+            questionTextStatus.value = ("Ваш ответ: \(check2)")
+        }
+        
+        self.AdvancedSpeechRecognition()
     }
     
     func stopSpeechRecognition() {
@@ -1210,13 +1179,12 @@ class QuizBaseViewModel {
             return
         }
         
-        player2?.volume = 10
-        
         recognitionTask = speechRecognizer?.recognitionTask(with: request, resultHandler: {
             [unowned self] (result, error) in
             if let res = result?.bestTranscription {
                 DispatchQueue.main.async {
                     self.check2 = res.formattedString
+                    print(self.check2)
                     self.CheckVoiceCommands()
                 }
             } else if let error = error {
@@ -1243,7 +1211,7 @@ class QuizBaseViewModel {
                 print("Error writing document: \(err)")
             } else {
                 print("success")
-                print(ref)
+                //print(ref)
             }
         }
         
