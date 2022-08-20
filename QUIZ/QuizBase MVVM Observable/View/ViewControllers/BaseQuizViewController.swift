@@ -89,6 +89,7 @@ class BaseQuizViewController: UIViewController {
         
         // Buttons
         
+        
         // Choice 1,2,3 text
         quiz?.Choice1Status.bind({(Choice1Status) in
             DispatchQueue.main.async {
@@ -130,6 +131,12 @@ class BaseQuizViewController: UIViewController {
         quiz?.SayQuestionButtonStatus.bind({(SayQuestionButtonStatus) in
             DispatchQueue.main.async {
                 self.SayQuestionButton.setImage(UIImage(named: SayQuestionButtonStatus), for: .normal)
+            }
+        })
+        
+        quiz?.OnOffButtonStatusTitle.bind({OnOffButtonStatusTitle in
+            DispatchQueue.main.async {
+                self.MusicButton.setTitle(OnOffButtonStatusTitle, for: .normal)
             }
         })
         

@@ -91,6 +91,7 @@ class QuizBaseViewModel {
     var RecordVideoStatus = QuizBaseObserver("")
     var RecordVideoStatusColor = QuizBaseObserver(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1))
     var OnOffButtonStatus = QuizBaseObserver("")
+    var OnOffButtonStatusTitle = QuizBaseObserver("")
     var SayQuestionButtonStatus = QuizBaseObserver("")
     var Choice1Status = QuizBaseObserver("")
     var Choice2Status = QuizBaseObserver("")
@@ -1425,7 +1426,6 @@ class QuizBaseViewModel {
         timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(timerClass), userInfo: nil, repeats: true)
     }
     
-    
     func setQuizeModel(base: QuizBaseViewModel) {
         self.base = base
     }
@@ -1436,15 +1436,7 @@ class QuizBaseViewModel {
             player.Sound(resource: music)
             self.checkMusicSetting()
             CurrentMusic(id: id, resource: " \(music)")
-        }
-        
-        if base?.checkid() == 10 {
-            questionTextStatusColor.value = UIColor.black
-            ScoreStatusColor.value = UIColor.black
-            AttemptsStatusColor.value = UIColor.black
-            Choice1StatusColor.value = UIColor.black
-            Choice2StatusColor.value = UIColor.black
-            Choice3StatusColor.value = UIColor.black
+            OnOffButtonStatusTitle.value = music
         }
     }
     
