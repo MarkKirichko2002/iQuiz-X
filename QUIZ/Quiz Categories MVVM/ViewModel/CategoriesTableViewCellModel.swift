@@ -27,20 +27,17 @@ class CategoriesTableViewCellModel {
                     if let category = document[quizpath] as? [String: Any] {
                         let complete = category["complete"] as? Bool ?? false
                         let bestscore = category["bestscore"] as? Int ?? 0
+                        let CorrectAnswersCounter = category["CorrectAnswersCounter"] as? Int ?? 0
                         
                         CategoryScore.text = "\(bestscore ?? 0)/100 баллов"
                         isComplete.text = "\(complete)"
                         
-                        if bestscore == 100 && complete == true {
-                            isComplete.text = "пройдено 100 %"
+                        if complete == true && CorrectAnswersCounter != nil {
+                            isComplete.text = "пройдено \(CorrectAnswersCounter)/20"
                             isComplete.textColor = UIColor.systemGreen
-                            //self.CategoryImage.flash()
-                        } else if complete == nil {
+                        } else if complete == nil || complete == false {
                             isComplete.text = "еще не пройдено"
                             isComplete.textColor = UIColor.gray
-                        } else if complete == true {
-                            isComplete.text = "пройдено"
-                            isComplete.textColor = UIColor.systemGreen
                         }
                     }
                 }
@@ -55,7 +52,7 @@ class CategoriesTableViewCellModel {
         CategoryScore.text = "\(category.score)/100"
         
         if category.complete == nil || category.complete == false {
-            isComplete.text = "еще не пройдено"
+            isComplete.text = "еще не пройдено 0/20"
             isComplete.textColor = UIColor.gray
         }
         
