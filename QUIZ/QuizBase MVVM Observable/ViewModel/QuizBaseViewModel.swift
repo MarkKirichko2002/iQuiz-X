@@ -395,6 +395,16 @@ class QuizBaseViewModel {
             
             self.isRecordingNow()
             
+            if isRecordOnAudio == true {
+                stopSpeechRecognition()
+                sayComment(comment: "Правильно")
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
+                    self.startRecognition()
+                }
+            } else {
+                sayComment(comment: "Правильно")
+            }
+            
             DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {
                 self.captureSession.startRunning()
                 self.isRecordingNow()
@@ -439,7 +449,6 @@ class QuizBaseViewModel {
             write(id: 16, quizpath: "quizunderwater", category: "underwater")
             write(id: 17, quizpath: "quizchess", category: "chess")
             
-            sayComment(comment: "Правильно")
             Timer.scheduledTimer(timeInterval:0.2, target: self, selector: #selector(updateUI), userInfo: nil, repeats: false)
         }
         
@@ -452,6 +461,16 @@ class QuizBaseViewModel {
             }
             
             isRecordingNow()
+            
+            if isRecordOnAudio == true {
+                stopSpeechRecognition()
+                sayComment(comment: "Правильно")
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
+                    self.startRecognition()
+                }
+            } else {
+                sayComment(comment: "Правильно")
+            }
             
             DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {
                 self.captureSession.startRunning()
@@ -500,7 +519,6 @@ class QuizBaseViewModel {
             write(id: 16, quizpath: "quizunderwater", category: "underwater")
             write(id: 17, quizpath: "quizchess", category: "chess")
             
-            sayComment(comment: "Не Правильно")
             Timer.scheduledTimer(timeInterval:0.2, target: self, selector: #selector(updateUI), userInfo: nil, repeats: false)
         }
     }
@@ -511,15 +529,17 @@ class QuizBaseViewModel {
         
         if  check! && counter < 100 {
             
-            RestartTimer()
-            
-            stopSpeechRecognition()
-            
-            sayComment(comment: "Правильно")
-            
-            DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
-                self.startRecognition()
+            if isRecordOnAudio == true {
+                stopSpeechRecognition()
+                sayComment(comment: "Правильно")
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
+                    self.startRecognition()
+                }
+            } else {
+                sayComment(comment: "Правильно")
             }
+            
+            RestartTimer()
             
             if base?.questionNumber == 19 {
                 PresentTotalScreen()
@@ -571,15 +591,17 @@ class QuizBaseViewModel {
             
         } else if !check! {
             
-            RestartTimer()
-            
-            stopSpeechRecognition()
-            
-            sayComment(comment: "Не Правильно")
-            
-            DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
-                self.startRecognition()
+            if isRecordOnAudio == true {
+                stopSpeechRecognition()
+                sayComment(comment: "Не Правильно")
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
+                    self.startRecognition()
+                }
+            } else {
+                sayComment(comment: "Не Правильно")
             }
+            
+            RestartTimer()
             
             if base?.questionNumber == 19 {
                 PresentTotalScreen()
@@ -859,13 +881,6 @@ class QuizBaseViewModel {
             startRecognition()
         } else if isRecordOnAudio == false {
             print("record audio not now")
-            self.VoiceRecording = false
-        }
-        
-        if self.VoiceRecording == false {
-            print("audio doesnt working")
-        } else {
-            
         }
     }
     

@@ -21,6 +21,7 @@ class ViewController: UITabBarController {
     var quizViewModel = CategoriesViewModel()
     var isStart : Bool = false
     var icon = "voice.png"
+    var base = QuizBaseViewModel()
     
     // Override selectedViewController for User initiated changes
     override var selectedViewController: UIViewController? {
