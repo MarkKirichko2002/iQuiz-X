@@ -19,6 +19,8 @@ final class SettingsTableViewController: UITableViewController, UIImagePickerCon
     
     private let storage = Storage.storage().reference()
     
+    var saved = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -30,9 +32,6 @@ final class SettingsTableViewController: UITableViewController, UIImagePickerCon
         picker.allowsEditing = true
         present(picker, animated: true)
     }
-    
-    var saved = false
-    
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         picker.dismiss(animated: true, completion: nil)
