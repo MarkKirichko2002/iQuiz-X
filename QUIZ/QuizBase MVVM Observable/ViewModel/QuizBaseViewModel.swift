@@ -464,12 +464,12 @@ class QuizBaseViewModel {
             
             if isRecordOnAudio == true {
                 stopSpeechRecognition()
-                sayComment(comment: "Правильно")
+                sayComment(comment: "Не правильно")
                 DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
                     self.startRecognition()
                 }
             } else {
-                sayComment(comment: "Правильно")
+                sayComment(comment: "Не правильно")
             }
             
             DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {
@@ -481,15 +481,15 @@ class QuizBaseViewModel {
             }
             
             if Choice1Status.value == check2 {
-                Choice1StatusColor.value = UIColor.systemGreen
+                Choice1StatusColor.value = UIColor.systemRed
             }
             
             if Choice2Status.value == check2 {
-                Choice2StatusColor.value = UIColor.systemGreen
+                Choice2StatusColor.value = UIColor.systemRed
             }
             
             if Choice3Status.value == check2 {
-                Choice3StatusColor.value = UIColor.systemGreen
+                Choice3StatusColor.value = UIColor.systemRed
             }
             
             AttemptsCounter -= 1
