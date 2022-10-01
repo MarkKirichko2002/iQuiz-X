@@ -450,6 +450,15 @@ class StartViewController: UIViewController {
             self.view2.backgroundColor = UIColor(patternImage: UIImage(named: "chess.background.jpeg")!)
             self.Image.image = UIImage(named: "chess.png")
             
+        case 18:
+            print("halloween")
+            self.TodayQuizButton.setTitle("хэллоуин", for: .normal)
+            //self.TodayQuizButton.backgroundColor = UIColor(patternImage: UIImage(named: "Swift.background.jpeg")!)
+            self.view.backgroundColor = UIColor(patternImage: UIImage(named: "halloween.background.jpeg")!)
+            self.scrollView.backgroundColor = UIColor(patternImage: UIImage(named: "halloween.background.jpeg")!)
+            self.view2.backgroundColor = UIColor(patternImage: UIImage(named: "halloween.background.jpeg")!)
+            self.Image.image = UIImage(named: "halloween.png")
+            
         default:
             print("other")
             //self.TodayQuizButton.backgroundColor = UIColor(patternImage: UIImage(named: "random.background.jpeg")!)

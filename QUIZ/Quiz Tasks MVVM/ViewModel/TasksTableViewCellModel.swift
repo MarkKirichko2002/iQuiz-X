@@ -107,6 +107,9 @@ class TasksTableViewCellModel {
             LoadData(quizpath: "quizchess", background: "chess.background.jpeg", TaskStatus: TaskStatus, view: background)
             
         case 18:
+            LoadData(quizpath: "quizhalloween", background: "halloween.background.jpeg", TaskStatus: TaskStatus, view: background)
+            
+        case 19:
             LoadData(quizpath: "lastquiz", background: "random.background.jpeg", TaskStatus: TaskStatus, view: background)
             
         default:

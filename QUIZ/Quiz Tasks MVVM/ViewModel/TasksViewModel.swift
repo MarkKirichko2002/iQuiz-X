@@ -26,6 +26,7 @@ class TasksViewModel {
                  TaskModel(name: "пройти викторину в категории Swift", image: "swift.jpeg", complete: false, id: 15),
                  TaskModel(name: "пройти викторину в категории подводный мир", image: "underwater", complete: false, id: 16),
                  TaskModel(name: "пройти викторину в категории шахматы", image: "chess.png", complete: false, id: 17),
-                 TaskModel(name: "пройти викторину в категории рандом", image: "random.jpeg", complete: false, id: 18)]
+                 TaskModel(name: "пройти викторину в категории хэллоуин", image: "halloween.png", complete: false, id: 18),
+                 TaskModel(name: "пройти викторину в категории рандом", image: "random.jpeg", complete: false, id: 19)]
     
 }
