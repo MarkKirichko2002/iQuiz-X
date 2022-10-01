@@ -100,9 +100,9 @@ class RegisterViewController: UIViewController, UIImagePickerControllerDelegate,
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = UIColor(patternImage: UIImage(named: "chess.background.jpeg")!)
-        view2.backgroundColor = UIColor(patternImage: UIImage(named: "chess.background.jpeg")!)
-        scrollView.backgroundColor = UIColor(patternImage: UIImage(named: "chess.background.jpeg")!)
+        view.backgroundColor = UIColor(patternImage: UIImage(named: "halloween.background.jpeg")!)
+        view2.backgroundColor = UIColor(patternImage: UIImage(named: "halloween.background.jpeg")!)
+        scrollView.backgroundColor = UIColor(patternImage: UIImage(named: "halloween.background.jpeg")!)
         
         RegisterButton.layer.cornerRadius = RegisterButton.frame.size.width / 20
         RegisterButton.clipsToBounds = true

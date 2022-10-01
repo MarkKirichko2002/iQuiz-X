@@ -26,6 +26,11 @@ class QuizBaseViewModel {
     var isTalking = false
     let synthesizer = AVSpeechSynthesizer()
     var isRecordOn = UserDefaults.standard.object(forKey: "onstatus") as? Bool
+    var quiznumber = 0
+    var questionNumber = 0;
+    var score = 0;
+    
+    var quiz: QuizModel?
     
     enum RemoteCommand: String {
         case none
@@ -151,6 +156,7 @@ class QuizBaseViewModel {
         base?.quiztheme(id: 15, background: "swift.background.jpeg", music: "Swift music.mp3")
         base?.quiztheme(id: 16, background: "underwater.background.jpeg", music: "underwater music.mp3")
         base?.quiztheme(id: 17, background: "chess.background.jpeg", music: "chess music.mp3")
+        base?.quiztheme(id: 18, background: "halloween.background.jpeg", music: "halloween music.mp3")
     }
     
     func AdvancedSpeechRecognition() {
@@ -207,6 +213,7 @@ class QuizBaseViewModel {
             write(id: 15, quizpath: "quizswift", category: "Swift")
             write(id: 16, quizpath: "quizunderwater", category: "underwater")
             write(id: 17, quizpath: "quizchess", category: "chess")
+            write(id: 18, quizpath: "quizhalloween", category: "halloween")
             
             questionTextStatus.value = "Правильно 👍👍👍!!!"
             Timer.scheduledTimer(timeInterval:0.2, target: self, selector: #selector(updateUI), userInfo: nil, repeats: false)
@@ -267,6 +274,7 @@ class QuizBaseViewModel {
             write(id: 15, quizpath: "quizswift", category: "Swift")
             write(id: 16, quizpath: "quizunderwater", category: "underwater")
             write(id: 17, quizpath: "quizchess", category: "chess")
+            write(id: 18, quizpath: "quizhalloween", category: "halloween")
             
             questionTextStatus.value = ("\(check2) не верный ответ 👎👎👎!!!")
             Timer.scheduledTimer(timeInterval:0.2, target: self, selector: #selector(updateUI), userInfo: nil, repeats: false)
@@ -301,12 +309,6 @@ class QuizBaseViewModel {
     func ids() -> [QuizModel] {
         return []
     }
-    
-    var quiznumber = 0
-    var questionNumber = 0;
-    var score = 0;
-    
-    var quiz: QuizModel?
     
     init(){}
     
@@ -448,6 +450,7 @@ class QuizBaseViewModel {
             write(id: 15, quizpath: "quizswift", category: "Swift")
             write(id: 16, quizpath: "quizunderwater", category: "underwater")
             write(id: 17, quizpath: "quizchess", category: "chess")
+            write(id: 18, quizpath: "quizhalloween", category: "halloween")
             
             Timer.scheduledTimer(timeInterval:0.2, target: self, selector: #selector(updateUI), userInfo: nil, repeats: false)
         }
@@ -518,6 +521,7 @@ class QuizBaseViewModel {
             write(id: 15, quizpath: "quizswift", category: "Swift")
             write(id: 16, quizpath: "quizunderwater", category: "underwater")
             write(id: 17, quizpath: "quizchess", category: "chess")
+            write(id: 18, quizpath: "quizhalloween", category: "halloween")
             
             Timer.scheduledTimer(timeInterval:0.2, target: self, selector: #selector(updateUI), userInfo: nil, repeats: false)
         }
@@ -560,6 +564,7 @@ class QuizBaseViewModel {
                 write(id: 15, quizpath: "quizswift", category: "Swift")
                 write(id: 16, quizpath: "quizunderwater", category: "underwater")
                 write(id: 17, quizpath: "quizchess", category: "chess")
+                write(id: 18, quizpath: "quizhalloween", category: "halloween")
             }
             
             sender.backgroundColor = UIColor.green;
@@ -588,6 +593,7 @@ class QuizBaseViewModel {
             write(id: 15, quizpath: "quizswift", category: "Swift")
             write(id: 16, quizpath: "quizunderwater", category: "underwater")
             write(id: 17, quizpath: "quizchess", category: "chess")
+            write(id: 18, quizpath: "quizhalloween", category: "halloween")
             
         } else if !check! {
             
@@ -638,6 +644,7 @@ class QuizBaseViewModel {
                 write(id: 15, quizpath: "quizswift", category: "Swift")
                 write(id: 16, quizpath: "quizunderwater", category: "underwater")
                 write(id: 17, quizpath: "quizchess", category: "chess")
+                write(id: 18, quizpath: "quizhalloween", category: "halloween")
                 
             } else if counter > 0 && self.Attempts != nil {
                 
@@ -665,6 +672,7 @@ class QuizBaseViewModel {
                 write(id: 15, quizpath: "quizswift", category: "Swift")
                 write(id: 16, quizpath: "quizunderwater", category: "underwater")
                 write(id: 17, quizpath: "quizchess", category: "chess")
+                write(id: 18, quizpath: "quizhalloween", category: "halloween")
                 
             }
         }
@@ -686,6 +694,7 @@ class QuizBaseViewModel {
         write(id: 15, quizpath: "quizswift", category: "Swift")
         write(id: 16, quizpath: "quizunderwater", category: "underwater")
         write(id: 17, quizpath: "quizchess", category: "chess")
+        write(id: 18, quizpath: "quizhalloween", category: "halloween")
         
 
         base?.nextQuestion()
@@ -989,6 +998,7 @@ class QuizBaseViewModel {
             self.stopMusic(id: 15, resource: "Swift music.mp3")
             self.stopMusic(id: 16, resource: "underwater music.mp3")
             self.stopMusic(id: 17, resource: "chess music.mp3")
+            self.stopMusic(id: 18, resource: "halloween music.mp3")
             
             let vc = self.storyboard?.instantiateViewController(identifier: "BaseTotalQuizViewController")
             guard let window = self.view?.window else {return}
@@ -1307,6 +1317,8 @@ class QuizBaseViewModel {
             case "chess":
                 LastQuiz(category: "шахматы", image: "chess.png", background: "chess.background.jpeg")
                 //CurrentQuiz()
+            case "halloween":
+                LastQuiz(category: "хэллоуин", image: "halloween.png", background: "halloween.background.jpeg")
                 
             default:
                 break
@@ -1485,6 +1497,7 @@ class QuizBaseViewModel {
         self.stopMusic(id: 15, resource: "Swift music.mp3")
         self.stopMusic(id: 16, resource: "underwater music.mp3")
         self.stopMusic(id: 17, resource: "chess music.mp3")
+        self.stopMusic(id: 18, resource: "halloween music.mp3")
     }
 }
 

@@ -110,6 +110,9 @@ class CategoriesTableViewCellModel {
             LoadData(quizpath: "quizchess", background: "chess.background.jpeg", isComplete: isComplete, CategoryScore: CategoryScore, view: background)
             
         case 18:
+            LoadData(quizpath: "quizhalloween", background: "halloween.background.jpeg", isComplete: isComplete, CategoryScore: CategoryScore, view: background)
+            
+        case 19:
             LoadData(quizpath: "lastquiz", background: "random.background.jpeg", isComplete: isComplete, CategoryScore: CategoryScore, view: background)
         
         default:

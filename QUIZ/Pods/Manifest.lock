@@ -345,7 +345,6 @@ PODS:
   - BoringSSL-GRPC/Implementation (0.0.7):
     - BoringSSL-GRPC/Interface (= 0.0.7)
   - BoringSSL-GRPC/Interface (0.0.7)
-  - DynamicJSON (2.0.2)
   - Firebase/Auth (8.12.1):
     - Firebase/CoreOnly
     - FirebaseAuth (~> 8.12.0)
@@ -451,7 +450,6 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire
-  - DynamicJSON
   - Firebase/Auth
   - Firebase/Database
   - Firebase/Firestore
@@ -464,7 +462,6 @@ SPEC REPOS:
     - abseil
     - Alamofire
     - BoringSSL-GRPC
-    - DynamicJSON
     - Firebase
     - FirebaseAuth
     - FirebaseCore
@@ -487,7 +484,6 @@ SPEC CHECKSUMS:
   abseil: 6c8eb7892aefa08d929b39f9bb108e5367e3228f
   Alamofire: 1c4fb5369c3fe93d2857c780d8bbe09f06f97e7c
   BoringSSL-GRPC: 8edf627ee524575e2f8d19d56f068b448eea3879
-  DynamicJSON: fc0c5a82980ff8aa956156f04d84fcdb2822e875
   Firebase: 580d09e8edafc3073ebf09c03fd42e4d80d35fe9
   FirebaseAuth: 5250d7bdba35e57cc34ec7ddc525f82b2757f2a0
   FirebaseCore: 8138de860a90ca7eec5e324da5788fb0ebf1d93c
@@ -506,6 +502,6 @@ SPEC CHECKSUMS:
   SCLAlertView: 6a77bb2edfc65e04dbe57725546cb4107a506b85
   SDWebImage: 53179a2dba77246efa8a9b85f5c5b21f8f43e38f
 
-PODFILE CHECKSUM: f5622a812b81c02e3925c079b2c82a83b5f4a18e
+PODFILE CHECKSUM: e6deb81158bd90b5bd980d3f5119e6949fd0334a
 
 COCOAPODS: 1.10.2

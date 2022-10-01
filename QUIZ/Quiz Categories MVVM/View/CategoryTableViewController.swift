@@ -51,7 +51,8 @@ final class CategoryTableViewController: UITableViewController {
         case 14: categories.GoToStart(quiz: QuizSwift(), storyboard: storyboard, view: view)
         case 15: categories.GoToStart(quiz: QuizUnderwater(), storyboard: storyboard, view: view)
         case 16: categories.GoToStart(quiz: QuizChess(), storyboard: storyboard, view: view)
-        case 17: categories.PresentRandomQuiz(storyboard: storyboard, view: view)
+        case 17: categories.GoToStart(quiz: QuizHalloween(), storyboard: storyboard, view: view)
+        case 18: categories.PresentRandomQuiz(storyboard: storyboard, view: view)
             
         default: break
         }

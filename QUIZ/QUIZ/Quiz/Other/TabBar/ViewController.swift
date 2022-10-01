@@ -194,6 +194,12 @@ class ViewController: UITabBarController {
                 self.cancelSpeechRecognization()
             }
             
+            if self.text.contains("Halloween")  || self.text.contains("halloween") {
+                self.quizViewModel.GoToStart(quiz: QuizHalloween(), storyboard: self.storyboard, view: self.view)
+                self.cancelSpeechRecognization()
+            }
+            
+            
             if self.text.contains("Рандом")  || self.text.contains("рандом") {
                 self.quizViewModel.PresentRandomQuiz(storyboard: self.storyboard, view: self.view)
                 self.cancelSpeechRecognization()
@@ -224,14 +230,14 @@ class ViewController: UITabBarController {
             button.setImage(UIImage(named: icon), for: .normal)
         } else {
             cancelSpeechRecognization()
-            button.setImage(UIImage(named: "planets.jpeg"), for: .normal)
+            button.setImage(UIImage(named: "halloween.png"), for: .normal)
         }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         selectedIndex = UserDefaults.standard.object(forKey: "index") as? Int ?? 0
-        button.setImage(UIImage(named: "quiz"), for: .normal)
+        button.setImage(UIImage(named: "halloween.png"), for: .normal)
         button.frame = CGRect(x: 0, y: 0, width: 44, height: 44)
         button.layer.borderWidth = 2
         self.view.insertSubview(button, aboveSubview: self.tabBar)

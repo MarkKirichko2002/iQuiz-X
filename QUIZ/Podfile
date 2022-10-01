@@ -12,7 +12,5 @@ target 'QUIZ' do
   pod 'Firebase/Firestore'
   pod 'Firebase/Storage'
   pod 'Alamofire'
-  pod 'SDWebImage'
-  pod 'DynamicJSON'
-  
+  pod 'SDWebImage' 
 end

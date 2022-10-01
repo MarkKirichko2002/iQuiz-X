@@ -24,7 +24,8 @@ class CategoriesViewModel {
         QuizModel(name: "Swift", image: "swift.jpeg", complete: false, id: 15, score: 0),
         QuizModel(name: "подводный мир", image: "underwater.png", complete: false, id: 16, score: 0),
         QuizModel(name: "шахматы", image: "chess.png", complete: false, id: 17, score: 0),
-        QuizModel(name: "рандом", image: "random.jpeg", complete: false, id: 18, score: 0)]
+                      QuizModel(name: "хэллоуин", image: "halloween.png", complete: false, id: 18, score: 0),
+        QuizModel(name: "рандом", image: "random.jpeg", complete: false, id: 19, score: 0)]
     
     func goToQuize(quiz: QuizBaseViewModel, storyboard: UIStoryboard?, view: UIView) {
         DispatchQueue.main.async {
