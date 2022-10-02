@@ -41,7 +41,7 @@ final class TasksTableViewController: UITableViewController {
             categories.GoToStart(quiz: QuizHistory(), storyboard: storyboard, view: view)
         case 2: player.Sound(resource: "anatomy.mp3")
             categories.GoToStart(quiz: QuizAnatomy(), storyboard: storyboard, view: view)
-        case 3: player.Sound(resource: "sport.mp3")
+        case 3: player.Sound(resource: "sport.wav")
             categories.GoToStart(quiz: QuizSport(), storyboard: storyboard, view: view)
         case 4: player.Sound(resource: "games.mp3")
             categories.GoToStart(quiz: QuizGames(), storyboard: storyboard, view: view)

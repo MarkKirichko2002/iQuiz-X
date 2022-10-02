@@ -233,6 +233,14 @@ class ViewController: UITabBarController {
                 self.quizViewModel.PresentRandomQuiz(storyboard: self.storyboard, view: self.view)
                 self.cancelSpeechRecognization()
             }
+            
+            // Включение/Выключение музыки
+            if self.text.contains("Муз")  || self.text.contains("муз") {
+                self.player.Sound(resource: "halloween music.mp3")
+            } else if self.text.contains("Выкл")  || self.text.contains("выкл") {
+                self.player.StopSound(resource: "halloween music.mp3")
+            }
+            
         }))
     }
     
