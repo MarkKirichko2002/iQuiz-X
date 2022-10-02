@@ -77,7 +77,6 @@
 		822F6C1927BD4AFC0033803A /* BaseTotalQuizViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 822F6C1827BD4AFC0033803A /* BaseTotalQuizViewController.swift */; };
 		82319E0228E8CF7E0053CEF5 /* halloween.png in Resources */ = {isa = PBXBuildFile; fileRef = 82319E0128E8CF7E0053CEF5 /* halloween.png */; };
 		82319E0628E8D1280053CEF5 /* QuizHalloween.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82319E0528E8D1280053CEF5 /* QuizHalloween.swift */; };
-		82319E0828E8D49C0053CEF5 /* halloween music.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 82319E0728E8D49C0053CEF5 /* halloween music.mp3 */; };
 		82319E0D28E8D84E0053CEF5 /* halloween.background.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 82319E0C28E8D84E0053CEF5 /* halloween.background.jpeg */; };
 		82319E0F28E8D8EA0053CEF5 /* halloween1.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 82319E0E28E8D8E90053CEF5 /* halloween1.jpeg */; };
 		82319E1128E8D95A0053CEF5 /* halloween2.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 82319E1028E8D95A0053CEF5 /* halloween2.jpeg */; };
@@ -225,7 +224,6 @@
 		82848D46281C77030068A4AE /* chemistry19.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 82848D3C281C77030068A4AE /* chemistry19.jpeg */; };
 		82848D47281C77030068A4AE /* chemistry14.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 82848D3D281C77030068A4AE /* chemistry14.jpeg */; };
 		82848D48281C77030068A4AE /* chemistry20.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 82848D3E281C77030068A4AE /* chemistry20.jpeg */; };
-		82848D5F281DACAB0068A4AE /* bgm.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 82848D4C281DACA80068A4AE /* bgm.mp3 */; };
 		82848D62281DACAB0068A4AE /* fail2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 82848D4F281DACA90068A4AE /* fail2.mp3 */; };
 		82848D65281DACAB0068A4AE /* geography music.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 82848D52281DACA90068A4AE /* geography music.mp3 */; };
 		82848D66281DACAB0068A4AE /* spring.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 82848D53281DACA90068A4AE /* spring.mp3 */; };
@@ -329,7 +327,6 @@
 		8294095227CECE1900AFF603 /* geography1.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 8294094827CECE0E00AFF603 /* geography1.jpeg */; };
 		8294095327CECE1900AFF603 /* geography4.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 8294094927CECE1400AFF603 /* geography4.jpeg */; };
 		8294095427CECE1900AFF603 /* geography5.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 8294094A27CECE1900AFF603 /* geography5.jpeg */; };
-		829F988828E76C6300CD7B1F /* selected sound.wav in Resources */ = {isa = PBXBuildFile; fileRef = 829F988728E76C6300CD7B1F /* selected sound.wav */; };
 		82A01BFD27C51CFF00DCBD6F /* RoundedImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82A01BFC27C51CFF00DCBD6F /* RoundedImageView.swift */; };
 		82A1D8C427FB25490044EEA6 /* DeleteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82A1D8C327FB25490044EEA6 /* DeleteTableViewCell.swift */; };
 		82A1D8C827FB4C3D0044EEA6 /* PhotoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82A1D8C727FB4C3D0044EEA6 /* PhotoTableViewCell.swift */; };
@@ -376,6 +373,26 @@
 		82CC60DC27BEA32A00038618 /* QuizSport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82CC60DB27BEA32A00038618 /* QuizSport.swift */; };
 		82CD6BF2288851FB00716443 /* click sound.wav in Resources */ = {isa = PBXBuildFile; fileRef = 82CD6BF1288851FB00716443 /* click sound.wav */; };
 		82CD6BF428885DFF00716443 /* QuizSegmentedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82CD6BF328885DFF00716443 /* QuizSegmentedViewController.swift */; };
+		82CE536528E9D4FC00D44A6E /* history.wav in Resources */ = {isa = PBXBuildFile; fileRef = 82CE535F28E9D4FB00D44A6E /* history.wav */; };
+		82CE536628E9D4FC00D44A6E /* economics.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 82CE536028E9D4FB00D44A6E /* economics.mp3 */; };
+		82CE536728E9D4FC00D44A6E /* sport.wav in Resources */ = {isa = PBXBuildFile; fileRef = 82CE536128E9D4FB00D44A6E /* sport.wav */; };
+		82CE536828E9D4FC00D44A6E /* literature.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 82CE536228E9D4FB00D44A6E /* literature.mp3 */; };
+		82CE536928E9D4FC00D44A6E /* halloween.wav in Resources */ = {isa = PBXBuildFile; fileRef = 82CE536328E9D4FB00D44A6E /* halloween.wav */; };
+		82CE536A28E9D4FC00D44A6E /* dice.wav in Resources */ = {isa = PBXBuildFile; fileRef = 82CE536428E9D4FC00D44A6E /* dice.wav */; };
+		82CE536E28E9DCCE00D44A6E /* games.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 82CE536D28E9DCCD00D44A6E /* games.mp3 */; };
+		82CE537028E9DE1500D44A6E /* underwater.wav in Resources */ = {isa = PBXBuildFile; fileRef = 82CE536F28E9DE1500D44A6E /* underwater.wav */; };
+		82CE537428E9E58B00D44A6E /* halloween music.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 82CE537328E9E58B00D44A6E /* halloween music.mp3 */; };
+		82CE537628E9E83300D44A6E /* chess.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 82CE537528E9E83300D44A6E /* chess.mp3 */; };
+		82CE537C28E9EC4600D44A6E /* anatomy.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 82CE537B28E9EC4600D44A6E /* anatomy.mp3 */; };
+		82CE537E28E9EE1B00D44A6E /* IQ.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 82CE537D28E9EE1B00D44A6E /* IQ.mp3 */; };
+		82CE538028E9EFE600D44A6E /* geography.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 82CE537F28E9EFE600D44A6E /* geography.mp3 */; };
+		82CE538228E9F22F00D44A6E /* informatics.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 82CE538128E9F22F00D44A6E /* informatics.mp3 */; };
+		82CE538428E9F3AD00D44A6E /* roadtraffic.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 82CE538328E9F3AD00D44A6E /* roadtraffic.mp3 */; };
+		82CE538628E9F86600D44A6E /* ecology.wav in Resources */ = {isa = PBXBuildFile; fileRef = 82CE538528E9F86600D44A6E /* ecology.wav */; };
+		82CE538828E9FA7F00D44A6E /* space.wav in Resources */ = {isa = PBXBuildFile; fileRef = 82CE538728E9FA7F00D44A6E /* space.wav */; };
+		82CE538A28E9FCB900D44A6E /* swift.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 82CE538928E9FCB900D44A6E /* swift.mp3 */; };
+		82CE538C28EA002300D44A6E /* physics.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 82CE538B28EA002300D44A6E /* physics.mp3 */; };
+		82CE538E28EA016400D44A6E /* chemistry.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 82CE538D28EA016400D44A6E /* chemistry.mp3 */; };
 		82CF0D3A28A583D9006B53F4 /* QuizStartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82CF0D3928A583D9006B53F4 /* QuizStartViewController.swift */; };
 		82DBCA2728303EDE009DD1EE /* EditProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82DBCA2628303EDE009DD1EE /* EditProfileTableViewCell.swift */; };
 		82DC6E1C27E65E790077D107 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82DC6E1B27E65E790077D107 /* StartViewController.swift */; };
@@ -612,7 +629,6 @@
 		822F6C1827BD4AFC0033803A /* BaseTotalQuizViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTotalQuizViewController.swift; sourceTree = "<group>"; };
 		82319E0128E8CF7E0053CEF5 /* halloween.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = halloween.png; path = ../../../../../Downloads/halloween.png; sourceTree = "<group>"; };
 		82319E0528E8D1280053CEF5 /* QuizHalloween.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizHalloween.swift; sourceTree = "<group>"; };
-		82319E0728E8D49C0053CEF5 /* halloween music.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "halloween music.mp3"; path = "../../../../Downloads/halloween music.mp3"; sourceTree = "<group>"; };
 		82319E0C28E8D84E0053CEF5 /* halloween.background.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = halloween.background.jpeg; sourceTree = "<group>"; };
 		82319E0E28E8D8E90053CEF5 /* halloween1.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = halloween1.jpeg; sourceTree = "<group>"; };
 		82319E1028E8D95A0053CEF5 /* halloween2.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = halloween2.jpeg; sourceTree = "<group>"; };
@@ -760,7 +776,6 @@
 		82848D3C281C77030068A4AE /* chemistry19.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = chemistry19.jpeg; sourceTree = "<group>"; };
 		82848D3D281C77030068A4AE /* chemistry14.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = chemistry14.jpeg; sourceTree = "<group>"; };
 		82848D3E281C77030068A4AE /* chemistry20.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = chemistry20.jpeg; sourceTree = "<group>"; };
-		82848D4C281DACA80068A4AE /* bgm.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = bgm.mp3; sourceTree = "<group>"; };
 		82848D4F281DACA90068A4AE /* fail2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = fail2.mp3; sourceTree = "<group>"; };
 		82848D52281DACA90068A4AE /* geography music.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "geography music.mp3"; sourceTree = "<group>"; };
 		82848D53281DACA90068A4AE /* spring.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = spring.mp3; sourceTree = "<group>"; };
@@ -864,7 +879,6 @@
 		8294094827CECE0E00AFF603 /* geography1.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = geography1.jpeg; sourceTree = "<group>"; };
 		8294094927CECE1400AFF603 /* geography4.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = geography4.jpeg; sourceTree = "<group>"; };
 		8294094A27CECE1900AFF603 /* geography5.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = geography5.jpeg; sourceTree = "<group>"; };
-		829F988728E76C6300CD7B1F /* selected sound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "selected sound.wav"; path = "../../../../Downloads/selected sound.wav"; sourceTree = "<group>"; };
 		82A01BFC27C51CFF00DCBD6F /* RoundedImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedImageView.swift; sourceTree = "<group>"; };
 		82A1D8C327FB25490044EEA6 /* DeleteTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteTableViewCell.swift; sourceTree = "<group>"; };
 		82A1D8C727FB4C3D0044EEA6 /* PhotoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoTableViewCell.swift; sourceTree = "<group>"; };
@@ -911,6 +925,26 @@
 		82CC60DB27BEA32A00038618 /* QuizSport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizSport.swift; sourceTree = "<group>"; };
 		82CD6BF1288851FB00716443 /* click sound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "click sound.wav"; sourceTree = "<group>"; };
 		82CD6BF328885DFF00716443 /* QuizSegmentedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizSegmentedViewController.swift; sourceTree = "<group>"; };
+		82CE535F28E9D4FB00D44A6E /* history.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = history.wav; path = "../../../../quiz categories sounds/history.wav"; sourceTree = "<group>"; };
+		82CE536028E9D4FB00D44A6E /* economics.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = economics.mp3; path = "../../../../quiz categories sounds/economics.mp3"; sourceTree = "<group>"; };
+		82CE536128E9D4FB00D44A6E /* sport.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = sport.wav; path = "../../../../quiz categories sounds/sport.wav"; sourceTree = "<group>"; };
+		82CE536228E9D4FB00D44A6E /* literature.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = literature.mp3; path = "../../../../quiz categories sounds/literature.mp3"; sourceTree = "<group>"; };
+		82CE536328E9D4FB00D44A6E /* halloween.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = halloween.wav; path = "../../../../quiz categories sounds/halloween.wav"; sourceTree = "<group>"; };
+		82CE536428E9D4FC00D44A6E /* dice.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = dice.wav; path = "../../../../quiz categories sounds/dice.wav"; sourceTree = "<group>"; };
+		82CE536D28E9DCCD00D44A6E /* games.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = games.mp3; sourceTree = "<group>"; };
+		82CE536F28E9DE1500D44A6E /* underwater.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = underwater.wav; path = ../../../../../Downloads/underwater.wav; sourceTree = "<group>"; };
+		82CE537328E9E58B00D44A6E /* halloween music.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "halloween music.mp3"; sourceTree = "<group>"; };
+		82CE537528E9E83300D44A6E /* chess.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = chess.mp3; path = ../../../../../Downloads/chess.mp3; sourceTree = "<group>"; };
+		82CE537B28E9EC4600D44A6E /* anatomy.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = anatomy.mp3; sourceTree = "<group>"; };
+		82CE537D28E9EE1B00D44A6E /* IQ.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = IQ.mp3; path = ../../../../../Downloads/IQ.mp3; sourceTree = "<group>"; };
+		82CE537F28E9EFE600D44A6E /* geography.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = geography.mp3; path = ../../../../../Downloads/geography.mp3; sourceTree = "<group>"; };
+		82CE538128E9F22F00D44A6E /* informatics.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = informatics.mp3; path = ../../../../../Downloads/informatics.mp3; sourceTree = "<group>"; };
+		82CE538328E9F3AD00D44A6E /* roadtraffic.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = roadtraffic.mp3; path = ../../../../../Downloads/roadtraffic.mp3; sourceTree = "<group>"; };
+		82CE538528E9F86600D44A6E /* ecology.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = ecology.wav; path = ../../../../../Downloads/ecology.wav; sourceTree = "<group>"; };
+		82CE538728E9FA7F00D44A6E /* space.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = space.wav; path = ../../../../../Downloads/space.wav; sourceTree = "<group>"; };
+		82CE538928E9FCB900D44A6E /* swift.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = swift.mp3; path = ../../../../../Downloads/swift.mp3; sourceTree = "<group>"; };
+		82CE538B28EA002300D44A6E /* physics.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = physics.mp3; path = "../../../../quiz categories sounds/physics.mp3"; sourceTree = "<group>"; };
+		82CE538D28EA016400D44A6E /* chemistry.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = chemistry.mp3; path = ../../../../../Downloads/chemistry.mp3; sourceTree = "<group>"; };
 		82CF0D3928A583D9006B53F4 /* QuizStartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizStartViewController.swift; sourceTree = "<group>"; };
 		82DBCA2628303EDE009DD1EE /* EditProfileTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileTableViewCell.swift; sourceTree = "<group>"; };
 		82DC6E1B27E65E790077D107 /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
@@ -1469,34 +1503,11 @@
 		827F8BF227E8185100F6D7B3 /* sounds */ = {
 			isa = PBXGroup;
 			children = (
-				82CD6BF1288851FB00716443 /* click sound.wav */,
-				829F988728E76C6300CD7B1F /* selected sound.wav */,
-				82EA1E96286BCB3100E49D0F /* future click sound.wav */,
-				823D9F742825694800EC0FE7 /* lock_sound.mp3 */,
-				823D9F7228247F6F00EC0FE7 /* pause_sound.mp3 */,
-				82848D4C281DACA80068A4AE /* bgm.mp3 */,
-				822139112874E75B0065A0C3 /* anatomy music.mp3 */,
-				822139132874E7630065A0C3 /* chemistry music.mp3 */,
-				822139152874E76E0065A0C3 /* drive music.mp3 */,
-				822139172874E77E0065A0C3 /* ecology music.mp3 */,
-				822139192874E7880065A0C3 /* economy music.mp3 */,
-				82848D4F281DACA90068A4AE /* fail2.mp3 */,
-				82848D5B281DACAA0068A4AE /* games music.mp3 */,
-				82848D52281DACA90068A4AE /* geography music.mp3 */,
-				8221391B2874E7960065A0C3 /* history music.mp3 */,
-				82848D5C281DACAA0068A4AE /* informatics music.mp3 */,
-				8221391D2874E79F0065A0C3 /* IQ music.mp3 */,
-				82848D57281DACAA0068A4AE /* literature music.mp3 */,
-				8221391F2874E7A80065A0C3 /* physics music.mp3 */,
-				822139212874E7B10065A0C3 /* space music.mp3 */,
-				822139232874E7BE0065A0C3 /* sport music.mp3 */,
-				82848D53281DACA90068A4AE /* spring.mp3 */,
-				822139252874E7D00065A0C3 /* Swift music.mp3 */,
-				82848D58281DACAA0068A4AE /* victory_sound.mp3 */,
-				824419B9286E54CE00203DBA /* underwater music.mp3 */,
-				821C69CD287385FE004FD9E1 /* chess music.mp3 */,
-				82319E0728E8D49C0053CEF5 /* halloween music.mp3 */,
-				827F8C0D27E81B7400F6D7B3 /* SoundClass.swift */,
+				82CE536C28E9D55F00D44A6E /* Sound Class */,
+				82CE536B28E9D54300D44A6E /* other sounds */,
+				82CE535B28E9D43100D44A6E /* ui sounds */,
+				82CE535A28E9D42200D44A6E /* category selected sounds */,
+				82CE535D28E9D4B300D44A6E /* themes */,
 			);
 			path = sounds;
 			sourceTree = "<group>";
@@ -2086,6 +2097,86 @@
 			path = Ecology;
 			sourceTree = "<group>";
 		};
+		82CE535A28E9D42200D44A6E /* category selected sounds */ = {
+			isa = PBXGroup;
+			children = (
+				82CE538728E9FA7F00D44A6E /* space.wav */,
+				82CE535F28E9D4FB00D44A6E /* history.wav */,
+				82CE537B28E9EC4600D44A6E /* anatomy.mp3 */,
+				82CE536128E9D4FB00D44A6E /* sport.wav */,
+				82CE536D28E9DCCD00D44A6E /* games.mp3 */,
+				82CE538328E9F3AD00D44A6E /* roadtraffic.mp3 */,
+				82CE537D28E9EE1B00D44A6E /* IQ.mp3 */,
+				82CE538528E9F86600D44A6E /* ecology.wav */,
+				82CE537F28E9EFE600D44A6E /* geography.mp3 */,
+				82CE538128E9F22F00D44A6E /* informatics.mp3 */,
+				82CE536028E9D4FB00D44A6E /* economics.mp3 */,
+				82CE536328E9D4FB00D44A6E /* halloween.wav */,
+				82CE536228E9D4FB00D44A6E /* literature.mp3 */,
+				82CE536F28E9DE1500D44A6E /* underwater.wav */,
+				82CE538D28EA016400D44A6E /* chemistry.mp3 */,
+				82CE538B28EA002300D44A6E /* physics.mp3 */,
+				82CE537528E9E83300D44A6E /* chess.mp3 */,
+				82CE536428E9D4FC00D44A6E /* dice.wav */,
+				82CE538928E9FCB900D44A6E /* swift.mp3 */,
+			);
+			path = "category selected sounds";
+			sourceTree = "<group>";
+		};
+		82CE535B28E9D43100D44A6E /* ui sounds */ = {
+			isa = PBXGroup;
+			children = (
+				82CD6BF1288851FB00716443 /* click sound.wav */,
+				82EA1E96286BCB3100E49D0F /* future click sound.wav */,
+				823D9F7228247F6F00EC0FE7 /* pause_sound.mp3 */,
+				82848D53281DACA90068A4AE /* spring.mp3 */,
+				823D9F742825694800EC0FE7 /* lock_sound.mp3 */,
+			);
+			path = "ui sounds";
+			sourceTree = "<group>";
+		};
+		82CE535D28E9D4B300D44A6E /* themes */ = {
+			isa = PBXGroup;
+			children = (
+				822139112874E75B0065A0C3 /* anatomy music.mp3 */,
+				822139132874E7630065A0C3 /* chemistry music.mp3 */,
+				822139172874E77E0065A0C3 /* ecology music.mp3 */,
+				822139152874E76E0065A0C3 /* drive music.mp3 */,
+				822139192874E7880065A0C3 /* economy music.mp3 */,
+				82848D5B281DACAA0068A4AE /* games music.mp3 */,
+				82848D52281DACA90068A4AE /* geography music.mp3 */,
+				8221391B2874E7960065A0C3 /* history music.mp3 */,
+				82848D5C281DACAA0068A4AE /* informatics music.mp3 */,
+				8221391D2874E79F0065A0C3 /* IQ music.mp3 */,
+				82848D57281DACAA0068A4AE /* literature music.mp3 */,
+				8221391F2874E7A80065A0C3 /* physics music.mp3 */,
+				822139212874E7B10065A0C3 /* space music.mp3 */,
+				822139232874E7BE0065A0C3 /* sport music.mp3 */,
+				822139252874E7D00065A0C3 /* Swift music.mp3 */,
+				824419B9286E54CE00203DBA /* underwater music.mp3 */,
+				821C69CD287385FE004FD9E1 /* chess music.mp3 */,
+				82CE537328E9E58B00D44A6E /* halloween music.mp3 */,
+			);
+			path = themes;
+			sourceTree = "<group>";
+		};
+		82CE536B28E9D54300D44A6E /* other sounds */ = {
+			isa = PBXGroup;
+			children = (
+				82848D58281DACAA0068A4AE /* victory_sound.mp3 */,
+				82848D4F281DACA90068A4AE /* fail2.mp3 */,
+			);
+			path = "other sounds";
+			sourceTree = "<group>";
+		};
+		82CE536C28E9D55F00D44A6E /* Sound Class */ = {
+			isa = PBXGroup;
+			children = (
+				827F8C0D27E81B7400F6D7B3 /* SoundClass.swift */,
+			);
+			path = "Sound Class";
+			sourceTree = "<group>";
+		};
 		82CF0D3828A583C3006B53F4 /* StartQuiz */ = {
 			isa = PBXGroup;
 			children = (
@@ -2211,13 +2302,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				8294093A27CECD6100AFF603 /* economy3.jpeg in Resources */,
+				82CE537428E9E58B00D44A6E /* halloween music.mp3 in Resources */,
 				822139372874E8650065A0C3 /* Swift15.jpeg in Resources */,
 				82EA1F7F286BCD0600E49D0F /* sport18.jpeg in Resources */,
 				8294092227CECCA900AFF603 /* IQ8.jpeg in Resources */,
 				829408A827CEC4F100AFF603 /* GoogleService-Info.plist in Resources */,
 				8237D9B9286E2A8E0097FE69 /* underwater12.jpeg in Resources */,
 				8294089F27CEC43E00AFF603 /* planets2.jpeg in Resources */,
-				82848D5F281DACAB0068A4AE /* bgm.mp3 in Resources */,
 				821C69D42873917C004FD9E1 /* chess13.jpeg in Resources */,
 				82EA1F2B286BCC9700E49D0F /* geography18.jpeg in Resources */,
 				82EA1EAB286BCB6000E49D0F /* literature2.jpeg in Resources */,
@@ -2229,6 +2320,7 @@
 				8288F0982872662400C6A182 /* chess3.jpeg in Resources */,
 				8261BC3527E114950089CC94 /* chemistry4.jpeg in Resources */,
 				829408A427CEC43E00AFF603 /* planets3.jpeg in Resources */,
+				82CE538628E9F86600D44A6E /* ecology.wav in Resources */,
 				821C69D6287392A8004FD9E1 /* chess14.jpeg in Resources */,
 				8288F0992872662400C6A182 /* chess9.jpeg in Resources */,
 				82EA1F00286BCC3E00E49D0F /* planets15.jpeg in Resources */,
@@ -2302,7 +2394,6 @@
 				82848D13281C6F4C0068A4AE /* economy.jpeg in Resources */,
 				8244DCF427E39D8500F5C59B /* informatics3.jpeg in Resources */,
 				82E4C6E2282F025900379856 /* roadtraffic12.jpeg in Resources */,
-				829F988828E76C6300CD7B1F /* selected sound.wav in Resources */,
 				82848D06281C6F4C0068A4AE /* anatomy.jpeg in Resources */,
 				821C69D028738F69004FD9E1 /* chess11.jpeg in Resources */,
 				82EA1F69286BCCEB00E49D0F /* games11.jpeg in Resources */,
@@ -2315,9 +2406,13 @@
 				822139282874E8250065A0C3 /* underwater.png in Resources */,
 				82848D30281C6F5B0068A4AE /* physics.background.jpeg in Resources */,
 				82EA1EA7286BCB6000E49D0F /* literature8.jpeg in Resources */,
+				82CE538228E9F22F00D44A6E /* informatics.mp3 in Resources */,
 				827D4B41281FED88007B3895 /* informatics6.jpeg in Resources */,
+				82CE537628E9E83300D44A6E /* chess.mp3 in Resources */,
 				82EA1F2D286BCC9700E49D0F /* geography20.jpeg in Resources */,
 				829408FD27CECAC800AFF603 /* sport2.jpeg in Resources */,
+				82CE538A28E9FCB900D44A6E /* swift.mp3 in Resources */,
+				82CE537E28E9EE1B00D44A6E /* IQ.mp3 in Resources */,
 				82EA1F52286BCCD200E49D0F /* IQ12.jpeg in Resources */,
 				8237D99A286D15D50097FE69 /* underwater2.jpeg in Resources */,
 				82848D2D281C6F5B0068A4AE /* games.background.jpeg in Resources */,
@@ -2352,6 +2447,7 @@
 				827F8C1027E81BDF00F6D7B3 /* physics8.jpeg in Resources */,
 				82848D3F281C77030068A4AE /* chemistry16.jpeg in Resources */,
 				82319E1128E8D95A0053CEF5 /* halloween2.jpeg in Resources */,
+				82CE538028E9EFE600D44A6E /* geography.mp3 in Resources */,
 				82EA1ED9286BCBF400E49D0F /* timer.png in Resources */,
 				821C69DE287397B3004FD9E1 /* chess17.jpeg in Resources */,
 				8213BF8827D6AC0100D07512 /* physics5.jpeg in Resources */,
@@ -2359,7 +2455,6 @@
 				8294093F27CECD6100AFF603 /* economy9.jpeg in Resources */,
 				82CBF25227D1861F0046E3BE /* ecology1.jpeg in Resources */,
 				82EA1F3E286BCCB900E49D0F /* economy12.jpeg in Resources */,
-				82319E0828E8D49C0053CEF5 /* halloween music.mp3 in Resources */,
 				8288F09C2872662400C6A182 /* chess6.jpeg in Resources */,
 				829408CF27CEC93100AFF603 /* history1.jpeg in Resources */,
 				8294093627CECD6100AFF603 /* economy10.jpeg in Resources */,
@@ -2423,6 +2518,7 @@
 				822139332874E8650065A0C3 /* Swift11.jpeg in Resources */,
 				829408E327CECA2F00AFF603 /* anatomy5.jpeg in Resources */,
 				821AC779289DC12400D04D55 /* trophy.png in Resources */,
+				82CE537028E9DE1500D44A6E /* underwater.wav in Resources */,
 				82EA1ECC286BCBC400E49D0F /* TOUCH ID.png in Resources */,
 				82EA1EC3286BCB8D00E49D0F /* attempts.png in Resources */,
 				821C69E228739845004FD9E1 /* chess18.jpeg in Resources */,
@@ -2435,6 +2531,7 @@
 				8243A61D2820810E00427553 /* physics15.jpeg in Resources */,
 				82848D10281C6F4C0068A4AE /* drive.jpeg in Resources */,
 				82848D28281C6F5B0068A4AE /* geography.background.jpeg in Resources */,
+				82CE537C28E9EC4600D44A6E /* anatomy.mp3 in Resources */,
 				822139162874E76E0065A0C3 /* drive music.mp3 in Resources */,
 				82EA1F5B286BCCD200E49D0F /* IQ11.jpeg in Resources */,
 				82EA1EA8286BCB6000E49D0F /* literature9.jpeg in Resources */,
@@ -2451,6 +2548,7 @@
 				82E4C6E3282F025900379856 /* roadtraffic17.jpeg in Resources */,
 				82EA1F02286BCC3E00E49D0F /* planets11.jpeg in Resources */,
 				82EA1F6D286BCCEB00E49D0F /* games19.jpeg in Resources */,
+				82CE538428E9F3AD00D44A6E /* roadtraffic.mp3 in Resources */,
 				8294095427CECE1900AFF603 /* geography5.jpeg in Resources */,
 				8237D99B286D15D50097FE69 /* underwater8.jpeg in Resources */,
 				829408CE27CEC93000AFF603 /* history10.jpeg in Resources */,
@@ -2465,6 +2563,7 @@
 				82319E0D28E8D84E0053CEF5 /* halloween.background.jpeg in Resources */,
 				82729E7F27D38F690042944C /* geography2.jpeg in Resources */,
 				82E4C6E4282F025900379856 /* roadtraffic18.jpeg in Resources */,
+				82CE536A28E9D4FC00D44A6E /* dice.wav in Resources */,
 				82EA1F66286BCCEB00E49D0F /* games13.jpeg in Resources */,
 				82848D6A281DACAB0068A4AE /* literature music.mp3 in Resources */,
 				8288F09B2872662400C6A182 /* chess2.jpeg in Resources */,
@@ -2472,18 +2571,22 @@
 				82319E2B28E8F05E0053CEF5 /* halloween15.jpeg in Resources */,
 				82319E2728E8EDD30053CEF5 /* halloween13.jpeg in Resources */,
 				8243A6232820810E00427553 /* physics14.jpeg in Resources */,
+				82CE538E28EA016400D44A6E /* chemistry.mp3 in Resources */,
 				82848D0A281C6F4C0068A4AE /* informatics.jpeg in Resources */,
+				82CE536E28E9DCCE00D44A6E /* games.mp3 in Resources */,
 				82EA1EDA286BCBF400E49D0F /* speach.png in Resources */,
 				82BDEB12283C630100B1AD7F /* literature17.jpeg in Resources */,
 				82EA1F97286BCD2300E49D0F /* anatomy15.jpeg in Resources */,
 				82319E2128E8E7F50053CEF5 /* halloween10.jpeg in Resources */,
 				82EA1F44286BCCB900E49D0F /* economy15.jpeg in Resources */,
 				82848D14281C6F4C0068A4AE /* games.jpeg in Resources */,
+				82CE536528E9D4FC00D44A6E /* history.wav in Resources */,
 				829408FC27CECAC800AFF603 /* sport10.jpeg in Resources */,
 				82EA1F92286BCD2300E49D0F /* anatomy17.jpeg in Resources */,
 				82848D27281C6F5B0068A4AE /* drive.background.jpeg in Resources */,
 				82EA1ED1286BCBD100E49D0F /* gesture.png in Resources */,
 				82E4C6E5282F025900379856 /* roadtraffic19.jpeg in Resources */,
+				82CE538C28EA002300D44A6E /* physics.mp3 in Resources */,
 				829408D027CEC93100AFF603 /* history4.jpeg in Resources */,
 				82EA1EF1286BCC1300E49D0F /* Swift8.jpeg in Resources */,
 				82BDEB10283C630100B1AD7F /* literature18.jpeg in Resources */,
@@ -2536,6 +2639,7 @@
 				82EA1EA4286BCB6000E49D0F /* literature5.jpeg in Resources */,
 				8288F09D2872662400C6A182 /* chess8.jpeg in Resources */,
 				82EA1EA5286BCB6000E49D0F /* literature7.jpeg in Resources */,
+				82CE536828E9D4FC00D44A6E /* literature.mp3 in Resources */,
 				82EA1F17286BCC7800E49D0F /* ecology12.jpeg in Resources */,
 				829408D327CEC93100AFF603 /* history7.jpeg in Resources */,
 				82EA1F46286BCCB900E49D0F /* economy17.jpeg in Resources */,
@@ -2585,10 +2689,12 @@
 				8244DCFD27E39D8500F5C59B /* informatics4.jpeg in Resources */,
 				829408EA27CECA2F00AFF603 /* anatomy1.jpeg in Resources */,
 				8221391C2874E7960065A0C3 /* history music.mp3 in Resources */,
+				82CE536728E9D4FC00D44A6E /* sport.wav in Resources */,
 				82EA1F83286BCD0600E49D0F /* sport20.jpeg in Resources */,
 				82EA1F81286BCD0600E49D0F /* sport16.jpeg in Resources */,
 				82E4C6DE282F025900379856 /* roadtraffic15.jpeg in Resources */,
 				8243A61B2820810E00427553 /* physics12.jpeg in Resources */,
+				82CE536928E9D4FC00D44A6E /* halloween.wav in Resources */,
 				82EA1F8F286BCD2300E49D0F /* anatomy12.jpeg in Resources */,
 				82E4C6DD282F025900379856 /* roadtraffic13.jpeg in Resources */,
 				829408EB27CECA2F00AFF603 /* anatomy4.jpeg in Resources */,
@@ -2606,6 +2712,7 @@
 				8288F08828725BA100C6A182 /* chess.png in Resources */,
 				82EA1ED8286BCBF400E49D0F /* voice.png in Resources */,
 				82848D31281C6F5B0068A4AE /* anatomy.background.jpeg in Resources */,
+				82CE536628E9D4FC00D44A6E /* economics.mp3 in Resources */,
 				8294093927CECD6100AFF603 /* economy2.jpeg in Resources */,
 				82EA1F1E286BCC7800E49D0F /* ecology13.jpeg in Resources */,
 				82319E3128E8F2F40053CEF5 /* halloween18.jpeg in Resources */,
@@ -2642,6 +2749,7 @@
 				82848D0D281C6F4C0068A4AE /* physics.jpeg in Resources */,
 				82848D26281C6F5B0068A4AE /* earth.background.jpeg in Resources */,
 				82EA1F41286BCCB900E49D0F /* economy14.jpeg in Resources */,
+				82CE538828E9FA7F00D44A6E /* space.wav in Resources */,
 				8294091527CECB9200AFF603 /* games10.jpeg in Resources */,
 				82CBF24D27D1861F0046E3BE /* ecology4.jpeg in Resources */,
 				829408E927CECA2F00AFF603 /* anatomy7.jpeg in Resources */,

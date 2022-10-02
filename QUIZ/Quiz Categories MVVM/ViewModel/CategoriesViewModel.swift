@@ -37,7 +37,7 @@ class CategoriesViewModel {
     }
     
     func GoToStart(quiz: QuizBaseViewModel, storyboard: UIStoryboard?, view: UIView) {
-        DispatchQueue.main.async {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
             guard let vc = storyboard?.instantiateViewController(identifier: "QuizStartViewController") else {return}
             (vc as? QuizStartViewController)?.base = quiz
             guard let window = view.window else {return}
