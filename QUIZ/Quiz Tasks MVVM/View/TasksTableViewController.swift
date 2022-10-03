@@ -9,7 +9,7 @@ import UIKit
 import SCLAlertView
 
 final class TasksTableViewController: UITableViewController {
-
+    
     @IBOutlet weak var InfoTasksButton: UIBarButtonItem!
     
     var categories = CategoriesViewModel()
@@ -34,6 +34,11 @@ final class TasksTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        if let cell = tableView.cellForRow(at: indexPath) as? TasksTableViewCell {
+            cell.didSelect(indexPath: indexPath)
+        }
+        
         switch(indexPath.row) {
         case 0:  player.Sound(resource: "space.wav")
             categories.GoToStart(quiz: QuizPlanets(), storyboard: storyboard, view: view)

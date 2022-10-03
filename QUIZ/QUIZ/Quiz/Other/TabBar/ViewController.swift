@@ -28,8 +28,8 @@ class ViewController: UITabBarController {
         
         do {
             try? AVAudioSession.sharedInstance().setCategory(.playAndRecord, mode: .default, policy: .default, options: .defaultToSpeaker)
-           } catch  {
-               
+        } catch  {
+            
         }
     }
     
@@ -98,6 +98,7 @@ class ViewController: UITabBarController {
             }
             
             // Навигация по приложению
+            
             if self.text.contains("Новост")  || self.text.contains("новост") {
                 self.selectedIndex = 0
             }
@@ -115,6 +116,7 @@ class ViewController: UITabBarController {
             }
             
             // Выбор категории викторины
+            
             if self.text.contains("Планет")  || self.text.contains("планет") {
                 self.icon = "planets.jpeg"
                 self.button.setImage(UIImage(named: self.icon), for: .normal)

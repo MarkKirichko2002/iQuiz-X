@@ -32,6 +32,11 @@ final class CategoryTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        if let cell = tableView.cellForRow(at: indexPath) as? CategoryTableViewCell {
+               cell.didSelect(indexPath: indexPath)
+        }
+        
         switch(indexPath.row) {
         case 0:  player.Sound(resource: "space.wav")
             categories.GoToStart(quiz: QuizPlanets(), storyboard: storyboard, view: view)
