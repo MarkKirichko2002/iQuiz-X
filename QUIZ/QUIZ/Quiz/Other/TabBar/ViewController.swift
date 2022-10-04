@@ -327,10 +327,12 @@ class ViewController: UITabBarController {
             player.Sound(resource: "click sound.wav")
             startSpeechRecognization()
             button.setImage(UIImage(named: icon), for: .normal)
+            animation.springButton(button: button)
         } else {
             player.Sound(resource: "pause_sound.mp3")
             cancelSpeechRecognization()
             button.setImage(UIImage(named: "halloween.png"), for: .normal)
+            animation.springButton(button: button)
         }
     }
     
