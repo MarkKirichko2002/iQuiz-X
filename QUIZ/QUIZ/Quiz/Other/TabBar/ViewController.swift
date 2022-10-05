@@ -101,18 +101,30 @@ class ViewController: UITabBarController {
             
             if self.text.contains("Новост")  || self.text.contains("новост") {
                 self.selectedIndex = 0
+                self.icon = "newspaper.png"
+                self.button.setImage(UIImage(named: self.icon), for: .normal)
+                self.animation.springButton(button: self.button)
             }
             
             if self.text.contains("Категори")  || self.text.contains("категори") {
                 self.selectedIndex = 1
+                self.icon = "planets.jpeg"
+                self.button.setImage(UIImage(named: self.icon), for: .normal)
+                self.animation.springButton(button: self.button)
             }
             
             if self.text.contains("Куб")  || self.text.contains("куб") {
                 self.selectedIndex = 3
+                self.icon = "trophy.png"
+                self.button.setImage(UIImage(named: self.icon), for: .normal)
+                self.animation.springButton(button: self.button)
             }
             
             if self.text.contains("Проф")  || self.text.contains("проф") {
                 self.selectedIndex = 4
+                self.icon = "user.png"
+                self.button.setImage(UIImage(named: self.icon), for: .normal)
+                self.animation.springButton(button: self.button)
             }
             
             // Выбор категории викторины
@@ -307,32 +319,25 @@ class ViewController: UITabBarController {
     
     
     func cancelSpeechRecognization(){
-        task?.finish()
-        task?.cancel()
-        task = nil
-        
-        request.endAudio()
-        audioEngine.stop()
-        
-        if audioEngine.inputNode.numberOfInputs > 0 {
-            audioEngine.inputNode.removeTap(onBus: 0)
-        }
-        
+        audioEngine.stop() //AVAudioEngine()
+        task?.cancel() //speechRecognizer?.recognitionTask
+        request.endAudio()  //SFSpeechAudioBufferRecognitionRequest?
+        audioEngine.inputNode.removeTap(onBus: 0)
     }
-    
     
     @objc func VoiceCommands(_ sender: UIButton) {
         isStart = !isStart
         if isStart {
             player.Sound(resource: "click sound.wav")
-            startSpeechRecognization()
-            button.setImage(UIImage(named: icon), for: .normal)
+            button.setImage(UIImage(named: "voice.png"), for: .normal)
             animation.springButton(button: button)
+            startSpeechRecognization()
         } else {
             player.Sound(resource: "pause_sound.mp3")
-            cancelSpeechRecognization()
-            button.setImage(UIImage(named: "halloween.png"), for: .normal)
+            self.icon = "halloween.png"
+            button.setImage(UIImage(named: self.icon), for: .normal)
             animation.springButton(button: button)
+            cancelSpeechRecognization()
         }
     }
     

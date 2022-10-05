@@ -1151,16 +1151,10 @@ class QuizBaseViewModel {
     }
     
     func stopSpeechRecognition() {
-        recognitionTask?.finish()
-        recognitionTask?.cancel()
-        recognitionTask  = nil
-        
-        request.endAudio()
-        audioEngine.stop()
-        
-        if audioEngine.inputNode.numberOfInputs > 0 {
-            audioEngine.inputNode.removeTap(onBus: 0)
-        }
+        audioEngine.stop() //AVAudioEngine()
+        recognitionTask?.cancel() //speechRecognizer?.recognitionTask
+        request.endAudio()  //SFSpeechAudioBufferRecognitionRequest?
+        audioEngine.inputNode.removeTap(onBus: 0)
     }
     
     func sayComment(comment: String) {
