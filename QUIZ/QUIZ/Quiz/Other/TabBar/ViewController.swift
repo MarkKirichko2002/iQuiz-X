@@ -336,6 +336,23 @@ class ViewController: UITabBarController {
                 self.player.StopSound(resource: "halloween music.mp3")
             }
             
+            // Узнать текущее время
+            if self.text.contains("Врем") || self.text.contains("врем") {
+                
+                // 1. Choose a date
+                let today = Date()
+                // 2. Pick the date components
+                let hours   = (Calendar.current.component(.hour, from: today))
+                let minutes = (Calendar.current.component(.minute, from: today))
+                
+                self.button.setImage(UIImage(named: ""), for: .normal)
+                self.button.setTitleColor(.black, for: .normal)
+                self.button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 20)
+                self.button.setTitle("\(hours):\(minutes)", for: .normal)
+                self.base.sayComment(comment: "\(hours):\(minutes)")
+                self.animation.springButton(button: self.button)
+            }
+            
         }))
     }
     
