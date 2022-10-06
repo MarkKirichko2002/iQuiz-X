@@ -353,6 +353,11 @@ class ViewController: UITabBarController {
                 self.animation.springButton(button: self.button)
             }
             
+            // выключить распознавание речи
+            if self.text.contains("Стоп") || self.text.contains("Стоп") {
+                self.button.sendActions(for: .touchUpInside)
+            }
+            
         }))
     }
     
