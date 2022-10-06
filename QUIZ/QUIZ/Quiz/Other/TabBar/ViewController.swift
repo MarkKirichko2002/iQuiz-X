@@ -49,6 +49,28 @@ class ViewController: UITabBarController {
     // handle new selection
     func tabChangedTo(selectedIndex: Int) {
         UserDefaults.standard.set(selectedIndex, forKey: "index")
+        switch selectedIndex {
+            
+        case 0:
+            self.icon = "newspaper.png"
+            self.button.setImage(UIImage(named: self.icon), for: .normal)
+            self.animation.springButton(button: self.button)
+        case 1:
+            self.icon = "planets.jpeg"
+            self.button.setImage(UIImage(named: self.icon), for: .normal)
+            self.animation.springButton(button: self.button)
+        case 3:
+            self.icon = "trophy.png"
+            self.button.setImage(UIImage(named: self.icon), for: .normal)
+            self.animation.springButton(button: self.button)
+        case 4:
+            self.icon = "user.png"
+            self.button.setImage(UIImage(named: self.icon), for: .normal)
+            self.animation.springButton(button: self.button)
+        default:
+            break
+            
+        }
     }
     
     func startSpeechRecognization() {
