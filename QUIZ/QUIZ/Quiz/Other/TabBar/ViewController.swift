@@ -23,6 +23,7 @@ class ViewController: UITabBarController {
     var icon = "voice.png"
     var base = QuizBaseViewModel()
     var animation = AnimationClass()
+    let today = Date()
     
     func configureAudioSession() {
         
@@ -339,11 +340,9 @@ class ViewController: UITabBarController {
             // Узнать текущее время
             if self.text.contains("Врем") || self.text.contains("врем") {
                 
-                // 1. Choose a date
-                let today = Date()
-                // 2. Pick the date components
-                let hours   = (Calendar.current.component(.hour, from: today))
-                let minutes = (Calendar.current.component(.minute, from: today))
+                let hours   = (Calendar.current.component(.hour, from: self.today))
+                let minutes = (Calendar.current.component(.minute, from: self.today))
+                let day = (Calendar.current.component(.day, from: self.today))
                 
                 self.button.setImage(UIImage(named: ""), for: .normal)
                 self.button.setTitleColor(.black, for: .normal)
@@ -353,8 +352,19 @@ class ViewController: UITabBarController {
                 self.animation.springButton(button: self.button)
             }
             
+            // Узнать текущий год
+            if self.text.contains("Год") || self.text.contains("год") {
+                let year = (Calendar.current.component(.year, from: self.today))
+                self.button.setImage(UIImage(named: ""), for: .normal)
+                self.button.setTitleColor(.black, for: .normal)
+                self.button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 20)
+                self.button.setTitle("\(year)", for: .normal)
+                self.base.sayComment(comment: "\(year)")
+                self.animation.springButton(button: self.button)
+            }
+            
             // выключить распознавание речи
-            if self.text.contains("Стоп") || self.text.contains("Стоп") {
+            if self.text.contains("Стоп") || self.text.contains("стоп") {
                 self.button.sendActions(for: .touchUpInside)
             }
             
