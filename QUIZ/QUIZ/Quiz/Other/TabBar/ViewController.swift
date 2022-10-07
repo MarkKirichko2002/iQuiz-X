@@ -24,6 +24,7 @@ class ViewController: UITabBarController {
     var base = QuizBaseViewModel()
     var animation = AnimationClass()
     let today = Date()
+    var fb = FBAuth()
     
     func configureAudioSession() {
         
@@ -65,8 +66,10 @@ class ViewController: UITabBarController {
             self.button.setImage(UIImage(named: self.icon), for: .normal)
             self.animation.springButton(button: self.button)
         case 4:
-            self.icon = "user.png"
-            self.button.setImage(UIImage(named: self.icon), for: .normal)
+            self.icon = UserDefaults.standard.value(forKey: "url") as? String ?? ""
+            self.button.layer.cornerRadius = self.button.frame.width / 2
+            self.button.clipsToBounds = true
+            self.button.sd_setImage(with: URL(string: self.icon), for: .normal)
             self.animation.springButton(button: self.button)
         default:
             break
@@ -145,8 +148,10 @@ class ViewController: UITabBarController {
             
             if self.text.contains("Проф")  || self.text.contains("проф") {
                 self.selectedIndex = 4
-                self.icon = "user.png"
-                self.button.setImage(UIImage(named: self.icon), for: .normal)
+                self.icon = UserDefaults.standard.value(forKey: "url") as? String ?? ""
+                self.button.layer.cornerRadius = self.button.frame.width / 2
+                self.button.clipsToBounds = true
+                self.button.sd_setImage(with: URL(string: self.icon), for: .normal)
                 self.animation.springButton(button: self.button)
             }
             
@@ -366,6 +371,13 @@ class ViewController: UITabBarController {
             // выключить распознавание речи
             if self.text.contains("Стоп") || self.text.contains("стоп") {
                 self.button.sendActions(for: .touchUpInside)
+            }
+            
+            // посмотреть на фотографию профиля
+            if self.text.contains("Фото") || self.text.contains("фото") {
+//                self.button.layer.cornerRadius = self.button.frame.width / 2
+//                self.button.clipsToBounds = true
+//                self.button.sd_setImage(with: URL(string: self.fb.GetCurrentUserImage()), for: .normal)
             }
             
         }))

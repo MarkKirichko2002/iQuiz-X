@@ -137,8 +137,7 @@ class FBAuth {
         docRef.getDocument { document, error in
             if let error = error as NSError? {
                 print("Error getting document: \(error.localizedDescription)")
-            }
-            else {
+            } else {
                 if let document = document {
                     let data = document.data()
                     let name = data?["name"] as? String ?? ""
@@ -177,3 +176,4 @@ class FBAuth {
         }
     }
 }
+
