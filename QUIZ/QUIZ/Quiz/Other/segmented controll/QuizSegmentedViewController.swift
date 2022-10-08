@@ -26,6 +26,7 @@ class QuizSegmentedViewController: UIViewController {
         segmentedControl.removeAllSegments()
         segmentedControl.insertSegment(with: UIImage(named: "categories"), at: 0, animated: true)
         segmentedControl.insertSegment(with: UIImage(named: "tasks"), at: 1, animated: true)
+        segmentedControl.insertSegment(with: UIImage(named: "player"), at: 2, animated: true)
         segmentedControl.addTarget(self, action: #selector(selectionDidChange(_:)), for: .valueChanged)
         segmentedControl.selectedSegmentIndex = 0
     }
@@ -59,6 +60,20 @@ class QuizSegmentedViewController: UIViewController {
         
         return viewController
     }()
+    
+    private lazy var quizMediaLibraryTableViewController: QuizMediaLibraryTableViewController = {
+        // Load Storyboard
+        let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+        
+        // Instantiate View Controller
+        var viewController = storyboard.instantiateViewController(withIdentifier: "QuizMediaLibraryTableViewController") as! QuizMediaLibraryTableViewController
+        
+        // Add View Controller as Child View Controller
+        self.add(asChildViewController: viewController)
+        
+        return viewController
+    }()
+    
     private func add(asChildViewController viewController: UITableViewController) {
         // Add Child View Controller
         addChild(viewController)
@@ -89,9 +104,12 @@ class QuizSegmentedViewController: UIViewController {
         if segmentedControl.selectedSegmentIndex == 0 {
             remove(asChildViewController: tasksViewController)
             add(asChildViewController: categoriesViewController)
-        } else  {
+        } else if segmentedControl.selectedSegmentIndex == 1  {
             remove(asChildViewController: categoriesViewController)
             add(asChildViewController: tasksViewController)
+        } else if segmentedControl.selectedSegmentIndex == 2  {
+            remove(asChildViewController: tasksViewController)
+            add(asChildViewController: quizMediaLibraryTableViewController)
         }
     }
     
