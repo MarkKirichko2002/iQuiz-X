@@ -192,7 +192,7 @@ class QuizBaseViewModel {
             counter += 5
             CorrectAnswersCounter += 1
             
-            ScoreStatus.value = ("Счет: \(CorrectAnswersCounter)")
+            ScoreStatus.value = ("Счет: \(CorrectAnswersCounter)/100")
             print("Голос \(check2)")
             
             base?.nextQuestion()
@@ -254,7 +254,7 @@ class QuizBaseViewModel {
             print(AttemptsCounter)
             
             print("Голос \(check2)")
-            ScoreStatus.value = ("Счет: \(String(counter))")
+            ScoreStatus.value = ("Счет: \(String(counter))/100")
             AttemptsCountStatus.value = "Попыток осталось: \(AttemptsCounter)"
             
             write(id: 1, quizpath: "quizplanets", category: "planets")
@@ -430,7 +430,7 @@ class QuizBaseViewModel {
             
             counter += 5
             CorrectAnswersCounter += 1
-            ScoreStatus.value = ("Счет: \(CorrectAnswersCounter)")
+            ScoreStatus.value = ("Счет: \(CorrectAnswersCounter)/100")
             
             base?.nextQuestion()
             write(id: 1, quizpath: "quizplanets", category: "planets")
@@ -500,7 +500,7 @@ class QuizBaseViewModel {
             print(AttemptsCounter)
             
             print("Голос \(check2)")
-            ScoreStatus.value = ("Счет: \(String(counter))")
+            ScoreStatus.value = ("Счет: \(String(counter))/100")
             AttemptsCountStatus.value = "Попыток осталось: \(AttemptsCounter)"
             
             base?.nextQuestion()
@@ -573,7 +573,7 @@ class QuizBaseViewModel {
             counter += 5
             CorrectAnswersCounter += 1
             
-            ScoreStatus.value = ("Счет: \(String(counter))")
+            ScoreStatus.value = ("Счет: \(String(counter))/100")
             animation.springLabel(label: Score.value)
             
             write(id: 1, quizpath: "quizplanets", category: "planets")
@@ -623,7 +623,7 @@ class QuizBaseViewModel {
                 counter = 0
                 AttemptsCounter -= 1
                 UnCorrectAnswersCounter += 1
-                ScoreStatus.value = ("Счет: \(String(counter))")
+                ScoreStatus.value = ("Счет: \(String(counter))/100")
                 AttemptsCountStatus.value = ("Попыток осталось: \(String(AttemptsCounter))")
                 animation.springLabel(label: Attempts.value)
                 
@@ -651,7 +651,7 @@ class QuizBaseViewModel {
                 sender.backgroundColor = UIColor.red
                 AttemptsCounter -= 1
                 UnCorrectAnswersCounter += 1
-                ScoreStatus.value = ("Счет: \(String(counter))")
+                ScoreStatus.value = ("Счет: \(String(counter))/100")
                 AttemptsCountStatus.value = ("Попыток осталось: \(String(AttemptsCounter))")
                 animation.springLabel(label: Attempts.value)
                 
@@ -1012,7 +1012,7 @@ class QuizBaseViewModel {
         
         questionTextStatus.value = ("Вопрос №\(base?.checkQuestionNumber() ?? 0): \(base?.checkQuestion() ?? "")")
         
-        ScoreStatus.value = "Счет: \(counter)"
+        ScoreStatus.value = "Счет: \(counter)/100"
         
         base?.nextQuiz()
         
@@ -1388,12 +1388,12 @@ class QuizBaseViewModel {
                 if counter == 0 && self.Attempts != nil {
                     counter = 0
                     AttemptsCounter -= 1
-                    ScoreStatus.value = ("Счет: \(String(counter))")
+                    ScoreStatus.value = ("Счет: \(String(counter))/100")
                     AttemptsCountStatus.value = ("Попыток осталось: \(String(AttemptsCounter))")
                     animation.springLabel(label: Attempts.value)
                 } else if counter > 0 && self.Attempts != nil {
                     AttemptsCounter -= 1
-                    ScoreStatus.value = ("Счет: \(String(counter))")
+                    ScoreStatus.value = ("Счет: \(String(counter))/100")
                     AttemptsCountStatus.value = ("Попыток осталось: \(String(AttemptsCounter))")
                     animation.springLabel(label: Attempts.value)
                     animation.springLabel(label: Score.value)

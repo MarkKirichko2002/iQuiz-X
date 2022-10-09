@@ -10,6 +10,8 @@ import UIKit
 
 class AnimationClass {
         
+    let rotationAnimation : CABasicAnimation = CABasicAnimation(keyPath: "transform.rotation.z")
+    
     func springLabel(label: UILabel) {
         let animation = CASpringAnimation(keyPath: "transform.scale")
         animation.fromValue = 0
@@ -42,6 +44,17 @@ class AnimationClass {
         animation.beginTime = CACurrentMediaTime() + 0
         button.layer.add(animation, forKey: nil)
     }
-
     
+    func StartRotateImage(image: UIImageView) {
+        rotationAnimation.toValue = NSNumber(value: .pi * 2.0)
+        rotationAnimation.duration = 2.0;
+        rotationAnimation.isCumulative = true;
+        rotationAnimation.repeatCount = .infinity;
+        image.layer.add(rotationAnimation, forKey: "rotationAnimation")
+    }
+    
+    func StopRotateImage(image: UIImageView) {
+        image.layer.removeAnimation(forKey: "rotationAnimation")
+    }
+
 }

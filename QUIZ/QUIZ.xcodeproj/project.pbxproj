@@ -113,9 +113,9 @@
 		8237D9B7286E2A8E0097FE69 /* underwater13.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 8237D9B4286E2A8D0097FE69 /* underwater13.jpeg */; };
 		8237D9B8286E2A8E0097FE69 /* underwater11.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 8237D9B5286E2A8D0097FE69 /* underwater11.jpeg */; };
 		8237D9B9286E2A8E0097FE69 /* underwater12.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 8237D9B6286E2A8D0097FE69 /* underwater12.jpeg */; };
-		8238057F28F1922E0006A736 /* QuizMediatekaTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8238057E28F1922E0006A736 /* QuizMediatekaTableViewController.swift */; };
-		8238058128F1926A0006A736 /* QuizMediatekaTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8238058028F1926A0006A736 /* QuizMediatekaTableViewCell.swift */; };
-		8238058328F192F70006A736 /* QuizMediatekaModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8238058228F192F70006A736 /* QuizMediatekaModel.swift */; };
+		8238057F28F1922E0006A736 /* QuizMediaLibraryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8238057E28F1922E0006A736 /* QuizMediaLibraryTableViewController.swift */; };
+		8238058128F1926A0006A736 /* QuizMediaLibraryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8238058028F1926A0006A736 /* QuizMediaLibraryTableViewCell.swift */; };
+		8238058328F192F70006A736 /* QuizMediaLibraryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8238058228F192F70006A736 /* QuizMediaLibraryModel.swift */; };
 		823A8EB927FF06F600C7965B /* MicrophoneTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 823A8EB827FF06F600C7965B /* MicrophoneTableViewCell.swift */; };
 		823CFF6F27FA1100001FF6D9 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 823CFF6E27FA1100001FF6D9 /* SettingsTableViewController.swift */; };
 		823CFF9327FA1BAF001FF6D9 /* BiometricTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 823CFF9227FA1BAF001FF6D9 /* BiometricTableViewCell.swift */; };
@@ -670,9 +670,9 @@
 		8237D9B4286E2A8D0097FE69 /* underwater13.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = underwater13.jpeg; path = image/ocean/underwater13.jpeg; sourceTree = SOURCE_ROOT; };
 		8237D9B5286E2A8D0097FE69 /* underwater11.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = underwater11.jpeg; path = image/ocean/underwater11.jpeg; sourceTree = SOURCE_ROOT; };
 		8237D9B6286E2A8D0097FE69 /* underwater12.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = underwater12.jpeg; path = image/ocean/underwater12.jpeg; sourceTree = SOURCE_ROOT; };
-		8238057E28F1922E0006A736 /* QuizMediatekaTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizMediatekaTableViewController.swift; sourceTree = "<group>"; };
-		8238058028F1926A0006A736 /* QuizMediatekaTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizMediatekaTableViewCell.swift; sourceTree = "<group>"; };
-		8238058228F192F70006A736 /* QuizMediatekaModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizMediatekaModel.swift; sourceTree = "<group>"; };
+		8238057E28F1922E0006A736 /* QuizMediaLibraryTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizMediaLibraryTableViewController.swift; sourceTree = "<group>"; };
+		8238058028F1926A0006A736 /* QuizMediaLibraryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizMediaLibraryTableViewCell.swift; sourceTree = "<group>"; };
+		8238058228F192F70006A736 /* QuizMediaLibraryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizMediaLibraryModel.swift; sourceTree = "<group>"; };
 		823A8EB827FF06F600C7965B /* MicrophoneTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MicrophoneTableViewCell.swift; sourceTree = "<group>"; };
 		823CFF6E27FA1100001FF6D9 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
 		823CFF9227FA1BAF001FF6D9 /* BiometricTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BiometricTableViewCell.swift; sourceTree = "<group>"; };
@@ -1262,9 +1262,9 @@
 		8238057B28F191B20006A736 /* Quiz media library */ = {
 			isa = PBXGroup;
 			children = (
-				8238057E28F1922E0006A736 /* QuizMediatekaTableViewController.swift */,
-				8238058028F1926A0006A736 /* QuizMediatekaTableViewCell.swift */,
-				8238058228F192F70006A736 /* QuizMediatekaModel.swift */,
+				8238057E28F1922E0006A736 /* QuizMediaLibraryTableViewController.swift */,
+				8238058028F1926A0006A736 /* QuizMediaLibraryTableViewCell.swift */,
+				8238058228F192F70006A736 /* QuizMediaLibraryModel.swift */,
 			);
 			path = "Quiz media library";
 			sourceTree = "<group>";
@@ -2855,14 +2855,14 @@
 				82F0CA8427FDDB04004925D8 /* VideoRecordTableViewCell.swift in Sources */,
 				8243F16F27C2841B00CD9CE4 /* TasksTableViewCell.swift in Sources */,
 				820C627F27BBA3CA004894FA /* AppDelegate.swift in Sources */,
-				8238058328F192F70006A736 /* QuizMediatekaModel.swift in Sources */,
+				8238058328F192F70006A736 /* QuizMediaLibraryModel.swift in Sources */,
 				82C2B5A327BD0E5700C66946 /* ViewController.swift in Sources */,
 				82319E0628E8D1280053CEF5 /* QuizHalloween.swift in Sources */,
 				82CBE8032870D4B40045616B /* TasksViewModel.swift in Sources */,
 				826E12B128009F1300465E16 /* SpeachTableViewCell.swift in Sources */,
 				82900D632801AB9D00742925 /* MusicTableViewCell.swift in Sources */,
 				822B235D27C868390067ED13 /* Player.swift in Sources */,
-				8238058128F1926A0006A736 /* QuizMediatekaTableViewCell.swift in Sources */,
+				8238058128F1926A0006A736 /* QuizMediaLibraryTableViewCell.swift in Sources */,
 				82B760F527CAA04D00540E0F /* CategoryTableViewCell.swift in Sources */,
 				82E0EC8228AC5ABA004AA2E3 /* Event.swift in Sources */,
 				82A1D8C827FB4C3D0044EEA6 /* PhotoTableViewCell.swift in Sources */,
@@ -2875,7 +2875,7 @@
 				824D0C8E280377B100C2BE4B /* TimerTableViewCell.swift in Sources */,
 				82CBF23E27D153AF0046E3BE /* QuizEcology.swift in Sources */,
 				82DF98EC27BCEB4A00548B38 /* QuizAnatomy.swift in Sources */,
-				8238057F28F1922E0006A736 /* QuizMediatekaTableViewController.swift in Sources */,
+				8238057F28F1922E0006A736 /* QuizMediaLibraryTableViewController.swift in Sources */,
 				8283D15127FA209600A71545 /* StatisticTableViewCell.swift in Sources */,
 				82A82B1628A9438200011B6F /* QuizBaseObserver.swift in Sources */,
 				82EDBAB927CCCEFE0099C069 /* QuizGeography.swift in Sources */,

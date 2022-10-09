@@ -337,9 +337,15 @@ class ViewController: UITabBarController {
             
             // Включение/Выключение музыки
             if self.text.contains("Муз")  || self.text.contains("муз") {
+                self.icon = "halloween.png"
+                self.button.setImage(UIImage(named: self.icon), for: .normal)
                 self.player.Sound(resource: "halloween music.mp3")
+                self.animation.StartRotateImage(image: self.button.imageView!)
             } else if self.text.contains("Выкл")  || self.text.contains("выкл") {
+                self.icon = "voice.png"
+                self.button.setImage(UIImage(named: self.icon), for: .normal)
                 self.player.StopSound(resource: "halloween music.mp3")
+                self.animation.StopRotateImage(image: self.button.imageView!)
             }
             
             // Узнать текущее время
@@ -371,13 +377,6 @@ class ViewController: UITabBarController {
             // выключить распознавание речи
             if self.text.contains("Стоп") || self.text.contains("стоп") {
                 self.button.sendActions(for: .touchUpInside)
-            }
-            
-            // посмотреть на фотографию профиля
-            if self.text.contains("Фото") || self.text.contains("фото") {
-//                self.button.layer.cornerRadius = self.button.frame.width / 2
-//                self.button.clipsToBounds = true
-//                self.button.sd_setImage(with: URL(string: self.fb.GetCurrentUserImage()), for: .normal)
             }
             
         }))
