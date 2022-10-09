@@ -163,14 +163,12 @@ class ViewController: UITabBarController {
                 self.animation.springButton(button: self.button)
                 self.player.Sound(resource: "space.wav")
                 self.quizViewModel.GoToStart(quiz: QuizPlanets(), storyboard: self.storyboard, view: self.view)
-                self.cancelSpeechRecognization()
             } else if self.text.contains("Космос")  || self.text.contains("космос") {
                 self.icon = "planets.jpeg"
                 self.button.setImage(UIImage(named: self.icon), for: .normal)
                 self.animation.springButton(button: self.button)
                 self.player.Sound(resource: "space.wav")
                 self.quizViewModel.GoToStart(quiz: QuizPlanets(), storyboard: self.storyboard, view: self.view)
-                self.cancelSpeechRecognization()
             }
             
             if self.text.contains("Истори")  || self.text.contains("истори") {
@@ -179,7 +177,6 @@ class ViewController: UITabBarController {
                 self.animation.springButton(button: self.button)
                 self.player.Sound(resource: "history.wav")
                 self.quizViewModel.GoToStart(quiz: QuizHistory(), storyboard: self.storyboard, view: self.view)
-                self.cancelSpeechRecognization()
             }
             
             if self.text.contains("Анатоми")  || self.text.contains("анатоми") {
@@ -188,7 +185,6 @@ class ViewController: UITabBarController {
                 self.animation.springButton(button: self.button)
                 self.player.Sound(resource: "anatomy.mp3")
                 self.quizViewModel.GoToStart(quiz: QuizAnatomy(), storyboard: self.storyboard, view: self.view)
-                self.cancelSpeechRecognization()
             }
             
             if self.text.contains("Спорт")  || self.text.contains("спорт") {
@@ -197,7 +193,6 @@ class ViewController: UITabBarController {
                 self.animation.springButton(button: self.button)
                 self.player.Sound(resource: "sport.wav")
                 self.quizViewModel.GoToStart(quiz: QuizSport(), storyboard: self.storyboard, view: self.view)
-                self.cancelSpeechRecognization()
             }
             
             if self.text.contains("Игр")  || self.text.contains("игр") {
@@ -206,7 +201,6 @@ class ViewController: UITabBarController {
                 self.animation.springButton(button: self.button)
                 self.player.Sound(resource: "games.mp3")
                 self.quizViewModel.GoToStart(quiz: QuizGames(), storyboard: self.storyboard, view: self.view)
-                self.cancelSpeechRecognization()
             }
             
             if self.text.contains("Интеллект")  || self.text.contains("интеллект") {
@@ -215,7 +209,6 @@ class ViewController: UITabBarController {
                 self.animation.springButton(button: self.button)
                 self.player.Sound(resource: "IQ.mp3")
                 self.quizViewModel.GoToStart(quiz: QuizIQ(), storyboard: self.storyboard, view: self.view)
-                self.cancelSpeechRecognization()
             }
             
             if self.text.contains("Эконом")  || self.text.contains("эконом") {
@@ -224,7 +217,6 @@ class ViewController: UITabBarController {
                 self.animation.springButton(button: self.button)
                 self.player.Sound(resource: "economics.mp3")
                 self.quizViewModel.GoToStart(quiz: QuizEconomy(), storyboard: self.storyboard, view: self.view)
-                self.cancelSpeechRecognization()
             }
             
             if self.text.contains("Географи")  || self.text.contains("географи") {
@@ -233,7 +225,6 @@ class ViewController: UITabBarController {
                 self.animation.springButton(button: self.button)
                 self.player.Sound(resource: "geography.mp3")
                 self.quizViewModel.GoToStart(quiz: QuizGeography(), storyboard: self.storyboard, view: self.view)
-                self.cancelSpeechRecognization()
             }
             
             if self.text.contains("Экологи")  || self.text.contains("экологи") {
@@ -242,7 +233,6 @@ class ViewController: UITabBarController {
                 self.animation.springButton(button: self.button)
                 self.player.Sound(resource: "ecology.wav")
                 self.quizViewModel.GoToStart(quiz: QuizEcology(), storyboard: self.storyboard, view: self.view)
-                self.cancelSpeechRecognization()
             }
             
             if self.text.contains("Физ")  || self.text.contains("физ") {
@@ -251,7 +241,6 @@ class ViewController: UITabBarController {
                 self.animation.springButton(button: self.button)
                 self.player.Sound(resource: "physics.mp3")
                 self.quizViewModel.GoToStart(quiz: QuizPhysics(), storyboard: self.storyboard, view: self.view)
-                self.cancelSpeechRecognization()
             }
             
             if self.text.contains("Хим")  || self.text.contains("хим") {
@@ -260,7 +249,6 @@ class ViewController: UITabBarController {
                 self.animation.springButton(button: self.button)
                 self.player.Sound(resource: "chemistry.mp3")
                 self.quizViewModel.GoToStart(quiz: QuizChemistry(), storyboard: self.storyboard, view: self.view)
-                self.cancelSpeechRecognization()
             }
             
             if self.text.contains("Информа")  || self.text.contains("информа") {
@@ -269,7 +257,6 @@ class ViewController: UITabBarController {
                 self.animation.springButton(button: self.button)
                 self.player.Sound(resource: "informatics.mp3")
                 self.quizViewModel.GoToStart(quiz: QuizInformatics(), storyboard: self.storyboard, view: self.view)
-                self.cancelSpeechRecognization()
             }
             
             if self.text.contains("Литера")  || self.text.contains("литера") {
@@ -278,7 +265,6 @@ class ViewController: UITabBarController {
                 self.animation.springButton(button: self.button)
                 self.player.Sound(resource: "literature.mp3")
                 self.quizViewModel.GoToStart(quiz: QuizLiterature(), storyboard: self.storyboard, view: self.view)
-                self.cancelSpeechRecognization()
             }
             
             if self.text.contains("Дорог")  || self.text.contains("дорог") {
@@ -287,7 +273,6 @@ class ViewController: UITabBarController {
                 self.animation.springButton(button: self.button)
                 self.player.Sound(resource: "roadtraffic.mp3")
                 self.quizViewModel.GoToStart(quiz: QuizRoadTraffic(), storyboard: self.storyboard, view: self.view)
-                self.cancelSpeechRecognization()
             }
             
             if self.text.contains("Swift")  || self.text.contains("swift") {
@@ -296,7 +281,6 @@ class ViewController: UITabBarController {
                 self.animation.springButton(button: self.button)
                 self.player.Sound(resource: "swift.mp3")
                 self.quizViewModel.GoToStart(quiz: QuizSwift(), storyboard: self.storyboard, view: self.view)
-                self.cancelSpeechRecognization()
             }
             
             if self.text.contains("Мор")  || self.text.contains("мор") {
@@ -305,7 +289,6 @@ class ViewController: UITabBarController {
                 self.animation.springButton(button: self.button)
                 self.player.Sound(resource: "underwater.wav")
                 self.quizViewModel.GoToStart(quiz: QuizUnderwater(), storyboard: self.storyboard, view: self.view)
-                self.cancelSpeechRecognization()
             }
             
             if self.text.contains("Шахмат")  || self.text.contains("шахмат") {
@@ -314,7 +297,6 @@ class ViewController: UITabBarController {
                 self.animation.springButton(button: self.button)
                 self.player.Sound(resource: "chess.mp3")
                 self.quizViewModel.GoToStart(quiz: QuizChess(), storyboard: self.storyboard, view: self.view)
-                self.cancelSpeechRecognization()
             }
             
             if self.text.contains("Halloween")  || self.text.contains("halloween") {
@@ -323,7 +305,6 @@ class ViewController: UITabBarController {
                 self.animation.springButton(button: self.button)
                 self.player.Sound(resource: "halloween.wav")
                 self.quizViewModel.GoToStart(quiz: QuizHalloween(), storyboard: self.storyboard, view: self.view)
-                self.cancelSpeechRecognization()
             }
             
             if self.text.contains("Рандом")  || self.text.contains("рандом") {
@@ -332,7 +313,6 @@ class ViewController: UITabBarController {
                 self.animation.springButton(button: self.button)
                 self.player.Sound(resource: "dice.wav")
                 self.quizViewModel.PresentRandomQuiz(storyboard: self.storyboard, view: self.view)
-                self.cancelSpeechRecognization()
             }
             
             // Включение/Выключение музыки
@@ -421,6 +401,11 @@ class ViewController: UITabBarController {
         super.viewDidLayoutSubviews()
         button.frame = CGRect.init(x: self.tabBar.center.x - 32, y: self.view.bounds.height - 100, width: 64, height: 64)
         button.layer.cornerRadius = 32
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        self.cancelSpeechRecognization()
     }
     
     override func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
