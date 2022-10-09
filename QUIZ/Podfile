@@ -6,11 +6,13 @@ target 'QUIZ' do
   use_frameworks!
 
   # Pods for QUIZ
-	pod 'SCLAlertView'
+  pod 'SCLAlertView'
   pod 'Firebase/Auth'
   pod 'Firebase/Database'
   pod 'Firebase/Firestore'
   pod 'Firebase/Storage'
   pod 'Alamofire'
   pod 'SDWebImage' 
+  pod 'RxSwift'
+  pod 'RxCocoa'
 end

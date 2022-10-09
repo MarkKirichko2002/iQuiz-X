@@ -521,8 +521,7 @@ class LoginViewController: UIViewController {
                 return
             }
             
-            
-            
+
             let defaults = UserDefaults.standard
             
             let email = defaults.set(self?.loginTextField.text, forKey: "email")

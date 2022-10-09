@@ -23,6 +23,8 @@
 		820C629D27BBCD29004894FA /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820C629C27BBCD29004894FA /* LoginViewController.swift */; };
 		820C62A827BBDAC4004894FA /* QuizHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820C62A727BBDAC4004894FA /* QuizHistory.swift */; };
 		820C62AE27BC22AA004894FA /* QuizPlanets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820C62AD27BC22AA004894FA /* QuizPlanets.swift */; };
+		820D303B28F340710031CFCD /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820D303A28F340710031CFCD /* Profile.swift */; };
+		820D303D28F340E80031CFCD /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820D303C28F340E80031CFCD /* ProfileViewModel.swift */; };
 		821120E72822EC4D009C2801 /* PauseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 821120E62822EC4D009C2801 /* PauseTableViewController.swift */; };
 		821120E92822EE5E009C2801 /* CurrentCategoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 821120E82822EE5E009C2801 /* CurrentCategoryTableViewCell.swift */; };
 		8213BF7127D6AAC800D07512 /* QuizPhysics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8213BF7027D6AAC800D07512 /* QuizPhysics.swift */; };
@@ -581,6 +583,8 @@
 		820C629C27BBCD29004894FA /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		820C62A727BBDAC4004894FA /* QuizHistory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizHistory.swift; sourceTree = "<group>"; };
 		820C62AD27BC22AA004894FA /* QuizPlanets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizPlanets.swift; sourceTree = "<group>"; };
+		820D303A28F340710031CFCD /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
+		820D303C28F340E80031CFCD /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 		821120E62822EC4D009C2801 /* PauseTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PauseTableViewController.swift; sourceTree = "<group>"; };
 		821120E82822EE5E009C2801 /* CurrentCategoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentCategoryTableViewCell.swift; sourceTree = "<group>"; };
 		8213BF7027D6AAC800D07512 /* QuizPhysics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizPhysics.swift; sourceTree = "<group>"; };
@@ -1139,9 +1143,9 @@
 		820C627227BBA3CA004894FA = {
 			isa = PBXGroup;
 			children = (
+				82E91ECD27F6840B003D7E80 /* ml */,
 				82CE538F28EA076C00D44A6E /* FB */,
 				825F0D0927F9FF5100E7BF4D /* Shim */,
-				82E91ECD27F6840B003D7E80 /* ml */,
 				8209F79A2847F2390093147A /* SplashScreen */,
 				82A82AE128A92BB100011B6F /* QuizBase MVVM Observable */,
 				82CBE8062870DE1A0045616B /* Players MVVM Combine */,
@@ -1187,6 +1191,31 @@
 				82DF98E427BCE73700548B38 /* Other */,
 			);
 			path = Quiz;
+			sourceTree = "<group>";
+		};
+		820D303728F3403F0031CFCD /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				820D303C28F340E80031CFCD /* ProfileViewModel.swift */,
+			);
+			name = ViewModel;
+			path = ../Profile/ViewModel;
+			sourceTree = "<group>";
+		};
+		820D303828F340490031CFCD /* View */ = {
+			isa = PBXGroup;
+			children = (
+				82C2B5A427BD115A00C66946 /* ProfileViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		820D303928F3404D0031CFCD /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				820D303A28F340710031CFCD /* Profile.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		8213BF7227D6AB4500D07512 /* Physics */ = {
@@ -1308,12 +1337,14 @@
 			path = Auth;
 			sourceTree = "<group>";
 		};
-		823CFF7327FA1149001FF6D9 /* Profile */ = {
+		823CFF7327FA1149001FF6D9 /* Profile MVVM + RxSwift */ = {
 			isa = PBXGroup;
 			children = (
-				82C2B5A427BD115A00C66946 /* ProfileViewController.swift */,
+				820D303928F3404D0031CFCD /* Model */,
+				820D303828F340490031CFCD /* View */,
+				820D303728F3403F0031CFCD /* ViewModel */,
 			);
-			path = Profile;
+			path = "Profile MVVM + RxSwift";
 			sourceTree = "<group>";
 		};
 		824419AA286E500B00203DBA /* Ocean */ = {
@@ -2226,7 +2257,7 @@
 				823CFF7027FA1117001FF6D9 /* Start */,
 				8261BC1F27E10EF30089CC94 /* Statistics */,
 				823CFF7127FA1126001FF6D9 /* Auth */,
-				823CFF7327FA1149001FF6D9 /* Profile */,
+				823CFF7327FA1149001FF6D9 /* Profile MVVM + RxSwift */,
 			);
 			path = Other;
 			sourceTree = "<group>";
@@ -2857,6 +2888,7 @@
 				820C627F27BBA3CA004894FA /* AppDelegate.swift in Sources */,
 				8238058328F192F70006A736 /* QuizMediaLibraryModel.swift in Sources */,
 				82C2B5A327BD0E5700C66946 /* ViewController.swift in Sources */,
+				820D303D28F340E80031CFCD /* ProfileViewModel.swift in Sources */,
 				82319E0628E8D1280053CEF5 /* QuizHalloween.swift in Sources */,
 				82CBE8032870D4B40045616B /* TasksViewModel.swift in Sources */,
 				826E12B128009F1300465E16 /* SpeachTableViewCell.swift in Sources */,
@@ -2908,6 +2940,7 @@
 				82CBE7FB2870A94E0045616B /* CategoriesTableViewCellModel.swift in Sources */,
 				823CFF9327FA1BAF001FF6D9 /* BiometricTableViewCell.swift in Sources */,
 				8209F79C2847F2600093147A /* SplashScreenController.swift in Sources */,
+				820D303B28F340710031CFCD /* Profile.swift in Sources */,
 				8261BC2227E10F1B0089CC94 /* TotalTableViewController.swift in Sources */,
 				822F6C1927BD4AFC0033803A /* BaseTotalQuizViewController.swift in Sources */,
 				82EA02A528240872008A0240 /* RestartTableViewCell.swift in Sources */,

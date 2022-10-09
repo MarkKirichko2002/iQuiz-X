@@ -18,6 +18,24 @@ class FBAuth {
     var view = UIView()
     let storage = Storage.storage().reference()
     
+    var image = ""
+    
+    func LoadProfileImage()-> String {
+        let docRef = db.collection("users").document((Auth.auth().currentUser?.email) ?? "")
+        docRef.getDocument { document, error in
+            if let error = error as NSError? {
+                print("Error getting document: \(error.localizedDescription)")
+            } else {
+                if let document = document {
+                    let data = document.data()
+                    let image = data?["image"] as? String
+                    self.image = image ?? ""
+                }
+            }
+        }
+        return image
+    }
+    
     func load(profileimage: UIImageView) {
         guard let urlString = UserDefaults.standard.value(forKey: "url") as? String,
               let url = URL(string: urlString) else {
@@ -33,7 +51,6 @@ class FBAuth {
             DispatchQueue.main.async {
                 let image = UIImage(data: data)
                 profileimage.image = image
-                
             }
         })
         

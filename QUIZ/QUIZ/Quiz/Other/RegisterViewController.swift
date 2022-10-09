@@ -234,10 +234,7 @@ class RegisterViewController: UIViewController, UIImagePickerControllerDelegate,
                         return
                     }
                     
-                    
-                    
                     self.urlString = url.absoluteString
-                    
                     
                     DispatchQueue.main.async {
                         self.Image.image = image
