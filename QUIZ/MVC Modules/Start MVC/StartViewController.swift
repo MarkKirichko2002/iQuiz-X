@@ -40,7 +40,6 @@ class StartViewController: UIViewController {
         
         StartButton.layer.cornerRadius = StartButton.frame.size.width / 10
         StartButton.clipsToBounds = true
-        StartButton.flash()
         
         StartButton.layer.borderWidth = 2
         StartButton.layer.borderColor = UIColor.black.cgColor

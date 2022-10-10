@@ -10,7 +10,7 @@ import SDWebImage
 import RxSwift
 import RxCocoa
 
-class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class ProfileViewController: UIViewController {
     
     @IBOutlet weak var ProfileImage: UIImageView!
     @IBOutlet weak var EmailLabel: UILabel!
@@ -20,12 +20,11 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
     
     var profileViewModel = ProfileViewModel()
     var disposeBag = DisposeBag()
-    var fb = FBAuth()
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         DispatchQueue.main.async {
-            self.ProfileImage.sd_setImage(with: URL(string: self.fb.LoadProfileImage()))
+            self.ProfileImage.sd_setImage(with: URL(string: UserDefaults.standard.object(forKey: "url") as? String ?? ""))
         }
     }
     

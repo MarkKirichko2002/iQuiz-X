@@ -102,6 +102,10 @@
                                                 <constraint firstAttribute="width" constant="100" id="bgU-Hn-64g"/>
                                             </constraints>
                                         </imageView>
+                                        <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="81I-01-mSg">
+                                            <rect key="frame" x="46" y="29" width="94" height="32"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        </stepper>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yCK-8b-owl">
                                             <rect key="frame" x="152" y="19" width="240" height="24"/>
                                             <fontDescription key="fontDescription" type="system" weight="black" pointSize="20"/>
@@ -174,7 +178,7 @@
                     </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="ehL-FL-StP">
-                        <rect key="frame" x="0.0" y="47" width="428" height="104.33333333333334"/>
+                        <rect key="frame" x="0.0" y="47" width="428" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -271,7 +275,7 @@
                     </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="1EA-1C-7wQ">
-                        <rect key="frame" x="0.0" y="47" width="428" height="104.33333333333334"/>
+                        <rect key="frame" x="0.0" y="47" width="428" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -427,7 +431,7 @@
                                 <rect key="frame" x="20" y="47" width="388" height="845"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qba-yu-yEJ">
-                                        <rect key="frame" x="0.0" y="0.0" width="388" height="64.333333333333329"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="388" height="64.666666666666671"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" image="pause ">
@@ -439,31 +443,31 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="запись не идет" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="29X-4T-rV6">
-                                        <rect key="frame" x="0.0" y="66.333333333333329" width="388" height="36.666666666666671"/>
+                                        <rect key="frame" x="0.0" y="66.666666666666671" width="388" height="36.666666666666671"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="1000" text="Счет: 0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zEj-7B-e44">
-                                        <rect key="frame" x="0.0" y="105" width="388" height="18"/>
+                                        <rect key="frame" x="0.0" y="105.33333333333334" width="388" height="18"/>
                                         <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="15"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Осталось: cекунд" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Ru-JJ-yL5">
-                                        <rect key="frame" x="0.0" y="125.00000000000001" width="388" height="30.666666666666671"/>
+                                        <rect key="frame" x="0.0" y="125.33333333333336" width="388" height="30.666666666666671"/>
                                         <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="15"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Попыток осталось: 5" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a4I-E9-SEl">
-                                        <rect key="frame" x="0.0" y="157.66666666666666" width="388" height="30.333333333333343"/>
+                                        <rect key="frame" x="0.0" y="158" width="388" height="30.666666666666657"/>
                                         <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="15"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JQw-sR-HWK">
-                                        <rect key="frame" x="0.0" y="190" width="388" height="64.666666666666686"/>
+                                        <rect key="frame" x="0.0" y="190.66666666666666" width="388" height="64.666666666666657"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" image="hints button" title=" 5">
                                             <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -473,7 +477,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hgj-ZP-Gy5">
-                                        <rect key="frame" x="0.0" y="256.66666666666669" width="388" height="58"/>
+                                        <rect key="frame" x="0.0" y="257.33333333333331" width="388" height="58.333333333333314"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="пропустить вопрос">
                                             <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -483,7 +487,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r5m-Be-neT">
-                                        <rect key="frame" x="0.0" y="316.66666666666669" width="388" height="64.333333333333314"/>
+                                        <rect key="frame" x="0.0" y="317.66666666666669" width="388" height="64.666666666666686"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" image="music button selected" title=" space music.mp3"/>
@@ -492,7 +496,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JL2-Oi-uPY">
-                                        <rect key="frame" x="0.0" y="383" width="388" height="64.333333333333314"/>
+                                        <rect key="frame" x="0.0" y="384.33333333333331" width="388" height="64.666666666666686"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" image="button:JL2-Oi-uPY:image"/>
@@ -501,13 +505,13 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalCompressionResistancePriority="1000" text="Question Text" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d9N-E7-PtI">
-                                        <rect key="frame" x="0.0" y="449.33333333333331" width="388" height="39"/>
+                                        <rect key="frame" x="0.0" y="451" width="388" height="39"/>
                                         <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="19"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="4p8-ZG-3rZ">
-                                        <rect key="frame" x="0.0" y="490.33333333333343" width="388" height="108.66666666666669"/>
+                                        <rect key="frame" x="0.0" y="492" width="388" height="107"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </imageView>
                                     <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Piy-OE-AAF">
@@ -594,7 +598,7 @@
                     </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="BBW-Fp-iCQ">
-                        <rect key="frame" x="0.0" y="47" width="428" height="104.33333333333334"/>
+                        <rect key="frame" x="0.0" y="47" width="428" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -1017,7 +1021,7 @@
                                                     <color key="titleColor" systemColor="systemBackgroundColor"/>
                                                 </state>
                                                 <connections>
-                                                    <action selector="login:" destination="5cK-aP-zcd" eventType="touchUpInside" id="5b7-jN-fJJ"/>
+                                                    <action selector="login:" destination="5cK-aP-zcd" eventType="touchUpInside" id="tVx-eo-pL2"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ck7-JU-bpT">
@@ -1028,7 +1032,7 @@
                                                     <color key="titleColor" systemColor="systemBackgroundColor"/>
                                                 </state>
                                                 <connections>
-                                                    <action selector="register" destination="5cK-aP-zcd" eventType="touchUpInside" id="4tw-R3-XXb"/>
+                                                    <action selector="register" destination="5cK-aP-zcd" eventType="touchUpInside" id="nKx-hk-3jX"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mdu-oE-0gl">
@@ -1043,7 +1047,6 @@
                                                     <color key="titleColor" systemColor="systemBackgroundColor"/>
                                                 </state>
                                                 <connections>
-                                                    <action selector="login:" destination="5cK-aP-zcd" eventType="touchUpInside" id="xhc-r3-g7V"/>
                                                     <action selector="useBiometricsWithSender:" destination="5cK-aP-zcd" eventType="touchUpInside" id="HgT-Iz-fKM"/>
                                                 </connections>
                                             </button>
@@ -2515,7 +2518,7 @@
                     <navigationItem key="navigationItem" id="ijf-sf-fMe"/>
                     <connections>
                         <outlet property="CommentLabel" destination="7w9-7t-X2u" id="cXr-Bd-eYn"/>
-                        <outlet property="CorrectAnswers" destination="fkP-Ei-OjK" id="qij-ZI-mCL"/>
+                        <outlet property="CorrectAnswers" destination="fkP-Ei-OjK" id="oC2-Cw-Zuv"/>
                         <outlet property="ExitButton" destination="8f8-Bw-uKl" id="IGN-CH-hkB"/>
                         <outlet property="Image" destination="gQI-k6-exZ" id="tvr-me-x5w"/>
                         <outlet property="RetryButton" destination="2DM-0F-wHV" id="hNW-zL-Pay"/>
