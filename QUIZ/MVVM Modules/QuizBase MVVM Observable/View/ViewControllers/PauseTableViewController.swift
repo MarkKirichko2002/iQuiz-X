@@ -33,7 +33,6 @@ class PauseTableViewController: UITableViewController {
         super.viewDidLoad()
     }
     
-
     func exit() {
         DispatchQueue.main.async {
             guard let vc = self.storyboard?.instantiateViewController(identifier: "ViewController") else {return}
@@ -44,7 +43,12 @@ class PauseTableViewController: UITableViewController {
     }
     
     func restart() {
-        categoryViewModel.goToQuize(quiz: currentquiz ?? QuizPlanets(), storyboard: self.storyboard, view: self.view)
+        DispatchQueue.main.async {
+            self.currentquiz?.stopSpeechRecognition()
+            self.currentquiz?.captureSession.stopRunning()
+            self.currentquiz?.questionNumber = 0
+            self.categoryViewModel.GoToStart(quiz: self.currentquiz ?? QuizPlanets(), storyboard: self.storyboard, view: self.view)
+        }
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -57,10 +61,10 @@ class PauseTableViewController: UITableViewController {
         case 0: print("category")
             
         case 1: print("restart")
-                restart()
+            restart()
             
         case 2: print("exit")
-                exit()
+            exit()
             
         default: break
             

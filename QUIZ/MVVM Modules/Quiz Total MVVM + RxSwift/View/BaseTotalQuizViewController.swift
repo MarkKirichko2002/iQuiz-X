@@ -22,6 +22,7 @@ class BaseTotalQuizViewController: UIViewController {
 
     var quizResultViewModel = QuizResultViewModel()
     var disposeBag = DisposeBag()
+    var quizBaseViewModel: QuizBaseViewModel?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,6 +53,13 @@ class BaseTotalQuizViewController: UIViewController {
         ExitButton.clipsToBounds = true
         RetryButton.layer.cornerRadius = RetryButton.frame.size.width / 5
         RetryButton.clipsToBounds = true
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+            self.quizBaseViewModel?.stopSpeechRecognition()
+        }
     }
     
     

@@ -999,8 +999,9 @@ class QuizBaseViewModel {
             self.stopMusic(id: 17, resource: "chess music.mp3")
             self.stopMusic(id: 18, resource: "halloween music.mp3")
             
-            let vc = self.storyboard?.instantiateViewController(identifier: "BaseTotalQuizViewController")
+            let vc = self.storyboard?.instantiateViewController(identifier: "BaseTotalQuizViewController") as? BaseTotalQuizViewController
             guard let window = self.view?.window else {return}
+            vc?.quizBaseViewModel = self.base
             window.rootViewController = vc
         }
     }
@@ -1067,6 +1068,12 @@ class QuizBaseViewModel {
         } catch {
             print("Could not create video device input")
             return
+        }
+        
+        if let inputs = captureSession.inputs as? [AVCaptureDeviceInput] {
+            for input in inputs {
+                captureSession.removeInput(input)
+            }
         }
         
         captureSession.beginConfiguration()
