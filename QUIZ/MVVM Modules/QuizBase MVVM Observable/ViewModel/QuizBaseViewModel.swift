@@ -1131,6 +1131,10 @@ class QuizBaseViewModel {
             check2 = ""
             self.ShowAnswer()
             
+        case _ where check2.contains("След") || check2.contains("след"):
+            check2 = ""
+            self.SkipQuestion()
+            
          default:
             check2 = ""
         }
