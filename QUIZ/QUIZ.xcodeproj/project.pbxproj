@@ -1228,7 +1228,6 @@
 			children = (
 				823CFF6D27FA10DC001FF6D9 /* Settings MVC */,
 				8290FCA327FCC15B00E05DDA /* TabBar MVC */,
-				82CF0D3828A583C3006B53F4 /* StartQuiz MVC */,
 				823CFF7027FA1117001FF6D9 /* Start MVC */,
 				823CFF7127FA1126001FF6D9 /* Auth MVC */,
 			);
@@ -2293,17 +2292,18 @@
 			path = FB;
 			sourceTree = "<group>";
 		};
-		82CF0D3828A583C3006B53F4 /* StartQuiz MVC */ = {
+		82CF0D3828A583C3006B53F4 /* StartQuiz */ = {
 			isa = PBXGroup;
 			children = (
 				82CF0D3928A583D9006B53F4 /* QuizStartViewController.swift */,
 			);
-			path = "StartQuiz MVC";
+			path = StartQuiz;
 			sourceTree = "<group>";
 		};
 		82DF98E427BCE73700548B38 /* Other Modules */ = {
 			isa = PBXGroup;
 			children = (
+				82CF0D3828A583C3006B53F4 /* StartQuiz */,
 				8209F79A2847F2390093147A /* SplashScreen */,
 				8238057B28F191B20006A736 /* Quiz media library */,
 				82222A2B288C801900C1954D /* segmented controll */,

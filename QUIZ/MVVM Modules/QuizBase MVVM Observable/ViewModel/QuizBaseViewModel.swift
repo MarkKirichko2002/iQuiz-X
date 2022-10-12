@@ -130,11 +130,10 @@ class QuizBaseViewModel {
     var view: UIView?
     
     func SkipQuestion() {
-        self.base?.questionNumber += 1
-        self.updateUI()
         
-        if self.base?.questionNumber == 19 {
-            SCLAlertView().showWarning("Внимание!", subTitle: "Это последний вопрос")
+        if self.base?.questionNumber ?? 0 < 19 {
+            self.base?.questionNumber += 1
+            self.updateUI()
         }
     }
     
@@ -1104,50 +1103,41 @@ class QuizBaseViewModel {
         
         switch check2 {
 
-        case "один":
+        case _ where check2.contains("один") || check2.contains("Один"):
             check2 = base?.checkChoices()[0] ?? ""
             questionTextStatus.value = ("Ваш ответ: \(check2)")
-
-        case "Один":
+            
+        case _ where check2.contains("два") || check2.contains("Два"):
+            check2 = base?.checkChoices()[1] ?? ""
+            questionTextStatus.value = ("Ваш ответ: \(check2)")
+            
+        case _ where check2.contains("три") || check2.contains("Три"):
+            check2 = base?.checkChoices()[2] ?? ""
+            questionTextStatus.value = ("Ваш ответ: \(check2)")
+            
+        case _ where check2.contains("перв") || check2.contains("Перв"):
             check2 = base?.checkChoices()[0] ?? ""
             questionTextStatus.value = ("Ваш ответ: \(check2)")
-
-        case "два":
+            
+        case _ where check2.contains("втор") || check2.contains("Втор"):
             check2 = base?.checkChoices()[1] ?? ""
             questionTextStatus.value = ("Ваш ответ: \(check2)")
-
-        case "Два":
-            check2 = base?.checkChoices()[1] ?? ""
-            questionTextStatus.value = ("Ваш ответ: \(check2)")
-
-        case "три":
+            
+        case _ where check2.contains("трет") || check2.contains("Трет"):
             check2 = base?.checkChoices()[2] ?? ""
             questionTextStatus.value = ("Ваш ответ: \(check2)")
-
-        case "Три":
-            check2 = base?.checkChoices()[2] ?? ""
-            questionTextStatus.value = ("Ваш ответ: \(check2)")
-
-        default:
-            break
+            
+        case _ where check2.contains("решение") || check2.contains("Решение"):
+            check2 = ""
+            self.ShowAnswer()
+            
+         default:
+            check2 = ""
         }
         
-        if check2.contains("перв") || check2.contains("Перв") {
-            check2 = base?.checkChoices()[0] ?? ""
-            questionTextStatus.value = ("Ваш ответ: \(check2)")
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+            self.AdvancedSpeechRecognition()
         }
-        
-        if check2.contains("втор") || check2.contains("Втор") {
-            check2 = base?.checkChoices()[1] ?? ""
-            questionTextStatus.value = ("Ваш ответ: \(check2)")
-        }
-        
-        if check2.contains("трет") || check2.contains("Трет") {
-            check2 = base?.checkChoices()[2] ?? ""
-            questionTextStatus.value = ("Ваш ответ: \(check2)")
-        }
-        
-        self.AdvancedSpeechRecognition()
     }
     
     func stopSpeechRecognition() {
