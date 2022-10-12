@@ -186,6 +186,8 @@
 		827F8A0C28283F2E00760D56 /* weather.png in Resources */ = {isa = PBXBuildFile; fileRef = 827F8A0B28283F2E00760D56 /* weather.png */; };
 		827F8C0E27E81B7400F6D7B3 /* SoundClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827F8C0D27E81B7400F6D7B3 /* SoundClass.swift */; };
 		827F8C1027E81BDF00F6D7B3 /* physics8.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 827F8C0F27E81BDF00F6D7B3 /* physics8.jpeg */; };
+		82826F5B28F74017008798D5 /* newspaper.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 82826F5A28F74016008798D5 /* newspaper.mp3 */; };
+		82826F5D28F74189008798D5 /* league.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 82826F5C28F74189008798D5 /* league.mp3 */; };
 		8283D15127FA209600A71545 /* StatisticTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8283D15027FA209600A71545 /* StatisticTableViewCell.swift */; };
 		8283D15327FA217200A71545 /* FBAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8283D15227FA217200A71545 /* FBAuth.swift */; };
 		82848D05281C6F4C0068A4AE /* literature.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 82848CF5281C6F4B0068A4AE /* literature.jpeg */; };
@@ -746,6 +748,8 @@
 		827F8A0B28283F2E00760D56 /* weather.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = weather.png; sourceTree = "<group>"; };
 		827F8C0D27E81B7400F6D7B3 /* SoundClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundClass.swift; sourceTree = "<group>"; };
 		827F8C0F27E81BDF00F6D7B3 /* physics8.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = physics8.jpeg; sourceTree = "<group>"; };
+		82826F5A28F74016008798D5 /* newspaper.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = newspaper.mp3; sourceTree = "<group>"; };
+		82826F5C28F74189008798D5 /* league.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = league.mp3; path = ../../../../../Downloads/league.mp3; sourceTree = "<group>"; };
 		8283D15027FA209600A71545 /* StatisticTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticTableViewCell.swift; sourceTree = "<group>"; };
 		8283D15227FA217200A71545 /* FBAuth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBAuth.swift; sourceTree = "<group>"; };
 		82848CF5281C6F4B0068A4AE /* literature.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = literature.jpeg; sourceTree = "<group>"; };
@@ -2233,11 +2237,13 @@
 		82CE535B28E9D43100D44A6E /* ui sounds */ = {
 			isa = PBXGroup;
 			children = (
+				82826F5C28F74189008798D5 /* league.mp3 */,
 				82CD6BF1288851FB00716443 /* click sound.wav */,
 				82EA1E96286BCB3100E49D0F /* future click sound.wav */,
 				823D9F7228247F6F00EC0FE7 /* pause_sound.mp3 */,
 				82848D53281DACA90068A4AE /* spring.mp3 */,
 				823D9F742825694800EC0FE7 /* lock_sound.mp3 */,
+				82826F5A28F74016008798D5 /* newspaper.mp3 */,
 			);
 			path = "ui sounds";
 			sourceTree = "<group>";
@@ -2517,6 +2523,7 @@
 				82EA1EDD286BCBF400E49D0F /* photo.png in Resources */,
 				822139282874E8250065A0C3 /* underwater.png in Resources */,
 				82848D30281C6F5B0068A4AE /* physics.background.jpeg in Resources */,
+				82826F5D28F74189008798D5 /* league.mp3 in Resources */,
 				82EA1EA7286BCB6000E49D0F /* literature8.jpeg in Resources */,
 				82CE538228E9F22F00D44A6E /* informatics.mp3 in Resources */,
 				827D4B41281FED88007B3895 /* informatics6.jpeg in Resources */,
@@ -2593,6 +2600,7 @@
 				82EA1F7E286BCD0600E49D0F /* sport17.jpeg in Resources */,
 				8237D9A0286D15D50097FE69 /* underwater5.jpeg in Resources */,
 				8294092427CECCA900AFF603 /* IQ7.jpeg in Resources */,
+				82826F5B28F74017008798D5 /* newspaper.mp3 in Resources */,
 				82319E2D28E8F1C40053CEF5 /* halloween16.jpeg in Resources */,
 				8244DCF927E39D8500F5C59B /* informatics1.jpeg in Resources */,
 				8294091227CECB9200AFF603 /* games2.jpeg in Resources */,

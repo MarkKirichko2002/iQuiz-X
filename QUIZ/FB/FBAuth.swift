@@ -17,6 +17,7 @@ class FBAuth {
     let db = Firestore.firestore()
     var view = UIView()
     let storage = Storage.storage().reference()
+    var player = SoundClass()
     
     var image = ""
     
@@ -34,6 +35,83 @@ class FBAuth {
             }
         }
         return image
+    }
+    
+    func PlayLastQuizSound() {
+        let docRef = db.collection("users").document((Auth.auth().currentUser?.email) ?? "")
+        docRef.getDocument { document, error in
+            if let error = error as NSError? {
+                print("Error getting document: \(error.localizedDescription)")
+            } else {
+                if let document = document {
+                    
+                    if let category = document["lastquiz"] as? [String: Any] {
+                        let id = category["Id"] as? Int ?? 1
+                        
+                        switch id {
+                            
+                        case 1:
+                            self.player.Sound(resource: "space.wav")
+                            
+                        case 2:
+                            self.player.Sound(resource: "history.wav")
+                            
+                        case 3:
+                            self.player.Sound(resource: "anatomy.wav")
+                            
+                        case 4:
+                            self.player.Sound(resource: "sport.wav")
+                            
+                        case 5:
+                            self.player.Sound(resource: "games.mp3")
+                            
+                        case 6:
+                            self.player.Sound(resource: "IQ.mp3")
+                            
+                        case 7:
+                            self.player.Sound(resource: "economics.mp3")
+                            
+                        case 8:
+                            self.player.Sound(resource: "geography.mp3")
+                            
+                        case 9:
+                            self.player.Sound(resource: "ecology.wav")
+                            
+                        case 10:
+                            self.player.Sound(resource: "physics.mp3")
+                            
+                        case 11:
+                            self.player.Sound(resource: "chemistry.mp3")
+                            
+                        case 12:
+                            self.player.Sound(resource: "informatics.mp3")
+                            
+                        case 13:
+                            self.player.Sound(resource: "literature.mp3")
+                            
+                        case 14:
+                            self.player.Sound(resource: "roadtraffic.mp3")
+                            
+                        case 15:
+                            self.player.Sound(resource: "swift.mp3")
+                            
+                        case 16:
+                            self.player.Sound(resource: "underwater.wav")
+                            
+                        case 17:
+                            self.player.Sound(resource: "chess.mp3")
+                            
+                        case 18:
+                            self.player.Sound(resource: "halloween.wav")
+                            
+                        default:
+                            break
+                        }
+                        
+                    }
+                }
+            }
+        }
     }
     
     func load(profileimage: UIImageView) {

@@ -1139,9 +1139,7 @@ class QuizBaseViewModel {
             check2 = ""
         }
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-            self.AdvancedSpeechRecognition()
-        }
+        self.AdvancedSpeechRecognition()
     }
     
     func stopSpeechRecognition() {
@@ -1216,6 +1214,7 @@ class QuizBaseViewModel {
                 "UnCorrectAnswersCounter": UnCorrectAnswersCounter,
                 "complete": true,
                 "category": category,
+                "Id": base?.checkid() ?? 0,
                 "image": image,
                 "background": background
             ]
@@ -1227,7 +1226,6 @@ class QuizBaseViewModel {
                 //print(ref)
             }
         }
-        
     }
     
     func write(id: Int, quizpath: String, category: String) {
