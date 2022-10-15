@@ -7,12 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		82010B2127EB9BED00EB86C9 /* WeatherCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82010B1F27EB9BEC00EB86C9 /* WeatherCollectionViewCell.swift */; };
-		82010B2227EB9BED00EB86C9 /* WeatherCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 82010B2027EB9BED00EB86C9 /* WeatherCollectionViewCell.xib */; };
-		82010B2627EBAC7100EB86C9 /* clear.background.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 82010B2527EBAC7100EB86C9 /* clear.background.jpeg */; };
-		82035C7527EC1FC8002287CD /* TodayModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82035C7427EC1FC7002287CD /* TodayModel.swift */; };
-		82035C7927EC20AF002287CD /* TodayTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82035C7827EC20AF002287CD /* TodayTableViewController.swift */; };
-		82035C7B27EC2191002287CD /* TodayTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82035C7A27EC2191002287CD /* TodayTableViewCell.swift */; };
+		02D7751B7FBA90ADBE8670DA /* Pods_QUIZ.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31E7B7627AF4CCD3FFDFB767 /* Pods_QUIZ.framework */; };
 		8207E24A286E5CC200CB017A /* underwater15.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 8207E245286E5CC200CB017A /* underwater15.jpeg */; };
 		8207E24B286E5CC200CB017A /* underwater14.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 8207E246286E5CC200CB017A /* underwater14.jpeg */; };
 		8207E24C286E5CC200CB017A /* underwater18.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 8207E247286E5CC200CB017A /* underwater18.jpeg */; };
@@ -28,6 +23,7 @@
 		820C629D27BBCD29004894FA /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820C629C27BBCD29004894FA /* LoginViewController.swift */; };
 		820C62A827BBDAC4004894FA /* QuizHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820C62A727BBDAC4004894FA /* QuizHistory.swift */; };
 		820C62AE27BC22AA004894FA /* QuizPlanets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820C62AD27BC22AA004894FA /* QuizPlanets.swift */; };
+		820D303B28F340710031CFCD /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820D303A28F340710031CFCD /* Profile.swift */; };
 		821120E72822EC4D009C2801 /* PauseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 821120E62822EC4D009C2801 /* PauseTableViewController.swift */; };
 		821120E92822EE5E009C2801 /* CurrentCategoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 821120E82822EE5E009C2801 /* CurrentCategoryTableViewCell.swift */; };
 		8213BF7127D6AAC800D07512 /* QuizPhysics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8213BF7027D6AAC800D07512 /* QuizPhysics.swift */; };
@@ -41,7 +37,7 @@
 		8213BF8927D6AC0100D07512 /* physics6.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 8213BF7F27D6ABF000D07512 /* physics6.jpeg */; };
 		8213BF8A27D6AC0100D07512 /* physics9.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 8213BF8027D6AC0100D07512 /* physics9.jpeg */; };
 		8216FE3027E560AB00DFB0CF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 820C628727BBA3CB004894FA /* Assets.xcassets */; };
-		82173C462829EA3400E15F22 /* selected sound.wav in Resources */ = {isa = PBXBuildFile; fileRef = 82173C432829EA3300E15F22 /* selected sound.wav */; };
+		821AC779289DC12400D04D55 /* trophy.png in Resources */ = {isa = PBXBuildFile; fileRef = 821AC778289DC12400D04D55 /* trophy.png */; };
 		821C69CE287385FE004FD9E1 /* chess music.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 821C69CD287385FE004FD9E1 /* chess music.mp3 */; };
 		821C69D028738F69004FD9E1 /* chess11.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 821C69CF28738F69004FD9E1 /* chess11.jpeg */; };
 		821C69D228739079004FD9E1 /* chess12.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 821C69D128739079004FD9E1 /* chess12.jpeg */; };
@@ -53,8 +49,7 @@
 		821C69E128739845004FD9E1 /* chess19.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 821C69DF28739845004FD9E1 /* chess19.jpeg */; };
 		821C69E228739845004FD9E1 /* chess18.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 821C69E028739845004FD9E1 /* chess18.jpeg */; };
 		821C69E42873995C004FD9E1 /* chess20.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 821C69E32873995C004FD9E1 /* chess20.jpeg */; };
-		821C69E828739E32004FD9E1 /* PlayerTableViewCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 821C69E628739E32004FD9E1 /* PlayerTableViewCellModel.swift */; };
-		821C69E928739E32004FD9E1 /* PlayerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 821C69E728739E32004FD9E1 /* PlayerViewModel.swift */; };
+		821C69E928739E32004FD9E1 /* PlayersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 821C69E728739E32004FD9E1 /* PlayersViewModel.swift */; };
 		822139102874E72D0065A0C3 /* example_5s0_hand_model.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 8221390F2874E72D0065A0C3 /* example_5s0_hand_model.mlmodel */; };
 		822139122874E75B0065A0C3 /* anatomy music.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 822139112874E75B0065A0C3 /* anatomy music.mp3 */; };
 		822139142874E7630065A0C3 /* chemistry music.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 822139132874E7630065A0C3 /* chemistry music.mp3 */; };
@@ -78,8 +73,32 @@
 		8221393A2874E8650065A0C3 /* Swift18.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 822139302874E8640065A0C3 /* Swift18.jpeg */; };
 		8221393B2874E8650065A0C3 /* Swift16.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 822139312874E8640065A0C3 /* Swift16.jpeg */; };
 		8221393C2874E8650065A0C3 /* Swift14.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 822139322874E8640065A0C3 /* Swift14.jpeg */; };
+		82251C34287E661F00723057 /* URLViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82251C33287E661F00723057 /* URLViewController.swift */; };
 		822B235D27C868390067ED13 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 822B235C27C868390067ED13 /* Player.swift */; };
 		822F6C1927BD4AFC0033803A /* BaseTotalQuizViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 822F6C1827BD4AFC0033803A /* BaseTotalQuizViewController.swift */; };
+		82319E0228E8CF7E0053CEF5 /* halloween.png in Resources */ = {isa = PBXBuildFile; fileRef = 82319E0128E8CF7E0053CEF5 /* halloween.png */; };
+		82319E0628E8D1280053CEF5 /* QuizHalloween.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82319E0528E8D1280053CEF5 /* QuizHalloween.swift */; };
+		82319E0D28E8D84E0053CEF5 /* halloween.background.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 82319E0C28E8D84E0053CEF5 /* halloween.background.jpeg */; };
+		82319E0F28E8D8EA0053CEF5 /* halloween1.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 82319E0E28E8D8E90053CEF5 /* halloween1.jpeg */; };
+		82319E1128E8D95A0053CEF5 /* halloween2.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 82319E1028E8D95A0053CEF5 /* halloween2.jpeg */; };
+		82319E1328E8D9CF0053CEF5 /* halloween3.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 82319E1228E8D9CE0053CEF5 /* halloween3.jpeg */; };
+		82319E1528E8DDAF0053CEF5 /* halloween4.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 82319E1428E8DDAF0053CEF5 /* halloween4.jpeg */; };
+		82319E1728E8DF030053CEF5 /* halloween5.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 82319E1628E8DF030053CEF5 /* halloween5.jpeg */; };
+		82319E1928E8E0080053CEF5 /* halloween6.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 82319E1828E8E0080053CEF5 /* halloween6.jpeg */; };
+		82319E1B28E8E0950053CEF5 /* halloween7.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 82319E1A28E8E0950053CEF5 /* halloween7.jpeg */; };
+		82319E1D28E8E1280053CEF5 /* halloween8.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 82319E1C28E8E1280053CEF5 /* halloween8.jpeg */; };
+		82319E1F28E8E6F60053CEF5 /* halloween9.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 82319E1E28E8E6F60053CEF5 /* halloween9.jpeg */; };
+		82319E2128E8E7F50053CEF5 /* halloween10.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 82319E2028E8E7F50053CEF5 /* halloween10.jpeg */; };
+		82319E2328E8E8790053CEF5 /* halloween11.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 82319E2228E8E8790053CEF5 /* halloween11.jpeg */; };
+		82319E2528E8E9DA0053CEF5 /* halloween12.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 82319E2428E8E9DA0053CEF5 /* halloween12.jpeg */; };
+		82319E2728E8EDD30053CEF5 /* halloween13.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 82319E2628E8EDD30053CEF5 /* halloween13.jpeg */; };
+		82319E2928E8EF7B0053CEF5 /* halloween14.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 82319E2828E8EF7B0053CEF5 /* halloween14.jpeg */; };
+		82319E2B28E8F05E0053CEF5 /* halloween15.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 82319E2A28E8F05E0053CEF5 /* halloween15.jpeg */; };
+		82319E2D28E8F1C40053CEF5 /* halloween16.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 82319E2C28E8F1C40053CEF5 /* halloween16.jpeg */; };
+		82319E2F28E8F2430053CEF5 /* halloween17.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 82319E2E28E8F2430053CEF5 /* halloween17.jpeg */; };
+		82319E3128E8F2F40053CEF5 /* halloween18.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 82319E3028E8F2F40053CEF5 /* halloween18.jpeg */; };
+		82319E3328E8F3880053CEF5 /* halloween19.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 82319E3228E8F3870053CEF5 /* halloween19.jpeg */; };
+		82319E3528E8F4180053CEF5 /* halloween20.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 82319E3428E8F4180053CEF5 /* halloween20.jpeg */; };
 		8237D98E286D02230097FE69 /* QuizUnderwater.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8237D98D286D02230097FE69 /* QuizUnderwater.swift */; };
 		8237D99A286D15D50097FE69 /* underwater2.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 8237D990286D15D20097FE69 /* underwater2.jpeg */; };
 		8237D99B286D15D50097FE69 /* underwater8.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 8237D991286D15D30097FE69 /* underwater8.jpeg */; };
@@ -95,6 +114,9 @@
 		8237D9B7286E2A8E0097FE69 /* underwater13.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 8237D9B4286E2A8D0097FE69 /* underwater13.jpeg */; };
 		8237D9B8286E2A8E0097FE69 /* underwater11.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 8237D9B5286E2A8D0097FE69 /* underwater11.jpeg */; };
 		8237D9B9286E2A8E0097FE69 /* underwater12.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 8237D9B6286E2A8D0097FE69 /* underwater12.jpeg */; };
+		8238057F28F1922E0006A736 /* QuizMediaLibraryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8238057E28F1922E0006A736 /* QuizMediaLibraryTableViewController.swift */; };
+		8238058128F1926A0006A736 /* QuizMediaLibraryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8238058028F1926A0006A736 /* QuizMediaLibraryTableViewCell.swift */; };
+		8238058328F192F70006A736 /* QuizMediaLibraryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8238058228F192F70006A736 /* QuizMediaLibraryModel.swift */; };
 		823A8EB927FF06F600C7965B /* MicrophoneTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 823A8EB827FF06F600C7965B /* MicrophoneTableViewCell.swift */; };
 		823CFF6F27FA1100001FF6D9 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 823CFF6E27FA1100001FF6D9 /* SettingsTableViewController.swift */; };
 		823CFF9327FA1BAF001FF6D9 /* BiometricTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 823CFF9227FA1BAF001FF6D9 /* BiometricTableViewCell.swift */; };
@@ -111,7 +133,7 @@
 		8243A6232820810E00427553 /* physics14.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 8243A6192820810E00427553 /* physics14.jpeg */; };
 		8243A6242820810E00427553 /* physics20.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 8243A61A2820810E00427553 /* physics20.jpeg */; };
 		8243F16527C25A1200CD9CE4 /* TaskModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8243F16427C25A1200CD9CE4 /* TaskModel.swift */; };
-		8243F16927C2617C00CD9CE4 /* QuizBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8243F16827C2617C00CD9CE4 /* QuizBase.swift */; };
+		8243F16927C2617C00CD9CE4 /* QuizBaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8243F16827C2617C00CD9CE4 /* QuizBaseViewModel.swift */; };
 		8243F16B27C266F800CD9CE4 /* BaseQuizViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8243F16A27C266F800CD9CE4 /* BaseQuizViewController.swift */; };
 		8243F16D27C27A9400CD9CE4 /* TasksTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8243F16C27C27A9300CD9CE4 /* TasksTableViewController.swift */; };
 		8243F16F27C2841B00CD9CE4 /* TasksTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8243F16E27C2841B00CD9CE4 /* TasksTableViewCell.swift */; };
@@ -129,7 +151,6 @@
 		8244DCFC27E39D8500F5C59B /* informatics8.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 8244DCF227E39D7A00F5C59B /* informatics8.jpeg */; };
 		8244DCFD27E39D8500F5C59B /* informatics4.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 8244DCF327E39D8500F5C59B /* informatics4.jpeg */; };
 		824D0C8E280377B100C2BE4B /* TimerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 824D0C8D280377B100C2BE4B /* TimerTableViewCell.swift */; };
-		825F0D0B27F9FF6700E7BF4D /* Shimmer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 825F0D0A27F9FF6700E7BF4D /* Shimmer.swift */; };
 		8261BC2227E10F1B0089CC94 /* TotalTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8261BC2127E10F1B0089CC94 /* TotalTableViewController.swift */; };
 		8261BC2927E1139A0089CC94 /* QuizChemistry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8261BC2827E1139A0089CC94 /* QuizChemistry.swift */; };
 		8261BC3427E114950089CC94 /* chemistry8.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 8261BC2627E113750089CC94 /* chemistry8.jpeg */; };
@@ -142,11 +163,6 @@
 		8261BC3B27E114950089CC94 /* chemistry2.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 8261BC2F27E1143B0089CC94 /* chemistry2.jpeg */; };
 		8261BC3C27E114950089CC94 /* chemistry7.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 8261BC3227E1146D0089CC94 /* chemistry7.jpeg */; };
 		8261BC3D27E114950089CC94 /* chemistry3.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 8261BC3327E114950089CC94 /* chemistry3.jpeg */; };
-		8267494727EB66860051977C /* WeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8267494627EB66860051977C /* WeatherViewController.swift */; };
-		8267494E27EB68700051977C /* WeatherTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8267494C27EB68700051977C /* WeatherTableViewCell.swift */; };
-		8267494F27EB68700051977C /* WeatherTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8267494D27EB68700051977C /* WeatherTableViewCell.xib */; };
-		8267495227EB68A10051977C /* HourlyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8267495027EB68A10051977C /* HourlyTableViewCell.swift */; };
-		8267495327EB68A10051977C /* HourlyTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8267495127EB68A10051977C /* HourlyTableViewCell.xib */; };
 		826E129227FF509800465E16 /* SwiftModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 826E129127FF509800465E16 /* SwiftModel.swift */; };
 		826E12AD27FF89DA00465E16 /* HintsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 826E12AC27FF89DA00465E16 /* HintsTableViewCell.swift */; };
 		826E12B128009F1300465E16 /* SpeachTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 826E12B028009F1300465E16 /* SpeachTableViewCell.swift */; };
@@ -170,6 +186,8 @@
 		827F8A0C28283F2E00760D56 /* weather.png in Resources */ = {isa = PBXBuildFile; fileRef = 827F8A0B28283F2E00760D56 /* weather.png */; };
 		827F8C0E27E81B7400F6D7B3 /* SoundClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827F8C0D27E81B7400F6D7B3 /* SoundClass.swift */; };
 		827F8C1027E81BDF00F6D7B3 /* physics8.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 827F8C0F27E81BDF00F6D7B3 /* physics8.jpeg */; };
+		82826F5B28F74017008798D5 /* newspaper.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 82826F5A28F74016008798D5 /* newspaper.mp3 */; };
+		82826F5D28F74189008798D5 /* league.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 82826F5C28F74189008798D5 /* league.mp3 */; };
 		8283D15127FA209600A71545 /* StatisticTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8283D15027FA209600A71545 /* StatisticTableViewCell.swift */; };
 		8283D15327FA217200A71545 /* FBAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8283D15227FA217200A71545 /* FBAuth.swift */; };
 		82848D05281C6F4C0068A4AE /* literature.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 82848CF5281C6F4B0068A4AE /* literature.jpeg */; };
@@ -211,7 +229,6 @@
 		82848D46281C77030068A4AE /* chemistry19.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 82848D3C281C77030068A4AE /* chemistry19.jpeg */; };
 		82848D47281C77030068A4AE /* chemistry14.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 82848D3D281C77030068A4AE /* chemistry14.jpeg */; };
 		82848D48281C77030068A4AE /* chemistry20.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 82848D3E281C77030068A4AE /* chemistry20.jpeg */; };
-		82848D5F281DACAB0068A4AE /* bgm.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 82848D4C281DACA80068A4AE /* bgm.mp3 */; };
 		82848D62281DACAB0068A4AE /* fail2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 82848D4F281DACA90068A4AE /* fail2.mp3 */; };
 		82848D65281DACAB0068A4AE /* geography music.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 82848D52281DACA90068A4AE /* geography music.mp3 */; };
 		82848D66281DACAB0068A4AE /* spring.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 82848D53281DACA90068A4AE /* spring.mp3 */; };
@@ -316,10 +333,13 @@
 		8294095327CECE1900AFF603 /* geography4.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 8294094927CECE1400AFF603 /* geography4.jpeg */; };
 		8294095427CECE1900AFF603 /* geography5.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 8294094A27CECE1900AFF603 /* geography5.jpeg */; };
 		82A01BFD27C51CFF00DCBD6F /* RoundedImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82A01BFC27C51CFF00DCBD6F /* RoundedImageView.swift */; };
+		82A08C7D28F488A70072A940 /* QuizResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82A08C7C28F488A70072A940 /* QuizResult.swift */; };
+		82A08C7F28F488E90072A940 /* QuizResultViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82A08C7E28F488E90072A940 /* QuizResultViewModel.swift */; };
+		82A08C8128F48E8E0072A940 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82A08C8028F48E8E0072A940 /* ProfileViewModel.swift */; };
 		82A1D8C427FB25490044EEA6 /* DeleteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82A1D8C327FB25490044EEA6 /* DeleteTableViewCell.swift */; };
 		82A1D8C827FB4C3D0044EEA6 /* PhotoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82A1D8C727FB4C3D0044EEA6 /* PhotoTableViewCell.swift */; };
 		82A4588027C12C2F0082BE4C /* QuizIQ.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82A4587F27C12C2E0082BE4C /* QuizIQ.swift */; };
-		82A458B127C232090082BE4C /* Gradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82A458B027C232090082BE4C /* Gradient.swift */; };
+		82A82B1628A9438200011B6F /* QuizBaseObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82A82B1528A9438200011B6F /* QuizBaseObserver.swift */; };
 		82A9796E27F8CB2C001EBF1C /* QuizLiterature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82A9796D27F8CB2C001EBF1C /* QuizLiterature.swift */; };
 		82AFAF6827FA3C25001B04A0 /* ExitTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82AFAF6727FA3C25001B04A0 /* ExitTableViewCell.swift */; };
 		82B760EA27CA75E800540E0F /* QuizModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82B760E927CA75E800540E0F /* QuizModel.swift */; };
@@ -340,12 +360,10 @@
 		82C2B5A327BD0E5700C66946 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82C2B5A227BD0E5700C66946 /* ViewController.swift */; };
 		82C2B5A527BD115A00C66946 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82C2B5A427BD115A00C66946 /* ProfileViewController.swift */; };
 		82C2B5B327BD2F8800C66946 /* AnimationsClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82C2B5B227BD2F8800C66946 /* AnimationsClass.swift */; };
-		82C996BE2879C5390082921A /* click sound.wav in Resources */ = {isa = PBXBuildFile; fileRef = 82C996BD2879C5390082921A /* click sound.wav */; };
 		82CBE7E9287093C50045616B /* NewsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82CBE7E5287093C50045616B /* NewsTableViewController.swift */; };
 		82CBE7EA287093C50045616B /* NewsListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82CBE7E6287093C50045616B /* NewsListViewModel.swift */; };
 		82CBE7EB287093C50045616B /* NewsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82CBE7E7287093C50045616B /* NewsModel.swift */; };
 		82CBE7EC287093C50045616B /* NewsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82CBE7E8287093C50045616B /* NewsTableViewCell.swift */; };
-		82CBE7F1287094D40045616B /* NewsTableViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82CBE7F0287094D40045616B /* NewsTableViewCellViewModel.swift */; };
 		82CBE7F92870A8F30045616B /* CategoriesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82CBE7F82870A8F30045616B /* CategoriesViewModel.swift */; };
 		82CBE7FB2870A94E0045616B /* CategoriesTableViewCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82CBE7FA2870A94E0045616B /* CategoriesTableViewCellModel.swift */; };
 		82CBE8032870D4B40045616B /* TasksViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82CBE8022870D4B40045616B /* TasksViewModel.swift */; };
@@ -361,9 +379,34 @@
 		82CBF25427D1861F0046E3BE /* ecology7.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 82CBF24A27D1861E0046E3BE /* ecology7.jpeg */; };
 		82CBF25527D1861F0046E3BE /* ecology9.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 82CBF24B27D1861E0046E3BE /* ecology9.jpeg */; };
 		82CC60DC27BEA32A00038618 /* QuizSport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82CC60DB27BEA32A00038618 /* QuizSport.swift */; };
+		82CD6BF2288851FB00716443 /* click sound.wav in Resources */ = {isa = PBXBuildFile; fileRef = 82CD6BF1288851FB00716443 /* click sound.wav */; };
+		82CD6BF428885DFF00716443 /* QuizSegmentedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82CD6BF328885DFF00716443 /* QuizSegmentedViewController.swift */; };
+		82CE536528E9D4FC00D44A6E /* history.wav in Resources */ = {isa = PBXBuildFile; fileRef = 82CE535F28E9D4FB00D44A6E /* history.wav */; };
+		82CE536628E9D4FC00D44A6E /* economics.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 82CE536028E9D4FB00D44A6E /* economics.mp3 */; };
+		82CE536728E9D4FC00D44A6E /* sport.wav in Resources */ = {isa = PBXBuildFile; fileRef = 82CE536128E9D4FB00D44A6E /* sport.wav */; };
+		82CE536828E9D4FC00D44A6E /* literature.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 82CE536228E9D4FB00D44A6E /* literature.mp3 */; };
+		82CE536928E9D4FC00D44A6E /* halloween.wav in Resources */ = {isa = PBXBuildFile; fileRef = 82CE536328E9D4FB00D44A6E /* halloween.wav */; };
+		82CE536A28E9D4FC00D44A6E /* dice.wav in Resources */ = {isa = PBXBuildFile; fileRef = 82CE536428E9D4FC00D44A6E /* dice.wav */; };
+		82CE536E28E9DCCE00D44A6E /* games.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 82CE536D28E9DCCD00D44A6E /* games.mp3 */; };
+		82CE537028E9DE1500D44A6E /* underwater.wav in Resources */ = {isa = PBXBuildFile; fileRef = 82CE536F28E9DE1500D44A6E /* underwater.wav */; };
+		82CE537428E9E58B00D44A6E /* halloween music.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 82CE537328E9E58B00D44A6E /* halloween music.mp3 */; };
+		82CE537628E9E83300D44A6E /* chess.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 82CE537528E9E83300D44A6E /* chess.mp3 */; };
+		82CE537C28E9EC4600D44A6E /* anatomy.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 82CE537B28E9EC4600D44A6E /* anatomy.mp3 */; };
+		82CE537E28E9EE1B00D44A6E /* IQ.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 82CE537D28E9EE1B00D44A6E /* IQ.mp3 */; };
+		82CE538028E9EFE600D44A6E /* geography.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 82CE537F28E9EFE600D44A6E /* geography.mp3 */; };
+		82CE538228E9F22F00D44A6E /* informatics.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 82CE538128E9F22F00D44A6E /* informatics.mp3 */; };
+		82CE538428E9F3AD00D44A6E /* roadtraffic.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 82CE538328E9F3AD00D44A6E /* roadtraffic.mp3 */; };
+		82CE538628E9F86600D44A6E /* ecology.wav in Resources */ = {isa = PBXBuildFile; fileRef = 82CE538528E9F86600D44A6E /* ecology.wav */; };
+		82CE538828E9FA7F00D44A6E /* space.wav in Resources */ = {isa = PBXBuildFile; fileRef = 82CE538728E9FA7F00D44A6E /* space.wav */; };
+		82CE538A28E9FCB900D44A6E /* swift.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 82CE538928E9FCB900D44A6E /* swift.mp3 */; };
+		82CE538C28EA002300D44A6E /* physics.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 82CE538B28EA002300D44A6E /* physics.mp3 */; };
+		82CE538E28EA016400D44A6E /* chemistry.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 82CE538D28EA016400D44A6E /* chemistry.mp3 */; };
+		82CF0D3A28A583D9006B53F4 /* QuizStartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82CF0D3928A583D9006B53F4 /* QuizStartViewController.swift */; };
 		82DBCA2728303EDE009DD1EE /* EditProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82DBCA2628303EDE009DD1EE /* EditProfileTableViewCell.swift */; };
 		82DC6E1C27E65E790077D107 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82DC6E1B27E65E790077D107 /* StartViewController.swift */; };
 		82DF98EC27BCEB4A00548B38 /* QuizAnatomy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82DF98EB27BCEB4A00548B38 /* QuizAnatomy.swift */; };
+		82E0EC8028AC5AA7004AA2E3 /* Bus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82E0EC7F28AC5AA7004AA2E3 /* Bus.swift */; };
+		82E0EC8228AC5ABA004AA2E3 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82E0EC8128AC5ABA004AA2E3 /* Event.swift */; };
 		82E4C6DD282F025900379856 /* roadtraffic13.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 82E4C6D3282F025000379856 /* roadtraffic13.jpeg */; };
 		82E4C6DE282F025900379856 /* roadtraffic15.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 82E4C6D4282F025100379856 /* roadtraffic15.jpeg */; };
 		82E4C6E0282F025900379856 /* roadtraffic11.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 82E4C6D6282F025400379856 /* roadtraffic11.jpeg */; };
@@ -514,22 +557,17 @@
 		82EA1FA9286BCD4200E49D0F /* history18.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 82EA1F9F286BCD4200E49D0F /* history18.jpeg */; };
 		82EA1FAA286BCD4200E49D0F /* history11.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 82EA1FA0286BCD4200E49D0F /* history11.jpeg */; };
 		82EA1FAB286BCD4200E49D0F /* history13.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 82EA1FA1286BCD4200E49D0F /* history13.jpeg */; };
+		82ECFA9D28EE1218000EE656 /* user.png in Resources */ = {isa = PBXBuildFile; fileRef = 82ECFA9B28EE1218000EE656 /* user.png */; };
+		82ECFA9E28EE1218000EE656 /* newspaper.png in Resources */ = {isa = PBXBuildFile; fileRef = 82ECFA9C28EE1218000EE656 /* newspaper.png */; };
 		82EDBAB927CCCEFE0099C069 /* QuizGeography.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82EDBAB827CCCEFE0099C069 /* QuizGeography.swift */; };
 		82F0CA8427FDDB04004925D8 /* VideoRecordTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82F0CA8327FDDB04004925D8 /* VideoRecordTableViewCell.swift */; };
 		82F7918B27CC04A00041DAB3 /* QuizEconomy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82F7918A27CC04A00041DAB3 /* QuizEconomy.swift */; };
-		FD88BB325D8FC1A0A66BB61B /* Pods_QUIZ.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEAC587B7A92373DDB6A8E3E /* Pods_QUIZ.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		1154439868648BE5F481FAE3 /* Pods-QUIZ.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QUIZ.debug.xcconfig"; path = "Target Support Files/Pods-QUIZ/Pods-QUIZ.debug.xcconfig"; sourceTree = "<group>"; };
-		1C637A47B2C26A39350829A1 /* Pods-QUIZ.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QUIZ.release.xcconfig"; path = "Target Support Files/Pods-QUIZ/Pods-QUIZ.release.xcconfig"; sourceTree = "<group>"; };
-		82010B1F27EB9BEC00EB86C9 /* WeatherCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherCollectionViewCell.swift; sourceTree = "<group>"; };
-		82010B2027EB9BED00EB86C9 /* WeatherCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WeatherCollectionViewCell.xib; sourceTree = "<group>"; };
-		82010B2527EBAC7100EB86C9 /* clear.background.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = clear.background.jpeg; sourceTree = "<group>"; };
-		82010B2927EBB6C100EB86C9 /* cloud.background.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = cloud.background.jpeg; sourceTree = "<group>"; };
-		82035C7427EC1FC7002287CD /* TodayModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayModel.swift; sourceTree = "<group>"; };
-		82035C7827EC20AF002287CD /* TodayTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayTableViewController.swift; sourceTree = "<group>"; };
-		82035C7A27EC2191002287CD /* TodayTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayTableViewCell.swift; sourceTree = "<group>"; };
+		07F953B2F57EECB9BC5EABF3 /* Pods-QUIZ.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QUIZ.release.xcconfig"; path = "Target Support Files/Pods-QUIZ/Pods-QUIZ.release.xcconfig"; sourceTree = "<group>"; };
+		31E7B7627AF4CCD3FFDFB767 /* Pods_QUIZ.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_QUIZ.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4D6806F65FF24F88E80C476C /* Pods-QUIZ.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QUIZ.debug.xcconfig"; path = "Target Support Files/Pods-QUIZ/Pods-QUIZ.debug.xcconfig"; sourceTree = "<group>"; };
 		8207E245286E5CC200CB017A /* underwater15.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = underwater15.jpeg; sourceTree = "<group>"; };
 		8207E246286E5CC200CB017A /* underwater14.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = underwater14.jpeg; sourceTree = "<group>"; };
 		8207E247286E5CC200CB017A /* underwater18.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = underwater18.jpeg; sourceTree = "<group>"; };
@@ -548,6 +586,7 @@
 		820C629C27BBCD29004894FA /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		820C62A727BBDAC4004894FA /* QuizHistory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizHistory.swift; sourceTree = "<group>"; };
 		820C62AD27BC22AA004894FA /* QuizPlanets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizPlanets.swift; sourceTree = "<group>"; };
+		820D303A28F340710031CFCD /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 		821120E62822EC4D009C2801 /* PauseTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PauseTableViewController.swift; sourceTree = "<group>"; };
 		821120E82822EE5E009C2801 /* CurrentCategoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentCategoryTableViewCell.swift; sourceTree = "<group>"; };
 		8213BF7027D6AAC800D07512 /* QuizPhysics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizPhysics.swift; sourceTree = "<group>"; };
@@ -560,7 +599,7 @@
 		8213BF7E27D6ABD600D07512 /* physics5.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = physics5.jpeg; sourceTree = "<group>"; };
 		8213BF7F27D6ABF000D07512 /* physics6.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = physics6.jpeg; sourceTree = "<group>"; };
 		8213BF8027D6AC0100D07512 /* physics9.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = physics9.jpeg; sourceTree = "<group>"; };
-		82173C432829EA3300E15F22 /* selected sound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "selected sound.wav"; sourceTree = "<group>"; };
+		821AC778289DC12400D04D55 /* trophy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = trophy.png; sourceTree = "<group>"; };
 		821C69CD287385FE004FD9E1 /* chess music.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "chess music.mp3"; sourceTree = "<group>"; };
 		821C69CF28738F69004FD9E1 /* chess11.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = chess11.jpeg; sourceTree = "<group>"; };
 		821C69D128739079004FD9E1 /* chess12.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = chess12.jpeg; sourceTree = "<group>"; };
@@ -572,8 +611,7 @@
 		821C69DF28739845004FD9E1 /* chess19.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = chess19.jpeg; sourceTree = "<group>"; };
 		821C69E028739845004FD9E1 /* chess18.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = chess18.jpeg; sourceTree = "<group>"; };
 		821C69E32873995C004FD9E1 /* chess20.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = chess20.jpeg; sourceTree = "<group>"; };
-		821C69E628739E32004FD9E1 /* PlayerTableViewCellModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerTableViewCellModel.swift; sourceTree = "<group>"; };
-		821C69E728739E32004FD9E1 /* PlayerViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerViewModel.swift; sourceTree = "<group>"; };
+		821C69E728739E32004FD9E1 /* PlayersViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayersViewModel.swift; sourceTree = "<group>"; };
 		8221390F2874E72D0065A0C3 /* example_5s0_hand_model.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = example_5s0_hand_model.mlmodel; sourceTree = "<group>"; };
 		822139112874E75B0065A0C3 /* anatomy music.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "anatomy music.mp3"; sourceTree = "<group>"; };
 		822139132874E7630065A0C3 /* chemistry music.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "chemistry music.mp3"; sourceTree = "<group>"; };
@@ -597,8 +635,32 @@
 		822139302874E8640065A0C3 /* Swift18.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Swift18.jpeg; sourceTree = "<group>"; };
 		822139312874E8640065A0C3 /* Swift16.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Swift16.jpeg; sourceTree = "<group>"; };
 		822139322874E8640065A0C3 /* Swift14.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Swift14.jpeg; sourceTree = "<group>"; };
+		82251C33287E661F00723057 /* URLViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLViewController.swift; sourceTree = "<group>"; };
 		822B235C27C868390067ED13 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		822F6C1827BD4AFC0033803A /* BaseTotalQuizViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTotalQuizViewController.swift; sourceTree = "<group>"; };
+		82319E0128E8CF7E0053CEF5 /* halloween.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = halloween.png; path = ../../../../../Downloads/halloween.png; sourceTree = "<group>"; };
+		82319E0528E8D1280053CEF5 /* QuizHalloween.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizHalloween.swift; sourceTree = "<group>"; };
+		82319E0C28E8D84E0053CEF5 /* halloween.background.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = halloween.background.jpeg; sourceTree = "<group>"; };
+		82319E0E28E8D8E90053CEF5 /* halloween1.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = halloween1.jpeg; sourceTree = "<group>"; };
+		82319E1028E8D95A0053CEF5 /* halloween2.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = halloween2.jpeg; sourceTree = "<group>"; };
+		82319E1228E8D9CE0053CEF5 /* halloween3.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = halloween3.jpeg; sourceTree = "<group>"; };
+		82319E1428E8DDAF0053CEF5 /* halloween4.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = halloween4.jpeg; sourceTree = "<group>"; };
+		82319E1628E8DF030053CEF5 /* halloween5.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = halloween5.jpeg; sourceTree = "<group>"; };
+		82319E1828E8E0080053CEF5 /* halloween6.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = halloween6.jpeg; sourceTree = "<group>"; };
+		82319E1A28E8E0950053CEF5 /* halloween7.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = halloween7.jpeg; sourceTree = "<group>"; };
+		82319E1C28E8E1280053CEF5 /* halloween8.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = halloween8.jpeg; sourceTree = "<group>"; };
+		82319E1E28E8E6F60053CEF5 /* halloween9.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = halloween9.jpeg; sourceTree = "<group>"; };
+		82319E2028E8E7F50053CEF5 /* halloween10.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = halloween10.jpeg; sourceTree = "<group>"; };
+		82319E2228E8E8790053CEF5 /* halloween11.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = halloween11.jpeg; sourceTree = "<group>"; };
+		82319E2428E8E9DA0053CEF5 /* halloween12.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = halloween12.jpeg; sourceTree = "<group>"; };
+		82319E2628E8EDD30053CEF5 /* halloween13.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = halloween13.jpeg; sourceTree = "<group>"; };
+		82319E2828E8EF7B0053CEF5 /* halloween14.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = halloween14.jpeg; sourceTree = "<group>"; };
+		82319E2A28E8F05E0053CEF5 /* halloween15.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = halloween15.jpeg; sourceTree = "<group>"; };
+		82319E2C28E8F1C40053CEF5 /* halloween16.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = halloween16.jpeg; sourceTree = "<group>"; };
+		82319E2E28E8F2430053CEF5 /* halloween17.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = halloween17.jpeg; sourceTree = "<group>"; };
+		82319E3028E8F2F40053CEF5 /* halloween18.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = halloween18.jpeg; sourceTree = "<group>"; };
+		82319E3228E8F3870053CEF5 /* halloween19.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = halloween19.jpeg; sourceTree = "<group>"; };
+		82319E3428E8F4180053CEF5 /* halloween20.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = halloween20.jpeg; sourceTree = "<group>"; };
 		8237D98D286D02230097FE69 /* QuizUnderwater.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizUnderwater.swift; sourceTree = "<group>"; };
 		8237D990286D15D20097FE69 /* underwater2.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = underwater2.jpeg; path = image/ocean/underwater2.jpeg; sourceTree = SOURCE_ROOT; };
 		8237D991286D15D30097FE69 /* underwater8.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = underwater8.jpeg; path = image/ocean/underwater8.jpeg; sourceTree = SOURCE_ROOT; };
@@ -614,6 +676,9 @@
 		8237D9B4286E2A8D0097FE69 /* underwater13.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = underwater13.jpeg; path = image/ocean/underwater13.jpeg; sourceTree = SOURCE_ROOT; };
 		8237D9B5286E2A8D0097FE69 /* underwater11.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = underwater11.jpeg; path = image/ocean/underwater11.jpeg; sourceTree = SOURCE_ROOT; };
 		8237D9B6286E2A8D0097FE69 /* underwater12.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = underwater12.jpeg; path = image/ocean/underwater12.jpeg; sourceTree = SOURCE_ROOT; };
+		8238057E28F1922E0006A736 /* QuizMediaLibraryTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizMediaLibraryTableViewController.swift; sourceTree = "<group>"; };
+		8238058028F1926A0006A736 /* QuizMediaLibraryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizMediaLibraryTableViewCell.swift; sourceTree = "<group>"; };
+		8238058228F192F70006A736 /* QuizMediaLibraryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizMediaLibraryModel.swift; sourceTree = "<group>"; };
 		823A8EB827FF06F600C7965B /* MicrophoneTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MicrophoneTableViewCell.swift; sourceTree = "<group>"; };
 		823CFF6E27FA1100001FF6D9 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
 		823CFF9227FA1BAF001FF6D9 /* BiometricTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BiometricTableViewCell.swift; sourceTree = "<group>"; };
@@ -630,7 +695,7 @@
 		8243A6192820810E00427553 /* physics14.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = physics14.jpeg; sourceTree = "<group>"; };
 		8243A61A2820810E00427553 /* physics20.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = physics20.jpeg; sourceTree = "<group>"; };
 		8243F16427C25A1200CD9CE4 /* TaskModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskModel.swift; sourceTree = "<group>"; };
-		8243F16827C2617C00CD9CE4 /* QuizBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizBase.swift; sourceTree = "<group>"; };
+		8243F16827C2617C00CD9CE4 /* QuizBaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizBaseViewModel.swift; sourceTree = "<group>"; };
 		8243F16A27C266F800CD9CE4 /* BaseQuizViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseQuizViewController.swift; sourceTree = "<group>"; };
 		8243F16C27C27A9300CD9CE4 /* TasksTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksTableViewController.swift; sourceTree = "<group>"; };
 		8243F16E27C2841B00CD9CE4 /* TasksTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksTableViewCell.swift; sourceTree = "<group>"; };
@@ -648,7 +713,6 @@
 		8244DCF227E39D7A00F5C59B /* informatics8.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = informatics8.jpeg; sourceTree = "<group>"; };
 		8244DCF327E39D8500F5C59B /* informatics4.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = informatics4.jpeg; sourceTree = "<group>"; };
 		824D0C8D280377B100C2BE4B /* TimerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerTableViewCell.swift; sourceTree = "<group>"; };
-		825F0D0A27F9FF6700E7BF4D /* Shimmer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shimmer.swift; sourceTree = "<group>"; };
 		8261BC2127E10F1B0089CC94 /* TotalTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TotalTableViewController.swift; sourceTree = "<group>"; };
 		8261BC2627E113750089CC94 /* chemistry8.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = chemistry8.jpeg; sourceTree = "<group>"; };
 		8261BC2727E1138B0089CC94 /* chemistry4.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = chemistry4.jpeg; sourceTree = "<group>"; };
@@ -661,12 +725,6 @@
 		8261BC2F27E1143B0089CC94 /* chemistry2.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = chemistry2.jpeg; sourceTree = "<group>"; };
 		8261BC3227E1146D0089CC94 /* chemistry7.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = chemistry7.jpeg; sourceTree = "<group>"; };
 		8261BC3327E114950089CC94 /* chemistry3.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = chemistry3.jpeg; sourceTree = "<group>"; };
-		8267494227EB663B0051977C /* rainy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rainy.png; sourceTree = "<group>"; };
-		8267494627EB66860051977C /* WeatherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewController.swift; sourceTree = "<group>"; };
-		8267494C27EB68700051977C /* WeatherTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherTableViewCell.swift; sourceTree = "<group>"; };
-		8267494D27EB68700051977C /* WeatherTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WeatherTableViewCell.xib; sourceTree = "<group>"; };
-		8267495027EB68A10051977C /* HourlyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourlyTableViewCell.swift; sourceTree = "<group>"; };
-		8267495127EB68A10051977C /* HourlyTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HourlyTableViewCell.xib; sourceTree = "<group>"; };
 		826E129127FF509800465E16 /* SwiftModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftModel.swift; sourceTree = "<group>"; };
 		826E12AC27FF89DA00465E16 /* HintsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HintsTableViewCell.swift; sourceTree = "<group>"; };
 		826E12B028009F1300465E16 /* SpeachTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeachTableViewCell.swift; sourceTree = "<group>"; };
@@ -675,7 +733,7 @@
 		82729E7A27D38F460042944C /* ecology2.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = ecology2.jpeg; sourceTree = "<group>"; };
 		82729E7E27D38F690042944C /* geography2.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = geography2.jpeg; sourceTree = "<group>"; };
 		82747F8B28050121001E994A /* AttemptsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttemptsTableViewCell.swift; sourceTree = "<group>"; };
-		8277BCF827C709A800B5F9D0 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RegisterViewController.swift; path = ../RegisterViewController.swift; sourceTree = "<group>"; };
+		8277BCF827C709A800B5F9D0 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		8277D8C8281F14DC00185632 /* lock.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lock.png; sourceTree = "<group>"; };
 		827B545227C01092000ACB31 /* QuizGames.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizGames.swift; sourceTree = "<group>"; };
 		827D4B40281FED88007B3895 /* informatics6.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = informatics6.jpeg; sourceTree = "<group>"; };
@@ -690,6 +748,8 @@
 		827F8A0B28283F2E00760D56 /* weather.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = weather.png; sourceTree = "<group>"; };
 		827F8C0D27E81B7400F6D7B3 /* SoundClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundClass.swift; sourceTree = "<group>"; };
 		827F8C0F27E81BDF00F6D7B3 /* physics8.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = physics8.jpeg; sourceTree = "<group>"; };
+		82826F5A28F74016008798D5 /* newspaper.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = newspaper.mp3; sourceTree = "<group>"; };
+		82826F5C28F74189008798D5 /* league.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = league.mp3; path = ../../../../../Downloads/league.mp3; sourceTree = "<group>"; };
 		8283D15027FA209600A71545 /* StatisticTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticTableViewCell.swift; sourceTree = "<group>"; };
 		8283D15227FA217200A71545 /* FBAuth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBAuth.swift; sourceTree = "<group>"; };
 		82848CF5281C6F4B0068A4AE /* literature.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = literature.jpeg; sourceTree = "<group>"; };
@@ -731,7 +791,6 @@
 		82848D3C281C77030068A4AE /* chemistry19.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = chemistry19.jpeg; sourceTree = "<group>"; };
 		82848D3D281C77030068A4AE /* chemistry14.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = chemistry14.jpeg; sourceTree = "<group>"; };
 		82848D3E281C77030068A4AE /* chemistry20.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = chemistry20.jpeg; sourceTree = "<group>"; };
-		82848D4C281DACA80068A4AE /* bgm.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = bgm.mp3; sourceTree = "<group>"; };
 		82848D4F281DACA90068A4AE /* fail2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = fail2.mp3; sourceTree = "<group>"; };
 		82848D52281DACA90068A4AE /* geography music.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "geography music.mp3"; sourceTree = "<group>"; };
 		82848D53281DACA90068A4AE /* spring.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = spring.mp3; sourceTree = "<group>"; };
@@ -836,10 +895,13 @@
 		8294094927CECE1400AFF603 /* geography4.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = geography4.jpeg; sourceTree = "<group>"; };
 		8294094A27CECE1900AFF603 /* geography5.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = geography5.jpeg; sourceTree = "<group>"; };
 		82A01BFC27C51CFF00DCBD6F /* RoundedImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedImageView.swift; sourceTree = "<group>"; };
+		82A08C7C28F488A70072A940 /* QuizResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizResult.swift; sourceTree = "<group>"; };
+		82A08C7E28F488E90072A940 /* QuizResultViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizResultViewModel.swift; sourceTree = "<group>"; };
+		82A08C8028F48E8E0072A940 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 		82A1D8C327FB25490044EEA6 /* DeleteTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteTableViewCell.swift; sourceTree = "<group>"; };
 		82A1D8C727FB4C3D0044EEA6 /* PhotoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoTableViewCell.swift; sourceTree = "<group>"; };
 		82A4587F27C12C2E0082BE4C /* QuizIQ.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizIQ.swift; sourceTree = "<group>"; };
-		82A458B027C232090082BE4C /* Gradient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gradient.swift; sourceTree = "<group>"; };
+		82A82B1528A9438200011B6F /* QuizBaseObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizBaseObserver.swift; sourceTree = "<group>"; };
 		82A9796D27F8CB2C001EBF1C /* QuizLiterature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizLiterature.swift; sourceTree = "<group>"; };
 		82AFAF6727FA3C25001B04A0 /* ExitTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExitTableViewCell.swift; sourceTree = "<group>"; };
 		82B760E927CA75E800540E0F /* QuizModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizModel.swift; sourceTree = "<group>"; };
@@ -860,12 +922,10 @@
 		82C2B5A227BD0E5700C66946 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		82C2B5A427BD115A00C66946 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		82C2B5B227BD2F8800C66946 /* AnimationsClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationsClass.swift; sourceTree = "<group>"; };
-		82C996BD2879C5390082921A /* click sound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "click sound.wav"; path = "../../../../Downloads/QUIZ-2022-quiz-2022 2/QUIZ/sounds/click sound.wav"; sourceTree = "<group>"; };
 		82CBE7E5287093C50045616B /* NewsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsTableViewController.swift; sourceTree = "<group>"; };
 		82CBE7E6287093C50045616B /* NewsListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsListViewModel.swift; sourceTree = "<group>"; };
 		82CBE7E7287093C50045616B /* NewsModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsModel.swift; sourceTree = "<group>"; };
 		82CBE7E8287093C50045616B /* NewsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsTableViewCell.swift; sourceTree = "<group>"; };
-		82CBE7F0287094D40045616B /* NewsTableViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsTableViewCellViewModel.swift; sourceTree = "<group>"; };
 		82CBE7F82870A8F30045616B /* CategoriesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesViewModel.swift; sourceTree = "<group>"; };
 		82CBE7FA2870A94E0045616B /* CategoriesTableViewCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesTableViewCellModel.swift; sourceTree = "<group>"; };
 		82CBE8022870D4B40045616B /* TasksViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksViewModel.swift; sourceTree = "<group>"; };
@@ -881,9 +941,34 @@
 		82CBF24A27D1861E0046E3BE /* ecology7.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = ecology7.jpeg; sourceTree = "<group>"; };
 		82CBF24B27D1861E0046E3BE /* ecology9.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = ecology9.jpeg; sourceTree = "<group>"; };
 		82CC60DB27BEA32A00038618 /* QuizSport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizSport.swift; sourceTree = "<group>"; };
+		82CD6BF1288851FB00716443 /* click sound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "click sound.wav"; sourceTree = "<group>"; };
+		82CD6BF328885DFF00716443 /* QuizSegmentedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizSegmentedViewController.swift; sourceTree = "<group>"; };
+		82CE535F28E9D4FB00D44A6E /* history.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = history.wav; path = "../../../../quiz categories sounds/history.wav"; sourceTree = "<group>"; };
+		82CE536028E9D4FB00D44A6E /* economics.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = economics.mp3; path = "../../../../quiz categories sounds/economics.mp3"; sourceTree = "<group>"; };
+		82CE536128E9D4FB00D44A6E /* sport.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = sport.wav; path = "../../../../quiz categories sounds/sport.wav"; sourceTree = "<group>"; };
+		82CE536228E9D4FB00D44A6E /* literature.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = literature.mp3; path = "../../../../quiz categories sounds/literature.mp3"; sourceTree = "<group>"; };
+		82CE536328E9D4FB00D44A6E /* halloween.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = halloween.wav; path = "../../../../quiz categories sounds/halloween.wav"; sourceTree = "<group>"; };
+		82CE536428E9D4FC00D44A6E /* dice.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = dice.wav; path = "../../../../quiz categories sounds/dice.wav"; sourceTree = "<group>"; };
+		82CE536D28E9DCCD00D44A6E /* games.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = games.mp3; sourceTree = "<group>"; };
+		82CE536F28E9DE1500D44A6E /* underwater.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = underwater.wav; path = ../../../../../Downloads/underwater.wav; sourceTree = "<group>"; };
+		82CE537328E9E58B00D44A6E /* halloween music.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "halloween music.mp3"; sourceTree = "<group>"; };
+		82CE537528E9E83300D44A6E /* chess.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = chess.mp3; path = ../../../../../Downloads/chess.mp3; sourceTree = "<group>"; };
+		82CE537B28E9EC4600D44A6E /* anatomy.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = anatomy.mp3; sourceTree = "<group>"; };
+		82CE537D28E9EE1B00D44A6E /* IQ.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = IQ.mp3; path = ../../../../../Downloads/IQ.mp3; sourceTree = "<group>"; };
+		82CE537F28E9EFE600D44A6E /* geography.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = geography.mp3; path = ../../../../../Downloads/geography.mp3; sourceTree = "<group>"; };
+		82CE538128E9F22F00D44A6E /* informatics.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = informatics.mp3; path = ../../../../../Downloads/informatics.mp3; sourceTree = "<group>"; };
+		82CE538328E9F3AD00D44A6E /* roadtraffic.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = roadtraffic.mp3; path = ../../../../../Downloads/roadtraffic.mp3; sourceTree = "<group>"; };
+		82CE538528E9F86600D44A6E /* ecology.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = ecology.wav; path = ../../../../../Downloads/ecology.wav; sourceTree = "<group>"; };
+		82CE538728E9FA7F00D44A6E /* space.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = space.wav; path = ../../../../../Downloads/space.wav; sourceTree = "<group>"; };
+		82CE538928E9FCB900D44A6E /* swift.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = swift.mp3; path = ../../../../../Downloads/swift.mp3; sourceTree = "<group>"; };
+		82CE538B28EA002300D44A6E /* physics.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = physics.mp3; path = "../../../../quiz categories sounds/physics.mp3"; sourceTree = "<group>"; };
+		82CE538D28EA016400D44A6E /* chemistry.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = chemistry.mp3; path = ../../../../../Downloads/chemistry.mp3; sourceTree = "<group>"; };
+		82CF0D3928A583D9006B53F4 /* QuizStartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizStartViewController.swift; sourceTree = "<group>"; };
 		82DBCA2628303EDE009DD1EE /* EditProfileTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileTableViewCell.swift; sourceTree = "<group>"; };
 		82DC6E1B27E65E790077D107 /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
 		82DF98EB27BCEB4A00548B38 /* QuizAnatomy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizAnatomy.swift; sourceTree = "<group>"; };
+		82E0EC7F28AC5AA7004AA2E3 /* Bus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bus.swift; sourceTree = "<group>"; };
+		82E0EC8128AC5ABA004AA2E3 /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		82E4C6D3282F025000379856 /* roadtraffic13.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = roadtraffic13.jpeg; sourceTree = "<group>"; };
 		82E4C6D4282F025100379856 /* roadtraffic15.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = roadtraffic15.jpeg; sourceTree = "<group>"; };
 		82E4C6D6282F025400379856 /* roadtraffic11.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = roadtraffic11.jpeg; sourceTree = "<group>"; };
@@ -1034,10 +1119,11 @@
 		82EA1F9F286BCD4200E49D0F /* history18.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = history18.jpeg; sourceTree = "<group>"; };
 		82EA1FA0286BCD4200E49D0F /* history11.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = history11.jpeg; sourceTree = "<group>"; };
 		82EA1FA1286BCD4200E49D0F /* history13.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = history13.jpeg; sourceTree = "<group>"; };
+		82ECFA9B28EE1218000EE656 /* user.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = user.png; sourceTree = "<group>"; };
+		82ECFA9C28EE1218000EE656 /* newspaper.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = newspaper.png; sourceTree = "<group>"; };
 		82EDBAB827CCCEFE0099C069 /* QuizGeography.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizGeography.swift; sourceTree = "<group>"; };
 		82F0CA8327FDDB04004925D8 /* VideoRecordTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoRecordTableViewCell.swift; sourceTree = "<group>"; };
 		82F7918A27CC04A00041DAB3 /* QuizEconomy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizEconomy.swift; sourceTree = "<group>"; };
-		CEAC587B7A92373DDB6A8E3E /* Pods_QUIZ.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_QUIZ.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1045,22 +1131,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FD88BB325D8FC1A0A66BB61B /* Pods_QUIZ.framework in Frameworks */,
+				02D7751B7FBA90ADBE8670DA /* Pods_QUIZ.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		82010B1E27EB9BAA00EB86C9 /* CollectionViewCell */ = {
-			isa = PBXGroup;
-			children = (
-				82010B1F27EB9BEC00EB86C9 /* WeatherCollectionViewCell.swift */,
-				82010B2027EB9BED00EB86C9 /* WeatherCollectionViewCell.xib */,
-			);
-			path = CollectionViewCell;
-			sourceTree = "<group>";
-		};
 		8209F79A2847F2390093147A /* SplashScreen */ = {
 			isa = PBXGroup;
 			children = (
@@ -1072,24 +1149,17 @@
 		820C627227BBA3CA004894FA = {
 			isa = PBXGroup;
 			children = (
-				8209F79A2847F2390093147A /* SplashScreen */,
-				82CBE8062870DE1A0045616B /* Players League MVVM */,
-				82CBE7FC2870D3AA0045616B /* Quiz Tasks MVVM */,
-				82CBE7F22870A8480045616B /* Quiz Categories MVVM */,
-				82CBE7E4287093890045616B /* News MVVM */,
-				8283D15227FA217200A71545 /* FBAuth.swift */,
-				825F0D0927F9FF5100E7BF4D /* Shim */,
-				82E91ECD27F6840B003D7E80 /* ml */,
-				8267494027EB66060051977C /* Wheather API */,
+				82E91ECD27F6840B003D7E80 /* machine learning */,
+				82CE538F28EA076C00D44A6E /* FB */,
+				820D304528F3852A0031CFCD /* MVVM Modules */,
+				820D304A28F386090031CFCD /* MVC Modules */,
 				827F8BF227E8185100F6D7B3 /* sounds */,
 				82C039C927CEC2EF00E69661 /* image */,
-				82A458B027C232090082BE4C /* Gradient.swift */,
 				82C2B5B127BD2F7000C66946 /* Animations */,
-				820C62A427BBDA7B004894FA /* Models */,
 				820C627D27BBA3CA004894FA /* QUIZ */,
 				820C627C27BBA3CA004894FA /* Products */,
 				C084AC94B5F45D5B9FB284D9 /* Pods */,
-				9250E62BC0EE0BD841FA80D6 /* Frameworks */,
+				D48391B7D14F069F2713E93B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -1104,13 +1174,8 @@
 		820C627D27BBA3CA004894FA /* QUIZ */ = {
 			isa = PBXGroup;
 			children = (
-				820C627E27BBA3CA004894FA /* AppDelegate.swift */,
-				820C628027BBA3CA004894FA /* SceneDelegate.swift */,
-				820C628427BBA3CA004894FA /* Main.storyboard */,
-				820C628727BBA3CB004894FA /* Assets.xcassets */,
-				820C628927BBA3CB004894FA /* LaunchScreen.storyboard */,
 				820C628C27BBA3CB004894FA /* Info.plist */,
-				829408A727CEC4F100AFF603 /* GoogleService-Info.plist */,
+				820D304B28F387010031CFCD /* Resources */,
 				820C629927BBC68E004894FA /* Quiz */,
 			);
 			path = QUIZ;
@@ -1119,49 +1184,71 @@
 		820C629927BBC68E004894FA /* Quiz */ = {
 			isa = PBXGroup;
 			children = (
-				821120E52822EC07009C2801 /* Pause */,
-				822F6C1127BD3DE60033803A /* Total */,
-				82DF98E327BCE71400548B38 /* Quiz */,
-				82DF98E427BCE73700548B38 /* Other */,
+				82DF98E427BCE73700548B38 /* Other Modules */,
 			);
 			path = Quiz;
 			sourceTree = "<group>";
 		};
-		820C62A427BBDA7B004894FA /* Models */ = {
+		820D303828F340490031CFCD /* View */ = {
 			isa = PBXGroup;
 			children = (
-				82035C7427EC1FC7002287CD /* TodayModel.swift */,
-				82B760F627CAA13500540E0F /* Question.swift */,
-				8243F16827C2617C00CD9CE4 /* QuizBase.swift */,
-				820C62AD27BC22AA004894FA /* QuizPlanets.swift */,
-				820C62A727BBDAC4004894FA /* QuizHistory.swift */,
-				82DF98EB27BCEB4A00548B38 /* QuizAnatomy.swift */,
-				82CC60DB27BEA32A00038618 /* QuizSport.swift */,
-				827B545227C01092000ACB31 /* QuizGames.swift */,
-				82A4587F27C12C2E0082BE4C /* QuizIQ.swift */,
-				82F7918A27CC04A00041DAB3 /* QuizEconomy.swift */,
-				82EDBAB827CCCEFE0099C069 /* QuizGeography.swift */,
-				82CBF23D27D153AF0046E3BE /* QuizEcology.swift */,
-				8213BF7027D6AAC800D07512 /* QuizPhysics.swift */,
-				8261BC2827E1139A0089CC94 /* QuizChemistry.swift */,
-				8244DCE727E39C1700F5C59B /* QuizInformatics.swift */,
-				82A9796D27F8CB2C001EBF1C /* QuizLiterature.swift */,
-				8209462C27FA676000F44E83 /* RoadTraffic.swift */,
-				826E129127FF509800465E16 /* SwiftModel.swift */,
-				8237D98D286D02230097FE69 /* QuizUnderwater.swift */,
-				8288F0892872601600C6A182 /* QuizChess.swift */,
+				82C2B5A427BD115A00C66946 /* ProfileViewController.swift */,
 			);
-			path = Models;
+			path = View;
 			sourceTree = "<group>";
 		};
-		821120E52822EC07009C2801 /* Pause */ = {
+		820D303928F3404D0031CFCD /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				821120E62822EC4D009C2801 /* PauseTableViewController.swift */,
-				821120E82822EE5E009C2801 /* CurrentCategoryTableViewCell.swift */,
-				82EA02A428240872008A0240 /* RestartTableViewCell.swift */,
+				820D303A28F340710031CFCD /* Profile.swift */,
 			);
-			path = Pause;
+			path = Model;
+			sourceTree = "<group>";
+		};
+		820D304528F3852A0031CFCD /* MVVM Modules */ = {
+			isa = PBXGroup;
+			children = (
+				82A08C7828F488590072A940 /* Quiz Total MVVM + RxSwift */,
+				82CBE7F22870A8480045616B /* Quiz Categories MVVM */,
+				82CBE7FC2870D3AA0045616B /* Quiz Tasks MVVM */,
+				82A82AE128A92BB100011B6F /* QuizBase MVVM Observable */,
+				82CBE8062870DE1A0045616B /* Players MVVM Combine */,
+				823CFF7327FA1149001FF6D9 /* Profile MVVM + RxSwift */,
+				82CBE7E4287093890045616B /* News MVVM Event Bus */,
+			);
+			path = "MVVM Modules";
+			sourceTree = "<group>";
+		};
+		820D304728F385D80031CFCD /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				82A08C8028F48E8E0072A940 /* ProfileViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		820D304A28F386090031CFCD /* MVC Modules */ = {
+			isa = PBXGroup;
+			children = (
+				823CFF6D27FA10DC001FF6D9 /* Settings MVC */,
+				8290FCA327FCC15B00E05DDA /* TabBar MVC */,
+				823CFF7027FA1117001FF6D9 /* Start MVC */,
+				823CFF7127FA1126001FF6D9 /* Auth MVC */,
+			);
+			path = "MVC Modules";
+			sourceTree = "<group>";
+		};
+		820D304B28F387010031CFCD /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				820C627E27BBA3CA004894FA /* AppDelegate.swift */,
+				820C628027BBA3CA004894FA /* SceneDelegate.swift */,
+				820C628427BBA3CA004894FA /* Main.storyboard */,
+				820C628727BBA3CB004894FA /* Assets.xcassets */,
+				820C628927BBA3CB004894FA /* LaunchScreen.storyboard */,
+				829408A727CEC4F100AFF603 /* GoogleService-Info.plist */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		8213BF7227D6AB4500D07512 /* Physics */ = {
@@ -1191,33 +1278,60 @@
 			path = Physics;
 			sourceTree = "<group>";
 		};
-		8214E70A27E1451700F491C9 /* Today */ = {
-			isa = PBXGroup;
-			children = (
-				82035C7827EC20AF002287CD /* TodayTableViewController.swift */,
-				82035C7A27EC2191002287CD /* TodayTableViewCell.swift */,
-			);
-			path = Today;
-			sourceTree = "<group>";
-		};
 		821C69E528739E1A004FD9E1 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				821C69E628739E32004FD9E1 /* PlayerTableViewCellModel.swift */,
-				821C69E728739E32004FD9E1 /* PlayerViewModel.swift */,
+				821C69E728739E32004FD9E1 /* PlayersViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
-		822F6C1127BD3DE60033803A /* Total */ = {
+		82222A2B288C801900C1954D /* segmented controll */ = {
 			isa = PBXGroup;
 			children = (
-				822F6C1827BD4AFC0033803A /* BaseTotalQuizViewController.swift */,
+				82CD6BF328885DFF00716443 /* QuizSegmentedViewController.swift */,
 			);
-			path = Total;
+			path = "segmented controll";
 			sourceTree = "<group>";
 		};
-		823CFF6D27FA10DC001FF6D9 /* Settings */ = {
+		82319E0928E8D7ED0053CEF5 /* Halloween */ = {
+			isa = PBXGroup;
+			children = (
+				82319E0E28E8D8E90053CEF5 /* halloween1.jpeg */,
+				82319E1028E8D95A0053CEF5 /* halloween2.jpeg */,
+				82319E1228E8D9CE0053CEF5 /* halloween3.jpeg */,
+				82319E1428E8DDAF0053CEF5 /* halloween4.jpeg */,
+				82319E1628E8DF030053CEF5 /* halloween5.jpeg */,
+				82319E1828E8E0080053CEF5 /* halloween6.jpeg */,
+				82319E1A28E8E0950053CEF5 /* halloween7.jpeg */,
+				82319E1C28E8E1280053CEF5 /* halloween8.jpeg */,
+				82319E1E28E8E6F60053CEF5 /* halloween9.jpeg */,
+				82319E2028E8E7F50053CEF5 /* halloween10.jpeg */,
+				82319E2228E8E8790053CEF5 /* halloween11.jpeg */,
+				82319E2428E8E9DA0053CEF5 /* halloween12.jpeg */,
+				82319E2628E8EDD30053CEF5 /* halloween13.jpeg */,
+				82319E2828E8EF7B0053CEF5 /* halloween14.jpeg */,
+				82319E2A28E8F05E0053CEF5 /* halloween15.jpeg */,
+				82319E2C28E8F1C40053CEF5 /* halloween16.jpeg */,
+				82319E2E28E8F2430053CEF5 /* halloween17.jpeg */,
+				82319E3028E8F2F40053CEF5 /* halloween18.jpeg */,
+				82319E3228E8F3870053CEF5 /* halloween19.jpeg */,
+				82319E3428E8F4180053CEF5 /* halloween20.jpeg */,
+			);
+			path = Halloween;
+			sourceTree = "<group>";
+		};
+		8238057B28F191B20006A736 /* Quiz media library */ = {
+			isa = PBXGroup;
+			children = (
+				8238057E28F1922E0006A736 /* QuizMediaLibraryTableViewController.swift */,
+				8238058028F1926A0006A736 /* QuizMediaLibraryTableViewCell.swift */,
+				8238058228F192F70006A736 /* QuizMediaLibraryModel.swift */,
+			);
+			path = "Quiz media library";
+			sourceTree = "<group>";
+		};
+		823CFF6D27FA10DC001FF6D9 /* Settings MVC */ = {
 			isa = PBXGroup;
 			children = (
 				823CFF6E27FA1100001FF6D9 /* SettingsTableViewController.swift */,
@@ -1236,35 +1350,37 @@
 				82A1D8C327FB25490044EEA6 /* DeleteTableViewCell.swift */,
 				82AFAF6727FA3C25001B04A0 /* ExitTableViewCell.swift */,
 			);
-			path = Settings;
+			path = "Settings MVC";
 			sourceTree = "<group>";
 		};
-		823CFF7027FA1117001FF6D9 /* Start */ = {
+		823CFF7027FA1117001FF6D9 /* Start MVC */ = {
 			isa = PBXGroup;
 			children = (
 				82DC6E1B27E65E790077D107 /* StartViewController.swift */,
 			);
-			path = Start;
+			path = "Start MVC";
 			sourceTree = "<group>";
 		};
-		823CFF7127FA1126001FF6D9 /* Auth */ = {
+		823CFF7127FA1126001FF6D9 /* Auth MVC */ = {
 			isa = PBXGroup;
 			children = (
 				820C629C27BBCD29004894FA /* LoginViewController.swift */,
 				8277BCF827C709A800B5F9D0 /* RegisterViewController.swift */,
 			);
-			path = Auth;
+			path = "Auth MVC";
 			sourceTree = "<group>";
 		};
-		823CFF7327FA1149001FF6D9 /* Profile */ = {
+		823CFF7327FA1149001FF6D9 /* Profile MVVM + RxSwift */ = {
 			isa = PBXGroup;
 			children = (
-				82C2B5A427BD115A00C66946 /* ProfileViewController.swift */,
+				820D303928F3404D0031CFCD /* Model */,
+				820D303828F340490031CFCD /* View */,
+				820D304728F385D80031CFCD /* ViewModel */,
 			);
-			path = Profile;
+			path = "Profile MVVM + RxSwift";
 			sourceTree = "<group>";
 		};
-		824419AA286E500B00203DBA /* ocean */ = {
+		824419AA286E500B00203DBA /* Ocean */ = {
 			isa = PBXGroup;
 			children = (
 				8237D994286D15D30097FE69 /* underwater1.jpeg */,
@@ -1288,7 +1404,7 @@
 				824419B5286E531900203DBA /* underwater19.jpeg */,
 				824419B6286E531900203DBA /* underwater20.jpeg */,
 			);
-			path = ocean;
+			path = Ocean;
 			sourceTree = "<group>";
 		};
 		8244DCE927E39C9C00F5C59B /* Informatics */ = {
@@ -1348,6 +1464,8 @@
 		8254A38D28145E13006B330B /* other images */ = {
 			isa = PBXGroup;
 			children = (
+				82ECFA9C28EE1218000EE656 /* newspaper.png */,
+				82ECFA9B28EE1218000EE656 /* user.png */,
 				82EA1EC2286BCB8C00E49D0F /* attempts.png */,
 				82EA1EC4286BCB9500E49D0F /* bar-chart.png */,
 				82EA1EC6286BCBA300E49D0F /* delete.png */,
@@ -1366,6 +1484,7 @@
 				8277D8C8281F14DC00185632 /* lock.png */,
 				82EA02A6282409FF008A0240 /* retry.png */,
 				82C18EED2832ECEA00348599 /* key.png */,
+				821AC778289DC12400D04D55 /* trophy.png */,
 			);
 			path = "other images";
 			sourceTree = "<group>";
@@ -1424,14 +1543,6 @@
 			path = Literature;
 			sourceTree = "<group>";
 		};
-		825F0D0927F9FF5100E7BF4D /* Shim */ = {
-			isa = PBXGroup;
-			children = (
-				825F0D0A27F9FF6700E7BF4D /* Shimmer.swift */,
-			);
-			path = Shim;
-			sourceTree = "<group>";
-		};
 		8261BC1F27E10EF30089CC94 /* Statistics */ = {
 			isa = PBXGroup;
 			children = (
@@ -1467,76 +1578,14 @@
 			path = Chemistry;
 			sourceTree = "<group>";
 		};
-		8267494027EB66060051977C /* Wheather API */ = {
-			isa = PBXGroup;
-			children = (
-				82010B1E27EB9BAA00EB86C9 /* CollectionViewCell */,
-				8267494927EB67FB0051977C /* HourlyCollectionCell */,
-				8267494827EB67DE0051977C /* WeatherCell */,
-				8267494627EB66860051977C /* WeatherViewController.swift */,
-				8267494127EB66120051977C /* images */,
-			);
-			path = "Wheather API";
-			sourceTree = "<group>";
-		};
-		8267494127EB66120051977C /* images */ = {
-			isa = PBXGroup;
-			children = (
-				8267494227EB663B0051977C /* rainy.png */,
-				82010B2527EBAC7100EB86C9 /* clear.background.jpeg */,
-				82010B2927EBB6C100EB86C9 /* cloud.background.jpeg */,
-			);
-			path = images;
-			sourceTree = "<group>";
-		};
-		8267494827EB67DE0051977C /* WeatherCell */ = {
-			isa = PBXGroup;
-			children = (
-				8267494C27EB68700051977C /* WeatherTableViewCell.swift */,
-				8267494D27EB68700051977C /* WeatherTableViewCell.xib */,
-			);
-			path = WeatherCell;
-			sourceTree = "<group>";
-		};
-		8267494927EB67FB0051977C /* HourlyCollectionCell */ = {
-			isa = PBXGroup;
-			children = (
-				8267495027EB68A10051977C /* HourlyTableViewCell.swift */,
-				8267495127EB68A10051977C /* HourlyTableViewCell.xib */,
-			);
-			path = HourlyCollectionCell;
-			sourceTree = "<group>";
-		};
 		827F8BF227E8185100F6D7B3 /* sounds */ = {
 			isa = PBXGroup;
 			children = (
-				82C996BD2879C5390082921A /* click sound.wav */,
-				82EA1E96286BCB3100E49D0F /* future click sound.wav */,
-				82173C432829EA3300E15F22 /* selected sound.wav */,
-				823D9F742825694800EC0FE7 /* lock_sound.mp3 */,
-				823D9F7228247F6F00EC0FE7 /* pause_sound.mp3 */,
-				82848D4C281DACA80068A4AE /* bgm.mp3 */,
-				822139112874E75B0065A0C3 /* anatomy music.mp3 */,
-				822139132874E7630065A0C3 /* chemistry music.mp3 */,
-				822139152874E76E0065A0C3 /* drive music.mp3 */,
-				822139172874E77E0065A0C3 /* ecology music.mp3 */,
-				822139192874E7880065A0C3 /* economy music.mp3 */,
-				82848D4F281DACA90068A4AE /* fail2.mp3 */,
-				82848D5B281DACAA0068A4AE /* games music.mp3 */,
-				82848D52281DACA90068A4AE /* geography music.mp3 */,
-				8221391B2874E7960065A0C3 /* history music.mp3 */,
-				82848D5C281DACAA0068A4AE /* informatics music.mp3 */,
-				8221391D2874E79F0065A0C3 /* IQ music.mp3 */,
-				82848D57281DACAA0068A4AE /* literature music.mp3 */,
-				8221391F2874E7A80065A0C3 /* physics music.mp3 */,
-				822139212874E7B10065A0C3 /* space music.mp3 */,
-				822139232874E7BE0065A0C3 /* sport music.mp3 */,
-				82848D53281DACA90068A4AE /* spring.mp3 */,
-				822139252874E7D00065A0C3 /* Swift music.mp3 */,
-				82848D58281DACAA0068A4AE /* victory_sound.mp3 */,
-				824419B9286E54CE00203DBA /* underwater music.mp3 */,
-				821C69CD287385FE004FD9E1 /* chess music.mp3 */,
-				827F8C0D27E81B7400F6D7B3 /* SoundClass.swift */,
+				82CE536C28E9D55F00D44A6E /* Sound Class */,
+				82CE536B28E9D54300D44A6E /* other sounds */,
+				82CE535B28E9D43100D44A6E /* ui sounds */,
+				82CE535A28E9D42200D44A6E /* category selected sounds */,
+				82CE535D28E9D4B300D44A6E /* themes */,
 			);
 			path = sounds;
 			sourceTree = "<group>";
@@ -1562,6 +1611,7 @@
 				822139272874E8250065A0C3 /* underwater.png */,
 				8237D9B2286E1BCF0097FE69 /* swift.jpeg */,
 				8288F08728725BA100C6A182 /* chess.png */,
+				82319E0128E8CF7E0053CEF5 /* halloween.png */,
 			);
 			path = "category icons";
 			sourceTree = "<group>";
@@ -1586,6 +1636,7 @@
 				82848D24281C6F5B0068A4AE /* swift.background.jpeg */,
 				8207E24F286F0DCA00CB017A /* underwater.background.jpeg */,
 				8288F0852872530E00C6A182 /* chess.background.jpeg */,
+				82319E0C28E8D84E0053CEF5 /* halloween.background.jpeg */,
 				82848D1B281C6F5A0068A4AE /* random.background.jpeg */,
 			);
 			path = backgrounds;
@@ -1618,12 +1669,12 @@
 			path = Chess;
 			sourceTree = "<group>";
 		};
-		8290FCA327FCC15B00E05DDA /* TabBar */ = {
+		8290FCA327FCC15B00E05DDA /* TabBar MVC */ = {
 			isa = PBXGroup;
 			children = (
 				82C2B5A227BD0E5700C66946 /* ViewController.swift */,
 			);
-			path = TabBar;
+			path = "TabBar MVC";
 			sourceTree = "<group>";
 		};
 		829408A627CEC44F00AFF603 /* Planets */ = {
@@ -1842,11 +1893,126 @@
 			path = Geography;
 			sourceTree = "<group>";
 		};
+		82A08C7828F488590072A940 /* Quiz Total MVVM + RxSwift */ = {
+			isa = PBXGroup;
+			children = (
+				82A08C7B28F4887E0072A940 /* Model */,
+				82A08C7A28F4887C0072A940 /* View */,
+				82A08C7928F488790072A940 /* ViewModel */,
+			);
+			path = "Quiz Total MVVM + RxSwift";
+			sourceTree = "<group>";
+		};
+		82A08C7928F488790072A940 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				82A08C7E28F488E90072A940 /* QuizResultViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		82A08C7A28F4887C0072A940 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				822F6C1827BD4AFC0033803A /* BaseTotalQuizViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		82A08C7B28F4887E0072A940 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				82A08C7C28F488A70072A940 /* QuizResult.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		82A82AE128A92BB100011B6F /* QuizBase MVVM Observable */ = {
+			isa = PBXGroup;
+			children = (
+				82A82B1328A9436800011B6F /* QuizBaseObserver */,
+				82A82AE428A92BC900011B6F /* Model */,
+				82A82AE328A92BC600011B6F /* View */,
+				82A82AE228A92BC400011B6F /* ViewModel */,
+			);
+			path = "QuizBase MVVM Observable";
+			sourceTree = "<group>";
+		};
+		82A82AE228A92BC400011B6F /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				8243F16827C2617C00CD9CE4 /* QuizBaseViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		82A82AE328A92BC600011B6F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				82A82AE628A92C2E00011B6F /* ViewControllers */,
+				82A82AE528A92C2B00011B6F /* Cells */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		82A82AE428A92BC900011B6F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				82B760F627CAA13500540E0F /* Question.swift */,
+				820C62AD27BC22AA004894FA /* QuizPlanets.swift */,
+				820C62A727BBDAC4004894FA /* QuizHistory.swift */,
+				82DF98EB27BCEB4A00548B38 /* QuizAnatomy.swift */,
+				82CC60DB27BEA32A00038618 /* QuizSport.swift */,
+				827B545227C01092000ACB31 /* QuizGames.swift */,
+				82A4587F27C12C2E0082BE4C /* QuizIQ.swift */,
+				82F7918A27CC04A00041DAB3 /* QuizEconomy.swift */,
+				82EDBAB827CCCEFE0099C069 /* QuizGeography.swift */,
+				82CBF23D27D153AF0046E3BE /* QuizEcology.swift */,
+				8213BF7027D6AAC800D07512 /* QuizPhysics.swift */,
+				8261BC2827E1139A0089CC94 /* QuizChemistry.swift */,
+				8244DCE727E39C1700F5C59B /* QuizInformatics.swift */,
+				82A9796D27F8CB2C001EBF1C /* QuizLiterature.swift */,
+				8209462C27FA676000F44E83 /* RoadTraffic.swift */,
+				826E129127FF509800465E16 /* SwiftModel.swift */,
+				8237D98D286D02230097FE69 /* QuizUnderwater.swift */,
+				8288F0892872601600C6A182 /* QuizChess.swift */,
+				82319E0528E8D1280053CEF5 /* QuizHalloween.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		82A82AE528A92C2B00011B6F /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				821120E82822EE5E009C2801 /* CurrentCategoryTableViewCell.swift */,
+				82EA02A428240872008A0240 /* RestartTableViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		82A82AE628A92C2E00011B6F /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				8243F16A27C266F800CD9CE4 /* BaseQuizViewController.swift */,
+				821120E62822EC4D009C2801 /* PauseTableViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		82A82B1328A9436800011B6F /* QuizBaseObserver */ = {
+			isa = PBXGroup;
+			children = (
+				82A82B1528A9438200011B6F /* QuizBaseObserver.swift */,
+			);
+			path = QuizBaseObserver;
+			sourceTree = "<group>";
+		};
 		82C039C927CEC2EF00E69661 /* image */ = {
 			isa = PBXGroup;
 			children = (
+				82319E0928E8D7ED0053CEF5 /* Halloween */,
 				8288F08B2872660D00C6A182 /* Chess */,
-				824419AA286E500B00203DBA /* ocean */,
+				824419AA286E500B00203DBA /* Ocean */,
 				82848CF4281C6EF10068A4AE /* backgrounds */,
 				82848CF3281C6ED40068A4AE /* category icons */,
 				8254A3DB28145E6D006B330B /* Literature */,
@@ -1878,14 +2044,16 @@
 			path = Animations;
 			sourceTree = "<group>";
 		};
-		82CBE7E4287093890045616B /* News MVVM */ = {
+		82CBE7E4287093890045616B /* News MVVM Event Bus */ = {
 			isa = PBXGroup;
 			children = (
+				82E0EC7E28AC5A90004AA2E3 /* Bus */,
+				82E0EC7D28AC5A8E004AA2E3 /* Event */,
 				82CBE7ED287093CC0045616B /* Model */,
 				82CBE7EF287093ED0045616B /* ViewModel */,
 				82CBE7EE287093DA0045616B /* View */,
 			);
-			path = "News MVVM";
+			path = "News MVVM Event Bus";
 			sourceTree = "<group>";
 		};
 		82CBE7ED287093CC0045616B /* Model */ = {
@@ -1901,6 +2069,7 @@
 			children = (
 				82CBE7E5287093C50045616B /* NewsTableViewController.swift */,
 				82CBE7E8287093C50045616B /* NewsTableViewCell.swift */,
+				82251C33287E661F00723057 /* URLViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1909,7 +2078,6 @@
 			isa = PBXGroup;
 			children = (
 				82CBE7E6287093C50045616B /* NewsListViewModel.swift */,
-				82CBE7F0287094D40045616B /* NewsTableViewCellViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -1980,20 +2148,20 @@
 		82CBE8012870D4530045616B /* View */ = {
 			isa = PBXGroup;
 			children = (
-				8243F16E27C2841B00CD9CE4 /* TasksTableViewCell.swift */,
 				8243F16C27C27A9300CD9CE4 /* TasksTableViewController.swift */,
+				8243F16E27C2841B00CD9CE4 /* TasksTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
 		};
-		82CBE8062870DE1A0045616B /* Players League MVVM */ = {
+		82CBE8062870DE1A0045616B /* Players MVVM Combine */ = {
 			isa = PBXGroup;
 			children = (
-				821C69E528739E1A004FD9E1 /* ViewModel */,
 				82CBE8092870DE370045616B /* Model */,
+				821C69E528739E1A004FD9E1 /* ViewModel */,
 				82CBE8082870DE350045616B /* View */,
 			);
-			path = "Players League MVVM";
+			path = "Players MVVM Combine";
 			sourceTree = "<group>";
 		};
 		82CBE8082870DE350045616B /* View */ = {
@@ -2040,51 +2208,155 @@
 			path = Ecology;
 			sourceTree = "<group>";
 		};
-		82DF98E327BCE71400548B38 /* Quiz */ = {
+		82CE535A28E9D42200D44A6E /* category selected sounds */ = {
 			isa = PBXGroup;
 			children = (
-				8243F16A27C266F800CD9CE4 /* BaseQuizViewController.swift */,
+				82CE538728E9FA7F00D44A6E /* space.wav */,
+				82CE535F28E9D4FB00D44A6E /* history.wav */,
+				82CE537B28E9EC4600D44A6E /* anatomy.mp3 */,
+				82CE536128E9D4FB00D44A6E /* sport.wav */,
+				82CE536D28E9DCCD00D44A6E /* games.mp3 */,
+				82CE538328E9F3AD00D44A6E /* roadtraffic.mp3 */,
+				82CE537D28E9EE1B00D44A6E /* IQ.mp3 */,
+				82CE538528E9F86600D44A6E /* ecology.wav */,
+				82CE537F28E9EFE600D44A6E /* geography.mp3 */,
+				82CE538128E9F22F00D44A6E /* informatics.mp3 */,
+				82CE536028E9D4FB00D44A6E /* economics.mp3 */,
+				82CE536328E9D4FB00D44A6E /* halloween.wav */,
+				82CE536228E9D4FB00D44A6E /* literature.mp3 */,
+				82CE536F28E9DE1500D44A6E /* underwater.wav */,
+				82CE538D28EA016400D44A6E /* chemistry.mp3 */,
+				82CE538B28EA002300D44A6E /* physics.mp3 */,
+				82CE537528E9E83300D44A6E /* chess.mp3 */,
+				82CE536428E9D4FC00D44A6E /* dice.wav */,
+				82CE538928E9FCB900D44A6E /* swift.mp3 */,
 			);
-			path = Quiz;
+			path = "category selected sounds";
 			sourceTree = "<group>";
 		};
-		82DF98E427BCE73700548B38 /* Other */ = {
+		82CE535B28E9D43100D44A6E /* ui sounds */ = {
 			isa = PBXGroup;
 			children = (
-				823CFF6D27FA10DC001FF6D9 /* Settings */,
-				8290FCA327FCC15B00E05DDA /* TabBar */,
-				823CFF7027FA1117001FF6D9 /* Start */,
-				8214E70A27E1451700F491C9 /* Today */,
+				82826F5C28F74189008798D5 /* league.mp3 */,
+				82CD6BF1288851FB00716443 /* click sound.wav */,
+				82EA1E96286BCB3100E49D0F /* future click sound.wav */,
+				823D9F7228247F6F00EC0FE7 /* pause_sound.mp3 */,
+				82848D53281DACA90068A4AE /* spring.mp3 */,
+				823D9F742825694800EC0FE7 /* lock_sound.mp3 */,
+				82826F5A28F74016008798D5 /* newspaper.mp3 */,
+			);
+			path = "ui sounds";
+			sourceTree = "<group>";
+		};
+		82CE535D28E9D4B300D44A6E /* themes */ = {
+			isa = PBXGroup;
+			children = (
+				822139112874E75B0065A0C3 /* anatomy music.mp3 */,
+				822139132874E7630065A0C3 /* chemistry music.mp3 */,
+				822139172874E77E0065A0C3 /* ecology music.mp3 */,
+				822139152874E76E0065A0C3 /* drive music.mp3 */,
+				822139192874E7880065A0C3 /* economy music.mp3 */,
+				82848D5B281DACAA0068A4AE /* games music.mp3 */,
+				82848D52281DACA90068A4AE /* geography music.mp3 */,
+				8221391B2874E7960065A0C3 /* history music.mp3 */,
+				82848D5C281DACAA0068A4AE /* informatics music.mp3 */,
+				8221391D2874E79F0065A0C3 /* IQ music.mp3 */,
+				82848D57281DACAA0068A4AE /* literature music.mp3 */,
+				8221391F2874E7A80065A0C3 /* physics music.mp3 */,
+				822139212874E7B10065A0C3 /* space music.mp3 */,
+				822139232874E7BE0065A0C3 /* sport music.mp3 */,
+				822139252874E7D00065A0C3 /* Swift music.mp3 */,
+				824419B9286E54CE00203DBA /* underwater music.mp3 */,
+				821C69CD287385FE004FD9E1 /* chess music.mp3 */,
+				82CE537328E9E58B00D44A6E /* halloween music.mp3 */,
+			);
+			path = themes;
+			sourceTree = "<group>";
+		};
+		82CE536B28E9D54300D44A6E /* other sounds */ = {
+			isa = PBXGroup;
+			children = (
+				82848D58281DACAA0068A4AE /* victory_sound.mp3 */,
+				82848D4F281DACA90068A4AE /* fail2.mp3 */,
+			);
+			path = "other sounds";
+			sourceTree = "<group>";
+		};
+		82CE536C28E9D55F00D44A6E /* Sound Class */ = {
+			isa = PBXGroup;
+			children = (
+				827F8C0D27E81B7400F6D7B3 /* SoundClass.swift */,
+			);
+			path = "Sound Class";
+			sourceTree = "<group>";
+		};
+		82CE538F28EA076C00D44A6E /* FB */ = {
+			isa = PBXGroup;
+			children = (
+				8283D15227FA217200A71545 /* FBAuth.swift */,
+			);
+			path = FB;
+			sourceTree = "<group>";
+		};
+		82CF0D3828A583C3006B53F4 /* StartQuiz */ = {
+			isa = PBXGroup;
+			children = (
+				82CF0D3928A583D9006B53F4 /* QuizStartViewController.swift */,
+			);
+			path = StartQuiz;
+			sourceTree = "<group>";
+		};
+		82DF98E427BCE73700548B38 /* Other Modules */ = {
+			isa = PBXGroup;
+			children = (
+				82CF0D3828A583C3006B53F4 /* StartQuiz */,
+				8209F79A2847F2390093147A /* SplashScreen */,
+				8238057B28F191B20006A736 /* Quiz media library */,
+				82222A2B288C801900C1954D /* segmented controll */,
 				8261BC1F27E10EF30089CC94 /* Statistics */,
-				823CFF7127FA1126001FF6D9 /* Auth */,
-				823CFF7327FA1149001FF6D9 /* Profile */,
 			);
-			path = Other;
+			path = "Other Modules";
 			sourceTree = "<group>";
 		};
-		82E91ECD27F6840B003D7E80 /* ml */ = {
+		82E0EC7D28AC5A8E004AA2E3 /* Event */ = {
+			isa = PBXGroup;
+			children = (
+				82E0EC8128AC5ABA004AA2E3 /* Event.swift */,
+			);
+			path = Event;
+			sourceTree = "<group>";
+		};
+		82E0EC7E28AC5A90004AA2E3 /* Bus */ = {
+			isa = PBXGroup;
+			children = (
+				82E0EC7F28AC5AA7004AA2E3 /* Bus.swift */,
+			);
+			path = Bus;
+			sourceTree = "<group>";
+		};
+		82E91ECD27F6840B003D7E80 /* machine learning */ = {
 			isa = PBXGroup;
 			children = (
 				8221390F2874E72D0065A0C3 /* example_5s0_hand_model.mlmodel */,
 			);
-			path = ml;
-			sourceTree = "<group>";
-		};
-		9250E62BC0EE0BD841FA80D6 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				CEAC587B7A92373DDB6A8E3E /* Pods_QUIZ.framework */,
-			);
-			name = Frameworks;
+			path = "machine learning";
 			sourceTree = "<group>";
 		};
 		C084AC94B5F45D5B9FB284D9 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				1154439868648BE5F481FAE3 /* Pods-QUIZ.debug.xcconfig */,
-				1C637A47B2C26A39350829A1 /* Pods-QUIZ.release.xcconfig */,
+				4D6806F65FF24F88E80C476C /* Pods-QUIZ.debug.xcconfig */,
+				07F953B2F57EECB9BC5EABF3 /* Pods-QUIZ.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		D48391B7D14F069F2713E93B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				31E7B7627AF4CCD3FFDFB767 /* Pods_QUIZ.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -2094,11 +2366,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 820C628F27BBA3CB004894FA /* Build configuration list for PBXNativeTarget "QUIZ" */;
 			buildPhases = (
-				7BA84E1894EEF53DBCCCC5AA /* [CP] Check Pods Manifest.lock */,
+				4B97CAA37CE5D99BDC4C00CD /* [CP] Check Pods Manifest.lock */,
 				820C627727BBA3CA004894FA /* Sources */,
 				820C627827BBA3CA004894FA /* Frameworks */,
 				820C627927BBA3CA004894FA /* Resources */,
-				5A5D1230FDB1DE736BDCB623 /* [CP] Embed Pods Frameworks */,
+				32DC3DBDA3A95EFBC911065F /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -2148,16 +2420,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				8294093A27CECD6100AFF603 /* economy3.jpeg in Resources */,
+				82CE537428E9E58B00D44A6E /* halloween music.mp3 in Resources */,
 				822139372874E8650065A0C3 /* Swift15.jpeg in Resources */,
 				82EA1F7F286BCD0600E49D0F /* sport18.jpeg in Resources */,
 				8294092227CECCA900AFF603 /* IQ8.jpeg in Resources */,
 				829408A827CEC4F100AFF603 /* GoogleService-Info.plist in Resources */,
 				8237D9B9286E2A8E0097FE69 /* underwater12.jpeg in Resources */,
 				8294089F27CEC43E00AFF603 /* planets2.jpeg in Resources */,
-				82848D5F281DACAB0068A4AE /* bgm.mp3 in Resources */,
 				821C69D42873917C004FD9E1 /* chess13.jpeg in Resources */,
 				82EA1F2B286BCC9700E49D0F /* geography18.jpeg in Resources */,
 				82EA1EAB286BCB6000E49D0F /* literature2.jpeg in Resources */,
+				82319E1328E8D9CF0053CEF5 /* halloween3.jpeg in Resources */,
 				829408F927CECAC800AFF603 /* sport6.jpeg in Resources */,
 				82EA1EC0286BCB7C00E49D0F /* roadtraffic9.jpeg in Resources */,
 				8221391E2874E79F0065A0C3 /* IQ music.mp3 in Resources */,
@@ -2165,6 +2438,7 @@
 				8288F0982872662400C6A182 /* chess3.jpeg in Resources */,
 				8261BC3527E114950089CC94 /* chemistry4.jpeg in Resources */,
 				829408A427CEC43E00AFF603 /* planets3.jpeg in Resources */,
+				82CE538628E9F86600D44A6E /* ecology.wav in Resources */,
 				821C69D6287392A8004FD9E1 /* chess14.jpeg in Resources */,
 				8288F0992872662400C6A182 /* chess9.jpeg in Resources */,
 				82EA1F00286BCC3E00E49D0F /* planets15.jpeg in Resources */,
@@ -2174,6 +2448,7 @@
 				827D4B6128205C0E007B3895 /* informatics17.jpeg in Resources */,
 				82EA1EBF286BCB7C00E49D0F /* roadtraffic7.jpeg in Resources */,
 				82EA1F82286BCD0600E49D0F /* sport12.jpeg in Resources */,
+				82319E1728E8DF030053CEF5 /* halloween5.jpeg in Resources */,
 				82848D09281C6F4C0068A4AE /* geography.jpeg in Resources */,
 				82EA1EEA286BCC1300E49D0F /* Swift9.jpeg in Resources */,
 				82EA1F90286BCD2300E49D0F /* anatomy19.jpeg in Resources */,
@@ -2187,6 +2462,7 @@
 				82BDEB11283C630100B1AD7F /* literature20.jpeg in Resources */,
 				8294092A27CECCA900AFF603 /* IQ4.jpeg in Resources */,
 				829408F827CECAC800AFF603 /* sport1.jpeg in Resources */,
+				82319E1928E8E0080053CEF5 /* halloween6.jpeg in Resources */,
 				8243A61C2820810E00427553 /* physics11.jpeg in Resources */,
 				82EA1EFF286BCC3E00E49D0F /* planets12.jpeg in Resources */,
 				8294095127CECE1900AFF603 /* geography9.jpeg in Resources */,
@@ -2198,7 +2474,6 @@
 				82EA1FA3286BCD4200E49D0F /* history17.jpeg in Resources */,
 				82BDEB0E283C630100B1AD7F /* literature13.jpeg in Resources */,
 				8213BF8327D6AC0100D07512 /* physics2.jpeg in Resources */,
-				82010B2227EB9BED00EB86C9 /* WeatherCollectionViewCell.xib in Resources */,
 				82EA1F6E286BCCEB00E49D0F /* games18.jpeg in Resources */,
 				82848D2A281C6F5B0068A4AE /* sport.background.jpeg in Resources */,
 				8294094C27CECE1900AFF603 /* geography7.jpeg in Resources */,
@@ -2214,6 +2489,7 @@
 				82EA1EC7286BCBA300E49D0F /* delete.png in Resources */,
 				82EA1F6F286BCCEB00E49D0F /* games20.jpeg in Resources */,
 				822139142874E7630065A0C3 /* chemistry music.mp3 in Resources */,
+				82319E3528E8F4180053CEF5 /* halloween20.jpeg in Resources */,
 				82EA1F31286BCC9700E49D0F /* geography11.jpeg in Resources */,
 				8294091427CECB9200AFF603 /* games8.jpeg in Resources */,
 				82EA1F6A286BCCEB00E49D0F /* games14.jpeg in Resources */,
@@ -2240,16 +2516,22 @@
 				821C69D028738F69004FD9E1 /* chess11.jpeg in Resources */,
 				82EA1F69286BCCEB00E49D0F /* games11.jpeg in Resources */,
 				82EA1EBE286BCB7C00E49D0F /* roadtraffic8.jpeg in Resources */,
+				82319E1F28E8E6F60053CEF5 /* halloween9.jpeg in Resources */,
 				82EA1F94286BCD2300E49D0F /* anatomy18.jpeg in Resources */,
 				8244DCF627E39D8500F5C59B /* informatics2.jpeg in Resources */,
 				829408FE27CECAC800AFF603 /* sport3.jpeg in Resources */,
 				82EA1EDD286BCBF400E49D0F /* photo.png in Resources */,
 				822139282874E8250065A0C3 /* underwater.png in Resources */,
 				82848D30281C6F5B0068A4AE /* physics.background.jpeg in Resources */,
+				82826F5D28F74189008798D5 /* league.mp3 in Resources */,
 				82EA1EA7286BCB6000E49D0F /* literature8.jpeg in Resources */,
+				82CE538228E9F22F00D44A6E /* informatics.mp3 in Resources */,
 				827D4B41281FED88007B3895 /* informatics6.jpeg in Resources */,
+				82CE537628E9E83300D44A6E /* chess.mp3 in Resources */,
 				82EA1F2D286BCC9700E49D0F /* geography20.jpeg in Resources */,
 				829408FD27CECAC800AFF603 /* sport2.jpeg in Resources */,
+				82CE538A28E9FCB900D44A6E /* swift.mp3 in Resources */,
+				82CE537E28E9EE1B00D44A6E /* IQ.mp3 in Resources */,
 				82EA1F52286BCCD200E49D0F /* IQ12.jpeg in Resources */,
 				8237D99A286D15D50097FE69 /* underwater2.jpeg in Resources */,
 				82848D2D281C6F5B0068A4AE /* games.background.jpeg in Resources */,
@@ -2258,6 +2540,7 @@
 				827D4B6228205C0E007B3895 /* informatics18.jpeg in Resources */,
 				8294092827CECCA900AFF603 /* IQ2.jpeg in Resources */,
 				824419B8286E531900203DBA /* underwater20.jpeg in Resources */,
+				82319E1B28E8E0950053CEF5 /* halloween7.jpeg in Resources */,
 				822139262874E7D00065A0C3 /* Swift music.mp3 in Resources */,
 				822139202874E7A80065A0C3 /* physics music.mp3 in Resources */,
 				82EA1EEC286BCC1300E49D0F /* Swift5.jpeg in Resources */,
@@ -2265,11 +2548,12 @@
 				8243A61F2820810E00427553 /* physics19.jpeg in Resources */,
 				823D9F7328247F7000EC0FE7 /* pause_sound.mp3 in Resources */,
 				8294092927CECCA900AFF603 /* IQ1.jpeg in Resources */,
+				82319E1D28E8E1280053CEF5 /* halloween8.jpeg in Resources */,
 				82EA1F7A286BCD0600E49D0F /* sport19.jpeg in Resources */,
 				829408D227CEC93100AFF603 /* history5.jpeg in Resources */,
 				8243A6202820810E00427553 /* physics17.jpeg in Resources */,
+				82319E0228E8CF7E0053CEF5 /* halloween.png in Resources */,
 				82EA1F2A286BCC9700E49D0F /* geography13.jpeg in Resources */,
-				82C996BE2879C5390082921A /* click sound.wav in Resources */,
 				829408D427CEC93100AFF603 /* history8.jpeg in Resources */,
 				82EA1EC1286BCB7C00E49D0F /* roadtraffic10.jpeg in Resources */,
 				82848D0B281C6F4C0068A4AE /* random.jpeg in Resources */,
@@ -2281,6 +2565,8 @@
 				82EA1EF3286BCC1E00E49D0F /* planets1.jpeg in Resources */,
 				827F8C1027E81BDF00F6D7B3 /* physics8.jpeg in Resources */,
 				82848D3F281C77030068A4AE /* chemistry16.jpeg in Resources */,
+				82319E1128E8D95A0053CEF5 /* halloween2.jpeg in Resources */,
+				82CE538028E9EFE600D44A6E /* geography.mp3 in Resources */,
 				82EA1ED9286BCBF400E49D0F /* timer.png in Resources */,
 				821C69DE287397B3004FD9E1 /* chess17.jpeg in Resources */,
 				8213BF8827D6AC0100D07512 /* physics5.jpeg in Resources */,
@@ -2299,18 +2585,23 @@
 				8261BC3727E114950089CC94 /* chemistry6.jpeg in Resources */,
 				82EA1EEE286BCC1300E49D0F /* Swift4.jpeg in Resources */,
 				8294094F27CECE1900AFF603 /* geography6.jpeg in Resources */,
+				82319E2928E8EF7B0053CEF5 /* halloween14.jpeg in Resources */,
 				82EA1F67286BCCEB00E49D0F /* games16.jpeg in Resources */,
 				82EA1EE9286BCC1300E49D0F /* Swift6.jpeg in Resources */,
 				8294095227CECE1900AFF603 /* geography1.jpeg in Resources */,
 				82848D6F281DACAB0068A4AE /* informatics music.mp3 in Resources */,
 				82E4C6E0282F025900379856 /* roadtraffic11.jpeg in Resources */,
+				82319E2F28E8F2430053CEF5 /* halloween17.jpeg in Resources */,
 				82848D41281C77030068A4AE /* chemistry11.jpeg in Resources */,
+				82319E2528E8E9DA0053CEF5 /* halloween12.jpeg in Resources */,
 				82EA1F04286BCC3E00E49D0F /* planets13.jpeg in Resources */,
 				8261BC3B27E114950089CC94 /* chemistry2.jpeg in Resources */,
 				82EA1F07286BCC3E00E49D0F /* planets17.jpeg in Resources */,
 				82EA1F7E286BCD0600E49D0F /* sport17.jpeg in Resources */,
 				8237D9A0286D15D50097FE69 /* underwater5.jpeg in Resources */,
 				8294092427CECCA900AFF603 /* IQ7.jpeg in Resources */,
+				82826F5B28F74017008798D5 /* newspaper.mp3 in Resources */,
+				82319E2D28E8F1C40053CEF5 /* halloween16.jpeg in Resources */,
 				8244DCF927E39D8500F5C59B /* informatics1.jpeg in Resources */,
 				8294091227CECB9200AFF603 /* games2.jpeg in Resources */,
 				82EA1F2F286BCC9700E49D0F /* geography14.jpeg in Resources */,
@@ -2338,12 +2629,16 @@
 				82BDEB0C283C630100B1AD7F /* literature19.jpeg in Resources */,
 				8244DCF527E39D8500F5C59B /* informatics5.jpeg in Resources */,
 				82EA1F7C286BCD0600E49D0F /* sport11.jpeg in Resources */,
+				82319E2328E8E8790053CEF5 /* halloween11.jpeg in Resources */,
 				827D4B6028205C0E007B3895 /* informatics16.png in Resources */,
 				8244DCF727E39D8500F5C59B /* informatics7.jpeg in Resources */,
 				8207E24E286E5CC200CB017A /* underwater16.jpeg in Resources */,
 				8237D9A1286D15D50097FE69 /* underwater7.jpeg in Resources */,
+				82319E1528E8DDAF0053CEF5 /* halloween4.jpeg in Resources */,
 				822139332874E8650065A0C3 /* Swift11.jpeg in Resources */,
 				829408E327CECA2F00AFF603 /* anatomy5.jpeg in Resources */,
+				821AC779289DC12400D04D55 /* trophy.png in Resources */,
+				82CE537028E9DE1500D44A6E /* underwater.wav in Resources */,
 				82EA1ECC286BCBC400E49D0F /* TOUCH ID.png in Resources */,
 				82EA1EC3286BCB8D00E49D0F /* attempts.png in Resources */,
 				821C69E228739845004FD9E1 /* chess18.jpeg in Resources */,
@@ -2356,12 +2651,13 @@
 				8243A61D2820810E00427553 /* physics15.jpeg in Resources */,
 				82848D10281C6F4C0068A4AE /* drive.jpeg in Resources */,
 				82848D28281C6F5B0068A4AE /* geography.background.jpeg in Resources */,
-				8267495327EB68A10051977C /* HourlyTableViewCell.xib in Resources */,
+				82CE537C28E9EC4600D44A6E /* anatomy.mp3 in Resources */,
 				822139162874E76E0065A0C3 /* drive music.mp3 in Resources */,
 				82EA1F5B286BCCD200E49D0F /* IQ11.jpeg in Resources */,
 				82EA1EA8286BCB6000E49D0F /* literature9.jpeg in Resources */,
 				82EA1F7D286BCD0600E49D0F /* sport15.jpeg in Resources */,
 				822139222874E7B10065A0C3 /* space music.mp3 in Resources */,
+				82ECFA9D28EE1218000EE656 /* user.png in Resources */,
 				82EA1EEB286BCC1300E49D0F /* Swift1.jpeg in Resources */,
 				8221393C2874E8650065A0C3 /* Swift14.jpeg in Resources */,
 				82EA1F8E286BCD2300E49D0F /* anatomy16.jpeg in Resources */,
@@ -2373,6 +2669,7 @@
 				82E4C6E3282F025900379856 /* roadtraffic17.jpeg in Resources */,
 				82EA1F02286BCC3E00E49D0F /* planets11.jpeg in Resources */,
 				82EA1F6D286BCCEB00E49D0F /* games19.jpeg in Resources */,
+				82CE538428E9F3AD00D44A6E /* roadtraffic.mp3 in Resources */,
 				8294095427CECE1900AFF603 /* geography5.jpeg in Resources */,
 				8237D99B286D15D50097FE69 /* underwater8.jpeg in Resources */,
 				829408CE27CEC93000AFF603 /* history10.jpeg in Resources */,
@@ -2384,24 +2681,33 @@
 				82EA1F06286BCC3E00E49D0F /* planets16.jpeg in Resources */,
 				8261BC3427E114950089CC94 /* chemistry8.jpeg in Resources */,
 				82CBF25427D1861F0046E3BE /* ecology7.jpeg in Resources */,
+				82319E0D28E8D84E0053CEF5 /* halloween.background.jpeg in Resources */,
 				82729E7F27D38F690042944C /* geography2.jpeg in Resources */,
 				82E4C6E4282F025900379856 /* roadtraffic18.jpeg in Resources */,
+				82CE536A28E9D4FC00D44A6E /* dice.wav in Resources */,
 				82EA1F66286BCCEB00E49D0F /* games13.jpeg in Resources */,
 				82848D6A281DACAB0068A4AE /* literature music.mp3 in Resources */,
 				8288F09B2872662400C6A182 /* chess2.jpeg in Resources */,
 				8243A6222820810E00427553 /* physics16.jpeg in Resources */,
+				82319E2B28E8F05E0053CEF5 /* halloween15.jpeg in Resources */,
+				82319E2728E8EDD30053CEF5 /* halloween13.jpeg in Resources */,
 				8243A6232820810E00427553 /* physics14.jpeg in Resources */,
+				82CE538E28EA016400D44A6E /* chemistry.mp3 in Resources */,
 				82848D0A281C6F4C0068A4AE /* informatics.jpeg in Resources */,
+				82CE536E28E9DCCE00D44A6E /* games.mp3 in Resources */,
 				82EA1EDA286BCBF400E49D0F /* speach.png in Resources */,
 				82BDEB12283C630100B1AD7F /* literature17.jpeg in Resources */,
 				82EA1F97286BCD2300E49D0F /* anatomy15.jpeg in Resources */,
+				82319E2128E8E7F50053CEF5 /* halloween10.jpeg in Resources */,
 				82EA1F44286BCCB900E49D0F /* economy15.jpeg in Resources */,
 				82848D14281C6F4C0068A4AE /* games.jpeg in Resources */,
+				82CE536528E9D4FC00D44A6E /* history.wav in Resources */,
 				829408FC27CECAC800AFF603 /* sport10.jpeg in Resources */,
 				82EA1F92286BCD2300E49D0F /* anatomy17.jpeg in Resources */,
 				82848D27281C6F5B0068A4AE /* drive.background.jpeg in Resources */,
 				82EA1ED1286BCBD100E49D0F /* gesture.png in Resources */,
 				82E4C6E5282F025900379856 /* roadtraffic19.jpeg in Resources */,
+				82CE538C28EA002300D44A6E /* physics.mp3 in Resources */,
 				829408D027CEC93100AFF603 /* history4.jpeg in Resources */,
 				82EA1EF1286BCC1300E49D0F /* Swift8.jpeg in Resources */,
 				82BDEB10283C630100B1AD7F /* literature18.jpeg in Resources */,
@@ -2447,7 +2753,6 @@
 				82EA1EED286BCC1300E49D0F /* Swift10.jpeg in Resources */,
 				82EA1FA9286BCD4200E49D0F /* history18.jpeg in Resources */,
 				82CBF25027D1861F0046E3BE /* ecology5.jpeg in Resources */,
-				82010B2627EBAC7100EB86C9 /* clear.background.jpeg in Resources */,
 				8294089E27CEC43E00AFF603 /* planets6.jpeg in Resources */,
 				822139342874E8650065A0C3 /* Swift19.jpeg in Resources */,
 				82EA1E98286BCB3100E49D0F /* future click sound.wav in Resources */,
@@ -2455,8 +2760,10 @@
 				82EA1EA4286BCB6000E49D0F /* literature5.jpeg in Resources */,
 				8288F09D2872662400C6A182 /* chess8.jpeg in Resources */,
 				82EA1EA5286BCB6000E49D0F /* literature7.jpeg in Resources */,
+				82CE536828E9D4FC00D44A6E /* literature.mp3 in Resources */,
 				82EA1F17286BCC7800E49D0F /* ecology12.jpeg in Resources */,
 				829408D327CEC93100AFF603 /* history7.jpeg in Resources */,
+				82ECFA9E28EE1218000EE656 /* newspaper.png in Resources */,
 				82EA1F46286BCCB900E49D0F /* economy17.jpeg in Resources */,
 				82EA1F54286BCCD200E49D0F /* IQ19.jpeg in Resources */,
 				82CBF24F27D1861F0046E3BE /* ecology3.jpeg in Resources */,
@@ -2464,6 +2771,7 @@
 				82EA1F96286BCD2300E49D0F /* anatomy13.jpeg in Resources */,
 				82848D43281C77030068A4AE /* chemistry13.jpeg in Resources */,
 				8244DCFC27E39D8500F5C59B /* informatics8.jpeg in Resources */,
+				82319E0F28E8D8EA0053CEF5 /* halloween1.jpeg in Resources */,
 				82EA1F7B286BCD0600E49D0F /* sport14.jpeg in Resources */,
 				82EA1F93286BCD2300E49D0F /* anatomy11.jpeg in Resources */,
 				82848D2B281C6F5B0068A4AE /* random.background.jpeg in Resources */,
@@ -2473,6 +2781,7 @@
 				829408FF27CECAC800AFF603 /* sport5.jpeg in Resources */,
 				8237D99E286D15D50097FE69 /* underwater1.jpeg in Resources */,
 				82EA1EC9286BCBB500E49D0F /* exit.png in Resources */,
+				82CD6BF2288851FB00716443 /* click sound.wav in Resources */,
 				82EA1EBA286BCB7C00E49D0F /* roadtraffic6.jpeg in Resources */,
 				82EA1F3F286BCCB900E49D0F /* economy16.jpeg in Resources */,
 				82848D33281C6F5B0068A4AE /* ecology.background.jpeg in Resources */,
@@ -2485,11 +2794,11 @@
 				82848D29281C6F5B0068A4AE /* economy.background.jpeg in Resources */,
 				820C628B27BBA3CB004894FA /* LaunchScreen.storyboard in Resources */,
 				82EA02A7282409FF008A0240 /* retry.png in Resources */,
+				82319E3328E8F3880053CEF5 /* halloween19.jpeg in Resources */,
 				82EA1F59286BCCD200E49D0F /* IQ18.jpeg in Resources */,
 				826F33692826BBA500FB6CF8 /* literature.background.jpeg in Resources */,
 				829408A227CEC43E00AFF603 /* planets10.jpeg in Resources */,
 				8288F09E2872662400C6A182 /* chess5.jpeg in Resources */,
-				82173C462829EA3400E15F22 /* selected sound.wav in Resources */,
 				82EA1F1A286BCC7800E49D0F /* ecology19.jpeg in Resources */,
 				82848D34281C6F5B0068A4AE /* swift.background.jpeg in Resources */,
 				82848D12281C6F4C0068A4AE /* sport.jpeg in Resources */,
@@ -2502,10 +2811,12 @@
 				8244DCFD27E39D8500F5C59B /* informatics4.jpeg in Resources */,
 				829408EA27CECA2F00AFF603 /* anatomy1.jpeg in Resources */,
 				8221391C2874E7960065A0C3 /* history music.mp3 in Resources */,
+				82CE536728E9D4FC00D44A6E /* sport.wav in Resources */,
 				82EA1F83286BCD0600E49D0F /* sport20.jpeg in Resources */,
 				82EA1F81286BCD0600E49D0F /* sport16.jpeg in Resources */,
 				82E4C6DE282F025900379856 /* roadtraffic15.jpeg in Resources */,
 				8243A61B2820810E00427553 /* physics12.jpeg in Resources */,
+				82CE536928E9D4FC00D44A6E /* halloween.wav in Resources */,
 				82EA1F8F286BCD2300E49D0F /* anatomy12.jpeg in Resources */,
 				82E4C6DD282F025900379856 /* roadtraffic13.jpeg in Resources */,
 				829408EB27CECA2F00AFF603 /* anatomy4.jpeg in Resources */,
@@ -2523,8 +2834,10 @@
 				8288F08828725BA100C6A182 /* chess.png in Resources */,
 				82EA1ED8286BCBF400E49D0F /* voice.png in Resources */,
 				82848D31281C6F5B0068A4AE /* anatomy.background.jpeg in Resources */,
+				82CE536628E9D4FC00D44A6E /* economics.mp3 in Resources */,
 				8294093927CECD6100AFF603 /* economy2.jpeg in Resources */,
 				82EA1F1E286BCC7800E49D0F /* ecology13.jpeg in Resources */,
+				82319E3128E8F2F40053CEF5 /* halloween18.jpeg in Resources */,
 				8294093B27CECD6100AFF603 /* economy8.jpeg in Resources */,
 				82EA1F0B286BCC4F00E49D0F /* informatics12.jpeg in Resources */,
 				82EA1EB9286BCB7C00E49D0F /* roadtraffic1.jpeg in Resources */,
@@ -2550,7 +2863,6 @@
 				82EA1F33286BCC9700E49D0F /* geography15.jpeg in Resources */,
 				821C69DA28739596004FD9E1 /* chess16.jpeg in Resources */,
 				82EA1F18286BCC7800E49D0F /* ecology18.jpeg in Resources */,
-				8267494F27EB68700051977C /* WeatherTableViewCell.xib in Resources */,
 				8213BF8527D6AC0100D07512 /* physics4.jpeg in Resources */,
 				8237D9B7286E2A8E0097FE69 /* underwater13.jpeg in Resources */,
 				829408F727CECAC800AFF603 /* sport4.jpeg in Resources */,
@@ -2559,6 +2871,7 @@
 				82848D0D281C6F4C0068A4AE /* physics.jpeg in Resources */,
 				82848D26281C6F5B0068A4AE /* earth.background.jpeg in Resources */,
 				82EA1F41286BCCB900E49D0F /* economy14.jpeg in Resources */,
+				82CE538828E9FA7F00D44A6E /* space.wav in Resources */,
 				8294091527CECB9200AFF603 /* games10.jpeg in Resources */,
 				82CBF24D27D1861F0046E3BE /* ecology4.jpeg in Resources */,
 				829408E927CECA2F00AFF603 /* anatomy7.jpeg in Resources */,
@@ -2581,7 +2894,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		5A5D1230FDB1DE736BDCB623 /* [CP] Embed Pods Frameworks */ = {
+		32DC3DBDA3A95EFBC911065F /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -2598,7 +2911,7 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-QUIZ/Pods-QUIZ-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		7BA84E1894EEF53DBCCCC5AA /* [CP] Check Pods Manifest.lock */ = {
+		4B97CAA37CE5D99BDC4C00CD /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -2627,32 +2940,33 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8267494E27EB68700051977C /* WeatherTableViewCell.swift in Sources */,
-				825F0D0B27F9FF6700E7BF4D /* Shimmer.swift in Sources */,
 				82F0CA8427FDDB04004925D8 /* VideoRecordTableViewCell.swift in Sources */,
 				8243F16F27C2841B00CD9CE4 /* TasksTableViewCell.swift in Sources */,
 				820C627F27BBA3CA004894FA /* AppDelegate.swift in Sources */,
+				8238058328F192F70006A736 /* QuizMediaLibraryModel.swift in Sources */,
 				82C2B5A327BD0E5700C66946 /* ViewController.swift in Sources */,
-				82035C7B27EC2191002287CD /* TodayTableViewCell.swift in Sources */,
+				82319E0628E8D1280053CEF5 /* QuizHalloween.swift in Sources */,
 				82CBE8032870D4B40045616B /* TasksViewModel.swift in Sources */,
 				826E12B128009F1300465E16 /* SpeachTableViewCell.swift in Sources */,
 				82900D632801AB9D00742925 /* MusicTableViewCell.swift in Sources */,
 				822B235D27C868390067ED13 /* Player.swift in Sources */,
-				8267494727EB66860051977C /* WeatherViewController.swift in Sources */,
-				82A458B127C232090082BE4C /* Gradient.swift in Sources */,
+				8238058128F1926A0006A736 /* QuizMediaLibraryTableViewCell.swift in Sources */,
 				82B760F527CAA04D00540E0F /* CategoryTableViewCell.swift in Sources */,
+				82E0EC8228AC5ABA004AA2E3 /* Event.swift in Sources */,
 				82A1D8C827FB4C3D0044EEA6 /* PhotoTableViewCell.swift in Sources */,
 				821120E92822EE5E009C2801 /* CurrentCategoryTableViewCell.swift in Sources */,
 				8287054F28144CF800002EBC /* VoicePasswordTableViewCell.swift in Sources */,
 				82A9796E27F8CB2C001EBF1C /* QuizLiterature.swift in Sources */,
+				82E0EC8028AC5AA7004AA2E3 /* Bus.swift in Sources */,
+				82A08C7D28F488A70072A940 /* QuizResult.swift in Sources */,
 				828F0DCF27C82CA10016D337 /* PlayerBoardTableViewController.swift in Sources */,
 				8283D15327FA217200A71545 /* FBAuth.swift in Sources */,
-				82035C7527EC1FC8002287CD /* TodayModel.swift in Sources */,
-				8267495227EB68A10051977C /* HourlyTableViewCell.swift in Sources */,
 				824D0C8E280377B100C2BE4B /* TimerTableViewCell.swift in Sources */,
 				82CBF23E27D153AF0046E3BE /* QuizEcology.swift in Sources */,
 				82DF98EC27BCEB4A00548B38 /* QuizAnatomy.swift in Sources */,
+				8238057F28F1922E0006A736 /* QuizMediaLibraryTableViewController.swift in Sources */,
 				8283D15127FA209600A71545 /* StatisticTableViewCell.swift in Sources */,
+				82A82B1628A9438200011B6F /* QuizBaseObserver.swift in Sources */,
 				82EDBAB927CCCEFE0099C069 /* QuizGeography.swift in Sources */,
 				820C62A827BBDAC4004894FA /* QuizHistory.swift in Sources */,
 				82DBCA2728303EDE009DD1EE /* EditProfileTableViewCell.swift in Sources */,
@@ -2661,40 +2975,42 @@
 				82A01BFD27C51CFF00DCBD6F /* RoundedImageView.swift in Sources */,
 				82C2B5B327BD2F8800C66946 /* AnimationsClass.swift in Sources */,
 				82B760F727CAA13500540E0F /* Question.swift in Sources */,
-				8243F16927C2617C00CD9CE4 /* QuizBase.swift in Sources */,
+				8243F16927C2617C00CD9CE4 /* QuizBaseViewModel.swift in Sources */,
+				82CD6BF428885DFF00716443 /* QuizSegmentedViewController.swift in Sources */,
 				826E129227FF509800465E16 /* SwiftModel.swift in Sources */,
 				82F7918B27CC04A00041DAB3 /* QuizEconomy.swift in Sources */,
 				8261BC2927E1139A0089CC94 /* QuizChemistry.swift in Sources */,
 				827F8C0E27E81B7400F6D7B3 /* SoundClass.swift in Sources */,
 				8243F16D27C27A9400CD9CE4 /* TasksTableViewController.swift in Sources */,
 				828F0DD127C82D4C0016D337 /* PlayerTableViewCell.swift in Sources */,
+				82251C34287E661F00723057 /* URLViewController.swift in Sources */,
 				82B760EF27CA9C2E00540E0F /* CategoryTableViewController.swift in Sources */,
 				8243F16B27C266F800CD9CE4 /* BaseQuizViewController.swift in Sources */,
 				82CBE7EC287093C50045616B /* NewsTableViewCell.swift in Sources */,
-				82010B2127EB9BED00EB86C9 /* WeatherCollectionViewCell.swift in Sources */,
 				827B545327C01092000ACB31 /* QuizGames.swift in Sources */,
 				826E12AD27FF89DA00465E16 /* HintsTableViewCell.swift in Sources */,
 				823A8EB927FF06F600C7965B /* MicrophoneTableViewCell.swift in Sources */,
 				8288F08A2872601600C6A182 /* QuizChess.swift in Sources */,
 				820C62AE27BC22AA004894FA /* QuizPlanets.swift in Sources */,
-				82CBE7F1287094D40045616B /* NewsTableViewCellViewModel.swift in Sources */,
 				82A4588027C12C2F0082BE4C /* QuizIQ.swift in Sources */,
 				82C2B5A527BD115A00C66946 /* ProfileViewController.swift in Sources */,
 				82CBE7FB2870A94E0045616B /* CategoriesTableViewCellModel.swift in Sources */,
-				82035C7927EC20AF002287CD /* TodayTableViewController.swift in Sources */,
 				823CFF9327FA1BAF001FF6D9 /* BiometricTableViewCell.swift in Sources */,
 				8209F79C2847F2600093147A /* SplashScreenController.swift in Sources */,
+				820D303B28F340710031CFCD /* Profile.swift in Sources */,
 				8261BC2227E10F1B0089CC94 /* TotalTableViewController.swift in Sources */,
 				822F6C1927BD4AFC0033803A /* BaseTotalQuizViewController.swift in Sources */,
 				82EA02A528240872008A0240 /* RestartTableViewCell.swift in Sources */,
 				82CBE7EA287093C50045616B /* NewsListViewModel.swift in Sources */,
+				82A08C7F28F488E90072A940 /* QuizResultViewModel.swift in Sources */,
 				82B760EA27CA75E800540E0F /* QuizModel.swift in Sources */,
+				82A08C8128F48E8E0072A940 /* ProfileViewModel.swift in Sources */,
 				82CBE7EB287093C50045616B /* NewsModel.swift in Sources */,
 				82AFAF6827FA3C25001B04A0 /* ExitTableViewCell.swift in Sources */,
 				82CBE7E9287093C50045616B /* NewsTableViewController.swift in Sources */,
 				8213BF7127D6AAC800D07512 /* QuizPhysics.swift in Sources */,
 				8243F16527C25A1200CD9CE4 /* TaskModel.swift in Sources */,
-				821C69E828739E32004FD9E1 /* PlayerTableViewCellModel.swift in Sources */,
+				82CF0D3A28A583D9006B53F4 /* QuizStartViewController.swift in Sources */,
 				82DC6E1C27E65E790077D107 /* StartViewController.swift in Sources */,
 				82747F8C28050121001E994A /* AttemptsTableViewCell.swift in Sources */,
 				821120E72822EC4D009C2801 /* PauseTableViewController.swift in Sources */,
@@ -2704,7 +3020,7 @@
 				8244DCE827E39C1700F5C59B /* QuizInformatics.swift in Sources */,
 				8237D98E286D02230097FE69 /* QuizUnderwater.swift in Sources */,
 				8209462D27FA676000F44E83 /* RoadTraffic.swift in Sources */,
-				821C69E928739E32004FD9E1 /* PlayerViewModel.swift in Sources */,
+				821C69E928739E32004FD9E1 /* PlayersViewModel.swift in Sources */,
 				820C628127BBA3CA004894FA /* SceneDelegate.swift in Sources */,
 				82A1D8C427FB25490044EEA6 /* DeleteTableViewCell.swift in Sources */,
 				82CBE7F92870A8F30045616B /* CategoriesViewModel.swift in Sources */,
@@ -2785,7 +3101,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -2840,7 +3156,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -2852,7 +3168,7 @@
 		};
 		820C629027BBA3CB004894FA /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1154439868648BE5F481FAE3 /* Pods-QUIZ.debug.xcconfig */;
+			baseConfigurationReference = 4D6806F65FF24F88E80C476C /* Pods-QUIZ.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -2863,12 +3179,13 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = QUIZ/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Викторина 2022";
-				INFOPLIST_KEY_NSCameraUsageDescription = camera;
-				INFOPLIST_KEY_NSFaceIDUsageDescription = "Хотите включить Face ID/Touch ID";
-				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Включить геопозицию?";
-				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Хотите включить микрофон?";
-				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "разрешите доступ к фото";
-				INFOPLIST_KEY_NSSpeechRecognitionUsageDescription = "Вы можете отвечать на вопросы с помощью голоса. Включить?";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.trivia-games";
+				INFOPLIST_KEY_NSCameraUsageDescription = "";
+				INFOPLIST_KEY_NSFaceIDUsageDescription = "";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "";
+				INFOPLIST_KEY_NSSpeechRecognitionUsageDescription = "";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -2891,7 +3208,7 @@
 		};
 		820C629127BBA3CB004894FA /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1C637A47B2C26A39350829A1 /* Pods-QUIZ.release.xcconfig */;
+			baseConfigurationReference = 07F953B2F57EECB9BC5EABF3 /* Pods-QUIZ.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -2902,12 +3219,13 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = QUIZ/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Викторина 2022";
-				INFOPLIST_KEY_NSCameraUsageDescription = camera;
-				INFOPLIST_KEY_NSFaceIDUsageDescription = "Хотите включить Face ID/Touch ID";
-				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Включить геопозицию?";
-				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Хотите включить микрофон?";
-				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "разрешите доступ к фото";
-				INFOPLIST_KEY_NSSpeechRecognitionUsageDescription = "Вы можете отвечать на вопросы с помощью голоса. Включить?";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.trivia-games";
+				INFOPLIST_KEY_NSCameraUsageDescription = "";
+				INFOPLIST_KEY_NSFaceIDUsageDescription = "";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "";
+				INFOPLIST_KEY_NSSpeechRecognitionUsageDescription = "";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
