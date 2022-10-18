@@ -136,18 +136,21 @@ class ViewController: UITabBarController {
                 self.icon = "newspaper.png"
                 self.button.setImage(UIImage(named: self.icon), for: .normal)
                 self.animation.springButton(button: self.button)
+                self.player.Sound(resource: "newspaper.mp3")
                 
             case _ where self.text.contains("Категори") || self.text.contains("категори"):
                 self.selectedIndex = 1
                 self.icon = "planets.jpeg"
                 self.button.setImage(UIImage(named: self.icon), for: .normal)
                 self.animation.springButton(button: self.button)
+                self.player.Sound(resource: "IQ.mp3")
                 
             case _ where self.text.contains("Куб") || self.text.contains("куб"):
                 self.selectedIndex = 3
                 self.icon = "trophy.png"
                 self.button.setImage(UIImage(named: self.icon), for: .normal)
                 self.animation.springButton(button: self.button)
+                self.player.Sound(resource: "league.mp3")
                 
             case _ where self.text.contains("Проф") || self.text.contains("проф"):
                 self.selectedIndex = 4
@@ -156,6 +159,7 @@ class ViewController: UITabBarController {
                 self.button.clipsToBounds = true
                 self.button.sd_setImage(with: URL(string: self.icon), for: .normal)
                 self.animation.springButton(button: self.button)
+                self.fb.PlayLastQuizSound()
                 
             // Выбор категории викторины
             case _ where self.text.contains("Планет") || self.text.contains("планет") || self.text.contains("Космос") || self.text.contains("космос"):
