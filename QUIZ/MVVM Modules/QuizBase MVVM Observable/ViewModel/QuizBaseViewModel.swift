@@ -1454,9 +1454,7 @@ class QuizBaseViewModel {
             SCLAlertView().showWarning("У вас осталось 0 подсказок", subTitle: "решайте сами")
             AnswersCounter = 0
             AnswersButtonStatus.value = ("\(AnswersCounter)")
-        }  else if Choice1Status.value == "" || Choice2Status.value == "" || Choice3Status.value == "" {
-            print(AnswersCounter)
-        } else {
+        } else if Choice1Status.value == "" || Choice2Status.value == "" || Choice3Status.value == "" {
             AnswersCounter = AnswersCounter - 1
             AnswersButtonStatus.value = ("\(AnswersCounter)")
             if Choice1Status.value != base?.checkAnswer() {
