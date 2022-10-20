@@ -172,6 +172,12 @@ class QuizBaseViewModel {
                 self.PresentTotalScreen()
             }
             
+            player.Sound(resource: "correct answer.wav")
+            
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                self.SetQuizTheme()
+            }
+            
             DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
                 self.startRecognition()
             }
@@ -230,6 +236,12 @@ class QuizBaseViewModel {
             
             if base?.questionNumber == 19 {
                 self.PresentTotalScreen()
+            }
+            
+            player.Sound(resource: "wrong answer.wav")
+            
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                self.SetQuizTheme()
             }
             
             DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
@@ -415,6 +427,12 @@ class QuizBaseViewModel {
                 PresentTotalScreen()
             }
             
+            player.Sound(resource: "correct answer.wav")
+            
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                self.SetQuizTheme()
+            }
+            
             if Choice1Status.value == check2 {
                 Choice1StatusColor.value = UIColor.systemGreen
             }
@@ -480,6 +498,12 @@ class QuizBaseViewModel {
             
             if base?.questionNumber == 19 {
                 PresentTotalScreen()
+            }
+            
+            player.Sound(resource: "correct answer.wav")
+            
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                self.SetQuizTheme()
             }
             
             if Choice1Status.value == check2 {
@@ -566,6 +590,12 @@ class QuizBaseViewModel {
                 write(id: 18, quizpath: "quizhalloween", category: "halloween")
             }
             
+            player.Sound(resource: "correct answer.wav")
+            
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                self.SetQuizTheme()
+            }
+            
             sender.backgroundColor = UIColor.green;
             questionTextStatus.value = "Правильно!"
             
@@ -610,6 +640,12 @@ class QuizBaseViewModel {
             
             if base?.questionNumber == 19 {
                 PresentTotalScreen()
+            }
+            
+            player.Sound(resource: "wrong answer.wav")
+            
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                self.SetQuizTheme()
             }
             
             if AttemptsCounter == 0 && self.AttemptsStatus == true {
@@ -1136,7 +1172,9 @@ class QuizBaseViewModel {
             
         case _ where check2.contains("решение") || check2.contains("Решение"):
             check2 = ""
-            self.ShowAnswer()
+            if self.HintsStatus == true {
+                self.ShowAnswer()
+            }
             
         case _ where check2.contains("След") || check2.contains("след"):
             check2 = ""

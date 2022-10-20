@@ -418,6 +418,8 @@
 		82E4C6E6282F025900379856 /* roadtraffic16.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 82E4C6DC282F025800379856 /* roadtraffic16.jpeg */; };
 		82E4C6E8282F062C00379856 /* roadtraffic14.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 82E4C6E7282F062C00379856 /* roadtraffic14.jpeg */; };
 		82E8C49C29016E9E005FD213 /* broken light bulb.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 82E8C49B29016E9D005FD213 /* broken light bulb.mp3 */; };
+		82E8C4A329019921005FD213 /* wrong answer.wav in Resources */ = {isa = PBXBuildFile; fileRef = 82E8C4A129019921005FD213 /* wrong answer.wav */; };
+		82E8C4A429019921005FD213 /* correct answer.wav in Resources */ = {isa = PBXBuildFile; fileRef = 82E8C4A229019921005FD213 /* correct answer.wav */; };
 		82EA02A528240872008A0240 /* RestartTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82EA02A428240872008A0240 /* RestartTableViewCell.swift */; };
 		82EA02A7282409FF008A0240 /* retry.png in Resources */ = {isa = PBXBuildFile; fileRef = 82EA02A6282409FF008A0240 /* retry.png */; };
 		82EA1E98286BCB3100E49D0F /* future click sound.wav in Resources */ = {isa = PBXBuildFile; fileRef = 82EA1E96286BCB3100E49D0F /* future click sound.wav */; };
@@ -981,6 +983,8 @@
 		82E4C6DC282F025800379856 /* roadtraffic16.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = roadtraffic16.jpeg; sourceTree = "<group>"; };
 		82E4C6E7282F062C00379856 /* roadtraffic14.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = roadtraffic14.jpeg; sourceTree = "<group>"; };
 		82E8C49B29016E9D005FD213 /* broken light bulb.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "broken light bulb.mp3"; sourceTree = "<group>"; };
+		82E8C4A129019921005FD213 /* wrong answer.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "wrong answer.wav"; path = "../../../../../Downloads/wrong answer.wav"; sourceTree = "<group>"; };
+		82E8C4A229019921005FD213 /* correct answer.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "correct answer.wav"; path = "../../../../../Downloads/correct answer.wav"; sourceTree = "<group>"; };
 		82EA02A428240872008A0240 /* RestartTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestartTableViewCell.swift; sourceTree = "<group>"; };
 		82EA02A6282409FF008A0240 /* retry.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = retry.png; sourceTree = "<group>"; };
 		82EA1E96286BCB3100E49D0F /* future click sound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "future click sound.wav"; sourceTree = "<group>"; };
@@ -2278,6 +2282,8 @@
 		82CE536B28E9D54300D44A6E /* other sounds */ = {
 			isa = PBXGroup;
 			children = (
+				82E8C4A229019921005FD213 /* correct answer.wav */,
+				82E8C4A129019921005FD213 /* wrong answer.wav */,
 				82848D58281DACAA0068A4AE /* victory_sound.mp3 */,
 				82848D4F281DACA90068A4AE /* fail2.mp3 */,
 				82E8C49B29016E9D005FD213 /* broken light bulb.mp3 */,
@@ -2806,6 +2812,7 @@
 				8288F09E2872662400C6A182 /* chess5.jpeg in Resources */,
 				82EA1F1A286BCC7800E49D0F /* ecology19.jpeg in Resources */,
 				82848D34281C6F5B0068A4AE /* swift.background.jpeg in Resources */,
+				82E8C4A329019921005FD213 /* wrong answer.wav in Resources */,
 				82848D12281C6F4C0068A4AE /* sport.jpeg in Resources */,
 				826F33672825E80200FB6CF8 /* planets.jpeg in Resources */,
 				8294090C27CECB9100AFF603 /* games1.jpeg in Resources */,
@@ -2837,6 +2844,7 @@
 				82EA1EB8286BCB7C00E49D0F /* roadtraffic3.jpeg in Resources */,
 				82CBF24E27D1861F0046E3BE /* ecology10.jpeg in Resources */,
 				8288F08828725BA100C6A182 /* chess.png in Resources */,
+				82E8C4A429019921005FD213 /* correct answer.wav in Resources */,
 				82EA1ED8286BCBF400E49D0F /* voice.png in Resources */,
 				82848D31281C6F5B0068A4AE /* anatomy.background.jpeg in Resources */,
 				82CE536628E9D4FC00D44A6E /* economics.mp3 in Resources */,

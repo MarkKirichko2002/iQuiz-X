@@ -87,9 +87,6 @@ class BaseQuizViewController: UIViewController {
         quiz?.view = self.view
         quiz?.storyboard = self.storyboard
         
-        // Buttons
-        
-        
         // Choice 1,2,3 text
         quiz?.Choice1Status.bind({(Choice1Status) in
             DispatchQueue.main.async {
@@ -142,7 +139,9 @@ class BaseQuizViewController: UIViewController {
         
         quiz?.AnswersButtonStatus.bind({(AnswersButtonStatus) in
             DispatchQueue.main.async {
-                self.AnswersButton.setTitle(AnswersButtonStatus, for: .normal)
+                if self.AnswersButton != nil {
+                    self.AnswersButton.setTitle(AnswersButtonStatus, for: .normal)
+                }
             }
         })
         
