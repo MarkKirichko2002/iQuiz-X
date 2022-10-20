@@ -1455,18 +1455,24 @@ class QuizBaseViewModel {
             AnswersCounter = 0
             AnswersButtonStatus.value = ("\(AnswersCounter)")
         } else if Choice1Status.value == "" || Choice2Status.value == "" || Choice3Status.value == "" {
+            print(AnswersCounter)
+        } else {
             AnswersCounter = AnswersCounter - 1
             AnswersButtonStatus.value = ("\(AnswersCounter)")
+            player.Sound(resource: "broken light bulb.mp3")
+            
             if Choice1Status.value != base?.checkAnswer() {
                 Choice1Status.value = ""
             }
-            
             if Choice2Status.value != base?.checkAnswer() {
                 Choice2Status.value = ""
             }
-            
             if Choice3Status.value != base?.checkAnswer() {
                 Choice3Status.value = ""
+            }
+            
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                self.SetQuizTheme()
             }
         }
     }
