@@ -128,6 +128,7 @@ class QuizBaseViewModel {
     // storyboard and view
     var storyboard: UIStoryboard?
     var view: UIView?
+    var viewController: UIViewController?
     
     func SkipQuestion() {
         
@@ -156,6 +157,213 @@ class QuizBaseViewModel {
         base?.quiztheme(id: 16, background: "underwater.background.jpeg", music: "underwater music.mp3")
         base?.quiztheme(id: 17, background: "chess.background.jpeg", music: "chess music.mp3")
         base?.quiztheme(id: 18, background: "halloween.background.jpeg", music: "halloween music.mp3")
+    }
+    
+    func OpenCamera() {
+        let picker = UIImagePickerController()
+        picker.sourceType = .camera
+        picker.allowsEditing = true
+        picker.delegate = self.viewController as? any UIImagePickerControllerDelegate & UINavigationControllerDelegate
+        self.viewController?.present(picker, animated: true)
+    }
+    
+    func recognizeText(image: UIImage?) {
+        guard let cgImage = image?.cgImage else {
+            return
+        }
+    
+        // Handler
+        let handler = VNImageRequestHandler(cgImage: cgImage, options: [:])
+    
+        // Request
+        let request = VNRecognizeTextRequest { [weak self] request,error in
+            guard let observations = request.results as? [VNRecognizedTextObservation],
+                  error == nil else {
+                return
+            }
+    
+            let text = observations.compactMap({
+                $0.topCandidates(1).first?.string
+            }).joined(separator: " ")
+    
+            switch text {
+                
+            case "1":
+                self?.check2 = self?.base?.checkChoices()[0] ?? ""
+                self?.questionTextStatus.value = self?.check2 ?? ""
+                
+            case "2":
+                self?.check2 = self?.base?.checkChoices()[1] ?? ""
+                self?.questionTextStatus.value = self?.check2 ?? ""
+                
+            case "3":
+                self?.check2 = self?.base?.checkChoices()[2] ?? ""
+                self?.questionTextStatus.value = self?.check2 ?? ""
+                
+            case "Один":
+                self?.check2 = self?.base?.checkChoices()[0] ?? ""
+                self?.questionTextStatus.value = self?.check2 ?? ""
+                
+            case "Два":
+                self?.check2 = self?.base?.checkChoices()[1] ?? ""
+                self?.questionTextStatus.value = self?.check2 ?? ""
+                
+            case "Три":
+                self?.check2 = self?.base?.checkChoices()[2] ?? ""
+                self?.questionTextStatus.value = self?.check2 ?? ""
+                
+            default:
+                break
+            }
+        }
+    
+        do {
+            try handler.perform([request])
+        } catch {
+            questionTextStatus.value = "\(error)"
+        }
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+            self.CheckPhotoAnswer()
+        }
+    }
+    
+    func CheckPhotoAnswer() {
+        
+        let photoanswer = base?.checkAnswer(check2)
+        
+        if photoanswer == true && check2 != "" && counter < 100  {
+            
+            if isRecordOnAudio == true {
+                stopSpeechRecognition()
+                sayComment(comment: "Правильно")
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
+                    self.startRecognition()
+                }
+            } else {
+                sayComment(comment: "Правильно")
+            }
+            
+            if base?.questionNumber == 19 {
+                self.PresentTotalScreen()
+            }
+            
+            player.Sound(resource: "correct answer.wav")
+            
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                self.SetQuizTheme()
+            }
+            
+            if Choice1Status.value == check2 {
+                Choice1StatusColor.value = UIColor.systemGreen
+            }
+            
+            if Choice2Status.value == check2 {
+                Choice2StatusColor.value = UIColor.systemGreen
+            }
+            
+            if Choice3Status.value == check2 {
+                Choice3StatusColor.value = UIColor.systemGreen
+            }
+            
+            counter += 5
+            CorrectAnswersCounter += 1
+            
+            ScoreStatus.value = ("Счет: \(CorrectAnswersCounter)/100")
+            print("Голос \(check2)")
+            
+            base?.nextQuestion()
+            write(id: 1, quizpath: "quizplanets", category: "planets")
+            write(id: 2, quizpath: "quizhistory", category: "history")
+            write(id: 3, quizpath: "quizanatomy", category: "anatomy")
+            write(id: 4, quizpath: "quizsport", category: "sport")
+            write(id: 5, quizpath: "quizgames", category: "games")
+            write(id: 6, quizpath: "quiziq", category: "IQ")
+            write(id: 7, quizpath: "quizeconomy", category: "economy")
+            write(id: 8, quizpath: "quizgeography", category: "geography")
+            write(id: 9, quizpath: "quizecology", category: "ecology")
+            write(id: 10, quizpath: "quizphysics", category: "physics")
+            write(id: 11, quizpath: "quizchemistry", category: "chemistry")
+            write(id: 12, quizpath: "quizinformatics", category: "informatics")
+            write(id: 13, quizpath: "quizliterature", category: "literature")
+            write(id: 14, quizpath: "quizroadtraffic", category: "roadtraffic")
+            write(id: 15, quizpath: "quizswift", category: "Swift")
+            write(id: 16, quizpath: "quizunderwater", category: "underwater")
+            write(id: 17, quizpath: "quizchess", category: "chess")
+            write(id: 18, quizpath: "quizhalloween", category: "halloween")
+            
+            questionTextStatus.value = "Правильно 👍👍👍!!!"
+            Timer.scheduledTimer(timeInterval:0.2, target: self, selector: #selector(updateUI), userInfo: nil, repeats: false)
+        }
+        
+        if photoanswer == false && check2 != "" {
+          
+            if AttemptsCounter == 0 && self.AttemptsStatus == true {
+                PresentTotalScreen()
+            }
+            
+            if isRecordOnAudio == true {
+                stopSpeechRecognition()
+                sayComment(comment: "Не правильно")
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
+                    self.startRecognition()
+                }
+            } else {
+                sayComment(comment: "Не правильно")
+            }
+            
+            if base?.questionNumber == 19 {
+                self.PresentTotalScreen()
+            }
+            
+            player.Sound(resource: "wrong answer.wav")
+            
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                self.SetQuizTheme()
+            }
+            
+            if Choice1Status.value == check2 {
+                Choice1StatusColor.value = UIColor.systemRed
+            }
+            
+            if Choice2Status.value == check2 {
+                Choice2StatusColor.value = UIColor.systemRed
+            }
+            
+            if Choice3Status.value == check2 {
+                Choice3StatusColor.value = UIColor.systemRed
+            }
+            
+            AttemptsCounter -= 1
+            AttemptsCountStatus.value = "Попыток осталось: \(AttemptsCounter)"
+            print(AttemptsCounter)
+            
+            print("Голос \(check2)")
+            ScoreStatus.value = ("Счет: \(String(counter))/100")
+            AttemptsCountStatus.value = "Попыток осталось: \(AttemptsCounter)"
+            
+            write(id: 1, quizpath: "quizplanets", category: "planets")
+            write(id: 2, quizpath: "quizhistory", category: "history")
+            write(id: 3, quizpath: "quizanatomy", category: "anatomy")
+            write(id: 4, quizpath: "quizsport", category: "sport")
+            write(id: 5, quizpath: "quizgames", category: "games")
+            write(id: 6, quizpath: "quiziq", category: "IQ")
+            write(id: 7, quizpath: "quizeconomy", category: "economy")
+            write(id: 8, quizpath: "quizgeography", category: "geography")
+            write(id: 9, quizpath: "quizecology", category: "ecology")
+            write(id: 10, quizpath: "quizphysics", category: "physics")
+            write(id: 11, quizpath: "quizchemistry", category: "chemistry")
+            write(id: 12, quizpath: "quizinformatics", category: "informatics")
+            write(id: 13, quizpath: "quizliterature", category: "literature")
+            write(id: 14, quizpath: "quizroadtraffic", category: "roadtraffic")
+            write(id: 15, quizpath: "quizswift", category: "Swift")
+            write(id: 16, quizpath: "quizunderwater", category: "underwater")
+            write(id: 17, quizpath: "quizchess", category: "chess")
+            write(id: 18, quizpath: "quizhalloween", category: "halloween")
+            
+            questionTextStatus.value = ("\(check2) не верный ответ 👎👎👎!!!")
+            Timer.scheduledTimer(timeInterval:0.2, target: self, selector: #selector(updateUI), userInfo: nil, repeats: false)
+        }
     }
     
     func AdvancedSpeechRecognition() {
@@ -859,7 +1067,7 @@ class QuizBaseViewModel {
         }
     }
     
-    func checkSpeachSetting(sender: UIButton) {
+    func checkSpeachSetting() {
         var isSpeachOn = UserDefaults.standard.object(forKey: "onstatusspeach") as? Bool
         
         print(isSpeachOn)
@@ -873,7 +1081,6 @@ class QuizBaseViewModel {
         
         if self.SpeachStatus == false {
             print("speach doesnt working")
-            sender.removeFromSuperview()
         } else {}
     }
     
@@ -1206,7 +1413,6 @@ class QuizBaseViewModel {
     
     func say() {
         if isTalking == false {
-            self.SayQuestionButtonStatus.value = "synthesizer selected"
             let utterance = AVSpeechUtterance(string: "\(base?.checkQuestion() ?? "")\(base?.checkChoices() ?? [""]) ")
             utterance.voice = AVSpeechSynthesisVoice(language: "ru-RU")
             synthesizer.speak(utterance)
@@ -1594,6 +1800,5 @@ extension QuizBaseViewModel: AVCaptureVideoDataOutputSampleBufferDelegate {
     var description: String {
         return ""
     }
-    
     
 }
