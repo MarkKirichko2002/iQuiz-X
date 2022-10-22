@@ -188,32 +188,33 @@ class QuizBaseViewModel {
     
             switch text {
                 
-            case "1":
+            case _ where text.contains("1"):
                 self?.check2 = self?.base?.checkChoices()[0] ?? ""
                 self?.questionTextStatus.value = self?.check2 ?? ""
                 
-            case "2":
+            case _ where text.contains("2"):
                 self?.check2 = self?.base?.checkChoices()[1] ?? ""
                 self?.questionTextStatus.value = self?.check2 ?? ""
                 
-            case "3":
+            case _ where text.contains("3"):
                 self?.check2 = self?.base?.checkChoices()[2] ?? ""
                 self?.questionTextStatus.value = self?.check2 ?? ""
                 
-            case "Один":
+            case _ where text.contains("Один"):
                 self?.check2 = self?.base?.checkChoices()[0] ?? ""
                 self?.questionTextStatus.value = self?.check2 ?? ""
                 
-            case "Два":
+            case _ where text.contains("Два"):
                 self?.check2 = self?.base?.checkChoices()[1] ?? ""
                 self?.questionTextStatus.value = self?.check2 ?? ""
                 
-            case "Три":
+            case _ where text.contains("Три"):
                 self?.check2 = self?.base?.checkChoices()[2] ?? ""
                 self?.questionTextStatus.value = self?.check2 ?? ""
                 
             default:
-                break
+                self?.questionTextStatus.value = text
+                self?.check2 = ""
             }
         }
     
@@ -1386,6 +1387,10 @@ class QuizBaseViewModel {
         case _ where check2.contains("След") || check2.contains("след"):
             check2 = ""
             self.SkipQuestion()
+            
+        case _ where check2.contains("Камер") || check2.contains("камер"):
+            check2 = ""
+            self.OpenCamera()
             
          default:
             check2 = ""
