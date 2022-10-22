@@ -20,7 +20,6 @@ class BaseQuizViewController: UIViewController {
     @IBOutlet weak var RecordVideoLabeL: UILabel!
     @IBOutlet weak var PauseButton: UIButton!
     @IBOutlet weak var AnswersButton: UIButton!
-    @IBOutlet weak var SayQuestionButton: UIButton!
     @IBOutlet weak var MusicButton: UIButton!
     
     var quiz: QuizBaseViewModel?
@@ -86,9 +85,7 @@ class BaseQuizViewController: UIViewController {
         // view
         quiz?.view = self.view
         quiz?.storyboard = self.storyboard
-        
-        // Buttons
-        
+        quiz?.viewController = self
         
         // Choice 1,2,3 text
         quiz?.Choice1Status.bind({(Choice1Status) in
@@ -128,12 +125,6 @@ class BaseQuizViewController: UIViewController {
             }
         })
         
-        quiz?.SayQuestionButtonStatus.bind({(SayQuestionButtonStatus) in
-            DispatchQueue.main.async {
-                self.SayQuestionButton.setImage(UIImage(named: SayQuestionButtonStatus), for: .normal)
-            }
-        })
-        
         quiz?.OnOffButtonStatusTitle.bind({OnOffButtonStatusTitle in
             DispatchQueue.main.async {
                 self.MusicButton.setTitle(OnOffButtonStatusTitle, for: .normal)
@@ -142,7 +133,9 @@ class BaseQuizViewController: UIViewController {
         
         quiz?.AnswersButtonStatus.bind({(AnswersButtonStatus) in
             DispatchQueue.main.async {
-                self.AnswersButton.setTitle(AnswersButtonStatus, for: .normal)
+                if self.AnswersButton != nil {
+                    self.AnswersButton.setTitle(AnswersButtonStatus, for: .normal)
+                }
             }
         })
         
@@ -183,7 +176,7 @@ class BaseQuizViewController: UIViewController {
         self.quiz?.SetQuizTheme()
         self.quiz?.checkHintsSetting(sender: AnswersButton)
         self.quiz?.checkGestureSetting()
-        self.quiz?.checkSpeachSetting(sender: SayQuestionButton)
+        self.quiz?.checkSpeachSetting()
         self.quiz?.configureAudioSession()
         self.quiz?.checkAudioSetting()
         self.quiz?.checkTimerSetting()
@@ -200,7 +193,6 @@ class BaseQuizViewController: UIViewController {
         Time.font = UIFont.boldSystemFont(ofSize: 15)
         Attempts.font = UIFont.boldSystemFont(ofSize: 15)
         Score.font = UIFont.boldSystemFont(ofSize: 15)
-        SayQuestionButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 17)
         AnswersButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 17)
         
         Choice1.layer.cornerRadius = Choice1.frame.size.width / 10
@@ -236,8 +228,8 @@ class BaseQuizViewController: UIViewController {
         vc.questionNumber = (quiz?.questionNumber ?? 0) + 1
     }
     
-    @IBAction func sayquestion() {
-        quiz?.say()
+    @IBAction func OpenCamera() {
+        quiz?.OpenCamera()
     }
     
     @IBAction func SkipQuestion() {
@@ -259,5 +251,23 @@ class BaseQuizViewController: UIViewController {
     
     @IBAction func showAnswer() {
         quiz?.ShowAnswer()
+    }
+}
+
+extension BaseQuizViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        picker.dismiss(animated: true, completion: nil)
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
+        
+        picker.dismiss(animated: true, completion: nil)
+        
+        guard let image = info[UIImagePickerController.InfoKey.editedImage] as?
+        UIImage else {
+            return
+        }
+        quiz?.recognizeText(image: image)
     }
 }

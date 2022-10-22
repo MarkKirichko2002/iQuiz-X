@@ -24,7 +24,9 @@ class StartViewController: UIViewController {
     
     var player = SoundClass()
     var viewModel = CategoriesViewModel()
-
+    var timer = Timer()
+    var animation = AnimationClass()
+    
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
         timer.invalidate()
@@ -467,33 +469,27 @@ class StartViewController: UIViewController {
     }
     
     @objc func GoToRandomQuiz() {
-        player.Sound(resource: "selected sound.wav")
-        var randomindex = UserDefaults.standard.object(forKey: "index") as? Int
-        var c = quizes[randomindex!]
         
-        viewModel.goToQuize(quiz: c, storyboard: self.storyboard, view: self.view)
+        player.Sound(resource: "IQ.mp3")
+        self.animation.springButton(button: self.TodayQuizButton)
         
+        let randomindex = UserDefaults.standard.object(forKey: "index") as? Int
+        let c = quizes[randomindex!]
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+            self.viewModel.goToQuize(quiz: c, storyboard: self.storyboard, view: self.view)
+        }
     }
     
-    var timer = Timer()
-    
-//    func goToQuize(quiz: QuizBaseViewModel) {
-//        DispatchQueue.main.async {
-//            guard let vc = self.storyboard?.instantiateViewController(identifier: "BaseQuizViewController") else {return}
-//            (vc as? BaseQuizViewController)?.setQuizeModel(quiz: quiz)
-//            guard let window = self.view.window else {return}
-//            window.rootViewController = vc
-//        }
-//    }
-    
-    
     @objc func GoToQuizApp() {
-        timer.invalidate()
-        DispatchQueue.main.async {
+        
+        self.player.Sound(resource: "future click sound.wav")
+        self.animation.springButton(button: self.StartButton)
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
             guard let vc = self.storyboard?.instantiateViewController(identifier: "ViewController") else {return}
             guard let window = self.view.window else {return}
             window.rootViewController = vc
-            self.player.Sound(resource: "future click sound.wav")
         }
     }
 }
