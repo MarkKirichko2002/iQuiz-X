@@ -29,6 +29,7 @@ class QuizBaseViewModel {
     var quiznumber = 0
     var questionNumber = 0;
     var score = 0;
+    var sound = ""
     
     var quiz: QuizModel?
     
@@ -1392,6 +1393,11 @@ class QuizBaseViewModel {
             check2 = ""
             self.OpenCamera()
             
+        case _ where check2.contains("Заверш") || check2.contains("заверш") || check2.contains("Выйти") || check2.contains("выйти") || check2.contains("Выход") || check2.contains("выход"):
+            check2 = ""
+            self.player.StopSound(resource: sound)
+            self.exit()
+            
          default:
             check2 = ""
         }
@@ -1404,6 +1410,16 @@ class QuizBaseViewModel {
         recognitionTask?.cancel() //speechRecognizer?.recognitionTask
         request.endAudio()  //SFSpeechAudioBufferRecognitionRequest?
         audioEngine.inputNode.removeTap(onBus: 0)
+    }
+    
+    
+    func exit() {
+        DispatchQueue.main.async {
+            guard let vc = self.storyboard?.instantiateViewController(identifier: "ViewController") else {return}
+            guard let window = self.view?.window else {return}
+            window.rootViewController = vc
+            UserDefaults.standard.set(false, forKey: "music")
+        }
     }
     
     func sayComment(comment: String) {
@@ -1686,6 +1702,7 @@ class QuizBaseViewModel {
             self.checkMusicSetting()
             CurrentMusic(id: id, resource: " \(music)")
             OnOffButtonStatusTitle.value = music
+            sound = music
         }
     }
     

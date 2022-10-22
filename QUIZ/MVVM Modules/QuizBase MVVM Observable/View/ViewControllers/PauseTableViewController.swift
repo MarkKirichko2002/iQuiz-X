@@ -31,15 +31,8 @@ class PauseTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-    }
-    
-    func exit() {
-        DispatchQueue.main.async {
-            guard let vc = self.storyboard?.instantiateViewController(identifier: "ViewController") else {return}
-            guard let window = self.view.window else {return}
-            window.rootViewController = vc
-            UserDefaults.standard.set(false, forKey: "music")
-        }
+        viewModel.view = view
+        viewModel.storyboard = storyboard
     }
     
     func restart() {
@@ -64,7 +57,7 @@ class PauseTableViewController: UITableViewController {
             restart()
             
         case 2: print("exit")
-            exit()
+            viewModel.exit()
             
         default: break
             
@@ -86,22 +79,18 @@ class PauseTableViewController: UITableViewController {
             
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "RestartTableViewCell") as? RestartTableViewCell
             else { return UITableViewCell() }
-            
             return cell
             
         } else if indexPath.row == 2  {
             
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "ExitTableViewCell") as? ExitTableViewCell
             else { return UITableViewCell() }
-            
             return cell
             
         } else {
             
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "ExitTableViewCell") as? ExitTableViewCell
             else { return UITableViewCell() }
-            
-            //cell.configure(groupItems[indexPath.row])
             return cell
             
         }
