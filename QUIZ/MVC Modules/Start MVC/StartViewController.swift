@@ -26,6 +26,7 @@ class StartViewController: UIViewController {
     var viewModel = CategoriesViewModel()
     var timer = Timer()
     var animation = AnimationClass()
+    var quizes = [QuizPlanets(), QuizHistory(), QuizAnatomy(), QuizSport(), QuizGames(), QuizIQ(), QuizEconomy(), QuizGeography(), QuizEconomy(), QuizPhysics(), QuizChemistry(), QuizInformatics()]
     
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
@@ -61,10 +62,6 @@ class StartViewController: UIViewController {
         self.TodayQuizButton.isUserInteractionEnabled = true
         self.TodayQuizButton.addGestureRecognizer(tap2)
     }
-    
-    
-    var quizes = [QuizPlanets(), QuizHistory(), QuizAnatomy(), QuizSport(), QuizGames(), QuizIQ(), QuizEconomy(), QuizGeography(), QuizEconomy(), QuizPhysics(), QuizChemistry(), QuizInformatics()]
-    
     
     func GenerateRandomIndex() {
         
@@ -477,7 +474,7 @@ class StartViewController: UIViewController {
         let c = quizes[randomindex!]
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-            self.viewModel.goToQuize(quiz: c, storyboard: self.storyboard, view: self.view)
+            self.viewModel.goToQuize(quiz: c, category: self.viewModel.categories[randomindex ?? 0], storyboard: self.storyboard, view: self.view)
         }
     }
     

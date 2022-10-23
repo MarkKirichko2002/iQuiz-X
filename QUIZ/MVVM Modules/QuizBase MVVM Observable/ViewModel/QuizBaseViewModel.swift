@@ -16,6 +16,9 @@ class QuizBaseViewModel {
     
     var pl = AVAudioPlayer()
     var music = UserDefaults.standard.object(forKey: "music") as? Bool
+    let isAttemptsOn = UserDefaults.standard.object(forKey: "onstatusattempts") as? Bool
+    var isRecordOn = UserDefaults.standard.object(forKey: "onstatus") as? Bool
+    var isRecordOnAudio = UserDefaults.standard.object(forKey: "onstatusaudio") as? Bool
     var GestureRecording = true
     var VoiceRecording = true
     var HintsStatus = true
@@ -25,12 +28,10 @@ class QuizBaseViewModel {
     var AttemptsStatus = true
     var isTalking = false
     let synthesizer = AVSpeechSynthesizer()
-    var isRecordOn = UserDefaults.standard.object(forKey: "onstatus") as? Bool
     var quiznumber = 0
     var questionNumber = 0;
     var score = 0;
     var sound = ""
-    
     var quiz: QuizModel?
     
     enum RemoteCommand: String {
@@ -131,14 +132,6 @@ class QuizBaseViewModel {
     var view: UIView?
     var viewController: UIViewController?
     
-    func SkipQuestion() {
-        
-        if self.base?.questionNumber ?? 0 < 19 {
-            self.base?.questionNumber += 1
-            self.updateUI()
-        }
-    }
-    
     func SetQuizTheme() {
         base?.quiztheme(id: 1, background: "earth.background.jpeg", music: "space music.mp3")
         base?.quiztheme(id: 2, background: "history.background.jpeg", music: "history music.mp3")
@@ -166,6 +159,15 @@ class QuizBaseViewModel {
         picker.allowsEditing = true
         picker.delegate = self.viewController as? any UIImagePickerControllerDelegate & UINavigationControllerDelegate
         self.viewController?.present(picker, animated: true)
+    }
+    
+    
+    func SkipQuestion() {
+        
+        if self.base?.questionNumber ?? 0 < 19 {
+            self.base?.questionNumber += 1
+            self.updateUI()
+        }
     }
     
     func recognizeText(image: UIImage?) {
@@ -252,8 +254,10 @@ class QuizBaseViewModel {
             
             player.Sound(resource: "correct answer.wav")
             
-            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-                self.SetQuizTheme()
+            if base?.questionNumber ?? 0 < 19 {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                    self.SetQuizTheme()
+                }
             }
             
             if Choice1Status.value == check2 {
@@ -320,8 +324,10 @@ class QuizBaseViewModel {
             
             player.Sound(resource: "wrong answer.wav")
             
-            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-                self.SetQuizTheme()
+            if base?.questionNumber ?? 0 < 19 {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                    self.SetQuizTheme()
+                }
             }
             
             if Choice1Status.value == check2 {
@@ -384,8 +390,10 @@ class QuizBaseViewModel {
             
             player.Sound(resource: "correct answer.wav")
             
-            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-                self.SetQuizTheme()
+            if base?.questionNumber ?? 0 < 19 {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                    self.SetQuizTheme()
+                }
             }
             
             DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
@@ -450,8 +458,10 @@ class QuizBaseViewModel {
             
             player.Sound(resource: "wrong answer.wav")
             
-            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-                self.SetQuizTheme()
+            if base?.questionNumber ?? 0 < 19 {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                    self.SetQuizTheme()
+                }
             }
             
             DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
@@ -639,8 +649,10 @@ class QuizBaseViewModel {
             
             player.Sound(resource: "correct answer.wav")
             
-            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-                self.SetQuizTheme()
+            if base?.questionNumber ?? 0 < 19 {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                    self.SetQuizTheme()
+                }
             }
             
             if Choice1Status.value == check2 {
@@ -710,10 +722,12 @@ class QuizBaseViewModel {
                 PresentTotalScreen()
             }
             
-            player.Sound(resource: "correct answer.wav")
+            player.Sound(resource: "wrong answer.wav")
             
-            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-                self.SetQuizTheme()
+            if base?.questionNumber ?? 0 < 19 {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                    self.SetQuizTheme()
+                }
             }
             
             if Choice1Status.value == check2 {
@@ -802,8 +816,10 @@ class QuizBaseViewModel {
             
             player.Sound(resource: "correct answer.wav")
             
-            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-                self.SetQuizTheme()
+            if base?.questionNumber ?? 0 < 19 {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                    self.SetQuizTheme()
+                }
             }
             
             sender.backgroundColor = UIColor.green;
@@ -854,8 +870,10 @@ class QuizBaseViewModel {
             
             player.Sound(resource: "wrong answer.wav")
             
-            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-                self.SetQuizTheme()
+            if base?.questionNumber ?? 0 < 19 {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                    self.SetQuizTheme()
+                }
             }
             
             if AttemptsCounter == 0 && self.AttemptsStatus == true {
@@ -1076,7 +1094,7 @@ class QuizBaseViewModel {
         
         if isSpeachOn == true {
             print("speach now")
-        } else if isSpeachOn == false {
+        } else if isSpeachOn == false || isSpeachOn == nil {
             print("speach not now")
             self.SpeachStatus = false
         }
@@ -1093,7 +1111,7 @@ class QuizBaseViewModel {
         
         if isHintsOn == true {
             print("hints now")
-        } else if isHintsOn == false {
+        } else if isHintsOn == false || isHintsOn == nil {
             print("hints not now")
             //self.captureSession.stopRunning()
             self.HintsStatus = false
@@ -1111,7 +1129,7 @@ class QuizBaseViewModel {
         
         if isRecordOn == true {
             print("record now")
-        } else if isRecordOn == false {
+        } else if isRecordOn == false || isRecordOn == nil {
             print("record not now")
             //self.captureSession.stopRunning()
             self.GestureRecording = false
@@ -1123,8 +1141,6 @@ class QuizBaseViewModel {
         }
     }
     
-    var isRecordOnAudio = UserDefaults.standard.object(forKey: "onstatusaudio") as? Bool
-    
     func checkAudioSetting() {
         
         print(isRecordOnAudio)
@@ -1132,7 +1148,7 @@ class QuizBaseViewModel {
         if isRecordOnAudio == true {
             print("record audio now")
             startRecognition()
-        } else if isRecordOnAudio == false {
+        } else if isRecordOnAudio == false || isRecordOnAudio == nil {
             print("record audio not now")
         }
     }
@@ -1145,7 +1161,7 @@ class QuizBaseViewModel {
         
         if isMusicOn == true {
             print("music now")
-        } else if isMusicOn == false {
+        } else if isMusicOn == false || isMusicOn == nil {
             print("music not now")
             //self.captureSession.stopRunning()
             self.MusicStatus = false
@@ -1182,7 +1198,7 @@ class QuizBaseViewModel {
         
         if isTimerOn == true {
             print("timer now")
-        } else if isTimerOn == false {
+        } else if isTimerOn == false || isTimerOn == nil {
             print("timer not now")
             //self.captureSession.stopRunning()
             self.TimerStatus = false
@@ -1190,13 +1206,12 @@ class QuizBaseViewModel {
     }
     
     func checkAttemptsSetting() {
-        var isAttemptsOn = UserDefaults.standard.object(forKey: "onstatusattempts") as? Bool
-        
+      
         print(isAttemptsOn)
         
         if isAttemptsOn == true {
             print("attempts now")
-        } else if isAttemptsOn == false {
+        } else if isAttemptsOn == false || isAttemptsOn == nil {
             print("attempts not now")
             //self.captureSession.stopRunning()
             self.AttemptsStatus = false
@@ -1225,24 +1240,7 @@ class QuizBaseViewModel {
             self.captureSession.stopRunning()
             print("В данный момент: \(self.captureSession.isRunning)")
             
-            self.stopMusic(id: 1, resource: "space music.mp3")
-            self.stopMusic(id: 2, resource: "history music.mp3")
-            self.stopMusic(id: 3, resource: "history music.mp3")
-            self.stopMusic(id: 4, resource: "sport music.mp3")
-            self.stopMusic(id: 5, resource: "games music.mp3")
-            self.stopMusic(id: 6, resource: "IQ music.mp3")
-            self.stopMusic(id: 7, resource: "economy music.mp3")
-            self.stopMusic(id: 8, resource: "geography music.mp3")
-            self.stopMusic(id: 9, resource: "ecology music.mp3")
-            self.stopMusic(id: 10, resource: "physics music.mp3")
-            self.stopMusic(id: 11, resource: "chemistry music.mp3")
-            self.stopMusic(id: 12, resource: "informatics music.mp3")
-            self.stopMusic(id: 13, resource: "literature music.mp3")
-            self.stopMusic(id: 14, resource: "drive music.mp3")
-            self.stopMusic(id: 15, resource: "Swift music.mp3")
-            self.stopMusic(id: 16, resource: "underwater music.mp3")
-            self.stopMusic(id: 17, resource: "chess music.mp3")
-            self.stopMusic(id: 18, resource: "halloween music.mp3")
+            self.player.StopSound(resource: self.sound)
             
             let vc = self.storyboard?.instantiateViewController(identifier: "BaseTotalQuizViewController") as? BaseTotalQuizViewController
             guard let window = self.view?.window else {return}

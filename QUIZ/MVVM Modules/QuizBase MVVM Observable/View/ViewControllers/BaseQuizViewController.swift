@@ -23,6 +23,7 @@ class BaseQuizViewController: UIViewController {
     @IBOutlet weak var MusicButton: UIButton!
     
     var quiz: QuizBaseViewModel?
+    var category: QuizModel?
     
     func BindViewModel() {
         quiz?.setQuizeModel(base: quiz ?? QuizPlanets())
@@ -222,7 +223,8 @@ class BaseQuizViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        var vc = segue.destination as! PauseTableViewController
+        let vc = segue.destination as! PauseTableViewController
+        vc.currentcategory = category
         vc.currentquiz = quiz
         vc.score = quiz?.score ?? 100
         vc.questionNumber = (quiz?.questionNumber ?? 0) + 1
