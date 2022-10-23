@@ -254,8 +254,10 @@ class QuizBaseViewModel {
             
             player.Sound(resource: "correct answer.wav")
             
-            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-                self.SetQuizTheme()
+            if base?.questionNumber ?? 0 < 19 {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                    self.SetQuizTheme()
+                }
             }
             
             if Choice1Status.value == check2 {
@@ -322,8 +324,10 @@ class QuizBaseViewModel {
             
             player.Sound(resource: "wrong answer.wav")
             
-            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-                self.SetQuizTheme()
+            if base?.questionNumber ?? 0 < 19 {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                    self.SetQuizTheme()
+                }
             }
             
             if Choice1Status.value == check2 {
@@ -386,8 +390,10 @@ class QuizBaseViewModel {
             
             player.Sound(resource: "correct answer.wav")
             
-            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-                self.SetQuizTheme()
+            if base?.questionNumber ?? 0 < 19 {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                    self.SetQuizTheme()
+                }
             }
             
             DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
@@ -452,8 +458,10 @@ class QuizBaseViewModel {
             
             player.Sound(resource: "wrong answer.wav")
             
-            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-                self.SetQuizTheme()
+            if base?.questionNumber ?? 0 < 19 {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                    self.SetQuizTheme()
+                }
             }
             
             DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
@@ -641,8 +649,10 @@ class QuizBaseViewModel {
             
             player.Sound(resource: "correct answer.wav")
             
-            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-                self.SetQuizTheme()
+            if base?.questionNumber ?? 0 < 19 {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                    self.SetQuizTheme()
+                }
             }
             
             if Choice1Status.value == check2 {
@@ -712,10 +722,12 @@ class QuizBaseViewModel {
                 PresentTotalScreen()
             }
             
-            player.Sound(resource: "correct answer.wav")
+            player.Sound(resource: "wrong answer.wav")
             
-            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-                self.SetQuizTheme()
+            if base?.questionNumber ?? 0 < 19 {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                    self.SetQuizTheme()
+                }
             }
             
             if Choice1Status.value == check2 {
@@ -804,8 +816,10 @@ class QuizBaseViewModel {
             
             player.Sound(resource: "correct answer.wav")
             
-            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-                self.SetQuizTheme()
+            if base?.questionNumber ?? 0 < 19 {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                    self.SetQuizTheme()
+                }
             }
             
             sender.backgroundColor = UIColor.green;
@@ -856,8 +870,10 @@ class QuizBaseViewModel {
             
             player.Sound(resource: "wrong answer.wav")
             
-            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-                self.SetQuizTheme()
+            if base?.questionNumber ?? 0 < 19 {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                    self.SetQuizTheme()
+                }
             }
             
             if AttemptsCounter == 0 && self.AttemptsStatus == true {
@@ -1224,24 +1240,7 @@ class QuizBaseViewModel {
             self.captureSession.stopRunning()
             print("В данный момент: \(self.captureSession.isRunning)")
             
-            self.stopMusic(id: 1, resource: "space music.mp3")
-            self.stopMusic(id: 2, resource: "history music.mp3")
-            self.stopMusic(id: 3, resource: "history music.mp3")
-            self.stopMusic(id: 4, resource: "sport music.mp3")
-            self.stopMusic(id: 5, resource: "games music.mp3")
-            self.stopMusic(id: 6, resource: "IQ music.mp3")
-            self.stopMusic(id: 7, resource: "economy music.mp3")
-            self.stopMusic(id: 8, resource: "geography music.mp3")
-            self.stopMusic(id: 9, resource: "ecology music.mp3")
-            self.stopMusic(id: 10, resource: "physics music.mp3")
-            self.stopMusic(id: 11, resource: "chemistry music.mp3")
-            self.stopMusic(id: 12, resource: "informatics music.mp3")
-            self.stopMusic(id: 13, resource: "literature music.mp3")
-            self.stopMusic(id: 14, resource: "drive music.mp3")
-            self.stopMusic(id: 15, resource: "Swift music.mp3")
-            self.stopMusic(id: 16, resource: "underwater music.mp3")
-            self.stopMusic(id: 17, resource: "chess music.mp3")
-            self.stopMusic(id: 18, resource: "halloween music.mp3")
+            self.player.StopSound(resource: self.sound)
             
             let vc = self.storyboard?.instantiateViewController(identifier: "BaseTotalQuizViewController") as? BaseTotalQuizViewController
             guard let window = self.view?.window else {return}
