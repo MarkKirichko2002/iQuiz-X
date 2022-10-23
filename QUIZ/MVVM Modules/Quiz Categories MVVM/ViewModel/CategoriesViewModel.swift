@@ -27,37 +27,31 @@ class CategoriesViewModel {
                       QuizModel(name: "хэллоуин", image: "halloween.png", complete: false, id: 18, score: 0),
         QuizModel(name: "рандом", image: "random.jpeg", complete: false, id: 19, score: 0)]
     
-    func goToQuize(quiz: QuizBaseViewModel, storyboard: UIStoryboard?, view: UIView) {
+    func goToQuize(quiz: QuizBaseViewModel, category: QuizModel, storyboard: UIStoryboard?, view: UIView) {
         DispatchQueue.main.async {
             guard let vc = storyboard?.instantiateViewController(identifier: "BaseQuizViewController") else {return}
             (vc as? BaseQuizViewController)?.quiz = quiz
+            (vc as? BaseQuizViewController)?.category = category
             guard let window = view.window else {return}
             window.rootViewController = vc
         }
     }
     
-    func GoToStart(quiz: QuizBaseViewModel, storyboard: UIStoryboard?, view: UIView) {
+    func GoToStart(quiz: QuizBaseViewModel, category: QuizModel, storyboard: UIStoryboard?, view: UIView) {
         DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
             guard let vc = storyboard?.instantiateViewController(identifier: "QuizStartViewController") else {return}
             (vc as? QuizStartViewController)?.base = quiz
+            (vc as? QuizStartViewController)?.category = category
             guard let window = view.window else {return}
             window.rootViewController = vc
         }
     }
     
     func PresentRandomQuiz(storyboard: UIStoryboard?, view: UIView) {
-        var randomindex = Int.random(in: 0..<quizes.count)
-        var lastindex = Int.random(in: 0..<quizes.count)
-        var random = quizes[randomindex]
-        
-        if lastindex == randomindex {
-            print(randomindex)
-            print(lastindex)
-            goToQuize(quiz: random, storyboard: storyboard, view: view)
-        } else {
-            print(randomindex)
-            print(lastindex)
-            goToQuize(quiz: random, storyboard: storyboard, view: view)
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
+            let randomquizindex = Int.random(in: 0..<self.quizes.count)
+            let randomquiz = self.quizes[randomquizindex]
+            self.goToQuize(quiz: randomquiz, category: self.categories[randomquizindex], storyboard: storyboard, view: view)
         }
     }
     

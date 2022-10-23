@@ -12,6 +12,7 @@ import AVFoundation
 class PauseTableViewController: UITableViewController {
     
     var currentquiz: QuizBaseViewModel?
+    var currentcategory: QuizModel?
     
     var viewModel = QuizBaseViewModel()
     var categoryViewModel = CategoriesViewModel()
@@ -40,7 +41,7 @@ class PauseTableViewController: UITableViewController {
             self.currentquiz?.stopSpeechRecognition()
             self.currentquiz?.captureSession.stopRunning()
             self.currentquiz?.questionNumber = 0
-            self.categoryViewModel.GoToStart(quiz: self.currentquiz ?? QuizPlanets(), storyboard: self.storyboard, view: self.view)
+            self.categoryViewModel.GoToStart(quiz: self.currentquiz ?? QuizPlanets(), category: self.currentcategory!, storyboard: self.storyboard, view: self.view)
         }
     }
     
@@ -70,7 +71,8 @@ class PauseTableViewController: UITableViewController {
             
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "CurrentCategoryTableViewCell") as? CurrentCategoryTableViewCell
             else { return UITableViewCell() }
-            cell.CurrentImage.image = UIImage(named: "planets.jpeg")
+            cell.CurrentImage.image = UIImage(named: currentcategory?.image ?? "")
+            cell.CurrentName.text = currentcategory?.name
             cell.CurrentScore.text = "счет: \(score)/100"
             cell.CurrentQuestion.text = "вопрос: \(questionNumber)/20"
             return cell
