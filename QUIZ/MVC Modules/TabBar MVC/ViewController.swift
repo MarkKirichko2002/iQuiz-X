@@ -379,7 +379,7 @@ class ViewController: UITabBarController {
                 self.button.setTitle("\(year)", for: .normal)
                 self.base.sayComment(comment: "\(year)")
                 self.animation.springButton(button: self.button)
-             
+            
             // Открыть камеру
             case _ where self.text.contains("Камер") || self.text.contains("камер"):
                 self.icon = "camera.png"
@@ -434,14 +434,12 @@ extension ViewController: UIImagePickerControllerDelegate, UINavigationControlle
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+            picker.dismiss(animated: true, completion: nil)
             self.startSpeechRecognization()
         }
-        picker.dismiss(animated: true, completion: nil)
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
-        
-        picker.dismiss(animated: true, completion: nil)
         
         guard let image = info[UIImagePickerController.InfoKey.editedImage] as?
         UIImage else {
@@ -450,6 +448,7 @@ extension ViewController: UIImagePickerControllerDelegate, UINavigationControlle
         
         quizViewModel.recognizeText(image: image)
         DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+            picker.dismiss(animated: true, completion: nil)
             self.startSpeechRecognization()
         }
         
