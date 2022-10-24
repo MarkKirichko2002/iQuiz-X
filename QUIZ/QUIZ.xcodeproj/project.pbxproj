@@ -184,7 +184,6 @@
 		827D4B6528205C0E007B3895 /* informatics11.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 827D4B5B28205C0E007B3895 /* informatics11.jpeg */; };
 		827D4B6628205C0E007B3895 /* informatics20.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 827D4B5C28205C0E007B3895 /* informatics20.jpeg */; };
 		827D4B6728205C0E007B3895 /* informatics15.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 827D4B5D28205C0E007B3895 /* informatics15.jpeg */; };
-		827F8A0C28283F2E00760D56 /* weather.png in Resources */ = {isa = PBXBuildFile; fileRef = 827F8A0B28283F2E00760D56 /* weather.png */; };
 		827F8C0E27E81B7400F6D7B3 /* SoundClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827F8C0D27E81B7400F6D7B3 /* SoundClass.swift */; };
 		827F8C1027E81BDF00F6D7B3 /* physics8.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 827F8C0F27E81BDF00F6D7B3 /* physics8.jpeg */; };
 		82826F5B28F74017008798D5 /* newspaper.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 82826F5A28F74016008798D5 /* newspaper.mp3 */; };
@@ -265,6 +264,8 @@
 		828F0DCF27C82CA10016D337 /* PlayerBoardTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 828F0DCE27C82CA10016D337 /* PlayerBoardTableViewController.swift */; };
 		828F0DD127C82D4C0016D337 /* PlayerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 828F0DD027C82D4C0016D337 /* PlayerTableViewCell.swift */; };
 		82900D632801AB9D00742925 /* MusicTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82900D622801AB9D00742925 /* MusicTableViewCell.swift */; };
+		8292EAE52906BAF200EDFFD5 /* camera.png in Resources */ = {isa = PBXBuildFile; fileRef = 8292EAE42906BAF200EDFFD5 /* camera.png */; };
+		8292EAE72906BC6B00EDFFD5 /* camera.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8292EAE62906BC6B00EDFFD5 /* camera.mp3 */; };
 		8294089C27CEC43E00AFF603 /* planets7.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 8294089227CEC40500AFF603 /* planets7.jpeg */; };
 		8294089D27CEC43E00AFF603 /* planets5.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 8294089327CEC40B00AFF603 /* planets5.jpeg */; };
 		8294089E27CEC43E00AFF603 /* planets6.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 8294089427CEC41100AFF603 /* planets6.jpeg */; };
@@ -749,7 +750,6 @@
 		827D4B5B28205C0E007B3895 /* informatics11.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = informatics11.jpeg; sourceTree = "<group>"; };
 		827D4B5C28205C0E007B3895 /* informatics20.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = informatics20.jpeg; sourceTree = "<group>"; };
 		827D4B5D28205C0E007B3895 /* informatics15.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = informatics15.jpeg; sourceTree = "<group>"; };
-		827F8A0B28283F2E00760D56 /* weather.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = weather.png; sourceTree = "<group>"; };
 		827F8C0D27E81B7400F6D7B3 /* SoundClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundClass.swift; sourceTree = "<group>"; };
 		827F8C0F27E81BDF00F6D7B3 /* physics8.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = physics8.jpeg; sourceTree = "<group>"; };
 		82826F5A28F74016008798D5 /* newspaper.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = newspaper.mp3; sourceTree = "<group>"; };
@@ -830,6 +830,8 @@
 		828F0DCE27C82CA10016D337 /* PlayerBoardTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerBoardTableViewController.swift; sourceTree = "<group>"; };
 		828F0DD027C82D4C0016D337 /* PlayerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerTableViewCell.swift; sourceTree = "<group>"; };
 		82900D622801AB9D00742925 /* MusicTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicTableViewCell.swift; sourceTree = "<group>"; };
+		8292EAE42906BAF200EDFFD5 /* camera.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = camera.png; sourceTree = "<group>"; };
+		8292EAE62906BC6B00EDFFD5 /* camera.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = camera.mp3; sourceTree = "<group>"; };
 		8294089227CEC40500AFF603 /* planets7.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = planets7.jpeg; sourceTree = "<group>"; };
 		8294089327CEC40B00AFF603 /* planets5.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = planets5.jpeg; sourceTree = "<group>"; };
 		8294089427CEC41100AFF603 /* planets6.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = planets6.jpeg; sourceTree = "<group>"; };
@@ -1473,6 +1475,7 @@
 				82ECFA9C28EE1218000EE656 /* newspaper.png */,
 				82ECFA9B28EE1218000EE656 /* user.png */,
 				82EA1EC2286BCB8C00E49D0F /* attempts.png */,
+				8292EAE42906BAF200EDFFD5 /* camera.png */,
 				82EA1EC4286BCB9500E49D0F /* bar-chart.png */,
 				82EA1EC6286BCBA300E49D0F /* delete.png */,
 				82EA1EC8286BCBB500E49D0F /* exit.png */,
@@ -1480,7 +1483,6 @@
 				82EA1ECA286BCBC300E49D0F /* TOUCH ID.png */,
 				82EA1ECF286BCBD100E49D0F /* gesture.png */,
 				82EA1ECE286BCBD000E49D0F /* hints.png */,
-				827F8A0B28283F2E00760D56 /* weather.png */,
 				82EA1ED6286BCBF400E49D0F /* music.png */,
 				82EA1ED7286BCBF400E49D0F /* photo.png */,
 				82EA1ED4286BCBF400E49D0F /* speach.png */,
@@ -2250,6 +2252,7 @@
 				82848D53281DACA90068A4AE /* spring.mp3 */,
 				823D9F742825694800EC0FE7 /* lock_sound.mp3 */,
 				82826F5A28F74016008798D5 /* newspaper.mp3 */,
+				8292EAE62906BC6B00EDFFD5 /* camera.mp3 */,
 			);
 			path = "ui sounds";
 			sourceTree = "<group>";
@@ -2464,6 +2467,7 @@
 				827D4B6528205C0E007B3895 /* informatics11.jpeg in Resources */,
 				82EA1F1C286BCC7800E49D0F /* ecology11.jpeg in Resources */,
 				82EA1F45286BCCB900E49D0F /* economy13.jpeg in Resources */,
+				8292EAE72906BC6B00EDFFD5 /* camera.mp3 in Resources */,
 				82EA1F2C286BCC9700E49D0F /* geography12.jpeg in Resources */,
 				8288F0862872530E00C6A182 /* chess.background.jpeg in Resources */,
 				8294090F27CECB9200AFF603 /* games5.jpeg in Resources */,
@@ -2491,7 +2495,6 @@
 				82EA1F53286BCCD200E49D0F /* IQ13.jpeg in Resources */,
 				82EA1F68286BCCEB00E49D0F /* games17.jpeg in Resources */,
 				8294091027CECB9200AFF603 /* games3.jpeg in Resources */,
-				827F8A0C28283F2E00760D56 /* weather.png in Resources */,
 				82EA1EFE286BCC3E00E49D0F /* planets19.jpeg in Resources */,
 				8294093D27CECD6100AFF603 /* economy7.jpeg in Resources */,
 				82EA1F1B286BCC7800E49D0F /* ecology16.jpeg in Resources */,
@@ -2547,6 +2550,7 @@
 				8286518C28FEF952004806D3 /* IQ.mp3 in Resources */,
 				82319E1B28E8E0950053CEF5 /* halloween7.jpeg in Resources */,
 				822139262874E7D00065A0C3 /* Swift music.mp3 in Resources */,
+				8292EAE52906BAF200EDFFD5 /* camera.png in Resources */,
 				822139202874E7A80065A0C3 /* physics music.mp3 in Resources */,
 				82EA1EEC286BCC1300E49D0F /* Swift5.jpeg in Resources */,
 				82EA1EAC286BCB6000E49D0F /* literature3.jpeg in Resources */,

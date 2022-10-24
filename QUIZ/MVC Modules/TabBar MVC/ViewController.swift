@@ -27,6 +27,36 @@ class ViewController: UITabBarController {
     var fb = FBAuth()
     var sound = ""
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        base.viewController = self
+        quizViewModel.view = view
+        quizViewModel.storyboard = storyboard
+        configureAudioSession()
+        selectedIndex = UserDefaults.standard.object(forKey: "index") as? Int ?? 0
+        button.setImage(UIImage(named: "halloween.png"), for: .normal)
+        button.frame = CGRect(x: 0, y: 0, width: 44, height: 44)
+        button.layer.borderWidth = 2
+        self.view.insertSubview(button, aboveSubview: self.tabBar)
+        button.addTarget(self, action:  #selector(ViewController.VoiceCommands(_:)), for: .touchUpInside)
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        button.frame = CGRect.init(x: self.tabBar.center.x - 32, y: self.view.bounds.height - 100, width: 64, height: 64)
+        button.layer.cornerRadius = 32
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        self.cancelSpeechRecognization()
+    }
+    
+    override func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
+        animation.TabBarItemAnimation(item: item)
+       // player.Sound(resource: "future click sound.wav")
+    }
+    
     func configureAudioSession() {
         
         do {
@@ -349,13 +379,25 @@ class ViewController: UITabBarController {
                 self.button.setTitle("\(year)", for: .normal)
                 self.base.sayComment(comment: "\(year)")
                 self.animation.springButton(button: self.button)
-                
+             
+            // Открыть камеру
+            case _ where self.text.contains("Камер") || self.text.contains("камер"):
+                self.icon = "camera.png"
+                self.button.setImage(UIImage(named: self.icon), for: .normal)
+                self.animation.springButton(button: self.button)
+                self.player.Sound(resource: "camera.mp3")
+                self.sound = "camera.mp3"
+                DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                    self.base.OpenCamera()
+                }
+               
             // выключить распознавание речи
             case _ where self.text.contains("Стоп") || self.text.contains("стоп"):
                 self.button.sendActions(for: .touchUpInside)
               
             case _ where self.sound != "":
                 self.player.StopSound(resource: self.sound)
+                
                 
             default:
                 break
@@ -386,31 +428,30 @@ class ViewController: UITabBarController {
             cancelSpeechRecognization()
         }
     }
+}
+
+extension ViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        configureAudioSession()
-        selectedIndex = UserDefaults.standard.object(forKey: "index") as? Int ?? 0
-        button.setImage(UIImage(named: "halloween.png"), for: .normal)
-        button.frame = CGRect(x: 0, y: 0, width: 44, height: 44)
-        button.layer.borderWidth = 2
-        self.view.insertSubview(button, aboveSubview: self.tabBar)
-        button.addTarget(self, action:  #selector(ViewController.VoiceCommands(_:)), for: .touchUpInside)
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+            self.startSpeechRecognization()
+        }
+        picker.dismiss(animated: true, completion: nil)
     }
     
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-        button.frame = CGRect.init(x: self.tabBar.center.x - 32, y: self.view.bounds.height - 100, width: 64, height: 64)
-        button.layer.cornerRadius = 32
-    }
-    
-    override func viewDidDisappear(_ animated: Bool) {
-        super.viewDidDisappear(animated)
-        self.cancelSpeechRecognization()
-    }
-    
-    override func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
-        animation.TabBarItemAnimation(item: item)
-       // player.Sound(resource: "future click sound.wav")
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
+        
+        picker.dismiss(animated: true, completion: nil)
+        
+        guard let image = info[UIImagePickerController.InfoKey.editedImage] as?
+        UIImage else {
+            return
+        }
+        
+        quizViewModel.recognizeText(image: image)
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+            self.startSpeechRecognization()
+        }
+        
     }
 }
