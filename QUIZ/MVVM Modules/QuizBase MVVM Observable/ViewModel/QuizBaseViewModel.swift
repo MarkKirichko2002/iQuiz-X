@@ -1443,7 +1443,7 @@ class QuizBaseViewModel {
         }
     }
     
-    fileprivate func startRecognition () {
+    func startRecognition () {
         let node = audioEngine.inputNode
         let recognitionFormat = node.outputFormat(forBus: 0)
         

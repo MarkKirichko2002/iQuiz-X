@@ -259,7 +259,10 @@ class BaseQuizViewController: UIViewController {
 extension BaseQuizViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
-        picker.dismiss(animated: true, completion: nil)
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+            picker.dismiss(animated: true, completion: nil)
+            self.quiz?.startRecognition()
+        }
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
@@ -271,5 +274,9 @@ extension BaseQuizViewController: UIImagePickerControllerDelegate, UINavigationC
             return
         }
         quiz?.recognizeText(image: image)
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+            picker.dismiss(animated: true, completion: nil)
+            self.quiz?.startRecognition()
+        }
     }
 }
