@@ -34,7 +34,7 @@ class ViewController: UITabBarController {
         quizViewModel.storyboard = storyboard
         configureAudioSession()
         selectedIndex = UserDefaults.standard.object(forKey: "index") as? Int ?? 0
-        button.setImage(UIImage(named: "halloween.png"), for: .normal)
+        button.setImage(UIImage(named: "planets.jpeg"), for: .normal)
         button.frame = CGRect(x: 0, y: 0, width: 44, height: 44)
         button.layer.borderWidth = 2
         self.view.insertSubview(button, aboveSubview: self.tabBar)
@@ -344,15 +344,16 @@ class ViewController: UITabBarController {
                 
             // Включение/Выключение музыки
             case _ where self.text.contains("Муз") || self.text.contains("муз"):
-                self.icon = "halloween.png"
+                self.icon = "planets.jpeg"
                 self.button.setImage(UIImage(named: self.icon), for: .normal)
-                self.player.Sound(resource: "halloween music.mp3")
+                self.sound = "space music.mp3"
+                self.player.Sound(resource: self.sound)
                 self.animation.StartRotateImage(image: self.button.imageView!)
                 
             case _ where self.text.contains("Выкл") || self.text.contains("выкл"):
                 self.icon = "voice.png"
                 self.button.setImage(UIImage(named: self.icon), for: .normal)
-                self.player.StopSound(resource: "halloween music.mp3")
+                self.player.StopSound(resource: self.sound)
                 self.animation.StopRotateImage(image: self.button.imageView!)
                 
             // Узнать текущее время
@@ -419,7 +420,7 @@ class ViewController: UITabBarController {
             startSpeechRecognization()
         } else {
             player.Sound(resource: "pause_sound.mp3")
-            self.icon = "halloween.png"
+            self.icon = "planets.jpeg"
             button.setImage(UIImage(named: self.icon), for: .normal)
             animation.springButton(button: button)
             cancelSpeechRecognization()
