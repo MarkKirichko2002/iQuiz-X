@@ -54,7 +54,6 @@ class ViewController: UITabBarController {
     
     override func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
         animation.TabBarItemAnimation(item: item)
-       // player.Sound(resource: "future click sound.wav")
     }
     
     func configureAudioSession() {
@@ -79,7 +78,6 @@ class ViewController: UITabBarController {
         }
     }
     
-    // handle new selection
     func tabChangedTo(selectedIndex: Int) {
         UserDefaults.standard.set(selectedIndex, forKey: "index")
         switch selectedIndex {
@@ -361,8 +359,7 @@ class ViewController: UITabBarController {
             case _ where self.text.contains("Врем") || self.text.contains("врем"):
                 let hours   = (Calendar.current.component(.hour, from: self.today))
                 let minutes = (Calendar.current.component(.minute, from: self.today))
-                let day = (Calendar.current.component(.day, from: self.today))
-                
+               
                 self.button.setImage(UIImage(named: ""), for: .normal)
                 self.button.setTitleColor(.black, for: .normal)
                 self.button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 20)
@@ -407,9 +404,9 @@ class ViewController: UITabBarController {
     
     
     func cancelSpeechRecognization(){
-        audioEngine.stop() //AVAudioEngine()
-        task?.cancel() //speechRecognizer?.recognitionTask
-        request.endAudio()  //SFSpeechAudioBufferRecognitionRequest?
+        audioEngine.stop()
+        task?.cancel()
+        request.endAudio()
         audioEngine.inputNode.removeTap(onBus: 0)
     }
     
@@ -451,6 +448,5 @@ extension ViewController: UIImagePickerControllerDelegate, UINavigationControlle
             picker.dismiss(animated: true, completion: nil)
             self.startSpeechRecognization()
         }
-        
     }
 }

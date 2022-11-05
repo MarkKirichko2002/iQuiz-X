@@ -29,7 +29,7 @@ class CategoriesTableViewCellModel {
                         let bestscore = category["bestscore"] as? Int ?? 0
                         let CorrectAnswersCounter = category["CorrectAnswersCounter"] as? Int ?? 0
                         
-                        CategoryScore.text = "\(bestscore ?? 0)/100 баллов"
+                        CategoryScore.text = "\(bestscore)/100 баллов"
                         isComplete.text = "\(complete)"
                         
                         if complete == true && CorrectAnswersCounter != nil {
