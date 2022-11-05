@@ -23,7 +23,6 @@ final class CategoryTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(categories.categories.count)
         navigationItem.title = "Категории (\(categories.categories.count))"
     }
     

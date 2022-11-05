@@ -34,7 +34,7 @@ class ViewController: UITabBarController {
         quizViewModel.storyboard = storyboard
         configureAudioSession()
         selectedIndex = UserDefaults.standard.object(forKey: "index") as? Int ?? 0
-        button.setImage(UIImage(named: "halloween.png"), for: .normal)
+        button.setImage(UIImage(named: "planets.jpeg"), for: .normal)
         button.frame = CGRect(x: 0, y: 0, width: 44, height: 44)
         button.layer.borderWidth = 2
         self.view.insertSubview(button, aboveSubview: self.tabBar)
@@ -54,7 +54,6 @@ class ViewController: UITabBarController {
     
     override func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
         animation.TabBarItemAnimation(item: item)
-       // player.Sound(resource: "future click sound.wav")
     }
     
     func configureAudioSession() {
@@ -79,7 +78,6 @@ class ViewController: UITabBarController {
         }
     }
     
-    // handle new selection
     func tabChangedTo(selectedIndex: Int) {
         UserDefaults.standard.set(selectedIndex, forKey: "index")
         switch selectedIndex {
@@ -346,23 +344,23 @@ class ViewController: UITabBarController {
                 
             // Включение/Выключение музыки
             case _ where self.text.contains("Муз") || self.text.contains("муз"):
-                self.icon = "halloween.png"
+                self.icon = "planets.jpeg"
                 self.button.setImage(UIImage(named: self.icon), for: .normal)
-                self.player.Sound(resource: "halloween music.mp3")
+                self.sound = "space music.mp3"
+                self.player.Sound(resource: self.sound)
                 self.animation.StartRotateImage(image: self.button.imageView!)
                 
             case _ where self.text.contains("Выкл") || self.text.contains("выкл"):
                 self.icon = "voice.png"
                 self.button.setImage(UIImage(named: self.icon), for: .normal)
-                self.player.StopSound(resource: "halloween music.mp3")
+                self.player.StopSound(resource: self.sound)
                 self.animation.StopRotateImage(image: self.button.imageView!)
                 
             // Узнать текущее время
             case _ where self.text.contains("Врем") || self.text.contains("врем"):
                 let hours   = (Calendar.current.component(.hour, from: self.today))
                 let minutes = (Calendar.current.component(.minute, from: self.today))
-                let day = (Calendar.current.component(.day, from: self.today))
-                
+               
                 self.button.setImage(UIImage(named: ""), for: .normal)
                 self.button.setTitleColor(.black, for: .normal)
                 self.button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 20)
@@ -407,9 +405,9 @@ class ViewController: UITabBarController {
     
     
     func cancelSpeechRecognization(){
-        audioEngine.stop() //AVAudioEngine()
-        task?.cancel() //speechRecognizer?.recognitionTask
-        request.endAudio()  //SFSpeechAudioBufferRecognitionRequest?
+        audioEngine.stop()
+        task?.cancel()
+        request.endAudio()
         audioEngine.inputNode.removeTap(onBus: 0)
     }
     
@@ -422,7 +420,7 @@ class ViewController: UITabBarController {
             startSpeechRecognization()
         } else {
             player.Sound(resource: "pause_sound.mp3")
-            self.icon = "halloween.png"
+            self.icon = "planets.jpeg"
             button.setImage(UIImage(named: self.icon), for: .normal)
             animation.springButton(button: button)
             cancelSpeechRecognization()
@@ -451,6 +449,5 @@ extension ViewController: UIImagePickerControllerDelegate, UINavigationControlle
             picker.dismiss(animated: true, completion: nil)
             self.startSpeechRecognization()
         }
-        
     }
 }

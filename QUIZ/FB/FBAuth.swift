@@ -226,49 +226,5 @@ class FBAuth {
         try? Auth.auth().signOut()
     }
     
-    func LoadUserInfo(username: UILabel, useremail: UILabel, userimage: UIImageView, highscore: UILabel, view: UIView) {
-        
-        let docRef = db.collection("users").document((Auth.auth().currentUser?.email) ?? "")
-        docRef.getDocument { document, error in
-            if let error = error as NSError? {
-                print("Error getting document: \(error.localizedDescription)")
-            } else {
-                if let document = document {
-                    let data = document.data()
-                    let name = data?["name"] as? String ?? ""
-                    let bestscore = data?["bestscore"] as? Int ?? 0
-                    let email = data?["email"] as? String
-                    let image = data?["image"] as? String
-                    username.text = name
-                    username.font = UIFont.boldSystemFont(ofSize: 20)
-                    useremail.text = email
-                    useremail.font = UIFont.boldSystemFont(ofSize: 20)
-                    highscore.font = UIFont.boldSystemFont(ofSize: 20)
-                    highscore.text = ("Лучший счет: \(bestscore) баллов")
-                    
-                    DispatchQueue.main.async {
-                        let imageURL = URL(string: image ?? "IQ.jpeg")
-                        userimage.sd_setImage(with: imageURL)
-                        print("Фотка \(image)")
-                    }
-                    if let category = document["lastquiz"] as? [String: Any] {
-                        let background = category["background"] as? String
-                        let image = category["image"] as? String
-                        let bestscore = category["bestscore"] as? Int ?? 0
-                        let category = category["category"] as? String ?? ""
-                        highscore.text = "Лучший счет: \(bestscore) баллов (\(category))"
-                        print(category)
-                        highscore.textColor = UIColor.white
-                        username.textColor = UIColor.white
-                        useremail.textColor = UIColor.white
-                        
-                        if background != nil {
-                            view.backgroundColor = UIColor(patternImage: UIImage(named: background!)!)
-                        }
-                    }
-                }
-            }
-        }
-    }
 }
 

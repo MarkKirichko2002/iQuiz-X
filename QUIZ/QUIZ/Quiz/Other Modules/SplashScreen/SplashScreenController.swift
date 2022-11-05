@@ -19,7 +19,7 @@ class SplashScreenController: UIViewController {
         super.viewDidLoad()
         animation.springImage(image: Image)
         Text.textColor = UIColor.white
-        view.backgroundColor = UIColor(patternImage: UIImage(named: "halloween.background.jpeg")!)
+        view.backgroundColor = UIColor(patternImage: UIImage(named: "earth.background.jpeg")!)
         SplashScreen()
     }
    

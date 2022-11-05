@@ -561,7 +561,6 @@
 		82EA1FA9286BCD4200E49D0F /* history18.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 82EA1F9F286BCD4200E49D0F /* history18.jpeg */; };
 		82EA1FAA286BCD4200E49D0F /* history11.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 82EA1FA0286BCD4200E49D0F /* history11.jpeg */; };
 		82EA1FAB286BCD4200E49D0F /* history13.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 82EA1FA1286BCD4200E49D0F /* history13.jpeg */; };
-		82ECFA9D28EE1218000EE656 /* user.png in Resources */ = {isa = PBXBuildFile; fileRef = 82ECFA9B28EE1218000EE656 /* user.png */; };
 		82ECFA9E28EE1218000EE656 /* newspaper.png in Resources */ = {isa = PBXBuildFile; fileRef = 82ECFA9C28EE1218000EE656 /* newspaper.png */; };
 		82EDBAB927CCCEFE0099C069 /* QuizGeography.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82EDBAB827CCCEFE0099C069 /* QuizGeography.swift */; };
 		82F0CA8427FDDB04004925D8 /* VideoRecordTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82F0CA8327FDDB04004925D8 /* VideoRecordTableViewCell.swift */; };
@@ -1127,7 +1126,6 @@
 		82EA1F9F286BCD4200E49D0F /* history18.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = history18.jpeg; sourceTree = "<group>"; };
 		82EA1FA0286BCD4200E49D0F /* history11.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = history11.jpeg; sourceTree = "<group>"; };
 		82EA1FA1286BCD4200E49D0F /* history13.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = history13.jpeg; sourceTree = "<group>"; };
-		82ECFA9B28EE1218000EE656 /* user.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = user.png; sourceTree = "<group>"; };
 		82ECFA9C28EE1218000EE656 /* newspaper.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = newspaper.png; sourceTree = "<group>"; };
 		82EDBAB827CCCEFE0099C069 /* QuizGeography.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizGeography.swift; sourceTree = "<group>"; };
 		82F0CA8327FDDB04004925D8 /* VideoRecordTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoRecordTableViewCell.swift; sourceTree = "<group>"; };
@@ -1473,7 +1471,6 @@
 			isa = PBXGroup;
 			children = (
 				82ECFA9C28EE1218000EE656 /* newspaper.png */,
-				82ECFA9B28EE1218000EE656 /* user.png */,
 				82EA1EC2286BCB8C00E49D0F /* attempts.png */,
 				8292EAE42906BAF200EDFFD5 /* camera.png */,
 				82EA1EC4286BCB9500E49D0F /* bar-chart.png */,
@@ -2666,7 +2663,6 @@
 				82EA1EA8286BCB6000E49D0F /* literature9.jpeg in Resources */,
 				82EA1F7D286BCD0600E49D0F /* sport15.jpeg in Resources */,
 				822139222874E7B10065A0C3 /* space music.mp3 in Resources */,
-				82ECFA9D28EE1218000EE656 /* user.png in Resources */,
 				82EA1EEB286BCC1300E49D0F /* Swift1.jpeg in Resources */,
 				8221393C2874E8650065A0C3 /* Swift14.jpeg in Resources */,
 				82EA1F8E286BCD2300E49D0F /* anatomy16.jpeg in Resources */,
