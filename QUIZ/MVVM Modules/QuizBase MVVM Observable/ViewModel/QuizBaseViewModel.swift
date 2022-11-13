@@ -1383,9 +1383,43 @@ class QuizBaseViewModel {
                 self.ShowAnswer()
             }
             
+            stopSpeechRecognition()
+            
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
+                self.startRecognition()
+            }
+            
         case _ where check2.contains("След") || check2.contains("след"):
             check2 = ""
             self.SkipQuestion()
+            
+            stopSpeechRecognition()
+            
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
+                self.startRecognition()
+            }
+            
+        case _ where check2.contains("Вопрос") || check2.contains("вопрос"):
+            check2 = ""
+            
+            sayComment(comment: "\(base?.checkQuestion() ?? "")\(base?.checkChoices() ?? [""])")
+            
+            stopSpeechRecognition()
+            
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
+                self.startRecognition()
+            }
+            
+        case _ where check2.contains("Счёт") || check2.contains("счёт"):
+            check2 = ""
+            
+            sayComment(comment: "\(counter)")
+            
+            stopSpeechRecognition()
+            
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
+                self.startRecognition()
+            }
             
         case _ where check2.contains("Камер") || check2.contains("камер"):
             check2 = ""
@@ -1432,7 +1466,7 @@ class QuizBaseViewModel {
     
     func say() {
         if isTalking == false {
-            let utterance = AVSpeechUtterance(string: "\(base?.checkQuestion() ?? "")\(base?.checkChoices() ?? [""]) ")
+            let utterance = AVSpeechUtterance(string: "\(base?.checkQuestion() ?? "")\(base?.checkChoices() ?? [""])")
             utterance.voice = AVSpeechSynthesisVoice(language: "ru-RU")
             synthesizer.speak(utterance)
             isTalking = true
