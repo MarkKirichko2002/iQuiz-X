@@ -1383,9 +1383,22 @@ class QuizBaseViewModel {
                 self.ShowAnswer()
             }
             
+            stopSpeechRecognition()
+            
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
+                self.startRecognition()
+            }
+            
         case _ where check2.contains("След") || check2.contains("след"):
             check2 = ""
             self.SkipQuestion()
+            
+            stopSpeechRecognition()
+            
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
+                self.startRecognition()
+            }
+            
             
         case _ where check2.contains("Камер") || check2.contains("камер"):
             check2 = ""
