@@ -1410,6 +1410,17 @@ class QuizBaseViewModel {
                 self.startRecognition()
             }
             
+        case _ where check2.contains("Счёт") || check2.contains("счёт"):
+            check2 = ""
+            
+            sayComment(comment: "\(counter) из 100")
+            
+            stopSpeechRecognition()
+            
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
+                self.startRecognition()
+            }
+            
         case _ where check2.contains("Камер") || check2.contains("камер"):
             check2 = ""
             self.OpenCamera()
