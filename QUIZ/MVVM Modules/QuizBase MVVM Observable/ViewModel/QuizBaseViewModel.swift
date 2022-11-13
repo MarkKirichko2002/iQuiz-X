@@ -1413,7 +1413,7 @@ class QuizBaseViewModel {
         case _ where check2.contains("Счёт") || check2.contains("счёт"):
             check2 = ""
             
-            sayComment(comment: "\(counter) из 100")
+            sayComment(comment: "\(counter)")
             
             stopSpeechRecognition()
             
