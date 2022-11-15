@@ -1421,6 +1421,29 @@ class QuizBaseViewModel {
                 self.startRecognition()
             }
             
+        case _ where check2.contains("Включить музыку") || check2.contains("включить музыку"):
+            check2 = ""
+            
+            OnOffButton.value.sendActions(for: .touchUpInside)
+            
+            stopSpeechRecognition()
+            
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
+                self.startRecognition()
+            }
+            
+            
+        case _ where check2.contains("Выключить музыку") || check2.contains("выключить музыку"):
+            check2 = ""
+            
+            OnOffButton.value.sendActions(for: .touchUpInside)
+            
+            stopSpeechRecognition()
+            
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
+                self.startRecognition()
+            }
+            
         case _ where check2.contains("Камер") || check2.contains("камер"):
             check2 = ""
             self.OpenCamera()

@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		02D7751B7FBA90ADBE8670DA /* Pods_QUIZ.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31E7B7627AF4CCD3FFDFB767 /* Pods_QUIZ.framework */; };
 		8207E24A286E5CC200CB017A /* underwater15.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 8207E245286E5CC200CB017A /* underwater15.jpeg */; };
 		8207E24B286E5CC200CB017A /* underwater14.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 8207E246286E5CC200CB017A /* underwater14.jpeg */; };
 		8207E24C286E5CC200CB017A /* underwater18.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 8207E247286E5CC200CB017A /* underwater18.jpeg */; };
@@ -565,12 +564,11 @@
 		82EDBAB927CCCEFE0099C069 /* QuizGeography.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82EDBAB827CCCEFE0099C069 /* QuizGeography.swift */; };
 		82F0CA8427FDDB04004925D8 /* VideoRecordTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82F0CA8327FDDB04004925D8 /* VideoRecordTableViewCell.swift */; };
 		82F7918B27CC04A00041DAB3 /* QuizEconomy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82F7918A27CC04A00041DAB3 /* QuizEconomy.swift */; };
+		EA0DDE5BE985559BC3D5E9A6 /* Pods_QUIZ.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E47984CF146DFCE383C08C8 /* Pods_QUIZ.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		07F953B2F57EECB9BC5EABF3 /* Pods-QUIZ.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QUIZ.release.xcconfig"; path = "Target Support Files/Pods-QUIZ/Pods-QUIZ.release.xcconfig"; sourceTree = "<group>"; };
-		31E7B7627AF4CCD3FFDFB767 /* Pods_QUIZ.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_QUIZ.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		4D6806F65FF24F88E80C476C /* Pods-QUIZ.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QUIZ.debug.xcconfig"; path = "Target Support Files/Pods-QUIZ/Pods-QUIZ.debug.xcconfig"; sourceTree = "<group>"; };
+		1E47984CF146DFCE383C08C8 /* Pods_QUIZ.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_QUIZ.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8207E245286E5CC200CB017A /* underwater15.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = underwater15.jpeg; sourceTree = "<group>"; };
 		8207E246286E5CC200CB017A /* underwater14.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = underwater14.jpeg; sourceTree = "<group>"; };
 		8207E247286E5CC200CB017A /* underwater18.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = underwater18.jpeg; sourceTree = "<group>"; };
@@ -1130,6 +1128,8 @@
 		82EDBAB827CCCEFE0099C069 /* QuizGeography.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizGeography.swift; sourceTree = "<group>"; };
 		82F0CA8327FDDB04004925D8 /* VideoRecordTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoRecordTableViewCell.swift; sourceTree = "<group>"; };
 		82F7918A27CC04A00041DAB3 /* QuizEconomy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizEconomy.swift; sourceTree = "<group>"; };
+		DFB98C4C257B529C5034EAD9 /* Pods-QUIZ.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QUIZ.debug.xcconfig"; path = "Target Support Files/Pods-QUIZ/Pods-QUIZ.debug.xcconfig"; sourceTree = "<group>"; };
+		E9F08EAEF50E84C0715991E1 /* Pods-QUIZ.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QUIZ.release.xcconfig"; path = "Target Support Files/Pods-QUIZ/Pods-QUIZ.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1137,13 +1137,21 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				02D7751B7FBA90ADBE8670DA /* Pods_QUIZ.framework in Frameworks */,
+				EA0DDE5BE985559BC3D5E9A6 /* Pods_QUIZ.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		068133F8A9A0D50BA23CCD4F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1E47984CF146DFCE383C08C8 /* Pods_QUIZ.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		8209F79A2847F2390093147A /* SplashScreen */ = {
 			isa = PBXGroup;
 			children = (
@@ -1165,7 +1173,7 @@
 				820C627D27BBA3CA004894FA /* QUIZ */,
 				820C627C27BBA3CA004894FA /* Products */,
 				C084AC94B5F45D5B9FB284D9 /* Pods */,
-				D48391B7D14F069F2713E93B /* Frameworks */,
+				068133F8A9A0D50BA23CCD4F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -2354,18 +2362,10 @@
 		C084AC94B5F45D5B9FB284D9 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				4D6806F65FF24F88E80C476C /* Pods-QUIZ.debug.xcconfig */,
-				07F953B2F57EECB9BC5EABF3 /* Pods-QUIZ.release.xcconfig */,
+				DFB98C4C257B529C5034EAD9 /* Pods-QUIZ.debug.xcconfig */,
+				E9F08EAEF50E84C0715991E1 /* Pods-QUIZ.release.xcconfig */,
 			);
 			path = Pods;
-			sourceTree = "<group>";
-		};
-		D48391B7D14F069F2713E93B /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				31E7B7627AF4CCD3FFDFB767 /* Pods_QUIZ.framework */,
-			);
-			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -2375,11 +2375,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 820C628F27BBA3CB004894FA /* Build configuration list for PBXNativeTarget "QUIZ" */;
 			buildPhases = (
-				4B97CAA37CE5D99BDC4C00CD /* [CP] Check Pods Manifest.lock */,
+				C67A98E2702096FF229BCDC2 /* [CP] Check Pods Manifest.lock */,
 				820C627727BBA3CA004894FA /* Sources */,
 				820C627827BBA3CA004894FA /* Frameworks */,
 				820C627927BBA3CA004894FA /* Resources */,
-				32DC3DBDA3A95EFBC911065F /* [CP] Embed Pods Frameworks */,
+				2539189218EAC475814F9DF8 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -2906,7 +2906,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		32DC3DBDA3A95EFBC911065F /* [CP] Embed Pods Frameworks */ = {
+		2539189218EAC475814F9DF8 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -2923,7 +2923,7 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-QUIZ/Pods-QUIZ-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		4B97CAA37CE5D99BDC4C00CD /* [CP] Check Pods Manifest.lock */ = {
+		C67A98E2702096FF229BCDC2 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -3180,7 +3180,7 @@
 		};
 		820C629027BBA3CB004894FA /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4D6806F65FF24F88E80C476C /* Pods-QUIZ.debug.xcconfig */;
+			baseConfigurationReference = DFB98C4C257B529C5034EAD9 /* Pods-QUIZ.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -3220,7 +3220,7 @@
 		};
 		820C629127BBA3CB004894FA /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 07F953B2F57EECB9BC5EABF3 /* Pods-QUIZ.release.xcconfig */;
+			baseConfigurationReference = E9F08EAEF50E84C0715991E1 /* Pods-QUIZ.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
