@@ -9,11 +9,6 @@ import Foundation
 
 class QuizLiterature: QuizBaseViewModel {
     
-    
-    override func ids() -> [QuizModel] {
-        return [QuizModel(name: "литература", image: "literature.jpeg", complete: false, id: 13, score: 0)]
-    }
-     
     override func questions() -> [Question] {
         return [
         Question(question: "На печать какого из этих произведений Л.Толстого понадобится наибольшее количество бумаги?", choices: ["«Анна Каренина»", "«Детство»", "«Война и мир»"], answer: "«Война и мир»", image: "literature1.jpeg", levelOfdifficulty: .easy),

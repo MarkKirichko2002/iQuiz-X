@@ -9,10 +9,6 @@ import Foundation
 
 class QuizPlanets: QuizBaseViewModel {
     
-    override func ids() -> [QuizModel] {
-        return [QuizModel(name: "планеты", image: "planets.jpeg", complete: false, id: 1, score: 0)]
-    }
-    
     override func questions() -> [Question] {
         return [
         Question(question: "Эта планета самая яркая в Солнечной системе.", choices: ["Юпитер", "Венера", "Нептун"], answer: "Венера", image: "planets1.jpeg", levelOfdifficulty: .easy),

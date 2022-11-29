@@ -58,7 +58,7 @@ class PlayerBoardTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: PlayerTableViewCell.identifier, for: indexPath) as! PlayerTableViewCell
         
         cell.configure(players: playersViewModel.players[indexPath.row])
-        
+        cell.PlayerImage.sound = playersViewModel.players[indexPath.row].sound
         return cell
     }
 }

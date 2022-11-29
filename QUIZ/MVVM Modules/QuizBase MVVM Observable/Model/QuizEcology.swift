@@ -9,10 +9,6 @@ import Foundation
 
 class QuizEcology: QuizBaseViewModel {
     
-    override func ids() -> [QuizModel] {
-        return [QuizModel(name: "экология", image: "ecology.jpeg", complete: false, id: 9, score: 0)]
-    }
-     
     override func questions() -> [Question] {
         return [
         Question(question: "Экология - это...", choices: ["Совокупность наук о строении Земли, её происхождении и развитии", "Наука о взаимодействиях живых организмов между собой и с их средой обитания", "Наука о жизни, существовавшей до начала голоценовой эпохи или в её начале в прошлые геологические периоды"], answer: "Наука о взаимодействиях живых организмов между собой и с их средой обитания", image: "ecology1.jpeg", levelOfdifficulty: .easy),

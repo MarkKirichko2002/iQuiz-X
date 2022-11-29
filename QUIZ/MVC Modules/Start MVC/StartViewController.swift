@@ -17,7 +17,7 @@ class StartViewController: UIViewController {
     
     @IBOutlet weak var StartButton: UIButton!
     @IBOutlet weak var TodayQuizButton: UIButton!
-    @IBOutlet weak var Image: UIImageView!
+    @IBOutlet weak var Image: RoundedImageView!
     @IBOutlet weak var TitleName: UILabel!
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var view2: UIView!
@@ -26,7 +26,8 @@ class StartViewController: UIViewController {
     var viewModel = CategoriesViewModel()
     var timer = Timer()
     var animation = AnimationClass()
-    var quizes = [QuizPlanets(), QuizHistory(), QuizAnatomy(), QuizSport(), QuizGames(), QuizIQ(), QuizEconomy(), QuizGeography(), QuizEconomy(), QuizPhysics(), QuizChemistry(), QuizInformatics()]
+    var quizes = [QuizPlanets(), QuizHistory(), QuizAnatomy(), QuizSport(), QuizGames(), QuizIQ(), QuizEconomy(), QuizGeography(), QuizEconomy(), QuizPhysics(), QuizChemistry(), QuizInformatics(), QuizLiterature(), QuizRoadTraffic(), QuizSwift(), QuizUnderwater(), QuizChess(), QuizHalloween()]
+    var sound = ""
     
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
@@ -226,12 +227,11 @@ class StartViewController: UIViewController {
             
         default: break
             
-            
         }
         
         if hourString == "00" && minutesString == "0" && seconds == "0" {
             self.GenerateRandomIndex()
-            self.dailyquiz()
+            self.DailyQuiz()
         }
         
     }
@@ -253,11 +253,7 @@ class StartViewController: UIViewController {
         
         var currentdate = days + "/" + months
         
-        //var currentdate = "2/5"
-        
         var saveddate = UserDefaults.standard.object(forKey: "saveddate") as? String
-        
-        var randomindex = (UserDefaults.standard.object(forKey: "index") as? Int) ?? 100
         
         if currentdate != saveddate {
             print("next day")
@@ -265,13 +261,13 @@ class StartViewController: UIViewController {
             print("сохраненная дата \(saveddate ?? "")")
             print("dates: \(currentdate) and \(saveddate ?? "") are not same")
             GenerateRandomIndex()
-            dailyquiz()
+            DailyQuiz()
             UserDefaults.standard.set(currentdate, forKey: "saveddate")
         }else if currentdate == saveddate {
             print("today")
             print("текущая дата \(currentdate)")
             print("сохраненная дата \(saveddate ?? "")")
-            dailyquiz()
+            DailyQuiz()
             print("dates: \(currentdate) and \(saveddate ?? "") are same")
         }
     }
@@ -281,31 +277,28 @@ class StartViewController: UIViewController {
         print(UserDefaults.standard.object(forKey: key) ?? "")
     }
     
-    func dailyquiz() {
-        var randomindex = (UserDefaults.standard.object(forKey: "index") as? Int) ?? 100
+    func DailyQuiz() {
+        let randomindex = (UserDefaults.standard.object(forKey: "index") as? Int) ?? 1
         
-        //GenerateRandomIndex()
+        quizes[randomindex].quiz = viewModel.categories[randomindex]
         
-        let date = UserDefaults.standard.object(forKey: "saveddate")
+        Image.sound = viewModel.categories[randomindex].sound
+        sound = viewModel.categories[randomindex].sound
         
         switch quizes[randomindex].checkid() {
-            
             
         case 1:
             print("planets")
             self.TodayQuizButton.setTitle("планеты", for: .normal)
-            //self.TodayQuizButton.backgroundColor = UIColor(patternImage: UIImage(named: "earth.background.jpeg")!)
             self.view.backgroundColor = UIColor(patternImage: UIImage(named: "earth.background.jpeg")!)
             self.scrollView.backgroundColor = UIColor(patternImage: UIImage(named: "earth.background.jpeg")!)
             self.view2.backgroundColor = UIColor(patternImage: UIImage(named: "earth.background.jpeg")!)
             self.Image.image = UIImage(named: "planets.jpeg")
-            //self.TitleName.text = "Сегодня: \(date ?? "")"
             
             
         case 2:
             print("history")
             self.TodayQuizButton.setTitle("история", for: .normal)
-            //self.TodayQuizButton.backgroundColor = UIColor(patternImage: UIImage(named: "earth.background.jpeg")!)
             self.view.backgroundColor = UIColor(patternImage: UIImage(named: "history.background.jpeg")!)
             self.scrollView.backgroundColor = UIColor(patternImage: UIImage(named: "history.background.jpeg")!)
             self.view2.backgroundColor = UIColor(patternImage: UIImage(named: "history.background.jpeg")!)
@@ -315,7 +308,6 @@ class StartViewController: UIViewController {
         case 3:
             print("anatomy")
             self.TodayQuizButton.setTitle("анатомия", for: .normal)
-            //self.TodayQuizButton.backgroundColor = UIColor(patternImage: UIImage(named: "anatomy.background.jpeg")!)
             self.view.backgroundColor = UIColor(patternImage: UIImage(named: "anatomy.background.jpeg")!)
             self.scrollView.backgroundColor = UIColor(patternImage: UIImage(named: "anatomy.background.jpeg")!)
             self.view2.backgroundColor = UIColor(patternImage: UIImage(named: "anatomy.background.jpeg")!)
@@ -325,7 +317,6 @@ class StartViewController: UIViewController {
         case 4:
             print("sport")
             self.TodayQuizButton.setTitle("спорт", for: .normal)
-            //self.TodayQuizButton.backgroundColor = UIColor(patternImage: UIImage(named: "sport.background.jpeg")!)
             self.view.backgroundColor = UIColor(patternImage: UIImage(named: "sport.background.jpeg")!)
             self.scrollView.backgroundColor = UIColor(patternImage: UIImage(named: "sport.background.jpeg")!)
             self.view2.backgroundColor = UIColor(patternImage: UIImage(named: "sport.background.jpeg")!)
@@ -334,7 +325,6 @@ class StartViewController: UIViewController {
         case 5:
             print("games")
             self.TodayQuizButton.setTitle("игры", for: .normal)
-            //self.TodayQuizButton.backgroundColor = UIColor(patternImage: UIImage(named: "games.background.jpeg")!)
             self.view.backgroundColor = UIColor(patternImage: UIImage(named: "games.background.jpeg")!)
             self.scrollView.backgroundColor = UIColor(patternImage: UIImage(named: "games.background.jpeg")!)
             self.view2.backgroundColor = UIColor(patternImage: UIImage(named: "games.background.jpeg")!)
@@ -352,7 +342,6 @@ class StartViewController: UIViewController {
         case 7:
             print("economy")
             self.TodayQuizButton.setTitle("экономика", for: .normal)
-            //self.TodayQuizButton.backgroundColor = UIColor(patternImage: UIImage(named: "economy.background.jpeg")!)
             self.view.backgroundColor = UIColor(patternImage: UIImage(named: "economy.background.jpeg")!)
             self.scrollView.backgroundColor = UIColor(patternImage: UIImage(named: "economy.background.jpeg")!)
             self.view2.backgroundColor = UIColor(patternImage: UIImage(named: "economy.background.jpeg")!)
@@ -361,7 +350,6 @@ class StartViewController: UIViewController {
         case 8:
             print("geography")
             self.TodayQuizButton.setTitle("география", for: .normal)
-            //self.TodayQuizButton.backgroundColor = UIColor(patternImage: UIImage(named: "geography.background.jpeg")!)
             self.view.backgroundColor = UIColor(patternImage: UIImage(named: "geography.background.jpeg")!)
             self.scrollView.backgroundColor = UIColor(patternImage: UIImage(named: "geography.background.jpeg")!)
             self.view2.backgroundColor = UIColor(patternImage: UIImage(named: "geography.background.jpeg")!)
@@ -370,7 +358,6 @@ class StartViewController: UIViewController {
         case 9:
             print("ecology")
             self.TodayQuizButton.setTitle("экология", for: .normal)
-            //self.TodayQuizButton.backgroundColor = UIColor(patternImage: UIImage(named: "ecology.background.jpeg")!)
             self.view.backgroundColor = UIColor(patternImage: UIImage(named: "ecology.background.jpeg")!)
             self.scrollView.backgroundColor = UIColor(patternImage: UIImage(named: "ecology.background.jpeg")!)
             self.view2.backgroundColor = UIColor(patternImage: UIImage(named: "ecology.background.jpeg")!)
@@ -379,7 +366,6 @@ class StartViewController: UIViewController {
         case 10:
             print("physics")
             self.TodayQuizButton.setTitle("физика", for: .normal)
-            //self.TodayQuizButton.backgroundColor = UIColor(patternImage: UIImage(named: "physics.background.jpeg")!)
             self.view.backgroundColor = UIColor(patternImage: UIImage(named: "physics.background.jpeg")!)
             self.scrollView.backgroundColor = UIColor(patternImage: UIImage(named: "physics.background.jpeg")!)
             self.view2.backgroundColor = UIColor(patternImage: UIImage(named: "physics.background.jpeg")!)
@@ -388,7 +374,6 @@ class StartViewController: UIViewController {
         case 11:
             print("chemistry")
             self.TodayQuizButton.setTitle("химия", for: .normal)
-            //self.TodayQuizButton.backgroundColor = UIColor(patternImage: UIImage(named: "chemistry.background.jpeg")!)
             self.view.backgroundColor = UIColor(patternImage: UIImage(named: "chemistry.background.jpeg")!)
             self.scrollView.backgroundColor = UIColor(patternImage: UIImage(named: "chemistry.background.jpeg")!)
             self.view2.backgroundColor = UIColor(patternImage: UIImage(named: "chemistry.background.jpeg")!)
@@ -397,7 +382,6 @@ class StartViewController: UIViewController {
         case 12:
             print("informatics")
             self.TodayQuizButton.setTitle("информатика", for: .normal)
-            //self.TodayQuizButton.backgroundColor = UIColor(patternImage: UIImage(named: "informatics.background.jpeg")!)
             self.view.backgroundColor = UIColor(patternImage: UIImage(named: "informatics.background.jpeg")!)
             self.scrollView.backgroundColor = UIColor(patternImage: UIImage(named: "informatics.background.jpeg")!)
             self.view2.backgroundColor = UIColor(patternImage: UIImage(named: "informatics.background.jpeg")!)
@@ -406,7 +390,6 @@ class StartViewController: UIViewController {
         case 13:
             print("literature")
             self.TodayQuizButton.setTitle("литература", for: .normal)
-            //self.TodayQuizButton.backgroundColor = UIColor(patternImage: UIImage(named: "literature.background.jpeg")!)
             self.view.backgroundColor = UIColor(patternImage: UIImage(named: "literature.background.jpeg")!)
             self.scrollView.backgroundColor = UIColor(patternImage: UIImage(named: "literature.background.jpeg")!)
             self.view2.backgroundColor = UIColor(patternImage: UIImage(named: "literature.background.jpeg")!)
@@ -415,7 +398,6 @@ class StartViewController: UIViewController {
         case 14:
             print("roadtraffic")
             self.TodayQuizButton.setTitle("ПДД", for: .normal)
-            //self.TodayQuizButton.backgroundColor = UIColor(patternImage: UIImage(named: "roadtraffic.background.jpeg")!)
             self.view.backgroundColor = UIColor(patternImage: UIImage(named: "drive.background.jpeg")!)
             self.scrollView.backgroundColor = UIColor(patternImage: UIImage(named: "drive.background.jpeg")!)
             self.view2.backgroundColor = UIColor(patternImage: UIImage(named: "drive.background.jpeg")!)
@@ -424,7 +406,6 @@ class StartViewController: UIViewController {
         case 15:
             print("Swift")
             self.TodayQuizButton.setTitle("Swift", for: .normal)
-            //self.TodayQuizButton.backgroundColor = UIColor(patternImage: UIImage(named: "Swift.background.jpeg")!)
             self.view.backgroundColor = UIColor(patternImage: UIImage(named: "Swift.background.jpeg")!)
             self.scrollView.backgroundColor = UIColor(patternImage: UIImage(named: "Swift.background.jpeg")!)
             self.view2.backgroundColor = UIColor(patternImage: UIImage(named: "Swift.background.jpeg")!)
@@ -433,7 +414,6 @@ class StartViewController: UIViewController {
         case 16:
             print("underwater")
             self.TodayQuizButton.setTitle("подводный мир", for: .normal)
-            //self.TodayQuizButton.backgroundColor = UIColor(patternImage: UIImage(named: "Swift.background.jpeg")!)
             self.view.backgroundColor = UIColor(patternImage: UIImage(named: "underwater.background.jpeg")!)
             self.scrollView.backgroundColor = UIColor(patternImage: UIImage(named: "underwater.background.jpeg")!)
             self.view2.backgroundColor = UIColor(patternImage: UIImage(named: "underwater.background.jpeg")!)
@@ -442,7 +422,6 @@ class StartViewController: UIViewController {
         case 17:
             print("chess")
             self.TodayQuizButton.setTitle("шахматы", for: .normal)
-            //self.TodayQuizButton.backgroundColor = UIColor(patternImage: UIImage(named: "Swift.background.jpeg")!)
             self.view.backgroundColor = UIColor(patternImage: UIImage(named: "chess.background.jpeg")!)
             self.scrollView.backgroundColor = UIColor(patternImage: UIImage(named: "chess.background.jpeg")!)
             self.view2.backgroundColor = UIColor(patternImage: UIImage(named: "chess.background.jpeg")!)
@@ -451,7 +430,6 @@ class StartViewController: UIViewController {
         case 18:
             print("halloween")
             self.TodayQuizButton.setTitle("хэллоуин", for: .normal)
-            //self.TodayQuizButton.backgroundColor = UIColor(patternImage: UIImage(named: "Swift.background.jpeg")!)
             self.view.backgroundColor = UIColor(patternImage: UIImage(named: "halloween.background.jpeg")!)
             self.scrollView.backgroundColor = UIColor(patternImage: UIImage(named: "halloween.background.jpeg")!)
             self.view2.backgroundColor = UIColor(patternImage: UIImage(named: "halloween.background.jpeg")!)
@@ -459,7 +437,6 @@ class StartViewController: UIViewController {
             
         default:
             print("other")
-            //self.TodayQuizButton.backgroundColor = UIColor(patternImage: UIImage(named: "random.background.jpeg")!)
             
         }
         
@@ -467,7 +444,7 @@ class StartViewController: UIViewController {
     
     @objc func GoToRandomQuiz() {
         
-        player.Sound(resource: "IQ.mp3")
+        player.Sound(resource: sound)
         self.animation.springButton(button: self.TodayQuizButton)
         
         let randomindex = UserDefaults.standard.object(forKey: "index") as? Int

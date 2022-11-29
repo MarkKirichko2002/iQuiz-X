@@ -9,10 +9,6 @@ import Foundation
 
 class QuizGames : QuizBaseViewModel {
     
-    override func ids() -> [QuizModel] {
-        return [QuizModel(name: "игры", image: "games.jpeg", complete: false, id: 5, score: 0)]
-    }
-    
     override func questions() -> [Question] {
         return [
             Question(question: "Из какой игры это изображение?", choices: ["Warcraft", "Dota 2", "  Dota"], answer: "Warcraft", image: "games1.jpeg", levelOfdifficulty: .easy),

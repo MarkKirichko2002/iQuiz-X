@@ -9,10 +9,6 @@ import Foundation
 
 class QuizEconomy: QuizBaseViewModel {
     
-    override func ids() -> [QuizModel] {
-        return [QuizModel(name: "экономика", image: "economy.jpeg", complete: false, id: 7, score: 0)]
-    }
-    
     override func questions() -> [Question] {
         return [
         Question(question: "Какой из вариантов наиболее соответствует определению предмета экономической теории:", choices: ["Человек и средства производства", "Взаимодействие производительных сил и производственных отношений", "Человек, средства производства и научно-технический прогресс"], answer: "Взаимодействие производительных сил и производственных отношений", image: "economy1.jpeg", levelOfdifficulty: .easy),

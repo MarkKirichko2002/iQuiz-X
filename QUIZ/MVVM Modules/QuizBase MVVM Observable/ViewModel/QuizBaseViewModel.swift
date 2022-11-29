@@ -532,17 +532,7 @@ class QuizBaseViewModel {
             }
         }
     }
-    
-    func questions() -> [Question] {
-        return []
-    }
-    
-    func ids() -> [QuizModel] {
-        return []
-    }
-    
-    init(){}
-    
+        
     func checkAnswer(_ userAnswer: String) -> Bool {
         print(userAnswer)
         print(questions()[questionNumber].answer)
@@ -552,6 +542,12 @@ class QuizBaseViewModel {
         }
         return false;
     }
+    
+    func questions() -> [Question] {
+        return []
+    }
+
+    init(){}
     
     func checkQuestion() -> String {
         return questions()[questionNumber].question
@@ -582,7 +578,7 @@ class QuizBaseViewModel {
     }
     
     func checkid() -> Int {
-        return ids()[quiznumber].id
+        return quiz?.id ?? 1
     }
     
     func checklevel() -> Question.levelOfdifficulty {
@@ -591,9 +587,6 @@ class QuizBaseViewModel {
     
     func nextQuiz(){
         quiznumber += 1
-        if(quiznumber==ids().count){
-            quiznumber=0
-        }
     }
     
     func nextQuestion() {
@@ -1543,7 +1536,8 @@ class QuizBaseViewModel {
                 "category": category,
                 "Id": base?.checkid() ?? 0,
                 "image": image,
-                "background": background
+                "background": background,
+                "sound": quiz?.sound
             ]
         ]) { err in
             if let err = err {

@@ -174,6 +174,7 @@ class BaseQuizViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.BindViewModel()
+        self.quiz?.quiz = category
         self.quiz?.SetQuizTheme()
         self.quiz?.checkHintsSetting(sender: AnswersButton)
         self.quiz?.checkGestureSetting()

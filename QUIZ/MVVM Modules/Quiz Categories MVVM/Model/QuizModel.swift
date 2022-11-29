@@ -13,4 +13,5 @@ struct QuizModel {
     var complete: Bool
     var id: Int
     var score: Int
+    var sound: String
 }

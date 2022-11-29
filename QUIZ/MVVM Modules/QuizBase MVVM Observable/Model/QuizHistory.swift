@@ -8,11 +8,7 @@
 import Foundation
 
 class QuizHistory: QuizBaseViewModel {
-    
-    override func ids() -> [QuizModel] {
-        return [QuizModel(name: "история", image: "history.jpeg", complete: false, id: 2, score: 0)]
-    }
-    
+  
     override func questions() -> [Question] {
         return [
         Question(question: "Какое из данных исторических явлений относится ко второму периоду истории средних веков?", choices: ["Образование сословий", "Возникновение и дальнейшее развитие капиталистических мануфактур", "Появление государств натурального хозяйства"], answer: "Образование сословий", image: "history1.jpeg", levelOfdifficulty: .easy),
