@@ -9,11 +9,6 @@ import Foundation
 
 class QuizInformatics: QuizBaseViewModel {
     
-        
-    override func ids() -> [QuizModel] {
-        return [QuizModel(name: "информатика", image: "informatics.jpeg", complete: false, id: 12, score: 0)]
-    }
-     
     override func questions() -> [Question] {
         return [
         Question(question: "Кто ввел термин информатика?", choices: ["Карл Штейнбух", "Алан Тьюринг", "Чарлз Бэббидж"], answer: "Карл Штейнбух", image: "informatics1.jpeg", levelOfdifficulty: .easy),

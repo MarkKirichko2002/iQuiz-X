@@ -9,10 +9,6 @@ import Foundation
 
 class QuizGeography: QuizBaseViewModel {
     
-    override func ids() -> [QuizModel] {
-        return [QuizModel(name: "география", image: "geography.jpeg", complete: false, id: 8, score: 0)]
-    }
-    
     override func questions() -> [Question] {
         return [
         Question(question: "Знаешь ли ты, для какой из перечисленных территорий характерно распространение вечной мерзлоты?", choices: ["Остров Сахалин", "Полуостров Таймыр", "Курильские острова"], answer: "Полуостров Таймыр", image: "geography1.jpeg", levelOfdifficulty: .easy),

@@ -9,10 +9,6 @@ import Foundation
 
 class QuizSport: QuizBaseViewModel {
     
-    override func ids() -> [QuizModel] {
-        return [QuizModel(name: "спорт", image: "sport.jpeg", complete: false, id: 4, score: 0)]
-    }
-    
     override func questions() -> [Question] {
         return [
         Question(question: "Чем поливают друг друга победители этапа «Формулы-1» в Бахрейне?", choices: ["Газировкой", "Шампанским", "Другой вариант ответа"], answer: "Газировкой", image: "sport1.jpeg", levelOfdifficulty: .easy),

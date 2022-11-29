@@ -9,10 +9,6 @@ import Foundation
 
 class QuizUnderwater: QuizBaseViewModel {
     
-    override func ids() -> [QuizModel] {
-        return [QuizModel(name: "подводный мир", image: "underwater.png", complete: false, id: 16, score: 0)]
-    }
-     
     override func questions() -> [Question] {
         return [
         Question(question: "Как называется эта рыба?", choices: ["Морской окунь", "Морской карась", "Треска"], answer: "Морской окунь", image: "underwater1.jpeg", levelOfdifficulty: .easy),

@@ -9,10 +9,6 @@ import Foundation
 
 class QuizChess: QuizBaseViewModel {
     
-    override func ids() -> [QuizModel] {
-        return [QuizModel(name: "шахматы", image: "chess.png", complete: false, id: 17, score: 0)]
-    }
-     
     override func questions() -> [Question] {
         return [
         Question(question: "Поставьте мат в два хода", choices: ["Bf8; Re7", "Be5; Rd8", "Re7; Ke4"], answer: "Bf8; Re7", image: "chess1.jpeg", levelOfdifficulty: .easy),

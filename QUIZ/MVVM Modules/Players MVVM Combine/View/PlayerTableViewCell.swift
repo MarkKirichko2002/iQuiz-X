@@ -14,11 +14,12 @@ class PlayerTableViewCell: UITableViewCell {
     
     @IBOutlet weak var UserName: UILabel!
     @IBOutlet weak var UserEmail: UILabel!
-    @IBOutlet weak var PlayerImage: UIImageView!
+    @IBOutlet weak var PlayerImage: RoundedImageView!
     @IBOutlet weak var PlayerBestScore: UILabel!
     
     func configure(players: Player) {
         PlayerImage.sd_setImage(with: URL(string: players.image))
+        PlayerImage.sound = players.sound
         UserName.text = players.name
         UserName.textColor = UIColor.white
         UserEmail.text = players.email

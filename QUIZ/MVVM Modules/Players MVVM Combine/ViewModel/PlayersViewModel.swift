@@ -25,12 +25,13 @@ class PlayersViewModel {
                     let photo = document.get("image") as? String
                     
                     if let category = document["lastquiz"] as? [String: Any] {
+                        let sound = category["sound"] as? String ?? ""
                         let CorrectAnswersCounter = category["CorrectAnswersCounter"] as? Int
                         let background = category["background"] as? String
                         let bestscore = category["bestscore"] as? Int ?? 0
                         let category = category["category"] as? String ?? ""
                         
-                        self.players.append(Player(name: name ?? "", counter: bestscore , email: email ?? "", CorrectAnswersCounter: CorrectAnswersCounter ?? 0, category: category , image: photo ?? "", background: background ?? ""))
+                        self.players.append(Player(name: name ?? "", counter: bestscore , email: email ?? "", CorrectAnswersCounter: CorrectAnswersCounter ?? 0, category: category , image: photo ?? "", background: background ?? "", sound: sound))
                         print(self.players.count)
                     }
                     self.players.sort(by: { $0.counter > $1.counter })

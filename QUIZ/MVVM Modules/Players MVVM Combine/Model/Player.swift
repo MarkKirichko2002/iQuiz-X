@@ -15,4 +15,5 @@ struct Player {
     var category: String
     var image: String
     let background: String
+    let sound: String
 }

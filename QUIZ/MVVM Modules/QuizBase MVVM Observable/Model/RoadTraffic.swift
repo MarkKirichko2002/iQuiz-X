@@ -9,11 +9,6 @@ import Foundation
 
 class QuizRoadTraffic: QuizBaseViewModel {
     
-    
-    override func ids() -> [QuizModel] {
-        return [QuizModel(name: "ПДД", image: "drive.jpeg", complete: false, id: 14, score: 0)]
-    }
-     
     override func questions() -> [Question] {
         return [
         Question(question: "Что означают эти дорожные знаки?", choices: ["Стоянка разрешена транспортным средствам оперативных служб", "Стоянка разрешена только с включенными габаритными огнями", "Стоянка разрешена в субботние, воскресные и праздничные дни"], answer: "Стоянка разрешена в субботние, воскресные и праздничные дни", image: "roadtraffic1.jpeg", levelOfdifficulty: .easy),

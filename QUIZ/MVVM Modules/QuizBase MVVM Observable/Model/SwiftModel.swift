@@ -9,11 +9,6 @@ import Foundation
 
 class QuizSwift: QuizBaseViewModel {
     
-    
-    override func ids() -> [QuizModel] {
-        return [QuizModel(name: "Swift", image: "swift.jpeg", complete: false, id: 15, score: 0)]
-    }
-     
     override func questions() -> [Question] {
         return [
         Question(question: "Из-за какой строки данный код не скомпилируется?", choices: ["5", "4", "3"], answer: "5", image: "Swift1.jpeg", levelOfdifficulty: .easy),

@@ -14,7 +14,7 @@ class TasksTableViewCell: UITableViewCell {
     var animation = AnimationClass()
     
     @IBOutlet weak var TaskText: UILabel!
-    @IBOutlet weak var TaskImage: UIImageView!
+    @IBOutlet weak var TaskImage: RoundedImageView!
     @IBOutlet weak var TaskStatus: UILabel!
     
     func didSelect(indexPath: IndexPath) {

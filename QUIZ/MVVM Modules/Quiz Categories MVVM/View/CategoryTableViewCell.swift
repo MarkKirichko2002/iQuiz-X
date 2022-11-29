@@ -14,7 +14,7 @@ class CategoryTableViewCell: UITableViewCell {
     var animation = AnimationClass()
     
     @IBOutlet weak var CategoryText: UILabel!
-    @IBOutlet weak var CategoryImage: UIImageView!
+    @IBOutlet weak var CategoryImage: RoundedImageView!
     @IBOutlet weak var isComplete: UILabel!
     @IBOutlet weak var CategoryScore: UILabel!
     

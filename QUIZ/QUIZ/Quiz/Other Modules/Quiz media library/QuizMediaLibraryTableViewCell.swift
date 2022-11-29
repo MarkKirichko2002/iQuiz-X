@@ -15,7 +15,7 @@ class QuizMediaLibraryTableViewCell: UITableViewCell {
     var isPlaying = false
     var animation = AnimationClass()
     
-    @IBOutlet weak var Icon: UIImageView!
+    @IBOutlet weak var Icon: RoundedImageView!
     @IBOutlet weak var Title: UILabel!
     @IBOutlet weak var PlayButton: UIButton!
     

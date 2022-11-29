@@ -9,10 +9,6 @@ import Foundation
 
 class QuizAnatomy: QuizBaseViewModel {
     
-    override func ids() -> [QuizModel] {
-        return [QuizModel(name: "анатомия", image: "anatomy.jpeg", complete: false, id: 3, score: 0)]
-    }
-    
     override func questions() -> [Question] {
         return [
         Question(question: "Звук какой частоты воспринимается человеческим ухом?", choices: ["От 20 до 20 000 Гц", "От 50 до 50 000 Гц", "От 100 до 100 000 Гц"], answer: "От 20 до 20 000 Гц", image: "anatomy1.jpeg", levelOfdifficulty: .easy),

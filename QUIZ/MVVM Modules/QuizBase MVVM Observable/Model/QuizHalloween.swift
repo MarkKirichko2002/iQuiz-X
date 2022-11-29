@@ -9,10 +9,6 @@ import Foundation
 
 class QuizHalloween: QuizBaseViewModel {
     
-    override func ids() -> [QuizModel] {
-        return [QuizModel(name: "хэллоуин", image: "halloween.png", complete: false, id: 18, score: 0)]
-    }
-     
     override func questions() -> [Question] {
         return [
         Question(question: "Какая группа людей начала Хэллоуин?", choices: ["Викинги", "Мавры", "кельты"], answer: "кельты", image: "halloween1.jpeg", levelOfdifficulty: .easy),

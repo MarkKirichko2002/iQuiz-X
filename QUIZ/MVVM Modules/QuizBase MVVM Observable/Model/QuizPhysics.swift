@@ -9,10 +9,6 @@ import Foundation
 
 class QuizPhysics: QuizBaseViewModel {
     
-    override func ids() -> [QuizModel] {
-        return [QuizModel(name: "физика", image: "physics.jpeg", complete: false, id: 10, score: 0)]
-    }
-     
     override func questions() -> [Question] {
         return [
         Question(question: "Кран поднимает вертикально вверх на высоту 5 м груз весом 1000 Н за 10 с. Какую механическую мощность развивает подъёмный кран во время этого подъёма?", choices: ["500 Вт", "1000 Вт", "5000 Вт"], answer: "500 Вт", image: "physics1.jpeg", levelOfdifficulty: .easy),

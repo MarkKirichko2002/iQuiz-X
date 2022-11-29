@@ -9,10 +9,6 @@ import Foundation
 
 class QuizIQ: QuizBaseViewModel {
     
-    override func ids() -> [QuizModel] {
-        return [QuizModel(name: "IQ", image: "anatomy.jpeg", complete: false, id: 6, score: 0)]
-    }
-    
     override func questions() -> [Question] {
         return [
         Question(question: "Какие буквы должны стоять, вместо вопросительных знаков?", choices: ["ЕН", "ДМ", "ГН"], answer: "ДМ", image: "IQ1.jpeg", levelOfdifficulty: .easy),
