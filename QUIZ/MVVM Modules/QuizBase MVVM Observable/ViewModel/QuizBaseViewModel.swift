@@ -1064,7 +1064,7 @@ class QuizBaseViewModel {
     }
     
     func checkSpeachSetting() {
-        var isSpeachOn = UserDefaults.standard.object(forKey: "onstatusspeach") as? Bool
+        let isSpeachOn = UserDefaults.standard.object(forKey: "onstatusspeach") as? Bool
         
         print(isSpeachOn)
         
@@ -1081,7 +1081,7 @@ class QuizBaseViewModel {
     }
     
     func checkHintsSetting(sender: UIButton) {
-        var isHintsOn = UserDefaults.standard.object(forKey: "onstatushints") as? Bool
+        let isHintsOn = UserDefaults.standard.object(forKey: "onstatushints") as? Bool
         
         print(isHintsOn)
         
@@ -1131,7 +1131,7 @@ class QuizBaseViewModel {
     
     
     func checkMusicSetting() {
-        var isMusicOn = UserDefaults.standard.object(forKey: "onstatusmusic") as? Bool
+        let isMusicOn = UserDefaults.standard.object(forKey: "onstatusmusic") as? Bool
         
         print("Музыка \(isMusicOn)")
         
@@ -1423,16 +1423,18 @@ class QuizBaseViewModel {
             DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
                 self.startRecognition()
             }
-            
+        
+        // Открыть камеру
         case _ where check2.contains("Камер") || check2.contains("камер"):
             check2 = ""
             self.OpenCamera()
-            
+        
+        // Выйти из викторины
         case _ where check2.contains("Заверш") || check2.contains("заверш") || check2.contains("Выйти") || check2.contains("выйти") || check2.contains("Выход") || check2.contains("выход"):
             check2 = ""
             self.player.StopSound(resource: sound)
             self.exit()
-            
+                        
         default:
             check2 = ""
         }
