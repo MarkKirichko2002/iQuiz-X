@@ -59,6 +59,7 @@ class PlayerBoardTableViewController: UITableViewController {
         
         cell.configure(players: playersViewModel.players[indexPath.row])
         cell.PlayerImage.sound = playersViewModel.players[indexPath.row].sound
+        cell.PlayerImage.color = .white
         return cell
     }
 }

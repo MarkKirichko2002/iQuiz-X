@@ -12,14 +12,16 @@ class RoundedImageView: UIImageView {
     
     var player = SoundClass()
     var sound = "space.wav"
+    var color = UIColor.black
+    var borderWidth = 3
     
     override func layoutSubviews() {
         self.layer.cornerRadius = self.bounds.width / 2
         let tap = UITapGestureRecognizer(target: self, action: #selector(tapFunction))
         self.isUserInteractionEnabled = true
         self.addGestureRecognizer(tap)
-        self.layer.borderWidth = 5
-        self.layer.borderColor = UIColor.black.cgColor
+        self.layer.borderWidth = CGFloat(borderWidth)
+        self.layer.borderColor = color.cgColor
     }
     
     @IBAction func tapFunction(sender: UITapGestureRecognizer) {

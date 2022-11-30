@@ -29,11 +29,12 @@ class ProfileViewModel {
                     let password = data?["password"] as? String
                     
                     if let category = document["lastquiz"] as? [String: Any] {
+                        let sound = category["sound"] as? String ?? ""
                         let background = category["background"] as? String
                         let bestscore = category["bestscore"] as? Int ?? 0
                         let category = category["category"] as? String ?? ""
                         
-                        let user = Profile(name: name, email: email ?? "", score: bestscore, category: category, image: image ?? "", background: background ?? "", password: password ?? "", voicepassword: self.voicepassword ?? "")
+                        let user = Profile(name: name, email: email ?? "", score: bestscore, category: category, image: image ?? "", background: background ?? "", password: password ?? "", voicepassword: self.voicepassword ?? "", categorysound: sound)
                         self.user.onNext(user)
                     }
                 }

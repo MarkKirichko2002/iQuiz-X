@@ -68,6 +68,7 @@ final class CategoryTableViewController: UITableViewController {
         
         cellmodel.configure(categories.categories[indexPath.row], CategoryImage: cell.CategoryImage, CategoryText: cell.CategoryText, isComplete: cell.isComplete, CategoryScore: cell.CategoryScore, background: cell)
         cell.CategoryImage.sound = categories.categories[indexPath.row].sound
+        cell.CategoryImage.color = .white
         
         return cell
     }
