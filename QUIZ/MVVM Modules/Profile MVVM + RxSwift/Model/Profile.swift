@@ -15,4 +15,5 @@ struct Profile {
     let background: String
     let password: String
     let voicepassword: String
+    let categorysound: String
 }

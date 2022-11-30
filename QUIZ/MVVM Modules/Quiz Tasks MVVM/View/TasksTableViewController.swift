@@ -71,6 +71,7 @@ final class TasksTableViewController: UITableViewController {
         
         cellmodel.configure(tasks.tasks[indexPath.row], TaskImage: cell.TaskImage, TaskText: cell.TaskText, TaskStatus: cell.TaskStatus, background: cell)
         cell.TaskImage.sound = categories.categories[indexPath.row].sound
+        cell.TaskImage.color = .white
         
         return cell
     }

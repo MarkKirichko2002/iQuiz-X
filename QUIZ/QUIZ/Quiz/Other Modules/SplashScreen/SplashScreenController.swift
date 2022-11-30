@@ -10,13 +10,15 @@ import UIKit
 
 class SplashScreenController: UIViewController {
     
-    @IBOutlet weak var Image: UIImageView!
+    @IBOutlet weak var Image: RoundedImageView!
     @IBOutlet weak var Text: UILabel!
     
     var animation = AnimationClass()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        Image.borderWidth = 5
+        Image.color = .white
         animation.springImage(image: Image)
         Text.textColor = UIColor.white
         view.backgroundColor = UIColor(patternImage: UIImage(named: "earth.background.jpeg")!)

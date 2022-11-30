@@ -221,7 +221,6 @@ class FBAuth {
     }
     
     
-    
     func SignOutAction() {
         try? Auth.auth().signOut()
     }

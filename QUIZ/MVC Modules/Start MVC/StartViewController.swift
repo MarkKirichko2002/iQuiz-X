@@ -41,6 +41,7 @@ class StartViewController: UIViewController {
 //                                                    selector: #selector(UpdateTime), userInfo: nil, repeats: true)
         
         self.CheckTime()
+        self.Image.color = .white
         
         StartButton.layer.cornerRadius = StartButton.frame.size.width / 10
         StartButton.clipsToBounds = true
