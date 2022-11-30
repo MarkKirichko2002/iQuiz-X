@@ -10,6 +10,7 @@ import Foundation
 struct QuizModel {
     var name: String
     var image: String
+    var background: String
     var complete: Bool
     var id: Int
     var score: Int

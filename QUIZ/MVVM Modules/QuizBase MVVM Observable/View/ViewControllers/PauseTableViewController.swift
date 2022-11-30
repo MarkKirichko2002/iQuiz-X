@@ -72,9 +72,15 @@ class PauseTableViewController: UITableViewController {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "CurrentCategoryTableViewCell") as? CurrentCategoryTableViewCell
             else { return UITableViewCell() }
             cell.CurrentImage.image = UIImage(named: currentcategory?.image ?? "")
+            cell.CurrentImage.color = .white
+            cell.CurrentImage.sound = currentcategory?.sound ?? ""
             cell.CurrentName.text = currentcategory?.name
+            cell.CurrentName.textColor = .white
             cell.CurrentScore.text = "счет: \(score)/100"
+            cell.CurrentScore.textColor = .white
             cell.CurrentQuestion.text = "вопрос: \(questionNumber)/20"
+            cell.CurrentQuestion.textColor = .white
+            cell.contentView.backgroundColor = UIColor(patternImage: UIImage(named: currentcategory?.background ?? "")!)
             return cell
             
         } else if indexPath.row == 1  {
