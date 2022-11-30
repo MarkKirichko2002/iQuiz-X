@@ -14,8 +14,7 @@ class CategoriesTableViewCellModel {
     
     let db = Firestore.firestore()
     
-    func LoadData(quizpath: String, background: String, isComplete: UILabel, CategoryScore: UILabel, view: UIView) {
-        view.backgroundColor = UIColor(patternImage: UIImage(named: background)!)
+    func LoadData(quizpath: String, isComplete: UILabel, CategoryScore: UILabel) {
         let docRef = db.collection("users").document(Auth.auth().currentUser?.email ?? "")
         
         docRef.getDocument { document, error in
@@ -47,6 +46,7 @@ class CategoriesTableViewCellModel {
     
     
     func configure(_ category: QuizModel, CategoryImage: UIImageView, CategoryText: UILabel, isComplete: UILabel, CategoryScore: UILabel, background: UIView)  {
+        background.backgroundColor = UIColor(patternImage: UIImage(named: category.background)!)
         CategoryImage.image = UIImage(named: category.image)
         CategoryText.text = category.name
         CategoryScore.text = "\(category.score)/100"
@@ -59,61 +59,61 @@ class CategoriesTableViewCellModel {
         switch category.id {
             
         case 1:
-            LoadData(quizpath: "quizplanets", background: "earth.background.jpeg", isComplete: isComplete, CategoryScore: CategoryScore, view: background)
+            LoadData(quizpath: "quizplanets", isComplete: isComplete, CategoryScore: CategoryScore)
             
         case 2:
-            LoadData(quizpath: "quizhistory", background: "history.background.jpeg", isComplete: isComplete, CategoryScore: CategoryScore, view: background)
+            LoadData(quizpath: "quizhistory", isComplete: isComplete, CategoryScore: CategoryScore)
             
         case 3:
-            LoadData(quizpath: "quizanatomy", background: "anatomy.background.jpeg", isComplete: isComplete, CategoryScore: CategoryScore, view: background)
+            LoadData(quizpath: "quizanatomy", isComplete: isComplete, CategoryScore: CategoryScore)
             
         case 4:
-            LoadData(quizpath: "quizsport", background: "sport.background.jpeg", isComplete: isComplete, CategoryScore: CategoryScore, view: background)
+            LoadData(quizpath: "quizsport", isComplete: isComplete, CategoryScore: CategoryScore)
             
         case 5:
-            LoadData(quizpath: "quizgames", background: "games.background.jpeg", isComplete: isComplete, CategoryScore: CategoryScore, view: background)
+            LoadData(quizpath: "quizgames", isComplete: isComplete, CategoryScore: CategoryScore)
             
         case 6:
-            LoadData(quizpath: "quiziq", background: "IQ.background.jpeg", isComplete: isComplete, CategoryScore: CategoryScore, view: background)
+            LoadData(quizpath: "quiziq", isComplete: isComplete, CategoryScore: CategoryScore)
             
         case 7:
-            LoadData(quizpath: "quizeconomy", background: "economy.background.jpeg", isComplete: isComplete, CategoryScore: CategoryScore, view: background)
+            LoadData(quizpath: "quizeconomy", isComplete: isComplete, CategoryScore: CategoryScore)
             
         case 8:
-            LoadData(quizpath: "quizgeography", background: "geography.background.jpeg", isComplete: isComplete, CategoryScore: CategoryScore, view: background)
+            LoadData(quizpath: "quizgeography", isComplete: isComplete, CategoryScore: CategoryScore)
             
         case 9:
-            LoadData(quizpath: "quizecology", background: "ecology.background.jpeg", isComplete: isComplete, CategoryScore: CategoryScore, view: background)
+            LoadData(quizpath: "quizecology", isComplete: isComplete, CategoryScore: CategoryScore)
             
         case 10:
-            LoadData(quizpath: "quizphysics", background: "physics.background.jpeg", isComplete: isComplete, CategoryScore: CategoryScore, view: background)
+            LoadData(quizpath: "quizphysics", isComplete: isComplete, CategoryScore: CategoryScore)
             
         case 11:
-            LoadData(quizpath: "quizchemistry", background: "chemistry.background.jpeg", isComplete: isComplete, CategoryScore: CategoryScore, view: background)
+            LoadData(quizpath: "quizchemistry", isComplete: isComplete, CategoryScore: CategoryScore)
             
         case 12:
-            LoadData(quizpath: "quizinformatics", background: "informatics.background.jpeg", isComplete: isComplete, CategoryScore: CategoryScore, view: background)
+            LoadData(quizpath: "quizinformatics", isComplete: isComplete, CategoryScore: CategoryScore)
             
         case 13:
-            LoadData(quizpath: "quizliterature", background: "literature.background.jpeg", isComplete: isComplete, CategoryScore: CategoryScore, view: background)
+            LoadData(quizpath: "quizliterature", isComplete: isComplete, CategoryScore: CategoryScore)
             
         case 14:
-            LoadData(quizpath: "quizroadtraffic", background: "drive.background.jpeg", isComplete: isComplete, CategoryScore: CategoryScore, view: background)
+            LoadData(quizpath: "quizroadtraffic", isComplete: isComplete, CategoryScore: CategoryScore)
             
         case 15:
-            LoadData(quizpath: "quizswift", background: "swift.background.jpeg", isComplete: isComplete, CategoryScore: CategoryScore, view: background)
+            LoadData(quizpath: "quizswift", isComplete: isComplete, CategoryScore: CategoryScore)
             
         case 16:
-            LoadData(quizpath: "quizunderwater", background: "underwater.background.jpeg", isComplete: isComplete, CategoryScore: CategoryScore, view: background)
+            LoadData(quizpath: "quizunderwater", isComplete: isComplete, CategoryScore: CategoryScore)
            
         case 17:
-            LoadData(quizpath: "quizchess", background: "chess.background.jpeg", isComplete: isComplete, CategoryScore: CategoryScore, view: background)
+            LoadData(quizpath: "quizchess", isComplete: isComplete, CategoryScore: CategoryScore)
             
         case 18:
-            LoadData(quizpath: "quizhalloween", background: "halloween.background.jpeg", isComplete: isComplete, CategoryScore: CategoryScore, view: background)
+            LoadData(quizpath: "quizhalloween", isComplete: isComplete, CategoryScore: CategoryScore)
             
         case 19:
-            LoadData(quizpath: "lastquiz", background: "random.background.jpeg", isComplete: isComplete, CategoryScore: CategoryScore, view: background)
+            LoadData(quizpath: "lastquiz", isComplete: isComplete, CategoryScore: CategoryScore)
         
         default:
             //LoadData(quizpath: "quizplanets", background: "earth.background.jpeg")

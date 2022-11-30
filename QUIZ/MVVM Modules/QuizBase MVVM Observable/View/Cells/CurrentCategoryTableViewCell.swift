@@ -9,7 +9,7 @@ import UIKit
 
 class CurrentCategoryTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var CurrentImage: UIImageView!
+    @IBOutlet weak var CurrentImage: RoundedImageView!
     @IBOutlet weak var CurrentName: UILabel!
     @IBOutlet weak var CurrentScore: UILabel!
     @IBOutlet weak var CurrentQuestion: UILabel!

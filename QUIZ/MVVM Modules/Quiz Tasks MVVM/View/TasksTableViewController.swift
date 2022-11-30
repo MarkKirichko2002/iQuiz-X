@@ -35,10 +35,10 @@ final class TasksTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        player.Sound(resource: categories.categories[indexPath.row].sound)
+        player.Sound(resource: tasks.tasks[indexPath.row].sound)
         
         if let cell = tableView.cellForRow(at: indexPath) as? CategoryTableViewCell {
-               cell.didSelect(indexPath: indexPath)
+            cell.didSelect(indexPath: indexPath)
         }
         
         switch(indexPath.row) {
@@ -70,7 +70,7 @@ final class TasksTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: TasksTableViewCell.identifier, for: indexPath) as! TasksTableViewCell
         
         cellmodel.configure(tasks.tasks[indexPath.row], TaskImage: cell.TaskImage, TaskText: cell.TaskText, TaskStatus: cell.TaskStatus, background: cell)
-        cell.TaskImage.sound = categories.categories[indexPath.row].sound
+        cell.TaskImage.sound = tasks.tasks[indexPath.row].sound
         cell.TaskImage.color = .white
         
         return cell

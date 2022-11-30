@@ -9,7 +9,7 @@ import UIKit
 
 class QuizStartViewController: UIViewController {
     
-    @IBOutlet weak var Icon: UIImageView!
+    @IBOutlet weak var Icon: RoundedImageView!
     @IBOutlet weak var CategoryName: UILabel!
     @IBOutlet weak var QuestionLabel: UILabel!
     @IBOutlet weak var TimerLabeL: UILabel!
@@ -36,10 +36,15 @@ class QuizStartViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = UIColor(patternImage: UIImage(named: category?.background ?? "")!)
+        Icon.sound = category?.sound ?? "space.wav"
         Icon.image = UIImage(named: category?.image ?? "planets.jpeg")
-        Icon.layer.cornerRadius = Icon.layer.frame.width / 2
-        Icon.layer.borderWidth = 5
+        Icon.color = .white
+        Icon.borderWidth = 5
         CategoryName.text = category?.name
+        CategoryName.textColor = .white
+        QuestionLabel.textColor = .white
+        TimerLabeL.textColor = .white
         timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(time), userInfo: nil, repeats: true)
         DispatchQueue.main.asyncAfter(deadline: .now() + 6) {
             self.viewModel.goToQuize(quiz: self.base!, category: self.category!, storyboard: self.storyboard, view: self.view)

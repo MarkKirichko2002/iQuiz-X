@@ -13,9 +13,8 @@ class TasksTableViewCellModel {
     
     let db = Firestore.firestore()
     
-    func LoadData(quizpath: String, background: String, TaskStatus: UILabel, view: UIView) {
+    func LoadData(quizpath: String, TaskStatus: UILabel) {
         
-        view.backgroundColor = UIColor(patternImage: UIImage(named: background)!)
         let docRef = db.collection("users").document((Auth.auth().currentUser?.email)!)
         
         docRef.getDocument { document, error in
@@ -45,6 +44,7 @@ class TasksTableViewCellModel {
     
     
     func configure(_ task: TaskModel, TaskImage: UIImageView, TaskText: UILabel, TaskStatus: UILabel, background: UIView)  {
+        background.backgroundColor = UIColor(patternImage: UIImage(named: task.background)!)
         TaskImage.image = UIImage(named: task.image)
         TaskText.text = task.name
         
@@ -56,61 +56,61 @@ class TasksTableViewCellModel {
         switch task.id {
             
         case 1:
-            LoadData(quizpath: "quizplanets", background: "earth.background.jpeg", TaskStatus: TaskStatus, view: background)
+            LoadData(quizpath: "quizplanets", TaskStatus: TaskStatus)
             
         case 2:
-            LoadData(quizpath: "quizhistory", background: "history.background.jpeg", TaskStatus: TaskStatus, view: background)
+            LoadData(quizpath: "quizhistory", TaskStatus: TaskStatus)
             
         case 3:
-            LoadData(quizpath: "quizanatomy", background: "anatomy.background.jpeg", TaskStatus: TaskStatus, view: background)
+            LoadData(quizpath: "quizanatomy", TaskStatus: TaskStatus)
             
         case 4:
-            LoadData(quizpath: "quizsport", background: "sport.background.jpeg", TaskStatus: TaskStatus, view: background)
+            LoadData(quizpath: "quizsport", TaskStatus: TaskStatus)
             
         case 5:
-            LoadData(quizpath: "quizgames", background: "games.background.jpeg", TaskStatus: TaskStatus, view: background)
+            LoadData(quizpath: "quizgames", TaskStatus: TaskStatus)
             
         case 6:
-            LoadData(quizpath: "quiziq", background: "IQ.background.jpeg", TaskStatus: TaskStatus, view: background)
+            LoadData(quizpath: "quiziq", TaskStatus: TaskStatus)
             
         case 7:
-            LoadData(quizpath: "quizeconomy", background: "economy.background.jpeg", TaskStatus: TaskStatus, view: background)
+            LoadData(quizpath: "quizeconomy", TaskStatus: TaskStatus)
             
         case 8:
-            LoadData(quizpath: "quizgeography", background: "geography.background.jpeg", TaskStatus: TaskStatus, view: background)
+            LoadData(quizpath: "quizgeography", TaskStatus: TaskStatus)
             
         case 9:
-            LoadData(quizpath: "quizecology", background: "ecology.background.jpeg", TaskStatus: TaskStatus, view: background)
+            LoadData(quizpath: "quizecology", TaskStatus: TaskStatus)
             
         case 10:
-            LoadData(quizpath: "quizphysics", background: "physics.background.jpeg", TaskStatus: TaskStatus, view: background)
+            LoadData(quizpath: "quizphysics", TaskStatus: TaskStatus)
             
         case 11:
-            LoadData(quizpath: "quizchemistry", background: "chemistry.background.jpeg", TaskStatus: TaskStatus, view: background)
+            LoadData(quizpath: "quizchemistry", TaskStatus: TaskStatus)
             
         case 12:
-            LoadData(quizpath: "quizinformatics", background: "informatics.background.jpeg", TaskStatus: TaskStatus, view: background)
+            LoadData(quizpath: "quizinformatics", TaskStatus: TaskStatus)
             
         case 13:
-            LoadData(quizpath: "quizliterature", background: "literature.background.jpeg", TaskStatus: TaskStatus, view: background)
+            LoadData(quizpath: "quizliterature", TaskStatus: TaskStatus)
             
         case 14:
-            LoadData(quizpath: "quizroadtraffic", background: "drive.background.jpeg", TaskStatus: TaskStatus, view: background)
+            LoadData(quizpath: "quizroadtraffic", TaskStatus: TaskStatus)
             
         case 15:
-            LoadData(quizpath: "quizswift", background: "swift.background.jpeg", TaskStatus: TaskStatus, view: background)
+            LoadData(quizpath: "quizswift", TaskStatus: TaskStatus)
             
         case 16:
-            LoadData(quizpath: "quizunderwater", background: "underwater.background.jpeg", TaskStatus: TaskStatus, view: background)
+            LoadData(quizpath: "quizunderwater", TaskStatus: TaskStatus)
             
         case 17:
-            LoadData(quizpath: "quizchess", background: "chess.background.jpeg", TaskStatus: TaskStatus, view: background)
+            LoadData(quizpath: "quizchess", TaskStatus: TaskStatus)
             
         case 18:
-            LoadData(quizpath: "quizhalloween", background: "halloween.background.jpeg", TaskStatus: TaskStatus, view: background)
+            LoadData(quizpath: "quizhalloween", TaskStatus: TaskStatus)
             
         case 19:
-            LoadData(quizpath: "lastquiz", background: "random.background.jpeg", TaskStatus: TaskStatus, view: background)
+            LoadData(quizpath: "lastquiz", TaskStatus: TaskStatus)
             
         default:
             //LoadData(quizpath: "quizplanets", background: "earth.background.jpeg")
