@@ -1353,6 +1353,10 @@ class QuizBaseViewModel {
             check2 = base?.checkChoices()[2] ?? ""
             questionTextStatus.value = ("Ваш ответ: \(check2)")
             
+        case _ where check2.contains("рандом") || check2.contains("Рандом"):
+            check2 = base?.checkChoices()[Int.random(in: 0...2)] ?? ""
+            questionTextStatus.value = ("Ваш ответ: \(check2)")
+            
         case _ where check2.contains("решение") || check2.contains("Решение"):
             check2 = ""
             if self.HintsStatus == true {
@@ -1432,7 +1436,6 @@ class QuizBaseViewModel {
         default:
             check2 = ""
         }
-        
         self.AdvancedSpeechRecognition()
     }
     
