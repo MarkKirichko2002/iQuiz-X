@@ -133,24 +133,7 @@ class QuizBaseViewModel {
     var viewController: UIViewController?
     
     func SetQuizTheme() {
-        base?.quiztheme(id: 1, background: "earth.background.jpeg", music: "space music.mp3")
-        base?.quiztheme(id: 2, background: "history.background.jpeg", music: "history music.mp3")
-        base?.quiztheme(id: 3, background: "anatomy.background.jpeg", music: "anatomy music.mp3")
-        base?.quiztheme(id: 4, background: "sport.background.jpeg", music: "sport music.mp3")
-        base?.quiztheme(id: 5, background: "games.background.jpeg", music: "games music.mp3")
-        base?.quiztheme(id: 6, background: "IQ.background.jpeg", music: "IQ music.mp3")
-        base?.quiztheme(id: 7, background: "economy.background.jpeg", music: "economy music.mp3")
-        base?.quiztheme(id: 8, background: "geography.background.jpeg", music: "geography music.mp3")
-        base?.quiztheme(id: 9, background: "ecology.background.jpeg", music: "ecology music.mp3")
-        base?.quiztheme(id: 10, background: "physics.background.jpeg", music: "physics music.mp3")
-        base?.quiztheme(id: 11, background: "chemistry.background.jpeg", music: "chemistry music.mp3")
-        base?.quiztheme(id: 12, background: "informatics.background.jpeg", music: "informatics music.mp3")
-        base?.quiztheme(id: 13, background: "literature.background.jpeg", music: "literature music.mp3")
-        base?.quiztheme(id: 14, background: "drive.background.jpeg", music: "drive music.mp3")
-        base?.quiztheme(id: 15, background: "swift.background.jpeg", music: "Swift music.mp3")
-        base?.quiztheme(id: 16, background: "underwater.background.jpeg", music: "underwater music.mp3")
-        base?.quiztheme(id: 17, background: "chess.background.jpeg", music: "chess music.mp3")
-        base?.quiztheme(id: 18, background: "halloween.background.jpeg", music: "halloween music.mp3")
+        base?.quiztheme()
     }
     
     func OpenCamera() {
@@ -174,21 +157,21 @@ class QuizBaseViewModel {
         guard let cgImage = image?.cgImage else {
             return
         }
-    
+        
         // Handler
         let handler = VNImageRequestHandler(cgImage: cgImage, options: [:])
-    
+        
         // Request
         let request = VNRecognizeTextRequest { [weak self] request,error in
             guard let observations = request.results as? [VNRecognizedTextObservation],
                   error == nil else {
                 return
             }
-    
+            
             let text = observations.compactMap({
                 $0.topCandidates(1).first?.string
             }).joined(separator: " ")
-    
+            
             switch text {
                 
             case _ where text.contains("1"):
@@ -220,7 +203,7 @@ class QuizBaseViewModel {
                 self?.check2 = ""
             }
         }
-    
+        
         do {
             try handler.perform([request])
         } catch {
@@ -303,7 +286,7 @@ class QuizBaseViewModel {
         }
         
         if photoanswer == false && check2 != "" {
-          
+            
             if AttemptsCounter == 0 && self.AttemptsStatus == true {
                 PresentTotalScreen()
             }
@@ -532,7 +515,7 @@ class QuizBaseViewModel {
             }
         }
     }
-        
+    
     func checkAnswer(_ userAnswer: String) -> Bool {
         print(userAnswer)
         print(questions()[questionNumber].answer)
@@ -546,7 +529,7 @@ class QuizBaseViewModel {
     func questions() -> [Question] {
         return []
     }
-
+    
     init(){}
     
     func checkQuestion() -> String {
@@ -952,7 +935,7 @@ class QuizBaseViewModel {
         write(id: 17, quizpath: "quizchess", category: "chess")
         write(id: 18, quizpath: "quizhalloween", category: "halloween")
         
-
+        
         base?.nextQuestion()
         
         Timer.scheduledTimer(timeInterval:0.2, target: self, selector: #selector(updateUI), userInfo: nil, repeats: false)
@@ -1057,27 +1040,27 @@ class QuizBaseViewModel {
         }
     }
     
-    func CurrentMusic(id: Int, resource: String) {
-        OnOffButtonStatus.value = resource
+    func CurrentMusic() {
+        OnOffButtonStatus.value = quiz?.music ?? ""
     }
     
-    func stopMusic(id: Int, resource: String) {
-        if base?.checkid() == id {
-            if self.OnOffButton != nil {
-                if isPlaying == true {
-                    player.StopSound(resource: resource)
-                    isPlaying = false
-                    OnOffButtonStatus.value = resource
-                    OnOffButtonStatus.value = "music button"
-                } else if isPlaying == false || self.MusicStatus == false {
-                    print("Music: \(self.MusicStatus)")
-                    player.Sound(resource: resource)
-                    isPlaying = true
-                    OnOffButtonStatus.value = resource
-                    OnOffButtonStatus.value = "music button selected"
-                }
+    func stopMusic() {
+        // if base?.checkid() == id {
+        if self.OnOffButton != nil {
+            if isPlaying == true {
+                player.StopSound(resource: quiz?.music ?? "")
+                isPlaying = false
+                OnOffButtonStatus.value = quiz?.music ?? ""
+                OnOffButtonStatus.value = "music button"
+            } else if isPlaying == false || self.MusicStatus == false {
+                print("Music: \(self.MusicStatus)")
+                player.Sound(resource: quiz?.music ?? "")
+                isPlaying = true
+                OnOffButtonStatus.value = quiz?.music ?? ""
+                OnOffButtonStatus.value = "music button selected"
             }
         }
+        // }
     }
     
     func checkSpeachSetting() {
@@ -1199,7 +1182,7 @@ class QuizBaseViewModel {
     }
     
     func checkAttemptsSetting() {
-      
+        
         print(isAttemptsOn)
         
         if isAttemptsOn == true {
@@ -1345,7 +1328,7 @@ class QuizBaseViewModel {
     func CheckVoiceCommands() {
         
         switch check2 {
-
+            
         case _ where check2.contains("один") || check2.contains("Один"):
             check2 = base?.checkChoices()[0] ?? ""
             questionTextStatus.value = ("Ваш ответ: \(check2)")
@@ -1446,7 +1429,7 @@ class QuizBaseViewModel {
             self.player.StopSound(resource: sound)
             self.exit()
             
-         default:
+        default:
             check2 = ""
         }
         
@@ -1471,9 +1454,9 @@ class QuizBaseViewModel {
     }
     
     func sayComment(comment: String) {
-            let utterance = AVSpeechUtterance(string: comment)
-            utterance.voice = AVSpeechSynthesisVoice(language: "ru-RU")
-            synthesizer.speak(utterance)
+        let utterance = AVSpeechUtterance(string: comment)
+        utterance.voice = AVSpeechSynthesisVoice(language: "ru-RU")
+        synthesizer.speak(utterance)
         
         if SpeachStatus == false {
             synthesizer.stopSpeaking(at: .immediate)
@@ -1744,23 +1727,21 @@ class QuizBaseViewModel {
         self.base = base
     }
     
-    func quiztheme(id: Int, background: String, music: String) {
-        if base?.checkid() == id {
-            viewStatus.value = UIColor(patternImage: UIImage(named: background)!)
-            player.Sound(resource: music)
-            self.checkMusicSetting()
-            CurrentMusic(id: id, resource: " \(music)")
-            OnOffButtonStatusTitle.value = music
-            sound = music
-        }
+    func quiztheme() {
+        viewStatus.value = UIColor(patternImage: UIImage(named: quiz?.background ?? "")!)
+        player.Sound(resource: quiz?.music ?? "")
+        self.checkMusicSetting()
+        CurrentMusic()
+        OnOffButtonStatusTitle.value = quiz?.music ?? ""
+        sound = quiz?.music ?? ""
     }
     
     func configureAudioSession() {
         
         do {
             try? AVAudioSession.sharedInstance().setCategory(.playAndRecord, mode: .default, policy: .default, options: .defaultToSpeaker)
-           } catch  {
-               
+        } catch  {
+            
         }
     }
     
@@ -1793,24 +1774,7 @@ class QuizBaseViewModel {
     }
     
     func OnOffSound() {
-        self.stopMusic(id: 1, resource: "space music.mp3")
-        self.stopMusic(id: 2, resource: "history music.mp3")
-        self.stopMusic(id: 3, resource: "anatomy music.mp3")
-        self.stopMusic(id: 4, resource: "sport music.mp3")
-        self.stopMusic(id: 5, resource: "games music.mp3")
-        self.stopMusic(id: 6, resource: "IQ music.mp3")
-        self.stopMusic(id: 7, resource: "economy music.mp3")
-        self.stopMusic(id: 8, resource: "geography music.mp3")
-        self.stopMusic(id: 9, resource: "ecology music.mp3")
-        self.stopMusic(id: 10, resource: "physics music.mp3")
-        self.stopMusic(id: 11, resource: "chemistry music.mp3")
-        self.stopMusic(id: 12, resource: "informatics music.mp3")
-        self.stopMusic(id: 13, resource: "literature music.mp3")
-        self.stopMusic(id: 14, resource: "drive music.mp3")
-        self.stopMusic(id: 15, resource: "Swift music.mp3")
-        self.stopMusic(id: 16, resource: "underwater music.mp3")
-        self.stopMusic(id: 17, resource: "chess music.mp3")
-        self.stopMusic(id: 18, resource: "halloween music.mp3")
+        self.stopMusic()
     }
 }
 
