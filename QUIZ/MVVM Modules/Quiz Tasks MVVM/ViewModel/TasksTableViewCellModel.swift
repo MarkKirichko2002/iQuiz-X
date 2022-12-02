@@ -108,8 +108,11 @@ class TasksTableViewCellModel {
             
         case 18:
             LoadData(quizpath: "quizhalloween", TaskStatus: TaskStatus)
-            
+          
         case 19:
+            LoadData(quizpath: "quiznewyear", TaskStatus: TaskStatus)
+            
+        case 20:
             LoadData(quizpath: "lastquiz", TaskStatus: TaskStatus)
             
         default:

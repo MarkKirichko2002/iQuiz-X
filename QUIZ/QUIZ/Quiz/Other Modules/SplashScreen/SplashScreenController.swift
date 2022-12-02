@@ -21,7 +21,7 @@ class SplashScreenController: UIViewController {
         Image.color = .white
         animation.springImage(image: Image)
         Text.textColor = UIColor.white
-        view.backgroundColor = UIColor(patternImage: UIImage(named: "earth.background.jpeg")!)
+        view.backgroundColor = UIColor(patternImage: UIImage(named: "newyear.background.jpeg")!)
         SplashScreen()
     }
    

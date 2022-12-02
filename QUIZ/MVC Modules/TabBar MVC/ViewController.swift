@@ -7,7 +7,6 @@
 
 import UIKit
 import Speech
-import SCLAlertView
 
 class ViewController: UITabBarController {
     
@@ -34,7 +33,7 @@ class ViewController: UITabBarController {
         quizViewModel.storyboard = storyboard
         configureAudioSession()
         selectedIndex = UserDefaults.standard.object(forKey: "index") as? Int ?? 0
-        button.setImage(UIImage(named: "planets.jpeg"), for: .normal)
+        button.setImage(UIImage(named: "newyear.png"), for: .normal)
         button.frame = CGRect(x: 0, y: 0, width: 44, height: 44)
         button.layer.borderWidth = 2
         self.view.insertSubview(button, aboveSubview: self.tabBar)
@@ -88,7 +87,7 @@ class ViewController: UITabBarController {
             self.animation.springButton(button: self.button)
             self.player.Sound(resource: "newspaper.mp3")
         case 1:
-            self.icon = "planets.jpeg"
+            self.icon = "newyear.png"
             self.button.setImage(UIImage(named: self.icon), for: .normal)
             self.animation.springButton(button: self.button)
             self.player.Sound(resource: "IQ.mp3")
@@ -168,7 +167,7 @@ class ViewController: UITabBarController {
                 
             case _ where self.text.contains("Категори") || self.text.contains("категори"):
                 self.selectedIndex = 1
-                self.icon = "planets.jpeg"
+                self.icon = "newyear.png"
                 self.button.setImage(UIImage(named: self.icon), for: .normal)
                 self.animation.springButton(button: self.button)
                 self.player.Sound(resource: "IQ.mp3")
@@ -191,7 +190,7 @@ class ViewController: UITabBarController {
                 
             // Выбор категории викторины
             case _ where self.text.contains("Планет") || self.text.contains("планет") || self.text.contains("Космос") || self.text.contains("космос"):
-                self.icon = "planets.jpeg"
+                self.icon = "newyear.png"
                 self.button.setImage(UIImage(named: self.icon), for: .normal)
                 self.animation.springButton(button: self.button)
                 self.player.Sound(resource: "space.wav")
@@ -344,9 +343,9 @@ class ViewController: UITabBarController {
                 
             // Включение/Выключение музыки
             case _ where self.text.contains("Муз") || self.text.contains("муз"):
-                self.icon = "planets.jpeg"
+                self.icon = "newyear.png"
                 self.button.setImage(UIImage(named: self.icon), for: .normal)
-                self.sound = "space music.mp3"
+                self.sound = "newyear music.mp3"
                 self.player.Sound(resource: self.sound)
                 self.animation.StartRotateImage(image: self.button.imageView!)
                 
@@ -420,7 +419,7 @@ class ViewController: UITabBarController {
             startSpeechRecognization()
         } else {
             player.Sound(resource: "pause_sound.mp3")
-            self.icon = "planets.jpeg"
+            self.icon = "newyear.png"
             button.setImage(UIImage(named: self.icon), for: .normal)
             animation.springButton(button: button)
             cancelSpeechRecognization()

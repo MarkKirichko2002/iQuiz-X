@@ -280,6 +280,7 @@ class QuizBaseViewModel {
             write(id: 16, quizpath: "quizunderwater", category: "underwater")
             write(id: 17, quizpath: "quizchess", category: "chess")
             write(id: 18, quizpath: "quizhalloween", category: "halloween")
+            write(id: 19, quizpath: "quiznewyear", category: "newyear")
             
             questionTextStatus.value = "Правильно 👍👍👍!!!"
             Timer.scheduledTimer(timeInterval:0.2, target: self, selector: #selector(updateUI), userInfo: nil, repeats: false)
@@ -351,6 +352,7 @@ class QuizBaseViewModel {
             write(id: 16, quizpath: "quizunderwater", category: "underwater")
             write(id: 17, quizpath: "quizchess", category: "chess")
             write(id: 18, quizpath: "quizhalloween", category: "halloween")
+            write(id: 19, quizpath: "quiznewyear", category: "newyear")
             
             questionTextStatus.value = ("\(check2) не верный ответ 👎👎👎!!!")
             Timer.scheduledTimer(timeInterval:0.2, target: self, selector: #selector(updateUI), userInfo: nil, repeats: false)
@@ -420,6 +422,7 @@ class QuizBaseViewModel {
             write(id: 16, quizpath: "quizunderwater", category: "underwater")
             write(id: 17, quizpath: "quizchess", category: "chess")
             write(id: 18, quizpath: "quizhalloween", category: "halloween")
+            write(id: 19, quizpath: "quiznewyear", category: "newyear")
             
             questionTextStatus.value = "Правильно 👍👍👍!!!"
             Timer.scheduledTimer(timeInterval:0.2, target: self, selector: #selector(updateUI), userInfo: nil, repeats: false)
@@ -489,6 +492,7 @@ class QuizBaseViewModel {
             write(id: 16, quizpath: "quizunderwater", category: "underwater")
             write(id: 17, quizpath: "quizchess", category: "chess")
             write(id: 18, quizpath: "quizhalloween", category: "halloween")
+            write(id: 19, quizpath: "quiznewyear", category: "newyear")
             
             questionTextStatus.value = ("\(check2) не верный ответ 👎👎👎!!!")
             Timer.scheduledTimer(timeInterval:0.2, target: self, selector: #selector(updateUI), userInfo: nil, repeats: false)
@@ -666,6 +670,7 @@ class QuizBaseViewModel {
             write(id: 16, quizpath: "quizunderwater", category: "underwater")
             write(id: 17, quizpath: "quizchess", category: "chess")
             write(id: 18, quizpath: "quizhalloween", category: "halloween")
+            write(id: 19, quizpath: "quiznewyear", category: "newyear")
             
             Timer.scheduledTimer(timeInterval:0.2, target: self, selector: #selector(updateUI), userInfo: nil, repeats: false)
         }
@@ -745,6 +750,7 @@ class QuizBaseViewModel {
             write(id: 16, quizpath: "quizunderwater", category: "underwater")
             write(id: 17, quizpath: "quizchess", category: "chess")
             write(id: 18, quizpath: "quizhalloween", category: "halloween")
+            write(id: 19, quizpath: "quiznewyear", category: "newyear")
             
             Timer.scheduledTimer(timeInterval:0.2, target: self, selector: #selector(updateUI), userInfo: nil, repeats: false)
         }
@@ -788,6 +794,7 @@ class QuizBaseViewModel {
                 write(id: 16, quizpath: "quizunderwater", category: "underwater")
                 write(id: 17, quizpath: "quizchess", category: "chess")
                 write(id: 18, quizpath: "quizhalloween", category: "halloween")
+                write(id: 19, quizpath: "quiznewyear", category: "newyear")
             }
             
             player.Sound(resource: "correct answer.wav")
@@ -825,6 +832,7 @@ class QuizBaseViewModel {
             write(id: 16, quizpath: "quizunderwater", category: "underwater")
             write(id: 17, quizpath: "quizchess", category: "chess")
             write(id: 18, quizpath: "quizhalloween", category: "halloween")
+            write(id: 19, quizpath: "quiznewyear", category: "newyear")
             
         } else if !check! {
             
@@ -884,6 +892,7 @@ class QuizBaseViewModel {
                 write(id: 16, quizpath: "quizunderwater", category: "underwater")
                 write(id: 17, quizpath: "quizchess", category: "chess")
                 write(id: 18, quizpath: "quizhalloween", category: "halloween")
+                write(id: 19, quizpath: "quiznewyear", category: "newyear")
                 
             } else if counter > 0 && self.Attempts != nil {
                 
@@ -912,6 +921,7 @@ class QuizBaseViewModel {
                 write(id: 16, quizpath: "quizunderwater", category: "underwater")
                 write(id: 17, quizpath: "quizchess", category: "chess")
                 write(id: 18, quizpath: "quizhalloween", category: "halloween")
+                write(id: 19, quizpath: "quiznewyear", category: "newyear")
                 
             }
         }
@@ -934,6 +944,7 @@ class QuizBaseViewModel {
         write(id: 16, quizpath: "quizunderwater", category: "underwater")
         write(id: 17, quizpath: "quizchess", category: "chess")
         write(id: 18, quizpath: "quizhalloween", category: "halloween")
+        write(id: 19, quizpath: "quiznewyear", category: "newyear")
         
         
         base?.nextQuestion()
@@ -1311,8 +1322,9 @@ class QuizBaseViewModel {
         let queue = DispatchQueue(label: "captureQueue")
         dataOutput.setSampleBufferDelegate(self, queue: queue)
         
-        captureSession.startRunning()
-        
+        DispatchQueue.global().async {
+            self.captureSession.startRunning()
+        }
     }
     
     func StopMusicOption(id: Int, resource: String) {
@@ -1525,7 +1537,7 @@ class QuizBaseViewModel {
                 "Id": base?.checkid() ?? 0,
                 "image": image,
                 "background": background,
-                "sound": quiz?.sound
+                "sound": quiz?.sound ?? ""
             ]
         ]) { err in
             if let err = err {
@@ -1614,6 +1626,8 @@ class QuizBaseViewModel {
                 //CurrentQuiz()
             case "halloween":
                 LastQuiz(category: "хэллоуин", image: "halloween.png", background: "halloween.background.jpeg")
+            case "newyear":
+                LastQuiz(category: "новый год", image: "newyear.png", background: "newyear.background.jpeg")
                 
             default:
                 break
@@ -1621,7 +1635,6 @@ class QuizBaseViewModel {
             
         }
     }
-    
     
     func level() {
         if TimeStatus != nil {

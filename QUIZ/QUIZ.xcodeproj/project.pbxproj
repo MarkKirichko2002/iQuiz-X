@@ -186,6 +186,31 @@
 		827D4B6728205C0E007B3895 /* informatics15.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 827D4B5D28205C0E007B3895 /* informatics15.jpeg */; };
 		827F8C0E27E81B7400F6D7B3 /* SoundClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827F8C0D27E81B7400F6D7B3 /* SoundClass.swift */; };
 		827F8C1027E81BDF00F6D7B3 /* physics8.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 827F8C0F27E81BDF00F6D7B3 /* physics8.jpeg */; };
+		8281167E293A867E00AA7C8E /* QuizNewYear.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8281167D293A867E00AA7C8E /* QuizNewYear.swift */; };
+		8281168A293A88DC00AA7C8E /* newyear3.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 82811680293A88DB00AA7C8E /* newyear3.jpeg */; };
+		8281168B293A88DC00AA7C8E /* newyear2.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 82811681293A88DB00AA7C8E /* newyear2.jpeg */; };
+		8281168C293A88DC00AA7C8E /* newyear9.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 82811682293A88DB00AA7C8E /* newyear9.jpeg */; };
+		8281168D293A88DC00AA7C8E /* newyear7.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 82811683293A88DB00AA7C8E /* newyear7.jpeg */; };
+		8281168E293A88DC00AA7C8E /* newyear8.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 82811684293A88DC00AA7C8E /* newyear8.jpeg */; };
+		8281168F293A88DC00AA7C8E /* newyear10.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 82811685293A88DC00AA7C8E /* newyear10.jpeg */; };
+		82811690293A88DC00AA7C8E /* newyear6.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 82811686293A88DC00AA7C8E /* newyear6.jpeg */; };
+		82811691293A88DC00AA7C8E /* newyear4.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 82811687293A88DC00AA7C8E /* newyear4.jpeg */; };
+		82811692293A88DC00AA7C8E /* newyear1.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 82811688293A88DC00AA7C8E /* newyear1.jpeg */; };
+		82811693293A88DC00AA7C8E /* newyear5.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 82811689293A88DC00AA7C8E /* newyear5.jpeg */; };
+		82811695293A891A00AA7C8E /* newyear.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 82811694293A891A00AA7C8E /* newyear.mp3 */; };
+		82811697293A892A00AA7C8E /* newyear music.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 82811696293A892A00AA7C8E /* newyear music.mp3 */; };
+		82811699293A8A3300AA7C8E /* newyear.background.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 82811698293A8A3300AA7C8E /* newyear.background.jpeg */; };
+		8281169B293A8A9D00AA7C8E /* newyear.png in Resources */ = {isa = PBXBuildFile; fileRef = 8281169A293A8A9D00AA7C8E /* newyear.png */; };
+		8281169E293A90BE00AA7C8E /* newyear11.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 8281169C293A90BD00AA7C8E /* newyear11.jpeg */; };
+		8281169F293A90BE00AA7C8E /* newyear12.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 8281169D293A90BE00AA7C8E /* newyear12.jpeg */; };
+		828116A1293A92E000AA7C8E /* newyear13.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 828116A0293A92E000AA7C8E /* newyear13.jpeg */; };
+		828116A3293A932000AA7C8E /* newyear14.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 828116A2293A931F00AA7C8E /* newyear14.jpeg */; };
+		828116A5293A975900AA7C8E /* newyear15.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 828116A4293A975900AA7C8E /* newyear15.jpeg */; };
+		828116A7293A9AA700AA7C8E /* newyear16.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 828116A6293A9AA700AA7C8E /* newyear16.jpeg */; };
+		828116AB293A9DCF00AA7C8E /* newyear17.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 828116AA293A9DCF00AA7C8E /* newyear17.jpeg */; };
+		828116AD293AA34200AA7C8E /* newyear18.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 828116AC293AA34200AA7C8E /* newyear18.jpeg */; };
+		828116AF293AA4E000AA7C8E /* newyear19.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 828116AE293AA4E000AA7C8E /* newyear19.jpeg */; };
+		828116B1293AA82200AA7C8E /* newyear20.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 828116B0293AA82100AA7C8E /* newyear20.jpeg */; };
 		82826F5B28F74017008798D5 /* newspaper.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 82826F5A28F74016008798D5 /* newspaper.mp3 */; };
 		8283D15127FA209600A71545 /* StatisticTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8283D15027FA209600A71545 /* StatisticTableViewCell.swift */; };
 		8283D15327FA217200A71545 /* FBAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8283D15227FA217200A71545 /* FBAuth.swift */; };
@@ -749,6 +774,31 @@
 		827D4B5D28205C0E007B3895 /* informatics15.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = informatics15.jpeg; sourceTree = "<group>"; };
 		827F8C0D27E81B7400F6D7B3 /* SoundClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundClass.swift; sourceTree = "<group>"; };
 		827F8C0F27E81BDF00F6D7B3 /* physics8.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = physics8.jpeg; sourceTree = "<group>"; };
+		8281167D293A867E00AA7C8E /* QuizNewYear.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizNewYear.swift; sourceTree = "<group>"; };
+		82811680293A88DB00AA7C8E /* newyear3.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = newyear3.jpeg; sourceTree = "<group>"; };
+		82811681293A88DB00AA7C8E /* newyear2.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = newyear2.jpeg; sourceTree = "<group>"; };
+		82811682293A88DB00AA7C8E /* newyear9.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = newyear9.jpeg; sourceTree = "<group>"; };
+		82811683293A88DB00AA7C8E /* newyear7.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = newyear7.jpeg; sourceTree = "<group>"; };
+		82811684293A88DC00AA7C8E /* newyear8.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = newyear8.jpeg; sourceTree = "<group>"; };
+		82811685293A88DC00AA7C8E /* newyear10.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = newyear10.jpeg; sourceTree = "<group>"; };
+		82811686293A88DC00AA7C8E /* newyear6.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = newyear6.jpeg; sourceTree = "<group>"; };
+		82811687293A88DC00AA7C8E /* newyear4.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = newyear4.jpeg; sourceTree = "<group>"; };
+		82811688293A88DC00AA7C8E /* newyear1.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = newyear1.jpeg; sourceTree = "<group>"; };
+		82811689293A88DC00AA7C8E /* newyear5.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = newyear5.jpeg; sourceTree = "<group>"; };
+		82811694293A891A00AA7C8E /* newyear.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = newyear.mp3; sourceTree = "<group>"; };
+		82811696293A892A00AA7C8E /* newyear music.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "newyear music.mp3"; sourceTree = "<group>"; };
+		82811698293A8A3300AA7C8E /* newyear.background.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = newyear.background.jpeg; sourceTree = "<group>"; };
+		8281169A293A8A9D00AA7C8E /* newyear.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = newyear.png; sourceTree = "<group>"; };
+		8281169C293A90BD00AA7C8E /* newyear11.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = newyear11.jpeg; sourceTree = "<group>"; };
+		8281169D293A90BE00AA7C8E /* newyear12.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = newyear12.jpeg; sourceTree = "<group>"; };
+		828116A0293A92E000AA7C8E /* newyear13.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = newyear13.jpeg; sourceTree = "<group>"; };
+		828116A2293A931F00AA7C8E /* newyear14.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = newyear14.jpeg; sourceTree = "<group>"; };
+		828116A4293A975900AA7C8E /* newyear15.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = newyear15.jpeg; sourceTree = "<group>"; };
+		828116A6293A9AA700AA7C8E /* newyear16.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = newyear16.jpeg; path = ../../../../../Downloads/newyear16.jpeg; sourceTree = "<group>"; };
+		828116AA293A9DCF00AA7C8E /* newyear17.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = newyear17.jpeg; sourceTree = "<group>"; };
+		828116AC293AA34200AA7C8E /* newyear18.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = newyear18.jpeg; path = ../../../../../Downloads/newyear18.jpeg; sourceTree = "<group>"; };
+		828116AE293AA4E000AA7C8E /* newyear19.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = newyear19.jpeg; path = ../../../../../Downloads/newyear19.jpeg; sourceTree = "<group>"; };
+		828116B0293AA82100AA7C8E /* newyear20.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = newyear20.jpeg; path = ../../../../../Downloads/newyear20.jpeg; sourceTree = "<group>"; };
 		82826F5A28F74016008798D5 /* newspaper.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = newspaper.mp3; sourceTree = "<group>"; };
 		8283D15027FA209600A71545 /* StatisticTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticTableViewCell.swift; sourceTree = "<group>"; };
 		8283D15227FA217200A71545 /* FBAuth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBAuth.swift; sourceTree = "<group>"; };
@@ -1603,6 +1653,33 @@
 			path = sounds;
 			sourceTree = "<group>";
 		};
+		8281167F293A88C600AA7C8E /* New Year */ = {
+			isa = PBXGroup;
+			children = (
+				82811688293A88DC00AA7C8E /* newyear1.jpeg */,
+				82811681293A88DB00AA7C8E /* newyear2.jpeg */,
+				82811680293A88DB00AA7C8E /* newyear3.jpeg */,
+				82811687293A88DC00AA7C8E /* newyear4.jpeg */,
+				82811689293A88DC00AA7C8E /* newyear5.jpeg */,
+				82811686293A88DC00AA7C8E /* newyear6.jpeg */,
+				82811683293A88DB00AA7C8E /* newyear7.jpeg */,
+				82811684293A88DC00AA7C8E /* newyear8.jpeg */,
+				82811682293A88DB00AA7C8E /* newyear9.jpeg */,
+				82811685293A88DC00AA7C8E /* newyear10.jpeg */,
+				8281169C293A90BD00AA7C8E /* newyear11.jpeg */,
+				8281169D293A90BE00AA7C8E /* newyear12.jpeg */,
+				828116A0293A92E000AA7C8E /* newyear13.jpeg */,
+				828116A2293A931F00AA7C8E /* newyear14.jpeg */,
+				828116A4293A975900AA7C8E /* newyear15.jpeg */,
+				828116A6293A9AA700AA7C8E /* newyear16.jpeg */,
+				828116AA293A9DCF00AA7C8E /* newyear17.jpeg */,
+				828116AC293AA34200AA7C8E /* newyear18.jpeg */,
+				828116AE293AA4E000AA7C8E /* newyear19.jpeg */,
+				828116B0293AA82100AA7C8E /* newyear20.jpeg */,
+			);
+			path = "New Year";
+			sourceTree = "<group>";
+		};
 		82848CF3281C6ED40068A4AE /* category icons */ = {
 			isa = PBXGroup;
 			children = (
@@ -1619,12 +1696,13 @@
 				82848CF9281C6F4B0068A4AE /* geography.jpeg */,
 				82848CFA281C6F4B0068A4AE /* informatics.jpeg */,
 				82848CF5281C6F4B0068A4AE /* literature.jpeg */,
-				82848CFB281C6F4B0068A4AE /* random.jpeg */,
 				82848CFD281C6F4B0068A4AE /* physics.jpeg */,
 				822139272874E8250065A0C3 /* underwater.png */,
 				8237D9B2286E1BCF0097FE69 /* swift.jpeg */,
 				8288F08728725BA100C6A182 /* chess.png */,
 				8286519B28FEF9ED004806D3 /* halloween.png */,
+				8281169A293A8A9D00AA7C8E /* newyear.png */,
+				82848CFB281C6F4B0068A4AE /* random.jpeg */,
 			);
 			path = "category icons";
 			sourceTree = "<group>";
@@ -1650,6 +1728,7 @@
 				8207E24F286F0DCA00CB017A /* underwater.background.jpeg */,
 				8288F0852872530E00C6A182 /* chess.background.jpeg */,
 				82319E0C28E8D84E0053CEF5 /* halloween.background.jpeg */,
+				82811698293A8A3300AA7C8E /* newyear.background.jpeg */,
 				82848D1B281C6F5A0068A4AE /* random.background.jpeg */,
 			);
 			path = backgrounds;
@@ -1990,6 +2069,7 @@
 				8237D98D286D02230097FE69 /* QuizUnderwater.swift */,
 				8288F0892872601600C6A182 /* QuizChess.swift */,
 				82319E0528E8D1280053CEF5 /* QuizHalloween.swift */,
+				8281167D293A867E00AA7C8E /* QuizNewYear.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -2044,6 +2124,7 @@
 				829408EC27CECA7800AFF603 /* Sport */,
 				829408D727CEC9D400AFF603 /* Anatomy */,
 				829408C227CEC8DA00AFF603 /* History */,
+				8281167F293A88C600AA7C8E /* New Year */,
 			);
 			path = image;
 			sourceTree = "<group>";
@@ -2243,6 +2324,7 @@
 				8286519728FEF9A8004806D3 /* chess.mp3 */,
 				82CE536428E9D4FC00D44A6E /* dice.wav */,
 				8286519928FEF9B8004806D3 /* swift.mp3 */,
+				82811694293A891A00AA7C8E /* newyear.mp3 */,
 			);
 			path = "category selected sounds";
 			sourceTree = "<group>";
@@ -2283,6 +2365,7 @@
 				824419B9286E54CE00203DBA /* underwater music.mp3 */,
 				821C69CD287385FE004FD9E1 /* chess music.mp3 */,
 				82CE537328E9E58B00D44A6E /* halloween music.mp3 */,
+				82811696293A892A00AA7C8E /* newyear music.mp3 */,
 			);
 			path = themes;
 			sourceTree = "<group>";
@@ -2444,6 +2527,7 @@
 				82EA1EC0286BCB7C00E49D0F /* roadtraffic9.jpeg in Resources */,
 				8221391E2874E79F0065A0C3 /* IQ music.mp3 in Resources */,
 				8286518E28FEF95A004806D3 /* ecology.wav in Resources */,
+				8281168B293A88DC00AA7C8E /* newyear2.jpeg in Resources */,
 				821C69E128739845004FD9E1 /* chess19.jpeg in Resources */,
 				8288F0982872662400C6A182 /* chess3.jpeg in Resources */,
 				8261BC3527E114950089CC94 /* chemistry4.jpeg in Resources */,
@@ -2472,13 +2556,17 @@
 				82BDEB11283C630100B1AD7F /* literature20.jpeg in Resources */,
 				8294092A27CECCA900AFF603 /* IQ4.jpeg in Resources */,
 				829408F827CECAC800AFF603 /* sport1.jpeg in Resources */,
+				8281169B293A8A9D00AA7C8E /* newyear.png in Resources */,
+				828116AD293AA34200AA7C8E /* newyear18.jpeg in Resources */,
 				82319E1928E8E0080053CEF5 /* halloween6.jpeg in Resources */,
+				828116AF293AA4E000AA7C8E /* newyear19.jpeg in Resources */,
 				8243A61C2820810E00427553 /* physics11.jpeg in Resources */,
 				82EA1EFF286BCC3E00E49D0F /* planets12.jpeg in Resources */,
 				8294095127CECE1900AFF603 /* geography9.jpeg in Resources */,
 				82EA1EDC286BCBF400E49D0F /* music.png in Resources */,
 				82EA1F56286BCCD200E49D0F /* IQ14.jpeg in Resources */,
 				829408A127CEC43E00AFF603 /* planets9.jpeg in Resources */,
+				828116AB293A9DCF00AA7C8E /* newyear17.jpeg in Resources */,
 				82EA1FA6286BCD4200E49D0F /* history20.jpeg in Resources */,
 				82848D6B281DACAB0068A4AE /* victory_sound.mp3 in Resources */,
 				82EA1FA3286BCD4200E49D0F /* history17.jpeg in Resources */,
@@ -2573,6 +2661,7 @@
 				82848D3F281C77030068A4AE /* chemistry16.jpeg in Resources */,
 				82319E1128E8D95A0053CEF5 /* halloween2.jpeg in Resources */,
 				82EA1ED9286BCBF400E49D0F /* timer.png in Resources */,
+				828116A1293A92E000AA7C8E /* newyear13.jpeg in Resources */,
 				821C69DE287397B3004FD9E1 /* chess17.jpeg in Resources */,
 				8213BF8827D6AC0100D07512 /* physics5.jpeg in Resources */,
 				82848D40281C77030068A4AE /* chemistry18.jpeg in Resources */,
@@ -2583,6 +2672,7 @@
 				829408CF27CEC93100AFF603 /* history1.jpeg in Resources */,
 				8294093627CECD6100AFF603 /* economy10.jpeg in Resources */,
 				8294093827CECD6100AFF603 /* economy5.jpeg in Resources */,
+				8281169E293A90BE00AA7C8E /* newyear11.jpeg in Resources */,
 				8237D99D286D15D50097FE69 /* underwater4.jpeg in Resources */,
 				822139382874E8650065A0C3 /* Swift12.jpeg in Resources */,
 				82EA1FA8286BCD4200E49D0F /* history12.jpeg in Resources */,
@@ -2617,6 +2707,7 @@
 				82EA1F6B286BCCEB00E49D0F /* games15.jpeg in Resources */,
 				8244DCF827E39D8500F5C59B /* informatics9.jpeg in Resources */,
 				824419BA286E54CE00203DBA /* underwater music.mp3 in Resources */,
+				8281168E293A88DC00AA7C8E /* newyear8.jpeg in Resources */,
 				8237D99C286D15D50097FE69 /* underwater9.jpeg in Resources */,
 				827D4B6728205C0E007B3895 /* informatics15.jpeg in Resources */,
 				827D4B6328205C0E007B3895 /* informatics14.jpeg in Resources */,
@@ -2627,6 +2718,7 @@
 				829408D127CEC93100AFF603 /* history2.jpeg in Resources */,
 				8286518628FEF916004806D3 /* league.mp3 in Resources */,
 				8221393A2874E8650065A0C3 /* Swift18.jpeg in Resources */,
+				8281168C293A88DC00AA7C8E /* newyear9.jpeg in Resources */,
 				8207E24C286E5CC200CB017A /* underwater18.jpeg in Resources */,
 				8243A61E2820810E00427553 /* physics13.jpeg in Resources */,
 				8294091127CECB9200AFF603 /* games6.jpeg in Resources */,
@@ -2638,6 +2730,7 @@
 				82319E2328E8E8790053CEF5 /* halloween11.jpeg in Resources */,
 				827D4B6028205C0E007B3895 /* informatics16.png in Resources */,
 				8244DCF727E39D8500F5C59B /* informatics7.jpeg in Resources */,
+				828116A7293A9AA700AA7C8E /* newyear16.jpeg in Resources */,
 				8207E24E286E5CC200CB017A /* underwater16.jpeg in Resources */,
 				8237D9A1286D15D50097FE69 /* underwater7.jpeg in Resources */,
 				82319E1528E8DDAF0053CEF5 /* halloween4.jpeg in Resources */,
@@ -2657,6 +2750,8 @@
 				8243A61D2820810E00427553 /* physics15.jpeg in Resources */,
 				82848D10281C6F4C0068A4AE /* drive.jpeg in Resources */,
 				82848D28281C6F5B0068A4AE /* geography.background.jpeg in Resources */,
+				8281168D293A88DC00AA7C8E /* newyear7.jpeg in Resources */,
+				82811693293A88DC00AA7C8E /* newyear5.jpeg in Resources */,
 				82CE537C28E9EC4600D44A6E /* anatomy.mp3 in Resources */,
 				822139162874E76E0065A0C3 /* drive music.mp3 in Resources */,
 				82EA1F5B286BCCD200E49D0F /* IQ11.jpeg in Resources */,
@@ -2698,6 +2793,7 @@
 				8243A6232820810E00427553 /* physics14.jpeg in Resources */,
 				82848D0A281C6F4C0068A4AE /* informatics.jpeg in Resources */,
 				8286519428FEF98B004806D3 /* underwater.wav in Resources */,
+				82811690293A88DC00AA7C8E /* newyear6.jpeg in Resources */,
 				82CE536E28E9DCCE00D44A6E /* games.mp3 in Resources */,
 				82EA1EDA286BCBF400E49D0F /* speach.png in Resources */,
 				8286519828FEF9A8004806D3 /* chess.mp3 in Resources */,
@@ -2709,12 +2805,14 @@
 				82CE536528E9D4FC00D44A6E /* history.wav in Resources */,
 				829408FC27CECAC800AFF603 /* sport10.jpeg in Resources */,
 				82EA1F92286BCD2300E49D0F /* anatomy17.jpeg in Resources */,
+				82811697293A892A00AA7C8E /* newyear music.mp3 in Resources */,
 				8286519228FEF97A004806D3 /* informatics.mp3 in Resources */,
 				82848D27281C6F5B0068A4AE /* drive.background.jpeg in Resources */,
 				82EA1ED1286BCBD100E49D0F /* gesture.png in Resources */,
 				82E4C6E5282F025900379856 /* roadtraffic19.jpeg in Resources */,
 				82CE538C28EA002300D44A6E /* physics.mp3 in Resources */,
 				829408D027CEC93100AFF603 /* history4.jpeg in Resources */,
+				8281169F293A90BE00AA7C8E /* newyear12.jpeg in Resources */,
 				82EA1EF1286BCC1300E49D0F /* Swift8.jpeg in Resources */,
 				82BDEB10283C630100B1AD7F /* literature18.jpeg in Resources */,
 				821C69D8287393B0004FD9E1 /* chess15.jpeg in Resources */,
@@ -2731,6 +2829,7 @@
 				829408E227CECA2F00AFF603 /* anatomy8.jpeg in Resources */,
 				82848D2C281C6F5B0068A4AE /* IQ.background.jpeg in Resources */,
 				829408FB27CECAC800AFF603 /* sport7.jpeg in Resources */,
+				82811695293A891A00AA7C8E /* newyear.mp3 in Resources */,
 				82EA1F03286BCC3E00E49D0F /* planets18.jpeg in Resources */,
 				82CBF24C27D1861F0046E3BE /* ecology6.jpeg in Resources */,
 				82EA1F1D286BCC7800E49D0F /* ecology17.jpeg in Resources */,
@@ -2744,6 +2843,7 @@
 				8243A6242820810E00427553 /* physics20.jpeg in Resources */,
 				82EA1F32286BCC9700E49D0F /* geography17.jpeg in Resources */,
 				82EA1F80286BCD0600E49D0F /* sport13.jpeg in Resources */,
+				8281168F293A88DC00AA7C8E /* newyear10.jpeg in Resources */,
 				82EA1ED0286BCBD100E49D0F /* hints.png in Resources */,
 				8294089D27CEC43E00AFF603 /* planets5.jpeg in Resources */,
 				8294092127CECCA900AFF603 /* IQ5.jpeg in Resources */,
@@ -2785,6 +2885,7 @@
 				82EA1F7B286BCD0600E49D0F /* sport14.jpeg in Resources */,
 				82EA1F93286BCD2300E49D0F /* anatomy11.jpeg in Resources */,
 				82848D2B281C6F5B0068A4AE /* random.background.jpeg in Resources */,
+				82811699293A8A3300AA7C8E /* newyear.background.jpeg in Resources */,
 				82BDEB14283C630100B1AD7F /* literature12.jpeg in Resources */,
 				82BDEB0F283C630100B1AD7F /* literature16.jpeg in Resources */,
 				82EA1F58286BCCD200E49D0F /* IQ16.jpeg in Resources */,
@@ -2822,6 +2923,7 @@
 				82EA1FA4286BCD4200E49D0F /* history19.jpeg in Resources */,
 				82848D45281C77030068A4AE /* chemistry17.jpeg in Resources */,
 				8244DCFD27E39D8500F5C59B /* informatics4.jpeg in Resources */,
+				82811691293A88DC00AA7C8E /* newyear4.jpeg in Resources */,
 				829408EA27CECA2F00AFF603 /* anatomy1.jpeg in Resources */,
 				8221391C2874E7960065A0C3 /* history music.mp3 in Resources */,
 				82CE536728E9D4FC00D44A6E /* sport.wav in Resources */,
@@ -2844,16 +2946,19 @@
 				82EA1FA5286BCD4200E49D0F /* history15.jpeg in Resources */,
 				82EA1EB8286BCB7C00E49D0F /* roadtraffic3.jpeg in Resources */,
 				82CBF24E27D1861F0046E3BE /* ecology10.jpeg in Resources */,
+				828116A5293A975900AA7C8E /* newyear15.jpeg in Resources */,
 				8288F08828725BA100C6A182 /* chess.png in Resources */,
 				82EA1ED8286BCBF400E49D0F /* voice.png in Resources */,
 				82848D31281C6F5B0068A4AE /* anatomy.background.jpeg in Resources */,
 				82CE536628E9D4FC00D44A6E /* economics.mp3 in Resources */,
+				82811692293A88DC00AA7C8E /* newyear1.jpeg in Resources */,
 				8294093927CECD6100AFF603 /* economy2.jpeg in Resources */,
 				82EA1F1E286BCC7800E49D0F /* ecology13.jpeg in Resources */,
 				82319E3128E8F2F40053CEF5 /* halloween18.jpeg in Resources */,
 				8294093B27CECD6100AFF603 /* economy8.jpeg in Resources */,
 				82EA1F0B286BCC4F00E49D0F /* informatics12.jpeg in Resources */,
 				82EA1EB9286BCB7C00E49D0F /* roadtraffic1.jpeg in Resources */,
+				828116B1293AA82200AA7C8E /* newyear20.jpeg in Resources */,
 				82848D6E281DACAB0068A4AE /* games music.mp3 in Resources */,
 				82EA1F2E286BCC9700E49D0F /* geography19.jpeg in Resources */,
 				82EA1FA2286BCD4200E49D0F /* history16.jpeg in Resources */,
@@ -2890,6 +2995,7 @@
 				8213BF8A27D6AC0100D07512 /* physics9.jpeg in Resources */,
 				82EA1F01286BCC3E00E49D0F /* planets20.jpeg in Resources */,
 				829408E827CECA2F00AFF603 /* anatomy6.jpeg in Resources */,
+				828116A3293A932000AA7C8E /* newyear14.jpeg in Resources */,
 				8207E250286F0DCA00CB017A /* underwater.background.jpeg in Resources */,
 				8294095027CECE1900AFF603 /* geography3.jpeg in Resources */,
 				8294090E27CECB9200AFF603 /* games9.jpeg in Resources */,
@@ -2897,6 +3003,7 @@
 				82EA1F55286BCCD200E49D0F /* IQ15.jpeg in Resources */,
 				829408E527CECA2F00AFF603 /* anatomy10.jpeg in Resources */,
 				82EA1EAA286BCB6000E49D0F /* literature10.jpeg in Resources */,
+				8281168A293A88DC00AA7C8E /* newyear3.jpeg in Resources */,
 				8294092627CECCA900AFF603 /* IQ10.jpeg in Resources */,
 				8207E24D286E5CC200CB017A /* underwater17.jpeg in Resources */,
 				829408A027CEC43E00AFF603 /* planets8.jpeg in Resources */,
@@ -2968,6 +3075,7 @@
 				82A1D8C827FB4C3D0044EEA6 /* PhotoTableViewCell.swift in Sources */,
 				821120E92822EE5E009C2801 /* CurrentCategoryTableViewCell.swift in Sources */,
 				8287054F28144CF800002EBC /* VoicePasswordTableViewCell.swift in Sources */,
+				8281167E293A867E00AA7C8E /* QuizNewYear.swift in Sources */,
 				82A9796E27F8CB2C001EBF1C /* QuizLiterature.swift in Sources */,
 				82E0EC8028AC5AA7004AA2E3 /* Bus.swift in Sources */,
 				82A08C7D28F488A70072A940 /* QuizResult.swift in Sources */,

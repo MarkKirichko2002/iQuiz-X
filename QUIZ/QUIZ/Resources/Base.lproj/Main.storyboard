@@ -271,7 +271,7 @@
                     </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="1EA-1C-7wQ">
-                        <rect key="frame" x="0.0" y="47" width="428" height="96"/>
+                        <rect key="frame" x="0.0" y="47" width="428" height="104.33333333333334"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -427,7 +427,7 @@
                                 <rect key="frame" x="20" y="47" width="388" height="845"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qba-yu-yEJ">
-                                        <rect key="frame" x="0.0" y="0.0" width="388" height="53"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="388" height="52.666666666666664"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" image="pause ">
@@ -439,31 +439,31 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="запись не идет" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="29X-4T-rV6">
-                                        <rect key="frame" x="0.0" y="55.000000000000007" width="388" height="30.333333333333336"/>
+                                        <rect key="frame" x="0.0" y="54.666666666666679" width="388" height="30.333333333333336"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="1000" text="Счет: 0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zEj-7B-e44">
-                                        <rect key="frame" x="0.0" y="87.333333333333343" width="388" height="18"/>
+                                        <rect key="frame" x="0.0" y="87" width="388" height="18"/>
                                         <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="15"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Осталось: cекунд" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Ru-JJ-yL5">
-                                        <rect key="frame" x="0.0" y="107.33333333333334" width="388" height="25"/>
+                                        <rect key="frame" x="0.0" y="107" width="388" height="25"/>
                                         <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="15"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Попыток осталось: 5" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a4I-E9-SEl">
-                                        <rect key="frame" x="0.0" y="134.33333333333334" width="388" height="25"/>
+                                        <rect key="frame" x="0.0" y="134" width="388" height="25"/>
                                         <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="15"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JQw-sR-HWK">
-                                        <rect key="frame" x="0.0" y="161.33333333333334" width="388" height="53"/>
+                                        <rect key="frame" x="0.0" y="161" width="388" height="52.666666666666657"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" image="hints button" title=" 5">
                                             <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -473,7 +473,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PNS-c1-3ME">
-                                        <rect key="frame" x="0.0" y="216.33333333333331" width="388" height="48"/>
+                                        <rect key="frame" x="0.0" y="215.66666666666669" width="388" height="47.666666666666686"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" image="camera" catalog="system">
                                             <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -483,7 +483,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hgj-ZP-Gy5">
-                                        <rect key="frame" x="0.0" y="266.33333333333331" width="388" height="48"/>
+                                        <rect key="frame" x="0.0" y="265.33333333333331" width="388" height="48"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="пропустить вопрос">
                                             <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -493,7 +493,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r5m-Be-neT">
-                                        <rect key="frame" x="0.0" y="316.33333333333331" width="388" height="53"/>
+                                        <rect key="frame" x="0.0" y="315.33333333333331" width="388" height="52.666666666666686"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" image="music button selected" title=" space music.mp3"/>
@@ -502,13 +502,13 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalCompressionResistancePriority="1000" text="Question Text" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d9N-E7-PtI">
-                                        <rect key="frame" x="0.0" y="371.33333333333331" width="388" height="32"/>
+                                        <rect key="frame" x="0.0" y="370" width="388" height="32"/>
                                         <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="19"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="4p8-ZG-3rZ">
-                                        <rect key="frame" x="0.0" y="405.33333333333331" width="388" height="193.66666666666669"/>
+                                        <rect key="frame" x="0.0" y="404" width="388" height="195"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </imageView>
                                     <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Piy-OE-AAF">
@@ -583,7 +583,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="k82-2E-kkf" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="9889" y="-1030"/>
+            <point key="canvasLocation" x="9550" y="-1030"/>
         </scene>
         <!--Сегодня-->
         <scene sceneID="a6Q-Wr-8m7">
@@ -620,7 +620,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pou-Rx-ItK">
                                         <rect key="frame" x="0.0" y="0.0" width="428" height="621"/>
                                         <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="planets.jpeg" translatesAutoresizingMaskIntoConstraints="NO" id="YOZ-n4-gwL" customClass="RoundedImageView" customModule="QUIZ" customModuleProvider="target">
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="newyear.png" translatesAutoresizingMaskIntoConstraints="NO" id="YOZ-n4-gwL" customClass="RoundedImageView" customModule="QUIZ" customModuleProvider="target">
                                                 <rect key="frame" x="154" y="40" width="120" height="120"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="120" id="Gfm-ef-r4f"/>
@@ -972,7 +972,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="S00-Ky-rY0">
                                         <rect key="frame" x="0.0" y="0.0" width="428" height="624"/>
                                         <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="planets.jpeg" translatesAutoresizingMaskIntoConstraints="NO" id="PoQ-D6-y7B" customClass="RoundedImageView" customModule="QUIZ" customModuleProvider="target">
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="newyear.png" translatesAutoresizingMaskIntoConstraints="NO" id="PoQ-D6-y7B" customClass="RoundedImageView" customModule="QUIZ" customModuleProvider="target">
                                                 <rect key="frame" x="154" y="40" width="120" height="120"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="120" id="OzG-sw-OdD"/>
@@ -1951,7 +1951,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="planets.jpeg" translatesAutoresizingMaskIntoConstraints="NO" id="Gqs-Lu-r79" customClass="RoundedImageView" customModule="QUIZ" customModuleProvider="target">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="newyear.png" translatesAutoresizingMaskIntoConstraints="NO" id="Gqs-Lu-r79" customClass="RoundedImageView" customModule="QUIZ" customModuleProvider="target">
                                 <rect key="frame" x="114" y="263" width="200" height="200"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="pdK-Tg-9hS"/>
@@ -1997,7 +1997,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="r3R-iI-fwc">
                                         <rect key="frame" x="0.0" y="0.0" width="428" height="626"/>
                                         <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="planets.jpeg" translatesAutoresizingMaskIntoConstraints="NO" id="xwD-Dl-jhn" customClass="RoundedImageView" customModule="QUIZ" customModuleProvider="target">
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="newyear.png" translatesAutoresizingMaskIntoConstraints="NO" id="xwD-Dl-jhn" customClass="RoundedImageView" customModule="QUIZ" customModuleProvider="target">
                                                 <rect key="frame" x="154" y="40" width="120" height="120"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="120" id="2Je-91-5PD"/>
@@ -2568,6 +2568,7 @@
         <image name="microphone" width="24" height="24"/>
         <image name="music button selected" width="24" height="24"/>
         <image name="music.png" width="409.60000610351562" height="409.60000610351562"/>
+        <image name="newyear.png" width="512" height="512"/>
         <image name="pause " width="24" height="24"/>
         <image name="photo.png" width="409.60000610351562" height="409.60000610351562"/>
         <image name="planets.jpeg" width="512" height="512"/>

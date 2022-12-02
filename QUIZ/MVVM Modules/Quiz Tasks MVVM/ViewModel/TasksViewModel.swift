@@ -27,5 +27,6 @@ class TasksViewModel {
                  TaskModel(name: "пройти викторину в категории подводный мир", image: "underwater", background: "underwater.background.jpeg", complete: false, id: 16, sound: "underwater.wav"),
                  TaskModel(name: "пройти викторину в категории шахматы", image: "chess.png", background: "chess.background.jpeg", complete: false, id: 17, sound: "chess.mp3"),
                  TaskModel(name: "пройти викторину в категории хэллоуин", image: "halloween.png", background: "halloween.background.jpeg", complete: false, id: 18, sound: "halloween.wav"),
-                 TaskModel(name: "пройти викторину в категории рандом", image: "random.jpeg", background: "random.background.jpeg", complete: false, id: 19, sound: "dice.wav")]
+                 TaskModel(name: "пройти викторину в категории новый год", image: "newyear.png", background: "newyear.background.jpeg", complete: false, id: 19, sound: "newyear.mp3"),
+                 TaskModel(name: "пройти викторину в категории рандом", image: "random.jpeg", background: "random.background.jpeg", complete: false, id: 20, sound: "dice.wav")]
 }
