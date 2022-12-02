@@ -43,10 +43,10 @@ final class TasksTableViewController: UITableViewController {
         
         switch(indexPath.row) {
         
-          case  0...17:
+          case  0...18:
             categories.GoToStart(quiz: categories.categories[indexPath.row].base, category: categories.categories[indexPath.row], storyboard: self.storyboard, view: self.view)
             
-        case 18: categories.PresentRandomQuiz(storyboard: storyboard, view: view)
+        case 19: categories.PresentRandomQuiz(storyboard: storyboard, view: view)
             
         default: break
         }

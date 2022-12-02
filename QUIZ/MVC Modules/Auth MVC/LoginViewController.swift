@@ -435,9 +435,9 @@ class LoginViewController: UIViewController {
             self.navigationItem.hidesBackButton = true
         }
         
-        view.backgroundColor = UIColor(patternImage: UIImage(named: "earth.background.jpeg")!)
-        view2.backgroundColor = UIColor(patternImage: UIImage(named: "earth.background.jpeg")!)
-        scrollView.backgroundColor = UIColor(patternImage: UIImage(named: "earth.background.jpeg")!)
+        view.backgroundColor = UIColor(patternImage: UIImage(named: "newyear.background.jpeg")!)
+        view2.backgroundColor = UIColor(patternImage: UIImage(named: "newyear.background.jpeg")!)
+        scrollView.backgroundColor = UIColor(patternImage: UIImage(named: "newyear.background.jpeg")!)
         
         //loginImageView.image = UIImage(named: "swift.jpeg")
         

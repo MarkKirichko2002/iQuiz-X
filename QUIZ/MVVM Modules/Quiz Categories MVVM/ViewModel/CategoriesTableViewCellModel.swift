@@ -113,10 +113,12 @@ class CategoriesTableViewCellModel {
             LoadData(quizpath: "quizhalloween", isComplete: isComplete, CategoryScore: CategoryScore)
             
         case 19:
+            LoadData(quizpath: "quiznewyear", isComplete: isComplete, CategoryScore: CategoryScore)
+            
+        case 20:
             LoadData(quizpath: "lastquiz", isComplete: isComplete, CategoryScore: CategoryScore)
         
         default:
-            //LoadData(quizpath: "quizplanets", background: "earth.background.jpeg")
             break
         }
         
