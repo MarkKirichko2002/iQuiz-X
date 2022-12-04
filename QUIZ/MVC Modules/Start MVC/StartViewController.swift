@@ -26,7 +26,7 @@ class StartViewController: UIViewController {
     var viewModel = CategoriesViewModel()
     var timer = Timer()
     var animation = AnimationClass()
-    var quizes = [QuizPlanets(), QuizHistory(), QuizAnatomy(), QuizSport(), QuizGames(), QuizIQ(), QuizEconomy(), QuizGeography(), QuizEconomy(), QuizPhysics(), QuizChemistry(), QuizInformatics(), QuizLiterature(), QuizRoadTraffic(), QuizSwift(), QuizUnderwater(), QuizChess(), QuizHalloween()]
+    var quizes = [QuizPlanets(), QuizHistory(), QuizAnatomy(), QuizSport(), QuizGames(), QuizIQ(), QuizEconomy(), QuizGeography(), QuizEconomy(), QuizPhysics(), QuizChemistry(), QuizInformatics(), QuizLiterature(), QuizRoadTraffic(), QuizSwift(), QuizUnderwater(), QuizChess(), QuizHalloween(), QuizNewYear()]
     var sound = ""
     
     override func viewDidDisappear(_ animated: Bool) {
@@ -281,10 +281,10 @@ class StartViewController: UIViewController {
     func DailyQuiz() {
         let randomindex = (UserDefaults.standard.object(forKey: "index") as? Int) ?? 1
         
-        quizes[randomindex].quiz = viewModel.categories[randomindex]
+        quizes[randomindex].quiz = viewModel.categories[randomindex].categories[randomindex]
         
-        Image.sound = viewModel.categories[randomindex].sound
-        sound = viewModel.categories[randomindex].sound
+        Image.sound = viewModel.categories[randomindex].categories[randomindex].sound
+        sound = viewModel.categories[randomindex].categories[randomindex].sound
         
         switch quizes[randomindex].checkid() {
             
@@ -452,7 +452,7 @@ class StartViewController: UIViewController {
         let c = quizes[randomindex!]
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-            self.viewModel.goToQuize(quiz: c, category: self.viewModel.categories[randomindex ?? 0], storyboard: self.storyboard, view: self.view)
+            self.viewModel.goToQuize(quiz: c, category: self.viewModel.categories[randomindex ?? 0].categories[randomindex ?? 0], storyboard: self.storyboard, view: self.view)
         }
     }
     

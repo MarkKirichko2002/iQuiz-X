@@ -7,6 +7,11 @@
 
 import Foundation
 
+struct Quiz {
+    var releaseDate: String
+    var categories: [QuizModel]
+}
+
 struct QuizModel {
     var name: String
     var image: String
