@@ -12,9 +12,12 @@ import SDWebImage
 class NewsTableViewController: UITableViewController {
     
     var newsViewModel = NewsListViewModel()
+    let RefreshControl = UIRefreshControl()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        RefreshControl.addTarget(self, action: #selector(refresh(_:)), for: .valueChanged)
+        tableView.addSubview(RefreshControl)
         Bus.shared.subscribeOnMain(.newsFetch) { [weak self] event in
             guard let result = event.result else {
                 return
@@ -28,6 +31,14 @@ class NewsTableViewController: UITableViewController {
             }
         }
         newsViewModel.GetNews()
+    }
+    
+    @objc func refresh(_ sender: AnyObject) {
+        DispatchQueue.main.async {
+            self.newsViewModel.GetNews()
+            self.tableView.reloadData()
+            self.RefreshControl.endRefreshing()
+        }
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
