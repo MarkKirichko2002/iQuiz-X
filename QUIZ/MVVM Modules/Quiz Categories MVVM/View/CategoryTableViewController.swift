@@ -37,15 +37,14 @@ final class CategoryTableViewController: UITableViewController {
         if let cell = tableView.cellForRow(at: indexPath) as? CategoryTableViewCell {
                cell.didSelect(indexPath: indexPath)
         }
-        
-        switch(indexPath.row) {
-        
-          case  0...18:
-            categories.GoToStart(quiz: categories.categories[indexPath.row].base, category: categories.categories[indexPath.row], storyboard: self.storyboard, view: self.view)
-            
-        case 19: categories.PresentRandomQuiz(storyboard: storyboard, view: view)
-            
-        default: break
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showDetail",
+           let destinationController = segue.destination as? QuizCategoryDetailViewController,
+           let indexSelectedCell = tableView.indexPathForSelectedRow {
+           let category = categories.categories[indexSelectedCell.row]
+           destinationController.category = category
         }
     }
     

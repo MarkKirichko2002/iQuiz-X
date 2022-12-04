@@ -33,7 +33,6 @@ class ViewController: UITabBarController {
         quizViewModel.storyboard = storyboard
         configureAudioSession()
         selectedIndex = UserDefaults.standard.object(forKey: "index") as? Int ?? 0
-        button.setImage(UIImage(named: "newyear.png"), for: .normal)
         button.frame = CGRect(x: 0, y: 0, width: 44, height: 44)
         button.layer.borderWidth = 2
         self.view.insertSubview(button, aboveSubview: self.tabBar)
@@ -90,7 +89,7 @@ class ViewController: UITabBarController {
             self.icon = "newyear.png"
             self.button.setImage(UIImage(named: self.icon), for: .normal)
             self.animation.springButton(button: self.button)
-            self.player.Sound(resource: "IQ.mp3")
+            self.player.Sound(resource: "newyear.mp3")
         case 3:
             self.icon = "trophy.png"
             self.button.setImage(UIImage(named: self.icon), for: .normal)
@@ -332,6 +331,14 @@ class ViewController: UITabBarController {
                 self.player.Sound(resource: "halloween.wav")
                 self.sound = "halloween.wav"
                 self.quizViewModel.GoToStart(quiz: QuizHalloween(), category: quizViewModel.categories[17], storyboard: self.storyboard, view: self.view)
+                
+            case _ where self.text.contains("Рождеств") || self.text.contains("рождеств"):
+                self.icon = "newyear.png"
+                self.button.setImage(UIImage(named: self.icon), for: .normal)
+                self.animation.springButton(button: self.button)
+                self.player.Sound(resource: "newyear.mp3")
+                self.sound = "newyear.mp3"
+                self.quizViewModel.GoToStart(quiz: QuizNewYear(), category: quizViewModel.categories[18], storyboard: self.storyboard, view: self.view)
                 
             case _ where self.text.contains("Рандом") || self.text.contains("рандом"):
                 self.icon = "random.jpeg"
