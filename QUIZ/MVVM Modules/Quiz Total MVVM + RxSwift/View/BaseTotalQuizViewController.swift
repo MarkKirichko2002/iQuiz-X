@@ -11,7 +11,7 @@ import RxCocoa
 
 class BaseTotalQuizViewController: UIViewController {
     
-    @IBOutlet weak var Image: UIImageView!
+    @IBOutlet weak var Image: RoundedImageView!
     @IBOutlet weak var ScoreLabel: UILabel!
     @IBOutlet weak var ExitButton: UIButton!
     @IBOutlet weak var CorrectAnswers: UILabel!
@@ -26,10 +26,12 @@ class BaseTotalQuizViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.Image.color = .white
         quizResultViewModel.SetupView(view: self.view, storyboard: self.storyboard!)
         quizResultViewModel.quizresult.subscribe(onNext: { result in
             guard let background = UIImage(named: result.background) else {return}
             self.Image.image = UIImage(named: result.icon)
+            self.Image.sound = result.sound
             self.CommentLabel.text = result.categoryName
             self.ScoreLabel.text = "счет: \(String(result.bestscore))/100 баллов"
             self.CorrectAnswers.text = "правильные ответы: \(result.CorrectAnswersCounter)/20"

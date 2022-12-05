@@ -41,11 +41,12 @@ class QuizResultViewModel {
                     if let category = document["lastquiz"] as? [String: Any] {
                         let CorrectAnswersCounter = category["CorrectAnswersCounter"] as? Int
                         let image = category["image"] as? String
+                        let sound = category["sound"] as? String
                         let background = category["background"] as? String
                         let bestscore = category["bestscore"] as? Int ?? 0
                         let category = category["category"] as? String ?? ""
                         
-                        let result = QuizResult(categoryName: category, icon: image ?? "", bestscore: bestscore, CorrectAnswersCounter: CorrectAnswersCounter ?? 0, background: background ?? "")
+                        let result = QuizResult(categoryName: category, icon: image ?? "", bestscore: bestscore, CorrectAnswersCounter: CorrectAnswersCounter ?? 0, background: background ?? "", sound: sound ?? "")
                         
 //                        self.ScoreLabel.text = ("счет: \(String(bestscore))/100 баллов")
 //                        self.CorrectAnswers.text = "Правильные ответы: \(CorrectAnswersCounter ?? 0)/20"
@@ -97,58 +98,58 @@ class QuizResultViewModel {
                                 self.viewModel.goToQuize(quiz: QuizPlanets(), category: viewModel.categories[0].categories[0], storyboard: self.storyboard, view: self.view!)
                                 
                             case "история":
-                                self.viewModel.goToQuize(quiz: QuizHistory(), category: viewModel.categories[1].categories[1], storyboard: self.storyboard, view: self.view!)
+                                self.viewModel.goToQuize(quiz: QuizHistory(), category: viewModel.categories[0].categories[1], storyboard: self.storyboard, view: self.view!)
                                 
                             case "анатомия":
-                                self.viewModel.goToQuize(quiz: QuizAnatomy(), category: viewModel.categories[2].categories[2], storyboard: self.storyboard, view: self.view!)
+                                self.viewModel.goToQuize(quiz: QuizAnatomy(), category: viewModel.categories[0].categories[2], storyboard: self.storyboard, view: self.view!)
                                 
                             case "спорт":
-                                self.viewModel.goToQuize(quiz: QuizSport(), category: viewModel.categories[3].categories[3], storyboard: self.storyboard, view: self.view!)
+                                self.viewModel.goToQuize(quiz: QuizSport(), category: viewModel.categories[0].categories[3], storyboard: self.storyboard, view: self.view!)
                                 
                             case "игры":
-                                self.viewModel.goToQuize(quiz: QuizGames(), category: viewModel.categories[4].categories[4], storyboard: self.storyboard, view: self.view!)
+                                self.viewModel.goToQuize(quiz: QuizGames(), category: viewModel.categories[1].categories[0], storyboard: self.storyboard, view: self.view!)
                                 
                             case "IQ":
-                                self.viewModel.goToQuize(quiz: QuizIQ(), category: viewModel.categories[5].categories[5], storyboard: self.storyboard, view: self.view!)
+                                self.viewModel.goToQuize(quiz: QuizIQ(), category: viewModel.categories[1].categories[1], storyboard: self.storyboard, view: self.view!)
                                 
                             case "экономика":
-                                self.viewModel.goToQuize(quiz: QuizEconomy(), category: viewModel.categories[6].categories[6], storyboard: self.storyboard, view: self.view!)
+                                self.viewModel.goToQuize(quiz: QuizEconomy(), category: viewModel.categories[1].categories[2], storyboard: self.storyboard, view: self.view!)
                                 
                             case "география":
-                                self.viewModel.goToQuize(quiz: QuizGeography(), category: viewModel.categories[7].categories[7], storyboard: self.storyboard, view: self.view!)
+                                self.viewModel.goToQuize(quiz: QuizGeography(), category: viewModel.categories[1].categories[3], storyboard: self.storyboard, view: self.view!)
                                 
                             case "экология":
-                                self.viewModel.goToQuize(quiz: QuizEcology(), category: viewModel.categories[8].categories[8], storyboard: self.storyboard, view: self.view!)
+                                self.viewModel.goToQuize(quiz: QuizEcology(), category: viewModel.categories[1].categories[4], storyboard: self.storyboard, view: self.view!)
                                 
                             case "физика":
-                                self.viewModel.goToQuize(quiz: QuizPhysics(), category: viewModel.categories[9].categories[9], storyboard: self.storyboard, view: self.view!)
+                                self.viewModel.goToQuize(quiz: QuizPhysics(), category: viewModel.categories[1].categories[5], storyboard: self.storyboard, view: self.view!)
                                 
                             case "химия":
-                                self.viewModel.goToQuize(quiz: QuizChemistry(), category: viewModel.categories[10].categories[10], storyboard: self.storyboard, view: self.view!)
+                                self.viewModel.goToQuize(quiz: QuizChemistry(), category: viewModel.categories[1].categories[6], storyboard: self.storyboard, view: self.view!)
                                 
                             case "информатика":
-                                self.viewModel.goToQuize(quiz: QuizInformatics(), category: viewModel.categories[11].categories[11], storyboard: self.storyboard, view: self.view!)
+                                self.viewModel.goToQuize(quiz: QuizInformatics(), category: viewModel.categories[1].categories[7], storyboard: self.storyboard, view: self.view!)
                                 
                             case "литература":
-                                self.viewModel.goToQuize(quiz: QuizLiterature(), category: viewModel.categories[12].categories[12], storyboard: self.storyboard, view: self.view!)
+                                self.viewModel.goToQuize(quiz: QuizLiterature(), category: viewModel.categories[2].categories[0], storyboard: self.storyboard, view: self.view!)
                                 
                             case "ПДД":
-                                self.viewModel.goToQuize(quiz: QuizRoadTraffic(), category: viewModel.categories[13].categories[13], storyboard: self.storyboard, view: self.view!)
+                                self.viewModel.goToQuize(quiz: QuizRoadTraffic(), category: viewModel.categories[2].categories[1], storyboard: self.storyboard, view: self.view!)
                                 
                             case "Swift":
-                                self.viewModel.goToQuize(quiz: QuizSwift(), category: viewModel.categories[14].categories[14], storyboard: self.storyboard, view: self.view!)
+                                self.viewModel.goToQuize(quiz: QuizSwift(), category: viewModel.categories[2].categories[2], storyboard: self.storyboard, view: self.view!)
                                 
                             case "подводный мир":
-                                self.viewModel.goToQuize(quiz: QuizUnderwater(), category: viewModel.categories[15].categories[15], storyboard: self.storyboard, view: self.view!)
+                                self.viewModel.goToQuize(quiz: QuizUnderwater(), category: viewModel.categories[3].categories[0], storyboard: self.storyboard, view: self.view!)
                             
                             case "шахматы":
-                                self.viewModel.goToQuize(quiz: QuizChess(), category: viewModel.categories[16].categories[16], storyboard: self.storyboard, view: self.view!)
+                                self.viewModel.goToQuize(quiz: QuizChess(), category: viewModel.categories[3].categories[1], storyboard: self.storyboard, view: self.view!)
                                 
                             case "хэллоуин":
-                                self.viewModel.goToQuize(quiz: QuizHalloween(), category: viewModel.categories[17].categories[17], storyboard: self.storyboard, view: self.view!)
+                                self.viewModel.goToQuize(quiz: QuizHalloween(), category: viewModel.categories[4].categories[0], storyboard: self.storyboard, view: self.view!)
                                 
                             case "новый год":
-                                self.viewModel.goToQuize(quiz: QuizHalloween(), category: viewModel.categories[17].categories[17], storyboard: self.storyboard, view: self.view!)
+                                self.viewModel.goToQuize(quiz: QuizNewYear(), category: viewModel.categories[5].categories[0], storyboard: self.storyboard, view: self.view!)
                                 
                             default:
                                 break

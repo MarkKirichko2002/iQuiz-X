@@ -11,14 +11,12 @@ import Vision
 
 class CategoriesViewModel {
     
-    var quizes = [QuizPlanets(), QuizHistory(), QuizAnatomy(), QuizSport(), QuizGames(), QuizIQ(), QuizEconomy(), QuizGeography(), QuizEcology(), QuizPhysics(), QuizChemistry(), QuizInformatics(), QuizLiterature(), QuizRoadTraffic(), QuizSwift(), QuizUnderwater(), QuizChess()]
+    var quizes = [QuizPlanets(), QuizHistory(), QuizAnatomy(), QuizSport(), QuizGames(), QuizIQ(), QuizEconomy(), QuizGeography(), QuizEcology(), QuizPhysics(), QuizChemistry(), QuizInformatics(), QuizLiterature(), QuizRoadTraffic(), QuizSwift(), QuizUnderwater(), QuizChess(), QuizHalloween(), QuizNewYear()]
     
     var view: UIView?
     var storyboard: UIStoryboard?
     
     var categories = [Quiz(releaseDate: "февраль 2022", categories: [QuizModel(name: "планеты", image: "planets.jpeg", base: QuizPlanets(), background: "earth.background.jpeg", complete: false, id: 1, score: 0, sound: "space.wav", music: "space music.mp3"), QuizModel(name: "история", image: "history.jpeg", base: QuizHistory(), background: "history.background.jpeg", complete: false, id: 2, score: 0, sound: "history.wav", music: "history music.mp3"), QuizModel(name: "анатомия", image: "anatomy.jpeg", base: QuizAnatomy(), background: "anatomy.background.jpeg", complete: false, id: 3, score: 0, sound: "anatomy.mp3", music: "anatomy music.mp3"), QuizModel(name: "спорт", image: "sport.jpeg", base: QuizSport(), background: "sport.background.jpeg", complete: false, id: 4, score: 0, sound: "sport.wav", music: "sport music.mp3")]), Quiz(releaseDate: "март 2022", categories: [QuizModel(name: "игры", image: "games.jpeg", base: QuizGames(), background: "games.background.jpeg", complete: false, id: 5, score: 0, sound: "games.mp3", music: "games music.mp3"), QuizModel(name: "IQ", image: "IQ.jpeg", base: QuizIQ(), background: "IQ.background.jpeg", complete: false, id: 6, score: 0, sound: "IQ.mp3", music: "IQ music.mp3"), QuizModel(name: "экономика", image: "economy.jpeg", base: QuizEconomy(), background: "economy.background.jpeg", complete: false, id: 7, score: 0, sound: "economics.mp3", music: "economy music.mp3"), QuizModel(name: "география", image: "geography.jpeg", base: QuizGeography(), background: "geography.background.jpeg", complete: false, id: 8, score: 0, sound: "geography.mp3", music: "geography music.mp3"), QuizModel(name: "экология", image: "ecology.jpeg", base: QuizEcology(), background: "ecology.background.jpeg", complete: false, id: 9, score: 0, sound: "ecology.wav", music: "ecology music.mp3"), QuizModel(name: "физика", image: "physics.jpeg", base: QuizPhysics(), background: "physics.background.jpeg", complete: false, id: 10, score: 0, sound: "physics.mp3", music: "physics music.mp3"), QuizModel(name: "химия", image: "chemistry.jpeg", base: QuizChemistry(), background: "chemistry.background.jpeg", complete: false, id: 11, score: 0, sound: "chemistry.mp3", music: "chemistry music.mp3"), QuizModel(name: "информатика", image: "informatics.jpeg", base: QuizInformatics(), background: "informatics.background.jpeg", complete: false, id: 12, score: 0, sound: "informatics.mp3", music: "informatics music.mp3")]), Quiz(releaseDate: "апрель 2022", categories: [QuizModel(name: "литература", image: "literature.jpeg", base: QuizLiterature(), background: "literature.background.jpeg", complete: false, id: 13, score: 0, sound: "literature.mp3", music: "literature music.mp3"), QuizModel(name: "ПДД", image: "drive.jpeg", base: QuizRoadTraffic(), background: "drive.background.jpeg", complete: false, id: 14, score: 0, sound: "roadtraffic.mp3", music: "drive music.mp3"), QuizModel(name: "Swift", image: "swift.jpeg", base: QuizSwift(), background:"swift.background.jpeg", complete: false, id: 15, score: 0, sound: "swift.mp3", music: "Swift music.mp3")]), Quiz(releaseDate: "июль 2022", categories: [QuizModel(name: "подводный мир", image: "underwater.png", base: QuizUnderwater(), background: "underwater.background.jpeg", complete: false, id: 16, score: 0, sound: "underwater.wav", music: "underwater music.mp3"), QuizModel(name: "шахматы", image: "chess.png", base: QuizChess(), background: "chess.background.jpeg", complete: false, id: 17, score: 0, sound: "chess.mp3", music: "chess music.mp3")]), Quiz(releaseDate: "октябрь 2022", categories: [QuizModel(name: "хэллоуин", image: "halloween.png", base: QuizHalloween(), background: "halloween.background.jpeg", complete: false, id: 18, score: 0, sound: "halloween.wav", music: "halloween music.mp3")]), Quiz(releaseDate: "декабрь 2022", categories: [QuizModel(name: "новый год", image: "newyear.png", base: QuizNewYear(), background: "newyear.background.jpeg", complete: false, id: 19, score: 0, sound: "newyear.mp3", music: "newyear music.mp3")])]
-    
-//    var categories = [QuizModel(name: "планеты", image: "planets.jpeg", base: QuizPlanets(), background: "earth.background.jpeg", complete: false, id: 1, score: 0, sound: "space.wav", music: "space music.mp3"), QuizModel(name: "история", image: "history.jpeg", base: QuizHistory(), background: "history.background.jpeg", complete: false, id: 2, score: 0, sound: "history.wav", music: "history music.mp3"), QuizModel(name: "анатомия", image: "anatomy.jpeg", base: QuizAnatomy(), background: "anatomy.background.jpeg", complete: false, id: 3, score: 0, sound: "anatomy.mp3", music: "anatomy music.mp3"), QuizModel(name: "спорт", image: "sport.jpeg", base: QuizSport(), background: "sport.background.jpeg", complete: false, id: 4, score: 0, sound: "sport.wav", music: "sport music.mp3"), QuizModel(name: "игры", image: "games.jpeg", base: QuizGames(), background: "games.background.jpeg", complete: false, id: 5, score: 0, sound: "games.mp3", music: "games music.mp3"), QuizModel(name: "IQ", image: "IQ.jpeg", base: QuizIQ(), background: "IQ.background.jpeg", complete: false, id: 6, score: 0, sound: "IQ.mp3", music: "IQ music.mp3"), QuizModel(name: "экономика", image: "economy.jpeg", base: QuizEconomy(), background: "economy.background.jpeg", complete: false, id: 7, score: 0, sound: "economics.mp3", music: "economy music.mp3"), QuizModel(name: "география", image: "geography.jpeg", base: QuizGeography(), background: "geography.background.jpeg", complete: false, id: 8, score: 0, sound: "geography.mp3", music: "geography music.mp3"), QuizModel(name: "экология", image: "ecology.jpeg", base: QuizEcology(), background: "ecology.background.jpeg", complete: false, id: 9, score: 0, sound: "ecology.wav", music: "ecology music.mp3"), QuizModel(name: "физика", image: "physics.jpeg", base: QuizPhysics(), background: "physics.background.jpeg", complete: false, id: 10, score: 0, sound: "physics.mp3", music: "physics music.mp3"), QuizModel(name: "химия", image: "chemistry.jpeg", base: QuizChemistry(), background: "chemistry.background.jpeg", complete: false, id: 11, score: 0, sound: "chemistry.mp3", music: "chemistry music.mp3"), QuizModel(name: "информатика", image: "informatics.jpeg", base: QuizInformatics(), background: "informatics.background.jpeg", complete: false, id: 12, score: 0, sound: "informatics.mp3", music: "informatics music.mp3"), QuizModel(name: "литература", image: "literature.jpeg", base: QuizLiterature(), background: "literature.background.jpeg", complete: false, id: 13, score: 0, sound: "literature.mp3", music: "literature music.mp3"), QuizModel(name: "ПДД", image: "drive.jpeg", base: QuizRoadTraffic(), background: "drive.background.jpeg", complete: false, id: 14, score: 0, sound: "roadtraffic.mp3", music: "drive music.mp3"), QuizModel(name: "Swift", image: "swift.jpeg", base: QuizSwift(), background:"swift.background.jpeg", complete: false, id: 15, score: 0, sound: "swift.mp3", music: "Swift music.mp3"), QuizModel(name: "подводный мир", image: "underwater.png", base: QuizUnderwater(), background: "underwater.background.jpeg", complete: false, id: 16, score: 0, sound: "underwater.wav", music: "underwater music.mp3"), QuizModel(name: "шахматы", image: "chess.png", base: QuizChess(), background: "chess.background.jpeg", complete: false, id: 17, score: 0, sound: "chess.mp3", music: "chess music.mp3"), QuizModel(name: "хэллоуин", image: "halloween.png", base: QuizHalloween(), background: "halloween.background.jpeg", complete: false, id: 18, score: 0, sound: "halloween.wav", music: "halloween music.mp3"), QuizModel(name: "новый год", image: "newyear.png", base: QuizNewYear(), background: "newyear.background.jpeg", complete: false, id: 19, score: 0, sound: "newyear.mp3", music: "newyear music.mp3"), QuizModel(name: "рандом", image: "random.jpeg", base: QuizPlanets(), background: "random.background.jpeg", complete: false, id: 20, score: 0, sound: "dice.wav", music: "dice.wav")]
     
     func goToQuize(quiz: QuizBaseViewModel, category: QuizModel, storyboard: UIStoryboard?, view: UIView) {
         DispatchQueue.main.async {
@@ -70,60 +68,101 @@ class CategoriesViewModel {
             switch text {
                 
             case _ where text.contains("Планеты"):
-                self?.goToQuize(quiz: QuizPlanets(), category: (self?.categories[0].categories[0])!, storyboard: self?.storyboard, view: (self?.view!)!)
+                DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                    self?.goToQuize(quiz: QuizPlanets(), category: (self?.categories[0].categories[0])!, storyboard: self?.storyboard, view: (self?.view!)!)
+                }
                 
             case _ where text.contains("История"):
-                self?.goToQuize(quiz: QuizHistory(), category: (self?.categories[1].categories[1])!, storyboard: self?.storyboard, view: (self?.view!)!)
+                DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                    self?.goToQuize(quiz: QuizHistory(), category: (self?.categories[0].categories[1])!, storyboard: self?.storyboard, view: (self?.view!)!)
+                }
                 
             case _ where text.contains("Анатомия"):
-                self?.goToQuize(quiz: QuizAnatomy(), category: (self?.categories[2].categories[2])!, storyboard: self?.storyboard, view: (self?.view!)!)
+                DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                    self?.goToQuize(quiz: QuizAnatomy(), category: (self?.categories[0].categories[2])!, storyboard: self?.storyboard, view: (self?.view!)!)
+                }
                 
             case _ where text.contains("Спорт"):
-                self?.goToQuize(quiz: QuizSport(), category: (self?.categories[3].categories[3])!, storyboard: self?.storyboard, view: (self?.view!)!)
+                DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                    self?.goToQuize(quiz: QuizSport(), category: (self?.categories[0].categories[3])!, storyboard: self?.storyboard, view: (self?.view!)!)
+                }
                 
             case _ where text.contains("Игры"):
-                self?.goToQuize(quiz: QuizGames(), category: (self?.categories[4].categories[4])!, storyboard: self?.storyboard, view: (self?.view!)!)
+                DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                    self?.goToQuize(quiz: QuizGames(), category: (self?.categories[1].categories[0])!, storyboard: self?.storyboard, view: (self?.view!)!)
+                }
                 
             case _ where text.contains("IQ"):
-                self?.goToQuize(quiz: QuizIQ(), category: (self?.categories[5].categories[5])!, storyboard: self?.storyboard, view: (self?.view!)!)
+                DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                    self?.goToQuize(quiz: QuizIQ(), category: (self?.categories[1].categories[1])!, storyboard: self?.storyboard, view: (self?.view!)!)
+                }
                 
             case _ where text.contains("Экономика"):
-                self?.goToQuize(quiz: QuizEconomy(), category: (self?.categories[6].categories[6])!, storyboard: self?.storyboard, view: (self?.view!)!)
+                DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                    self?.goToQuize(quiz: QuizEconomy(), category: (self?.categories[1].categories[2])!, storyboard: self?.storyboard, view: (self?.view!)!)
+                }
                 
             case _ where text.contains("География"):
-                self?.goToQuize(quiz: QuizGeography(), category: (self?.categories[7].categories[7])!, storyboard: self?.storyboard, view: (self?.view!)!)
+                DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                    self?.goToQuize(quiz: QuizGeography(), category: (self?.categories[1].categories[3])!, storyboard: self?.storyboard, view: (self?.view!)!)
+                }
                 
             case _ where text.contains("Экология"):
-                self?.goToQuize(quiz: QuizEcology(), category: (self?.categories[8].categories[8])!, storyboard: self?.storyboard, view: (self?.view!)!)
+                DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                    self?.goToQuize(quiz: QuizEcology(), category: (self?.categories[1].categories[4])!, storyboard: self?.storyboard, view: (self?.view!)!)
+                }
                 
             case _ where text.contains("Физика"):
-                self?.goToQuize(quiz: QuizPhysics(), category: (self?.categories[9].categories[9])!, storyboard: self?.storyboard, view: (self?.view!)!)
+                DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                    self?.goToQuize(quiz: QuizPhysics(), category: (self?.categories[1].categories[5])!, storyboard: self?.storyboard, view: (self?.view!)!)
+                }
                 
             case _ where text.contains("Химия"):
-                self?.goToQuize(quiz: QuizChemistry(), category: (self?.categories[10].categories[10])!, storyboard: self?.storyboard, view: (self?.view!)!)
+                DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                    self?.goToQuize(quiz: QuizChemistry(), category: (self?.categories[1].categories[6])!, storyboard: self?.storyboard, view: (self?.view!)!)
+                }
                 
             case _ where text.contains("Информатика"):
-                self?.goToQuize(quiz: QuizInformatics(), category: (self?.categories[11].categories[11])!, storyboard: self?.storyboard, view: (self?.view!)!)
+                DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                    self?.goToQuize(quiz: QuizInformatics(), category: (self?.categories[1].categories[7])!, storyboard: self?.storyboard, view: (self?.view!)!)
+                }
                 
             case _ where text.contains("Литература"):
-                self?.goToQuize(quiz: QuizLiterature(), category: (self?.categories[12].categories[12])!, storyboard: self?.storyboard, view: (self?.view!)!)
+                DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                    self?.goToQuize(quiz: QuizLiterature(), category: (self?.categories[2].categories[0])!, storyboard: self?.storyboard, view: (self?.view!)!)
+                }
                 
             case _ where text.contains("ПДД"):
-                self?.goToQuize(quiz: QuizRoadTraffic(), category: (self?.categories[13].categories[13])!, storyboard: self?.storyboard, view: (self?.view!)!)
+                DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                    self?.goToQuize(quiz: QuizRoadTraffic(), category: (self?.categories[2].categories[1])!, storyboard: self?.storyboard, view: (self?.view!)!)
+                }
                 
             case _ where text.contains("Swift"):
-                self?.goToQuize(quiz: QuizSwift(), category: (self?.categories[14].categories[14])!, storyboard: self?.storyboard, view: (self?.view!)!)
+                DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                    self?.goToQuize(quiz: QuizSwift(), category: (self?.categories[2].categories[2])!, storyboard: self?.storyboard, view: (self?.view!)!)
+                }
                 
             case _ where text.contains("Подводный мир"):
-                self?.goToQuize(quiz: QuizUnderwater(), category: (self?.categories[15].categories[15])!, storyboard: self?.storyboard, view: (self?.view!)!)
+                DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                    self?.goToQuize(quiz: QuizUnderwater(), category: (self?.categories[3].categories[0])!, storyboard: self?.storyboard, view: (self?.view!)!)
+                }
                 
             case _ where text.contains("Шахматы"):
-                self?.goToQuize(quiz: QuizChess(), category: (self?.categories[16].categories[16])!, storyboard: self?.storyboard, view: (self?.view!)!)
+                DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                    self?.goToQuize(quiz: QuizChess(), category: (self?.categories[3].categories[1])!, storyboard: self?.storyboard, view: (self?.view!)!)
+                }
                 
             case _ where text.contains("Хэллоуин"):
-                self?.goToQuize(quiz: QuizHalloween(), category: (self?.categories[17].categories[17])!, storyboard: self?.storyboard, view: (self?.view!)!)
+                DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                    self?.goToQuize(quiz: QuizHalloween(), category: (self?.categories[4].categories[0])!, storyboard: self?.storyboard, view: (self?.view!)!)
+                }
                 
-            case _ where text.contains("18"):
+            case _ where text.contains("Рождество"):
+                DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                    self?.goToQuize(quiz: QuizHalloween(), category: (self?.categories[5].categories[0])!, storyboard: self?.storyboard, view: (self?.view!)!)
+                }
+                
+            case _ where text.contains("19"):
                 self?.PresentRandomQuiz(storyboard: self?.storyboard, view: (self?.view!)!)
                 
             default:
@@ -135,12 +174,7 @@ class CategoriesViewModel {
         do {
             try handler.perform([request])
         } catch {
-            //questionTextStatus.value = "\(error)"
-        }
-        
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-            //self.CheckPhotoAnswer()
+            print(error)
         }
     }
-    
 }

@@ -67,14 +67,14 @@ class StartViewController: UIViewController {
     
     func GenerateRandomIndex() {
         
-        var randomindex = Int.random(in: 0..<quizes.count)
+        var randomindex = Int.random(in: 0..<quizes.count - 1)
         
         UserDefaults.standard.set(randomindex, forKey: "index") as? Int
         
         var savedindex = UserDefaults.standard.object(forKey: "index") as? Int
         
         if randomindex == savedindex {
-            randomindex = Int.random(in: 0..<quizes.count)
+            randomindex = Int.random(in: 0..<quizes.count-1)
         } else {}
     }
     
@@ -279,7 +279,7 @@ class StartViewController: UIViewController {
     }
     
     func DailyQuiz() {
-        let randomindex = (UserDefaults.standard.object(forKey: "index") as? Int) ?? 1
+        let randomindex = 1
         
         quizes[randomindex].quiz = viewModel.categories[randomindex].categories[randomindex]
         

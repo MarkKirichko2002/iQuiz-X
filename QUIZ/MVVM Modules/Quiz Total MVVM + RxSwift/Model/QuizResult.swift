@@ -13,4 +13,5 @@ struct QuizResult {
     let bestscore: Int
     let CorrectAnswersCounter: Int
     let background: String
+    let sound: String
 }
