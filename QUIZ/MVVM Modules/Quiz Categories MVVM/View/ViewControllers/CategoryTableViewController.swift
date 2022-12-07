@@ -29,7 +29,9 @@ final class CategoryTableViewController: UITableViewController, CustomViewCellDe
     }
     
     func didElementClick() {
-        performSegue(withIdentifier: "showDetail", sender: nil)
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+            self.performSegue(withIdentifier: "showDetail", sender: nil)
+        }
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
