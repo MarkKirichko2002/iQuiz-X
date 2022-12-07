@@ -35,7 +35,7 @@ final class TasksTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        player.Sound(resource: categories.categories[indexPath.row].sound)
+        player.Sound(resource: categories.categories[indexPath.section].categories[indexPath.row].sound)
         
         if let cell = tableView.cellForRow(at: indexPath) as? TasksTableViewCell {
                cell.didSelect(indexPath: indexPath)
@@ -44,7 +44,7 @@ final class TasksTableViewController: UITableViewController {
         switch(indexPath.row) {
         
           case  0...18:
-            categories.GoToStart(quiz: categories.categories[indexPath.row].base, category: categories.categories[indexPath.row], storyboard: self.storyboard, view: self.view)
+            categories.GoToStart(quiz: categories.categories[indexPath.section].categories[indexPath.row].base, category: categories.categories[indexPath.section].categories[indexPath.row], storyboard: self.storyboard, view: self.view)
             
         case 19: categories.PresentRandomQuiz(storyboard: storyboard, view: view)
             

@@ -15,4 +15,5 @@ target 'QUIZ' do
   pod 'SDWebImage' 
   pod 'RxSwift'
   pod 'RxCocoa'
+  pod 'SnapKit'
 end

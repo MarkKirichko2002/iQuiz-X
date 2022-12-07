@@ -19,10 +19,13 @@ class QuizMediaLibraryTableViewCell: UITableViewCell {
     @IBOutlet weak var Title: UILabel!
     @IBOutlet weak var PlayButton: UIButton!
     
-    func configure(mediateka: QuizMediaLibraryModel) {
-        Icon.image = UIImage(named: mediateka.icon)
-        Title.text = mediateka.title
-        music = mediateka.music
+    func configure(medialibrary: QuizMediaLibraryModel) {
+        Icon.image = UIImage(named: medialibrary.icon)
+        Icon.sound = medialibrary.sound
+        Title.text = medialibrary.title
+        Title.textColor = .white
+        music = medialibrary.music
+        contentView.backgroundColor = UIColor(patternImage: UIImage(named: medialibrary.background)!)
     }
     
     @IBAction func PlayMusic() {

@@ -11,4 +11,6 @@ struct QuizMediaLibraryModel {
     let title: String
     let icon: String
     let music: String
+    let sound: String
+    let background: String
 }
