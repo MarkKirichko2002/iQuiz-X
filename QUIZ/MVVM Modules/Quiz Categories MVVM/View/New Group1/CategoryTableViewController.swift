@@ -8,13 +8,14 @@
 import UIKit
 import SCLAlertView
 
-final class CategoryTableViewController: UITableViewController {
+final class CategoryTableViewController: UITableViewController, CustomViewCellDelegate {
     
     @IBOutlet weak var InfoCategoriesButton: UIBarButtonItem!
     
     var categories = CategoriesViewModel()
     var cellmodel = CategoriesTableViewCellModel()
     var player = SoundClass()
+    var delegate: CustomViewCellDelegate?
     
     @IBAction func ShowCategoriesInfo() {
         player.Sound(resource: "future click sound.wav")
@@ -23,7 +24,12 @@ final class CategoryTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.tableView.register(UINib(nibName: CategoryTableViewCell.identifier, bundle: nil), forCellReuseIdentifier: CategoryTableViewCell.identifier)
         navigationItem.title = "Категории (\(categories.categories.count))"
+    }
+    
+    func didElementClick() {
+        performSegue(withIdentifier: "showDetail", sender: nil)
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -78,7 +84,7 @@ final class CategoryTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: CategoryTableViewCell.identifier, for: indexPath) as! CategoryTableViewCell
-        
+        cell.delegate = self
         cellmodel.configure(categories.categories[indexPath.section].categories[indexPath.row], CategoryImage: cell.CategoryImage, CategoryText: cell.CategoryText, isComplete: cell.isComplete, CategoryScore: cell.CategoryScore, background: cell)
         cell.CategoryImage.sound = categories.categories[indexPath.section].categories[indexPath.row].sound
         cell.CategoryImage.color = .white

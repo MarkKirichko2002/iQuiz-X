@@ -8,10 +8,17 @@
 import UIKit
 import Firebase
 
+protocol CustomViewCellDelegate: class {
+   func didElementClick()
+}
+
 class CategoryTableViewCell: UITableViewCell {
     
     static let identifier = "CategoryTableViewCell"
     var animation = AnimationClass()
+    var categoryTapped: (() -> Void)?
+    
+    var delegate: CustomViewCellDelegate?
     
     @IBOutlet weak var CategoryText: UILabel!
     @IBOutlet weak var CategoryImage: RoundedImageView!
@@ -23,6 +30,7 @@ class CategoryTableViewCell: UITableViewCell {
         animation.springLabel(label: CategoryText)
         animation.springLabel(label: isComplete)
         animation.springLabel(label: CategoryScore)
+        delegate?.didElementClick()
     }
     
 }

@@ -287,6 +287,8 @@
 		8288F09D2872662400C6A182 /* chess8.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 8288F0932872662400C6A182 /* chess8.jpeg */; };
 		8288F09E2872662400C6A182 /* chess5.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 8288F0942872662400C6A182 /* chess5.jpeg */; };
 		8288F09F2872662400C6A182 /* chess10.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 8288F0952872662400C6A182 /* chess10.jpeg */; };
+		828E4B43293FD2EC002A55B1 /* PlayerDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 828E4B42293FD2EC002A55B1 /* PlayerDetailViewController.swift */; };
+		828E4B4D29408FC2002A55B1 /* CategoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 828E4B4C29408FC2002A55B1 /* CategoryTableViewCell.xib */; };
 		828F0DCF27C82CA10016D337 /* PlayerBoardTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 828F0DCE27C82CA10016D337 /* PlayerBoardTableViewController.swift */; };
 		828F0DD127C82D4C0016D337 /* PlayerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 828F0DD027C82D4C0016D337 /* PlayerTableViewCell.swift */; };
 		82900D632801AB9D00742925 /* MusicTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82900D622801AB9D00742925 /* MusicTableViewCell.swift */; };
@@ -614,7 +616,7 @@
 		820C62A727BBDAC4004894FA /* QuizHistory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizHistory.swift; sourceTree = "<group>"; };
 		820C62AD27BC22AA004894FA /* QuizPlanets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizPlanets.swift; sourceTree = "<group>"; };
 		820D303A28F340710031CFCD /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
-		820DE930293CE40700103D55 /* QuizCategoryDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizCategoryDetailViewController.swift; sourceTree = "<group>"; };
+		820DE930293CE40700103D55 /* QuizCategoryDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = QuizCategoryDetailViewController.swift; path = "../New Group1/QuizCategoryDetailViewController.swift"; sourceTree = "<group>"; };
 		821120E62822EC4D009C2801 /* PauseTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PauseTableViewController.swift; sourceTree = "<group>"; };
 		821120E82822EE5E009C2801 /* CurrentCategoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentCategoryTableViewCell.swift; sourceTree = "<group>"; };
 		8213BF7027D6AAC800D07512 /* QuizPhysics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizPhysics.swift; sourceTree = "<group>"; };
@@ -724,8 +726,8 @@
 		8243F16427C25A1200CD9CE4 /* TaskModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskModel.swift; sourceTree = "<group>"; };
 		8243F16827C2617C00CD9CE4 /* QuizBaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizBaseViewModel.swift; sourceTree = "<group>"; };
 		8243F16A27C266F800CD9CE4 /* BaseQuizViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseQuizViewController.swift; sourceTree = "<group>"; };
-		8243F16C27C27A9300CD9CE4 /* TasksTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksTableViewController.swift; sourceTree = "<group>"; };
-		8243F16E27C2841B00CD9CE4 /* TasksTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksTableViewCell.swift; sourceTree = "<group>"; };
+		8243F16C27C27A9300CD9CE4 /* TasksTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TasksTableViewController.swift; path = "../New Group1/TasksTableViewController.swift"; sourceTree = "<group>"; };
+		8243F16E27C2841B00CD9CE4 /* TasksTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TasksTableViewCell.swift; path = ../TasksTableViewCell.swift; sourceTree = "<group>"; };
 		824419B5286E531900203DBA /* underwater19.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = underwater19.jpeg; sourceTree = "<group>"; };
 		824419B6286E531900203DBA /* underwater20.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = underwater20.jpeg; sourceTree = "<group>"; };
 		824419B9286E54CE00203DBA /* underwater music.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "underwater music.mp3"; sourceTree = "<group>"; };
@@ -876,6 +878,8 @@
 		8288F0932872662400C6A182 /* chess8.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = chess8.jpeg; sourceTree = "<group>"; };
 		8288F0942872662400C6A182 /* chess5.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = chess5.jpeg; sourceTree = "<group>"; };
 		8288F0952872662400C6A182 /* chess10.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = chess10.jpeg; sourceTree = "<group>"; };
+		828E4B42293FD2EC002A55B1 /* PlayerDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerDetailViewController.swift; sourceTree = "<group>"; };
+		828E4B4C29408FC2002A55B1 /* CategoryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryTableViewCell.xib; sourceTree = "<group>"; };
 		828F0DCE27C82CA10016D337 /* PlayerBoardTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerBoardTableViewController.swift; sourceTree = "<group>"; };
 		828F0DD027C82D4C0016D337 /* PlayerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerTableViewCell.swift; sourceTree = "<group>"; };
 		82900D622801AB9D00742925 /* MusicTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicTableViewCell.swift; sourceTree = "<group>"; };
@@ -971,8 +975,8 @@
 		82A9796D27F8CB2C001EBF1C /* QuizLiterature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizLiterature.swift; sourceTree = "<group>"; };
 		82AFAF6727FA3C25001B04A0 /* ExitTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExitTableViewCell.swift; sourceTree = "<group>"; };
 		82B760E927CA75E800540E0F /* QuizModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizModel.swift; sourceTree = "<group>"; };
-		82B760EE27CA9C2E00540E0F /* CategoryTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryTableViewController.swift; sourceTree = "<group>"; };
-		82B760F427CAA04D00540E0F /* CategoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryTableViewCell.swift; sourceTree = "<group>"; };
+		82B760EE27CA9C2E00540E0F /* CategoryTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CategoryTableViewController.swift; path = "../New Group1/CategoryTableViewController.swift"; sourceTree = "<group>"; };
+		82B760F427CAA04D00540E0F /* CategoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CategoryTableViewCell.swift; path = "../New Group/CategoryTableViewCell.swift"; sourceTree = "<group>"; };
 		82B760F627CAA13500540E0F /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
 		82BDEB02283C630000B1AD7F /* literature19.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = literature19.jpeg; sourceTree = "<group>"; };
 		82BDEB03283C630000B1AD7F /* literature14.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = literature14.jpeg; sourceTree = "<group>"; };
@@ -991,7 +995,7 @@
 		82CBE7E5287093C50045616B /* NewsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsTableViewController.swift; sourceTree = "<group>"; };
 		82CBE7E6287093C50045616B /* NewsListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsListViewModel.swift; sourceTree = "<group>"; };
 		82CBE7E7287093C50045616B /* NewsModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsModel.swift; sourceTree = "<group>"; };
-		82CBE7E8287093C50045616B /* NewsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsTableViewCell.swift; sourceTree = "<group>"; };
+		82CBE7E8287093C50045616B /* NewsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NewsTableViewCell.swift; path = "../New Group/NewsTableViewCell.swift"; sourceTree = "<group>"; };
 		82CBE7F82870A8F30045616B /* CategoriesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesViewModel.swift; sourceTree = "<group>"; };
 		82CBE7FA2870A94E0045616B /* CategoriesTableViewCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesTableViewCellModel.swift; sourceTree = "<group>"; };
 		82CBE8022870D4B40045616B /* TasksViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksViewModel.swift; sourceTree = "<group>"; };
@@ -1763,6 +1767,74 @@
 			path = Chess;
 			sourceTree = "<group>";
 		};
+		828E4B44293FD557002A55B1 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				828F0DD027C82D4C0016D337 /* PlayerTableViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		828E4B45293FD559002A55B1 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				828F0DCE27C82CA10016D337 /* PlayerBoardTableViewController.swift */,
+				828E4B42293FD2EC002A55B1 /* PlayerDetailViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		828E4B46293FD636002A55B1 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				82CBE7E8287093C50045616B /* NewsTableViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		828E4B47293FD638002A55B1 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				82CBE7E5287093C50045616B /* NewsTableViewController.swift */,
+				82251C33287E661F00723057 /* URLViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		828E4B48293FD687002A55B1 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				8243F16E27C2841B00CD9CE4 /* TasksTableViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		828E4B49293FD689002A55B1 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				8243F16C27C27A9300CD9CE4 /* TasksTableViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		828E4B4A293FD6B5002A55B1 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				82B760F427CAA04D00540E0F /* CategoryTableViewCell.swift */,
+				828E4B4C29408FC2002A55B1 /* CategoryTableViewCell.xib */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		828E4B4B293FD6B9002A55B1 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				82B760EE27CA9C2E00540E0F /* CategoryTableViewController.swift */,
+				820DE930293CE40700103D55 /* QuizCategoryDetailViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
 		8290FCA327FCC15B00E05DDA /* TabBar MVC */ = {
 			isa = PBXGroup;
 			children = (
@@ -2163,9 +2235,8 @@
 		82CBE7EE287093DA0045616B /* View */ = {
 			isa = PBXGroup;
 			children = (
-				82CBE7E5287093C50045616B /* NewsTableViewController.swift */,
-				82CBE7E8287093C50045616B /* NewsTableViewCell.swift */,
-				82251C33287E661F00723057 /* URLViewController.swift */,
+				828E4B47293FD638002A55B1 /* ViewControllers */,
+				828E4B46293FD636002A55B1 /* Cells */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -2200,9 +2271,8 @@
 		82CBE7F62870A8720045616B /* View */ = {
 			isa = PBXGroup;
 			children = (
-				82B760EE27CA9C2E00540E0F /* CategoryTableViewController.swift */,
-				82B760F427CAA04D00540E0F /* CategoryTableViewCell.swift */,
-				820DE930293CE40700103D55 /* QuizCategoryDetailViewController.swift */,
+				828E4B4B293FD6B9002A55B1 /* ViewControllers */,
+				828E4B4A293FD6B5002A55B1 /* Cells */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -2245,8 +2315,8 @@
 		82CBE8012870D4530045616B /* View */ = {
 			isa = PBXGroup;
 			children = (
-				8243F16C27C27A9300CD9CE4 /* TasksTableViewController.swift */,
-				8243F16E27C2841B00CD9CE4 /* TasksTableViewCell.swift */,
+				828E4B49293FD689002A55B1 /* ViewControllers */,
+				828E4B48293FD687002A55B1 /* Cells */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -2264,8 +2334,8 @@
 		82CBE8082870DE350045616B /* View */ = {
 			isa = PBXGroup;
 			children = (
-				828F0DCE27C82CA10016D337 /* PlayerBoardTableViewController.swift */,
-				828F0DD027C82D4C0016D337 /* PlayerTableViewCell.swift */,
+				828E4B45293FD559002A55B1 /* ViewControllers */,
+				828E4B44293FD557002A55B1 /* Cells */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -2662,6 +2732,7 @@
 				82EA1EF3286BCC1E00E49D0F /* planets1.jpeg in Resources */,
 				827F8C1027E81BDF00F6D7B3 /* physics8.jpeg in Resources */,
 				82848D3F281C77030068A4AE /* chemistry16.jpeg in Resources */,
+				828E4B4D29408FC2002A55B1 /* CategoryTableViewCell.xib in Resources */,
 				82319E1128E8D95A0053CEF5 /* halloween2.jpeg in Resources */,
 				82EA1ED9286BCBF400E49D0F /* timer.png in Resources */,
 				828116A1293A92E000AA7C8E /* newyear13.jpeg in Resources */,
@@ -3098,6 +3169,7 @@
 				82A01BFD27C51CFF00DCBD6F /* RoundedImageView.swift in Sources */,
 				82C2B5B327BD2F8800C66946 /* AnimationsClass.swift in Sources */,
 				82B760F727CAA13500540E0F /* Question.swift in Sources */,
+				828E4B43293FD2EC002A55B1 /* PlayerDetailViewController.swift in Sources */,
 				8243F16927C2617C00CD9CE4 /* QuizBaseViewModel.swift in Sources */,
 				82CD6BF428885DFF00716443 /* QuizSegmentedViewController.swift in Sources */,
 				826E129227FF509800465E16 /* SwiftModel.swift in Sources */,

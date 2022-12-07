@@ -40,13 +40,13 @@ class QuizResultViewModel {
                     let data = document.data()
                     if let category = document["lastquiz"] as? [String: Any] {
                         let CorrectAnswersCounter = category["CorrectAnswersCounter"] as? Int
-                        let image = category["image"] as? String
+                        let icon = category["icon"] as? String
                         let sound = category["sound"] as? String
                         let background = category["background"] as? String
                         let bestscore = category["bestscore"] as? Int ?? 0
                         let category = category["category"] as? String ?? ""
                         
-                        let result = QuizResult(categoryName: category, icon: image ?? "", bestscore: bestscore, CorrectAnswersCounter: CorrectAnswersCounter ?? 0, background: background ?? "", sound: sound ?? "")
+                        let result = QuizResult(categoryName: category, icon: icon ?? "", bestscore: bestscore, CorrectAnswersCounter: CorrectAnswersCounter ?? 0, background: background ?? "", sound: sound ?? "")
                         
 //                        self.ScoreLabel.text = ("счет: \(String(bestscore))/100 баллов")
 //                        self.CorrectAnswers.text = "Правильные ответы: \(CorrectAnswersCounter ?? 0)/20"

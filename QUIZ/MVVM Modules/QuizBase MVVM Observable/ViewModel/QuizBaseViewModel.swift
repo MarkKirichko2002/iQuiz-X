@@ -34,6 +34,8 @@ class QuizBaseViewModel {
     var sound = ""
     var quiz: QuizModel?
     
+    let date = Date()
+    
     enum RemoteCommand: String {
         case none
         case one = "FIVE-UB-RHand"
@@ -144,6 +146,13 @@ class QuizBaseViewModel {
         self.viewController?.present(picker, animated: true)
     }
     
+    func GetCurrentDate()-> String {
+        var currentDate = ""
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd/MM/yyyy"
+        currentDate = dateFormatter.string(from: date)
+        return currentDate
+    }
     
     func SkipQuestion() {
         
@@ -1535,16 +1544,16 @@ class QuizBaseViewModel {
                 "complete": true,
                 "category": category,
                 "Id": base?.checkid() ?? 0,
-                "image": image,
+                "icon": image,
                 "background": background,
-                "sound": quiz?.sound ?? ""
+                "sound": quiz?.sound ?? "",
+                "date": GetCurrentDate()
             ]
         ]) { err in
             if let err = err {
                 print("Error writing document: \(err)")
             } else {
                 print("success")
-                //print(ref)
             }
         }
     }
@@ -1560,7 +1569,8 @@ class QuizBaseViewModel {
                     "CorrectAnswersCounter": CorrectAnswersCounter,
                     "UnCorrectAnswersCounter": UnCorrectAnswersCounter,
                     "complete": true,
-                    "category": category
+                    "category": category,
+                    "date": GetCurrentDate()
                 ]
             ]) { err in
                 if let err = err {
