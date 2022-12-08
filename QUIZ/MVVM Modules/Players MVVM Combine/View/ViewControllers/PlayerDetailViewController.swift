@@ -17,9 +17,7 @@ class PlayerDetailViewController: UIViewController {
     var PlayerEmail = UILabel()
     var PlayerScore = UILabel()
     var table = UITableView()
-    
     var playersViewModel = PlayersViewModel()
-  
     var player: Player?
     
     override func viewDidLoad() {
@@ -30,6 +28,11 @@ class PlayerDetailViewController: UIViewController {
         table.register(UINib(nibName: CategoryTableViewCell.identifier, bundle: nil), forCellReuseIdentifier: CategoryTableViewCell.identifier)
         SetUpView()
         SetUpConstraints()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        playersViewModel.PlayCurrentCategoryMusic()
     }
     
     func SetUpView() {

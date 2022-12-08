@@ -13,6 +13,7 @@ struct Player {
     var email: String
     var CorrectAnswersCounter: Int
     var category: String
+    var categoryMusic: String
     var image: String
     let background: String
     let sound: String

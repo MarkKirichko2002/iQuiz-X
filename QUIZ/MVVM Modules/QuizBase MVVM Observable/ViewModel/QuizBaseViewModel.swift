@@ -1543,6 +1543,7 @@ class QuizBaseViewModel {
                 "UnCorrectAnswersCounter": UnCorrectAnswersCounter,
                 "complete": true,
                 "category": category,
+                "music": quiz?.music ?? "",
                 "Id": base?.checkid() ?? 0,
                 "icon": image,
                 "background": background,
@@ -1570,6 +1571,7 @@ class QuizBaseViewModel {
                     "UnCorrectAnswersCounter": UnCorrectAnswersCounter,
                     "complete": true,
                     "category": category,
+                    "music": quiz?.music ?? "",
                     "date": GetCurrentDate()
                 ]
             ]) { err in
