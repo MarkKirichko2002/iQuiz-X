@@ -14,7 +14,7 @@ class VoicePasswordTableViewCell: UITableViewCell {
     
     let mycontext: LAContext = LAContext()
     
-    var auth = FBAuth()
+    var auth = FBManager()
     
     var biometric = ""
     

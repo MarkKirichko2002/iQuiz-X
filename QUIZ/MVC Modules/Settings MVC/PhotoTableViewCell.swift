@@ -13,7 +13,7 @@ class PhotoTableViewCell: UITableViewCell {
     
     static let identifier = "PhotoTableViewCell"
     
-    var auth = FBAuth()
+    var auth = FBManager()
     
     @IBOutlet weak var SettingsImage: UIImageView!
     

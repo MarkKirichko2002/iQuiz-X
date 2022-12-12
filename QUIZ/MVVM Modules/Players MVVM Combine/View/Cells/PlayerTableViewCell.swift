@@ -11,11 +11,19 @@ import SDWebImage
 class PlayerTableViewCell: UITableViewCell {
     
     static let identifier = "PlayerTableViewCell"
+    var animation = AnimationClass()
     
+    @IBOutlet weak var PlayerImage: RoundedImageView!
     @IBOutlet weak var UserName: UILabel!
     @IBOutlet weak var UserEmail: UILabel!
-    @IBOutlet weak var PlayerImage: RoundedImageView!
     @IBOutlet weak var PlayerBestScore: UILabel!
+    
+    func didSelect(indexPath: IndexPath) {
+        animation.springImage(image: PlayerImage)
+        animation.springLabel(label: UserName)
+        animation.springLabel(label: UserEmail)
+        animation.springLabel(label: PlayerBestScore)
+    }
     
     func configure(players: Player) {
         PlayerImage.sd_setImage(with: URL(string: players.image))

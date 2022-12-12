@@ -28,9 +28,7 @@ class QuizCategoryDetailViewController: UIViewController {
         CategoryName.text = category?.name
         CategoryName.textColor = .white
         PlayButton.tintColor = .white
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-            self.player.Sound(resource: self.category?.music ?? "")
-        }
+        self.player.Sound(resource: self.category?.music ?? "")
     }
     
     @IBAction func PlayQuiz() {

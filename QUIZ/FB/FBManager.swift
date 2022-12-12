@@ -1,5 +1,5 @@
 //
-//  FBAuth.swift
+//  FBManager.swift
 //  QUIZ
 //
 //  Created by Марк Киричко on 03.04.2022.
@@ -11,7 +11,7 @@ import Firebase
 import SDWebImage
 import SCLAlertView
 
-class FBAuth {
+class FBManager {
     
     let defaults = UserDefaults.standard
     let db = Firestore.firestore()

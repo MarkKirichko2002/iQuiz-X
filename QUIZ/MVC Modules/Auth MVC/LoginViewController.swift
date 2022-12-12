@@ -31,7 +31,7 @@ class LoginViewController: UIViewController {
     
     let mycontext: LAContext = LAContext()
     
-    var auth = FBAuth()
+    var auth = FBManager()
     var UnlockVoiceFailsCounter = 0
     var UnlockBiometricFailsCounter = 0
     

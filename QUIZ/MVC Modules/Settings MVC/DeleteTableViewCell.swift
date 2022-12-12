@@ -12,7 +12,7 @@ class DeleteTableViewCell: UITableViewCell {
 
     static let identifier = "DeleteTableViewCell"
     
-    var auth = FBAuth()
+    var auth = FBManager()
     
     override func awakeFromNib() {
         super.awakeFromNib()

@@ -54,7 +54,20 @@ class PlayerBoardTableViewController: UITableViewController {
         return playersViewModel.players.count
     }
     
-    override func tableView( _ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        player.Sound(resource: playersViewModel.players[indexPath.row].sound)
+        
+        if let cell = tableView.cellForRow(at: indexPath) as? PlayerTableViewCell {
+               cell.didSelect(indexPath: indexPath)
+        }
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
+            self.GoToDetail(indexPath: indexPath)
+        }
+    }
+    
+    func GoToDetail(indexPath: IndexPath) {
         if let vc = storyboard?.instantiateViewController(withIdentifier: "PlayerDetailViewController") as? PlayerDetailViewController {
             vc.player = playersViewModel.players[indexPath.row]
             self.navigationController?.pushViewController(vc, animated: true)

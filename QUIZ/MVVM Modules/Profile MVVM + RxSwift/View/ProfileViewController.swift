@@ -11,22 +11,26 @@ import RxSwift
 import RxCocoa
 
 class ProfileViewController: UIViewController {
-    
+    var animation = AnimationClass()
+    var profileViewModel = ProfileViewModel()
+    var disposeBag = DisposeBag()
     @IBOutlet weak var ProfileImage: RoundedImageView!
     @IBOutlet weak var EmailLabel: UILabel!
     @IBOutlet weak var NameLabel: UILabel!
     @IBOutlet weak var DateLabel: UILabel!
-    
     @IBOutlet weak var LastQuizCategoryIcon: RoundedImageView!
     @IBOutlet weak var LastQuizCategoryName: UILabel!
     @IBOutlet weak var BestScore: UILabel!
     @IBOutlet weak var CorrectAnswersCountLabel: UILabel!
+    @IBOutlet weak var SettingsButton: UIButton!
     
-    @IBOutlet weak var SettingsButton: UIBarButtonItem!
-    
-    var profileViewModel = ProfileViewModel()
-    var disposeBag = DisposeBag()
-    
+    @IBAction func ShowSettings() {
+        animation.springButton(button: SettingsButton)
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+            self.performSegue(withIdentifier: "showSettings", sender: nil)
+        }
+    }
+        
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         DispatchQueue.main.async {
@@ -47,7 +51,6 @@ class ProfileViewController: UIViewController {
             self.NameLabel.text = user.name
             self.EmailLabel.text = user.email
             self.DateLabel.text = user.categoryDate
-            
             // информация о последней викторине
             self.LastQuizCategoryIcon.image = UIImage(named: user.icon)
             self.LastQuizCategoryIcon.sound = user.categorysound

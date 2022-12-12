@@ -13,8 +13,8 @@ class PlayersViewModel {
     @Published var players = [Player]()
     
     let db = Firestore.firestore()
-    
     var player: Player?
+    var audioPlayer = SoundClass()
     
     var categories = [QuizModel(name: "планеты", image: "planets.jpeg", base: QuizPlanets(), background: "earth.background.jpeg", complete: false, id: 1, score: 0, sound: "space.wav", music: "space music.mp3"), QuizModel(name: "история", image: "history.jpeg", base: QuizHistory(), background: "history.background.jpeg", complete: false, id: 2, score: 0, sound: "history.wav", music: "history music.mp3"), QuizModel(name: "анатомия", image: "anatomy.jpeg", base: QuizAnatomy(), background: "anatomy.background.jpeg", complete: false, id: 3, score: 0, sound: "anatomy.mp3", music: "anatomy music.mp3"), QuizModel(name: "спорт", image: "sport.jpeg", base: QuizSport(), background: "sport.background.jpeg", complete: false, id: 4, score: 0, sound: "sport.wav", music: "sport music.mp3"), QuizModel(name: "игры", image: "games.jpeg", base: QuizGames(), background: "games.background.jpeg", complete: false, id: 5, score: 0, sound: "games.mp3", music: "games music.mp3"), QuizModel(name: "IQ", image: "IQ.jpeg", base: QuizIQ(), background: "IQ.background.jpeg", complete: false, id: 6, score: 0, sound: "IQ.mp3", music: "IQ music.mp3"), QuizModel(name: "экономика", image: "economy.jpeg", base: QuizEconomy(), background: "economy.background.jpeg", complete: false, id: 7, score: 0, sound: "economics.mp3", music: "economy music.mp3"), QuizModel(name: "география", image: "geography.jpeg", base: QuizGeography(), background: "geography.background.jpeg", complete: false, id: 8, score: 0, sound: "geography.mp3", music: "geography music.mp3"), QuizModel(name: "экология", image: "ecology.jpeg", base: QuizEcology(), background: "ecology.background.jpeg", complete: false, id: 9, score: 0, sound: "ecology.wav", music: "ecology music.mp3"), QuizModel(name: "физика", image: "physics.jpeg", base: QuizPhysics(), background: "physics.background.jpeg", complete: false, id: 10, score: 0, sound: "physics.mp3", music: "physics music.mp3"), QuizModel(name: "химия", image: "chemistry.jpeg", base: QuizChemistry(), background: "chemistry.background.jpeg", complete: false, id: 11, score: 0, sound: "chemistry.mp3", music: "chemistry music.mp3"), QuizModel(name: "информатика", image: "informatics.jpeg", base: QuizInformatics(), background: "informatics.background.jpeg", complete: false, id: 12, score: 0, sound: "informatics.mp3", music: "informatics music.mp3"), QuizModel(name: "литература", image: "literature.jpeg", base: QuizLiterature(), background: "literature.background.jpeg", complete: false, id: 13, score: 0, sound: "literature.mp3", music: "literature music.mp3"), QuizModel(name: "ПДД", image: "drive.jpeg", base: QuizRoadTraffic(), background: "drive.background.jpeg", complete: false, id: 14, score: 0, sound: "roadtraffic.mp3", music: "drive music.mp3"), QuizModel(name: "Swift", image: "swift.jpeg", base: QuizSwift(), background:"swift.background.jpeg", complete: false, id: 15, score: 0, sound: "swift.mp3", music: "Swift music.mp3"), QuizModel(name: "подводный мир", image: "underwater.png", base: QuizUnderwater(), background: "underwater.background.jpeg", complete: false, id: 16, score: 0, sound: "underwater.wav", music: "underwater music.mp3"), QuizModel(name: "шахматы", image: "chess.png", base: QuizChess(), background: "chess.background.jpeg", complete: false, id: 17, score: 0, sound: "chess.mp3", music: "chess music.mp3"), QuizModel(name: "хэллоуин", image: "halloween.png", base: QuizHalloween(), background: "halloween.background.jpeg", complete: false, id: 18, score: 0, sound: "halloween.wav", music: "halloween music.mp3"), QuizModel(name: "новый год", image: "newyear.png", base: QuizNewYear(), background: "newyear.background.jpeg", complete: false, id: 19, score: 0, sound: "newyear.mp3", music: "newyear music.mp3")]
     
@@ -124,7 +124,10 @@ class PlayersViewModel {
         default:
             break
         }
-        
+    }
+    
+    func PlayCurrentCategoryMusic() {
+        audioPlayer.Sound(resource: player?.categoryMusic ?? "")
     }
     
     func GetPlayers() {
@@ -139,12 +142,13 @@ class PlayersViewModel {
                     
                     if let category = document["lastquiz"] as? [String: Any] {
                         let sound = category["sound"] as? String ?? ""
+                        let music = category["music"] as? String ?? ""
                         let CorrectAnswersCounter = category["CorrectAnswersCounter"] as? Int
                         let background = category["background"] as? String
                         let bestscore = category["bestscore"] as? Int ?? 0
                         let category = category["category"] as? String ?? ""
                         
-                        self.players.append(Player(name: name ?? "", counter: bestscore , email: email ?? "", CorrectAnswersCounter: CorrectAnswersCounter ?? 0, category: category , image: photo ?? "", background: background ?? "", sound: sound))
+                        self.players.append(Player(name: name ?? "", counter: bestscore , email: email ?? "", CorrectAnswersCounter: CorrectAnswersCounter ?? 0, category: category, categoryMusic: music , image: photo ?? "", background: background ?? "", sound: sound))
                         print(self.players.count)
                     }
                     self.players.sort(by: { $0.counter > $1.counter })

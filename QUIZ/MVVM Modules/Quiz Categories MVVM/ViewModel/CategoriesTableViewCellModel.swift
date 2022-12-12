@@ -44,10 +44,11 @@ class CategoriesTableViewCellModel {
         }
     }
     
-    
-    func configure(_ category: QuizModel, CategoryImage: UIImageView, CategoryText: UILabel, isComplete: UILabel, CategoryScore: UILabel, background: UIView)  {
+    func configure(_ category: QuizModel, CategoryImage: RoundedImageView, CategoryText: UILabel, isComplete: UILabel, CategoryScore: UILabel, background: UIView)  {
         background.backgroundColor = UIColor(patternImage: UIImage(named: category.background)!)
         CategoryImage.image = UIImage(named: category.image)
+        CategoryImage.sound = category.sound
+        CategoryImage.color = .white
         CategoryText.text = category.name
         CategoryScore.text = "\(category.score)/100"
         
