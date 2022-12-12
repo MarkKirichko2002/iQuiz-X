@@ -23,7 +23,7 @@ class ViewController: UITabBarController {
     var base = QuizBaseViewModel()
     var animation = AnimationClass()
     let today = Date()
-    var fb = FBAuth()
+    var fb = FBManager()
     var sound = ""
     
     override func viewDidLoad() {

@@ -88,8 +88,6 @@ final class CategoryTableViewController: UITableViewController, CustomViewCellDe
         let cell = tableView.dequeueReusableCell(withIdentifier: CategoryTableViewCell.identifier, for: indexPath) as! CategoryTableViewCell
         cell.delegate = self
         cellmodel.configure(categories.categories[indexPath.section].categories[indexPath.row], CategoryImage: cell.CategoryImage, CategoryText: cell.CategoryText, isComplete: cell.isComplete, CategoryScore: cell.CategoryScore, background: cell)
-        cell.CategoryImage.sound = categories.categories[indexPath.section].categories[indexPath.row].sound
-        cell.CategoryImage.color = .white
         
         return cell
     }

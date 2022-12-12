@@ -15,7 +15,7 @@ class EditProfileTableViewCell: UITableViewCell {
     @IBOutlet weak var EmailLabel: UILabel!
     @IBOutlet weak var PasswordLabel: UILabel!
     
-    var auth = FBAuth()
+    var auth = FBManager()
     
     override func awakeFromNib() {
         super.awakeFromNib()

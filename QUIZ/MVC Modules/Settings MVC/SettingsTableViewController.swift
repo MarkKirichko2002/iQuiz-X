@@ -13,7 +13,7 @@ final class SettingsTableViewController: UITableViewController, UIImagePickerCon
     
     var urlString = ""
     
-    var auth = FBAuth()
+    var auth = FBManager()
     
     let db = Firestore.firestore()
     

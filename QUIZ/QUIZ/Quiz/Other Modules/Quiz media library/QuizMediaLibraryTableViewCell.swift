@@ -22,6 +22,7 @@ class QuizMediaLibraryTableViewCell: UITableViewCell {
     func configure(medialibrary: QuizMediaLibraryModel) {
         Icon.image = UIImage(named: medialibrary.icon)
         Icon.sound = medialibrary.sound
+        Icon.color = .white
         Title.text = medialibrary.title
         Title.textColor = .white
         music = medialibrary.music
