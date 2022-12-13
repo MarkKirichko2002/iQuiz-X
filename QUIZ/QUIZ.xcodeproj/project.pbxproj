@@ -430,6 +430,8 @@
 		82CE537C28E9EC4600D44A6E /* anatomy.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 82CE537B28E9EC4600D44A6E /* anatomy.mp3 */; };
 		82CE538C28EA002300D44A6E /* physics.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 82CE538B28EA002300D44A6E /* physics.mp3 */; };
 		82CF0D3A28A583D9006B53F4 /* QuizStartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82CF0D3928A583D9006B53F4 /* QuizStartViewController.swift */; };
+		82D67D662948BDDE0097FD30 /* gear.png in Resources */ = {isa = PBXBuildFile; fileRef = 82D67D652948BDDD0097FD30 /* gear.png */; };
+		82D67D682948C0530097FD30 /* settings.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 82D67D672948C0530097FD30 /* settings.mp3 */; };
 		82DBCA2728303EDE009DD1EE /* EditProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82DBCA2628303EDE009DD1EE /* EditProfileTableViewCell.swift */; };
 		82DC6E1C27E65E790077D107 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82DC6E1B27E65E790077D107 /* StartViewController.swift */; };
 		82DF98EC27BCEB4A00548B38 /* QuizAnatomy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82DF98EB27BCEB4A00548B38 /* QuizAnatomy.swift */; };
@@ -1022,6 +1024,8 @@
 		82CE537B28E9EC4600D44A6E /* anatomy.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = anatomy.mp3; sourceTree = "<group>"; };
 		82CE538B28EA002300D44A6E /* physics.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = physics.mp3; path = "../../../../quiz categories sounds/physics.mp3"; sourceTree = "<group>"; };
 		82CF0D3928A583D9006B53F4 /* QuizStartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizStartViewController.swift; sourceTree = "<group>"; };
+		82D67D652948BDDD0097FD30 /* gear.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = gear.png; path = ../../../../../Downloads/gear.png; sourceTree = "<group>"; };
+		82D67D672948C0530097FD30 /* settings.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = settings.mp3; path = ../../../../../Downloads/settings.mp3; sourceTree = "<group>"; };
 		82DBCA2628303EDE009DD1EE /* EditProfileTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileTableViewCell.swift; sourceTree = "<group>"; };
 		82DC6E1B27E65E790077D107 /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
 		82DF98EB27BCEB4A00548B38 /* QuizAnatomy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizAnatomy.swift; sourceTree = "<group>"; };
@@ -1554,6 +1558,7 @@
 				82EA02A6282409FF008A0240 /* retry.png */,
 				82C18EED2832ECEA00348599 /* key.png */,
 				821AC778289DC12400D04D55 /* trophy.png */,
+				82D67D652948BDDD0097FD30 /* gear.png */,
 			);
 			path = "other images";
 			sourceTree = "<group>";
@@ -2442,6 +2447,7 @@
 				82848D58281DACAA0068A4AE /* victory_sound.mp3 */,
 				82848D4F281DACA90068A4AE /* fail2.mp3 */,
 				82E8C49B29016E9D005FD213 /* broken light bulb.mp3 */,
+				82D67D672948C0530097FD30 /* settings.mp3 */,
 			);
 			path = "other sounds";
 			sourceTree = "<group>";
@@ -2796,6 +2802,7 @@
 				8207E24C286E5CC200CB017A /* underwater18.jpeg in Resources */,
 				8243A61E2820810E00427553 /* physics13.jpeg in Resources */,
 				8294091127CECB9200AFF603 /* games6.jpeg in Resources */,
+				82D67D682948C0530097FD30 /* settings.mp3 in Resources */,
 				8294093727CECD6100AFF603 /* economy1.jpeg in Resources */,
 				82848D05281C6F4C0068A4AE /* literature.jpeg in Resources */,
 				82BDEB0C283C630100B1AD7F /* literature19.jpeg in Resources */,
@@ -2884,6 +2891,7 @@
 				82848D27281C6F5B0068A4AE /* drive.background.jpeg in Resources */,
 				82EA1ED1286BCBD100E49D0F /* gesture.png in Resources */,
 				82E4C6E5282F025900379856 /* roadtraffic19.jpeg in Resources */,
+				82D67D662948BDDE0097FD30 /* gear.png in Resources */,
 				82CE538C28EA002300D44A6E /* physics.mp3 in Resources */,
 				829408D027CEC93100AFF603 /* history4.jpeg in Resources */,
 				8281169F293A90BE00AA7C8E /* newyear12.jpeg in Resources */,

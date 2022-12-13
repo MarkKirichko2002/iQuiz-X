@@ -394,7 +394,20 @@ class ViewController: UITabBarController {
                 DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
                     self.base.OpenCamera()
                 }
+            
+            // показать экран настроек
+            case _ where self.text.contains("Настрой") || self.text.contains("настрой"):
+                self.icon = "gear.png"
+                self.button.setImage(UIImage(named: self.icon), for: .normal)
+                self.animation.springButton(button: self.button)
+                self.player.Sound(resource: "settings.mp3")
+                DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                    self.performSegue(withIdentifier: "showSettings", sender: nil)
+                }
                
+            case _ where self.text.contains("Закр") || self.text.contains("закр"):
+                self.dismiss(animated: true)
+                
             // выключить распознавание речи
             case _ where self.text.contains("Стоп") || self.text.contains("стоп"):
                 self.button.sendActions(for: .touchUpInside)
