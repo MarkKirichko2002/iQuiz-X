@@ -421,7 +421,6 @@
 		82CD6BF428885DFF00716443 /* QuizSegmentedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82CD6BF328885DFF00716443 /* QuizSegmentedViewController.swift */; };
 		82CE536528E9D4FC00D44A6E /* history.wav in Resources */ = {isa = PBXBuildFile; fileRef = 82CE535F28E9D4FB00D44A6E /* history.wav */; };
 		82CE536628E9D4FC00D44A6E /* economics.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 82CE536028E9D4FB00D44A6E /* economics.mp3 */; };
-		82CE536728E9D4FC00D44A6E /* sport.wav in Resources */ = {isa = PBXBuildFile; fileRef = 82CE536128E9D4FB00D44A6E /* sport.wav */; };
 		82CE536828E9D4FC00D44A6E /* literature.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 82CE536228E9D4FB00D44A6E /* literature.mp3 */; };
 		82CE536928E9D4FC00D44A6E /* halloween.wav in Resources */ = {isa = PBXBuildFile; fileRef = 82CE536328E9D4FB00D44A6E /* halloween.wav */; };
 		82CE536A28E9D4FC00D44A6E /* dice.wav in Resources */ = {isa = PBXBuildFile; fileRef = 82CE536428E9D4FC00D44A6E /* dice.wav */; };
@@ -432,6 +431,7 @@
 		82CF0D3A28A583D9006B53F4 /* QuizStartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82CF0D3928A583D9006B53F4 /* QuizStartViewController.swift */; };
 		82D67D662948BDDE0097FD30 /* gear.png in Resources */ = {isa = PBXBuildFile; fileRef = 82D67D652948BDDD0097FD30 /* gear.png */; };
 		82D67D682948C0530097FD30 /* settings.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 82D67D672948C0530097FD30 /* settings.mp3 */; };
+		82D67D6E2948E04B0097FD30 /* sport.wav in Resources */ = {isa = PBXBuildFile; fileRef = 82D67D6D2948E04B0097FD30 /* sport.wav */; };
 		82DBCA2728303EDE009DD1EE /* EditProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82DBCA2628303EDE009DD1EE /* EditProfileTableViewCell.swift */; };
 		82DC6E1C27E65E790077D107 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82DC6E1B27E65E790077D107 /* StartViewController.swift */; };
 		82DF98EC27BCEB4A00548B38 /* QuizAnatomy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82DF98EB27BCEB4A00548B38 /* QuizAnatomy.swift */; };
@@ -1015,7 +1015,6 @@
 		82CD6BF328885DFF00716443 /* QuizSegmentedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizSegmentedViewController.swift; sourceTree = "<group>"; };
 		82CE535F28E9D4FB00D44A6E /* history.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = history.wav; path = "../../../../quiz categories sounds/history.wav"; sourceTree = "<group>"; };
 		82CE536028E9D4FB00D44A6E /* economics.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = economics.mp3; path = "../../../../quiz categories sounds/economics.mp3"; sourceTree = "<group>"; };
-		82CE536128E9D4FB00D44A6E /* sport.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = sport.wav; path = "../../../../quiz categories sounds/sport.wav"; sourceTree = "<group>"; };
 		82CE536228E9D4FB00D44A6E /* literature.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = literature.mp3; path = "../../../../quiz categories sounds/literature.mp3"; sourceTree = "<group>"; };
 		82CE536328E9D4FB00D44A6E /* halloween.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = halloween.wav; path = "../../../../quiz categories sounds/halloween.wav"; sourceTree = "<group>"; };
 		82CE536428E9D4FC00D44A6E /* dice.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = dice.wav; path = "../../../../quiz categories sounds/dice.wav"; sourceTree = "<group>"; };
@@ -1026,6 +1025,7 @@
 		82CF0D3928A583D9006B53F4 /* QuizStartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizStartViewController.swift; sourceTree = "<group>"; };
 		82D67D652948BDDD0097FD30 /* gear.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = gear.png; path = ../../../../../Downloads/gear.png; sourceTree = "<group>"; };
 		82D67D672948C0530097FD30 /* settings.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = settings.mp3; path = ../../../../../Downloads/settings.mp3; sourceTree = "<group>"; };
+		82D67D6D2948E04B0097FD30 /* sport.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = sport.wav; sourceTree = "<group>"; };
 		82DBCA2628303EDE009DD1EE /* EditProfileTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileTableViewCell.swift; sourceTree = "<group>"; };
 		82DC6E1B27E65E790077D107 /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
 		82DF98EB27BCEB4A00548B38 /* QuizAnatomy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizAnatomy.swift; sourceTree = "<group>"; };
@@ -2377,7 +2377,7 @@
 				8286518728FEF93B004806D3 /* space.wav */,
 				82CE535F28E9D4FB00D44A6E /* history.wav */,
 				82CE537B28E9EC4600D44A6E /* anatomy.mp3 */,
-				82CE536128E9D4FB00D44A6E /* sport.wav */,
+				82D67D6D2948E04B0097FD30 /* sport.wav */,
 				82CE536D28E9DCCD00D44A6E /* games.mp3 */,
 				8286518928FEF947004806D3 /* roadtraffic.mp3 */,
 				8286518B28FEF952004806D3 /* IQ.mp3 */,
@@ -3003,12 +3003,12 @@
 				8243A6212820810E00427553 /* physics18.jpeg in Resources */,
 				82848D2F281C6F5B0068A4AE /* informatics.background.jpeg in Resources */,
 				82EA1FA4286BCD4200E49D0F /* history19.jpeg in Resources */,
+				82D67D6E2948E04B0097FD30 /* sport.wav in Resources */,
 				82848D45281C77030068A4AE /* chemistry17.jpeg in Resources */,
 				8244DCFD27E39D8500F5C59B /* informatics4.jpeg in Resources */,
 				82811691293A88DC00AA7C8E /* newyear4.jpeg in Resources */,
 				829408EA27CECA2F00AFF603 /* anatomy1.jpeg in Resources */,
 				8221391C2874E7960065A0C3 /* history music.mp3 in Resources */,
-				82CE536728E9D4FC00D44A6E /* sport.wav in Resources */,
 				82EA1F83286BCD0600E49D0F /* sport20.jpeg in Resources */,
 				82EA1F81286BCD0600E49D0F /* sport16.jpeg in Resources */,
 				82E4C6DE282F025900379856 /* roadtraffic15.jpeg in Resources */,
