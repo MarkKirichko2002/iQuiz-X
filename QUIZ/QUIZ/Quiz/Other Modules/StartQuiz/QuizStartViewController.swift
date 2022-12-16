@@ -36,6 +36,8 @@ class QuizStartViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        viewModel.view = self.view
+        viewModel.storyboard = self.storyboard
         view.backgroundColor = UIColor(patternImage: UIImage(named: category?.background ?? "")!)
         Icon.sound = category?.sound ?? "space.wav"
         Icon.image = UIImage(named: category?.image ?? "planets.jpeg")
@@ -47,7 +49,7 @@ class QuizStartViewController: UIViewController {
         TimerLabeL.textColor = .white
         timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(time), userInfo: nil, repeats: true)
         DispatchQueue.main.asyncAfter(deadline: .now() + 6) {
-            self.viewModel.goToQuize(quiz: self.base!, category: self.category!, storyboard: self.storyboard, view: self.view)
+            self.viewModel.goToQuize(quiz: self.base!, category: self.category!)
         }
     }
     

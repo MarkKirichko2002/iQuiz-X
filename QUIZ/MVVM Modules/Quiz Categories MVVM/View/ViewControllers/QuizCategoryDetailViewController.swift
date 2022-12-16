@@ -21,6 +21,8 @@ class QuizCategoryDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        categoriesViewModel.view = self.view
+        categoriesViewModel.storyboard = self.storyboard
         view?.backgroundColor = UIColor(patternImage: UIImage(named: category?.background ?? "")!)
         CategoryIcon.image = UIImage(named: category?.image ?? "")
         CategoryIcon.color = .white
@@ -35,7 +37,7 @@ class QuizCategoryDetailViewController: UIViewController {
         animation.springButton(button: self.PlayButton)
         player.StopSound(resource: category?.music ?? "")
         player.Sound(resource: category?.sound ?? "")
-        categoriesViewModel.GoToStart(quiz: category!.base, category: category!, storyboard: self.storyboard, view: self.view)
+        categoriesViewModel.GoToStart(quiz: category!.base, category: category!)
     }
     
 }
