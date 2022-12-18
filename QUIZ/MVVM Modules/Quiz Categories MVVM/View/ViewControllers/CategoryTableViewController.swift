@@ -9,14 +9,15 @@ import UIKit
 import SCLAlertView
 import Combine
 
-final class CategoryTableViewController: UITableViewController, CustomViewCellDelegate {
+final class CategoryTableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, CustomViewCellDelegate {
     
     @IBOutlet weak var InfoCategoriesButton: UIBarButtonItem!
-    
     var categoriesViewModel = CategoriesViewModel()
     var player = SoundClass()
     var delegate: CustomViewCellDelegate?
     var cancellation: Set<AnyCancellable> = []
+    var tableView = UITableView()
+    var refreshControl = UIRefreshControl()
     
     @IBAction func ShowCategoriesInfo() {
         player.Sound(resource: "future click sound.wav")
@@ -25,14 +26,34 @@ final class CategoryTableViewController: UITableViewController, CustomViewCellDe
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableView.addSubview(refreshControl)
+        refreshControl.addTarget(self, action: #selector(refresh), for: .valueChanged)
+        SetUpTable()
+        categoriesViewModel.view = self.view
+        categoriesViewModel.ShowLoading()
         categoriesViewModel.$categories.sink { [weak self] category in
             DispatchQueue.main.async {
                 self?.tableView.reloadData()
             }
         }.store(in: &cancellation)
-        self.categoriesViewModel.LoadResults()
         self.tableView.register(UINib(nibName: CategoryTableViewCell.identifier, bundle: nil), forCellReuseIdentifier: CategoryTableViewCell.identifier)
         navigationItem.title = "Категории (\(categoriesViewModel.categories.count))"
+    }
+    
+    @objc func refresh() {
+        DispatchQueue.main.async {
+            self.categoriesViewModel.categories = []
+            self.tableView.reloadData()
+            self.refreshControl.endRefreshing()
+        }
+        categoriesViewModel.ShowLoading()
+    }
+    
+    func SetUpTable() {
+        view.addSubview(tableView)
+        tableView.frame = view.bounds
+        tableView.delegate = self
+        tableView.dataSource = self
     }
     
     func didElementClick() {
@@ -41,20 +62,20 @@ final class CategoryTableViewController: UITableViewController, CustomViewCellDe
         }
     }
     
-    override func numberOfSections(in tableView: UITableView) -> Int {
+     func numberOfSections(in tableView: UITableView) -> Int {
         return categoriesViewModel.categories.count
     }
     
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return categoriesViewModel.categories[section].categories.count
     }
     
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         player.Sound(resource: categoriesViewModel.categories[indexPath.section].categories[indexPath.row].sound)
         
         if let cell = tableView.cellForRow(at: indexPath) as? CategoryTableViewCell {
-               cell.didSelect(indexPath: indexPath)
+            cell.didSelect(indexPath: indexPath)
         }
     }
     
@@ -63,22 +84,22 @@ final class CategoryTableViewController: UITableViewController, CustomViewCellDe
            let destinationController = segue.destination as? QuizCategoryDetailViewController,
            let indexSelectedCell = tableView.indexPathForSelectedRow {
             let category = categoriesViewModel.categories[indexSelectedCell.section].categories[indexSelectedCell.row]
-           destinationController.category = category
+            destinationController.category = category
         }
     }
     
-    override func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+     func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
         if let headerView = view as? UITableViewHeaderFooterView {
             headerView.contentView.backgroundColor = .black
             headerView.textLabel?.textColor = .white
         }
     }
     
-    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return categoriesViewModel.categories[section].releaseDate
     }
     
-    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let view = UIView(frame: CGRect(x: 0, y: 0, width: tableView.frame.width, height: 40))
         let lbl = UILabel(frame: CGRect(x: 15, y: 0, width: view.frame.width - 15, height: 40))
         lbl.font = UIFont.systemFont(ofSize: 25)
@@ -87,11 +108,11 @@ final class CategoryTableViewController: UITableViewController, CustomViewCellDe
         return view
     }
     
-    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 40
     }
     
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: CategoryTableViewCell.identifier, for: indexPath) as! CategoryTableViewCell
         cell.delegate = self
         cell.ConfigureCell(category: categoriesViewModel.categories[indexPath.section].categories[indexPath.row])
