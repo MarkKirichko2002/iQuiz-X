@@ -12,6 +12,8 @@ class QuizCategoryDetailViewController: UIViewController {
     
     @IBOutlet weak var CategoryIcon: RoundedImageView!
     @IBOutlet weak var CategoryName: UILabel!
+    @IBOutlet weak var CompleteStatus: UILabel!
+    @IBOutlet weak var CategoryScore: UILabel!
     @IBOutlet weak var PlayButton: UIButton!
     
     var category: QuizModel?
@@ -27,8 +29,24 @@ class QuizCategoryDetailViewController: UIViewController {
         CategoryIcon.image = UIImage(named: category?.image ?? "")
         CategoryIcon.color = .white
         CategoryIcon.sound = category?.sound ?? ""
-        CategoryName.text = category?.name
         CategoryName.textColor = .white
+        CategoryName.text = category?.name
+        CategoryScore.textColor = .white
+        CategoryScore.text = "\(category?.score ?? 0)/100"
+        CompleteStatus.textColor = .white
+        switch category?.complete {
+        case true:
+            CompleteStatus.text = "пройдено"
+            CompleteStatus.textColor = .systemGreen
+            
+        case false:
+            CompleteStatus.text = "не пройдено"
+            CompleteStatus.textColor = .systemGray
+            
+        default:
+            CompleteStatus.text = "не пройдено"
+            CompleteStatus.textColor = .systemGray
+        }
         PlayButton.tintColor = .white
         self.player.Sound(resource: self.category?.music ?? "")
     }

@@ -386,6 +386,7 @@
 		82A82B1628A9438200011B6F /* QuizBaseObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82A82B1528A9438200011B6F /* QuizBaseObserver.swift */; };
 		82A9796E27F8CB2C001EBF1C /* QuizLiterature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82A9796D27F8CB2C001EBF1C /* QuizLiterature.swift */; };
 		82AFAF6827FA3C25001B04A0 /* ExitTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82AFAF6727FA3C25001B04A0 /* ExitTableViewCell.swift */; };
+		82B01736294F86740073452D /* NewsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82B01735294F86730073452D /* NewsTableViewCell.swift */; };
 		82B760EA27CA75E800540E0F /* QuizModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82B760E927CA75E800540E0F /* QuizModel.swift */; };
 		82B760F727CAA13500540E0F /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82B760F627CAA13500540E0F /* Question.swift */; };
 		82BC0189294770D400AEB659 /* TasksTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82BC0188294770D400AEB659 /* TasksTableViewController.swift */; };
@@ -407,7 +408,6 @@
 		82CBE7E9287093C50045616B /* NewsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82CBE7E5287093C50045616B /* NewsTableViewController.swift */; };
 		82CBE7EA287093C50045616B /* NewsListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82CBE7E6287093C50045616B /* NewsListViewModel.swift */; };
 		82CBE7EB287093C50045616B /* NewsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82CBE7E7287093C50045616B /* NewsModel.swift */; };
-		82CBE7EC287093C50045616B /* NewsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82CBE7E8287093C50045616B /* NewsTableViewCell.swift */; };
 		82CBE7F92870A8F30045616B /* CategoriesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82CBE7F82870A8F30045616B /* CategoriesViewModel.swift */; };
 		82CBE8032870D4B40045616B /* TasksViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82CBE8022870D4B40045616B /* TasksViewModel.swift */; };
 		82CBE8052870D4D40045616B /* TasksTableViewCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82CBE8042870D4D40045616B /* TasksTableViewCellModel.swift */; };
@@ -978,6 +978,7 @@
 		82A82B1528A9438200011B6F /* QuizBaseObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizBaseObserver.swift; sourceTree = "<group>"; };
 		82A9796D27F8CB2C001EBF1C /* QuizLiterature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizLiterature.swift; sourceTree = "<group>"; };
 		82AFAF6727FA3C25001B04A0 /* ExitTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExitTableViewCell.swift; sourceTree = "<group>"; };
+		82B01735294F86730073452D /* NewsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsTableViewCell.swift; sourceTree = "<group>"; };
 		82B760E927CA75E800540E0F /* QuizModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizModel.swift; sourceTree = "<group>"; };
 		82B760F627CAA13500540E0F /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
 		82BC0188294770D400AEB659 /* TasksTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TasksTableViewController.swift; sourceTree = "<group>"; };
@@ -999,7 +1000,6 @@
 		82CBE7E5287093C50045616B /* NewsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsTableViewController.swift; sourceTree = "<group>"; };
 		82CBE7E6287093C50045616B /* NewsListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsListViewModel.swift; sourceTree = "<group>"; };
 		82CBE7E7287093C50045616B /* NewsModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsModel.swift; sourceTree = "<group>"; };
-		82CBE7E8287093C50045616B /* NewsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NewsTableViewCell.swift; path = "../New Group/NewsTableViewCell.swift"; sourceTree = "<group>"; };
 		82CBE7F82870A8F30045616B /* CategoriesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesViewModel.swift; sourceTree = "<group>"; };
 		82CBE8022870D4B40045616B /* TasksViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksViewModel.swift; sourceTree = "<group>"; };
 		82CBE8042870D4D40045616B /* TasksTableViewCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksTableViewCellModel.swift; sourceTree = "<group>"; };
@@ -1787,14 +1787,6 @@
 			path = ViewControllers;
 			sourceTree = "<group>";
 		};
-		828E4B46293FD636002A55B1 /* Cells */ = {
-			isa = PBXGroup;
-			children = (
-				82CBE7E8287093C50045616B /* NewsTableViewCell.swift */,
-			);
-			path = Cells;
-			sourceTree = "<group>";
-		};
 		828E4B47293FD638002A55B1 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -2152,6 +2144,14 @@
 			path = QuizBaseObserver;
 			sourceTree = "<group>";
 		};
+		82B01734294F861E0073452D /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				82B01735294F86730073452D /* NewsTableViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 		82BC01822947706600AEB659 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
@@ -2230,7 +2230,7 @@
 			isa = PBXGroup;
 			children = (
 				828E4B47293FD638002A55B1 /* ViewControllers */,
-				828E4B46293FD636002A55B1 /* Cells */,
+				82B01734294F861E0073452D /* Cells */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -3183,7 +3183,6 @@
 				828F0DD127C82D4C0016D337 /* PlayerTableViewCell.swift in Sources */,
 				82251C34287E661F00723057 /* URLViewController.swift in Sources */,
 				8243F16B27C266F800CD9CE4 /* BaseQuizViewController.swift in Sources */,
-				82CBE7EC287093C50045616B /* NewsTableViewCell.swift in Sources */,
 				827B545327C01092000ACB31 /* QuizGames.swift in Sources */,
 				826E12AD27FF89DA00465E16 /* HintsTableViewCell.swift in Sources */,
 				823A8EB927FF06F600C7965B /* MicrophoneTableViewCell.swift in Sources */,
@@ -3201,6 +3200,7 @@
 				82CBE7EA287093C50045616B /* NewsListViewModel.swift in Sources */,
 				82A08C7F28F488E90072A940 /* QuizResultViewModel.swift in Sources */,
 				82B760EA27CA75E800540E0F /* QuizModel.swift in Sources */,
+				82B01736294F86740073452D /* NewsTableViewCell.swift in Sources */,
 				82A08C8128F48E8E0072A940 /* ProfileViewModel.swift in Sources */,
 				82CBE7EB287093C50045616B /* NewsModel.swift in Sources */,
 				82BC0189294770D400AEB659 /* TasksTableViewController.swift in Sources */,

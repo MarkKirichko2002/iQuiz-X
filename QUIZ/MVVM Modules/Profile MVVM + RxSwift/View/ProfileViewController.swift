@@ -11,9 +11,6 @@ import RxSwift
 import RxCocoa
 
 class ProfileViewController: UIViewController {
-    var animation = AnimationClass()
-    var profileViewModel = ProfileViewModel()
-    var disposeBag = DisposeBag()
     @IBOutlet weak var ProfileImage: RoundedImageView!
     @IBOutlet weak var EmailLabel: UILabel!
     @IBOutlet weak var NameLabel: UILabel!
@@ -24,8 +21,14 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var CorrectAnswersCountLabel: UILabel!
     @IBOutlet weak var SettingsButton: UIButton!
     
+    private var animation = AnimationClass()
+    private var profileViewModel = ProfileViewModel()
+    private var disposeBag = DisposeBag()
+    private var player = SoundClass()
+    
     @IBAction func ShowSettings() {
         animation.springButton(button: SettingsButton)
+        player.Sound(resource: "settings.mp3")
         DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
             self.performSegue(withIdentifier: "showSettings", sender: nil)
         }
@@ -40,9 +43,13 @@ class ProfileViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.DisplayProfileData()
+    }
+    
+    private func DisplayProfileData() {
         self.LastQuizCategoryIcon.color = .white
         ProfileImage.color = .white
-        profileViewModel.LoadUserInfo()
+        profileViewModel.GetProfileData()
         profileViewModel.user.subscribe(onNext: { user in
             guard let background = UIImage(named: user.background) else {return}
             // информация о профиле
@@ -58,6 +65,11 @@ class ProfileViewController: UIViewController {
             self.BestScore.text = "лучший счет: \(user.score)/100"
             self.CorrectAnswersCountLabel.text = "ответы: \(user.correctAnswers)/20"
             self.view.backgroundColor = UIColor(patternImage: background)
+            if user.background != "" {
+                self.SettingsButton.setImage(UIImage(named: "settings white"), for: .normal)
+            } else {
+                self.SettingsButton.setImage(UIImage(named: "settings"), for: .normal)
+            }
         }).disposed(by: disposeBag)
     }
 }
