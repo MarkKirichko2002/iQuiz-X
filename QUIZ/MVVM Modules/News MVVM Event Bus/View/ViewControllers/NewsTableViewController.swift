@@ -50,16 +50,13 @@ class NewsTableViewController: UITableViewController {
     
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
         return newsViewModel.news.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: NewsTableViewCell.identifier, for: indexPath) as! NewsTableViewCell
         
-        cell.NewsImage.sd_setImage(with: URL(string: newsViewModel.news[indexPath.row].urlToImage ?? ""))
-        cell.TitleLabel.text = newsViewModel.news[indexPath.row].title ?? ""
-        cell.DescriptionLabel.text = newsViewModel.news[indexPath.row].description ?? ""
+        cell.configure(news: newsViewModel.news[indexPath.row])
         
         return cell
     }
