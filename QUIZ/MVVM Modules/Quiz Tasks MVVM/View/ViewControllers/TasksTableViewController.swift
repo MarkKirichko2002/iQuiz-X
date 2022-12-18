@@ -12,7 +12,7 @@ final class TasksTableViewController: UITableViewController {
     
     @IBOutlet weak var InfoTasksButton: UIBarButtonItem!
     
-    var categories = CategoriesViewModel()
+    var categoriesViewModel = CategoriesViewModel()
     var tasks = TasksViewModel()
     var cellmodel = TasksTableViewCellModel()
     var player = SoundClass()
@@ -24,8 +24,8 @@ final class TasksTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        categories.view = self.view
-        categories.storyboard = self.storyboard
+        categoriesViewModel.view = self.view
+        categoriesViewModel.storyboard = self.storyboard
         print(tasks.tasks.count)
         navigationItem.title = "Задания (\(tasks.tasks.count))"
     }
@@ -37,7 +37,7 @@ final class TasksTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        player.Sound(resource: categories.categories[indexPath.section].categories[indexPath.row].sound)
+        player.Sound(resource: categoriesViewModel.quizcategories[indexPath.row].sound)
         
         if let cell = tableView.cellForRow(at: indexPath) as? TasksTableViewCell {
                cell.didSelect(indexPath: indexPath)
@@ -46,9 +46,9 @@ final class TasksTableViewController: UITableViewController {
         switch(indexPath.row) {
         
           case  0...18:
-            categories.GoToStart(quiz: categories.categories[indexPath.section].categories[indexPath.row].base, category: categories.categories[indexPath.section].categories[indexPath.row])
+            categoriesViewModel.GoToStart(quiz: categoriesViewModel.quizcategories[indexPath.row].base, category: categoriesViewModel.quizcategories[indexPath.row])
             
-        case 19: categories.PresentRandomQuiz()
+        case 19: categoriesViewModel.PresentRandomQuiz()
             
         default: break
         }
