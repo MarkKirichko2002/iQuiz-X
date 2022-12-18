@@ -74,7 +74,7 @@ class QuizSegmentedViewController: UIViewController {
         return viewController
     }()
     
-    private func add(asChildViewController viewController: UITableViewController) {
+    private func add(asChildViewController viewController: UIViewController) {
         // Add Child View Controller
         addChild(viewController)
         

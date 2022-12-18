@@ -28,6 +28,7 @@ class ViewController: UITabBarController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        quizViewModel.CreateCategories()
         base.viewController = self
         quizViewModel.view = self.view
         quizViewModel.storyboard = self.storyboard
