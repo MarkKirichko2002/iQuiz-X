@@ -10,17 +10,17 @@ import UIKit
 class QuizSegmentedViewController: UIViewController {
     
     @IBOutlet var segmentedControl: UISegmentedControl!
-        
-        override func viewDidLoad() {
-            super.viewDidLoad()
-            setupView()
-        }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        setupView()
+    }
     
     private func setupView() {
         setupSegmentedControl()
         updateView()
     }
-
+    
     private func setupSegmentedControl() {
         // Configure Segmented Control
         segmentedControl.removeAllSegments()
@@ -28,7 +28,7 @@ class QuizSegmentedViewController: UIViewController {
         segmentedControl.insertSegment(with: UIImage(named: "tasks"), at: 1, animated: true)
         segmentedControl.insertSegment(with: UIImage(named: "player"), at: 2, animated: true)
         segmentedControl.addTarget(self, action: #selector(selectionDidChange(_:)), for: .valueChanged)
-        segmentedControl.selectedSegmentIndex = 0
+        segmentedControl.selectedSegmentIndex = UserDefaults.standard.object(forKey: "selectedSegmentIndex") as? Int ?? 0
     }
     
     @objc func selectionDidChange(_ sender: UISegmentedControl) {
@@ -47,7 +47,7 @@ class QuizSegmentedViewController: UIViewController {
         
         return viewController
     }()
-
+    
     private lazy var tasksViewController: TasksTableViewController = {
         // Load Storyboard
         let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
@@ -92,10 +92,10 @@ class QuizSegmentedViewController: UIViewController {
     private func remove(asChildViewController viewController: UIViewController) {
         // Notify Child View Controller
         viewController.willMove(toParent: nil)
-
+        
         // Remove Child View From Superview
         viewController.view.removeFromSuperview()
-
+        
         // Notify Child View Controller
         viewController.removeFromParent()
     }
@@ -111,6 +111,6 @@ class QuizSegmentedViewController: UIViewController {
             remove(asChildViewController: tasksViewController)
             add(asChildViewController: quizMediaLibraryTableViewController)
         }
+        UserDefaults.standard.setValue(segmentedControl.selectedSegmentIndex, forKey: "selectedSegmentIndex")
     }
-    
 }
