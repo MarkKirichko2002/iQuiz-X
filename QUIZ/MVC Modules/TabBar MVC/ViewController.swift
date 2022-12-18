@@ -194,7 +194,7 @@ class ViewController: UITabBarController {
                 self.animation.springButton(button: self.button)
                 self.player.Sound(resource: "space.wav")
                 self.sound = "space.wav"
-                self.quizViewModel.GoToStart(quiz: QuizPlanets(), category: quizViewModel.categories[0].categories[0], storyboard: self.storyboard, view: self.view)
+                self.quizViewModel.GoToStart(quiz: QuizPlanets(), category: quizViewModel.categories[0].categories[0])
                 
             case _ where self.text.contains("Истори") || self.text.contains("истори"):
                 self.icon = "history.jpeg"
@@ -202,7 +202,7 @@ class ViewController: UITabBarController {
                 self.animation.springButton(button: self.button)
                 self.player.Sound(resource: "history.wav")
                 self.sound = "history.wav"
-                self.quizViewModel.GoToStart(quiz: QuizHistory(), category: quizViewModel.categories[0].categories[1], storyboard: self.storyboard, view: self.view)
+                self.quizViewModel.GoToStart(quiz: QuizHistory(), category: quizViewModel.categories[0].categories[1])
                 
             case _ where self.text.contains("Анатоми") || self.text.contains("анатоми"):
                 self.icon = "anatomy.jpeg"
@@ -210,7 +210,7 @@ class ViewController: UITabBarController {
                 self.animation.springButton(button: self.button)
                 self.player.Sound(resource: "anatomy.mp3")
                 self.sound = "anatomy.mp3"
-                self.quizViewModel.GoToStart(quiz: QuizAnatomy(), category: quizViewModel.categories[0].categories[2], storyboard: self.storyboard, view: self.view)
+                self.quizViewModel.GoToStart(quiz: QuizAnatomy(), category: quizViewModel.categories[0].categories[2])
                 
             case _ where self.text.contains("Спорт") || self.text.contains("спорт"):
                 self.icon = "sport.jpeg"
@@ -218,7 +218,7 @@ class ViewController: UITabBarController {
                 self.animation.springButton(button: self.button)
                 self.player.Sound(resource: "sport.wav")
                 self.sound = "sport.wav"
-                self.quizViewModel.GoToStart(quiz: QuizSport(), category: quizViewModel.categories[0].categories[3], storyboard: self.storyboard, view: self.view)
+                self.quizViewModel.GoToStart(quiz: QuizSport(), category: quizViewModel.categories[0].categories[3])
                 
             case _ where self.text.contains("Игр") || self.text.contains("игр"):
                 self.icon = "games.jpeg"
@@ -226,7 +226,7 @@ class ViewController: UITabBarController {
                 self.animation.springButton(button: self.button)
                 self.player.Sound(resource: "games.mp3")
                 self.sound = "games.mp3"
-                self.quizViewModel.GoToStart(quiz: QuizGames(), category: quizViewModel.categories[1].categories[0], storyboard: self.storyboard, view: self.view)
+                self.quizViewModel.GoToStart(quiz: QuizGames(), category: quizViewModel.categories[1].categories[0])
                 
             case _ where self.text.contains("Интеллект") || self.text.contains("интеллект"):
                 self.icon = "IQ.jpeg"
@@ -234,7 +234,7 @@ class ViewController: UITabBarController {
                 self.animation.springButton(button: self.button)
                 self.player.Sound(resource: "IQ.mp3")
                 self.sound = "IQ.mp3"
-                self.quizViewModel.GoToStart(quiz: QuizIQ(), category: quizViewModel.categories[1].categories[1], storyboard: self.storyboard, view: self.view)
+                self.quizViewModel.GoToStart(quiz: QuizIQ(), category: quizViewModel.categories[1].categories[1])
                 
             case _ where self.text.contains("Эконом") || self.text.contains("эконом"):
                 self.icon = "economy.jpeg"
@@ -242,7 +242,7 @@ class ViewController: UITabBarController {
                 self.animation.springButton(button: self.button)
                 self.player.Sound(resource: "economics.mp3")
                 self.sound = "economics.mp3"
-                self.quizViewModel.GoToStart(quiz: QuizEconomy(), category: quizViewModel.categories[1].categories[2], storyboard: self.storyboard, view: self.view)
+                self.quizViewModel.GoToStart(quiz: QuizEconomy(), category: quizViewModel.categories[1].categories[2])
                 
             case _ where self.text.contains("Географи") || self.text.contains("географи"):
                 self.icon = "geography.jpeg"
@@ -250,7 +250,7 @@ class ViewController: UITabBarController {
                 self.animation.springButton(button: self.button)
                 self.player.Sound(resource: "geography.mp3")
                 self.sound = "geography.mp3"
-                self.quizViewModel.GoToStart(quiz: QuizGeography(), category: quizViewModel.categories[1].categories[3], storyboard: self.storyboard, view: self.view)
+                self.quizViewModel.GoToStart(quiz: QuizGeography(), category: quizViewModel.categories[1].categories[3])
                 
             case _ where self.text.contains("Экологи") || self.text.contains("экологи"):
                 self.icon = "ecology.jpeg"
@@ -258,7 +258,7 @@ class ViewController: UITabBarController {
                 self.animation.springButton(button: self.button)
                 self.player.Sound(resource: "ecology.wav")
                 self.sound = "ecology.wav"
-                self.quizViewModel.GoToStart(quiz: QuizEcology(), category: quizViewModel.categories[1].categories[4], storyboard: self.storyboard, view: self.view)
+                self.quizViewModel.GoToStart(quiz: QuizEcology(), category: quizViewModel.categories[1].categories[4])
                 
             case _ where self.text.contains("Физ") || self.text.contains("физ"):
                 self.icon = "physics.jpeg"
@@ -266,7 +266,7 @@ class ViewController: UITabBarController {
                 self.animation.springButton(button: self.button)
                 self.player.Sound(resource: "physics.mp3")
                 self.sound = "physics.mp3"
-                self.quizViewModel.GoToStart(quiz: QuizPhysics(), category: quizViewModel.categories[1].categories[5], storyboard: self.storyboard, view: self.view)
+                self.quizViewModel.GoToStart(quiz: QuizPhysics(), category: quizViewModel.categories[1].categories[5])
                 
             case _ where self.text.contains("Хим") || self.text.contains("хим"):
                 self.icon = "chemistry.jpeg"
@@ -274,7 +274,7 @@ class ViewController: UITabBarController {
                 self.animation.springButton(button: self.button)
                 self.player.Sound(resource: "chemistry.mp3")
                 self.sound = "chemistry.mp3"
-                self.quizViewModel.GoToStart(quiz: QuizChemistry(), category: quizViewModel.categories[1].categories[6], storyboard: self.storyboard, view: self.view)
+                self.quizViewModel.GoToStart(quiz: QuizChemistry(), category: quizViewModel.categories[1].categories[6])
                 
             case _ where self.text.contains("Информа") || self.text.contains("информа"):
                 self.icon = "informatics.jpeg"
@@ -282,7 +282,7 @@ class ViewController: UITabBarController {
                 self.animation.springButton(button: self.button)
                 self.player.Sound(resource: "informatics.mp3")
                 self.sound = "informatics.mp3"
-                self.quizViewModel.GoToStart(quiz: QuizInformatics(), category: quizViewModel.categories[1].categories[7], storyboard: self.storyboard, view: self.view)
+                self.quizViewModel.GoToStart(quiz: QuizInformatics(), category: quizViewModel.categories[1].categories[7])
                 
             case _ where self.text.contains("Литера") || self.text.contains("литера"):
                 self.icon = "literature.jpeg"
@@ -290,7 +290,7 @@ class ViewController: UITabBarController {
                 self.animation.springButton(button: self.button)
                 self.player.Sound(resource: "literature.mp3")
                 self.sound = "literature.mp3"
-                self.quizViewModel.GoToStart(quiz: QuizLiterature(), category: quizViewModel.categories[2].categories[0], storyboard: self.storyboard, view: self.view)
+                self.quizViewModel.GoToStart(quiz: QuizLiterature(), category: quizViewModel.categories[2].categories[0])
                 
             case _ where self.text.contains("Дорог") || self.text.contains("дорог"):
                 self.icon = "drive.jpeg"
@@ -298,7 +298,7 @@ class ViewController: UITabBarController {
                 self.animation.springButton(button: self.button)
                 self.player.Sound(resource: "roadtraffic.mp3")
                 self.sound = "roadtraffic.mp3"
-                self.quizViewModel.GoToStart(quiz: QuizRoadTraffic(), category: quizViewModel.categories[2].categories[1], storyboard: self.storyboard, view: self.view)
+                self.quizViewModel.GoToStart(quiz: QuizRoadTraffic(), category: quizViewModel.categories[2].categories[1])
                 
             case _ where self.text.contains("Swift") || self.text.contains("swift"):
                 self.icon = "swift.jpeg"
@@ -306,7 +306,7 @@ class ViewController: UITabBarController {
                 self.animation.springButton(button: self.button)
                 self.player.Sound(resource: "swift.mp3")
                 self.sound = "swift.mp3"
-                self.quizViewModel.GoToStart(quiz: QuizSwift(), category: quizViewModel.categories[2].categories[2], storyboard: self.storyboard, view: self.view)
+                self.quizViewModel.GoToStart(quiz: QuizSwift(), category: quizViewModel.categories[2].categories[2])
                 
             case _ where self.text.contains("Мор") || self.text.contains("мор"):
                 self.icon = "underwater.png"
@@ -314,7 +314,7 @@ class ViewController: UITabBarController {
                 self.animation.springButton(button: self.button)
                 self.player.Sound(resource: "underwater.wav")
                 self.sound = "underwater.wav"
-                self.quizViewModel.GoToStart(quiz: QuizUnderwater(), category: quizViewModel.categories[3].categories[0], storyboard: self.storyboard, view: self.view)
+                self.quizViewModel.GoToStart(quiz: QuizUnderwater(), category: quizViewModel.categories[3].categories[0])
                 
             case _ where self.text.contains("Шахмат") || self.text.contains("шахмат"):
                 self.icon = "chess.png"
@@ -322,7 +322,7 @@ class ViewController: UITabBarController {
                 self.animation.springButton(button: self.button)
                 self.player.Sound(resource: "chess.mp3")
                 self.sound = "chess.mp3"
-                self.quizViewModel.GoToStart(quiz: QuizChess(), category: quizViewModel.categories[3].categories[1], storyboard: self.storyboard, view: self.view)
+                self.quizViewModel.GoToStart(quiz: QuizChess(), category: quizViewModel.categories[3].categories[1])
                 
             case _ where self.text.contains("Halloween") || self.text.contains("halloween"):
                 self.icon = "halloween.png"
@@ -330,7 +330,7 @@ class ViewController: UITabBarController {
                 self.animation.springButton(button: self.button)
                 self.player.Sound(resource: "halloween.wav")
                 self.sound = "halloween.wav"
-                self.quizViewModel.GoToStart(quiz: QuizHalloween(), category: quizViewModel.categories[4].categories[0], storyboard: self.storyboard, view: self.view)
+                self.quizViewModel.GoToStart(quiz: QuizHalloween(), category: quizViewModel.categories[4].categories[0])
                 
             case _ where self.text.contains("Рождеств") || self.text.contains("рождеств"):
                 self.icon = "newyear.png"
@@ -338,7 +338,7 @@ class ViewController: UITabBarController {
                 self.animation.springButton(button: self.button)
                 self.player.Sound(resource: "newyear.mp3")
                 self.sound = "newyear.mp3"
-                self.quizViewModel.GoToStart(quiz: QuizNewYear(), category: quizViewModel.categories[5].categories[0], storyboard: self.storyboard, view: self.view)
+                self.quizViewModel.GoToStart(quiz: QuizNewYear(), category: quizViewModel.categories[5].categories[0])
                 
             case _ where self.text.contains("Рандом") || self.text.contains("рандом"):
                 self.icon = "random.jpeg"
@@ -346,7 +346,7 @@ class ViewController: UITabBarController {
                 self.animation.springButton(button: self.button)
                 self.player.Sound(resource: "dice.wav")
                 self.sound = "dice.wav"
-                self.quizViewModel.PresentRandomQuiz(storyboard: self.storyboard, view: self.view)
+                self.quizViewModel.PresentRandomQuiz()
                 
             // Включение/Выключение музыки
             case _ where self.text.contains("Муз") || self.text.contains("муз"):

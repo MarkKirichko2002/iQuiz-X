@@ -6,33 +6,36 @@
 //
 
 import UIKit
+import Combine
 
 final class TotalTableViewController: UITableViewController {
 
-    var categories = CategoriesViewModel()
-    var cellmodel = CategoriesTableViewCellModel()
-    
+    var categoriesViewModel = CategoriesViewModel()
     var timer = Timer()
+    var cancellation: Set<AnyCancellable> = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        categoriesViewModel.$categories.sink { [weak self] category in
+            DispatchQueue.main.async {
+                self?.tableView.reloadData()
+            }
+        }.store(in: &cancellation)
+        self.categoriesViewModel.LoadResults()
         self.tableView.register(UINib(nibName: CategoryTableViewCell.identifier, bundle: nil), forCellReuseIdentifier: CategoryTableViewCell.identifier)
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return categories.categories.count
+        return categoriesViewModel.categories.count
     }
     
    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-       categories.categories[section].categories.count
+       categoriesViewModel.categories[section].categories.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: CategoryTableViewCell.identifier, for: indexPath) as! CategoryTableViewCell
-        cellmodel.configure(categories.categories[indexPath.section].categories[indexPath.row], CategoryImage: cell.CategoryImage, CategoryText: cell.CategoryText, isComplete: cell.isComplete, CategoryScore: cell.CategoryScore, background: cell)
-        cell.CategoryImage.sound = categories.categories[indexPath.section].categories[indexPath.row].sound
-        cell.CategoryImage.color = .white
-        
+        cell.ConfigureCell(category: categoriesViewModel.categories[indexPath.section].categories[indexPath.row])
         return cell
     }
     

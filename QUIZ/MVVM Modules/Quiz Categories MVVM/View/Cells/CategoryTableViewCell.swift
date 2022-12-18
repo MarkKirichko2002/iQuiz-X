@@ -8,7 +8,7 @@
 import UIKit
 import Firebase
 
-protocol CustomViewCellDelegate: class {
+protocol CustomViewCellDelegate: AnyObject {
    func didElementClick()
 }
 
@@ -24,6 +24,23 @@ class CategoryTableViewCell: UITableViewCell {
     @IBOutlet weak var CategoryImage: RoundedImageView!
     @IBOutlet weak var isComplete: UILabel!
     @IBOutlet weak var CategoryScore: UILabel!
+    
+    func ConfigureCell(category: QuizModel) {
+        CategoryImage.image = UIImage(named: category.image)
+        CategoryImage.sound = category.sound
+        CategoryImage.color = .white
+        CategoryText.text = category.name
+        CategoryScore.text = "\(category.score)/100 баллов"
+        contentView.backgroundColor = UIColor(patternImage: UIImage(named: category.background)!)
+        switch category.complete {
+        case true:
+            isComplete.text = "пройдено"
+            isComplete.textColor = .systemGreen
+        case false:
+            isComplete.text = "не пройдено"
+            isComplete.textColor = .systemGray
+        }
+    }
     
     func didSelect(indexPath: IndexPath) {
         animation.springImage(image: CategoryImage)

@@ -28,6 +28,7 @@ class StartViewController: UIViewController {
     var animation = AnimationClass()
     var quizes = [QuizPlanets(), QuizHistory(), QuizAnatomy(), QuizSport(), QuizGames(), QuizIQ(), QuizEconomy(), QuizGeography(), QuizEconomy(), QuizPhysics(), QuizChemistry(), QuizInformatics(), QuizLiterature(), QuizRoadTraffic(), QuizSwift(), QuizUnderwater(), QuizChess(), QuizHalloween(), QuizNewYear()]
     var sound = ""
+    let randomindex = UserDefaults.standard.object(forKey: "index") as? Int ?? 0
     
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
@@ -36,10 +37,8 @@ class StartViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-//        let everyMinuteTimer = Timer.scheduledTimer(timeInterval: 0, target: self,
-//                                                    selector: #selector(UpdateTime), userInfo: nil, repeats: true)
-        
+        viewModel.view = self.view
+        viewModel.storyboard = self.storyboard
         self.CheckTime()
         self.Image.color = .white
         
@@ -279,12 +278,11 @@ class StartViewController: UIViewController {
     }
     
     func DailyQuiz() {
-        let randomindex = 1
         
-        quizes[randomindex].quiz = viewModel.categories[randomindex].categories[randomindex]
+        quizes[randomindex].quiz = viewModel.quizcategories[randomindex]
         
-        Image.sound = viewModel.categories[randomindex].categories[randomindex].sound
-        sound = viewModel.categories[randomindex].categories[randomindex].sound
+        Image.sound = viewModel.quizcategories[randomindex].sound
+        sound = viewModel.quizcategories[randomindex].sound
         
         switch quizes[randomindex].checkid() {
             
@@ -448,11 +446,10 @@ class StartViewController: UIViewController {
         player.Sound(resource: sound)
         self.animation.springButton(button: self.TodayQuizButton)
         
-        let randomindex = UserDefaults.standard.object(forKey: "index") as? Int
-        let c = quizes[randomindex!]
+        let c = quizes[randomindex]
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-            self.viewModel.goToQuize(quiz: c, category: self.viewModel.categories[randomindex ?? 0].categories[randomindex ?? 0], storyboard: self.storyboard, view: self.view)
+            self.viewModel.goToQuize(quiz: c, category: self.viewModel.quizcategories[self.randomindex])
         }
     }
     

@@ -41,7 +41,7 @@ class PauseTableViewController: UITableViewController {
             self.currentquiz?.stopSpeechRecognition()
             self.currentquiz?.captureSession.stopRunning()
             self.currentquiz?.questionNumber = 0
-            self.categoryViewModel.GoToStart(quiz: self.currentquiz ?? QuizPlanets(), category: self.currentcategory!, storyboard: self.storyboard, view: self.view)
+            self.categoryViewModel.GoToStart(quiz: self.currentquiz ?? QuizPlanets(), category: self.currentcategory!)
         }
     }
     

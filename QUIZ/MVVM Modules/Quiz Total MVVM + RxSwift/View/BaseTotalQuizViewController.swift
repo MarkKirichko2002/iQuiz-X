@@ -26,6 +26,8 @@ class BaseTotalQuizViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.quizResultViewModel.viewModel.view = self.view
+        self.quizResultViewModel.viewModel.storyboard = self.storyboard
         self.Image.color = .white
         quizResultViewModel.SetupView(view: self.view, storyboard: self.storyboard!)
         quizResultViewModel.quizresult.subscribe(onNext: { result in

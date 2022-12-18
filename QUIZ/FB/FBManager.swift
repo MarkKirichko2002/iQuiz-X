@@ -11,15 +11,44 @@ import Firebase
 import SDWebImage
 import SCLAlertView
 
+struct QuizCategoryViewModel {
+    let score: Int
+    let CorrectAnswersCounter: Int
+    let complete: Bool
+}
+
 class FBManager {
     
-    let defaults = UserDefaults.standard
-    let db = Firestore.firestore()
-    var view = UIView()
-    let storage = Storage.storage().reference()
-    var player = SoundClass()
+    private let defaults = UserDefaults.standard
+    private let db = Firestore.firestore()
+    private var view = UIView()
+    private let storage = Storage.storage().reference()
+    private var player = SoundClass()
+    private var image = ""
+    private var model: QuizCategoryViewModel?
     
-    var image = ""
+    func LoadQuizCategoriesData(quizpath: String, completion: @escaping(QuizCategoryViewModel)->()) {
+        let docRef = db.collection("users").document(Auth.auth().currentUser?.email ?? "")
+        
+        docRef.getDocument { document, error in
+            if let error = error as NSError? {
+                print("Error getting document: \(error.localizedDescription)")
+            } else {
+                if let document = document {
+                    if let category = document[quizpath] as? [String: Any] {
+                        let complete = category["complete"] as? Bool ?? false
+                        let bestscore = category["bestscore"] as? Int ?? 0
+                        let CorrectAnswersCounter = category["CorrectAnswersCounter"] as? Int ?? 0
+                        let category = category["category"] as? String ?? ""
+                        
+                        self.model = QuizCategoryViewModel(score: bestscore, CorrectAnswersCounter: CorrectAnswersCounter, complete: complete)
+                        guard let model = self.model else {return}
+                        completion(model)
+                    }
+                }
+            }
+        }
+    }
     
     func LoadProfileImage()-> String {
         let docRef = db.collection("users").document((Auth.auth().currentUser?.email) ?? "")
