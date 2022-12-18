@@ -33,8 +33,7 @@ class CategoriesViewModel {
         spinner.image = UIImage(named: "newyear.png")
         view?.addSubview(spinner)
         loadingText.text = "загрузка результатов..."
-        loadingText.numberOfLines = 0
-        loadingText.font = UIFont.boldSystemFont(ofSize: 18.0)
+        loadingText.font = UIFont.boldSystemFont(ofSize: 22.0)
         view?.addSubview(loadingText)
         makeConstraints()
         animation.StartRotateImage(image: spinner)
@@ -57,7 +56,7 @@ class CategoriesViewModel {
             make.centerX.equalToSuperview()
             make.top.equalTo(spinner.snp.bottom).offset(20)
             make.height.equalTo(60)
-            make.width.equalTo(220)
+            make.width.equalTo(250)
         }
     }
     

@@ -17,6 +17,7 @@ final class CategoryTableViewController: UIViewController, UITableViewDelegate, 
     var delegate: CustomViewCellDelegate?
     var cancellation: Set<AnyCancellable> = []
     var tableView = UITableView()
+    var refreshControl = UIRefreshControl()
     
     @IBAction func ShowCategoriesInfo() {
         player.Sound(resource: "future click sound.wav")
@@ -25,6 +26,8 @@ final class CategoryTableViewController: UIViewController, UITableViewDelegate, 
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableView.addSubview(refreshControl)
+        refreshControl.addTarget(self, action: #selector(refresh), for: .valueChanged)
         SetUpTable()
         categoriesViewModel.view = self.view
         categoriesViewModel.ShowLoading()
@@ -35,6 +38,15 @@ final class CategoryTableViewController: UIViewController, UITableViewDelegate, 
         }.store(in: &cancellation)
         self.tableView.register(UINib(nibName: CategoryTableViewCell.identifier, bundle: nil), forCellReuseIdentifier: CategoryTableViewCell.identifier)
         navigationItem.title = "Категории (\(categoriesViewModel.categories.count))"
+    }
+    
+    @objc func refresh() {
+        DispatchQueue.main.async {
+            self.categoriesViewModel.categories = []
+            self.tableView.reloadData()
+            self.refreshControl.endRefreshing()
+        }
+        categoriesViewModel.ShowLoading()
     }
     
     func SetUpTable() {
