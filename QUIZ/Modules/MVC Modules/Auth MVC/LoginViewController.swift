@@ -204,7 +204,7 @@ class LoginViewController: UIViewController {
                             self.BiometricAuthButton.setTitle("не доступно", for: .normal)
                             self.titleLabel.text = "доступ запрещен"
                             self.loginImageView.image = UIImage(named: "lock.png")
-                            self.player.Sound(resource: "lock_sound.mp3")
+                            self.player.PlaySound(resource: "lock_sound.mp3")
                         }
                     }
                 }
@@ -322,7 +322,7 @@ class LoginViewController: UIViewController {
         if VoiceButton.isSelected && check2.contains(voicepassword ?? ""){
             loadData()
             titleLabel.text = "доступ разрешен"
-            player.Sound(resource: "victory_sound.mp3")
+            player.PlaySound(resource: "victory_sound.mp3")
         }
         
         
@@ -331,7 +331,7 @@ class LoginViewController: UIViewController {
             animation.springImage(image: loginImageView)
             titleLabel.text = ("Пароль \(check2) неверный")
             self.loginImageView.image = UIImage(named: "voice.png")
-            player.Sound(resource: "fail2.mp3")
+            player.PlaySound(resource: "fail2.mp3")
             print(UnlockVoiceFailsCounter)
         }
         
@@ -348,7 +348,7 @@ class LoginViewController: UIViewController {
             VoiceButton.setTitle(" не доступно", for: .normal)
             titleLabel.text = "доступ запрещен"
             loginImageView.image = UIImage(named: "lock.png")
-            self.player.Sound(resource: "lock_sound.mp3")
+            self.player.PlaySound(resource: "lock_sound.mp3")
         }
         
         //configure player

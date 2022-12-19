@@ -28,11 +28,11 @@ class MusicTableViewCell: UITableViewCell {
             print("on")
             userDefaults.set(true, forKey: "onstatusmusic")
             animation.springImage(image: MusicImage)
-            player.Sound(resource: "click sound.wav")
+            player.PlaySound(resource: "click sound.wav")
         } else if mySwitch.isOn == false {
             print("off")
             userDefaults.set(false, forKey: "onstatusmusic")
-            player.Sound(resource: "click sound.wav")
+            player.PlaySound(resource: "click sound.wav")
         }
         
     }

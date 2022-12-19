@@ -85,17 +85,17 @@ class ViewController: UITabBarController {
             self.icon = "newspaper.png"
             self.button.setImage(UIImage(named: self.icon), for: .normal)
             self.animation.springButton(button: self.button)
-            self.player.Sound(resource: "newspaper.mp3")
+            self.player.PlaySound(resource: "newspaper.mp3")
         case 1:
             self.icon = "newyear.png"
             self.button.setImage(UIImage(named: self.icon), for: .normal)
             self.animation.springButton(button: self.button)
-            self.player.Sound(resource: "newyear.mp3")
+            self.player.PlaySound(resource: "newyear.mp3")
         case 3:
             self.icon = "trophy.png"
             self.button.setImage(UIImage(named: self.icon), for: .normal)
             self.animation.springButton(button: self.button)
-            self.player.Sound(resource: "league.mp3")
+            self.player.PlaySound(resource: "league.mp3")
         case 4:
             self.icon = UserDefaults.standard.value(forKey: "url") as? String ?? ""
             self.button.layer.cornerRadius = self.button.frame.width / 2
@@ -163,21 +163,21 @@ class ViewController: UITabBarController {
                 self.icon = "newspaper.png"
                 self.button.setImage(UIImage(named: self.icon), for: .normal)
                 self.animation.springButton(button: self.button)
-                self.player.Sound(resource: "newspaper.mp3")
+                self.player.PlaySound(resource: "newspaper.mp3")
                 
             case _ where self.text.contains("Категори") || self.text.contains("категори"):
                 self.selectedIndex = 1
                 self.icon = "newyear.png"
                 self.button.setImage(UIImage(named: self.icon), for: .normal)
                 self.animation.springButton(button: self.button)
-                self.player.Sound(resource: "IQ.mp3")
+                self.player.PlaySound(resource: "IQ.mp3")
                 
             case _ where self.text.contains("Куб") || self.text.contains("куб"):
                 self.selectedIndex = 3
                 self.icon = "trophy.png"
                 self.button.setImage(UIImage(named: self.icon), for: .normal)
                 self.animation.springButton(button: self.button)
-                self.player.Sound(resource: "league.mp3")
+                self.player.PlaySound(resource: "league.mp3")
                 
             case _ where self.text.contains("Проф") || self.text.contains("проф"):
                 self.selectedIndex = 4
@@ -193,7 +193,7 @@ class ViewController: UITabBarController {
                 self.icon = "planets.jpeg"
                 self.button.setImage(UIImage(named: self.icon), for: .normal)
                 self.animation.springButton(button: self.button)
-                self.player.Sound(resource: "space.wav")
+                self.player.PlaySound(resource: "space.wav")
                 self.sound = "space.wav"
                 self.quizViewModel.GoToStart(quiz: QuizPlanets(), category: quizViewModel.categories[0].categories[0])
                 
@@ -201,7 +201,7 @@ class ViewController: UITabBarController {
                 self.icon = "history.jpeg"
                 self.button.setImage(UIImage(named: self.icon), for: .normal)
                 self.animation.springButton(button: self.button)
-                self.player.Sound(resource: "history.wav")
+                self.player.PlaySound(resource: "history.wav")
                 self.sound = "history.wav"
                 self.quizViewModel.GoToStart(quiz: QuizHistory(), category: quizViewModel.categories[0].categories[1])
                 
@@ -209,7 +209,7 @@ class ViewController: UITabBarController {
                 self.icon = "anatomy.jpeg"
                 self.button.setImage(UIImage(named: self.icon), for: .normal)
                 self.animation.springButton(button: self.button)
-                self.player.Sound(resource: "anatomy.mp3")
+                self.player.PlaySound(resource: "anatomy.mp3")
                 self.sound = "anatomy.mp3"
                 self.quizViewModel.GoToStart(quiz: QuizAnatomy(), category: quizViewModel.categories[0].categories[2])
                 
@@ -217,7 +217,7 @@ class ViewController: UITabBarController {
                 self.icon = "sport.jpeg"
                 self.button.setImage(UIImage(named: self.icon), for: .normal)
                 self.animation.springButton(button: self.button)
-                self.player.Sound(resource: "sport.wav")
+                self.player.PlaySound(resource: "sport.wav")
                 self.sound = "sport.wav"
                 self.quizViewModel.GoToStart(quiz: QuizSport(), category: quizViewModel.categories[0].categories[3])
                 
@@ -225,7 +225,7 @@ class ViewController: UITabBarController {
                 self.icon = "games.jpeg"
                 self.button.setImage(UIImage(named: self.icon), for: .normal)
                 self.animation.springButton(button: self.button)
-                self.player.Sound(resource: "games.mp3")
+                self.player.PlaySound(resource: "games.mp3")
                 self.sound = "games.mp3"
                 self.quizViewModel.GoToStart(quiz: QuizGames(), category: quizViewModel.categories[1].categories[0])
                 
@@ -233,7 +233,7 @@ class ViewController: UITabBarController {
                 self.icon = "IQ.jpeg"
                 self.button.setImage(UIImage(named: self.icon), for: .normal)
                 self.animation.springButton(button: self.button)
-                self.player.Sound(resource: "IQ.mp3")
+                self.player.PlaySound(resource: "IQ.mp3")
                 self.sound = "IQ.mp3"
                 self.quizViewModel.GoToStart(quiz: QuizIQ(), category: quizViewModel.categories[1].categories[1])
                 
@@ -241,7 +241,7 @@ class ViewController: UITabBarController {
                 self.icon = "economy.jpeg"
                 self.button.setImage(UIImage(named: self.icon), for: .normal)
                 self.animation.springButton(button: self.button)
-                self.player.Sound(resource: "economics.mp3")
+                self.player.PlaySound(resource: "economics.mp3")
                 self.sound = "economics.mp3"
                 self.quizViewModel.GoToStart(quiz: QuizEconomy(), category: quizViewModel.categories[1].categories[2])
                 
@@ -249,7 +249,7 @@ class ViewController: UITabBarController {
                 self.icon = "geography.jpeg"
                 self.button.setImage(UIImage(named: self.icon), for: .normal)
                 self.animation.springButton(button: self.button)
-                self.player.Sound(resource: "geography.mp3")
+                self.player.PlaySound(resource: "geography.mp3")
                 self.sound = "geography.mp3"
                 self.quizViewModel.GoToStart(quiz: QuizGeography(), category: quizViewModel.categories[1].categories[3])
                 
@@ -257,7 +257,7 @@ class ViewController: UITabBarController {
                 self.icon = "ecology.jpeg"
                 self.button.setImage(UIImage(named: self.icon), for: .normal)
                 self.animation.springButton(button: self.button)
-                self.player.Sound(resource: "ecology.wav")
+                self.player.PlaySound(resource: "ecology.wav")
                 self.sound = "ecology.wav"
                 self.quizViewModel.GoToStart(quiz: QuizEcology(), category: quizViewModel.categories[1].categories[4])
                 
@@ -265,7 +265,7 @@ class ViewController: UITabBarController {
                 self.icon = "physics.jpeg"
                 self.button.setImage(UIImage(named: self.icon), for: .normal)
                 self.animation.springButton(button: self.button)
-                self.player.Sound(resource: "physics.mp3")
+                self.player.PlaySound(resource: "physics.mp3")
                 self.sound = "physics.mp3"
                 self.quizViewModel.GoToStart(quiz: QuizPhysics(), category: quizViewModel.categories[1].categories[5])
                 
@@ -273,7 +273,7 @@ class ViewController: UITabBarController {
                 self.icon = "chemistry.jpeg"
                 self.button.setImage(UIImage(named: self.icon), for: .normal)
                 self.animation.springButton(button: self.button)
-                self.player.Sound(resource: "chemistry.mp3")
+                self.player.PlaySound(resource: "chemistry.mp3")
                 self.sound = "chemistry.mp3"
                 self.quizViewModel.GoToStart(quiz: QuizChemistry(), category: quizViewModel.categories[1].categories[6])
                 
@@ -281,7 +281,7 @@ class ViewController: UITabBarController {
                 self.icon = "informatics.jpeg"
                 self.button.setImage(UIImage(named: self.icon), for: .normal)
                 self.animation.springButton(button: self.button)
-                self.player.Sound(resource: "informatics.mp3")
+                self.player.PlaySound(resource: "informatics.mp3")
                 self.sound = "informatics.mp3"
                 self.quizViewModel.GoToStart(quiz: QuizInformatics(), category: quizViewModel.categories[1].categories[7])
                 
@@ -289,7 +289,7 @@ class ViewController: UITabBarController {
                 self.icon = "literature.jpeg"
                 self.button.setImage(UIImage(named: self.icon), for: .normal)
                 self.animation.springButton(button: self.button)
-                self.player.Sound(resource: "literature.mp3")
+                self.player.PlaySound(resource: "literature.mp3")
                 self.sound = "literature.mp3"
                 self.quizViewModel.GoToStart(quiz: QuizLiterature(), category: quizViewModel.categories[2].categories[0])
                 
@@ -297,7 +297,7 @@ class ViewController: UITabBarController {
                 self.icon = "drive.jpeg"
                 self.button.setImage(UIImage(named: self.icon), for: .normal)
                 self.animation.springButton(button: self.button)
-                self.player.Sound(resource: "roadtraffic.mp3")
+                self.player.PlaySound(resource: "roadtraffic.mp3")
                 self.sound = "roadtraffic.mp3"
                 self.quizViewModel.GoToStart(quiz: QuizRoadTraffic(), category: quizViewModel.categories[2].categories[1])
                 
@@ -305,7 +305,7 @@ class ViewController: UITabBarController {
                 self.icon = "swift.jpeg"
                 self.button.setImage(UIImage(named: self.icon), for: .normal)
                 self.animation.springButton(button: self.button)
-                self.player.Sound(resource: "swift.mp3")
+                self.player.PlaySound(resource: "swift.mp3")
                 self.sound = "swift.mp3"
                 self.quizViewModel.GoToStart(quiz: QuizSwift(), category: quizViewModel.categories[2].categories[2])
                 
@@ -313,7 +313,7 @@ class ViewController: UITabBarController {
                 self.icon = "underwater.png"
                 self.button.setImage(UIImage(named: self.icon), for: .normal)
                 self.animation.springButton(button: self.button)
-                self.player.Sound(resource: "underwater.wav")
+                self.player.PlaySound(resource: "underwater.wav")
                 self.sound = "underwater.wav"
                 self.quizViewModel.GoToStart(quiz: QuizUnderwater(), category: quizViewModel.categories[3].categories[0])
                 
@@ -321,7 +321,7 @@ class ViewController: UITabBarController {
                 self.icon = "chess.png"
                 self.button.setImage(UIImage(named: self.icon), for: .normal)
                 self.animation.springButton(button: self.button)
-                self.player.Sound(resource: "chess.mp3")
+                self.player.PlaySound(resource: "chess.mp3")
                 self.sound = "chess.mp3"
                 self.quizViewModel.GoToStart(quiz: QuizChess(), category: quizViewModel.categories[3].categories[1])
                 
@@ -329,7 +329,7 @@ class ViewController: UITabBarController {
                 self.icon = "halloween.png"
                 self.button.setImage(UIImage(named: self.icon), for: .normal)
                 self.animation.springButton(button: self.button)
-                self.player.Sound(resource: "halloween.wav")
+                self.player.PlaySound(resource: "halloween.wav")
                 self.sound = "halloween.wav"
                 self.quizViewModel.GoToStart(quiz: QuizHalloween(), category: quizViewModel.categories[4].categories[0])
                 
@@ -337,7 +337,7 @@ class ViewController: UITabBarController {
                 self.icon = "newyear.png"
                 self.button.setImage(UIImage(named: self.icon), for: .normal)
                 self.animation.springButton(button: self.button)
-                self.player.Sound(resource: "newyear.mp3")
+                self.player.PlaySound(resource: "newyear.mp3")
                 self.sound = "newyear.mp3"
                 self.quizViewModel.GoToStart(quiz: QuizNewYear(), category: quizViewModel.categories[5].categories[0])
                 
@@ -345,7 +345,7 @@ class ViewController: UITabBarController {
                 self.icon = "random.jpeg"
                 self.button.setImage(UIImage(named: self.icon), for: .normal)
                 self.animation.springButton(button: self.button)
-                self.player.Sound(resource: "dice.wav")
+                self.player.PlaySound(resource: "dice.wav")
                 self.sound = "dice.wav"
                 self.quizViewModel.PresentRandomQuiz()
                 
@@ -354,7 +354,7 @@ class ViewController: UITabBarController {
                 self.icon = "newyear.png"
                 self.button.setImage(UIImage(named: self.icon), for: .normal)
                 self.sound = "newyear music.mp3"
-                self.player.Sound(resource: self.sound)
+                self.player.PlaySound(resource: self.sound)
                 self.animation.StartRotateImage(image: self.button.imageView!)
                 
             case _ where self.text.contains("Выкл") || self.text.contains("выкл"):
@@ -390,7 +390,7 @@ class ViewController: UITabBarController {
                 self.icon = "camera.png"
                 self.button.setImage(UIImage(named: self.icon), for: .normal)
                 self.animation.springButton(button: self.button)
-                self.player.Sound(resource: "camera.mp3")
+                self.player.PlaySound(resource: "camera.mp3")
                 self.sound = "camera.mp3"
                 DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
                     self.base.OpenCamera()
@@ -401,7 +401,7 @@ class ViewController: UITabBarController {
                 self.icon = "gear.png"
                 self.button.setImage(UIImage(named: self.icon), for: .normal)
                 self.animation.springButton(button: self.button)
-                self.player.Sound(resource: "settings.mp3")
+                self.player.PlaySound(resource: "settings.mp3")
                 DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
                     self.performSegue(withIdentifier: "showSettings", sender: nil)
                 }
@@ -434,12 +434,12 @@ class ViewController: UITabBarController {
     @objc func VoiceCommands(_ sender: UIButton) {
         isStart = !isStart
         if isStart {
-            player.Sound(resource: "click sound.wav")
+            player.PlaySound(resource: "click sound.wav")
             button.setImage(UIImage(named: "voice.png"), for: .normal)
             animation.springButton(button: button)
             startSpeechRecognization()
         } else {
-            player.Sound(resource: "pause_sound.mp3")
+            player.PlaySound(resource: "pause_sound.mp3")
             self.icon = "newyear.png"
             button.setImage(UIImage(named: self.icon), for: .normal)
             animation.springButton(button: button)

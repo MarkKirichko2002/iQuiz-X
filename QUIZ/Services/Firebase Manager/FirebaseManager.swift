@@ -167,7 +167,7 @@ class FirebaseManager {
                     if let category = document["lastquiz"] as? [String: Any] {
                         let sound = category["sound"] as? String ?? ""
                         
-                        self.player.Sound(resource: sound)
+                        self.player.PlaySound(resource: sound)
                     }
                 }
             }

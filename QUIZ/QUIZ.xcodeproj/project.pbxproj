@@ -1291,7 +1291,6 @@
 		820D304A28F386090031CFCD /* MVC Modules */ = {
 			isa = PBXGroup;
 			children = (
-				823CFF6D27FA10DC001FF6D9 /* Settings MVC */,
 				8290FCA327FCC15B00E05DDA /* TabBar MVC */,
 				823CFF7027FA1117001FF6D9 /* Start MVC */,
 				823CFF7127FA1126001FF6D9 /* Auth MVC */,
@@ -1390,26 +1389,13 @@
 			path = "Quiz media library";
 			sourceTree = "<group>";
 		};
-		823CFF6D27FA10DC001FF6D9 /* Settings MVC */ = {
+		823CFF6D27FA10DC001FF6D9 /* Settings */ = {
 			isa = PBXGroup;
 			children = (
-				823CFF6E27FA1100001FF6D9 /* SettingsTableViewController.swift */,
-				823CFF9227FA1BAF001FF6D9 /* BiometricTableViewCell.swift */,
-				8287054E28144CF800002EBC /* VoicePasswordTableViewCell.swift */,
-				82DBCA2628303EDE009DD1EE /* EditProfileTableViewCell.swift */,
-				8283D15027FA209600A71545 /* StatisticTableViewCell.swift */,
-				82A1D8C727FB4C3D0044EEA6 /* PhotoTableViewCell.swift */,
-				82F0CA8327FDDB04004925D8 /* VideoRecordTableViewCell.swift */,
-				823A8EB827FF06F600C7965B /* MicrophoneTableViewCell.swift */,
-				826E12AC27FF89DA00465E16 /* HintsTableViewCell.swift */,
-				826E12B028009F1300465E16 /* SpeachTableViewCell.swift */,
-				82900D622801AB9D00742925 /* MusicTableViewCell.swift */,
-				824D0C8D280377B100C2BE4B /* TimerTableViewCell.swift */,
-				82747F8B28050121001E994A /* AttemptsTableViewCell.swift */,
-				82A1D8C327FB25490044EEA6 /* DeleteTableViewCell.swift */,
-				82AFAF6727FA3C25001B04A0 /* ExitTableViewCell.swift */,
+				829D3D382950EB3900B4C924 /* ViewControllers */,
+				829D3D372950EB3600B4C924 /* Cells */,
 			);
-			path = "Settings MVC";
+			path = Settings;
 			sourceTree = "<group>";
 		};
 		823CFF7027FA1117001FF6D9 /* Start MVC */ = {
@@ -2018,8 +2004,8 @@
 		8295F1912950AA9F000E033E /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				82CE536C28E9D55F00D44A6E /* AudioPlayer */,
 				82CE538F28EA076C00D44A6E /* Firebase Manager */,
+				82CE536C28E9D55F00D44A6E /* AudioPlayer */,
 				8295F1972950B3FF000E033E /* Rounded Image */,
 				82C2B5B127BD2F7000C66946 /* Animation */,
 			);
@@ -2098,8 +2084,8 @@
 			children = (
 				82CBE7F22870A8480045616B /* Quiz Categories MVVM */,
 				82CBE7FC2870D3AA0045616B /* Quiz Tasks MVVM */,
-				82A08C7828F488590072A940 /* Quiz Total MVVM + RxSwift */,
 				82A82AE128A92BB100011B6F /* QuizBase MVVM Observable */,
+				82A08C7828F488590072A940 /* Quiz Total MVVM + RxSwift */,
 			);
 			path = "Quiz Modules";
 			sourceTree = "<group>";
@@ -2126,6 +2112,35 @@
 				82CBE7E4287093890045616B /* News MVVM Event Bus */,
 			);
 			path = "News Module";
+			sourceTree = "<group>";
+		};
+		829D3D372950EB3600B4C924 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				823CFF9227FA1BAF001FF6D9 /* BiometricTableViewCell.swift */,
+				8287054E28144CF800002EBC /* VoicePasswordTableViewCell.swift */,
+				82DBCA2628303EDE009DD1EE /* EditProfileTableViewCell.swift */,
+				8283D15027FA209600A71545 /* StatisticTableViewCell.swift */,
+				82A1D8C727FB4C3D0044EEA6 /* PhotoTableViewCell.swift */,
+				82F0CA8327FDDB04004925D8 /* VideoRecordTableViewCell.swift */,
+				823A8EB827FF06F600C7965B /* MicrophoneTableViewCell.swift */,
+				826E12AC27FF89DA00465E16 /* HintsTableViewCell.swift */,
+				826E12B028009F1300465E16 /* SpeachTableViewCell.swift */,
+				82900D622801AB9D00742925 /* MusicTableViewCell.swift */,
+				824D0C8D280377B100C2BE4B /* TimerTableViewCell.swift */,
+				82747F8B28050121001E994A /* AttemptsTableViewCell.swift */,
+				82A1D8C327FB25490044EEA6 /* DeleteTableViewCell.swift */,
+				82AFAF6727FA3C25001B04A0 /* ExitTableViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		829D3D382950EB3900B4C924 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				823CFF6E27FA1100001FF6D9 /* SettingsTableViewController.swift */,
+			);
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 		82A08C7828F488590072A940 /* Quiz Total MVVM + RxSwift */ = {
@@ -2557,6 +2572,7 @@
 		82DF98E427BCE73700548B38 /* Other Modules */ = {
 			isa = PBXGroup;
 			children = (
+				823CFF6D27FA10DC001FF6D9 /* Settings */,
 				82CF0D3828A583C3006B53F4 /* StartQuiz */,
 				8209F79A2847F2390093147A /* SplashScreen */,
 				8238057B28F191B20006A736 /* Quiz media library */,

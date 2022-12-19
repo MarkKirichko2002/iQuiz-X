@@ -34,7 +34,7 @@ final class TasksTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        player.Sound(resource: categoriesViewModel.quizcategories[indexPath.row].sound)
+        player.PlaySound(resource: categoriesViewModel.quizcategories[indexPath.row].sound)
         
         if let cell = tableView.cellForRow(at: indexPath) as? TasksTableViewCell {
                cell.didSelect(indexPath: indexPath)
