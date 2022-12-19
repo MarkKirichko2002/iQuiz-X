@@ -13,10 +13,9 @@ import RxCocoa
 class QuizResultViewModel {
     
     var quizresult = PublishSubject<QuizResult>()
-    
-    let db = Firestore.firestore()
-    var player = SoundClass()
     var viewModel = CategoriesViewModel()
+    private var firebaseManager = FirebaseManager()
+    private let db = Firestore.firestore()
     var category: QuizCategoryModel?
     
     // View
@@ -28,51 +27,10 @@ class QuizResultViewModel {
         self.storyboard = storyboard
     }
     
-    func LoadQuizResult() {
-        let docRef = db.collection("users").document((Auth.auth().currentUser?.email)!)
-        
-        docRef.getDocument { document, error in
-            if let error = error as NSError? {
-                print("Error getting document: \(error.localizedDescription)")
-            }
-            else {
-                if let document = document {
-                    let data = document.data()
-                    if let category = document["lastquiz"] as? [String: Any] {
-                        let CorrectAnswersCounter = category["CorrectAnswersCounter"] as? Int
-                        let icon = category["icon"] as? String
-                        let sound = category["sound"] as? String
-                        let background = category["background"] as? String
-                        let bestscore = category["bestscore"] as? Int ?? 0
-                        let category = category["category"] as? String ?? ""
-                        
-                        let result = QuizResult(categoryName: category, icon: icon ?? "", bestscore: bestscore, CorrectAnswersCounter: CorrectAnswersCounter ?? 0, background: background ?? "", sound: sound ?? "")
-                        
-//                        self.ScoreLabel.text = ("счет: \(String(bestscore))/100 баллов")
-//                        self.CorrectAnswers.text = "Правильные ответы: \(CorrectAnswersCounter ?? 0)/20"
-//                        self.CommentLabel.text = category
-//                        self.Image.image = UIImage(named: image ?? "")
-//                        self.view.backgroundColor = UIColor(patternImage: UIImage(named: background!)!)
-//                        self.view2.backgroundColor = UIColor(patternImage: UIImage(named: background!)!)
-//                        self.scrollView.backgroundColor = UIColor(patternImage: UIImage(named: background!)!)
-                       
-//                        if bestscore == 0 {
-//                            self.CommentLabel.text = "категория \(category) не пройдена!"
-//                            self.player.Sound(resource: "bgm.mp3")
-//                        }
-//
-//                        if bestscore == 100 {
-//                            self.ExitButton.flash()
-//                            self.player.Sound(resource: "victory_sound.mp3")
-//                            self.CommentLabel.text = "категория \(category) 100%"
-//                            self.Image.image = UIImage(named: "trophy.png")
-//                            self.Image.flash()
-//                        }
-                        
-                        self.quizresult.onNext(result)
-                    }
-                }
-            }
+    func GetQuizResult() {
+        viewModel.CreateCategories()
+        firebaseManager.LoadLastQuizCategoryData { result in
+            self.quizresult.onNext(result)
         }
     }
     
@@ -154,9 +112,7 @@ class QuizResultViewModel {
                             default:
                                 break
                             }
-                            
                         }
-                        
                     }
                 }
             }

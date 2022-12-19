@@ -45,7 +45,7 @@ class BaseTotalQuizViewController: UIViewController {
         RetryButton.layer.borderColor = UIColor.black.cgColor
         ExitButton.layer.borderWidth = 2
         ExitButton.layer.borderColor = UIColor.black.cgColor
-        quizResultViewModel.LoadQuizResult()
+        quizResultViewModel.GetQuizResult()
         Image.layer.cornerRadius = Image.frame.size.width / 2
         Image.clipsToBounds = true
         Image.layer.borderWidth = 5
