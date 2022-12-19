@@ -521,17 +521,15 @@ class LoginViewController: UIViewController {
                 return
             }
             
-
             let defaults = UserDefaults.standard
             
-            let email = defaults.set(self?.loginTextField.text, forKey: "email")
+            defaults.set(self?.loginTextField.text, forKey: "email")
             
-            let password = defaults.set(self?.passwordTextField.text, forKey: "password")
+            defaults.set(self?.passwordTextField.text, forKey: "password")
             
         }
         
     }
-    
     
     @IBAction func register() {
         DispatchQueue.main.async {
@@ -542,11 +540,9 @@ class LoginViewController: UIViewController {
     }
     
     
-    
     @objc func hideKeyboard() {
         self.scrollView.endEditing(true)
     }
-    
     
     // Когда клавиатура появляется
     @objc func keyboardWasShown(notification: Notification) {

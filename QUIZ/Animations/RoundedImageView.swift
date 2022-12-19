@@ -22,6 +22,7 @@ class RoundedImageView: UIImageView {
         self.addGestureRecognizer(tap)
         self.layer.borderWidth = CGFloat(borderWidth)
         self.layer.borderColor = color.cgColor
+        self.clipsToBounds = true
     }
     
     @IBAction func tapFunction(sender: UITapGestureRecognizer) {
