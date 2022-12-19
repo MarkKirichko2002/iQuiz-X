@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="TasksTableViewCell" id="mSw-cO-0UM" customClass="TasksTableViewCell" customModule="QUIZ" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="430" height="138.33332824707031"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="mSw-cO-0UM" id="6UQ-OV-ick">
+                <rect key="frame" x="0.0" y="0.0" width="430" height="138.33332824707031"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="planets.jpeg" translatesAutoresizingMaskIntoConstraints="NO" id="EBN-cN-HJt" customClass="RoundedImageView" customModule="QUIZ" customModuleProvider="target">
+                        <rect key="frame" x="36" y="19" width="100" height="100"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="100" id="RXy-gf-Ogz"/>
+                            <constraint firstAttribute="height" constant="100" id="opv-P8-8Mg"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vvk-uq-V9n">
+                        <rect key="frame" x="152" y="19" width="242" height="24"/>
+                        <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="20"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VCT-KR-fIF">
+                        <rect key="frame" x="152" y="48" width="53.666666666666657" height="24"/>
+                        <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="20"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="EBN-cN-HJt" firstAttribute="leading" secondItem="6UQ-OV-ick" secondAttribute="leadingMargin" constant="16" id="0Fd-YT-VqF"/>
+                    <constraint firstItem="VCT-KR-fIF" firstAttribute="leading" secondItem="vvk-uq-V9n" secondAttribute="leading" id="3bi-lI-Df1"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="EBN-cN-HJt" secondAttribute="bottom" constant="8" id="5eD-JD-2KX"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="vvk-uq-V9n" secondAttribute="trailing" constant="16" id="FHp-HK-6yF"/>
+                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="VCT-KR-fIF" secondAttribute="trailing" constant="20" symbolic="YES" id="Gz5-Ua-Dis"/>
+                    <constraint firstItem="EBN-cN-HJt" firstAttribute="top" secondItem="6UQ-OV-ick" secondAttribute="topMargin" constant="8" id="JP5-JO-FSa"/>
+                    <constraint firstItem="VCT-KR-fIF" firstAttribute="top" secondItem="vvk-uq-V9n" secondAttribute="bottom" constant="5" id="X4M-kZ-Yti"/>
+                    <constraint firstItem="vvk-uq-V9n" firstAttribute="top" secondItem="EBN-cN-HJt" secondAttribute="top" id="gQ0-2f-Jqf"/>
+                    <constraint firstItem="vvk-uq-V9n" firstAttribute="leading" secondItem="EBN-cN-HJt" secondAttribute="trailing" constant="16" id="raR-iO-NVm"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="TaskImage" destination="EBN-cN-HJt" id="ylO-Ku-l53"/>
+                <outlet property="TaskStatus" destination="VCT-KR-fIF" id="sN2-wZ-AZI"/>
+                <outlet property="TaskText" destination="vvk-uq-V9n" id="hnt-ln-tsM"/>
+            </connections>
+            <point key="canvasLocation" x="-124" y="21"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="planets.jpeg" width="512" height="512"/>
+    </resources>
+</document>
