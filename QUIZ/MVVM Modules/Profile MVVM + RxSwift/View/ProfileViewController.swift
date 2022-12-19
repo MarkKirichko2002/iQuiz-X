@@ -43,13 +43,37 @@ class ProfileViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.profileViewModel.view = self.view
+        self.HideUI()
+        profileViewModel.ShowLoading()
         self.DisplayProfileData()
+    }
+    
+    func HideUI() {
+        ProfileImage.isHidden = true
+        NameLabel.isHidden = true
+        EmailLabel.isHidden = true
+        DateLabel.isHidden = true
+        LastQuizCategoryIcon.isHidden = true
+        LastQuizCategoryName.isHidden = true
+        BestScore.isHidden = true
+        CorrectAnswersCountLabel.isHidden = true
+    }
+    
+    func ShowUI() {
+        ProfileImage.isHidden = false
+        NameLabel.isHidden = false
+        EmailLabel.isHidden = false
+        DateLabel.isHidden = false
+        LastQuizCategoryIcon.isHidden = false
+        LastQuizCategoryName.isHidden = false
+        BestScore.isHidden = false
+        CorrectAnswersCountLabel.isHidden = false
     }
     
     private func DisplayProfileData() {
         self.LastQuizCategoryIcon.color = .white
         ProfileImage.color = .white
-        profileViewModel.GetProfileData()
         profileViewModel.user.subscribe(onNext: { user in
             guard let background = UIImage(named: user.background) else {return}
             // информация о профиле
@@ -70,6 +94,7 @@ class ProfileViewController: UIViewController {
             } else {
                 self.SettingsButton.setImage(UIImage(named: "settings"), for: .normal)
             }
+            self.ShowUI()
         }).disposed(by: disposeBag)
     }
 }

@@ -34,6 +34,8 @@ class PauseTableViewController: UITableViewController {
         super.viewDidLoad()
         viewModel.view = view
         viewModel.storyboard = storyboard
+        self.categoryViewModel.view = self.view
+        self.categoryViewModel.storyboard = self.storyboard
     }
     
     func restart() {

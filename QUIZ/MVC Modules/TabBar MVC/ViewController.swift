@@ -59,8 +59,8 @@ class ViewController: UITabBarController {
         
         do {
             try? AVAudioSession.sharedInstance().setCategory(.playAndRecord, mode: .default, policy: .default, options: .defaultToSpeaker)
-        } catch  {
-            
+        } catch {
+            print(error)
         }
     }
     
