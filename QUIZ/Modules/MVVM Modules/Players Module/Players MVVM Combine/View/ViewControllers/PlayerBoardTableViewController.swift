@@ -29,13 +29,13 @@ class PlayerBoardTableViewController: UITableViewController {
     
 
     @IBAction func sort() {
-        player.Sound(resource: "future click sound.wav")
+        player.PlaySound(resource: "future click sound.wav")
         SortTable()
     }
     
     
     func SortTable() {
-        player.Sound(resource: "future click sound.wav")
+        player.PlaySound(resource: "future click sound.wav")
         if sorted == true {
             self.playersViewModel.players.sort(by: { $0.counter > $1.counter })
             sorted = false
@@ -56,7 +56,7 @@ class PlayerBoardTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        player.Sound(resource: playersViewModel.players[indexPath.row].sound)
+        player.PlaySound(resource: playersViewModel.players[indexPath.row].sound)
         
         if let cell = tableView.cellForRow(at: indexPath) as? PlayerTableViewCell {
                cell.didSelect(indexPath: indexPath)

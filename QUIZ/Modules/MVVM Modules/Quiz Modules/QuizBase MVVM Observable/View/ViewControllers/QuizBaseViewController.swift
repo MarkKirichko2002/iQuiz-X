@@ -249,7 +249,7 @@ class QuizBaseViewController: UIViewController {
     
     @IBAction func PresentСategoryScreen() {
         performSegue(withIdentifier: "segue", sender: self)
-        quiz?.player.Sound(resource: "pause_sound.mp3")
+        quiz?.player.PlaySound(resource: "pause_sound.mp3")
     }
     
     @IBAction func showAnswer() {

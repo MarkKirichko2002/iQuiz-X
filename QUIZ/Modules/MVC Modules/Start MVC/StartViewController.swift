@@ -443,7 +443,7 @@ class StartViewController: UIViewController {
     
     @objc func GoToRandomQuiz() {
         
-        player.Sound(resource: sound)
+        player.PlaySound(resource: sound)
         self.animation.springButton(button: self.TodayQuizButton)
         
         let c = quizes[randomindex]
@@ -455,7 +455,7 @@ class StartViewController: UIViewController {
     
     @objc func GoToQuizApp() {
         
-        self.player.Sound(resource: "future click sound.wav")
+        self.player.PlaySound(resource: "future click sound.wav")
         self.animation.springButton(button: self.StartButton)
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 2) {

@@ -28,7 +28,7 @@ class ProfileViewController: UIViewController {
     
     @IBAction func ShowSettings() {
         animation.springButton(button: SettingsButton)
-        player.Sound(resource: "settings.mp3")
+        player.PlaySound(resource: "settings.mp3")
         DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
             self.performSegue(withIdentifier: "showSettings", sender: nil)
         }

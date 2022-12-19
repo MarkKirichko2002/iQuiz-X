@@ -244,7 +244,7 @@ class QuizBaseViewModel {
                 self.PresentTotalScreen()
             }
             
-            player.Sound(resource: "correct answer.wav")
+            player.PlaySound(resource: "correct answer.wav")
             
             if base?.questionNumber ?? 0 < 19 {
                 DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
@@ -315,7 +315,7 @@ class QuizBaseViewModel {
                 self.PresentTotalScreen()
             }
             
-            player.Sound(resource: "wrong answer.wav")
+            player.PlaySound(resource: "wrong answer.wav")
             
             if base?.questionNumber ?? 0 < 19 {
                 DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
@@ -382,7 +382,7 @@ class QuizBaseViewModel {
                 self.PresentTotalScreen()
             }
             
-            player.Sound(resource: "correct answer.wav")
+            player.PlaySound(resource: "correct answer.wav")
             
             if base?.questionNumber ?? 0 < 19 {
                 DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
@@ -451,7 +451,7 @@ class QuizBaseViewModel {
                 self.PresentTotalScreen()
             }
             
-            player.Sound(resource: "wrong answer.wav")
+            player.PlaySound(resource: "wrong answer.wav")
             
             if base?.questionNumber ?? 0 < 19 {
                 DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
@@ -636,7 +636,7 @@ class QuizBaseViewModel {
                 PresentTotalScreen()
             }
             
-            player.Sound(resource: "correct answer.wav")
+            player.PlaySound(resource: "correct answer.wav")
             
             if base?.questionNumber ?? 0 < 19 {
                 DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
@@ -712,7 +712,7 @@ class QuizBaseViewModel {
                 PresentTotalScreen()
             }
             
-            player.Sound(resource: "wrong answer.wav")
+            player.PlaySound(resource: "wrong answer.wav")
             
             if base?.questionNumber ?? 0 < 19 {
                 DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
@@ -806,7 +806,7 @@ class QuizBaseViewModel {
                 write(id: 19, quizpath: "quiznewyear", category: "newyear")
             }
             
-            player.Sound(resource: "correct answer.wav")
+            player.PlaySound(resource: "correct answer.wav")
             
             if base?.questionNumber ?? 0 < 19 {
                 DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
@@ -861,7 +861,7 @@ class QuizBaseViewModel {
                 PresentTotalScreen()
             }
             
-            player.Sound(resource: "wrong answer.wav")
+            player.PlaySound(resource: "wrong answer.wav")
             
             if base?.questionNumber ?? 0 < 19 {
                 DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
@@ -1074,7 +1074,7 @@ class QuizBaseViewModel {
                 OnOffButtonStatus.value = "music button"
             } else if isPlaying == false || self.MusicStatus == false {
                 print("Music: \(self.MusicStatus)")
-                player.Sound(resource: quiz?.music ?? "")
+                player.PlaySound(resource: quiz?.music ?? "")
                 isPlaying = true
                 OnOffButtonStatus.value = quiz?.music ?? ""
                 OnOffButtonStatus.value = "music button selected"
@@ -1747,9 +1747,7 @@ class QuizBaseViewModel {
     }
     
     func startTimer() {
-        //Make sure there arent any others timers running
         timer.invalidate()
-        //Create the timer
         timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(timerClass), userInfo: nil, repeats: true)
     }
     
@@ -1759,7 +1757,7 @@ class QuizBaseViewModel {
     
     func quiztheme() {
         viewStatus.value = UIColor(patternImage: UIImage(named: quiz?.background ?? "")!)
-        player.Sound(resource: quiz?.music ?? "")
+        player.PlaySound(resource: quiz?.music ?? "")
         self.checkMusicSetting()
         CurrentMusic()
         OnOffButtonStatusTitle.value = quiz?.music ?? ""
@@ -1785,7 +1783,7 @@ class QuizBaseViewModel {
         } else {
             AnswersCounter = AnswersCounter - 1
             AnswersButtonStatus.value = ("\(AnswersCounter)")
-            player.Sound(resource: "broken light bulb.mp3")
+            player.PlaySound(resource: "broken light bulb.mp3")
             
             if Choice1Status.value != base?.checkAnswer() {
                 Choice1Status.value = ""

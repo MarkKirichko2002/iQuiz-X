@@ -32,11 +32,11 @@ class BiometricTableViewCell: UITableViewCell {
             print("on")
             userDefaults.set(true, forKey: "onstatusbiometric")
             animation.springImage(image: BiometricMethod)
-            player.Sound(resource: "click sound.wav")
+            player.PlaySound(resource: "click sound.wav")
         } else if mySwitch.isOn == false {
             print("off")
             userDefaults.set(false, forKey: "onstatusbiometric")
-            player.Sound(resource: "click sound.wav")
+            player.PlaySound(resource: "click sound.wav")
         }
         
     }

@@ -49,13 +49,13 @@ class QuizCategoryDetailViewController: UIViewController {
             CompleteStatus.textColor = .systemGray
         }
         PlayButton.tintColor = .white
-        self.player.Sound(resource: self.category?.music ?? "")
+        self.player.PlaySound(resource: self.category?.music ?? "")
     }
     
     @IBAction func PlayQuiz() {
         animation.springButton(button: self.PlayButton)
         player.StopSound(resource: category?.music ?? "")
-        player.Sound(resource: category?.sound ?? "")
+        player.PlaySound(resource: category?.sound ?? "")
         categoriesViewModel.GoToStart(quiz: category!.base, category: category!)
     }
     

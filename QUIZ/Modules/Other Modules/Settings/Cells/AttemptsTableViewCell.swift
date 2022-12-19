@@ -1,38 +1,38 @@
 //
-//  SpeachTableViewCell.swift
+//  AttemptsTableViewCell.swift
 //  QUIZ
 //
-//  Created by Марк Киричко on 08.04.2022.
+//  Created by Марк Киричко on 12.04.2022.
 //
 
 import UIKit
 
-class SpeachTableViewCell: UITableViewCell {
+class AttemptsTableViewCell: UITableViewCell {
 
     var userDefaults = UserDefaults.standard
     var animation = AnimationClass()
     var player = SoundClass()
     
-    static let identifier = "SpeachTableViewCell"
+    static let identifier = "AttemptsTableViewCell"
     
     @IBOutlet weak var mySwitch: UISwitch!
-    @IBOutlet weak var SpeachLabel: UILabel!
-    @IBOutlet weak var SpeachImage: UIImageView!
+    @IBOutlet weak var AttemptsLabel: UILabel!
+    @IBOutlet weak var AttemptsImage: UIImageView!
     
     @IBAction func switchAction(_ sender: UISwitch) {
         
-        userDefaults.set(sender.isOn, forKey: "onspeach")
-        userDefaults.set(sender.isOn, forKey: "offspeach")
+        userDefaults.set(sender.isOn, forKey: "onattempts")
+        userDefaults.set(sender.isOn, forKey: "offattempts")
         
         if mySwitch.isOn == true {
             print("on")
-            userDefaults.set(true, forKey: "onstatusspeach")
-            animation.springImage(image: SpeachImage)
-            player.Sound(resource: "click sound.wav")
+            userDefaults.set(true, forKey: "onstatusattempts")
+            animation.springImage(image: AttemptsImage)
+            player.PlaySound(resource: "click sound.wav")
         } else if mySwitch.isOn == false {
             print("off")
-            userDefaults.set(false, forKey: "onstatusspeach")
-            player.Sound(resource: "click sound.wav")
+            userDefaults.set(false, forKey: "onstatusattempts")
+            player.PlaySound(resource: "click sound.wav")
         }
         
     }
@@ -40,8 +40,8 @@ class SpeachTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        mySwitch.isOn = userDefaults.bool(forKey: "onspeach")
-        mySwitch.isOn = userDefaults.bool(forKey: "offspeach")
+        mySwitch.isOn = userDefaults.bool(forKey: "onattempts")
+        mySwitch.isOn = userDefaults.bool(forKey: "offattempts")
         //userDefaults.object(forKey: "off")
         
         

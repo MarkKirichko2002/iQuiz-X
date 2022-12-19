@@ -64,7 +64,7 @@ final class CategoryTableViewController: UIViewController, UITableViewDelegate, 
     
      func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        player.Sound(resource: categoriesViewModel.categories[indexPath.section].categories[indexPath.row].sound)
+        player.PlaySound(resource: categoriesViewModel.categories[indexPath.section].categories[indexPath.row].sound)
         
         if let cell = tableView.cellForRow(at: indexPath) as? CategoryTableViewCell {
             cell.didSelect(indexPath: indexPath)

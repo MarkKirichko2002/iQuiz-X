@@ -26,7 +26,7 @@ class RoundedImageView: UIImageView {
     }
     
     @IBAction func tapFunction(sender: UITapGestureRecognizer) {
-        player.Sound(resource: sound)
+        player.PlaySound(resource: sound)
         UIView.animate(withDuration: 0.75,
                                     delay: 0,
                                     usingSpringWithDamping: 0.50,

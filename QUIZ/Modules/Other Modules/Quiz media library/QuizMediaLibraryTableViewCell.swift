@@ -33,7 +33,7 @@ class QuizMediaLibraryTableViewCell: UITableViewCell {
         
         if isPlaying == false {
             PlayButton.setImage(UIImage(named: "player selected"), for: .normal)
-            player.Sound(resource: music)
+            player.PlaySound(resource: music)
             animation.StartRotateImage(image: self.Icon)
             isPlaying = true
         } else if isPlaying == true {

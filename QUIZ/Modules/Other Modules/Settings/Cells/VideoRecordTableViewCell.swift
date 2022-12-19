@@ -1,38 +1,39 @@
 //
-//  TimerTableViewCell.swift
+//  VideoRecordTableViewCell.swift
 //  QUIZ
 //
-//  Created by Марк Киричко on 10.04.2022.
+//  Created by Марк Киричко on 06.04.2022.
 //
 
 import UIKit
 
-class TimerTableViewCell: UITableViewCell {
+class VideoRecordTableViewCell: UITableViewCell {
 
     var userDefaults = UserDefaults.standard
     var animation = AnimationClass()
     var player = SoundClass()
     
-    static let identifier = "TimerTableViewCell"
+    static let identifier = "VideoRecordTableViewCell"
     
     @IBOutlet weak var mySwitch: UISwitch!
-    @IBOutlet weak var TimerLabel: UILabel!
-    @IBOutlet weak var TimerImage: UIImageView!
+    @IBOutlet weak var GestureLabel: UILabel!
+    @IBOutlet weak var GestureImage: UIImageView!
     
     @IBAction func switchAction(_ sender: UISwitch) {
         
-        userDefaults.set(sender.isOn, forKey: "ontimer")
-        userDefaults.set(sender.isOn, forKey: "offtimer")
+        
+        userDefaults.set(sender.isOn, forKey: "on")
+        userDefaults.set(sender.isOn, forKey: "off")
         
         if mySwitch.isOn == true {
             print("on")
-            userDefaults.set(true, forKey: "onstatustimer")
-            animation.springImage(image: TimerImage)
-            player.Sound(resource: "click sound.wav")
+            userDefaults.set(true, forKey: "onstatus")
+            animation.springImage(image: GestureImage)
+            player.PlaySound(resource: "click sound.wav")
         } else if mySwitch.isOn == false {
             print("off")
-            userDefaults.set(false, forKey: "onstatustimer")
-            player.Sound(resource: "click sound.wav")
+            userDefaults.set(false, forKey: "onstatus")
+            player.PlaySound(resource: "click sound.wav")
         }
         
     }
@@ -40,10 +41,11 @@ class TimerTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        mySwitch.isOn = userDefaults.bool(forKey: "ontimer")
-        mySwitch.isOn = userDefaults.bool(forKey: "offtimer")
+        mySwitch.isOn = userDefaults.bool(forKey: "on")
+        mySwitch.isOn = userDefaults.bool(forKey: "off")
         //userDefaults.object(forKey: "off")
         
+        print(userDefaults.bool(forKey: "on"))
         
         //mySwitch.isOn = userDefaults.bool(forKey: "on")
         //mySwitch.isOn = userDefaults.bool(forKey: "on")

@@ -70,6 +70,33 @@ class FirebaseManager {
         }
     }
     
+    // загрузить данные о последней категории
+    func LoadLastQuizCategoryData(completion: @escaping(QuizResult)->()) {
+        let docRef = db.collection("users").document((Auth.auth().currentUser?.email)!)
+        
+        docRef.getDocument { document, error in
+            if let error = error as NSError? {
+                print("Error getting document: \(error.localizedDescription)")
+            }
+            else {
+                if let document = document {
+                    let data = document.data()
+                    if let category = document["lastquiz"] as? [String: Any] {
+                        let CorrectAnswersCounter = category["CorrectAnswersCounter"] as? Int
+                        let icon = category["icon"] as? String
+                        let sound = category["sound"] as? String
+                        let background = category["background"] as? String
+                        let bestscore = category["bestscore"] as? Int ?? 0
+                        let category = category["category"] as? String ?? ""
+                        
+                        let result = QuizResult(categoryName: category, icon: icon ?? "", bestscore: bestscore, CorrectAnswersCounter: CorrectAnswersCounter ?? 0, background: background ?? "", sound: sound ?? "")
+                        completion(result)
+                    }
+                }
+            }
+        }
+    }
+    
     // загрузить список игроков
     func LoadPlayers(completion: @escaping([Player])->()) {
         db.collection("users").getDocuments() { (QuerySnapshot, err) in
@@ -129,7 +156,6 @@ class FirebaseManager {
         }
     }
     
-    
     func PlayLastQuizSound() {
         let docRef = db.collection("users").document((Auth.auth().currentUser?.email) ?? "")
         docRef.getDocument { document, error in
@@ -141,7 +167,7 @@ class FirebaseManager {
                     if let category = document["lastquiz"] as? [String: Any] {
                         let sound = category["sound"] as? String ?? ""
                         
-                        self.player.Sound(resource: sound)
+                        self.player.PlaySound(resource: sound)
                     }
                 }
             }
@@ -184,10 +210,9 @@ class FirebaseManager {
     }
     
     func delete() {
-        //DispatchQueue.main.async {
+        
         if Auth.auth().currentUser?.email != nil {
-            //Auth.auth().currentUser?.delete()
-            
+           
             let user = Auth.auth().currentUser
             
             let email = defaults.object(forKey: "email") as? String
@@ -223,7 +248,6 @@ class FirebaseManager {
         } else {
             print("no user")
         }
-        // }
     }
     
     func loadVoiceInfo(passwordLabel: UILabel) {
@@ -253,7 +277,6 @@ class FirebaseManager {
             passwordLabel.text = "нет пароля"
         }
     }
-    
     
     func SignOutAction() {
         try? Auth.auth().signOut()
