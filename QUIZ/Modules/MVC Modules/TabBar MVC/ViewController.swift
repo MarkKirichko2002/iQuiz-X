@@ -56,9 +56,8 @@ class ViewController: UITabBarController {
     }
     
     func configureAudioSession() {
-        
         do {
-            try? AVAudioSession.sharedInstance().setCategory(.playAndRecord, mode: .default, policy: .default, options: .defaultToSpeaker)
+            try? AVAudioSession.sharedInstance().setCategory(.playAndRecord, mode: .default, policy: .default, options: .mixWithOthers)
         } catch {
             print(error)
         }
@@ -187,167 +186,21 @@ class ViewController: UITabBarController {
                 self.button.sd_setImage(with: URL(string: self.icon), for: .normal)
                 self.animation.springButton(button: self.button)
                 self.fb.PlayLastQuizSound()
-                
-            // Выбор категории викторины
-            case _ where self.text.contains("Планет") || self.text.contains("планет") || self.text.contains("Космос") || self.text.contains("космос"):
-                self.icon = "planets.jpeg"
-                self.button.setImage(UIImage(named: self.icon), for: .normal)
-                self.animation.springButton(button: self.button)
-                self.player.PlaySound(resource: "space.wav")
-                self.sound = "space.wav"
-                self.quizViewModel.GoToStart(quiz: QuizPlanets(), category: quizViewModel.categories[0].categories[0])
-                
-            case _ where self.text.contains("Истори") || self.text.contains("истори"):
-                self.icon = "history.jpeg"
-                self.button.setImage(UIImage(named: self.icon), for: .normal)
-                self.animation.springButton(button: self.button)
-                self.player.PlaySound(resource: "history.wav")
-                self.sound = "history.wav"
-                self.quizViewModel.GoToStart(quiz: QuizHistory(), category: quizViewModel.categories[0].categories[1])
-                
-            case _ where self.text.contains("Анатоми") || self.text.contains("анатоми"):
-                self.icon = "anatomy.jpeg"
-                self.button.setImage(UIImage(named: self.icon), for: .normal)
-                self.animation.springButton(button: self.button)
-                self.player.PlaySound(resource: "anatomy.mp3")
-                self.sound = "anatomy.mp3"
-                self.quizViewModel.GoToStart(quiz: QuizAnatomy(), category: quizViewModel.categories[0].categories[2])
-                
-            case _ where self.text.contains("Спорт") || self.text.contains("спорт"):
-                self.icon = "sport.jpeg"
-                self.button.setImage(UIImage(named: self.icon), for: .normal)
-                self.animation.springButton(button: self.button)
-                self.player.PlaySound(resource: "sport.wav")
-                self.sound = "sport.wav"
-                self.quizViewModel.GoToStart(quiz: QuizSport(), category: quizViewModel.categories[0].categories[3])
-                
-            case _ where self.text.contains("Игр") || self.text.contains("игр"):
-                self.icon = "games.jpeg"
-                self.button.setImage(UIImage(named: self.icon), for: .normal)
-                self.animation.springButton(button: self.button)
-                self.player.PlaySound(resource: "games.mp3")
-                self.sound = "games.mp3"
-                self.quizViewModel.GoToStart(quiz: QuizGames(), category: quizViewModel.categories[1].categories[0])
-                
-            case _ where self.text.contains("Интеллект") || self.text.contains("интеллект"):
-                self.icon = "IQ.jpeg"
-                self.button.setImage(UIImage(named: self.icon), for: .normal)
-                self.animation.springButton(button: self.button)
-                self.player.PlaySound(resource: "IQ.mp3")
-                self.sound = "IQ.mp3"
-                self.quizViewModel.GoToStart(quiz: QuizIQ(), category: quizViewModel.categories[1].categories[1])
-                
-            case _ where self.text.contains("Эконом") || self.text.contains("эконом"):
-                self.icon = "economy.jpeg"
-                self.button.setImage(UIImage(named: self.icon), for: .normal)
-                self.animation.springButton(button: self.button)
-                self.player.PlaySound(resource: "economics.mp3")
-                self.sound = "economics.mp3"
-                self.quizViewModel.GoToStart(quiz: QuizEconomy(), category: quizViewModel.categories[1].categories[2])
-                
-            case _ where self.text.contains("Географи") || self.text.contains("географи"):
-                self.icon = "geography.jpeg"
-                self.button.setImage(UIImage(named: self.icon), for: .normal)
-                self.animation.springButton(button: self.button)
-                self.player.PlaySound(resource: "geography.mp3")
-                self.sound = "geography.mp3"
-                self.quizViewModel.GoToStart(quiz: QuizGeography(), category: quizViewModel.categories[1].categories[3])
-                
-            case _ where self.text.contains("Экологи") || self.text.contains("экологи"):
-                self.icon = "ecology.jpeg"
-                self.button.setImage(UIImage(named: self.icon), for: .normal)
-                self.animation.springButton(button: self.button)
-                self.player.PlaySound(resource: "ecology.wav")
-                self.sound = "ecology.wav"
-                self.quizViewModel.GoToStart(quiz: QuizEcology(), category: quizViewModel.categories[1].categories[4])
-                
-            case _ where self.text.contains("Физ") || self.text.contains("физ"):
-                self.icon = "physics.jpeg"
-                self.button.setImage(UIImage(named: self.icon), for: .normal)
-                self.animation.springButton(button: self.button)
-                self.player.PlaySound(resource: "physics.mp3")
-                self.sound = "physics.mp3"
-                self.quizViewModel.GoToStart(quiz: QuizPhysics(), category: quizViewModel.categories[1].categories[5])
-                
-            case _ where self.text.contains("Хим") || self.text.contains("хим"):
-                self.icon = "chemistry.jpeg"
-                self.button.setImage(UIImage(named: self.icon), for: .normal)
-                self.animation.springButton(button: self.button)
-                self.player.PlaySound(resource: "chemistry.mp3")
-                self.sound = "chemistry.mp3"
-                self.quizViewModel.GoToStart(quiz: QuizChemistry(), category: quizViewModel.categories[1].categories[6])
-                
-            case _ where self.text.contains("Информа") || self.text.contains("информа"):
-                self.icon = "informatics.jpeg"
-                self.button.setImage(UIImage(named: self.icon), for: .normal)
-                self.animation.springButton(button: self.button)
-                self.player.PlaySound(resource: "informatics.mp3")
-                self.sound = "informatics.mp3"
-                self.quizViewModel.GoToStart(quiz: QuizInformatics(), category: quizViewModel.categories[1].categories[7])
-                
-            case _ where self.text.contains("Литера") || self.text.contains("литера"):
-                self.icon = "literature.jpeg"
-                self.button.setImage(UIImage(named: self.icon), for: .normal)
-                self.animation.springButton(button: self.button)
-                self.player.PlaySound(resource: "literature.mp3")
-                self.sound = "literature.mp3"
-                self.quizViewModel.GoToStart(quiz: QuizLiterature(), category: quizViewModel.categories[2].categories[0])
-                
-            case _ where self.text.contains("Дорог") || self.text.contains("дорог"):
-                self.icon = "drive.jpeg"
-                self.button.setImage(UIImage(named: self.icon), for: .normal)
-                self.animation.springButton(button: self.button)
-                self.player.PlaySound(resource: "roadtraffic.mp3")
-                self.sound = "roadtraffic.mp3"
-                self.quizViewModel.GoToStart(quiz: QuizRoadTraffic(), category: quizViewModel.categories[2].categories[1])
-                
-            case _ where self.text.contains("Swift") || self.text.contains("swift"):
-                self.icon = "swift.jpeg"
-                self.button.setImage(UIImage(named: self.icon), for: .normal)
-                self.animation.springButton(button: self.button)
-                self.player.PlaySound(resource: "swift.mp3")
-                self.sound = "swift.mp3"
-                self.quizViewModel.GoToStart(quiz: QuizSwift(), category: quizViewModel.categories[2].categories[2])
-                
-            case _ where self.text.contains("Мор") || self.text.contains("мор"):
-                self.icon = "underwater.png"
-                self.button.setImage(UIImage(named: self.icon), for: .normal)
-                self.animation.springButton(button: self.button)
-                self.player.PlaySound(resource: "underwater.wav")
-                self.sound = "underwater.wav"
-                self.quizViewModel.GoToStart(quiz: QuizUnderwater(), category: quizViewModel.categories[3].categories[0])
-                
-            case _ where self.text.contains("Шахмат") || self.text.contains("шахмат"):
-                self.icon = "chess.png"
-                self.button.setImage(UIImage(named: self.icon), for: .normal)
-                self.animation.springButton(button: self.button)
-                self.player.PlaySound(resource: "chess.mp3")
-                self.sound = "chess.mp3"
-                self.quizViewModel.GoToStart(quiz: QuizChess(), category: quizViewModel.categories[3].categories[1])
-                
-            case _ where self.text.contains("Halloween") || self.text.contains("halloween"):
-                self.icon = "halloween.png"
-                self.button.setImage(UIImage(named: self.icon), for: .normal)
-                self.animation.springButton(button: self.button)
-                self.player.PlaySound(resource: "halloween.wav")
-                self.sound = "halloween.wav"
-                self.quizViewModel.GoToStart(quiz: QuizHalloween(), category: quizViewModel.categories[4].categories[0])
-                
-            case _ where self.text.contains("Рождеств") || self.text.contains("рождеств"):
-                self.icon = "newyear.png"
-                self.button.setImage(UIImage(named: self.icon), for: .normal)
-                self.animation.springButton(button: self.button)
-                self.player.PlaySound(resource: "newyear.mp3")
-                self.sound = "newyear.mp3"
-                self.quizViewModel.GoToStart(quiz: QuizNewYear(), category: quizViewModel.categories[5].categories[0])
-                
-            case _ where self.text.contains("Рандом") || self.text.contains("рандом"):
-                self.icon = "random.jpeg"
-                self.button.setImage(UIImage(named: self.icon), for: .normal)
-                self.animation.springButton(button: self.button)
-                self.player.PlaySound(resource: "dice.wav")
-                self.sound = "dice.wav"
-                self.quizViewModel.PresentRandomQuiz()
+             
+            // выбор категории викторины
+            case _ where self.text != "":
+                for i in 0...5 {
+                    for value in quizViewModel.categories[i].categories {
+                        if text.lowercased().contains(value.voiceCommand) {
+                            self.icon = value.image
+                            self.button.setImage(UIImage(named: self.icon), for: .normal)
+                            self.animation.springButton(button: self.button)
+                            self.player.PlaySound(resource: value.sound)
+                            self.sound = value.sound
+                            self.quizViewModel.GoToStart(quiz: value.base, category: value)
+                        }
+                    }
+                }
                 
             // Включение/Выключение музыки
             case _ where self.text.contains("Муз") || self.text.contains("муз"):
@@ -367,7 +220,7 @@ class ViewController: UITabBarController {
             case _ where self.text.contains("Врем") || self.text.contains("врем"):
                 let hours   = (Calendar.current.component(.hour, from: self.today))
                 let minutes = (Calendar.current.component(.minute, from: self.today))
-               
+                
                 self.button.setImage(UIImage(named: ""), for: .normal)
                 self.button.setTitleColor(.black, for: .normal)
                 self.button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 20)
@@ -384,7 +237,7 @@ class ViewController: UITabBarController {
                 self.button.setTitle("\(year)", for: .normal)
                 self.base.sayComment(comment: "\(year)")
                 self.animation.springButton(button: self.button)
-            
+                
             // Открыть камеру
             case _ where self.text.contains("Камер") || self.text.contains("камер"):
                 self.icon = "camera.png"
@@ -395,7 +248,7 @@ class ViewController: UITabBarController {
                 DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
                     self.base.OpenCamera()
                 }
-            
+                
             // показать экран настроек
             case _ where self.text.contains("Настрой") || self.text.contains("настрой"):
                 self.icon = "gear.png"
@@ -405,17 +258,16 @@ class ViewController: UITabBarController {
                 DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
                     self.performSegue(withIdentifier: "showSettings", sender: nil)
                 }
-               
+                
             case _ where self.text.contains("Закр") || self.text.contains("закр"):
                 self.dismiss(animated: true)
                 
             // выключить распознавание речи
             case _ where self.text.contains("Стоп") || self.text.contains("стоп"):
                 self.button.sendActions(for: .touchUpInside)
-              
+                
             case _ where self.sound != "":
                 self.player.StopSound(resource: self.sound)
-                
                 
             default:
                 break
@@ -460,7 +312,7 @@ extension ViewController: UIImagePickerControllerDelegate, UINavigationControlle
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
         
         guard let image = info[UIImagePickerController.InfoKey.editedImage] as?
-        UIImage else {
+                UIImage else {
             return
         }
         
@@ -471,3 +323,4 @@ extension ViewController: UIImagePickerControllerDelegate, UINavigationControlle
         }
     }
 }
+
