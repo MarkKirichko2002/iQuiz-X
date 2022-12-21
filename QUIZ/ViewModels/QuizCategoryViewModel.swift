@@ -8,7 +8,7 @@
 import Foundation
 
 struct QuizCategoryViewModel {
-    let score: Int
-    let CorrectAnswersCounter: Int
-    let complete: Bool
+    var score: Int
+    var CorrectAnswersCounter: Int
+    var complete: Bool
 }

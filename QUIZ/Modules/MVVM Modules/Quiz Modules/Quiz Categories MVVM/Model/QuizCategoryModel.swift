@@ -11,6 +11,7 @@ struct QuizCategoryModel {
     var name: String
     var image: String
     var base: QuizBaseViewModel
+    var voiceCommand: String
     var background: String
     var complete: Bool
     var id: Int
