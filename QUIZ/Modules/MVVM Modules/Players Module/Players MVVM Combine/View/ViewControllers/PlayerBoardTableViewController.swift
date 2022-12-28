@@ -19,6 +19,7 @@ class PlayerBoardTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.tableView.register(UINib(nibName: PlayerTableViewCell.identifier, bundle: nil), forCellReuseIdentifier: PlayerTableViewCell.identifier)
         playersViewModel.$players.sink { [weak self] players in
             DispatchQueue.main.async {
                 self?.tableView.reloadData()
