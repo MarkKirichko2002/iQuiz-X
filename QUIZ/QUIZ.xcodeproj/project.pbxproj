@@ -433,6 +433,8 @@
 		82CE537428E9E58B00D44A6E /* halloween music.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 82CE537328E9E58B00D44A6E /* halloween music.mp3 */; };
 		82CE537C28E9EC4600D44A6E /* anatomy.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 82CE537B28E9EC4600D44A6E /* anatomy.mp3 */; };
 		82CF0D3A28A583D9006B53F4 /* QuizStartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82CF0D3928A583D9006B53F4 /* QuizStartViewController.swift */; };
+		82D35B47295C520B000EB277 /* PlayerTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 82D35B46295C520B000EB277 /* PlayerTableViewCell.xib */; };
+		82D35B49295C5529000EB277 /* NewsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 82D35B48295C5529000EB277 /* NewsTableViewCell.xib */; };
 		82D67D6E2948E04B0097FD30 /* sport.wav in Resources */ = {isa = PBXBuildFile; fileRef = 82D67D6D2948E04B0097FD30 /* sport.wav */; };
 		82DBCA2728303EDE009DD1EE /* EditProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82DBCA2628303EDE009DD1EE /* EditProfileTableViewCell.swift */; };
 		82DC6E1C27E65E790077D107 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82DC6E1B27E65E790077D107 /* StartViewController.swift */; };
@@ -1028,6 +1030,8 @@
 		82CE537328E9E58B00D44A6E /* halloween music.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "halloween music.mp3"; sourceTree = "<group>"; };
 		82CE537B28E9EC4600D44A6E /* anatomy.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = anatomy.mp3; sourceTree = "<group>"; };
 		82CF0D3928A583D9006B53F4 /* QuizStartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizStartViewController.swift; sourceTree = "<group>"; };
+		82D35B46295C520B000EB277 /* PlayerTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlayerTableViewCell.xib; sourceTree = "<group>"; };
+		82D35B48295C5529000EB277 /* NewsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewsTableViewCell.xib; sourceTree = "<group>"; };
 		82D67D6D2948E04B0097FD30 /* sport.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = sport.wav; sourceTree = "<group>"; };
 		82DBCA2628303EDE009DD1EE /* EditProfileTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileTableViewCell.swift; sourceTree = "<group>"; };
 		82DC6E1B27E65E790077D107 /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
@@ -1746,6 +1750,7 @@
 			isa = PBXGroup;
 			children = (
 				828F0DD027C82D4C0016D337 /* PlayerTableViewCell.swift */,
+				82D35B46295C520B000EB277 /* PlayerTableViewCell.xib */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -2262,6 +2267,7 @@
 			isa = PBXGroup;
 			children = (
 				82B01735294F86730073452D /* NewsTableViewCell.swift */,
+				82D35B48295C5529000EB277 /* NewsTableViewCell.xib */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -3022,6 +3028,7 @@
 				8281168F293A88DC00AA7C8E /* newyear10.jpeg in Resources */,
 				82EA1ED0286BCBD100E49D0F /* hints.png in Resources */,
 				8294089D27CEC43E00AFF603 /* planets5.jpeg in Resources */,
+				82D35B47295C520B000EB277 /* PlayerTableViewCell.xib in Resources */,
 				8294092127CECCA900AFF603 /* IQ5.jpeg in Resources */,
 				823D9F752825694800EC0FE7 /* lock_sound.mp3 in Resources */,
 				8286519A28FEF9B8004806D3 /* swift.mp3 in Resources */,
@@ -3067,6 +3074,7 @@
 				82BDEB0F283C630100B1AD7F /* literature16.jpeg in Resources */,
 				82EA1F58286BCCD200E49D0F /* IQ16.jpeg in Resources */,
 				829408FF27CECAC800AFF603 /* sport5.jpeg in Resources */,
+				82D35B49295C5529000EB277 /* NewsTableViewCell.xib in Resources */,
 				82EA1EC9286BCBB500E49D0F /* exit.png in Resources */,
 				82CD6BF2288851FB00716443 /* click sound.wav in Resources */,
 				82EA1EBA286BCB7C00E49D0F /* roadtraffic6.jpeg in Resources */,

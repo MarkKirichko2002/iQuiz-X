@@ -16,6 +16,7 @@ class NewsTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.tableView.register(UINib(nibName: NewsTableViewCell.identifier, bundle: nil), forCellReuseIdentifier: NewsTableViewCell.identifier)
         RefreshControl.addTarget(self, action: #selector(refresh(_:)), for: .valueChanged)
         tableView.addSubview(RefreshControl)
         Bus.shared.subscribeOnMain(.newsFetch) { [weak self] event in
