@@ -8,5 +8,5 @@
 import Foundation
 
 protocol CustomViewCellDelegate: AnyObject {
-   func didElementClick()
+     func didElementClick()
 }
