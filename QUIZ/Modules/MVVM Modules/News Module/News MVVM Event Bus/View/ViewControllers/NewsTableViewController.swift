@@ -9,10 +9,11 @@ import UIKit
 import Alamofire
 import SDWebImage
 
-class NewsTableViewController: UITableViewController {
+class NewsTableViewController: UITableViewController, CustomViewCellDelegate {
     
-    var newsViewModel = NewsListViewModel()
-    let RefreshControl = UIRefreshControl()
+    private var newsViewModel = NewsListViewModel()
+    private let RefreshControl = UIRefreshControl()
+    private let player = SoundClass()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,10 +43,28 @@ class NewsTableViewController: UITableViewController {
         }
     }
     
+    func didElementClick() {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+            self.performSegue(withIdentifier: "ShowWeb", sender: nil)
+        }
+    }
+    
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if let vc = storyboard?.instantiateViewController(withIdentifier: "URLViewController") as? URLViewController {
-            vc.url = newsViewModel.news[indexPath.row].url ?? ""
-            self.navigationController?.pushViewController(vc, animated: true)
+        
+        player.PlaySound(resource: "literature.mp3")
+        
+        if let cell = tableView.cellForRow(at: indexPath) as? NewsTableViewCell {
+            cell.didSelect(indexPath: indexPath)
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "ShowWeb",
+           let destinationController = segue.destination as? URLViewController,
+           let indexSelectedCell = tableView.indexPathForSelectedRow {
+           let url = newsViewModel.news[indexSelectedCell.row].url
+           guard let url = url else {return}
+           destinationController.url = url
         }
     }
     
@@ -56,7 +75,7 @@ class NewsTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: NewsTableViewCell.identifier, for: indexPath) as! NewsTableViewCell
-        
+        cell.delegate = self
         cell.configure(news: newsViewModel.news[indexPath.row])
         
         return cell

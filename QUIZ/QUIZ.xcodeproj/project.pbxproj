@@ -435,6 +435,8 @@
 		82CF0D3A28A583D9006B53F4 /* QuizStartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82CF0D3928A583D9006B53F4 /* QuizStartViewController.swift */; };
 		82D35B47295C520B000EB277 /* PlayerTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 82D35B46295C520B000EB277 /* PlayerTableViewCell.xib */; };
 		82D35B49295C5529000EB277 /* NewsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 82D35B48295C5529000EB277 /* NewsTableViewCell.xib */; };
+		82D35BDC29630F83000EB277 /* QuizMediaLibraryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 82D35BDB29630F83000EB277 /* QuizMediaLibraryTableViewCell.xib */; };
+		82D35BDF2963130A000EB277 /* CustomViewCellDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82D35BDE2963130A000EB277 /* CustomViewCellDelegate.swift */; };
 		82D67D6E2948E04B0097FD30 /* sport.wav in Resources */ = {isa = PBXBuildFile; fileRef = 82D67D6D2948E04B0097FD30 /* sport.wav */; };
 		82DBCA2728303EDE009DD1EE /* EditProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82DBCA2628303EDE009DD1EE /* EditProfileTableViewCell.swift */; };
 		82DC6E1C27E65E790077D107 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82DC6E1B27E65E790077D107 /* StartViewController.swift */; };
@@ -1032,6 +1034,8 @@
 		82CF0D3928A583D9006B53F4 /* QuizStartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizStartViewController.swift; sourceTree = "<group>"; };
 		82D35B46295C520B000EB277 /* PlayerTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlayerTableViewCell.xib; sourceTree = "<group>"; };
 		82D35B48295C5529000EB277 /* NewsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewsTableViewCell.xib; sourceTree = "<group>"; };
+		82D35BDB29630F83000EB277 /* QuizMediaLibraryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QuizMediaLibraryTableViewCell.xib; sourceTree = "<group>"; };
+		82D35BDE2963130A000EB277 /* CustomViewCellDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomViewCellDelegate.swift; sourceTree = "<group>"; };
 		82D67D6D2948E04B0097FD30 /* sport.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = sport.wav; sourceTree = "<group>"; };
 		82DBCA2628303EDE009DD1EE /* EditProfileTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileTableViewCell.swift; sourceTree = "<group>"; };
 		82DC6E1B27E65E790077D107 /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
@@ -1231,6 +1235,7 @@
 		820C627227BBA3CA004894FA = {
 			isa = PBXGroup;
 			children = (
+				82D35BDD296312D1000EB277 /* Delegates */,
 				8295F1912950AA9F000E033E /* Services */,
 				8295F1992950B5F7000E033E /* Modules */,
 				8295F1922950AB10000E033E /* ViewModels */,
@@ -1386,9 +1391,9 @@
 		8238057B28F191B20006A736 /* Quiz media library */ = {
 			isa = PBXGroup;
 			children = (
-				8238057E28F1922E0006A736 /* QuizMediaLibraryTableViewController.swift */,
-				8238058028F1926A0006A736 /* QuizMediaLibraryTableViewCell.swift */,
-				8238058228F192F70006A736 /* QuizMediaLibraryModel.swift */,
+				82D35BDA29630F46000EB277 /* Model */,
+				82D35BD929630F42000EB277 /* ViewControllers */,
+				82D35BD829630F3E000EB277 /* Cells */,
 			);
 			path = "Quiz media library";
 			sourceTree = "<group>";
@@ -2314,8 +2319,8 @@
 				82E0EC7E28AC5A90004AA2E3 /* Bus */,
 				82E0EC7D28AC5A8E004AA2E3 /* Event */,
 				82CBE7ED287093CC0045616B /* Model */,
-				82CBE7EF287093ED0045616B /* ViewModel */,
 				82CBE7EE287093DA0045616B /* View */,
+				82CBE7EF287093ED0045616B /* ViewModel */,
 			);
 			path = "News MVVM Event Bus";
 			sourceTree = "<group>";
@@ -2575,6 +2580,39 @@
 			path = StartQuiz;
 			sourceTree = "<group>";
 		};
+		82D35BD829630F3E000EB277 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				8238058028F1926A0006A736 /* QuizMediaLibraryTableViewCell.swift */,
+				82D35BDB29630F83000EB277 /* QuizMediaLibraryTableViewCell.xib */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		82D35BD929630F42000EB277 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				8238057E28F1922E0006A736 /* QuizMediaLibraryTableViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		82D35BDA29630F46000EB277 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				8238058228F192F70006A736 /* QuizMediaLibraryModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		82D35BDD296312D1000EB277 /* Delegates */ = {
+			isa = PBXGroup;
+			children = (
+				82D35BDE2963130A000EB277 /* CustomViewCellDelegate.swift */,
+			);
+			path = Delegates;
+			sourceTree = "<group>";
+		};
 		82DF98E427BCE73700548B38 /* Other Modules */ = {
 			isa = PBXGroup;
 			children = (
@@ -2701,6 +2739,7 @@
 				8295F1BD2950BB39000E033E /* newyear16.jpeg in Resources */,
 				82EA1F2B286BCC9700E49D0F /* geography18.jpeg in Resources */,
 				82EA1EAB286BCB6000E49D0F /* literature2.jpeg in Resources */,
+				82D35BDC29630F83000EB277 /* QuizMediaLibraryTableViewCell.xib in Resources */,
 				82319E1328E8D9CF0053CEF5 /* halloween3.jpeg in Resources */,
 				829408F927CECAC800AFF603 /* sport6.jpeg in Resources */,
 				82EA1EC0286BCB7C00E49D0F /* roadtraffic9.jpeg in Resources */,
@@ -3288,6 +3327,7 @@
 				827F8C0E27E81B7400F6D7B3 /* SoundClass.swift in Sources */,
 				828F0DD127C82D4C0016D337 /* PlayerTableViewCell.swift in Sources */,
 				8295F1942950AB25000E033E /* QuizCategoryViewModel.swift in Sources */,
+				82D35BDF2963130A000EB277 /* CustomViewCellDelegate.swift in Sources */,
 				82251C34287E661F00723057 /* URLViewController.swift in Sources */,
 				8243F16B27C266F800CD9CE4 /* QuizBaseViewController.swift in Sources */,
 				8295F19B2950B68A000E033E /* Quiz.swift in Sources */,

@@ -16,6 +16,7 @@ final class TotalTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.tableView.register(UINib(nibName: CategoryTableViewCell.identifier, bundle: nil), forCellReuseIdentifier: CategoryTableViewCell.identifier)
         categoriesViewModel.$categories.sink { [weak self] category in
             DispatchQueue.main.async {
                 self?.tableView.reloadData()
@@ -38,6 +39,4 @@ final class TotalTableViewController: UITableViewController {
         cell.ConfigureCell(category: categoriesViewModel.categories[indexPath.section].categories[indexPath.row])
         return cell
     }
-    
 }
-
