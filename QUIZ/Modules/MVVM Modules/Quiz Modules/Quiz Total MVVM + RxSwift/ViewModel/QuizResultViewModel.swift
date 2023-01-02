@@ -52,7 +52,7 @@ class QuizResultViewModel {
                             
                             switch category {
                                 
-                            case "планеты":
+                            case "астрономия":
                                 self.viewModel.goToQuize(quiz: QuizPlanets(), category: viewModel.categories[0].categories[0])
                                 
                             case "история":

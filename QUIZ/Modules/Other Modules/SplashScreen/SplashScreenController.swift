@@ -28,7 +28,7 @@ class SplashScreenController: UIViewController {
     func SplashScreen() {
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-            self.Text.text = "Викторина 2022"
+            self.Text.text = "Викторина 2023"
             self.animation.springLabel(label: self.Text)
         }
         
