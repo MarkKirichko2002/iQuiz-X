@@ -14,16 +14,16 @@ class PauseTableViewController: UITableViewController {
     var currentquiz: QuizBaseViewModel?
     var currentcategory: QuizCategoryModel?
     
-    var viewModel = QuizBaseViewModel()
-    var categoryViewModel = CategoriesViewModel()
+    private let quizBaseViewModel = QuizBaseViewModel()
+    private let categoriesViewModel = CategoriesViewModel()
     
     var icon = ""
     var score = 0
     var questionNumber = 0
     
-    var timer = Timer()
+    private let timer = Timer()
     
-    var player = SoundClass()
+    private let player = SoundClass()
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
@@ -32,18 +32,26 @@ class PauseTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        viewModel.view = view
-        viewModel.storyboard = storyboard
-        self.categoryViewModel.view = self.view
-        self.categoryViewModel.storyboard = self.storyboard
+        quizBaseViewModel.view = view
+        quizBaseViewModel.storyboard = storyboard
+        self.categoriesViewModel.view = self.view
+        self.categoriesViewModel.storyboard = self.storyboard
+        self.SetUpCells()
     }
     
-    func restart() {
+    
+    private func SetUpCells() {
+        self.tableView.register(UINib(nibName: CurrentCategoryTableViewCell.identifier, bundle: nil), forCellReuseIdentifier: CurrentCategoryTableViewCell.identifier)
+        self.tableView.register(UINib(nibName: RestartTableViewCell.identifier, bundle: nil), forCellReuseIdentifier: RestartTableViewCell.identifier)
+        self.tableView.register(UINib(nibName: ExitTableViewCell.identifier, bundle: nil), forCellReuseIdentifier: ExitTableViewCell.identifier)
+    }
+    
+    private func restart() {
         DispatchQueue.main.async {
             self.currentquiz?.stopSpeechRecognition()
             self.currentquiz?.captureSession.stopRunning()
             self.currentquiz?.questionNumber = 0
-            self.categoryViewModel.GoToStart(quiz: self.currentquiz ?? QuizPlanets(), category: self.currentcategory!)
+            self.categoriesViewModel.GoToStart(quiz: self.currentquiz ?? QuizPlanets(), category: self.currentcategory!)
         }
     }
     
@@ -60,7 +68,7 @@ class PauseTableViewController: UITableViewController {
             restart()
             
         case 2: print("exit")
-            viewModel.exit()
+            quizBaseViewModel.exit()
             
         default: break
             
@@ -69,8 +77,9 @@ class PauseTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        if indexPath.row == 0  {
+        switch indexPath.row {
             
+        case 0:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "CurrentCategoryTableViewCell") as? CurrentCategoryTableViewCell
             else { return UITableViewCell() }
             cell.CurrentImage.image = UIImage(named: currentcategory?.image ?? "")
@@ -85,20 +94,17 @@ class PauseTableViewController: UITableViewController {
             cell.contentView.backgroundColor = UIColor(patternImage: UIImage(named: currentcategory?.background ?? "")!)
             return cell
             
-        } else if indexPath.row == 1  {
-            
+        case 1:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "RestartTableViewCell") as? RestartTableViewCell
             else { return UITableViewCell() }
             return cell
             
-        } else if indexPath.row == 2  {
-            
+        case 2:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "ExitTableViewCell") as? ExitTableViewCell
             else { return UITableViewCell() }
             return cell
-            
-        } else {
-            
+         
+        default:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "ExitTableViewCell") as? ExitTableViewCell
             else { return UITableViewCell() }
             return cell

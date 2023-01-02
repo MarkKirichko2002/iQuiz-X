@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="RestartTableViewCell" id="9wa-sW-zjH" customClass="RestartTableViewCell" customModule="QUIZ" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="430" height="138.33332824707031"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="9wa-sW-zjH" id="UAR-hq-Y2T">
+                <rect key="frame" x="0.0" y="0.0" width="430" height="138.33332824707031"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="retry.png" translatesAutoresizingMaskIntoConstraints="NO" id="HgX-Ld-LC9" customClass="RoundedImageView" customModule="QUIZ" customModuleProvider="target">
+                        <rect key="frame" x="36" y="19" width="100" height="100"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="100" id="6ub-Ga-Tya"/>
+                            <constraint firstAttribute="width" constant="100" id="XP9-Gh-IkI"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="рестарт" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pGY-Le-Miy">
+                        <rect key="frame" x="152" y="19" width="242" height="24"/>
+                        <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="20"/>
+                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="HgX-Ld-LC9" firstAttribute="leading" secondItem="UAR-hq-Y2T" secondAttribute="leadingMargin" constant="16" id="1Xb-Ap-J8e"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="pGY-Le-Miy" secondAttribute="trailing" constant="16" id="Lsh-o9-2wr"/>
+                    <constraint firstItem="pGY-Le-Miy" firstAttribute="leading" secondItem="HgX-Ld-LC9" secondAttribute="trailing" constant="16" id="M57-1W-Ij0"/>
+                    <constraint firstItem="HgX-Ld-LC9" firstAttribute="top" secondItem="UAR-hq-Y2T" secondAttribute="topMargin" constant="8" id="Q7m-gb-C1X"/>
+                    <constraint firstItem="pGY-Le-Miy" firstAttribute="top" secondItem="HgX-Ld-LC9" secondAttribute="top" id="UmD-Oq-BbA"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="HgX-Ld-LC9" secondAttribute="bottom" constant="8" id="zvb-L2-nd7"/>
+                </constraints>
+            </tableViewCellContentView>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <point key="canvasLocation" x="56" y="21"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="retry.png" width="409.60000610351562" height="409.60000610351562"/>
+    </resources>
+</document>
