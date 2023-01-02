@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="TimerTableViewCell" rowHeight="136" id="nWU-Bj-RUe" customClass="TimerTableViewCell" customModule="QUIZ" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="430" height="136"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="nWU-Bj-RUe" id="iZp-tL-x0q">
+                <rect key="frame" x="0.0" y="0.0" width="430" height="136"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="timer.png" translatesAutoresizingMaskIntoConstraints="NO" id="N7e-bV-1rF" customClass="RoundedImageView" customModule="QUIZ" customModuleProvider="target">
+                        <rect key="frame" x="36" y="19" width="100" height="100"/>
+                        <color key="tintColor" red="0.0564979439" green="0.0" blue="0.25830120280000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="100" id="Hxw-qQ-bZA"/>
+                            <constraint firstAttribute="height" constant="100" id="u91-vs-JCV"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="таймер " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Gn-Lc-FA7">
+                        <rect key="frame" x="152" y="19" width="242" height="24"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="O1K-Hj-1Pm">
+                        <rect key="frame" x="152" y="51" width="49" height="31"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <connections>
+                            <action selector="switchAction:" destination="nWU-Bj-RUe" eventType="touchUpInside" id="Tpv-uC-CbW"/>
+                        </connections>
+                    </switch>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailingMargin" secondItem="5Gn-Lc-FA7" secondAttribute="trailing" constant="16" id="1l4-wn-US3"/>
+                    <constraint firstItem="5Gn-Lc-FA7" firstAttribute="leading" secondItem="N7e-bV-1rF" secondAttribute="trailing" constant="16" id="Utr-tu-WdY"/>
+                    <constraint firstItem="5Gn-Lc-FA7" firstAttribute="top" secondItem="N7e-bV-1rF" secondAttribute="top" id="aTs-CY-dcY"/>
+                    <constraint firstItem="N7e-bV-1rF" firstAttribute="top" secondItem="iZp-tL-x0q" secondAttribute="topMargin" constant="8" id="dsS-4O-LCa"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="N7e-bV-1rF" secondAttribute="bottom" constant="8" id="i1R-On-2tA"/>
+                    <constraint firstItem="N7e-bV-1rF" firstAttribute="leading" secondItem="iZp-tL-x0q" secondAttribute="leadingMargin" constant="16" id="vEn-Bp-sye"/>
+                </constraints>
+            </tableViewCellContentView>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <connections>
+                <outlet property="TimerImage" destination="N7e-bV-1rF" id="xvB-wc-FoK"/>
+                <outlet property="TimerLabel" destination="5Gn-Lc-FA7" id="YNX-Xa-wdV"/>
+                <outlet property="mySwitch" destination="O1K-Hj-1Pm" id="68R-cb-jj9"/>
+            </connections>
+            <point key="canvasLocation" x="48.854961832061065" y="-0.70422535211267612"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="timer.png" width="384" height="384"/>
+    </resources>
+</document>

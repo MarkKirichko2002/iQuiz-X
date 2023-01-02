@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="AttemptsTableViewCell" rowHeight="134" id="DHC-fz-wA5" customClass="AttemptsTableViewCell" customModule="QUIZ" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="430" height="134"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="DHC-fz-wA5" id="36T-8m-vJf">
+                <rect key="frame" x="0.0" y="0.0" width="430" height="134"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="attempts.png" translatesAutoresizingMaskIntoConstraints="NO" id="CPo-M7-3BL" customClass="RoundedImageView" customModule="QUIZ" customModuleProvider="target">
+                        <rect key="frame" x="36" y="19" width="100" height="100"/>
+                        <color key="tintColor" red="0.0564979439" green="0.0" blue="0.25830120280000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="100" id="eeU-se-Sn2"/>
+                            <constraint firstAttribute="width" constant="100" id="rsY-Pf-rgt"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="попытки" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9SH-a1-D0P">
+                        <rect key="frame" x="152" y="19" width="242" height="24"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="NNQ-ce-CzA">
+                        <rect key="frame" x="152" y="51" width="49" height="31"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <connections>
+                            <action selector="switchAction:" destination="DHC-fz-wA5" eventType="touchUpInside" id="EiU-ps-yph"/>
+                        </connections>
+                    </switch>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottomMargin" secondItem="CPo-M7-3BL" secondAttribute="bottom" constant="8" id="1cY-xH-hp0"/>
+                    <constraint firstItem="CPo-M7-3BL" firstAttribute="leading" secondItem="36T-8m-vJf" secondAttribute="leadingMargin" constant="16" id="5Ku-Jr-zze"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="9SH-a1-D0P" secondAttribute="trailing" constant="16" id="814-Gl-6k2"/>
+                    <constraint firstItem="9SH-a1-D0P" firstAttribute="top" secondItem="CPo-M7-3BL" secondAttribute="top" id="O81-iV-qto"/>
+                    <constraint firstItem="9SH-a1-D0P" firstAttribute="leading" secondItem="CPo-M7-3BL" secondAttribute="trailing" constant="16" id="tJr-MN-dhd"/>
+                    <constraint firstItem="CPo-M7-3BL" firstAttribute="top" secondItem="36T-8m-vJf" secondAttribute="topMargin" constant="8" id="y7a-t1-MhW"/>
+                </constraints>
+            </tableViewCellContentView>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <connections>
+                <outlet property="AttemptsImage" destination="CPo-M7-3BL" id="Fe7-ws-nJf"/>
+                <outlet property="AttemptsLabel" destination="9SH-a1-D0P" id="cwg-CU-hus"/>
+                <outlet property="mySwitch" destination="NNQ-ce-CzA" id="JOT-0s-a19"/>
+            </connections>
+            <point key="canvasLocation" x="35.114503816793892" y="21.83098591549296"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="attempts.png" width="384" height="384"/>
+    </resources>
+</document>
