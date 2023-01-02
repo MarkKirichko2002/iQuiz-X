@@ -16,6 +16,7 @@ final class SettingsTableViewController: UITableViewController, UIImagePickerCon
     private let db = Firestore.firestore()
     private let storage = Storage.storage().reference()
     private var saved = false
+    private var sections = ["Авторизация","Профиль","Викторина","Аккаунт"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -98,8 +99,6 @@ final class SettingsTableViewController: UITableViewController, UIImagePickerCon
                 print("Download URL: \(self.urlString)")
                 UserDefaults.standard.set(self.urlString, forKey: "url")
             })
-            
-            
         })
     }
     
@@ -107,61 +106,228 @@ final class SettingsTableViewController: UITableViewController, UIImagePickerCon
         picker.dismiss(animated: true, completion: nil)
     }
     
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        return 4
+    }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 14
-    }
-    
-    
-    private func showLoginVC() {
-        guard let vc = storyboard?.instantiateViewController(identifier: "LoginViewController") else {return}
-        guard let window = self.view.window else {return}
-        window.rootViewController = vc
-    }
-    
-    
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        switch(indexPath.row) {
+        switch section {
             
-        case 0: print("biometric")
+        case 0:
+            return 2
             
-        case 1: print("voice password")
-                alert2()
+        case 1:
+            return 3
             
-        case 2: alert()
+        case 2:
+            return 7
             
-        case 3: print("statistic")
-            if let cell = tableView.cellForRow(at: indexPath) as? StatisticTableViewCell {
-                cell.didSelect(indexPath: indexPath)
-            }
+        case 3:
+            return 2
             
-        case 4: print("photo")
-                self.didTapButton()
-            
-        case 5: print("video recording")
-            
-        case 6: print("audio recording")
-            
-        case 7: print("hints")
-            
-        case 8: print("speach")
-            
-        case 9: print("music")
-            
-        case 10: print("timer")
-            
-        case 11: print("attempts")
-            
-        case 12: auth.delete()
-                auth.SignOutAction()
-                self.showLoginVC()
-            
-        case 13: auth.SignOutAction()
-                self.showLoginVC()
-            
-        default: break
+        default:
+            return 0
             
         }
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        switch indexPath.section {
+            
+        case 0:
+            
+            if indexPath.row == 0 {
+                print("biometric")
+            } else if indexPath.row == 1 {
+                print("voice password")
+                alert2()
+            }
+            
+        case 1:
+            
+            if indexPath.row == 0 {
+                print("photo")
+                self.didTapButton()
+            } else if indexPath.row == 1 {
+                alert()
+            } else if indexPath.row == 2 {
+                print("statistic")
+                if let cell = tableView.cellForRow(at: indexPath) as? StatisticTableViewCell {
+                       cell.didSelect(indexPath: indexPath)
+                }
+            }
+            
+        case 2:
+            
+            if indexPath.row == 0 {
+                print("audio recording")
+            } else if indexPath.row == 1 {
+                print("video recording")
+            } else if indexPath.row == 2 {
+                print("hints")
+            } else if indexPath.row == 3 {
+                print("speach")
+            } else if indexPath.row == 4 {
+                print("music")
+            } else if indexPath.row == 5 {
+                print("timer")
+            } else if indexPath.row == 6 {
+                print("attempts")
+            }
+            
+        case 3:
+            
+            if indexPath.row == 0 {
+                auth.delete()
+                auth.SignOutAction()
+                self.showLoginVC()
+            } else if indexPath.row == 1 {
+                auth.SignOutAction()
+                self.showLoginVC()
+            }
+            
+            
+        default:
+            break
+            
+        }
+    }
+    
+    override func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+       if let headerView = view as? UITableViewHeaderFooterView {
+           headerView.contentView.backgroundColor = .black
+           headerView.textLabel?.textColor = .white
+       }
+   }
+    
+    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+       let view = UIView(frame: CGRect(x: 0, y: 0, width: tableView.frame.width, height: 40))
+       let lbl = UILabel(frame: CGRect(x: 15, y: 0, width: view.frame.width - 15, height: 40))
+       lbl.font = UIFont.systemFont(ofSize: 25)
+        switch section {
+            
+        case 0:
+            lbl.text = "Авторизация"
+            
+        case 1:
+            lbl.text = "Профиль"
+            
+        case 2:
+            lbl.text = "Викторина"
+            
+        case 3:
+            lbl.text = "Аккаунт"
+            
+        default:
+            lbl.text = ""
+            
+        }
+       view.addSubview(lbl)
+       return view
+   }
+   
+    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+       return 40
+   }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        switch indexPath.section {
+            
+        case 0:
+            
+            if indexPath.row == 0 {
+                guard let cell = tableView.dequeueReusableCell(withIdentifier: "BiometricTableViewCell") as? BiometricTableViewCell
+                else { return UITableViewCell() }
+                return cell
+            } else if indexPath.row == 1 {
+                guard let cell = tableView.dequeueReusableCell(withIdentifier: "VoicePasswordTableViewCell") as? VoicePasswordTableViewCell
+                else { return UITableViewCell() }
+                return cell
+            }
+            
+        case 1:
+            
+            if indexPath.row == 0 {
+                guard let cell = tableView.dequeueReusableCell(withIdentifier: "PhotoTableViewCell") as? PhotoTableViewCell
+                else { return UITableViewCell() }
+                
+                if self.saved == true {
+                    print("Сохранено")
+                    self.auth.load(profileimage: cell.SettingsImage)
+                }
+                
+                return cell
+                
+            } else if indexPath.row == 1 {
+                guard let cell = tableView.dequeueReusableCell(withIdentifier: "EditProfileTableViewCell") as? EditProfileTableViewCell
+                else { return UITableViewCell() }
+                return cell
+                
+            } else if indexPath.row == 2 {
+                guard let cell = tableView.dequeueReusableCell(withIdentifier: "StatisticTableViewCell") as? StatisticTableViewCell
+                else { return UITableViewCell() }
+                cell.delegate = self
+                return cell
+            }
+            
+        case 2:
+            if indexPath.row == 0 {
+                guard let cell = tableView.dequeueReusableCell(withIdentifier: "MicrophoneTableViewCell") as? MicrophoneTableViewCell
+                else { return UITableViewCell() }
+                
+                return cell
+            } else if indexPath.row == 1 {
+                guard let cell = tableView.dequeueReusableCell(withIdentifier: "VideoRecordTableViewCell") as? VideoRecordTableViewCell
+                else { return UITableViewCell() }
+                
+                return cell
+            } else if indexPath.row == 2 {
+                guard let cell = tableView.dequeueReusableCell(withIdentifier: "HintsTableViewCell") as? HintsTableViewCell
+                else { return UITableViewCell() }
+                
+                return cell
+            } else if indexPath.row == 3 {
+                guard let cell = tableView.dequeueReusableCell(withIdentifier: "SpeachTableViewCell") as? SpeachTableViewCell
+                else { return UITableViewCell() }
+                
+                return cell
+            } else if indexPath.row == 4 {
+                guard let cell = tableView.dequeueReusableCell(withIdentifier: "MusicTableViewCell") as? MusicTableViewCell
+                else { return UITableViewCell() }
+
+                return cell
+            } else if indexPath.row == 5 {
+                guard let cell = tableView.dequeueReusableCell(withIdentifier: "TimerTableViewCell") as? TimerTableViewCell
+                else { return UITableViewCell() }
+
+                return cell
+            } else if indexPath.row == 6 {
+                guard let cell = tableView.dequeueReusableCell(withIdentifier: "AttemptsTableViewCell") as? AttemptsTableViewCell
+                else { return UITableViewCell() }
+
+                return cell
+            }
+            
+        case 3:
+            if indexPath.row == 0 {
+                guard let cell = tableView.dequeueReusableCell(withIdentifier: "DeleteTableViewCell") as? DeleteTableViewCell
+                else { return UITableViewCell() }
+
+                return cell
+            } else if indexPath.row == 1 {
+                guard let cell = tableView.dequeueReusableCell(withIdentifier: "ExitTableViewCell") as? ExitTableViewCell
+                else { return UITableViewCell() }
+
+                return cell
+            }
+            
+        default:
+            return UITableViewCell()
+            
+        }
+        return UITableViewCell()
     }
     
     func didElementClick() {
@@ -172,10 +338,9 @@ final class SettingsTableViewController: UITableViewController, UIImagePickerCon
     
     func alert() {
         let defaults = UserDefaults.standard
-        var name = defaults.object(forKey:"name") as? String
-        var email = defaults.object(forKey:"email") as? String
-        var password = defaults.object(forKey:"password") as? String
-        var credential: AuthCredential
+        let email = defaults.object(forKey:"email") as? String ?? ""
+        var name = defaults.object(forKey:"name") as? String ?? ""
+        var password = defaults.object(forKey:"password") as? String ?? ""
         
         print("нет email")
         
@@ -269,107 +434,10 @@ final class SettingsTableViewController: UITableViewController, UIImagePickerCon
         
     }
     
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        
-        switch indexPath.row {
-            
-        case 0:
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: "BiometricTableViewCell") as? BiometricTableViewCell
-            else { return UITableViewCell() }
-            return cell
-            
-        case 1:
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: "VoicePasswordTableViewCell") as? VoicePasswordTableViewCell
-            else { return UITableViewCell() }
-            
-            return cell
-            
-        case 2:
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: "EditProfileTableViewCell") as? EditProfileTableViewCell
-            else { return UITableViewCell() }
-            
-            return cell
-            
-        case 3:
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: "StatisticTableViewCell") as? StatisticTableViewCell
-            else { return UITableViewCell() }
-            cell.delegate = self
-            
-            return cell
-            
-        case 4:
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: "PhotoTableViewCell") as? PhotoTableViewCell
-            else { return UITableViewCell() }
-            
-            
-            if self.saved == true {
-                print("Сохранено")
-                self.auth.load(profileimage: cell.SettingsImage)
-            }
-            
-            return cell
-            
-            
-        case 5:
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: "VideoRecordTableViewCell") as? VideoRecordTableViewCell
-            else { return UITableViewCell() }
-            
-            return cell
-            
-        case 6:
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: "MicrophoneTableViewCell") as? MicrophoneTableViewCell
-            else { return UITableViewCell() }
-            
-            return cell
-            
-        case 7:
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: "HintsTableViewCell") as? HintsTableViewCell
-            else { return UITableViewCell() }
-            
-            return cell
-            
-        case 8:
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: "SpeachTableViewCell") as? SpeachTableViewCell
-            else { return UITableViewCell() }
-            
-            return cell
-            
-        case 9:
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: "MusicTableViewCell") as? MusicTableViewCell
-            else { return UITableViewCell() }
-            
-            return cell
-            
-        case 10:
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: "TimerTableViewCell") as? TimerTableViewCell
-            else { return UITableViewCell() }
-            
-            return cell
-            
-        case 11:
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: "AttemptsTableViewCell") as? AttemptsTableViewCell
-            else { return UITableViewCell() }
-            
-            return cell
-            
-        case 12:
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: "DeleteTableViewCell") as? DeleteTableViewCell
-            else { return UITableViewCell() }
-            
-            return cell
-            
-        case 13:
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: "ExitTableViewCell") as? ExitTableViewCell
-            else { return UITableViewCell() }
-            
-            return cell
-            
-        default:
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: "StatisticTableViewCell") as? StatisticTableViewCell
-            else { return UITableViewCell() }
-            
-            return cell
-        }
+    private func showLoginVC() {
+        guard let vc = storyboard?.instantiateViewController(identifier: "LoginViewController") else {return}
+        guard let window = self.view.window else {return}
+        window.rootViewController = vc
     }
+    
 }

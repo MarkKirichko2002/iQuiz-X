@@ -86,11 +86,7 @@ final class CategoryTableViewController: UIViewController, UITableViewDelegate, 
             headerView.textLabel?.textColor = .white
         }
     }
-    
-     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return categoriesViewModel.categories[section].releaseDate
-    }
-    
+        
      func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let view = UIView(frame: CGRect(x: 0, y: 0, width: tableView.frame.width, height: 40))
         let lbl = UILabel(frame: CGRect(x: 15, y: 0, width: view.frame.width - 15, height: 40))
