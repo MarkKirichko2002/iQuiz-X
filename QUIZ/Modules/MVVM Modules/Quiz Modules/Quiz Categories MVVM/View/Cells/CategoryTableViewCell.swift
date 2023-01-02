@@ -8,10 +8,6 @@
 import UIKit
 import Firebase
 
-protocol CustomViewCellDelegate: AnyObject {
-   func didElementClick()
-}
-
 class CategoryTableViewCell: UITableViewCell {
     
     static let identifier = "CategoryTableViewCell"
