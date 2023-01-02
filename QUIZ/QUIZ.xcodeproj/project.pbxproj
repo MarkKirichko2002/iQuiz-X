@@ -440,6 +440,19 @@
 		82D35BEE29631D25000EB277 /* RestartTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 82D35BED29631D25000EB277 /* RestartTableViewCell.xib */; };
 		82D35BF029631D67000EB277 /* CurrentCategoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 82D35BEF29631D67000EB277 /* CurrentCategoryTableViewCell.xib */; };
 		82D35BF229631DEC000EB277 /* ExitTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 82D35BF129631DEC000EB277 /* ExitTableViewCell.xib */; };
+		82D35C0329632596000EB277 /* BiometricTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 82D35C0229632596000EB277 /* BiometricTableViewCell.xib */; };
+		82D35C05296325DF000EB277 /* VoicePasswordTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 82D35C04296325DF000EB277 /* VoicePasswordTableViewCell.xib */; };
+		82D35C0729632620000EB277 /* EditProfileTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 82D35C0629632620000EB277 /* EditProfileTableViewCell.xib */; };
+		82D35C0929632688000EB277 /* StatisticTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 82D35C0829632688000EB277 /* StatisticTableViewCell.xib */; };
+		82D35C0B296326A8000EB277 /* PhotoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 82D35C0A296326A8000EB277 /* PhotoTableViewCell.xib */; };
+		82D35C0D296326DC000EB277 /* VideoRecordTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 82D35C0C296326DC000EB277 /* VideoRecordTableViewCell.xib */; };
+		82D35C0F296326FF000EB277 /* MicrophoneTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 82D35C0E296326FF000EB277 /* MicrophoneTableViewCell.xib */; };
+		82D35C1129632721000EB277 /* HintsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 82D35C1029632721000EB277 /* HintsTableViewCell.xib */; };
+		82D35C132963278A000EB277 /* SpeachTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 82D35C122963278A000EB277 /* SpeachTableViewCell.xib */; };
+		82D35C15296327A6000EB277 /* MusicTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 82D35C14296327A6000EB277 /* MusicTableViewCell.xib */; };
+		82D35C17296327CF000EB277 /* TimerTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 82D35C16296327CF000EB277 /* TimerTableViewCell.xib */; };
+		82D35C19296327FC000EB277 /* AttemptsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 82D35C18296327FC000EB277 /* AttemptsTableViewCell.xib */; };
+		82D35C1B29632823000EB277 /* DeleteTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 82D35C1A29632823000EB277 /* DeleteTableViewCell.xib */; };
 		82D67D6E2948E04B0097FD30 /* sport.wav in Resources */ = {isa = PBXBuildFile; fileRef = 82D67D6D2948E04B0097FD30 /* sport.wav */; };
 		82DBCA2728303EDE009DD1EE /* EditProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82DBCA2628303EDE009DD1EE /* EditProfileTableViewCell.swift */; };
 		82DC6E1C27E65E790077D107 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82DC6E1B27E65E790077D107 /* StartViewController.swift */; };
@@ -1042,6 +1055,19 @@
 		82D35BED29631D25000EB277 /* RestartTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RestartTableViewCell.xib; sourceTree = "<group>"; };
 		82D35BEF29631D67000EB277 /* CurrentCategoryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CurrentCategoryTableViewCell.xib; sourceTree = "<group>"; };
 		82D35BF129631DEC000EB277 /* ExitTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExitTableViewCell.xib; sourceTree = "<group>"; };
+		82D35C0229632596000EB277 /* BiometricTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BiometricTableViewCell.xib; sourceTree = "<group>"; };
+		82D35C04296325DF000EB277 /* VoicePasswordTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VoicePasswordTableViewCell.xib; sourceTree = "<group>"; };
+		82D35C0629632620000EB277 /* EditProfileTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EditProfileTableViewCell.xib; sourceTree = "<group>"; };
+		82D35C0829632688000EB277 /* StatisticTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StatisticTableViewCell.xib; sourceTree = "<group>"; };
+		82D35C0A296326A8000EB277 /* PhotoTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhotoTableViewCell.xib; sourceTree = "<group>"; };
+		82D35C0C296326DC000EB277 /* VideoRecordTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VideoRecordTableViewCell.xib; sourceTree = "<group>"; };
+		82D35C0E296326FF000EB277 /* MicrophoneTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MicrophoneTableViewCell.xib; sourceTree = "<group>"; };
+		82D35C1029632721000EB277 /* HintsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HintsTableViewCell.xib; sourceTree = "<group>"; };
+		82D35C122963278A000EB277 /* SpeachTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SpeachTableViewCell.xib; sourceTree = "<group>"; };
+		82D35C14296327A6000EB277 /* MusicTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MusicTableViewCell.xib; sourceTree = "<group>"; };
+		82D35C16296327CF000EB277 /* TimerTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TimerTableViewCell.xib; sourceTree = "<group>"; };
+		82D35C18296327FC000EB277 /* AttemptsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AttemptsTableViewCell.xib; sourceTree = "<group>"; };
+		82D35C1A29632823000EB277 /* DeleteTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DeleteTableViewCell.xib; sourceTree = "<group>"; };
 		82D67D6D2948E04B0097FD30 /* sport.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = sport.wav; sourceTree = "<group>"; };
 		82DBCA2628303EDE009DD1EE /* EditProfileTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileTableViewCell.swift; sourceTree = "<group>"; };
 		82DC6E1B27E65E790077D107 /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
@@ -2133,19 +2159,19 @@
 		829D3D372950EB3600B4C924 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				823CFF9227FA1BAF001FF6D9 /* BiometricTableViewCell.swift */,
-				8287054E28144CF800002EBC /* VoicePasswordTableViewCell.swift */,
-				82DBCA2628303EDE009DD1EE /* EditProfileTableViewCell.swift */,
-				8283D15027FA209600A71545 /* StatisticTableViewCell.swift */,
-				82A1D8C727FB4C3D0044EEA6 /* PhotoTableViewCell.swift */,
-				82F0CA8327FDDB04004925D8 /* VideoRecordTableViewCell.swift */,
-				823A8EB827FF06F600C7965B /* MicrophoneTableViewCell.swift */,
-				826E12AC27FF89DA00465E16 /* HintsTableViewCell.swift */,
-				826E12B028009F1300465E16 /* SpeachTableViewCell.swift */,
-				82900D622801AB9D00742925 /* MusicTableViewCell.swift */,
-				824D0C8D280377B100C2BE4B /* TimerTableViewCell.swift */,
-				82747F8B28050121001E994A /* AttemptsTableViewCell.swift */,
-				82A1D8C327FB25490044EEA6 /* DeleteTableViewCell.swift */,
+				82D35C01296322A5000EB277 /* BiometricTableViewCell */,
+				82D35C00296322A3000EB277 /* VoicePasswordTableViewCell */,
+				82D35BFF296322A0000EB277 /* EditProfileTableViewCell */,
+				82D35BFE2963229E000EB277 /* StatisticTableViewCell */,
+				82D35BFD2963229C000EB277 /* PhotoTableViewCell */,
+				82D35BFC2963229A000EB277 /* VideoRecordTableViewCell */,
+				82D35BFB29632298000EB277 /* MicrophoneTableViewCell */,
+				82D35BFA29632296000EB277 /* HintsTableViewCell */,
+				82D35BF929632294000EB277 /* SpeachTableViewCell */,
+				82D35BF829632291000EB277 /* MusicTableViewCell */,
+				82D35BF72963228F000EB277 /* TimerTableViewCell */,
+				82D35BF62963228D000EB277 /* AttemptsTableViewCell */,
+				82D35BF52963227C000EB277 /* DeleteTableViewCell */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -2726,6 +2752,123 @@
 			path = Base;
 			sourceTree = "<group>";
 		};
+		82D35BF52963227C000EB277 /* DeleteTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				82A1D8C327FB25490044EEA6 /* DeleteTableViewCell.swift */,
+				82D35C1A29632823000EB277 /* DeleteTableViewCell.xib */,
+			);
+			path = DeleteTableViewCell;
+			sourceTree = "<group>";
+		};
+		82D35BF62963228D000EB277 /* AttemptsTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				82747F8B28050121001E994A /* AttemptsTableViewCell.swift */,
+				82D35C18296327FC000EB277 /* AttemptsTableViewCell.xib */,
+			);
+			path = AttemptsTableViewCell;
+			sourceTree = "<group>";
+		};
+		82D35BF72963228F000EB277 /* TimerTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				824D0C8D280377B100C2BE4B /* TimerTableViewCell.swift */,
+				82D35C16296327CF000EB277 /* TimerTableViewCell.xib */,
+			);
+			path = TimerTableViewCell;
+			sourceTree = "<group>";
+		};
+		82D35BF829632291000EB277 /* MusicTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				82900D622801AB9D00742925 /* MusicTableViewCell.swift */,
+				82D35C14296327A6000EB277 /* MusicTableViewCell.xib */,
+			);
+			path = MusicTableViewCell;
+			sourceTree = "<group>";
+		};
+		82D35BF929632294000EB277 /* SpeachTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				826E12B028009F1300465E16 /* SpeachTableViewCell.swift */,
+				82D35C122963278A000EB277 /* SpeachTableViewCell.xib */,
+			);
+			path = SpeachTableViewCell;
+			sourceTree = "<group>";
+		};
+		82D35BFA29632296000EB277 /* HintsTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				826E12AC27FF89DA00465E16 /* HintsTableViewCell.swift */,
+				82D35C1029632721000EB277 /* HintsTableViewCell.xib */,
+			);
+			path = HintsTableViewCell;
+			sourceTree = "<group>";
+		};
+		82D35BFB29632298000EB277 /* MicrophoneTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				823A8EB827FF06F600C7965B /* MicrophoneTableViewCell.swift */,
+				82D35C0E296326FF000EB277 /* MicrophoneTableViewCell.xib */,
+			);
+			path = MicrophoneTableViewCell;
+			sourceTree = "<group>";
+		};
+		82D35BFC2963229A000EB277 /* VideoRecordTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				82F0CA8327FDDB04004925D8 /* VideoRecordTableViewCell.swift */,
+				82D35C0C296326DC000EB277 /* VideoRecordTableViewCell.xib */,
+			);
+			path = VideoRecordTableViewCell;
+			sourceTree = "<group>";
+		};
+		82D35BFD2963229C000EB277 /* PhotoTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				82A1D8C727FB4C3D0044EEA6 /* PhotoTableViewCell.swift */,
+				82D35C0A296326A8000EB277 /* PhotoTableViewCell.xib */,
+			);
+			path = PhotoTableViewCell;
+			sourceTree = "<group>";
+		};
+		82D35BFE2963229E000EB277 /* StatisticTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				8283D15027FA209600A71545 /* StatisticTableViewCell.swift */,
+				82D35C0829632688000EB277 /* StatisticTableViewCell.xib */,
+			);
+			path = StatisticTableViewCell;
+			sourceTree = "<group>";
+		};
+		82D35BFF296322A0000EB277 /* EditProfileTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				82DBCA2628303EDE009DD1EE /* EditProfileTableViewCell.swift */,
+				82D35C0629632620000EB277 /* EditProfileTableViewCell.xib */,
+			);
+			path = EditProfileTableViewCell;
+			sourceTree = "<group>";
+		};
+		82D35C00296322A3000EB277 /* VoicePasswordTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				8287054E28144CF800002EBC /* VoicePasswordTableViewCell.swift */,
+				82D35C04296325DF000EB277 /* VoicePasswordTableViewCell.xib */,
+			);
+			path = VoicePasswordTableViewCell;
+			sourceTree = "<group>";
+		};
+		82D35C01296322A5000EB277 /* BiometricTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				823CFF9227FA1BAF001FF6D9 /* BiometricTableViewCell.swift */,
+				82D35C0229632596000EB277 /* BiometricTableViewCell.xib */,
+			);
+			path = BiometricTableViewCell;
+			sourceTree = "<group>";
+		};
 		82DF98E427BCE73700548B38 /* Other Modules */ = {
 			isa = PBXGroup;
 			children = (
@@ -2868,6 +3011,7 @@
 				82EA1F00286BCC3E00E49D0F /* planets15.jpeg in Resources */,
 				8294090D27CECB9200AFF603 /* games7.jpeg in Resources */,
 				822139182874E77E0065A0C3 /* ecology music.mp3 in Resources */,
+				82D35C15296327A6000EB277 /* MusicTableViewCell.xib in Resources */,
 				829408D527CEC93100AFF603 /* history9.jpeg in Resources */,
 				827D4B6128205C0E007B3895 /* informatics17.jpeg in Resources */,
 				82EA1EBF286BCB7C00E49D0F /* roadtraffic7.jpeg in Resources */,
@@ -2889,6 +3033,7 @@
 				829408F827CECAC800AFF603 /* sport1.jpeg in Resources */,
 				8281169B293A8A9D00AA7C8E /* newyear.png in Resources */,
 				82319E1928E8E0080053CEF5 /* halloween6.jpeg in Resources */,
+				82D35C0929632688000EB277 /* StatisticTableViewCell.xib in Resources */,
 				8243A61C2820810E00427553 /* physics11.jpeg in Resources */,
 				82EA1EFF286BCC3E00E49D0F /* planets12.jpeg in Resources */,
 				8294095127CECE1900AFF603 /* geography9.jpeg in Resources */,
@@ -2900,6 +3045,7 @@
 				82848D6B281DACAB0068A4AE /* victory_sound.mp3 in Resources */,
 				82EA1FA3286BCD4200E49D0F /* history17.jpeg in Resources */,
 				82BDEB0E283C630100B1AD7F /* literature13.jpeg in Resources */,
+				82D35C0729632620000EB277 /* EditProfileTableViewCell.xib in Resources */,
 				8213BF8327D6AC0100D07512 /* physics2.jpeg in Resources */,
 				82EA1F6E286BCCEB00E49D0F /* games18.jpeg in Resources */,
 				82848D2A281C6F5B0068A4AE /* sport.background.jpeg in Resources */,
@@ -2964,7 +3110,9 @@
 				8207E24B286E5CC200CB017A /* underwater14.jpeg in Resources */,
 				82EA1EAD286BCB6000E49D0F /* literature6.jpeg in Resources */,
 				827D4B6228205C0E007B3895 /* informatics18.jpeg in Resources */,
+				82D35C0B296326A8000EB277 /* PhotoTableViewCell.xib in Resources */,
 				8294092827CECCA900AFF603 /* IQ2.jpeg in Resources */,
+				82D35C132963278A000EB277 /* SpeachTableViewCell.xib in Resources */,
 				824419B8286E531900203DBA /* underwater20.jpeg in Resources */,
 				8286518C28FEF952004806D3 /* IQ.mp3 in Resources */,
 				8295F1C32950BB43000E033E /* newyear20.jpeg in Resources */,
@@ -2976,6 +3124,7 @@
 				822139202874E7A80065A0C3 /* physics music.mp3 in Resources */,
 				82EA1EEC286BCC1300E49D0F /* Swift5.jpeg in Resources */,
 				82EA1EAC286BCB6000E49D0F /* literature3.jpeg in Resources */,
+				82D35C0F296326FF000EB277 /* MicrophoneTableViewCell.xib in Resources */,
 				8243A61F2820810E00427553 /* physics19.jpeg in Resources */,
 				823D9F7328247F7000EC0FE7 /* pause_sound.mp3 in Resources */,
 				8294092927CECCA900AFF603 /* IQ1.jpeg in Resources */,
@@ -3020,6 +3169,7 @@
 				82319E2928E8EF7B0053CEF5 /* halloween14.jpeg in Resources */,
 				8295F1BA2950B8C2000E033E /* gear.png in Resources */,
 				82EA1F67286BCCEB00E49D0F /* games16.jpeg in Resources */,
+				82D35C05296325DF000EB277 /* VoicePasswordTableViewCell.xib in Resources */,
 				82EA1EE9286BCC1300E49D0F /* Swift6.jpeg in Resources */,
 				8294095227CECE1900AFF603 /* geography1.jpeg in Resources */,
 				82848D6F281DACAB0068A4AE /* informatics music.mp3 in Resources */,
@@ -3037,6 +3187,7 @@
 				8244DCF927E39D8500F5C59B /* informatics1.jpeg in Resources */,
 				8294091227CECB9200AFF603 /* games2.jpeg in Resources */,
 				82EA1F2F286BCC9700E49D0F /* geography14.jpeg in Resources */,
+				82D35C17296327CF000EB277 /* TimerTableViewCell.xib in Resources */,
 				82EA1FAB286BCD4200E49D0F /* history13.jpeg in Resources */,
 				8294090027CECAC800AFF603 /* sport8.jpeg in Resources */,
 				82EA1F95286BCD2300E49D0F /* anatomy20.jpeg in Resources */,
@@ -3206,6 +3357,7 @@
 				8221391A2874E7880065A0C3 /* economy music.mp3 in Resources */,
 				82EA1EA4286BCB6000E49D0F /* literature5.jpeg in Resources */,
 				8288F09D2872662400C6A182 /* chess8.jpeg in Resources */,
+				82D35C1129632721000EB277 /* HintsTableViewCell.xib in Resources */,
 				82EA1EA5286BCB6000E49D0F /* literature7.jpeg in Resources */,
 				82EA1F17286BCC7800E49D0F /* ecology12.jpeg in Resources */,
 				829408D327CEC93100AFF603 /* history7.jpeg in Resources */,
@@ -3229,6 +3381,7 @@
 				82BDEB0F283C630100B1AD7F /* literature16.jpeg in Resources */,
 				82EA1F58286BCCD200E49D0F /* IQ16.jpeg in Resources */,
 				829408FF27CECAC800AFF603 /* sport5.jpeg in Resources */,
+				82D35C0329632596000EB277 /* BiometricTableViewCell.xib in Resources */,
 				82D35B49295C5529000EB277 /* NewsTableViewCell.xib in Resources */,
 				82EA1EC9286BCBB500E49D0F /* exit.png in Resources */,
 				82CD6BF2288851FB00716443 /* click sound.wav in Resources */,
@@ -3253,6 +3406,7 @@
 				82EA1F59286BCCD200E49D0F /* IQ18.jpeg in Resources */,
 				826F33692826BBA500FB6CF8 /* literature.background.jpeg in Resources */,
 				829408A227CEC43E00AFF603 /* planets10.jpeg in Resources */,
+				82D35C1B29632823000EB277 /* DeleteTableViewCell.xib in Resources */,
 				8288F09E2872662400C6A182 /* chess5.jpeg in Resources */,
 				82EA1F1A286BCC7800E49D0F /* ecology19.jpeg in Resources */,
 				82848D34281C6F5B0068A4AE /* swift.background.jpeg in Resources */,
@@ -3292,6 +3446,7 @@
 				82EA1ED8286BCBF400E49D0F /* voice.png in Resources */,
 				82848D31281C6F5B0068A4AE /* anatomy.background.jpeg in Resources */,
 				82811692293A88DC00AA7C8E /* newyear1.jpeg in Resources */,
+				82D35C19296327FC000EB277 /* AttemptsTableViewCell.xib in Resources */,
 				8294093927CECD6100AFF603 /* economy2.jpeg in Resources */,
 				82EA1F1E286BCC7800E49D0F /* ecology13.jpeg in Resources */,
 				82319E3128E8F2F40053CEF5 /* halloween18.jpeg in Resources */,
@@ -3322,6 +3477,7 @@
 				82EA1F33286BCC9700E49D0F /* geography15.jpeg in Resources */,
 				821C69DA28739596004FD9E1 /* chess16.jpeg in Resources */,
 				82EA1F18286BCC7800E49D0F /* ecology18.jpeg in Resources */,
+				82D35C0D296326DC000EB277 /* VideoRecordTableViewCell.xib in Resources */,
 				8213BF8527D6AC0100D07512 /* physics4.jpeg in Resources */,
 				829408F727CECAC800AFF603 /* sport4.jpeg in Resources */,
 				82848D46281C77030068A4AE /* chemistry19.jpeg in Resources */,

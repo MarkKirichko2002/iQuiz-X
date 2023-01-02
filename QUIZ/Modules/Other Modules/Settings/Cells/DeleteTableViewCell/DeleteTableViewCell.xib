@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="DeleteTableViewCell" rowHeight="139" id="NK4-Hk-Xcn" customClass="DeleteTableViewCell" customModule="QUIZ" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="430" height="139"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="NK4-Hk-Xcn" id="Cyw-mR-LUM">
+                <rect key="frame" x="0.0" y="0.0" width="430" height="139"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="delete.png" translatesAutoresizingMaskIntoConstraints="NO" id="3dM-Yj-TIJ" customClass="RoundedImageView" customModule="QUIZ" customModuleProvider="target">
+                        <rect key="frame" x="36" y="19" width="100" height="100"/>
+                        <color key="tintColor" red="0.0564979439" green="0.0" blue="0.25830120280000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="100" id="jjk-Zz-Rb0"/>
+                            <constraint firstAttribute="height" constant="100" id="yxv-dc-azC"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="удалить аккаунт" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="noT-Mc-Fje">
+                        <rect key="frame" x="152" y="19" width="242" height="24"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                        <color key="textColor" systemColor="systemRedColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="3dM-Yj-TIJ" firstAttribute="leading" secondItem="Cyw-mR-LUM" secondAttribute="leadingMargin" constant="16" id="Hal-Ut-Bdb"/>
+                    <constraint firstItem="noT-Mc-Fje" firstAttribute="leading" secondItem="3dM-Yj-TIJ" secondAttribute="trailing" constant="16" id="eUg-8W-Z5n"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="noT-Mc-Fje" secondAttribute="trailing" constant="16" id="jRG-L1-Zrp"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="3dM-Yj-TIJ" secondAttribute="bottom" constant="8" id="klN-9N-CJg"/>
+                    <constraint firstItem="noT-Mc-Fje" firstAttribute="top" secondItem="3dM-Yj-TIJ" secondAttribute="top" id="qFl-hd-n31"/>
+                    <constraint firstItem="3dM-Yj-TIJ" firstAttribute="top" secondItem="Cyw-mR-LUM" secondAttribute="topMargin" constant="8" id="vVc-Ig-nw6"/>
+                </constraints>
+            </tableViewCellContentView>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <point key="canvasLocation" x="21.374045801526716" y="-37.676056338028168"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="delete.png" width="405.09890747070312" height="405.09890747070312"/>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

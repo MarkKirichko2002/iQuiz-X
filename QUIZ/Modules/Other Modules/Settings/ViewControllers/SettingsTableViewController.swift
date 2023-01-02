@@ -9,28 +9,56 @@ import UIKit
 import SCLAlertView
 import Firebase
 
-final class SettingsTableViewController: UITableViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+final class SettingsTableViewController: UITableViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, CustomViewCellDelegate {
     
-    var urlString = ""
-    
-    var auth = FirebaseManager()
-    
-    let db = Firestore.firestore()
-    
+    private var urlString = ""
+    private let auth = FirebaseManager()
+    private let db = Firestore.firestore()
     private let storage = Storage.storage().reference()
-    
-    var saved = false
+    private var saved = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.SetUpCells()
     }
     
-    func didTapButton() {
+    private func didTapButton() {
         let picker = UIImagePickerController()
         picker.sourceType = .photoLibrary
         picker.delegate = self
         picker.allowsEditing = true
         present(picker, animated: true)
+    }
+    
+    private func SetUpCells() {
+        // биометрия
+        self.tableView.register(UINib(nibName: BiometricTableViewCell.identifier, bundle: nil), forCellReuseIdentifier: BiometricTableViewCell.identifier)
+        // голосовой пароль
+        self.tableView.register(UINib(nibName: VoicePasswordTableViewCell.identifier, bundle: nil), forCellReuseIdentifier: VoicePasswordTableViewCell.identifier)
+        // редактировать профиль
+        self.tableView.register(UINib(nibName: EditProfileTableViewCell.identifier, bundle: nil), forCellReuseIdentifier: EditProfileTableViewCell.identifier)
+        // статистика
+        self.tableView.register(UINib(nibName: StatisticTableViewCell.identifier, bundle: nil), forCellReuseIdentifier: StatisticTableViewCell.identifier)
+        // фото
+        self.tableView.register(UINib(nibName: PhotoTableViewCell.identifier, bundle: nil), forCellReuseIdentifier: PhotoTableViewCell.identifier)
+        // распознование жестов
+        self.tableView.register(UINib(nibName: VideoRecordTableViewCell.identifier, bundle: nil), forCellReuseIdentifier: VideoRecordTableViewCell.identifier)
+        // распознование речи
+        self.tableView.register(UINib(nibName: MicrophoneTableViewCell.identifier, bundle: nil), forCellReuseIdentifier: MicrophoneTableViewCell.identifier)
+        // подсказки
+        self.tableView.register(UINib(nibName: HintsTableViewCell.identifier, bundle: nil), forCellReuseIdentifier: HintsTableViewCell.identifier)
+        // синтезатор речи
+        self.tableView.register(UINib(nibName: SpeachTableViewCell.identifier, bundle: nil), forCellReuseIdentifier: SpeachTableViewCell.identifier)
+        // музыка
+        self.tableView.register(UINib(nibName: MusicTableViewCell.identifier, bundle: nil), forCellReuseIdentifier: MusicTableViewCell.identifier)
+        // таймер
+        self.tableView.register(UINib(nibName: TimerTableViewCell.identifier, bundle: nil), forCellReuseIdentifier: TimerTableViewCell.identifier)
+        // попытки
+        self.tableView.register(UINib(nibName: AttemptsTableViewCell.identifier, bundle: nil), forCellReuseIdentifier: AttemptsTableViewCell.identifier)
+        // удалить аккаунт
+        self.tableView.register(UINib(nibName: DeleteTableViewCell.identifier, bundle: nil), forCellReuseIdentifier: DeleteTableViewCell.identifier)
+        // выйти из аккаунта
+        self.tableView.register(UINib(nibName: ExitTableViewCell.identifier, bundle: nil), forCellReuseIdentifier: ExitTableViewCell.identifier)
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
@@ -98,14 +126,17 @@ final class SettingsTableViewController: UITableViewController, UIImagePickerCon
         case 0: print("biometric")
             
         case 1: print("voice password")
-            alert2()
+                alert2()
             
         case 2: alert()
             
         case 3: print("statistic")
+            if let cell = tableView.cellForRow(at: indexPath) as? StatisticTableViewCell {
+                cell.didSelect(indexPath: indexPath)
+            }
             
         case 4: print("photo")
-            self.didTapButton()
+                self.didTapButton()
             
         case 5: print("video recording")
             
@@ -122,18 +153,22 @@ final class SettingsTableViewController: UITableViewController, UIImagePickerCon
         case 11: print("attempts")
             
         case 12: auth.delete()
-            auth.SignOutAction()
-            self.showLoginVC()
+                auth.SignOutAction()
+                self.showLoginVC()
             
         case 13: auth.SignOutAction()
-            self.showLoginVC()
+                self.showLoginVC()
             
         default: break
             
         }
     }
     
-    
+    func didElementClick() {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+            self.performSegue(withIdentifier: "ShowStatistic", sender: nil)
+        }
+    }
     
     func alert() {
         let defaults = UserDefaults.standard
@@ -143,41 +178,30 @@ final class SettingsTableViewController: UITableViewController, UIImagePickerCon
         var credential: AuthCredential
         
         print("нет email")
-        //1. Create the alert controller.
+        
         let alert = UIAlertController(title: "Изменение данных для профиля", message: "Вы точно хотите перезаписать данные?", preferredStyle: .alert)
         
-        //2. Add the text field. You can configure it however you need.
         alert.addTextField { (textField) in
             textField.text = ""
             textField.placeholder = "Введите имя"
-            
-//            alert.addTextField { (textField) in
-//                textField.text = ""
-//                textField.placeholder = "Введите email"
-//            }
             
             alert.addTextField { (textField) in
                 textField.text = ""
                 textField.placeholder = "Введите пароль"
             }
         }
-        // 3. Grab the value from the text field, and print it when the user clicks OK.
         
         alert.addAction(UIAlertAction(title: "нет", style: .cancel, handler: { (action: UIAlertAction!) in
             print("Handle Cancel Logic here")
         }))
         
-        
-        
         alert.addAction(UIAlertAction(title: "да", style: .default, handler: { [weak alert] (_) in
             let textField = alert?.textFields![0]
             let textField2 = alert?.textFields![1]
-            //let textField3 = alert?.textFields![2]
             
             self.tableView.reloadData()
             
             name = textField?.text
-            //email = textField2?.text
             password = textField2?.text
             
             if name != "" && email != "" && password != ""  {
@@ -204,10 +228,8 @@ final class SettingsTableViewController: UITableViewController, UIImagePickerCon
                 SCLAlertView().showError("Данные не введены!", subTitle: "введите данные")
             }
             
-            
         }))
         
-        // 4. Present the alert.
         present(alert, animated: true, completion: nil)
         
     }
@@ -217,21 +239,17 @@ final class SettingsTableViewController: UITableViewController, UIImagePickerCon
         var voicepassword = defaults.object(forKey:"voicepassword") as? String
         
         print("нет голосового пароля")
-        //1. Create the alert controller.
+        
         let alert = UIAlertController(title: "Изменение данных для голосового пароля", message: "Вы точно хотите перезаписать данные?", preferredStyle: .alert)
         
-        //2. Add the text field. You can configure it however you need.
         alert.addTextField { (textField) in
             textField.text = ""
             textField.placeholder = "Введите пароль"
         }
-        // 3. Grab the value from the text field, and print it when the user clicks OK.
         
         alert.addAction(UIAlertAction(title: "нет", style: .cancel, handler: { (action: UIAlertAction!) in
             print("Handle Cancel Logic here")
         }))
-        
-        
         
         alert.addAction(UIAlertAction(title: "да", style: .default, handler: { [weak alert] (_) in
             let textField = alert?.textFields![0]
@@ -247,44 +265,40 @@ final class SettingsTableViewController: UITableViewController, UIImagePickerCon
             
         }))
         
-        // 4. Present the alert.
         present(alert, animated: true, completion: nil)
         
     }
     
-    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        if indexPath.row == 0  {
+        
+        switch indexPath.row {
             
+        case 0:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "BiometricTableViewCell") as? BiometricTableViewCell
             else { return UITableViewCell() }
             return cell
             
-        } else if indexPath.row == 1  {
-            
+        case 1:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "VoicePasswordTableViewCell") as? VoicePasswordTableViewCell
             else { return UITableViewCell() }
             
             return cell
             
-        } else if indexPath.row == 2  {
-            
+        case 2:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "EditProfileTableViewCell") as? EditProfileTableViewCell
             else { return UITableViewCell() }
             
             return cell
             
-        } else if indexPath.row == 3  {
-            
+        case 3:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "StatisticTableViewCell") as? StatisticTableViewCell
             else { return UITableViewCell() }
-            
+            cell.delegate = self
             
             return cell
             
-        } else if indexPath.row == 4  {
-            
+        case 4:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "PhotoTableViewCell") as? PhotoTableViewCell
             else { return UITableViewCell() }
             
@@ -296,80 +310,66 @@ final class SettingsTableViewController: UITableViewController, UIImagePickerCon
             
             return cell
             
-        } else if indexPath.row == 5  {
             
+        case 5:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "VideoRecordTableViewCell") as? VideoRecordTableViewCell
             else { return UITableViewCell() }
             
             return cell
             
-        }  else if indexPath.row == 6  {
-            
+        case 6:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "MicrophoneTableViewCell") as? MicrophoneTableViewCell
             else { return UITableViewCell() }
             
             return cell
             
-        }   else if indexPath.row == 7  {
-            
+        case 7:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "HintsTableViewCell") as? HintsTableViewCell
             else { return UITableViewCell() }
             
             return cell
             
-        }   else if indexPath.row == 8  {
-            
+        case 8:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "SpeachTableViewCell") as? SpeachTableViewCell
             else { return UITableViewCell() }
             
             return cell
             
-        }   else if indexPath.row == 9  {
-            
+        case 9:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "MusicTableViewCell") as? MusicTableViewCell
             else { return UITableViewCell() }
             
             return cell
             
-        } else if indexPath.row == 10  {
-            
+        case 10:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "TimerTableViewCell") as? TimerTableViewCell
             else { return UITableViewCell() }
             
             return cell
             
-        } else if indexPath.row == 11  {
-            
+        case 11:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "AttemptsTableViewCell") as? AttemptsTableViewCell
             else { return UITableViewCell() }
             
             return cell
             
-        } else if indexPath.row == 12  {
-            
+        case 12:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "DeleteTableViewCell") as? DeleteTableViewCell
             else { return UITableViewCell() }
             
             return cell
             
-        } else if indexPath.row == 13  {
-            
+        case 13:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "ExitTableViewCell") as? ExitTableViewCell
             else { return UITableViewCell() }
             
             return cell
             
-        } else {
-            
+        default:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "StatisticTableViewCell") as? StatisticTableViewCell
             else { return UITableViewCell() }
             
-            //cell.configure(groupItems[indexPath.row])
             return cell
-            
         }
     }
-    
-    
 }
-

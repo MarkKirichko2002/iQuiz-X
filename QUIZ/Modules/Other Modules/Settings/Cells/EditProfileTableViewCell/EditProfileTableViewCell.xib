@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="EditProfileTableViewCell" id="wgK-eu-adA" customClass="EditProfileTableViewCell" customModule="QUIZ" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="430" height="138.33332824707031"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="wgK-eu-adA" id="PHN-mB-Zo9">
+                <rect key="frame" x="0.0" y="0.0" width="430" height="138.33332824707031"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="key.png" translatesAutoresizingMaskIntoConstraints="NO" id="GIQ-P7-WXp" customClass="RoundedImageView" customModule="QUIZ" customModuleProvider="target">
+                        <rect key="frame" x="36" y="19" width="100" height="100"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="100" id="QSm-zB-B1u"/>
+                            <constraint firstAttribute="height" constant="100" id="Zko-tF-eu5"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="имя" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N6N-oC-jOR">
+                        <rect key="frame" x="152" y="19" width="242" height="24"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GB3-lD-5dP">
+                        <rect key="frame" x="152" y="57" width="46.666666666666657" height="24"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="пароль" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jr3-uf-Wvo">
+                        <rect key="frame" x="152" y="95" width="65.666666666666686" height="24"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailingMargin" secondItem="N6N-oC-jOR" secondAttribute="trailing" constant="16" id="4nl-gB-Mea"/>
+                    <constraint firstItem="N6N-oC-jOR" firstAttribute="top" secondItem="GIQ-P7-WXp" secondAttribute="top" id="FEu-j5-o7e"/>
+                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Jr3-uf-Wvo" secondAttribute="trailing" constant="20" symbolic="YES" id="JLS-BY-2W3"/>
+                    <constraint firstItem="GIQ-P7-WXp" firstAttribute="top" secondItem="PHN-mB-Zo9" secondAttribute="topMargin" constant="8" id="M82-kC-SjX"/>
+                    <constraint firstItem="Jr3-uf-Wvo" firstAttribute="leading" secondItem="GB3-lD-5dP" secondAttribute="leading" id="Oz4-aU-iZZ"/>
+                    <constraint firstItem="GIQ-P7-WXp" firstAttribute="leading" secondItem="PHN-mB-Zo9" secondAttribute="leadingMargin" constant="16" id="RPm-FT-e30"/>
+                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="GB3-lD-5dP" secondAttribute="trailing" constant="20" symbolic="YES" id="XsC-z6-ei6"/>
+                    <constraint firstItem="Jr3-uf-Wvo" firstAttribute="leading" secondItem="N6N-oC-jOR" secondAttribute="leading" id="a1i-s9-NX4"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="Jr3-uf-Wvo" secondAttribute="bottom" constant="8.5" id="gWv-8k-NMW"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="GIQ-P7-WXp" secondAttribute="bottom" constant="8" id="rMF-SM-biQ"/>
+                    <constraint firstItem="N6N-oC-jOR" firstAttribute="leading" secondItem="GIQ-P7-WXp" secondAttribute="trailing" constant="16" id="uec-Pl-TeQ"/>
+                    <constraint firstItem="Jr3-uf-Wvo" firstAttribute="top" secondItem="GB3-lD-5dP" secondAttribute="bottom" constant="14" id="x2T-MY-Qwx"/>
+                </constraints>
+            </tableViewCellContentView>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <connections>
+                <outlet property="EmailLabel" destination="GB3-lD-5dP" id="oGn-KA-lgi"/>
+                <outlet property="NameLabel" destination="N6N-oC-jOR" id="Zwg-PX-Ref"/>
+                <outlet property="PasswordLabel" destination="Jr3-uf-Wvo" id="al9-TV-tKj"/>
+            </connections>
+            <point key="canvasLocation" x="56" y="19"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="key.png" width="409.60000610351562" height="409.60000610351562"/>
+    </resources>
+</document>

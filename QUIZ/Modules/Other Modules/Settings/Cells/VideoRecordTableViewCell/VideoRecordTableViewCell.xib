@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="VideoRecordTableViewCell" id="Wba-wp-Wc8" customClass="VideoRecordTableViewCell" customModule="QUIZ" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="430" height="138.33332824707031"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Wba-wp-Wc8" id="yHt-QR-WQl">
+                <rect key="frame" x="0.0" y="0.0" width="430" height="138.33332824707031"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gesture.png" translatesAutoresizingMaskIntoConstraints="NO" id="eld-kL-OoJ" customClass="RoundedImageView" customModule="QUIZ" customModuleProvider="target">
+                        <rect key="frame" x="36" y="19" width="100" height="100"/>
+                        <color key="tintColor" red="0.0564979439" green="0.0" blue="0.25830120280000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="100" id="ATJ-sN-1hs"/>
+                            <constraint firstAttribute="width" constant="100" id="dc0-xj-qHO"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="распознавание жестов" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pxy-2e-hA3">
+                        <rect key="frame" x="152" y="19" width="242" height="24"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="whS-gr-riN">
+                        <rect key="frame" x="152" y="53" width="49" height="31"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <connections>
+                            <action selector="switchAction:" destination="Wba-wp-Wc8" eventType="touchUpInside" id="ET6-UX-wSa"/>
+                        </connections>
+                    </switch>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailingMargin" secondItem="Pxy-2e-hA3" secondAttribute="trailing" constant="16" id="IN7-m9-mmH"/>
+                    <constraint firstItem="Pxy-2e-hA3" firstAttribute="leading" secondItem="eld-kL-OoJ" secondAttribute="trailing" constant="16" id="Ma3-uP-oey"/>
+                    <constraint firstItem="eld-kL-OoJ" firstAttribute="top" secondItem="yHt-QR-WQl" secondAttribute="topMargin" constant="8" id="Vu0-GU-GsE"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="eld-kL-OoJ" secondAttribute="bottom" constant="8" id="bH4-eU-95s"/>
+                    <constraint firstItem="eld-kL-OoJ" firstAttribute="leading" secondItem="yHt-QR-WQl" secondAttribute="leadingMargin" constant="16" id="eEm-af-hnT"/>
+                    <constraint firstItem="Pxy-2e-hA3" firstAttribute="top" secondItem="eld-kL-OoJ" secondAttribute="top" id="wGt-Tz-vJU"/>
+                </constraints>
+            </tableViewCellContentView>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <connections>
+                <outlet property="GestureImage" destination="eld-kL-OoJ" id="a4p-zM-eP7"/>
+                <outlet property="GestureLabel" destination="Pxy-2e-hA3" id="8zu-9M-5JS"/>
+                <outlet property="mySwitch" destination="whS-gr-riN" id="7SV-vN-sJi"/>
+            </connections>
+            <point key="canvasLocation" x="2" y="20"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="gesture.png" width="384" height="384"/>
+    </resources>
+</document>
