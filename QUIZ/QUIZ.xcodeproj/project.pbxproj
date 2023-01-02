@@ -453,6 +453,10 @@
 		82D35C17296327CF000EB277 /* TimerTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 82D35C16296327CF000EB277 /* TimerTableViewCell.xib */; };
 		82D35C19296327FC000EB277 /* AttemptsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 82D35C18296327FC000EB277 /* AttemptsTableViewCell.xib */; };
 		82D35C1B29632823000EB277 /* DeleteTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 82D35C1A29632823000EB277 /* DeleteTableViewCell.xib */; };
+		82D35C1E29633398000EB277 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82D35C1D29633398000EB277 /* OnboardingViewController.swift */; };
+		82D35C2129633A55000EB277 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82D35C2029633A55000EB277 /* UIView+Extensions.swift */; };
+		82D35C2429634355000EB277 /* OnboardingSlide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82D35C2329634355000EB277 /* OnboardingSlide.swift */; };
+		82D35C29296346D5000EB277 /* OnboardingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82D35C28296346D5000EB277 /* OnboardingCollectionViewCell.swift */; };
 		82D67D6E2948E04B0097FD30 /* sport.wav in Resources */ = {isa = PBXBuildFile; fileRef = 82D67D6D2948E04B0097FD30 /* sport.wav */; };
 		82DBCA2728303EDE009DD1EE /* EditProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82DBCA2628303EDE009DD1EE /* EditProfileTableViewCell.swift */; };
 		82DC6E1C27E65E790077D107 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82DC6E1B27E65E790077D107 /* StartViewController.swift */; };
@@ -1068,6 +1072,10 @@
 		82D35C16296327CF000EB277 /* TimerTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TimerTableViewCell.xib; sourceTree = "<group>"; };
 		82D35C18296327FC000EB277 /* AttemptsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AttemptsTableViewCell.xib; sourceTree = "<group>"; };
 		82D35C1A29632823000EB277 /* DeleteTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DeleteTableViewCell.xib; sourceTree = "<group>"; };
+		82D35C1D29633398000EB277 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
+		82D35C2029633A55000EB277 /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
+		82D35C2329634355000EB277 /* OnboardingSlide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingSlide.swift; sourceTree = "<group>"; };
+		82D35C28296346D5000EB277 /* OnboardingCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCollectionViewCell.swift; sourceTree = "<group>"; };
 		82D67D6D2948E04B0097FD30 /* sport.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = sport.wav; sourceTree = "<group>"; };
 		82DBCA2628303EDE009DD1EE /* EditProfileTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileTableViewCell.swift; sourceTree = "<group>"; };
 		82DC6E1B27E65E790077D107 /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
@@ -1267,6 +1275,7 @@
 		820C627227BBA3CA004894FA = {
 			isa = PBXGroup;
 			children = (
+				82D35C1F29633A3B000EB277 /* Extensions */,
 				82D35BDD296312D1000EB277 /* Delegates */,
 				8295F1912950AA9F000E033E /* Services */,
 				8295F1992950B5F7000E033E /* Modules */,
@@ -2135,7 +2144,7 @@
 		8295F1C82950C13F000E033E /* Players Module */ = {
 			isa = PBXGroup;
 			children = (
-				82CBE8062870DE1A0045616B /* Players MVVM Combine */,
+				82CBE8062870DE1A0045616B /* Players List MVVM Combine */,
 			);
 			path = "Players Module";
 			sourceTree = "<group>";
@@ -2435,14 +2444,14 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		82CBE8062870DE1A0045616B /* Players MVVM Combine */ = {
+		82CBE8062870DE1A0045616B /* Players List MVVM Combine */ = {
 			isa = PBXGroup;
 			children = (
 				82CBE8092870DE370045616B /* Model */,
 				82CBE8082870DE350045616B /* View */,
 				821C69E528739E1A004FD9E1 /* ViewModel */,
 			);
-			path = "Players MVVM Combine";
+			path = "Players List MVVM Combine";
 			sourceTree = "<group>";
 		};
 		82CBE8082870DE350045616B /* View */ = {
@@ -2869,9 +2878,60 @@
 			path = BiometricTableViewCell;
 			sourceTree = "<group>";
 		};
+		82D35C1C2963336F000EB277 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				82D35C222963433B000EB277 /* Models */,
+				82D35C252963435A000EB277 /* View */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		82D35C1F29633A3B000EB277 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				82D35C2029633A55000EB277 /* UIView+Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		82D35C222963433B000EB277 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				82D35C2329634355000EB277 /* OnboardingSlide.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		82D35C252963435A000EB277 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				82D35C27296346A7000EB277 /* ViewControllers */,
+				82D35C26296346A3000EB277 /* Cells */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		82D35C26296346A3000EB277 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				82D35C28296346D5000EB277 /* OnboardingCollectionViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		82D35C27296346A7000EB277 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				82D35C1D29633398000EB277 /* OnboardingViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
 		82DF98E427BCE73700548B38 /* Other Modules */ = {
 			isa = PBXGroup;
 			children = (
+				82D35C1C2963336F000EB277 /* Onboarding */,
 				823CFF6D27FA10DC001FF6D9 /* Settings */,
 				82CF0D3828A583C3006B53F4 /* StartQuiz */,
 				8209F79A2847F2390093147A /* SplashScreen */,
@@ -3578,6 +3638,7 @@
 				8283D15327FA217200A71545 /* FirebaseManager.swift in Sources */,
 				824D0C8E280377B100C2BE4B /* TimerTableViewCell.swift in Sources */,
 				82CBF23E27D153AF0046E3BE /* QuizEcology.swift in Sources */,
+				82D35C29296346D5000EB277 /* OnboardingCollectionViewCell.swift in Sources */,
 				82DF98EC27BCEB4A00548B38 /* QuizAnatomy.swift in Sources */,
 				8238057F28F1922E0006A736 /* QuizMediaLibraryTableViewController.swift in Sources */,
 				8283D15127FA209600A71545 /* StatisticTableViewCell.swift in Sources */,
@@ -3594,6 +3655,7 @@
 				8243F16927C2617C00CD9CE4 /* QuizBaseViewModel.swift in Sources */,
 				82CD6BF428885DFF00716443 /* QuizSegmentedViewController.swift in Sources */,
 				826E129227FF509800465E16 /* QuizSwift.swift in Sources */,
+				82D35C1E29633398000EB277 /* OnboardingViewController.swift in Sources */,
 				82F7918B27CC04A00041DAB3 /* QuizEconomy.swift in Sources */,
 				8261BC2927E1139A0089CC94 /* QuizChemistry.swift in Sources */,
 				827F8C0E27E81B7400F6D7B3 /* SoundClass.swift in Sources */,
@@ -3627,9 +3689,11 @@
 				82F564712940D1FB0031F7BD /* QuizCategoryDetailViewController.swift in Sources */,
 				82AFAF6827FA3C25001B04A0 /* ExitTableViewCell.swift in Sources */,
 				82CBE7E9287093C50045616B /* NewsTableViewController.swift in Sources */,
+				82D35C2429634355000EB277 /* OnboardingSlide.swift in Sources */,
 				8213BF7127D6AAC800D07512 /* QuizPhysics.swift in Sources */,
 				8243F16527C25A1200CD9CE4 /* TaskModel.swift in Sources */,
 				82CF0D3A28A583D9006B53F4 /* QuizStartViewController.swift in Sources */,
+				82D35C2129633A55000EB277 /* UIView+Extensions.swift in Sources */,
 				82DC6E1C27E65E790077D107 /* StartViewController.swift in Sources */,
 				82747F8C28050121001E994A /* AttemptsTableViewCell.swift in Sources */,
 				821120E72822EC4D009C2801 /* PauseTableViewController.swift in Sources */,

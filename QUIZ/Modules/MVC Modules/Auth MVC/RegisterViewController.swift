@@ -67,9 +67,6 @@ class RegisterViewController: UIViewController, UIImagePickerControllerDelegate,
                     print("Error writing document: \(err)")
                 } else {
                     SCLAlertView().showSuccess("Успех!", subTitle: "пользователь сохранен!")
-//                    var useremail = defaults.object(forKey:"email") as? String
-//                    let pass = defaults.object(forKey: "password") as? String
-//                    let photo = defaults.object(forKey: "url") as? String
                     
                     defaults.set(self.NameTextField.text!, forKey: "name")
                     defaults.set(self.loginTextField.text!, forKey: "email")
@@ -140,11 +137,6 @@ class RegisterViewController: UIViewController, UIImagePickerControllerDelegate,
         BackButton.layer.borderWidth = 2
         BackButton.layer.borderColor = UIColor.black.cgColor
         
-        //NameTextField.placeholder = "Введите имя"
-        //loginTextField.placeholder = "Введите логин"
-        //passwordTextField.placeholder = "Введите пароль"
-        
-        
         guard let urlString = UserDefaults.standard.value(forKey: "url") as? String,
               let url = URL(string: urlString) else {
                   return
@@ -158,10 +150,8 @@ class RegisterViewController: UIViewController, UIImagePickerControllerDelegate,
             
             DispatchQueue.main.async {
                 let image = UIImage(data: data)
-                //self.Image.image = image
             }
         })
-        
         
         task.resume()
         
@@ -172,10 +162,14 @@ class RegisterViewController: UIViewController, UIImagePickerControllerDelegate,
         
         token = Auth.auth().addStateDidChangeListener{[weak self] auth, user in
             guard user != nil else {return}
-             DispatchQueue.main.async {
-                 guard let vc = self?.storyboard?.instantiateViewController(identifier: "SplashScreenController") else {return}
-                 guard let window = self!.view.window else {return}
-                 window.rootViewController = vc
+            if UserDefaults.standard.bool(forKey: "isOnboarding") {
+                
+            } else {
+                DispatchQueue.main.async {
+                    guard let vc = self?.storyboard?.instantiateViewController(identifier: "OnboardingViewController") else {return}
+                    guard let window = self!.view.window else {return}
+                    window.rootViewController = vc
+               }
             }
          }
     }
@@ -254,8 +248,7 @@ class RegisterViewController: UIViewController, UIImagePickerControllerDelegate,
         picker.dismiss(animated: true, completion: nil)
     }
     
-    
-    
+
     @IBAction func register() {
         guard let email = loginTextField.text, loginTextField.hasText,
               let password = passwordTextField.text, passwordTextField.hasText
@@ -271,23 +264,23 @@ class RegisterViewController: UIViewController, UIImagePickerControllerDelegate,
                 return
             }
             
-            DispatchQueue.main.async {
-                guard let vc = self?.storyboard?.instantiateViewController(identifier: "StartViewController") else {return}
-                guard let window = self!.view.window else {return}
-                window.rootViewController = vc
-           }
+            if UserDefaults.standard.bool(forKey: "isOnboarding") {
+                
+            } else {
+                DispatchQueue.main.async {
+                    guard let vc = self?.storyboard?.instantiateViewController(identifier: "OnboardingViewController") else {return}
+                    guard let window = self!.view.window else {return}
+                    window.rootViewController = vc
+               }
+            }
             
             self!.write()
-        
         }
-    
     }
-    
     
     @objc func hideKeyboard() {
         self.scrollView.endEditing(true)
     }
-
 
     // Когда клавиатура появляется
     @objc func keyboardWasShown(notification: Notification) {
