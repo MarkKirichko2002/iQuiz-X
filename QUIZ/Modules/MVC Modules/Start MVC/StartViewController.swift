@@ -288,7 +288,7 @@ class StartViewController: UIViewController {
             
         case 1:
             print("planets")
-            self.TodayQuizButton.setTitle("планеты", for: .normal)
+            self.TodayQuizButton.setTitle("астрономия", for: .normal)
             self.view.backgroundColor = UIColor(patternImage: UIImage(named: "earth.background.jpeg")!)
             self.scrollView.backgroundColor = UIColor(patternImage: UIImage(named: "earth.background.jpeg")!)
             self.view2.backgroundColor = UIColor(patternImage: UIImage(named: "earth.background.jpeg")!)

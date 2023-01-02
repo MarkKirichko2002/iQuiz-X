@@ -10,10 +10,10 @@ import UIKit
 class QuizMediaLibraryTableViewCell: UITableViewCell {
     
     static let identifier = "QuizMediaLibraryTableViewCell"
-    var player = SoundClass()
-    var music = "space music.mp3"
-    var isPlaying = false
-    var animation = AnimationClass()
+    private var player = SoundClass()
+    private var music = "space music.mp3"
+    private var isPlaying = false
+    private var animation = AnimationClass()
     
     @IBOutlet weak var Icon: RoundedImageView!
     @IBOutlet weak var Title: UILabel!

@@ -3486,7 +3486,7 @@
 				DEVELOPMENT_TEAM = 265GKHT32M;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = QUIZ/Resources/App/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = "Викторина 2022";
+				INFOPLIST_KEY_CFBundleDisplayName = "Викторина 2023";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.trivia-games";
 				INFOPLIST_KEY_NSCameraUsageDescription = "";
 				INFOPLIST_KEY_NSFaceIDUsageDescription = "";
@@ -3526,7 +3526,7 @@
 				DEVELOPMENT_TEAM = 265GKHT32M;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = QUIZ/Resources/App/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = "Викторина 2022";
+				INFOPLIST_KEY_CFBundleDisplayName = "Викторина 2023";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.trivia-games";
 				INFOPLIST_KEY_NSCameraUsageDescription = "";
 				INFOPLIST_KEY_NSFaceIDUsageDescription = "";

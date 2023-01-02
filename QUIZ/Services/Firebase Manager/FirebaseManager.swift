@@ -136,7 +136,7 @@ class FirebaseManager {
                     let data = document.data()
                     let name = data?["name"] as? String ?? ""
                     let email = data?["email"] as? String
-                    let image = data?["image"] as? String ?? ""
+                    let image = data?["image"] as? String ?? "https://cdn-icons-png.flaticon.com/512/3637/3637624.png"
                     let password = data?["password"] as? String
                     
                     if let category = document["lastquiz"] as? [String: Any] {

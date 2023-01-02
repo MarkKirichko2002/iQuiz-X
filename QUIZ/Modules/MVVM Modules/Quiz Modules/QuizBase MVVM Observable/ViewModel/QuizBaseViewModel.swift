@@ -1582,69 +1582,8 @@ class QuizBaseViewModel {
                     print(ref)
                 }
             }
-            
-            switch category {
-                
-            case "planets":
-                LastQuiz(category: "планеты", image: "planets.jpeg", background: "earth.background.jpeg")
-                //CurrentQuiz()
-            case "history":
-                LastQuiz(category: "история", image: "history.jpeg", background: "history.background.jpeg")
-                //CurrentQuiz()
-            case "anatomy":
-                LastQuiz(category: "анатомия", image: "anatomy.jpeg", background: "anatomy.background.jpeg")
-                //CurrentQuiz()
-            case "sport":
-                LastQuiz(category: "спорт", image: "sport.jpeg", background: "sport.background.jpeg")
-                //CurrentQuiz()
-            case "games":
-                LastQuiz(category: "игры", image: "games.jpeg", background: "games.background.jpeg")
-                //CurrentQuiz()
-            case "IQ":
-                LastQuiz(category: "IQ", image: "IQ.jpeg", background: "IQ.background.jpeg")
-                //CurrentQuiz()
-            case "economy":
-                LastQuiz(category: "экономика", image: "economy.jpeg", background: "economy.background.jpeg")
-                //CurrentQuiz()
-            case "geography":
-                LastQuiz(category: "география", image: "geography.jpeg", background: "geography.background.jpeg")
-                //CurrentQuiz()
-            case "ecology":
-                LastQuiz(category: "экология", image: "ecology.jpeg", background: "ecology.background.jpeg")
-                //CurrentQuiz()
-            case "physics":
-                LastQuiz(category: "физика", image: "physics.jpeg", background: "physics.background.jpeg")
-                //CurrentQuiz()
-            case "chemistry":
-                LastQuiz(category: "химия", image: "chemistry.jpeg", background: "chemistry.background.jpeg")
-                //CurrentQuiz()
-            case "informatics":
-                LastQuiz(category: "информатика", image: "informatics.jpeg", background: "informatics.background.jpeg")
-                //CurrentQuiz()
-            case "literature":
-                LastQuiz(category: "литература", image: "literature.jpeg", background: "literature.background.jpeg")
-                //CurrentQuiz()
-            case "roadtraffic":
-                LastQuiz(category: "ПДД", image: "drive.jpeg", background: "drive.background.jpeg")
-                //CurrentQuiz()
-            case "Swift":
-                LastQuiz(category: "Swift", image: "swift.jpeg", background: "swift.background.jpeg")
-                //CurrentQuiz()
-            case "underwater":
-                LastQuiz(category: "подводный мир", image: "underwater.png", background: "underwater.background.jpeg")
-                //CurrentQuiz()
-            case "chess":
-                LastQuiz(category: "шахматы", image: "chess.png", background: "chess.background.jpeg")
-                //CurrentQuiz()
-            case "halloween":
-                LastQuiz(category: "хэллоуин", image: "halloween.png", background: "halloween.background.jpeg")
-            case "newyear":
-                LastQuiz(category: "новый год", image: "newyear.png", background: "newyear.background.jpeg")
-                
-            default:
-                break
-            }
-            
+            guard let category = quiz else {return}
+            LastQuiz(category: category.name, image: category.image, background: category.background)
         }
     }
     

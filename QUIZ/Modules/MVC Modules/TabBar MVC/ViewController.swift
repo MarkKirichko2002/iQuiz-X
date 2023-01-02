@@ -96,7 +96,7 @@ class ViewController: UITabBarController {
             self.animation.springButton(button: self.button)
             self.player.PlaySound(resource: "league.mp3")
         case 4:
-            self.icon = UserDefaults.standard.value(forKey: "url") as? String ?? ""
+            self.icon = UserDefaults.standard.value(forKey: "url") as? String ?? "https://cdn-icons-png.flaticon.com/512/3637/3637624.png"
             self.button.layer.cornerRadius = self.button.frame.width / 2
             self.button.clipsToBounds = true
             self.button.sd_setImage(with: URL(string: self.icon), for: .normal)
@@ -180,7 +180,7 @@ class ViewController: UITabBarController {
                 
             case _ where self.text.contains("Проф") || self.text.contains("проф"):
                 self.selectedIndex = 4
-                self.icon = UserDefaults.standard.value(forKey: "url") as? String ?? ""
+                self.icon = UserDefaults.standard.value(forKey: "url") as? String ?? "https://cdn-icons-png.flaticon.com/512/3637/3637624.png"
                 self.button.layer.cornerRadius = self.button.frame.width / 2
                 self.button.clipsToBounds = true
                 self.button.sd_setImage(with: URL(string: self.icon), for: .normal)

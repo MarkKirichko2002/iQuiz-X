@@ -439,10 +439,6 @@ class LoginViewController: UIViewController {
         view2.backgroundColor = UIColor(patternImage: UIImage(named: "newyear.background.jpeg")!)
         scrollView.backgroundColor = UIColor(patternImage: UIImage(named: "newyear.background.jpeg")!)
         
-        //loginImageView.image = UIImage(named: "swift.jpeg")
-        
-        //titleLabel.text = "Викторина 2022"
-        
         loginButton.layer.cornerRadius = loginButton.frame.size.width / 20
         loginButton.clipsToBounds = true
         

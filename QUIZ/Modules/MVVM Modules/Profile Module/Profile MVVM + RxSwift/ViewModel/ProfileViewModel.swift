@@ -31,7 +31,7 @@ class ProfileViewModel {
         loadingText.font = UIFont.boldSystemFont(ofSize: 22.0)
         view?.addSubview(loadingText)
         makeConstraints()
-        spinner.sd_setImage(with: URL(string: UserDefaults.standard.value(forKey: "url") as? String ?? ""))
+        spinner.sd_setImage(with: URL(string: UserDefaults.standard.value(forKey: "url") as? String ?? "https://cdn-icons-png.flaticon.com/512/3637/3637624.png"))
         animation.StartRotateImage(image: spinner)
         DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
             self.GetProfileData()
