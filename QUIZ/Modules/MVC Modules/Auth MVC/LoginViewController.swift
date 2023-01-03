@@ -50,6 +50,7 @@ class LoginViewController: UIViewController {
     var BiometricStatus = true
     let speaker = AVSpeechSynthesizer()
     let dialogue = AVSpeechUtterance(string: "доступ разрешен")
+    private let speechRecognitionManager = SpeechRecognitionManager()
     
     func CheckBiometricSetting() {
         var isBiometricOn = UserDefaults.standard.object(forKey: "onstatusbiometric") as? Bool
@@ -214,17 +215,7 @@ class LoginViewController: UIViewController {
     
     // Voice Unlock
     
-    private func configureAudioSession() {
-        
-        do {
-            try AVAudioSession.sharedInstance().setCategory(AVAudioSession.Category.playAndRecord, options: .mixWithOthers)
-            try AVAudioSession.sharedInstance().setActive(true)
-        } catch { }
-    }
-    
-    
     func CheckChoiceNumber() {
-        
         
         if check2.contains("один") || check2.contains("Один") {
             check2 = "1"
@@ -297,7 +288,7 @@ class LoginViewController: UIViewController {
     
     @IBAction func RecordPassword(_ sender: UIButton) {
         
-        configureAudioSession()
+        speechRecognitionManager.configureAudioSession()
         
         var voicepassword = UserDefaults.standard.object(forKey: "voicepassword") as? String
         

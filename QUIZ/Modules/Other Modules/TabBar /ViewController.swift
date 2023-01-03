@@ -21,7 +21,8 @@ class ViewController: UITabBarController {
     private var isStart: Bool = false
     private var icon = "voice.png"
     private var quizBaseViewModel = QuizBaseViewModel()
-    private var animation = AnimationClass()
+    private let animation = AnimationClass()
+    private let speechRecognitionManager = SpeechRecognitionManager()
     private let today = Date()
     private var firebaseManager = FirebaseManager()
     private var sound = ""
@@ -32,7 +33,7 @@ class ViewController: UITabBarController {
         quizBaseViewModel.viewController = self
         categoriesViewModel.view = self.view
         categoriesViewModel.storyboard = self.storyboard
-        configureAudioSession()
+        speechRecognitionManager.configureAudioSession()
         selectedIndex = UserDefaults.standard.object(forKey: "index") as? Int ?? 0
         button.frame = CGRect(x: 0, y: 0, width: 44, height: 44)
         button.layer.borderWidth = 2
@@ -53,14 +54,6 @@ class ViewController: UITabBarController {
     
     override func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
         animation.TabBarItemAnimation(item: item)
-    }
-    
-    func configureAudioSession() {
-        do {
-            try? AVAudioSession.sharedInstance().setCategory(.playAndRecord, mode: .default, policy: .default, options: .mixWithOthers)
-        } catch {
-            print(error)
-        }
     }
     
     // Override selectedViewController for User initiated changes

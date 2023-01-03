@@ -383,6 +383,7 @@
 		8295F1C32950BB43000E033E /* newyear20.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 8295F1C02950BB43000E033E /* newyear20.jpeg */; };
 		8295F1CC2950C735000E033E /* TasksTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8295F1CB2950C735000E033E /* TasksTableViewCell.xib */; };
 		829DC874296445F2006C9D91 /* skip.png in Resources */ = {isa = PBXBuildFile; fileRef = 829DC873296445F2006C9D91 /* skip.png */; };
+		829DC87C2964C2C2006C9D91 /* SpeechRecognitionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 829DC87B2964C2C2006C9D91 /* SpeechRecognitionManager.swift */; };
 		82A01BFD27C51CFF00DCBD6F /* RoundedImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82A01BFC27C51CFF00DCBD6F /* RoundedImageView.swift */; };
 		82A08C7D28F488A70072A940 /* QuizResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82A08C7C28F488A70072A940 /* QuizResult.swift */; };
 		82A08C7F28F488E90072A940 /* QuizResultViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82A08C7E28F488E90072A940 /* QuizResultViewModel.swift */; };
@@ -1010,6 +1011,7 @@
 		8295F1C02950BB43000E033E /* newyear20.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = newyear20.jpeg; sourceTree = "<group>"; };
 		8295F1CB2950C735000E033E /* TasksTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TasksTableViewCell.xib; sourceTree = "<group>"; };
 		829DC873296445F2006C9D91 /* skip.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = skip.png; sourceTree = "<group>"; };
+		829DC87B2964C2C2006C9D91 /* SpeechRecognitionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechRecognitionManager.swift; sourceTree = "<group>"; };
 		82A01BFC27C51CFF00DCBD6F /* RoundedImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedImageView.swift; sourceTree = "<group>"; };
 		82A08C7C28F488A70072A940 /* QuizResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizResult.swift; sourceTree = "<group>"; };
 		82A08C7E28F488E90072A940 /* QuizResultViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizResultViewModel.swift; sourceTree = "<group>"; };
@@ -1342,7 +1344,7 @@
 				8295F1C72950C113000E033E /* Quiz Modules */,
 				8295F1C82950C13F000E033E /* Players Module */,
 				8295F1C92950C150000E033E /* Profile Module */,
-				82D35C3F2963AE41000EB277 /* Voice Command MVVM */,
+				82D35C3F2963AE41000EB277 /* Voice Command */,
 			);
 			path = "MVVM Modules";
 			sourceTree = "<group>";
@@ -2072,6 +2074,7 @@
 		8295F1912950AA9F000E033E /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				829DC87A2964C2AD006C9D91 /* Speech Recognition */,
 				82CE538F28EA076C00D44A6E /* Firebase Manager */,
 				82CE536C28E9D55F00D44A6E /* AudioPlayer */,
 				8295F1972950B3FF000E033E /* Rounded Image */,
@@ -2207,6 +2210,31 @@
 			isa = PBXGroup;
 			children = (
 				823CFF6E27FA1100001FF6D9 /* SettingsTableViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		829DC87A2964C2AD006C9D91 /* Speech Recognition */ = {
+			isa = PBXGroup;
+			children = (
+				829DC87B2964C2C2006C9D91 /* SpeechRecognitionManager.swift */,
+			);
+			path = "Speech Recognition";
+			sourceTree = "<group>";
+		};
+		829DC87D2964D202006C9D91 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				82D35C472963B0C9000EB277 /* VoiceCommandTableViewCell.swift */,
+				82D35C492963B18D000EB277 /* VoiceCommandTableViewCell.xib */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		829DC87E2964D204006C9D91 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				82D35C3D2963ADF6000EB277 /* VoiceCommandsTableViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -2955,14 +2983,14 @@
 			path = VoiceCommandSettingTableViewCell;
 			sourceTree = "<group>";
 		};
-		82D35C3F2963AE41000EB277 /* Voice Command MVVM */ = {
+		82D35C3F2963AE41000EB277 /* Voice Command */ = {
 			isa = PBXGroup;
 			children = (
 				82D35C422963AE55000EB277 /* Model */,
 				82D35C412963AE53000EB277 /* View */,
 				82D35C402963AE51000EB277 /* ViewModel */,
 			);
-			path = "Voice Command MVVM";
+			path = "Voice Command";
 			sourceTree = "<group>";
 		};
 		82D35C402963AE51000EB277 /* ViewModel */ = {
@@ -2976,9 +3004,8 @@
 		82D35C412963AE53000EB277 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				82D35C3D2963ADF6000EB277 /* VoiceCommandsTableViewController.swift */,
-				82D35C472963B0C9000EB277 /* VoiceCommandTableViewCell.swift */,
-				82D35C492963B18D000EB277 /* VoiceCommandTableViewCell.xib */,
+				829DC87E2964D204006C9D91 /* ViewControllers */,
+				829DC87D2964D202006C9D91 /* Cells */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -2994,8 +3021,8 @@
 		82DF98E427BCE73700548B38 /* Other Modules */ = {
 			isa = PBXGroup;
 			children = (
-				8290FCA327FCC15B00E05DDA /* TabBar  */,
 				82D35C1C2963336F000EB277 /* Onboarding */,
+				8290FCA327FCC15B00E05DDA /* TabBar  */,
 				823CFF6D27FA10DC001FF6D9 /* Settings */,
 				82CF0D3828A583C3006B53F4 /* StartQuiz */,
 				8209F79A2847F2390093147A /* SplashScreen */,
@@ -3751,6 +3778,7 @@
 				82CBE7EA287093C50045616B /* NewsListViewModel.swift in Sources */,
 				82A08C7F28F488E90072A940 /* QuizResultViewModel.swift in Sources */,
 				82B760EA27CA75E800540E0F /* QuizCategoryModel.swift in Sources */,
+				829DC87C2964C2C2006C9D91 /* SpeechRecognitionManager.swift in Sources */,
 				82D35C462963AED5000EB277 /* VoiceCommandViewModel.swift in Sources */,
 				82D35C442963AE94000EB277 /* VoiceCommandModel.swift in Sources */,
 				82B01736294F86740073452D /* NewsTableViewCell.swift in Sources */,

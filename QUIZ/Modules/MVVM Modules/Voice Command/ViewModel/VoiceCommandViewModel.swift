@@ -25,9 +25,7 @@ class VoiceCommandViewModel {
     func GetVoiceCommands() {
         for i in 0...2 {
             for value in commands[i].commands {
-                DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
-                    self.configure(command: value)
-                }
+                self.configure(command: value)
             }
         }
     }
