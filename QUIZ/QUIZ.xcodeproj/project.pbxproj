@@ -1358,7 +1358,6 @@
 		820D304A28F386090031CFCD /* MVC Modules */ = {
 			isa = PBXGroup;
 			children = (
-				8290FCA327FCC15B00E05DDA /* TabBar MVC */,
 				823CFF7027FA1117001FF6D9 /* Start MVC */,
 				823CFF7127FA1126001FF6D9 /* Auth MVC */,
 			);
@@ -1846,12 +1845,12 @@
 			path = Cells;
 			sourceTree = "<group>";
 		};
-		8290FCA327FCC15B00E05DDA /* TabBar MVC */ = {
+		8290FCA327FCC15B00E05DDA /* TabBar  */ = {
 			isa = PBXGroup;
 			children = (
 				82C2B5A227BD0E5700C66946 /* ViewController.swift */,
 			);
-			path = "TabBar MVC";
+			path = "TabBar ";
 			sourceTree = "<group>";
 		};
 		829408A627CEC44F00AFF603 /* Planets */ = {
@@ -2995,6 +2994,7 @@
 		82DF98E427BCE73700548B38 /* Other Modules */ = {
 			isa = PBXGroup;
 			children = (
+				8290FCA327FCC15B00E05DDA /* TabBar  */,
 				82D35C1C2963336F000EB277 /* Onboarding */,
 				823CFF6D27FA10DC001FF6D9 /* Settings */,
 				82CF0D3828A583C3006B53F4 /* StartQuiz */,
