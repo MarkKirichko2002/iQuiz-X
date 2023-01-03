@@ -156,6 +156,45 @@ class FirebaseManager {
         }
     }
     
+    // сохранить свою голосовую команду
+    func SaveCustomVoiceCommand(id: Int, voicecommand: VoiceCommandModel, text: String) {
+        let db = Firestore.firestore()
+        
+        if voicecommand.id == id {
+            let ref = db.collection("users").document((Auth.auth().currentUser?.email)!)
+            ref.updateData([
+                voicecommand.name: [
+                    "voicecommand": text,
+                ]
+            ]) { err in
+                if let err = err {
+                    print("Error writing document: \(err)")
+                } else {
+                    print("success")
+                    print(ref)
+                }
+            }
+        }
+    }
+    
+    // загрузить голосовые команды
+    func LoadVoiceCommands(command: String, completion: @escaping(String)->()) {
+        let docRef = db.collection("users").document(Auth.auth().currentUser?.email ?? "")
+        
+        docRef.getDocument { document, error in
+            if let error = error as NSError? {
+                print("Error getting document: \(error.localizedDescription)")
+            } else {
+                if let document = document {
+                    if let category = document[command] as? [String: Any] {
+                        let voicecommand = category["voicecommand"] as? String ?? ""
+                        completion(voicecommand)
+                    }
+                }
+            }
+        }
+    }
+    
     func PlayLastQuizSound() {
         let docRef = db.collection("users").document((Auth.auth().currentUser?.email) ?? "")
         docRef.getDocument { document, error in

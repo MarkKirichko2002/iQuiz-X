@@ -16,7 +16,6 @@ final class SettingsTableViewController: UITableViewController, UIImagePickerCon
     private let db = Firestore.firestore()
     private let storage = Storage.storage().reference()
     private var saved = false
-    private var sections = ["Авторизация","Профиль","Викторина","Аккаунт"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,6 +41,7 @@ final class SettingsTableViewController: UITableViewController, UIImagePickerCon
         self.tableView.register(UINib(nibName: StatisticTableViewCell.identifier, bundle: nil), forCellReuseIdentifier: StatisticTableViewCell.identifier)
         // фото
         self.tableView.register(UINib(nibName: PhotoTableViewCell.identifier, bundle: nil), forCellReuseIdentifier: PhotoTableViewCell.identifier)
+        self.tableView.register(UINib(nibName: VoiceCommandSettingTableViewCell.identifier, bundle: nil), forCellReuseIdentifier: VoiceCommandSettingTableViewCell.identifier)
         // распознование жестов
         self.tableView.register(UINib(nibName: VideoRecordTableViewCell.identifier, bundle: nil), forCellReuseIdentifier: VideoRecordTableViewCell.identifier)
         // распознование речи
@@ -120,7 +120,7 @@ final class SettingsTableViewController: UITableViewController, UIImagePickerCon
             return 3
             
         case 2:
-            return 7
+            return 8
             
         case 3:
             return 2
@@ -159,20 +159,23 @@ final class SettingsTableViewController: UITableViewController, UIImagePickerCon
             }
             
         case 2:
-            
             if indexPath.row == 0 {
+                print("voice command")
+                let vc = VoiceCommandsTableViewController()
+                self.present(vc, animated: true)
+            }else if indexPath.row == 1 {
                 print("audio recording")
-            } else if indexPath.row == 1 {
-                print("video recording")
             } else if indexPath.row == 2 {
-                print("hints")
+                print("video recording")
             } else if indexPath.row == 3 {
-                print("speach")
+                print("hints")
             } else if indexPath.row == 4 {
-                print("music")
+                print("speach")
             } else if indexPath.row == 5 {
-                print("timer")
+                print("music")
             } else if indexPath.row == 6 {
+                print("timer")
+            } else if indexPath.row == 7 {
                 print("attempts")
             }
             
@@ -273,37 +276,43 @@ final class SettingsTableViewController: UITableViewController, UIImagePickerCon
             }
             
         case 2:
+            
             if indexPath.row == 0 {
-                guard let cell = tableView.dequeueReusableCell(withIdentifier: "MicrophoneTableViewCell") as? MicrophoneTableViewCell
+                guard let cell = tableView.dequeueReusableCell(withIdentifier: "VoiceCommandSettingTableViewCell") as? VoiceCommandSettingTableViewCell
                 else { return UITableViewCell() }
                 
                 return cell
             } else if indexPath.row == 1 {
-                guard let cell = tableView.dequeueReusableCell(withIdentifier: "VideoRecordTableViewCell") as? VideoRecordTableViewCell
+                guard let cell = tableView.dequeueReusableCell(withIdentifier: "MicrophoneTableViewCell") as? MicrophoneTableViewCell
                 else { return UITableViewCell() }
                 
                 return cell
             } else if indexPath.row == 2 {
-                guard let cell = tableView.dequeueReusableCell(withIdentifier: "HintsTableViewCell") as? HintsTableViewCell
+                guard let cell = tableView.dequeueReusableCell(withIdentifier: "VideoRecordTableViewCell") as? VideoRecordTableViewCell
                 else { return UITableViewCell() }
                 
                 return cell
             } else if indexPath.row == 3 {
-                guard let cell = tableView.dequeueReusableCell(withIdentifier: "SpeachTableViewCell") as? SpeachTableViewCell
+                guard let cell = tableView.dequeueReusableCell(withIdentifier: "HintsTableViewCell") as? HintsTableViewCell
                 else { return UITableViewCell() }
                 
                 return cell
             } else if indexPath.row == 4 {
+                guard let cell = tableView.dequeueReusableCell(withIdentifier: "SpeachTableViewCell") as? SpeachTableViewCell
+                else { return UITableViewCell() }
+                
+                return cell
+            } else if indexPath.row == 5 {
                 guard let cell = tableView.dequeueReusableCell(withIdentifier: "MusicTableViewCell") as? MusicTableViewCell
                 else { return UITableViewCell() }
 
                 return cell
-            } else if indexPath.row == 5 {
+            } else if indexPath.row == 6 {
                 guard let cell = tableView.dequeueReusableCell(withIdentifier: "TimerTableViewCell") as? TimerTableViewCell
                 else { return UITableViewCell() }
 
                 return cell
-            } else if indexPath.row == 6 {
+            } else if indexPath.row == 7 {
                 guard let cell = tableView.dequeueReusableCell(withIdentifier: "AttemptsTableViewCell") as? AttemptsTableViewCell
                 else { return UITableViewCell() }
 
@@ -339,8 +348,6 @@ final class SettingsTableViewController: UITableViewController, UIImagePickerCon
     func alert() {
         let defaults = UserDefaults.standard
         let email = defaults.object(forKey:"email") as? String ?? ""
-        var name = defaults.object(forKey:"name") as? String ?? ""
-        var password = defaults.object(forKey:"password") as? String ?? ""
         
         print("нет email")
         
@@ -366,8 +373,8 @@ final class SettingsTableViewController: UITableViewController, UIImagePickerCon
             
             self.tableView.reloadData()
             
-            name = textField?.text
-            password = textField2?.text
+            guard let name = textField?.text else {return}
+            guard let password = textField2?.text else {return}
             
             if name != "" && email != "" && password != ""  {
                 self.db.collection("users").document((Auth.auth().currentUser?.email)!).updateData([
@@ -381,12 +388,12 @@ final class SettingsTableViewController: UITableViewController, UIImagePickerCon
                         defaults.set(email, forKey: "email")
                         defaults.set(password, forKey: "password")
                         
-                        Auth.auth().currentUser?.updatePassword(to: password!) { (error) in
+                        Auth.auth().currentUser?.updatePassword(to: password) { (error) in
                         }
                         
-                        print(name ?? "")
-                        print(email ?? "")
-                        print(password ?? "")
+                        print(name)
+                        print(email)
+                        print(password)
                     }
                 }
             } else {

@@ -10,28 +10,28 @@ import Speech
 
 class ViewController: UITabBarController {
     
-    var player = SoundClass()
-    let button = UIButton()
-    var text = ""
-    let audioEngine = AVAudioEngine()
-    let speechReconizer = SFSpeechRecognizer(locale: Locale.init(identifier: "ru-RU"))
-    let request = SFSpeechAudioBufferRecognitionRequest()
-    var task: SFSpeechRecognitionTask?
-    var quizViewModel = CategoriesViewModel()
-    var isStart : Bool = false
-    var icon = "voice.png"
-    var base = QuizBaseViewModel()
-    var animation = AnimationClass()
-    let today = Date()
-    var fb = FirebaseManager()
-    var sound = ""
+    private let player = SoundClass()
+    private let button = UIButton()
+    private var text = ""
+    private let audioEngine = AVAudioEngine()
+    private let speechReconizer = SFSpeechRecognizer(locale: Locale.init(identifier: "ru-RU"))
+    private let request = SFSpeechAudioBufferRecognitionRequest()
+    private var task: SFSpeechRecognitionTask?
+    private let categoriesViewModel = CategoriesViewModel()
+    private var isStart: Bool = false
+    private var icon = "voice.png"
+    private var quizBaseViewModel = QuizBaseViewModel()
+    private var animation = AnimationClass()
+    private let today = Date()
+    private var firebaseManager = FirebaseManager()
+    private var sound = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        quizViewModel.CreateCategories()
-        base.viewController = self
-        quizViewModel.view = self.view
-        quizViewModel.storyboard = self.storyboard
+        self.categoriesViewModel.CreateCategories()
+        quizBaseViewModel.viewController = self
+        categoriesViewModel.view = self.view
+        categoriesViewModel.storyboard = self.storyboard
         configureAudioSession()
         selectedIndex = UserDefaults.standard.object(forKey: "index") as? Int ?? 0
         button.frame = CGRect(x: 0, y: 0, width: 44, height: 44)
@@ -101,7 +101,7 @@ class ViewController: UITabBarController {
             self.button.clipsToBounds = true
             self.button.sd_setImage(with: URL(string: self.icon), for: .normal)
             self.animation.springButton(button: self.button)
-            self.fb.PlayLastQuizSound()
+            self.firebaseManager.PlayLastQuizSound()
         default:
             break
             
@@ -146,7 +146,7 @@ class ViewController: UITabBarController {
             }
             
             let message = response.bestTranscription.formattedString
-            print("Message : \(message)")
+            print("Message : \(message.lowercased())")
             self.text = message
             
             for segment in response.bestTranscription.segments {
@@ -185,23 +185,24 @@ class ViewController: UITabBarController {
                 self.button.clipsToBounds = true
                 self.button.sd_setImage(with: URL(string: self.icon), for: .normal)
                 self.animation.springButton(button: self.button)
-                self.fb.PlayLastQuizSound()
+                self.firebaseManager.PlayLastQuizSound()
              
             // выбор категории викторины
             case _ where self.text != "":
+               
                 for i in 0...5 {
-                    for value in quizViewModel.categories[i].categories {
-                        if text.lowercased().contains(value.voiceCommand) {
+                    for value in self.categoriesViewModel.categories[i].categories {
+                        if self.text.lowercased().contains(value.voiceCommand) {
                             self.icon = value.image
                             self.button.setImage(UIImage(named: self.icon), for: .normal)
                             self.animation.springButton(button: self.button)
                             self.player.PlaySound(resource: value.sound)
                             self.sound = value.sound
-                            self.quizViewModel.GoToStart(quiz: value.base, category: value)
+                            self.categoriesViewModel.GoToStart(quiz: value.base, category: value)
                         }
                     }
                 }
-                
+                    
             // Включение/Выключение музыки
             case _ where self.text.contains("Муз") || self.text.contains("муз"):
                 self.icon = "newyear.png"
@@ -225,7 +226,7 @@ class ViewController: UITabBarController {
                 self.button.setTitleColor(.black, for: .normal)
                 self.button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 20)
                 self.button.setTitle("\(hours):\(minutes)", for: .normal)
-                self.base.sayComment(comment: "\(hours):\(minutes)")
+                self.quizBaseViewModel.sayComment(comment: "\(hours):\(minutes)")
                 self.animation.springButton(button: self.button)
                 
             // Узнать текущий год
@@ -235,7 +236,7 @@ class ViewController: UITabBarController {
                 self.button.setTitleColor(.black, for: .normal)
                 self.button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 20)
                 self.button.setTitle("\(year)", for: .normal)
-                self.base.sayComment(comment: "\(year)")
+                self.quizBaseViewModel.sayComment(comment: "\(year)")
                 self.animation.springButton(button: self.button)
                 
             // Открыть камеру
@@ -246,7 +247,7 @@ class ViewController: UITabBarController {
                 self.player.PlaySound(resource: "camera.mp3")
                 self.sound = "camera.mp3"
                 DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-                    self.base.OpenCamera()
+                    self.quizBaseViewModel.OpenCamera()
                 }
                 
             // показать экран настроек
@@ -316,7 +317,7 @@ extension ViewController: UIImagePickerControllerDelegate, UINavigationControlle
             return
         }
         
-        quizViewModel.recognizeText(image: image)
+        categoriesViewModel.recognizeText(image: image)
         DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
             picker.dismiss(animated: true, completion: nil)
             self.startSpeechRecognization()
