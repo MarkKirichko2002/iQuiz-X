@@ -27,15 +27,16 @@ class RoundedImageView: UIImageView {
     
     @IBAction func tapFunction(sender: UITapGestureRecognizer) {
         player.PlaySound(resource: sound)
-        UIView.animate(withDuration: 0.75,
-                                    delay: 0,
-                                    usingSpringWithDamping: 0.50,
-                                    initialSpringVelocity: 0.50,
-                                    options: [.allowUserInteraction],
-                                    animations: {
-                                        self.bounds = self.bounds.insetBy(dx: 15, dy: 15)
-                                    },
-                                    completion: nil)
+        DispatchQueue.main.async {
+            UIView.animate(withDuration: 0.75,
+                           delay: 0,
+                           usingSpringWithDamping: 0.50,
+                           initialSpringVelocity: 0.50,
+                           options: [.allowUserInteraction],
+                           animations: {
+                self.bounds = self.bounds.insetBy(dx: 15, dy: 15)
+            },
+                           completion: nil)
+        }
     }
 }
-

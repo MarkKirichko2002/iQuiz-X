@@ -33,6 +33,7 @@ class QuizBaseViewModel {
     var score = 0;
     var sound = ""
     var quiz: QuizCategoryModel?
+    let speechRecognitionManager = SpeechRecognitionManager()
     
     let date = Date()
     
@@ -1701,15 +1702,6 @@ class QuizBaseViewModel {
         CurrentMusic()
         OnOffButtonStatusTitle.value = quiz?.music ?? ""
         sound = quiz?.music ?? ""
-    }
-    
-    func configureAudioSession() {
-        
-        do {
-            try? AVAudioSession.sharedInstance().setCategory(.playAndRecord, mode: .default, policy: .default, options: .defaultToSpeaker)
-        } catch  {
-            
-        }
     }
     
     func ShowAnswer() {

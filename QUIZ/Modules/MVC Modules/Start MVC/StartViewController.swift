@@ -459,9 +459,10 @@ class StartViewController: UIViewController {
         self.animation.springButton(button: self.StartButton)
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-            guard let vc = self.storyboard?.instantiateViewController(identifier: "ViewController") else {return}
-            guard let window = self.view.window else {return}
-            window.rootViewController = vc
+            guard let controller = self.storyboard?.instantiateViewController(withIdentifier: "ViewController") as? UIViewController else {return}
+            controller.modalPresentationStyle = .fullScreen
+            controller.modalTransitionStyle = .flipHorizontal
+            self.present(controller, animated: true, completion: nil)
         }
     }
 }

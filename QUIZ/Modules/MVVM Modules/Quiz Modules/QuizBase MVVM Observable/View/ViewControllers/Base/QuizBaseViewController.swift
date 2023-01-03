@@ -179,7 +179,7 @@ class QuizBaseViewController: UIViewController {
         self.quiz?.checkHintsSetting(sender: AnswersButton)
         self.quiz?.checkGestureSetting()
         self.quiz?.checkSpeachSetting()
-        self.quiz?.configureAudioSession()
+        self.quiz?.speechRecognitionManager.configureAudioSession()
         self.quiz?.checkAudioSetting()
         self.quiz?.checkTimerSetting()
         self.quiz?.checkAttemptsSetting()

@@ -57,5 +57,4 @@ class VoiceCommandsTableViewController: UITableViewController {
         cell.configure(voicecommand: voiceCommandViewModel.commands[indexPath.section].commands[indexPath.row])
         return cell
     }
-    
 }
