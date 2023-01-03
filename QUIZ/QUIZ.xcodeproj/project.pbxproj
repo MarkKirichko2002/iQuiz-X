@@ -382,6 +382,7 @@
 		8295F1C22950BB43000E033E /* newyear19.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 8295F1BF2950BB43000E033E /* newyear19.jpeg */; };
 		8295F1C32950BB43000E033E /* newyear20.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 8295F1C02950BB43000E033E /* newyear20.jpeg */; };
 		8295F1CC2950C735000E033E /* TasksTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8295F1CB2950C735000E033E /* TasksTableViewCell.xib */; };
+		829DC874296445F2006C9D91 /* skip.png in Resources */ = {isa = PBXBuildFile; fileRef = 829DC873296445F2006C9D91 /* skip.png */; };
 		82A01BFD27C51CFF00DCBD6F /* RoundedImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82A01BFC27C51CFF00DCBD6F /* RoundedImageView.swift */; };
 		82A08C7D28F488A70072A940 /* QuizResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82A08C7C28F488A70072A940 /* QuizResult.swift */; };
 		82A08C7F28F488E90072A940 /* QuizResultViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82A08C7E28F488E90072A940 /* QuizResultViewModel.swift */; };
@@ -457,6 +458,13 @@
 		82D35C2129633A55000EB277 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82D35C2029633A55000EB277 /* UIView+Extensions.swift */; };
 		82D35C2429634355000EB277 /* OnboardingSlide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82D35C2329634355000EB277 /* OnboardingSlide.swift */; };
 		82D35C29296346D5000EB277 /* OnboardingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82D35C28296346D5000EB277 /* OnboardingCollectionViewCell.swift */; };
+		82D35C3A2963AA64000EB277 /* VoiceCommandSettingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82D35C392963AA64000EB277 /* VoiceCommandSettingTableViewCell.swift */; };
+		82D35C3C2963AA78000EB277 /* VoiceCommandSettingTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 82D35C3B2963AA78000EB277 /* VoiceCommandSettingTableViewCell.xib */; };
+		82D35C3E2963ADF6000EB277 /* VoiceCommandsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82D35C3D2963ADF6000EB277 /* VoiceCommandsTableViewController.swift */; };
+		82D35C442963AE94000EB277 /* VoiceCommandModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82D35C432963AE94000EB277 /* VoiceCommandModel.swift */; };
+		82D35C462963AED5000EB277 /* VoiceCommandViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82D35C452963AED5000EB277 /* VoiceCommandViewModel.swift */; };
+		82D35C482963B0C9000EB277 /* VoiceCommandTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82D35C472963B0C9000EB277 /* VoiceCommandTableViewCell.swift */; };
+		82D35C4A2963B18D000EB277 /* VoiceCommandTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 82D35C492963B18D000EB277 /* VoiceCommandTableViewCell.xib */; };
 		82D67D6E2948E04B0097FD30 /* sport.wav in Resources */ = {isa = PBXBuildFile; fileRef = 82D67D6D2948E04B0097FD30 /* sport.wav */; };
 		82DBCA2728303EDE009DD1EE /* EditProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82DBCA2628303EDE009DD1EE /* EditProfileTableViewCell.swift */; };
 		82DC6E1C27E65E790077D107 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82DC6E1B27E65E790077D107 /* StartViewController.swift */; };
@@ -1001,6 +1009,7 @@
 		8295F1BF2950BB43000E033E /* newyear19.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = newyear19.jpeg; sourceTree = "<group>"; };
 		8295F1C02950BB43000E033E /* newyear20.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = newyear20.jpeg; sourceTree = "<group>"; };
 		8295F1CB2950C735000E033E /* TasksTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TasksTableViewCell.xib; sourceTree = "<group>"; };
+		829DC873296445F2006C9D91 /* skip.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = skip.png; sourceTree = "<group>"; };
 		82A01BFC27C51CFF00DCBD6F /* RoundedImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedImageView.swift; sourceTree = "<group>"; };
 		82A08C7C28F488A70072A940 /* QuizResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizResult.swift; sourceTree = "<group>"; };
 		82A08C7E28F488E90072A940 /* QuizResultViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizResultViewModel.swift; sourceTree = "<group>"; };
@@ -1076,6 +1085,13 @@
 		82D35C2029633A55000EB277 /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
 		82D35C2329634355000EB277 /* OnboardingSlide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingSlide.swift; sourceTree = "<group>"; };
 		82D35C28296346D5000EB277 /* OnboardingCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCollectionViewCell.swift; sourceTree = "<group>"; };
+		82D35C392963AA64000EB277 /* VoiceCommandSettingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceCommandSettingTableViewCell.swift; sourceTree = "<group>"; };
+		82D35C3B2963AA78000EB277 /* VoiceCommandSettingTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VoiceCommandSettingTableViewCell.xib; sourceTree = "<group>"; };
+		82D35C3D2963ADF6000EB277 /* VoiceCommandsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceCommandsTableViewController.swift; sourceTree = "<group>"; };
+		82D35C432963AE94000EB277 /* VoiceCommandModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceCommandModel.swift; sourceTree = "<group>"; };
+		82D35C452963AED5000EB277 /* VoiceCommandViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceCommandViewModel.swift; sourceTree = "<group>"; };
+		82D35C472963B0C9000EB277 /* VoiceCommandTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceCommandTableViewCell.swift; sourceTree = "<group>"; };
+		82D35C492963B18D000EB277 /* VoiceCommandTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VoiceCommandTableViewCell.xib; sourceTree = "<group>"; };
 		82D67D6D2948E04B0097FD30 /* sport.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = sport.wav; sourceTree = "<group>"; };
 		82DBCA2628303EDE009DD1EE /* EditProfileTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileTableViewCell.swift; sourceTree = "<group>"; };
 		82DC6E1B27E65E790077D107 /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
@@ -1326,6 +1342,7 @@
 				8295F1C72950C113000E033E /* Quiz Modules */,
 				8295F1C82950C13F000E033E /* Players Module */,
 				8295F1C92950C150000E033E /* Profile Module */,
+				82D35C3F2963AE41000EB277 /* Voice Command MVVM */,
 			);
 			path = "MVVM Modules";
 			sourceTree = "<group>";
@@ -1580,6 +1597,7 @@
 				82C18EED2832ECEA00348599 /* key.png */,
 				821AC778289DC12400D04D55 /* trophy.png */,
 				8295F1B92950B8C1000E033E /* gear.png */,
+				829DC873296445F2006C9D91 /* skip.png */,
 			);
 			path = "other images";
 			sourceTree = "<group>";
@@ -2168,6 +2186,7 @@
 		829D3D372950EB3600B4C924 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				82D35C382963A9FF000EB277 /* VoiceCommandSettingTableViewCell */,
 				82D35C01296322A5000EB277 /* BiometricTableViewCell */,
 				82D35C00296322A3000EB277 /* VoicePasswordTableViewCell */,
 				82D35BFF296322A0000EB277 /* EditProfileTableViewCell */,
@@ -2928,6 +2947,51 @@
 			path = ViewControllers;
 			sourceTree = "<group>";
 		};
+		82D35C382963A9FF000EB277 /* VoiceCommandSettingTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				82D35C392963AA64000EB277 /* VoiceCommandSettingTableViewCell.swift */,
+				82D35C3B2963AA78000EB277 /* VoiceCommandSettingTableViewCell.xib */,
+			);
+			path = VoiceCommandSettingTableViewCell;
+			sourceTree = "<group>";
+		};
+		82D35C3F2963AE41000EB277 /* Voice Command MVVM */ = {
+			isa = PBXGroup;
+			children = (
+				82D35C422963AE55000EB277 /* Model */,
+				82D35C412963AE53000EB277 /* View */,
+				82D35C402963AE51000EB277 /* ViewModel */,
+			);
+			path = "Voice Command MVVM";
+			sourceTree = "<group>";
+		};
+		82D35C402963AE51000EB277 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				82D35C452963AED5000EB277 /* VoiceCommandViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		82D35C412963AE53000EB277 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				82D35C3D2963ADF6000EB277 /* VoiceCommandsTableViewController.swift */,
+				82D35C472963B0C9000EB277 /* VoiceCommandTableViewCell.swift */,
+				82D35C492963B18D000EB277 /* VoiceCommandTableViewCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		82D35C422963AE55000EB277 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				82D35C432963AE94000EB277 /* VoiceCommandModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		82DF98E427BCE73700548B38 /* Other Modules */ = {
 			isa = PBXGroup;
 			children = (
@@ -3266,6 +3330,7 @@
 				829408D127CEC93100AFF603 /* history2.jpeg in Resources */,
 				8286518628FEF916004806D3 /* league.mp3 in Resources */,
 				8221393A2874E8650065A0C3 /* Swift18.jpeg in Resources */,
+				82D35C3C2963AA78000EB277 /* VoiceCommandSettingTableViewCell.xib in Resources */,
 				8281168C293A88DC00AA7C8E /* newyear9.jpeg in Resources */,
 				8207E24C286E5CC200CB017A /* underwater18.jpeg in Resources */,
 				8295F1B72950B76F000E033E /* settings.mp3 in Resources */,
@@ -3369,6 +3434,7 @@
 				8286518A28FEF947004806D3 /* roadtraffic.mp3 in Resources */,
 				8294093C27CECD6100AFF603 /* economy4.jpeg in Resources */,
 				8288F0962872662400C6A182 /* chess1.jpeg in Resources */,
+				829DC874296445F2006C9D91 /* skip.png in Resources */,
 				82848D25281C6F5B0068A4AE /* chemistry.background.jpeg in Resources */,
 				8294094D27CECE1900AFF603 /* geography10.jpeg in Resources */,
 				8216FE3027E560AB00DFB0CF /* Assets.xcassets in Resources */,
@@ -3435,6 +3501,7 @@
 				82319E0F28E8D8EA0053CEF5 /* halloween1.jpeg in Resources */,
 				82EA1F7B286BCD0600E49D0F /* sport14.jpeg in Resources */,
 				82EA1F93286BCD2300E49D0F /* anatomy11.jpeg in Resources */,
+				82D35C4A2963B18D000EB277 /* VoiceCommandTableViewCell.xib in Resources */,
 				82848D2B281C6F5B0068A4AE /* random.background.jpeg in Resources */,
 				82811699293A8A3300AA7C8E /* newyear.background.jpeg in Resources */,
 				82BDEB14283C630100B1AD7F /* literature12.jpeg in Resources */,
@@ -3623,6 +3690,7 @@
 				82CBE8032870D4B40045616B /* TasksViewModel.swift in Sources */,
 				826E12B128009F1300465E16 /* SpeachTableViewCell.swift in Sources */,
 				82900D632801AB9D00742925 /* MusicTableViewCell.swift in Sources */,
+				82D35C482963B0C9000EB277 /* VoiceCommandTableViewCell.swift in Sources */,
 				822B235D27C868390067ED13 /* Player.swift in Sources */,
 				8238058128F1926A0006A736 /* QuizMediaLibraryTableViewCell.swift in Sources */,
 				82E0EC8228AC5ABA004AA2E3 /* Event.swift in Sources */,
@@ -3631,6 +3699,7 @@
 				821120E92822EE5E009C2801 /* CurrentCategoryTableViewCell.swift in Sources */,
 				8287054F28144CF800002EBC /* VoicePasswordTableViewCell.swift in Sources */,
 				8281167E293A867E00AA7C8E /* QuizNewYear.swift in Sources */,
+				82D35C3E2963ADF6000EB277 /* VoiceCommandsTableViewController.swift in Sources */,
 				82A9796E27F8CB2C001EBF1C /* QuizLiterature.swift in Sources */,
 				82E0EC8028AC5AA7004AA2E3 /* Bus.swift in Sources */,
 				82A08C7D28F488A70072A940 /* QuizResult.swift in Sources */,
@@ -3682,12 +3751,15 @@
 				82CBE7EA287093C50045616B /* NewsListViewModel.swift in Sources */,
 				82A08C7F28F488E90072A940 /* QuizResultViewModel.swift in Sources */,
 				82B760EA27CA75E800540E0F /* QuizCategoryModel.swift in Sources */,
+				82D35C462963AED5000EB277 /* VoiceCommandViewModel.swift in Sources */,
+				82D35C442963AE94000EB277 /* VoiceCommandModel.swift in Sources */,
 				82B01736294F86740073452D /* NewsTableViewCell.swift in Sources */,
 				82A08C8128F48E8E0072A940 /* ProfileViewModel.swift in Sources */,
 				82CBE7EB287093C50045616B /* NewsModel.swift in Sources */,
 				82BC0189294770D400AEB659 /* TasksTableViewController.swift in Sources */,
 				82F564712940D1FB0031F7BD /* QuizCategoryDetailViewController.swift in Sources */,
 				82AFAF6827FA3C25001B04A0 /* ExitTableViewCell.swift in Sources */,
+				82D35C3A2963AA64000EB277 /* VoiceCommandSettingTableViewCell.swift in Sources */,
 				82CBE7E9287093C50045616B /* NewsTableViewController.swift in Sources */,
 				82D35C2429634355000EB277 /* OnboardingSlide.swift in Sources */,
 				8213BF7127D6AAC800D07512 /* QuizPhysics.swift in Sources */,
