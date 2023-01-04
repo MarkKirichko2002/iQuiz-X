@@ -11,7 +11,8 @@ import Firebase
 class TasksTableViewCell: UITableViewCell {
     
     static let identifier = "TasksTableViewCell"
-    var animation = AnimationClass()
+    private let animation = AnimationClass()
+    var delegate: CustomViewCellDelegate?
     
     @IBOutlet weak var TaskText: UILabel!
     @IBOutlet weak var TaskImage: RoundedImageView!
@@ -37,6 +38,7 @@ class TasksTableViewCell: UITableViewCell {
         animation.springImage(image: TaskImage)
         animation.springLabel(label: TaskText)
         animation.springLabel(label: TaskStatus)
+        delegate?.didElementClick()
     }
     
 }

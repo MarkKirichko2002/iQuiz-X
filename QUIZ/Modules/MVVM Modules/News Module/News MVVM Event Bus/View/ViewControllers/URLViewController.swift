@@ -8,7 +8,7 @@
 import UIKit
 import WebKit
 
-class URLViewController: UIViewController {
+final class URLViewController: UIViewController {
 
     @IBOutlet weak var WVWEBview: WKWebView!
    

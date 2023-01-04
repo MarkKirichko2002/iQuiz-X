@@ -7,7 +7,6 @@
 
 import Foundation
 import UIKit
-import Vision
 import Combine
 import SnapKit
 
@@ -20,7 +19,7 @@ class CategoriesViewModel {
     private let spinner = RoundedImageView()
     private let loadingText = UILabel()
     private let animation = AnimationClass()
-    
+    private let textRecognitionManager = TextRecognitionManager()
     @Published var categories = [Quiz]()
     
     var quizcategories = [QuizCategoryModel(name: "астрономия", image: "planets.jpeg", base: QuizPlanets(), voiceCommand: "планет", background: "earth.background.jpeg", complete: false, id: 1, score: 0, sound: "space.wav", music: "space music.mp3"), QuizCategoryModel(name: "история", image: "history.jpeg", base: QuizHistory(), voiceCommand: "истори", background: "history.background.jpeg", complete: false, id: 2, score: 0, sound: "history.wav", music: "history music.mp3"), QuizCategoryModel(name: "анатомия", image: "anatomy.jpeg", base: QuizAnatomy(), voiceCommand:"анатоми", background: "anatomy.background.jpeg", complete: false, id: 3, score: 0, sound: "anatomy.mp3", music: "anatomy music.mp3"), QuizCategoryModel(name: "спорт", image: "sport.jpeg", base: QuizSport(), voiceCommand: "спорт", background: "sport.background.jpeg", complete: false, id: 4, score: 0, sound: "sport.wav", music: "sport music.mp3"), QuizCategoryModel(name: "игры", image: "games.jpeg", base: QuizGames(), voiceCommand: "игр", background: "games.background.jpeg", complete: false, id: 5, score: 0, sound: "games.mp3", music: "games music.mp3"), QuizCategoryModel(name: "IQ", image: "IQ.jpeg", base: QuizIQ(), voiceCommand: "интеллект", background: "IQ.background.jpeg", complete: false, id: 6, score: 0, sound: "IQ.mp3", music: "IQ music.mp3"), QuizCategoryModel(name: "экономика", image: "economy.jpeg", base: QuizEconomy(), voiceCommand: "экономика", background: "economy.background.jpeg", complete: false, id: 7, score: 0, sound: "economics.mp3", music: "economy music.mp3"), QuizCategoryModel(name: "география", image: "geography.jpeg", base: QuizGeography(), voiceCommand: "географи", background: "geography.background.jpeg", complete: false, id: 8, score: 0, sound: "geography.mp3", music: "geography music.mp3"), QuizCategoryModel(name: "экология", image: "ecology.jpeg", base: QuizEcology(), voiceCommand: "экологи", background: "ecology.background.jpeg", complete: false, id: 9, score: 0, sound: "ecology.wav", music: "ecology music.mp3"), QuizCategoryModel(name: "физика", image: "physics.jpeg", base: QuizPhysics(), voiceCommand: "физ", background: "physics.background.jpeg", complete: false, id: 10, score: 0, sound: "physics.mp3", music: "physics music.mp3"), QuizCategoryModel(name: "химия", image: "chemistry.jpeg", base: QuizChemistry(), voiceCommand: "хим", background: "chemistry.background.jpeg", complete: false, id: 11, score: 0, sound: "chemistry.mp3", music: "chemistry music.mp3"), QuizCategoryModel(name: "информатика", image: "informatics.jpeg", base: QuizInformatics(), voiceCommand: "информа", background: "informatics.background.jpeg", complete: false, id: 12, score: 0, sound: "informatics.mp3", music: "informatics music.mp3"), QuizCategoryModel(name: "литература", image: "literature.jpeg", base: QuizLiterature(), voiceCommand: "литера", background: "literature.background.jpeg", complete: false, id: 13, score: 0, sound: "literature.mp3", music: "literature music.mp3"), QuizCategoryModel(name: "ПДД", image: "drive.jpeg", base: QuizRoadTraffic(), voiceCommand: "дорог", background: "drive.background.jpeg", complete: false, id: 14, score: 0, sound: "roadtraffic.mp3", music: "drive music.mp3"), QuizCategoryModel(name: "Swift", image: "swift.jpeg", base: QuizSwift(), voiceCommand: "swift", background:"swift.background.jpeg", complete: false, id: 15, score: 0, sound: "swift.mp3", music: "Swift music.mp3"), QuizCategoryModel(name: "подводный мир", image: "underwater.png", base: QuizUnderwater(), voiceCommand: "мор", background: "underwater.background.jpeg", complete: false, id: 16, score: 0, sound: "underwater.wav", music: "underwater music.mp3"), QuizCategoryModel(name: "шахматы", image: "chess.png", base: QuizChess(), voiceCommand: "шахмат", background: "chess.background.jpeg", complete: false, id: 17, score: 0, sound: "chess.mp3", music: "chess music.mp3"), QuizCategoryModel(name: "хэллоуин", image: "halloween.png", base: QuizHalloween(), voiceCommand: "halloween", background: "halloween.background.jpeg", complete: false, id: 18, score: 0, sound: "halloween.wav", music: "halloween music.mp3"), QuizCategoryModel(name: "новый год", image: "newyear.png", base: QuizNewYear(), voiceCommand: "рождеств", background: "newyear.background.jpeg", complete: false, id: 19, score: 0, sound: "newyear.mp3", music: "newyear music.mp3")]
@@ -335,135 +334,15 @@ class CategoriesViewModel {
         }
     }
     
-    func recognizeText(image: UIImage?) {
-        guard let cgImage = image?.cgImage else {
-            return
-        }
-        
-        // Handler
-        let handler = VNImageRequestHandler(cgImage: cgImage, options: [:])
-        
-        // Request
-        let request = VNRecognizeTextRequest { [weak self] request,error in
-            guard let observations = request.results as? [VNRecognizedTextObservation],
-                  error == nil else {
-                return
+    func CheckText(image: UIImage) {
+        textRecognitionManager.recognizeText(image: image) { text in
+            for i in 0...5 {
+                for value in self.categories[i].categories {
+                    if text.lowercased().contains(value.name) {
+                        self.GoToStart(quiz: value.base, category: value)
+                    }
+                }
             }
-            
-            let text = observations.compactMap({
-                $0.topCandidates(1).first?.string
-            }).joined(separator: " ")
-            
-            switch text {
-                
-            case _ where text.contains("Астрономия"):
-                DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-                    self?.goToQuize(quiz: QuizPlanets(), category: (self?.categories[0].categories[0])!)
-                }
-                
-            case _ where text.contains("История"):
-                DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-                    self?.goToQuize(quiz: QuizHistory(), category: (self?.categories[0].categories[1])!)
-                }
-                
-            case _ where text.contains("Анатомия"):
-                DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-                    self?.goToQuize(quiz: QuizAnatomy(), category: (self?.categories[0].categories[2])!)
-                }
-                
-            case _ where text.contains("Спорт"):
-                DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-                    self?.goToQuize(quiz: QuizSport(), category: (self?.categories[0].categories[3])!)
-                }
-                
-            case _ where text.contains("Игры"):
-                DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-                    self?.goToQuize(quiz: QuizGames(), category: (self?.categories[1].categories[0])!)
-                }
-                
-            case _ where text.contains("IQ"):
-                DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-                    self?.goToQuize(quiz: QuizIQ(), category: (self?.categories[1].categories[1])!)
-                }
-                
-            case _ where text.contains("Экономика"):
-                DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-                    self?.goToQuize(quiz: QuizEconomy(), category: (self?.categories[1].categories[2])!)
-                }
-                
-            case _ where text.contains("География"):
-                DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-                    self?.goToQuize(quiz: QuizGeography(), category: (self?.categories[1].categories[3])!)
-                }
-                
-            case _ where text.contains("Экология"):
-                DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-                    self?.goToQuize(quiz: QuizEcology(), category: (self?.categories[1].categories[4])!)
-                }
-                
-            case _ where text.contains("Физика"):
-                DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-                    self?.goToQuize(quiz: QuizPhysics(), category: (self?.categories[1].categories[5])!)
-                }
-                
-            case _ where text.contains("Химия"):
-                DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-                    self?.goToQuize(quiz: QuizChemistry(), category: (self?.categories[1].categories[6])!)
-                }
-                
-            case _ where text.contains("Информатика"):
-                DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-                    self?.goToQuize(quiz: QuizInformatics(), category: (self?.categories[1].categories[7])!)
-                }
-                
-            case _ where text.contains("Литература"):
-                DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-                    self?.goToQuize(quiz: QuizLiterature(), category: (self?.categories[2].categories[0])!)
-                }
-                
-            case _ where text.contains("ПДД"):
-                DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-                    self?.goToQuize(quiz: QuizRoadTraffic(), category: (self?.categories[2].categories[1])!)
-                }
-                
-            case _ where text.contains("Swift"):
-                DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-                    self?.goToQuize(quiz: QuizSwift(), category: (self?.categories[2].categories[2])!)
-                }
-                
-            case _ where text.contains("Подводный мир"):
-                DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-                    self?.goToQuize(quiz: QuizUnderwater(), category: (self?.categories[3].categories[0])!)
-                }
-                
-            case _ where text.contains("Шахматы"):
-                DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-                    self?.goToQuize(quiz: QuizChess(), category: (self?.categories[3].categories[1])!)
-                }
-                
-            case _ where text.contains("Хэллоуин"):
-                DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-                    self?.goToQuize(quiz: QuizHalloween(), category: (self?.categories[4].categories[0])!)
-                }
-                
-            case _ where text.contains("Рождество"):
-                DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-                    self?.goToQuize(quiz: QuizHalloween(), category: (self?.categories[5].categories[0])!)
-                }
-                
-            case _ where text.contains("19"):
-                self?.PresentRandomQuiz()
-                
-            default:
-                break
-                
-            }
-        }
-        
-        do {
-            try handler.perform([request])
-        } catch {
-            print(error)
         }
     }
 }

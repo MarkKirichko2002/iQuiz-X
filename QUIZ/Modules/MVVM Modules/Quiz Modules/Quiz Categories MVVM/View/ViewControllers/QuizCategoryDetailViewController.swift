@@ -8,8 +8,7 @@
 import Foundation
 import UIKit
 
-
-class QuizCategoryDetailViewController: UIViewController {
+final class QuizCategoryDetailViewController: UIViewController {
     
     @IBOutlet weak var CategoryIcon: RoundedImageView!
     @IBOutlet weak var CategoryName: UILabel!
@@ -19,23 +18,26 @@ class QuizCategoryDetailViewController: UIViewController {
     
     var category: QuizCategoryModel?
     var player = SoundClass()
-    var categoriesViewModel = CategoriesViewModel()
-    var animation = AnimationClass()
+    private let categoriesViewModel = CategoriesViewModel()
+    private let animation = AnimationClass()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        guard let category = self.category else {return}
         categoriesViewModel.view = self.view
         categoriesViewModel.storyboard = self.storyboard
-        view?.backgroundColor = UIColor(patternImage: UIImage(named: category?.background ?? "")!)
-        CategoryIcon.image = UIImage(named: category?.image ?? "")
+        view?.backgroundColor = UIColor(patternImage: UIImage(named: category.background)!)
+        CategoryIcon.image = UIImage(named: category.image)
         CategoryIcon.color = .white
-        CategoryIcon.sound = category?.sound ?? ""
+        CategoryIcon.sound = category.sound
         CategoryName.textColor = .white
-        CategoryName.text = category?.name
+        CategoryName.text = category.name
         CategoryScore.textColor = .white
-        CategoryScore.text = "\(category?.score ?? 0)/100"
+        CategoryScore.text = "\(category.score)/100"
         CompleteStatus.textColor = .white
-        switch category?.complete {
+        PlayButton.tintColor = .white
+        switch category.complete {
+            
         case true:
             CompleteStatus.text = "пройдено"
             CompleteStatus.textColor = .systemGreen
@@ -43,20 +45,22 @@ class QuizCategoryDetailViewController: UIViewController {
         case false:
             CompleteStatus.text = "не пройдено"
             CompleteStatus.textColor = .systemGray
-            
-        default:
-            CompleteStatus.text = "не пройдено"
-            CompleteStatus.textColor = .systemGray
         }
-        PlayButton.tintColor = .white
-        self.player.PlaySound(resource: self.category?.music ?? "")
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        guard let category = self.category else {return}
+        self.player.PlaySound(resource: category.music)
     }
     
     @IBAction func PlayQuiz() {
+        guard let category = self.category else {return}
+        animation.springImage(image: self.CategoryIcon)
+        animation.springLabel(label: self.CategoryName)
         animation.springButton(button: self.PlayButton)
-        player.StopSound(resource: category?.music ?? "")
-        player.PlaySound(resource: category?.sound ?? "")
-        categoriesViewModel.GoToStart(quiz: category!.base, category: category!)
+        player.StopSound(resource: category.music)
+        player.PlaySound(resource: category.sound)
+        categoriesViewModel.GoToStart(quiz: category.base, category: category)
     }
-    
 }

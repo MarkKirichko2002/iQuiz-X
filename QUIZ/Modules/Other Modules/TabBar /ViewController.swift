@@ -295,7 +295,7 @@ extension ViewController: UIImagePickerControllerDelegate, UINavigationControlle
             return
         }
         
-        categoriesViewModel.recognizeText(image: image)
+        categoriesViewModel.CheckText(image: image)
         DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
             picker.dismiss(animated: true, completion: nil)
             self.startSpeechRecognization()

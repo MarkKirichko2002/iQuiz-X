@@ -50,7 +50,7 @@ final class CategoryTableViewController: UIViewController, UITableViewDelegate, 
     
     func didElementClick() {
         DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-            self.performSegue(withIdentifier: "showDetail", sender: nil)
+            self.performSegue(withIdentifier: "showCategoryDetail", sender: nil)
         }
     }
     
@@ -72,7 +72,7 @@ final class CategoryTableViewController: UIViewController, UITableViewDelegate, 
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "showDetail",
+        if segue.identifier == "showCategoryDetail",
            let destinationController = segue.destination as? QuizCategoryDetailViewController,
            let indexSelectedCell = tableView.indexPathForSelectedRow {
             let category = categoriesViewModel.categories[indexSelectedCell.section].categories[indexSelectedCell.row]
