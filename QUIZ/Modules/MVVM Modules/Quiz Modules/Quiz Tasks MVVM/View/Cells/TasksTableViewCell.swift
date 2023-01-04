@@ -17,7 +17,7 @@ class TasksTableViewCell: UITableViewCell {
     @IBOutlet weak var TaskImage: RoundedImageView!
     @IBOutlet weak var TaskStatus: UILabel!
     
-    func ConfigureCell(task: TaskModel) {
+    func ConfigureCell(task: QuizTaskModel) {
         TaskImage.image = UIImage(named: task.image)
         TaskImage.sound = task.sound
         TaskImage.color = .white
@@ -29,7 +29,7 @@ class TasksTableViewCell: UITableViewCell {
             TaskStatus.textColor = .systemGreen
         case false:
             TaskStatus.text = "не пройдено"
-            TaskStatus.textColor = .systemGray
+            TaskStatus.textColor = .white
         }
     }
     

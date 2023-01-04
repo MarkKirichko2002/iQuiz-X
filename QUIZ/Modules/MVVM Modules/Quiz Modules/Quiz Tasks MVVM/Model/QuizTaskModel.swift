@@ -7,12 +7,13 @@
 
 import Foundation
 
-struct TaskModel {
+struct QuizTaskModel {
+    var id: Int
     var name: String
     var image: String
     var background: String
     var complete: Bool
-    var id: Int
+    var quizpath: String
     var sound: String
 }
 

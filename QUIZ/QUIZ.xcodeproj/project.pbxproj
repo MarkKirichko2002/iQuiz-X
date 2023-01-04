@@ -124,7 +124,7 @@
 		8243A6222820810E00427553 /* physics16.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 8243A6182820810E00427553 /* physics16.jpeg */; };
 		8243A6232820810E00427553 /* physics14.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 8243A6192820810E00427553 /* physics14.jpeg */; };
 		8243A6242820810E00427553 /* physics20.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 8243A61A2820810E00427553 /* physics20.jpeg */; };
-		8243F16527C25A1200CD9CE4 /* TaskModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8243F16427C25A1200CD9CE4 /* TaskModel.swift */; };
+		8243F16527C25A1200CD9CE4 /* QuizTaskModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8243F16427C25A1200CD9CE4 /* QuizTaskModel.swift */; };
 		8243F16927C2617C00CD9CE4 /* QuizBaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8243F16827C2617C00CD9CE4 /* QuizBaseViewModel.swift */; };
 		8243F16B27C266F800CD9CE4 /* QuizBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8243F16A27C266F800CD9CE4 /* QuizBaseViewController.swift */; };
 		824419B7286E531900203DBA /* underwater19.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 824419B5286E531900203DBA /* underwater19.jpeg */; };
@@ -752,7 +752,7 @@
 		8243A6182820810E00427553 /* physics16.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = physics16.jpeg; sourceTree = "<group>"; };
 		8243A6192820810E00427553 /* physics14.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = physics14.jpeg; sourceTree = "<group>"; };
 		8243A61A2820810E00427553 /* physics20.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = physics20.jpeg; sourceTree = "<group>"; };
-		8243F16427C25A1200CD9CE4 /* TaskModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskModel.swift; sourceTree = "<group>"; };
+		8243F16427C25A1200CD9CE4 /* QuizTaskModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizTaskModel.swift; sourceTree = "<group>"; };
 		8243F16827C2617C00CD9CE4 /* QuizBaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizBaseViewModel.swift; sourceTree = "<group>"; };
 		8243F16A27C266F800CD9CE4 /* QuizBaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizBaseViewController.swift; sourceTree = "<group>"; };
 		824419B5286E531900203DBA /* underwater19.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = underwater19.jpeg; sourceTree = "<group>"; };
@@ -1282,12 +1282,12 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		8209F79A2847F2390093147A /* SplashScreen */ = {
+		8209F79A2847F2390093147A /* Splash Screen */ = {
 			isa = PBXGroup;
 			children = (
 				8209F79B2847F2600093147A /* SplashScreenController.swift */,
 			);
-			path = SplashScreen;
+			path = "Splash Screen";
 			sourceTree = "<group>";
 		};
 		820C627227BBA3CA004894FA = {
@@ -1412,12 +1412,12 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
-		82222A2B288C801900C1954D /* Segmented control */ = {
+		82222A2B288C801900C1954D /* Segmented Control */ = {
 			isa = PBXGroup;
 			children = (
 				82CD6BF328885DFF00716443 /* QuizSegmentedViewController.swift */,
 			);
-			path = "Segmented control";
+			path = "Segmented Control";
 			sourceTree = "<group>";
 		};
 		82319E0928E8D7ED0053CEF5 /* Halloween */ = {
@@ -1447,14 +1447,14 @@
 			path = Halloween;
 			sourceTree = "<group>";
 		};
-		8238057B28F191B20006A736 /* Quiz media library */ = {
+		8238057B28F191B20006A736 /* Quiz Media Library */ = {
 			isa = PBXGroup;
 			children = (
 				82D35BDA29630F46000EB277 /* Model */,
 				82D35BD929630F42000EB277 /* ViewControllers */,
 				82D35BD829630F3E000EB277 /* Cells */,
 			);
-			path = "Quiz media library";
+			path = "Quiz Media Library";
 			sourceTree = "<group>";
 		};
 		823CFF6D27FA10DC001FF6D9 /* Settings */ = {
@@ -2476,7 +2476,7 @@
 		82CBE8002870D3CC0045616B /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				8243F16427C25A1200CD9CE4 /* TaskModel.swift */,
+				8243F16427C25A1200CD9CE4 /* QuizTaskModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -2552,8 +2552,8 @@
 				82CE537B28E9EC4600D44A6E /* anatomy.mp3 */,
 				82D67D6D2948E04B0097FD30 /* sport.wav */,
 				82CE536D28E9DCCD00D44A6E /* games.mp3 */,
-				8286518928FEF947004806D3 /* roadtraffic.mp3 */,
 				8286518B28FEF952004806D3 /* IQ.mp3 */,
+				8286518928FEF947004806D3 /* roadtraffic.mp3 */,
 				8286518D28FEF95A004806D3 /* ecology.wav */,
 				8286518F28FEF968004806D3 /* geography.mp3 */,
 				8286519128FEF97A004806D3 /* informatics.mp3 */,
@@ -2641,12 +2641,12 @@
 			path = "Firebase Manager";
 			sourceTree = "<group>";
 		};
-		82CF0D3828A583C3006B53F4 /* StartQuiz */ = {
+		82CF0D3828A583C3006B53F4 /* Start Quiz */ = {
 			isa = PBXGroup;
 			children = (
 				82CF0D3928A583D9006B53F4 /* QuizStartViewController.swift */,
 			);
-			path = StartQuiz;
+			path = "Start Quiz";
 			sourceTree = "<group>";
 		};
 		82D35BD829630F3E000EB277 /* Cells */ = {
@@ -3024,10 +3024,10 @@
 				82D35C1C2963336F000EB277 /* Onboarding */,
 				8290FCA327FCC15B00E05DDA /* TabBar  */,
 				823CFF6D27FA10DC001FF6D9 /* Settings */,
-				82CF0D3828A583C3006B53F4 /* StartQuiz */,
-				8209F79A2847F2390093147A /* SplashScreen */,
-				8238057B28F191B20006A736 /* Quiz media library */,
-				82222A2B288C801900C1954D /* Segmented control */,
+				82CF0D3828A583C3006B53F4 /* Start Quiz */,
+				8209F79A2847F2390093147A /* Splash Screen */,
+				8238057B28F191B20006A736 /* Quiz Media Library */,
+				82222A2B288C801900C1954D /* Segmented Control */,
 				8261BC1F27E10EF30089CC94 /* Statistics */,
 			);
 			path = "Other Modules";
@@ -3791,7 +3791,7 @@
 				82CBE7E9287093C50045616B /* NewsTableViewController.swift in Sources */,
 				82D35C2429634355000EB277 /* OnboardingSlide.swift in Sources */,
 				8213BF7127D6AAC800D07512 /* QuizPhysics.swift in Sources */,
-				8243F16527C25A1200CD9CE4 /* TaskModel.swift in Sources */,
+				8243F16527C25A1200CD9CE4 /* QuizTaskModel.swift in Sources */,
 				82CF0D3A28A583D9006B53F4 /* QuizStartViewController.swift in Sources */,
 				82D35C2129633A55000EB277 /* UIView+Extensions.swift in Sources */,
 				82DC6E1C27E65E790077D107 /* StartViewController.swift in Sources */,
