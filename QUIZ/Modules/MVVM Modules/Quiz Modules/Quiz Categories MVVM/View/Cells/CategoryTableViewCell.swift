@@ -12,8 +12,7 @@ class CategoryTableViewCell: UITableViewCell {
     
     static let identifier = "CategoryTableViewCell"
     var animation = AnimationClass()
-    var categoryTapped: (() -> Void)?
-    
+   
     var delegate: CustomViewCellDelegate?
     
     @IBOutlet weak var CategoryText: UILabel!

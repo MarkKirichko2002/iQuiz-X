@@ -9,7 +9,7 @@ import UIKit
 import Alamofire
 import SDWebImage
 
-class NewsTableViewController: UITableViewController, CustomViewCellDelegate {
+final class NewsTableViewController: UITableViewController, CustomViewCellDelegate {
     
     private var newsViewModel = NewsListViewModel()
     private let RefreshControl = UIRefreshControl()
