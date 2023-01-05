@@ -6,18 +6,18 @@
 //
 
 import UIKit
+import SDWebImage
 
 class PhotoTableViewCell: UITableViewCell {
 
     static let identifier = "PhotoTableViewCell"
-    
-    var auth = FirebaseManager()
+    private let settingsManager = SettingsManager()
     
     @IBOutlet weak var SettingsImage: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        self.auth.load(profileimage: SettingsImage)
+        SettingsImage.sd_setImage(with: URL(string: settingsManager.profileImage))
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

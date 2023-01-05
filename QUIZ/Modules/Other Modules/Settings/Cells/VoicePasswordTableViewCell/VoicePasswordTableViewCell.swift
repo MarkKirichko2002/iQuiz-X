@@ -6,43 +6,33 @@
 //
 
 import UIKit
-import LocalAuthentication
 
 class VoicePasswordTableViewCell: UITableViewCell {
 
     static let identifier = "VoicePasswordTableViewCell"
-    
-    let mycontext: LAContext = LAContext()
-    
-    var auth = FirebaseManager()
-    
-    var biometric = ""
-    
-    var voicepassword = UserDefaults.standard.object(forKey: "voicepassword")
-    
+    private let settingsManager = SettingsManager()
     @IBOutlet weak var VoicePasswordImage: UIImageView!
     @IBOutlet weak var Password: UILabel!
     @IBOutlet weak var PasswordStatus: UILabel!
     
     func CheckVoicePassword() {
-        if self.voicepassword == nil {
+        if self.settingsManager.voicepassword == nil {
             self.Password.text = "пароль: отсутствует"
             self.PasswordStatus.text = "❌"
         } else {
-            self.Password.text = "пароль: \(voicepassword ?? "")"
+            self.Password.text = "пароль: \(settingsManager.voicepassword)"
             self.PasswordStatus.text = "✔️"
         }
     }
     
     override func awakeFromNib() {
         super.awakeFromNib()
-            self.auth.loadVoiceInfo(passwordLabel: Password)
+            Password.text = settingsManager.voicepassword
             self.CheckVoicePassword()
         }
     
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
     }
-
 }
 

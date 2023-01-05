@@ -52,6 +52,69 @@ class LoginViewController: UIViewController {
     let dialogue = AVSpeechUtterance(string: "доступ разрешен")
     private let speechRecognitionManager = SpeechRecognitionManager()
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        self.CheckBiometricSetting()
+        
+        if mycontext.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: nil) {
+            if mycontext.biometryType == .faceID {
+                BiometricAuthButton.titleLabel?.text = "Face ID"
+            } else if mycontext.biometryType == .touchID {
+                BiometricAuthButton.titleLabel?.text = "Touch ID"
+            }
+            self.navigationItem.hidesBackButton = true
+        }
+        
+        view.backgroundColor = UIColor(patternImage: UIImage(named: "newyear.background.jpeg")!)
+        view2.backgroundColor = UIColor(patternImage: UIImage(named: "newyear.background.jpeg")!)
+        scrollView.backgroundColor = UIColor(patternImage: UIImage(named: "newyear.background.jpeg")!)
+        
+        loginButton.layer.cornerRadius = loginButton.frame.size.width / 20
+        loginButton.clipsToBounds = true
+        
+        loginButton.layer.borderWidth = 2
+        loginButton.layer.borderColor = UIColor.black.cgColor
+        
+        RegisterButton.layer.cornerRadius = RegisterButton.frame.size.width / 20
+        RegisterButton.clipsToBounds = true
+        
+        RegisterButton.layer.borderWidth = 2
+        RegisterButton.layer.borderColor = UIColor.black.cgColor
+        
+        loginTextField.layer.cornerRadius = loginTextField.frame.size.width / 20
+        loginTextField.clipsToBounds = true
+        
+        loginTextField.layer.borderWidth = 2
+        loginTextField.layer.borderColor = UIColor.black.cgColor
+        
+        passwordTextField.layer.cornerRadius = passwordTextField.frame.size.width / 20
+        passwordTextField.clipsToBounds = true
+        
+        passwordTextField.layer.borderWidth = 2
+        passwordTextField.layer.borderColor = UIColor.black.cgColor
+        
+        BiometricAuthButton.layer.cornerRadius = BiometricAuthButton.frame.size.width / 20
+        BiometricAuthButton.clipsToBounds = true
+        
+        BiometricAuthButton.layer.borderWidth = 2
+        BiometricAuthButton.layer.borderColor = UIColor.black.cgColor
+        
+        // Жест нажатия
+        let hideKeyboardGesture = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard))
+        // Присваиваем его UIScrollVIew
+        scrollView.addGestureRecognizer(hideKeyboardGesture)
+        
+        token = Auth.auth().addStateDidChangeListener{[weak self] auth, user in
+            guard user != nil else {return}
+            DispatchQueue.main.async {
+                guard let vc = self?.storyboard?.instantiateViewController(identifier: "SplashScreenController") else {return}
+                guard let window = self!.view.window else {return}
+                window.rootViewController = vc
+            }
+        }
+    }
+    
     func CheckBiometricSetting() {
         var isBiometricOn = UserDefaults.standard.object(forKey: "onstatusbiometric") as? Bool
         
@@ -68,7 +131,6 @@ class LoginViewController: UIViewController {
             print("biometric doesnt working")
             self.BiometricAuthButton.isUserInteractionEnabled = false
             self.BiometricAuthButton.setTitle("выключено", for: .normal)
-            //SCLAlertView().showNotice("", subTitle: "")
         } else {}
     }
     
@@ -84,8 +146,7 @@ class LoginViewController: UIViewController {
         
         print(email)
         print(password)
-        //print(photo)
-        
+       
         var auth = ""
         
         if mycontext.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: nil) {
@@ -409,70 +470,6 @@ class LoginViewController: UIViewController {
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        self.CheckBiometricSetting()
-        
-        if mycontext.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: nil) {
-            if mycontext.biometryType == .faceID {
-                BiometricAuthButton.titleLabel?.text = "Face ID"
-            } else if mycontext.biometryType == .touchID {
-                BiometricAuthButton.titleLabel?.text = "Touch ID"
-            }
-            self.navigationItem.hidesBackButton = true
-        }
-        
-        view.backgroundColor = UIColor(patternImage: UIImage(named: "newyear.background.jpeg")!)
-        view2.backgroundColor = UIColor(patternImage: UIImage(named: "newyear.background.jpeg")!)
-        scrollView.backgroundColor = UIColor(patternImage: UIImage(named: "newyear.background.jpeg")!)
-        
-        loginButton.layer.cornerRadius = loginButton.frame.size.width / 20
-        loginButton.clipsToBounds = true
-        
-        loginButton.layer.borderWidth = 2
-        loginButton.layer.borderColor = UIColor.black.cgColor
-        
-        RegisterButton.layer.cornerRadius = RegisterButton.frame.size.width / 20
-        RegisterButton.clipsToBounds = true
-        
-        RegisterButton.layer.borderWidth = 2
-        RegisterButton.layer.borderColor = UIColor.black.cgColor
-        
-        loginTextField.layer.cornerRadius = loginTextField.frame.size.width / 20
-        loginTextField.clipsToBounds = true
-        
-        loginTextField.layer.borderWidth = 2
-        loginTextField.layer.borderColor = UIColor.black.cgColor
-        
-        passwordTextField.layer.cornerRadius = passwordTextField.frame.size.width / 20
-        passwordTextField.clipsToBounds = true
-        
-        passwordTextField.layer.borderWidth = 2
-        passwordTextField.layer.borderColor = UIColor.black.cgColor
-        
-        BiometricAuthButton.layer.cornerRadius = BiometricAuthButton.frame.size.width / 20
-        BiometricAuthButton.clipsToBounds = true
-        
-        BiometricAuthButton.layer.borderWidth = 2
-        BiometricAuthButton.layer.borderColor = UIColor.black.cgColor
-        
-        // Жест нажатия
-        let hideKeyboardGesture = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard))
-        // Присваиваем его UIScrollVIew
-        scrollView.addGestureRecognizer(hideKeyboardGesture)
-        
-        token = Auth.auth().addStateDidChangeListener{[weak self] auth, user in
-            guard user != nil else {return}
-            DispatchQueue.main.async {
-                guard let vc = self?.storyboard?.instantiateViewController(identifier: "SplashScreenController") else {return}
-                guard let window = self!.view.window else {return}
-                window.rootViewController = vc
-            }
-        }
     }
     
     override func viewDidAppear(_ animated: Bool) {
