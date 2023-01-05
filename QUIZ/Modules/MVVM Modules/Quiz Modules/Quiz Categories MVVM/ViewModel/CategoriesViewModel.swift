@@ -12,20 +12,19 @@ import SnapKit
 
 class CategoriesViewModel {
     
-    private var quizes = [QuizPlanets(), QuizHistory(), QuizAnatomy(), QuizSport(), QuizGames(), QuizIQ(), QuizEconomy(), QuizGeography(), QuizEcology(), QuizPhysics(), QuizChemistry(), QuizInformatics(), QuizLiterature(), QuizRoadTraffic(), QuizSwift(), QuizUnderwater(), QuizChess(), QuizHalloween(), QuizNewYear()]
-    var view: UIView?
-    var storyboard: UIStoryboard?
     private let fbManager = FirebaseManager()
     private let spinner = RoundedImageView()
     private let loadingText = UILabel()
     private let animation = AnimationClass()
     private let textRecognitionManager = TextRecognitionManager()
     @Published var categories = [Quiz]()
+    var view: UIView?
+    var storyboard: UIStoryboard?
     
-    var quizcategories = [QuizCategoryModel(name: "астрономия", image: "planets.jpeg", base: QuizPlanets(), voiceCommand: "планет", background: "earth.background.jpeg", complete: false, id: 1, score: 0, sound: "space.wav", music: "space music.mp3"), QuizCategoryModel(name: "история", image: "history.jpeg", base: QuizHistory(), voiceCommand: "истори", background: "history.background.jpeg", complete: false, id: 2, score: 0, sound: "history.wav", music: "history music.mp3"), QuizCategoryModel(name: "анатомия", image: "anatomy.jpeg", base: QuizAnatomy(), voiceCommand:"анатоми", background: "anatomy.background.jpeg", complete: false, id: 3, score: 0, sound: "anatomy.mp3", music: "anatomy music.mp3"), QuizCategoryModel(name: "спорт", image: "sport.jpeg", base: QuizSport(), voiceCommand: "спорт", background: "sport.background.jpeg", complete: false, id: 4, score: 0, sound: "sport.wav", music: "sport music.mp3"), QuizCategoryModel(name: "игры", image: "games.jpeg", base: QuizGames(), voiceCommand: "игр", background: "games.background.jpeg", complete: false, id: 5, score: 0, sound: "games.mp3", music: "games music.mp3"), QuizCategoryModel(name: "IQ", image: "IQ.jpeg", base: QuizIQ(), voiceCommand: "интеллект", background: "IQ.background.jpeg", complete: false, id: 6, score: 0, sound: "IQ.mp3", music: "IQ music.mp3"), QuizCategoryModel(name: "экономика", image: "economy.jpeg", base: QuizEconomy(), voiceCommand: "экономика", background: "economy.background.jpeg", complete: false, id: 7, score: 0, sound: "economics.mp3", music: "economy music.mp3"), QuizCategoryModel(name: "география", image: "geography.jpeg", base: QuizGeography(), voiceCommand: "географи", background: "geography.background.jpeg", complete: false, id: 8, score: 0, sound: "geography.mp3", music: "geography music.mp3"), QuizCategoryModel(name: "экология", image: "ecology.jpeg", base: QuizEcology(), voiceCommand: "экологи", background: "ecology.background.jpeg", complete: false, id: 9, score: 0, sound: "ecology.wav", music: "ecology music.mp3"), QuizCategoryModel(name: "физика", image: "physics.jpeg", base: QuizPhysics(), voiceCommand: "физ", background: "physics.background.jpeg", complete: false, id: 10, score: 0, sound: "physics.mp3", music: "physics music.mp3"), QuizCategoryModel(name: "химия", image: "chemistry.jpeg", base: QuizChemistry(), voiceCommand: "хим", background: "chemistry.background.jpeg", complete: false, id: 11, score: 0, sound: "chemistry.mp3", music: "chemistry music.mp3"), QuizCategoryModel(name: "информатика", image: "informatics.jpeg", base: QuizInformatics(), voiceCommand: "информа", background: "informatics.background.jpeg", complete: false, id: 12, score: 0, sound: "informatics.mp3", music: "informatics music.mp3"), QuizCategoryModel(name: "литература", image: "literature.jpeg", base: QuizLiterature(), voiceCommand: "литера", background: "literature.background.jpeg", complete: false, id: 13, score: 0, sound: "literature.mp3", music: "literature music.mp3"), QuizCategoryModel(name: "ПДД", image: "drive.jpeg", base: QuizRoadTraffic(), voiceCommand: "дорог", background: "drive.background.jpeg", complete: false, id: 14, score: 0, sound: "roadtraffic.mp3", music: "drive music.mp3"), QuizCategoryModel(name: "Swift", image: "swift.jpeg", base: QuizSwift(), voiceCommand: "swift", background:"swift.background.jpeg", complete: false, id: 15, score: 0, sound: "swift.mp3", music: "Swift music.mp3"), QuizCategoryModel(name: "подводный мир", image: "underwater.png", base: QuizUnderwater(), voiceCommand: "мор", background: "underwater.background.jpeg", complete: false, id: 16, score: 0, sound: "underwater.wav", music: "underwater music.mp3"), QuizCategoryModel(name: "шахматы", image: "chess.png", base: QuizChess(), voiceCommand: "шахмат", background: "chess.background.jpeg", complete: false, id: 17, score: 0, sound: "chess.mp3", music: "chess music.mp3"), QuizCategoryModel(name: "хэллоуин", image: "halloween.png", base: QuizHalloween(), voiceCommand: "halloween", background: "halloween.background.jpeg", complete: false, id: 18, score: 0, sound: "halloween.wav", music: "halloween music.mp3"), QuizCategoryModel(name: "новый год", image: "newyear.png", base: QuizNewYear(), voiceCommand: "рождеств", background: "newyear.background.jpeg", complete: false, id: 19, score: 0, sound: "newyear.mp3", music: "newyear music.mp3")]
+    var quizcategories = [QuizCategoryModel(id: 1, name: "астрономия", image: "planets.jpeg", base:  QuizPlanets(), quizpath: "quizastronomy", voiceCommand: "планет", background: "earth.background.jpeg", complete: false, score: 0, sound: "space.wav", music: "space music.mp3"), QuizCategoryModel(id: 2, name: "история", image: "history.jpeg", base: QuizHistory(), quizpath: "quizhistory", voiceCommand: "истори", background: "history.background.jpeg", complete: false, score: 0, sound: "history.wav", music: "history music.mp3"), QuizCategoryModel(id: 3, name: "анатомия", image: "anatomy.jpeg", base: QuizAnatomy(), quizpath: "quizanatomy", voiceCommand:"анатоми", background: "anatomy.background.jpeg", complete: false, score: 0, sound: "anatomy.mp3", music: "anatomy music.mp3"), QuizCategoryModel(id: 4, name: "спорт", image: "sport.jpeg", base: QuizSport(), quizpath: "quizsport", voiceCommand: "спорт", background: "sport.background.jpeg", complete: false, score: 0, sound: "sport.wav", music: "sport music.mp3"), QuizCategoryModel(id: 5, name: "игры", image: "games.jpeg", base: QuizGames(), quizpath: "quizgames", voiceCommand: "игр", background: "games.background.jpeg", complete: false, score: 0, sound: "games.mp3", music: "games music.mp3"), QuizCategoryModel(id: 6, name: "IQ", image: "IQ.jpeg", base: QuizIQ(), quizpath: "quiziq", voiceCommand: "интеллект", background: "IQ.background.jpeg", complete: false, score: 0, sound: "IQ.mp3", music: "IQ music.mp3"), QuizCategoryModel(id: 7, name: "экономика", image: "economy.jpeg", base: QuizEconomy(), quizpath: "quizeconomy", voiceCommand: "экономика", background: "economy.background.jpeg", complete: false, score: 0, sound: "economics.mp3", music: "economy music.mp3"), QuizCategoryModel(id: 8, name: "география", image: "geography.jpeg", base: QuizGeography(), quizpath: "quizgeography", voiceCommand: "географи", background: "geography.background.jpeg", complete: false, score: 0, sound: "geography.mp3", music: "geography music.mp3"), QuizCategoryModel(id: 9, name: "экология", image: "ecology.jpeg", base: QuizEcology(), quizpath: "quizecology", voiceCommand: "экологи", background: "ecology.background.jpeg", complete: false, score: 0, sound: "ecology.wav", music: "ecology music.mp3"), QuizCategoryModel(id: 10, name: "физика", image: "physics.jpeg", base: QuizPhysics(), quizpath: "quizphysics", voiceCommand: "физ", background: "physics.background.jpeg", complete: false, score: 0, sound: "physics.mp3", music: "physics music.mp3"), QuizCategoryModel(id: 11, name: "химия", image: "chemistry.jpeg", base: QuizChemistry(), quizpath: "quizchemistry", voiceCommand: "хим", background: "chemistry.background.jpeg", complete: false, score: 0, sound: "chemistry.mp3", music: "chemistry music.mp3"), QuizCategoryModel(id: 12, name: "информатика", image: "informatics.jpeg", base: QuizInformatics(), quizpath: "quizinformatics", voiceCommand: "информа", background: "informatics.background.jpeg", complete: false, score: 0, sound: "informatics.mp3", music: "informatics music.mp3"), QuizCategoryModel(id: 13, name: "литература", image: "literature.jpeg", base: QuizLiterature(), quizpath: "quizliterature", voiceCommand: "литера", background: "literature.background.jpeg", complete: false, score: 0, sound: "literature.mp3", music: "literature music.mp3"), QuizCategoryModel(id: 14, name: "ПДД", image: "drive.jpeg", base: QuizRoadTraffic(), quizpath: "quizroadtraffic", voiceCommand: "дорог", background: "drive.background.jpeg", complete: false, score: 0, sound: "roadtraffic.mp3", music: "drive music.mp3"), QuizCategoryModel(id: 15, name: "Swift", image: "swift.jpeg", base: QuizSwift(), quizpath: "quizswift", voiceCommand: "swift", background:"swift.background.jpeg", complete: false, score: 0, sound: "swift.mp3", music: "Swift music.mp3"), QuizCategoryModel(id: 16, name: "подводный мир", image: "underwater.png", base: QuizUnderwater(), quizpath: "quizunderwater", voiceCommand: "мор", background: "underwater.background.jpeg", complete: false, score: 0, sound: "underwater.wav", music: "underwater music.mp3"), QuizCategoryModel(id: 17, name: "шахматы", image: "chess.png", base: QuizChess(), quizpath: "quizchess", voiceCommand: "шахмат", background: "chess.background.jpeg", complete: false, score: 0, sound: "chess.mp3", music: "chess music.mp3"), QuizCategoryModel(id: 18, name: "хэллоуин", image: "halloween.png", base: QuizHalloween(), quizpath: "quizhalloween", voiceCommand: "halloween", background: "halloween.background.jpeg", complete: false, score: 0, sound: "halloween.wav", music: "halloween music.mp3"), QuizCategoryModel(id: 19, name: "новый год", image: "newyear.png", base: QuizNewYear(), quizpath: "quiznewyear", voiceCommand: "рождеств", background: "newyear.background.jpeg", complete: false, score: 0, sound: "newyear.mp3", music: "newyear music.mp3")]
     
     func CreateCategories() {
-        categories = [Quiz(releaseDate: "февраль 2022", categories: [QuizCategoryModel(name: "астрономия", image: "planets.jpeg", base: QuizPlanets(), voiceCommand: "планет", background: "earth.background.jpeg", complete: false, id: 1, score: 0, sound: "space.wav", music: "space music.mp3"), QuizCategoryModel(name: "история", image: "history.jpeg", base: QuizHistory(), voiceCommand: "истори", background: "history.background.jpeg", complete: false, id: 2, score: 0, sound: "history.wav", music: "history music.mp3"), QuizCategoryModel(name: "анатомия", image: "anatomy.jpeg", base: QuizAnatomy(), voiceCommand:"анатоми", background: "anatomy.background.jpeg", complete: false, id: 3, score: 0, sound: "anatomy.mp3", music: "anatomy music.mp3"), QuizCategoryModel(name: "спорт", image: "sport.jpeg", base: QuizSport(), voiceCommand: "спорт", background: "sport.background.jpeg", complete: false, id: 4, score: 0, sound: "sport.wav", music: "sport music.mp3")]), Quiz(releaseDate: "март 2022", categories: [QuizCategoryModel(name: "игры", image: "games.jpeg", base: QuizGames(), voiceCommand: "игр", background: "games.background.jpeg", complete: false, id: 5, score: 0, sound: "games.mp3", music: "games music.mp3"), QuizCategoryModel(name: "IQ", image: "IQ.jpeg", base: QuizIQ(), voiceCommand: "интеллект", background: "IQ.background.jpeg", complete: false, id: 6, score: 0, sound: "IQ.mp3", music: "IQ music.mp3"), QuizCategoryModel(name: "экономика", image: "economy.jpeg", base: QuizEconomy(), voiceCommand: "эконом", background: "economy.background.jpeg", complete: false, id: 7, score: 0, sound: "economics.mp3", music: "economy music.mp3"), QuizCategoryModel(name: "география", image: "geography.jpeg", base: QuizGeography(), voiceCommand: "географи", background: "geography.background.jpeg", complete: false, id: 8, score: 0, sound: "geography.mp3", music: "geography music.mp3"), QuizCategoryModel(name: "экология", image: "ecology.jpeg", base: QuizEcology(), voiceCommand: "экологи", background: "ecology.background.jpeg", complete: false, id: 9, score: 0, sound: "ecology.wav", music: "ecology music.mp3"), QuizCategoryModel(name: "физика", image: "physics.jpeg", base: QuizPhysics(), voiceCommand: "физ", background: "physics.background.jpeg", complete: false, id: 10, score: 0, sound: "physics.mp3", music: "physics music.mp3"), QuizCategoryModel(name: "химия", image: "chemistry.jpeg", base: QuizChemistry(), voiceCommand: "хим", background: "chemistry.background.jpeg", complete: false, id: 11, score: 0, sound: "chemistry.mp3", music: "chemistry music.mp3"), QuizCategoryModel(name: "информатика", image: "informatics.jpeg", base: QuizInformatics(), voiceCommand: "информа", background: "informatics.background.jpeg", complete: false, id: 12, score: 0, sound: "informatics.mp3", music: "informatics music.mp3")]), Quiz(releaseDate: "апрель 2022", categories: [QuizCategoryModel(name: "литература", image: "literature.jpeg", base: QuizLiterature(), voiceCommand: "литера", background: "literature.background.jpeg", complete: false, id: 13, score: 0, sound: "literature.mp3", music: "literature music.mp3"), QuizCategoryModel(name: "ПДД", image: "drive.jpeg", base: QuizRoadTraffic(), voiceCommand: "дорог", background: "drive.background.jpeg", complete: false, id: 14, score: 0, sound: "roadtraffic.mp3", music: "drive music.mp3"), QuizCategoryModel(name: "Swift", image: "swift.jpeg", base: QuizSwift(), voiceCommand: "swift", background:"swift.background.jpeg", complete: false, id: 15, score: 0, sound: "swift.mp3", music: "Swift music.mp3")]), Quiz(releaseDate: "июль 2022", categories: [QuizCategoryModel(name: "подводный мир", image: "underwater.png", base: QuizUnderwater(), voiceCommand: "мор", background: "underwater.background.jpeg", complete: false, id: 16, score: 0, sound: "underwater.wav", music: "underwater music.mp3"), QuizCategoryModel(name: "шахматы", image: "chess.png", base: QuizChess(), voiceCommand: "шахмат", background: "chess.background.jpeg", complete: false, id: 17, score: 0, sound: "chess.mp3", music: "chess music.mp3")]), Quiz(releaseDate: "октябрь 2022", categories: [QuizCategoryModel(name: "хэллоуин", image: "halloween.png", base: QuizHalloween(), voiceCommand: "halloween", background: "halloween.background.jpeg", complete: false, id: 18, score: 0, sound: "halloween.wav", music: "halloween music.mp3")]), Quiz(releaseDate: "декабрь 2022", categories: [QuizCategoryModel(name: "новый год", image: "newyear.png", base: QuizNewYear(), voiceCommand: "рождеств", background: "newyear.background.jpeg", complete: false, id: 19, score: 0, sound: "newyear.mp3", music: "newyear music.mp3")])]
+        categories = [Quiz(releaseDate: "февраль 2022", categories: [QuizCategoryModel(id: 1, name: "астрономия", image: "planets.jpeg", base:  QuizPlanets(), quizpath: "quizastronomy", voiceCommand: "планет", background: "earth.background.jpeg", complete: false, score: 0, sound: "space.wav", music: "space music.mp3"), QuizCategoryModel(id: 2, name: "история", image: "history.jpeg", base: QuizHistory(), quizpath: "quizhistory", voiceCommand: "истори", background: "history.background.jpeg", complete: false, score: 0, sound: "history.wav", music: "history music.mp3"), QuizCategoryModel(id: 3, name: "анатомия", image: "anatomy.jpeg", base: QuizAnatomy(), quizpath: "quizanatomy", voiceCommand:"анатоми", background: "anatomy.background.jpeg", complete: false, score: 0, sound: "anatomy.mp3", music: "anatomy music.mp3"), QuizCategoryModel(id: 4, name: "спорт", image: "sport.jpeg", base: QuizSport(), quizpath: "quizsport", voiceCommand: "спорт", background: "sport.background.jpeg", complete: false, score: 0, sound: "sport.wav", music: "sport music.mp3")]), Quiz(releaseDate: "март 2022", categories: [QuizCategoryModel(id: 5, name: "игры", image: "games.jpeg", base: QuizGames(), quizpath: "quizgames", voiceCommand: "игр", background: "games.background.jpeg", complete: false, score: 0, sound: "games.mp3", music: "games music.mp3"), QuizCategoryModel(id: 6, name: "IQ", image: "IQ.jpeg", base: QuizIQ(), quizpath: "quiziq", voiceCommand: "интеллект", background: "IQ.background.jpeg", complete: false, score: 0, sound: "IQ.mp3", music: "IQ music.mp3"), QuizCategoryModel(id: 7, name: "экономика", image: "economy.jpeg", base: QuizEconomy(), quizpath: "quizeconomy", voiceCommand: "экономика", background: "economy.background.jpeg", complete: false, score: 0, sound: "economics.mp3", music: "economy music.mp3"), QuizCategoryModel(id: 8, name: "география", image: "geography.jpeg", base: QuizGeography(), quizpath: "quizgeography", voiceCommand: "географи", background: "geography.background.jpeg", complete: false, score: 0, sound: "geography.mp3", music: "geography music.mp3"), QuizCategoryModel(id: 9, name: "экология", image: "ecology.jpeg", base: QuizEcology(), quizpath: "quizecology", voiceCommand: "экологи", background: "ecology.background.jpeg", complete: false, score: 0, sound: "ecology.wav", music: "ecology music.mp3"), QuizCategoryModel(id: 10, name: "физика", image: "physics.jpeg", base: QuizPhysics(), quizpath: "quizphysics", voiceCommand: "физ", background: "physics.background.jpeg", complete: false, score: 0, sound: "physics.mp3", music: "physics music.mp3"), QuizCategoryModel(id: 11, name: "химия", image: "chemistry.jpeg", base: QuizChemistry(), quizpath: "quizchemistry", voiceCommand: "хим", background: "chemistry.background.jpeg", complete: false, score: 0, sound: "chemistry.mp3", music: "chemistry music.mp3"), QuizCategoryModel(id: 12, name: "информатика", image: "informatics.jpeg", base: QuizInformatics(), quizpath: "quizinformatics", voiceCommand: "информа", background: "informatics.background.jpeg", complete: false, score: 0, sound: "informatics.mp3", music: "informatics music.mp3")]), Quiz(releaseDate: "апрель 2022", categories: [QuizCategoryModel(id: 13, name: "литература", image: "literature.jpeg", base: QuizLiterature(), quizpath: "quizliterature", voiceCommand: "литера", background: "literature.background.jpeg", complete: false, score: 0, sound: "literature.mp3", music: "literature music.mp3"), QuizCategoryModel(id: 14, name: "ПДД", image: "drive.jpeg", base: QuizRoadTraffic(), quizpath: "quizroadtraffic", voiceCommand: "дорог", background: "drive.background.jpeg", complete: false, score: 0, sound: "roadtraffic.mp3", music: "drive music.mp3"), QuizCategoryModel(id: 15, name: "Swift", image: "swift.jpeg", base: QuizSwift(), quizpath: "quizswift", voiceCommand: "swift", background:"swift.background.jpeg", complete: false, score: 0, sound: "swift.mp3", music: "Swift music.mp3")]), Quiz(releaseDate: "июль 2022", categories: [QuizCategoryModel(id: 16, name: "подводный мир", image: "underwater.png", base: QuizUnderwater(), quizpath: "quizunderwater", voiceCommand: "мор", background: "underwater.background.jpeg", complete: false, score: 0, sound: "underwater.wav", music: "underwater music.mp3"), QuizCategoryModel(id: 17, name: "шахматы", image: "chess.png", base: QuizChess(), quizpath: "quizchess", voiceCommand: "шахмат", background: "chess.background.jpeg", complete: false, score: 0, sound: "chess.mp3", music: "chess music.mp3")]), Quiz(releaseDate: "октябрь 2022", categories: [QuizCategoryModel(id: 18, name: "хэллоуин", image: "halloween.png", base: QuizHalloween(), quizpath: "quizhalloween", voiceCommand: "halloween", background: "halloween.background.jpeg", complete: false, score: 0, sound: "halloween.wav", music: "halloween music.mp3")]), Quiz(releaseDate: "декабрь 2022", categories: [QuizCategoryModel(id: 19, name: "новый год", image: "newyear.png", base: QuizNewYear(), quizpath: "quiznewyear", voiceCommand: "рождеств", background: "newyear.background.jpeg", complete: false, score: 0, sound: "newyear.mp3", music: "newyear music.mp3")])]
         
         self.fbManager.LoadVoiceCommands(command: "астрономия") { command in
             self.categories[0].categories[0].voiceCommand = command.lowercased()
@@ -148,7 +147,7 @@ class CategoriesViewModel {
         switch category.id {
             
         case 1:
-            fbManager.LoadQuizCategoriesData(quizpath: "quizplanets") { result in
+            fbManager.LoadQuizCategoriesData(quizpath: category.quizpath) { result in
                 DispatchQueue.main.async {
                     self.categories[0].categories[0].score = result.score
                     self.categories[0].categories[0].complete = result.complete
@@ -156,7 +155,7 @@ class CategoriesViewModel {
             }
             
         case 2:
-            fbManager.LoadQuizCategoriesData(quizpath: "quizhistory") { result in
+            fbManager.LoadQuizCategoriesData(quizpath: category.quizpath) { result in
                 DispatchQueue.main.async {
                     self.categories[0].categories[1].score = result.score
                     self.categories[0].categories[1].complete = result.complete
@@ -164,7 +163,7 @@ class CategoriesViewModel {
             }
             
         case 3:
-            fbManager.LoadQuizCategoriesData(quizpath: "quizanatomy") { result in
+            fbManager.LoadQuizCategoriesData(quizpath: category.quizpath) { result in
                 DispatchQueue.main.async {
                     self.categories[0].categories[2].score = result.score
                     self.categories[0].categories[2].complete = result.complete
@@ -173,7 +172,7 @@ class CategoriesViewModel {
             
             
         case 4:
-            fbManager.LoadQuizCategoriesData(quizpath: "quizsport") { result in
+            fbManager.LoadQuizCategoriesData(quizpath: category.quizpath) { result in
                 DispatchQueue.main.async {
                     self.categories[0].categories[3].score = result.score
                     self.categories[0].categories[3].complete = result.complete
@@ -181,7 +180,7 @@ class CategoriesViewModel {
             }
             
         case 5:
-            fbManager.LoadQuizCategoriesData(quizpath: "quizgames") { result in
+            fbManager.LoadQuizCategoriesData(quizpath: category.quizpath) { result in
                 DispatchQueue.main.async {
                     self.categories[1].categories[0].score = result.score
                     self.categories[1].categories[0].complete = result.complete
@@ -189,7 +188,7 @@ class CategoriesViewModel {
             }
             
         case 6:
-            fbManager.LoadQuizCategoriesData(quizpath: "quiziq") { result in
+            fbManager.LoadQuizCategoriesData(quizpath: category.quizpath) { result in
                 DispatchQueue.main.async {
                     self.categories[1].categories[1].score = result.score
                     self.categories[1].categories[1].complete = result.complete
@@ -197,7 +196,7 @@ class CategoriesViewModel {
             }
             
         case 7:
-            fbManager.LoadQuizCategoriesData(quizpath: "quizeconomy") { result in
+            fbManager.LoadQuizCategoriesData(quizpath: category.quizpath) { result in
                 DispatchQueue.main.async {
                     self.categories[1].categories[2].score = result.score
                     self.categories[1].categories[2].complete = result.complete
@@ -205,7 +204,7 @@ class CategoriesViewModel {
             }
             
         case 8:
-            fbManager.LoadQuizCategoriesData(quizpath: "quizgeography") { result in
+            fbManager.LoadQuizCategoriesData(quizpath: category.quizpath) { result in
                 DispatchQueue.main.async {
                     self.categories[1].categories[3].score = result.score
                     self.categories[1].categories[3].complete = result.complete
@@ -213,7 +212,7 @@ class CategoriesViewModel {
             }
             
         case 9:
-            fbManager.LoadQuizCategoriesData(quizpath: "quizecology") { result in
+            fbManager.LoadQuizCategoriesData(quizpath: category.quizpath) { result in
                 DispatchQueue.main.async {
                     self.categories[1].categories[4].score = result.score
                     self.categories[1].categories[4].complete = result.complete
@@ -221,7 +220,7 @@ class CategoriesViewModel {
             }
             
         case 10:
-            fbManager.LoadQuizCategoriesData(quizpath: "quizphysics") { result in
+            fbManager.LoadQuizCategoriesData(quizpath: category.quizpath) { result in
                 DispatchQueue.main.async {
                     self.categories[1].categories[5].score = result.score
                     self.categories[1].categories[5].complete = result.complete
@@ -229,7 +228,7 @@ class CategoriesViewModel {
             }
             
         case 11:
-            fbManager.LoadQuizCategoriesData(quizpath: "quizchemistry") { result in
+            fbManager.LoadQuizCategoriesData(quizpath: category.quizpath) { result in
                 DispatchQueue.main.async {
                     self.categories[1].categories[6].score = result.score
                     self.categories[1].categories[6].complete = result.complete
@@ -237,7 +236,7 @@ class CategoriesViewModel {
             }
             
         case 12:
-            fbManager.LoadQuizCategoriesData(quizpath: "quizinformatics") { result in
+            fbManager.LoadQuizCategoriesData(quizpath: category.quizpath) { result in
                 DispatchQueue.main.async {
                     self.categories[1].categories[7].score = result.score
                     self.categories[1].categories[7].complete = result.complete
@@ -245,7 +244,7 @@ class CategoriesViewModel {
             }
             
         case 13:
-            fbManager.LoadQuizCategoriesData(quizpath: "quizliterature") { result in
+            fbManager.LoadQuizCategoriesData(quizpath: category.quizpath) { result in
                 DispatchQueue.main.async {
                     self.categories[2].categories[0].score = result.score
                     self.categories[2].categories[0].complete = result.complete
@@ -253,7 +252,7 @@ class CategoriesViewModel {
             }
             
         case 14:
-            fbManager.LoadQuizCategoriesData(quizpath: "quizroadtraffic") { result in
+            fbManager.LoadQuizCategoriesData(quizpath: category.quizpath) { result in
                 DispatchQueue.main.async {
                     self.categories[2].categories[1].score = result.score
                     self.categories[2].categories[1].complete = result.complete
@@ -261,7 +260,7 @@ class CategoriesViewModel {
             }
             
         case 15:
-            fbManager.LoadQuizCategoriesData(quizpath: "quizswift") { result in
+            fbManager.LoadQuizCategoriesData(quizpath: category.quizpath) { result in
                 DispatchQueue.main.async {
                     self.categories[2].categories[2].score = result.score
                     self.categories[2].categories[2].complete = result.complete
@@ -269,7 +268,7 @@ class CategoriesViewModel {
             }
             
         case 16:
-            fbManager.LoadQuizCategoriesData(quizpath: "quizunderwater") { result in
+            fbManager.LoadQuizCategoriesData(quizpath: category.quizpath) { result in
                 DispatchQueue.main.async {
                     self.categories[3].categories[0].score = result.score
                     self.categories[3].categories[0].complete = result.complete
@@ -277,7 +276,7 @@ class CategoriesViewModel {
             }
             
         case 17:
-            fbManager.LoadQuizCategoriesData(quizpath: "quizchess") { result in
+            fbManager.LoadQuizCategoriesData(quizpath: category.quizpath) { result in
                 DispatchQueue.main.async {
                     self.categories[3].categories[1].score = result.score
                     self.categories[3].categories[1].complete = result.complete
@@ -285,7 +284,7 @@ class CategoriesViewModel {
             }
             
         case 18:
-            fbManager.LoadQuizCategoriesData(quizpath: "quizhalloween") { result in
+            fbManager.LoadQuizCategoriesData(quizpath: category.quizpath) { result in
                 DispatchQueue.main.async {
                     self.categories[4].categories[0].score = result.score
                     self.categories[4].categories[0].complete = result.complete
@@ -293,7 +292,7 @@ class CategoriesViewModel {
             }
             
         case 19:
-            fbManager.LoadQuizCategoriesData(quizpath: "quiznewyear") { result in
+            fbManager.LoadQuizCategoriesData(quizpath: category.quizpath) { result in
                 DispatchQueue.main.async {
                     self.categories[5].categories[0].score = result.score
                     self.categories[5].categories[0].complete = result.complete
@@ -303,10 +302,9 @@ class CategoriesViewModel {
         default:
             break
         }
-        
     }
     
-    func goToQuize(quiz: QuizBaseViewModel, category: QuizCategoryModel) {
+    func GoToQuiz(quiz: QuizBaseViewModel, category: QuizCategoryModel) {
         DispatchQueue.main.async {
             guard let vc = self.storyboard?.instantiateViewController(identifier: "QuizBaseViewController") else {return}
             (vc as? QuizBaseViewController)?.quiz = quiz
@@ -328,9 +326,9 @@ class CategoriesViewModel {
     
     func PresentRandomQuiz() {
         DispatchQueue.main.async {
-            let randomquizindex = Int.random(in: 0..<self.quizes.count)
-            let randomquiz = self.quizes[randomquizindex]
-            self.GoToStart(quiz: randomquiz, category: self.quizcategories[randomquizindex])
+            let randomquizindex = Int.random(in: 0..<self.quizcategories.count)
+            let randomquiz = self.quizcategories[randomquizindex]
+            self.GoToStart(quiz: randomquiz.base, category: randomquiz)
         }
     }
     

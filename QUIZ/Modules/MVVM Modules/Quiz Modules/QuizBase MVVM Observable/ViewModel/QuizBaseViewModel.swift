@@ -272,26 +272,7 @@ class QuizBaseViewModel {
             print("Голос \(check2)")
             
             base?.nextQuestion()
-            write(id: 1, quizpath: "quizplanets", category: "planets")
-            write(id: 2, quizpath: "quizhistory", category: "history")
-            write(id: 3, quizpath: "quizanatomy", category: "anatomy")
-            write(id: 4, quizpath: "quizsport", category: "sport")
-            write(id: 5, quizpath: "quizgames", category: "games")
-            write(id: 6, quizpath: "quiziq", category: "IQ")
-            write(id: 7, quizpath: "quizeconomy", category: "economy")
-            write(id: 8, quizpath: "quizgeography", category: "geography")
-            write(id: 9, quizpath: "quizecology", category: "ecology")
-            write(id: 10, quizpath: "quizphysics", category: "physics")
-            write(id: 11, quizpath: "quizchemistry", category: "chemistry")
-            write(id: 12, quizpath: "quizinformatics", category: "informatics")
-            write(id: 13, quizpath: "quizliterature", category: "literature")
-            write(id: 14, quizpath: "quizroadtraffic", category: "roadtraffic")
-            write(id: 15, quizpath: "quizswift", category: "Swift")
-            write(id: 16, quizpath: "quizunderwater", category: "underwater")
-            write(id: 17, quizpath: "quizchess", category: "chess")
-            write(id: 18, quizpath: "quizhalloween", category: "halloween")
-            write(id: 19, quizpath: "quiznewyear", category: "newyear")
-            
+            write(category: quiz!)
             questionTextStatus.value = "Правильно 👍👍👍!!!"
             Timer.scheduledTimer(timeInterval:0.2, target: self, selector: #selector(updateUI), userInfo: nil, repeats: false)
         }
@@ -344,25 +325,7 @@ class QuizBaseViewModel {
             ScoreStatus.value = ("Счет: \(String(counter))/100")
             AttemptsCountStatus.value = "Попыток осталось: \(AttemptsCounter)"
             
-            write(id: 1, quizpath: "quizplanets", category: "planets")
-            write(id: 2, quizpath: "quizhistory", category: "history")
-            write(id: 3, quizpath: "quizanatomy", category: "anatomy")
-            write(id: 4, quizpath: "quizsport", category: "sport")
-            write(id: 5, quizpath: "quizgames", category: "games")
-            write(id: 6, quizpath: "quiziq", category: "IQ")
-            write(id: 7, quizpath: "quizeconomy", category: "economy")
-            write(id: 8, quizpath: "quizgeography", category: "geography")
-            write(id: 9, quizpath: "quizecology", category: "ecology")
-            write(id: 10, quizpath: "quizphysics", category: "physics")
-            write(id: 11, quizpath: "quizchemistry", category: "chemistry")
-            write(id: 12, quizpath: "quizinformatics", category: "informatics")
-            write(id: 13, quizpath: "quizliterature", category: "literature")
-            write(id: 14, quizpath: "quizroadtraffic", category: "roadtraffic")
-            write(id: 15, quizpath: "quizswift", category: "Swift")
-            write(id: 16, quizpath: "quizunderwater", category: "underwater")
-            write(id: 17, quizpath: "quizchess", category: "chess")
-            write(id: 18, quizpath: "quizhalloween", category: "halloween")
-            write(id: 19, quizpath: "quiznewyear", category: "newyear")
+            write(category: quiz!)
             
             questionTextStatus.value = ("\(check2) не верный ответ 👎👎👎!!!")
             Timer.scheduledTimer(timeInterval:0.2, target: self, selector: #selector(updateUI), userInfo: nil, repeats: false)
@@ -414,25 +377,7 @@ class QuizBaseViewModel {
             print("Голос \(check2)")
             
             base?.nextQuestion()
-            write(id: 1, quizpath: "quizplanets", category: "planets")
-            write(id: 2, quizpath: "quizhistory", category: "history")
-            write(id: 3, quizpath: "quizanatomy", category: "anatomy")
-            write(id: 4, quizpath: "quizsport", category: "sport")
-            write(id: 5, quizpath: "quizgames", category: "games")
-            write(id: 6, quizpath: "quiziq", category: "IQ")
-            write(id: 7, quizpath: "quizeconomy", category: "economy")
-            write(id: 8, quizpath: "quizgeography", category: "geography")
-            write(id: 9, quizpath: "quizecology", category: "ecology")
-            write(id: 10, quizpath: "quizphysics", category: "physics")
-            write(id: 11, quizpath: "quizchemistry", category: "chemistry")
-            write(id: 12, quizpath: "quizinformatics", category: "informatics")
-            write(id: 13, quizpath: "quizliterature", category: "literature")
-            write(id: 14, quizpath: "quizroadtraffic", category: "roadtraffic")
-            write(id: 15, quizpath: "quizswift", category: "Swift")
-            write(id: 16, quizpath: "quizunderwater", category: "underwater")
-            write(id: 17, quizpath: "quizchess", category: "chess")
-            write(id: 18, quizpath: "quizhalloween", category: "halloween")
-            write(id: 19, quizpath: "quiznewyear", category: "newyear")
+            write(category: quiz!)
             
             questionTextStatus.value = "Правильно 👍👍👍!!!"
             Timer.scheduledTimer(timeInterval:0.2, target: self, selector: #selector(updateUI), userInfo: nil, repeats: false)
@@ -484,25 +429,7 @@ class QuizBaseViewModel {
             ScoreStatus.value = ("Счет: \(String(counter))/100")
             AttemptsCountStatus.value = "Попыток осталось: \(AttemptsCounter)"
             
-            write(id: 1, quizpath: "quizplanets", category: "planets")
-            write(id: 2, quizpath: "quizhistory", category: "history")
-            write(id: 3, quizpath: "quizanatomy", category: "anatomy")
-            write(id: 4, quizpath: "quizsport", category: "sport")
-            write(id: 5, quizpath: "quizgames", category: "games")
-            write(id: 6, quizpath: "quiziq", category: "IQ")
-            write(id: 7, quizpath: "quizeconomy", category: "economy")
-            write(id: 8, quizpath: "quizgeography", category: "geography")
-            write(id: 9, quizpath: "quizecology", category: "ecology")
-            write(id: 10, quizpath: "quizphysics", category: "physics")
-            write(id: 11, quizpath: "quizchemistry", category: "chemistry")
-            write(id: 12, quizpath: "quizinformatics", category: "informatics")
-            write(id: 13, quizpath: "quizliterature", category: "literature")
-            write(id: 14, quizpath: "quizroadtraffic", category: "roadtraffic")
-            write(id: 15, quizpath: "quizswift", category: "Swift")
-            write(id: 16, quizpath: "quizunderwater", category: "underwater")
-            write(id: 17, quizpath: "quizchess", category: "chess")
-            write(id: 18, quizpath: "quizhalloween", category: "halloween")
-            write(id: 19, quizpath: "quiznewyear", category: "newyear")
+            write(category: quiz!)
             
             questionTextStatus.value = ("\(check2) не верный ответ 👎👎👎!!!")
             Timer.scheduledTimer(timeInterval:0.2, target: self, selector: #selector(updateUI), userInfo: nil, repeats: false)
@@ -662,25 +589,7 @@ class QuizBaseViewModel {
             ScoreStatus.value = ("Счет: \(CorrectAnswersCounter)/100")
             
             base?.nextQuestion()
-            write(id: 1, quizpath: "quizplanets", category: "planets")
-            write(id: 2, quizpath: "quizhistory", category: "history")
-            write(id: 3, quizpath: "quizanatomy", category: "anatomy")
-            write(id: 4, quizpath: "quizsport", category: "sport")
-            write(id: 5, quizpath: "quizgames", category: "games")
-            write(id: 6, quizpath: "quiziq", category: "IQ")
-            write(id: 7, quizpath: "quizeconomy", category: "economy")
-            write(id: 8, quizpath: "quizgeography", category: "geography")
-            write(id: 9, quizpath: "quizecology", category: "ecology")
-            write(id: 10, quizpath: "quizphysics", category: "physics")
-            write(id: 11, quizpath: "quizchemistry", category: "chemistry")
-            write(id: 12, quizpath: "quizinformatics", category: "informatics")
-            write(id: 13, quizpath: "quizliterature", category: "literature")
-            write(id: 14, quizpath: "quizroadtraffic", category: "roadtraffic")
-            write(id: 15, quizpath: "quizswift", category: "Swift")
-            write(id: 16, quizpath: "quizunderwater", category: "underwater")
-            write(id: 17, quizpath: "quizchess", category: "chess")
-            write(id: 18, quizpath: "quizhalloween", category: "halloween")
-            write(id: 19, quizpath: "quiznewyear", category: "newyear")
+            write(category: quiz!)
             
             Timer.scheduledTimer(timeInterval:0.2, target: self, selector: #selector(updateUI), userInfo: nil, repeats: false)
         }
@@ -742,25 +651,7 @@ class QuizBaseViewModel {
             AttemptsCountStatus.value = "Попыток осталось: \(AttemptsCounter)"
             
             base?.nextQuestion()
-            write(id: 1, quizpath: "quizplanets", category: "planets")
-            write(id: 2, quizpath: "quizhistory", category: "history")
-            write(id: 3, quizpath: "quizanatomy", category: "anatomy")
-            write(id: 4, quizpath: "quizsport", category: "sport")
-            write(id: 5, quizpath: "quizgames", category: "games")
-            write(id: 6, quizpath: "quiziq", category: "IQ")
-            write(id: 7, quizpath: "quizeconomy", category: "economy")
-            write(id: 8, quizpath: "quizgeography", category: "geography")
-            write(id: 9, quizpath: "quizecology", category: "ecology")
-            write(id: 10, quizpath: "quizphysics", category: "physics")
-            write(id: 11, quizpath: "quizchemistry", category: "chemistry")
-            write(id: 12, quizpath: "quizinformatics", category: "informatics")
-            write(id: 13, quizpath: "quizliterature", category: "literature")
-            write(id: 14, quizpath: "quizroadtraffic", category: "roadtraffic")
-            write(id: 15, quizpath: "quizswift", category: "Swift")
-            write(id: 16, quizpath: "quizunderwater", category: "underwater")
-            write(id: 17, quizpath: "quizchess", category: "chess")
-            write(id: 18, quizpath: "quizhalloween", category: "halloween")
-            write(id: 19, quizpath: "quiznewyear", category: "newyear")
+            write(category: quiz!)
             
             Timer.scheduledTimer(timeInterval:0.2, target: self, selector: #selector(updateUI), userInfo: nil, repeats: false)
         }
@@ -786,25 +677,7 @@ class QuizBaseViewModel {
             
             if base?.questionNumber == 19 {
                 PresentTotalScreen()
-                write(id: 1, quizpath: "quizplanets", category: "planets")
-                write(id: 2, quizpath: "quizhistory", category: "history")
-                write(id: 3, quizpath: "quizanatomy", category: "anatomy")
-                write(id: 4, quizpath: "quizsport", category: "sport")
-                write(id: 5, quizpath: "quizgames", category: "games")
-                write(id: 6, quizpath: "quiziq", category: "IQ")
-                write(id: 7, quizpath: "quizeconomy", category: "economy")
-                write(id: 8, quizpath: "quizgeography", category: "geography")
-                write(id: 9, quizpath: "quizecology", category: "ecology")
-                write(id: 10, quizpath: "quizphysics", category: "physics")
-                write(id: 11, quizpath: "quizchemistry", category: "chemistry")
-                write(id: 12, quizpath: "quizinformatics", category: "informatics")
-                write(id: 13, quizpath: "quizliterature", category: "literature")
-                write(id: 14, quizpath: "quizroadtraffic", category: "roadtraffic")
-                write(id: 15, quizpath: "quizswift", category: "Swift")
-                write(id: 16, quizpath: "quizunderwater", category: "underwater")
-                write(id: 17, quizpath: "quizchess", category: "chess")
-                write(id: 18, quizpath: "quizhalloween", category: "halloween")
-                write(id: 19, quizpath: "quiznewyear", category: "newyear")
+                write(category: quiz!)
             }
             
             player.PlaySound(resource: "correct answer.wav")
@@ -824,25 +697,7 @@ class QuizBaseViewModel {
             ScoreStatus.value = ("Счет: \(String(counter))/100")
             animation.springLabel(label: Score.value)
             
-            write(id: 1, quizpath: "quizplanets", category: "planets")
-            write(id: 2, quizpath: "quizhistory", category: "history")
-            write(id: 3, quizpath: "quizanatomy", category: "anatomy")
-            write(id: 4, quizpath: "quizsport", category: "sport")
-            write(id: 5, quizpath: "quizgames", category: "games")
-            write(id: 6, quizpath: "quiziq", category: "IQ")
-            write(id: 7, quizpath: "quizeconomy", category: "economy")
-            write(id: 8, quizpath: "quizgeography", category: "geography")
-            write(id: 9, quizpath: "quizecology", category: "ecology")
-            write(id: 10, quizpath: "quizphysics", category: "physics")
-            write(id: 11, quizpath: "quizchemistry", category: "chemistry")
-            write(id: 12, quizpath: "quizinformatics", category: "informatics")
-            write(id: 13, quizpath: "quizliterature", category: "literature")
-            write(id: 14, quizpath: "quizroadtraffic", category: "roadtraffic")
-            write(id: 15, quizpath: "quizswift", category: "Swift")
-            write(id: 16, quizpath: "quizunderwater", category: "underwater")
-            write(id: 17, quizpath: "quizchess", category: "chess")
-            write(id: 18, quizpath: "quizhalloween", category: "halloween")
-            write(id: 19, quizpath: "quiznewyear", category: "newyear")
+            write(category: quiz!)
             
         } else if !check! {
             
@@ -884,25 +739,7 @@ class QuizBaseViewModel {
                 AttemptsCountStatus.value = ("Попыток осталось: \(String(AttemptsCounter))")
                 animation.springLabel(label: Attempts.value)
                 
-                write(id: 1, quizpath: "quizplanets", category: "planets")
-                write(id: 2, quizpath: "quizhistory", category: "history")
-                write(id: 3, quizpath: "quizanatomy", category: "anatomy")
-                write(id: 4, quizpath: "quizsport", category: "sport")
-                write(id: 5, quizpath: "quizgames", category: "games")
-                write(id: 6, quizpath: "quiziq", category: "IQ")
-                write(id: 7, quizpath: "quizeconomy", category: "economy")
-                write(id: 8, quizpath: "quizgeography", category: "geography")
-                write(id: 9, quizpath: "quizecology", category: "ecology")
-                write(id: 10, quizpath: "quizphysics", category: "physics")
-                write(id: 11, quizpath: "quizchemistry", category: "chemistry")
-                write(id: 12, quizpath: "quizinformatics", category: "informatics")
-                write(id: 13, quizpath: "quizliterature", category: "literature")
-                write(id: 14, quizpath: "quizroadtraffic", category: "roadtraffic")
-                write(id: 15, quizpath: "quizswift", category: "Swift")
-                write(id: 16, quizpath: "quizunderwater", category: "underwater")
-                write(id: 17, quizpath: "quizchess", category: "chess")
-                write(id: 18, quizpath: "quizhalloween", category: "halloween")
-                write(id: 19, quizpath: "quiznewyear", category: "newyear")
+                write(category: quiz!)
                 
             } else if counter > 0 && self.Attempts != nil {
                 
@@ -913,49 +750,12 @@ class QuizBaseViewModel {
                 AttemptsCountStatus.value = ("Попыток осталось: \(String(AttemptsCounter))")
                 animation.springLabel(label: Attempts.value)
                 
-                write(id: 1, quizpath: "quizplanets", category: "planets")
-                write(id: 2, quizpath: "quizhistory", category: "history")
-                write(id: 3, quizpath: "quizanatomy", category: "anatomy")
-                write(id: 4, quizpath: "quizsport", category: "sport")
-                write(id: 5, quizpath: "quizgames", category: "games")
-                write(id: 6, quizpath: "quiziq", category: "IQ")
-                write(id: 7, quizpath: "quizeconomy", category: "economy")
-                write(id: 8, quizpath: "quizgeography", category: "geography")
-                write(id: 9, quizpath: "quizecology", category: "ecology")
-                write(id: 10, quizpath: "quizphysics", category: "physics")
-                write(id: 11, quizpath: "quizchemistry", category: "chemistry")
-                write(id: 12, quizpath: "quizinformatics", category: "informatics")
-                write(id: 13, quizpath: "quizliterature", category: "literature")
-                write(id: 14, quizpath: "quizroadtraffic", category: "roadtraffic")
-                write(id: 15, quizpath: "quizswift", category: "Swift")
-                write(id: 16, quizpath: "quizunderwater", category: "underwater")
-                write(id: 17, quizpath: "quizchess", category: "chess")
-                write(id: 18, quizpath: "quizhalloween", category: "halloween")
-                write(id: 19, quizpath: "quiznewyear", category: "newyear")
+                write(category: quiz!)
                 
             }
         }
         
-        write(id: 1, quizpath: "quizplanets", category: "planets")
-        write(id: 2, quizpath: "quizhistory", category: "history")
-        write(id: 3, quizpath: "quizanatomy", category: "anatomy")
-        write(id: 4, quizpath: "quizsport", category: "sport")
-        write(id: 5, quizpath: "quizgames", category: "games")
-        write(id: 6, quizpath: "quiziq", category: "IQ")
-        write(id: 7, quizpath: "quizeconomy", category: "economy")
-        write(id: 8, quizpath: "quizgeography", category: "geography")
-        write(id: 9, quizpath: "quizecology", category: "ecology")
-        write(id: 10, quizpath: "quizphysics", category: "physics")
-        write(id: 11, quizpath: "quizchemistry", category: "chemistry")
-        write(id: 12, quizpath: "quizinformatics", category: "informatics")
-        write(id: 13, quizpath: "quizliterature", category: "literature")
-        write(id: 14, quizpath: "quizroadtraffic", category: "roadtraffic")
-        write(id: 15, quizpath: "quizswift", category: "Swift")
-        write(id: 16, quizpath: "quizunderwater", category: "underwater")
-        write(id: 17, quizpath: "quizchess", category: "chess")
-        write(id: 18, quizpath: "quizhalloween", category: "halloween")
-        write(id: 19, quizpath: "quiznewyear", category: "newyear")
-        
+        write(category: quiz!)
         
         base?.nextQuestion()
         
@@ -1204,13 +1004,10 @@ class QuizBaseViewModel {
     
     func checkAttemptsSetting() {
         
-        print(isAttemptsOn)
-        
         if isAttemptsOn == true {
             print("attempts now")
         } else if isAttemptsOn == false || isAttemptsOn == nil {
             print("attempts not now")
-            //self.captureSession.stopRunning()
             self.AttemptsStatus = false
         }
         
@@ -1239,7 +1036,7 @@ class QuizBaseViewModel {
             
             self.player.StopSound(resource: self.sound)
             
-            let vc = self.storyboard?.instantiateViewController(identifier: "BaseTotalQuizViewController") as? BaseTotalQuizViewController
+            let vc = self.storyboard?.instantiateViewController(identifier: "QuizResultsViewController") as? QuizResultsViewController
             guard let window = self.view?.window else {return}
             vc?.quizBaseViewModel = self.base
             window.rootViewController = vc
@@ -1445,18 +1242,18 @@ class QuizBaseViewModel {
             DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
                 self.startRecognition()
             }
-        
-        // Открыть камеру
+            
+            // Открыть камеру
         case _ where check2.contains("Камер") || check2.contains("камер"):
             check2 = ""
             self.OpenCamera()
-        
-        // Выйти из викторины
+            
+            // Выйти из викторины
         case _ where check2.contains("Заверш") || check2.contains("заверш") || check2.contains("Выйти") || check2.contains("выйти") || check2.contains("Выход") || check2.contains("выход"):
             check2 = ""
             self.player.StopSound(resource: sound)
             self.exit()
-                        
+            
         default:
             check2 = ""
         }
@@ -1560,32 +1357,29 @@ class QuizBaseViewModel {
         }
     }
     
-    func write(id: Int, quizpath: String, category: String) {
+    func write(category: QuizCategoryModel) {
         let db = Firestore.firestore()
-        
-        if base?.checkid() == id {
-            let ref = db.collection("users").document((Auth.auth().currentUser?.email)!)
-            ref.updateData([
-                quizpath: [
-                    "bestscore": counter,
-                    "CorrectAnswersCounter": CorrectAnswersCounter,
-                    "UnCorrectAnswersCounter": UnCorrectAnswersCounter,
-                    "complete": true,
-                    "category": category,
-                    "music": quiz?.music ?? "",
-                    "date": GetCurrentDate()
-                ]
-            ]) { err in
-                if let err = err {
-                    print("Error writing document: \(err)")
-                } else {
-                    print("success")
-                    print(ref)
-                }
+        let ref = db.collection("users").document((Auth.auth().currentUser?.email)!)
+        ref.updateData([
+            category.quizpath: [
+                "bestscore": counter,
+                "CorrectAnswersCounter": CorrectAnswersCounter,
+                "UnCorrectAnswersCounter": UnCorrectAnswersCounter,
+                "complete": true,
+                "category": category.name,
+                "music": quiz?.music ?? "",
+                "date": GetCurrentDate()
+            ]
+        ]) { err in
+            if let err = err {
+                print("Error writing document: \(err)")
+            } else {
+                print("success")
+                print(ref)
             }
-            guard let category = quiz else {return}
-            LastQuiz(category: category.name, image: category.image, background: category.background)
         }
+        guard let category = quiz else {return}
+        LastQuiz(category: category.name, image: category.image, background: category.background)
     }
     
     func level() {

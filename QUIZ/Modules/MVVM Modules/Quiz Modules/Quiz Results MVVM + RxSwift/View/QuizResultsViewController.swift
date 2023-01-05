@@ -1,5 +1,5 @@
 //
-//  BaseTotalQuizViewController.swift
+//  QuizResultsViewController.swift
 //  QUIZ
 //
 //  Created by Марк Киричко on 16.02.2022.
@@ -9,7 +9,7 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-class BaseTotalQuizViewController: UIViewController {
+class QuizResultsViewController: UIViewController {
     
     @IBOutlet weak var Image: RoundedImageView!
     @IBOutlet weak var ScoreLabel: UILabel!
@@ -20,17 +20,19 @@ class BaseTotalQuizViewController: UIViewController {
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var view2: UIView!
 
-    var quizResultViewModel = QuizResultViewModel()
-    var disposeBag = DisposeBag()
+    var quizResultsViewModel = QuizResultsViewModel()
     var quizBaseViewModel: QuizBaseViewModel?
+    private let disposeBag = DisposeBag()
+    private let animation = AnimationClass()
+    private let player = SoundClass()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.quizResultViewModel.viewModel.view = self.view
-        self.quizResultViewModel.viewModel.storyboard = self.storyboard
+        self.quizResultsViewModel.categoriesViewModel.view = self.view
+        self.quizResultsViewModel.categoriesViewModel.storyboard = self.storyboard
         self.Image.color = .white
-        quizResultViewModel.SetupView(view: self.view, storyboard: self.storyboard!)
-        quizResultViewModel.quizresult.subscribe(onNext: { result in
+        quizResultsViewModel.SetupView(view: self.view, storyboard: self.storyboard!)
+        quizResultsViewModel.quizresult.subscribe(onNext: { result in
             guard let background = UIImage(named: result.background) else {return}
             self.Image.image = UIImage(named: result.icon)
             self.Image.sound = result.sound
@@ -45,7 +47,7 @@ class BaseTotalQuizViewController: UIViewController {
         RetryButton.layer.borderColor = UIColor.black.cgColor
         ExitButton.layer.borderWidth = 2
         ExitButton.layer.borderColor = UIColor.black.cgColor
-        quizResultViewModel.GetQuizResult()
+        quizResultsViewModel.GetQuizResult()
         Image.layer.cornerRadius = Image.frame.size.width / 2
         Image.clipsToBounds = true
         Image.layer.borderWidth = 5
@@ -66,18 +68,19 @@ class BaseTotalQuizViewController: UIViewController {
         }
     }
     
-    
     @IBAction func presentCategoryScreen() {
-        quizResultViewModel.PresentCategoryScreen()
+        animation.springButton(button: self.ExitButton)
+        player.PlaySound(resource: "spring.mp3")
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+            self.quizResultsViewModel.PresentCategoryScreen()
+        }
     }
     
     @IBAction func restart() {
-        quizResultViewModel.restartGame()
+        animation.springButton(button: self.RetryButton)
+        player.PlaySound(resource: "spring.mp3")
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+            self.quizResultsViewModel.restartGame()
+        }
     }
-    
 }
-
-
-
-
-

@@ -55,7 +55,7 @@
 		821C69E128739845004FD9E1 /* chess19.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 821C69DF28739845004FD9E1 /* chess19.jpeg */; };
 		821C69E228739845004FD9E1 /* chess18.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 821C69E028739845004FD9E1 /* chess18.jpeg */; };
 		821C69E42873995C004FD9E1 /* chess20.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 821C69E32873995C004FD9E1 /* chess20.jpeg */; };
-		821C69E928739E32004FD9E1 /* PlayersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 821C69E728739E32004FD9E1 /* PlayersViewModel.swift */; };
+		821C69E928739E32004FD9E1 /* PlayerListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 821C69E728739E32004FD9E1 /* PlayerListViewModel.swift */; };
 		822139102874E72D0065A0C3 /* example_5s0_hand_model.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 8221390F2874E72D0065A0C3 /* example_5s0_hand_model.mlmodel */; };
 		822139122874E75B0065A0C3 /* anatomy music.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 822139112874E75B0065A0C3 /* anatomy music.mp3 */; };
 		822139142874E7630065A0C3 /* chemistry music.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 822139132874E7630065A0C3 /* chemistry music.mp3 */; };
@@ -81,7 +81,7 @@
 		8221393C2874E8650065A0C3 /* Swift14.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 822139322874E8640065A0C3 /* Swift14.jpeg */; };
 		82251C34287E661F00723057 /* URLViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82251C33287E661F00723057 /* URLViewController.swift */; };
 		822B235D27C868390067ED13 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 822B235C27C868390067ED13 /* Player.swift */; };
-		822F6C1927BD4AFC0033803A /* BaseTotalQuizViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 822F6C1827BD4AFC0033803A /* BaseTotalQuizViewController.swift */; };
+		822F6C1927BD4AFC0033803A /* QuizResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 822F6C1827BD4AFC0033803A /* QuizResultsViewController.swift */; };
 		82319E0628E8D1280053CEF5 /* QuizHalloween.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82319E0528E8D1280053CEF5 /* QuizHalloween.swift */; };
 		82319E0D28E8D84E0053CEF5 /* halloween.background.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 82319E0C28E8D84E0053CEF5 /* halloween.background.jpeg */; };
 		82319E0F28E8D8EA0053CEF5 /* halloween1.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 82319E0E28E8D8E90053CEF5 /* halloween1.jpeg */; };
@@ -388,7 +388,7 @@
 		829DC89A2965B44E006C9D91 /* TextRecognitionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 829DC8992965B44E006C9D91 /* TextRecognitionManager.swift */; };
 		82A01BFD27C51CFF00DCBD6F /* RoundedImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82A01BFC27C51CFF00DCBD6F /* RoundedImageView.swift */; };
 		82A08C7D28F488A70072A940 /* QuizResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82A08C7C28F488A70072A940 /* QuizResult.swift */; };
-		82A08C7F28F488E90072A940 /* QuizResultViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82A08C7E28F488E90072A940 /* QuizResultViewModel.swift */; };
+		82A08C7F28F488E90072A940 /* QuizResultsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82A08C7E28F488E90072A940 /* QuizResultsViewModel.swift */; };
 		82A08C8128F48E8E0072A940 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82A08C8028F48E8E0072A940 /* ProfileViewModel.swift */; };
 		82A1D8C427FB25490044EEA6 /* DeleteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82A1D8C327FB25490044EEA6 /* DeleteTableViewCell.swift */; };
 		82A1D8C827FB4C3D0044EEA6 /* PhotoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82A1D8C727FB4C3D0044EEA6 /* PhotoTableViewCell.swift */; };
@@ -685,7 +685,7 @@
 		821C69DF28739845004FD9E1 /* chess19.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = chess19.jpeg; sourceTree = "<group>"; };
 		821C69E028739845004FD9E1 /* chess18.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = chess18.jpeg; sourceTree = "<group>"; };
 		821C69E32873995C004FD9E1 /* chess20.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = chess20.jpeg; sourceTree = "<group>"; };
-		821C69E728739E32004FD9E1 /* PlayersViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayersViewModel.swift; sourceTree = "<group>"; };
+		821C69E728739E32004FD9E1 /* PlayerListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerListViewModel.swift; sourceTree = "<group>"; };
 		8221390F2874E72D0065A0C3 /* example_5s0_hand_model.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = example_5s0_hand_model.mlmodel; sourceTree = "<group>"; };
 		822139112874E75B0065A0C3 /* anatomy music.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "anatomy music.mp3"; sourceTree = "<group>"; };
 		822139132874E7630065A0C3 /* chemistry music.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "chemistry music.mp3"; sourceTree = "<group>"; };
@@ -711,7 +711,7 @@
 		822139322874E8640065A0C3 /* Swift14.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Swift14.jpeg; sourceTree = "<group>"; };
 		82251C33287E661F00723057 /* URLViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLViewController.swift; sourceTree = "<group>"; };
 		822B235C27C868390067ED13 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
-		822F6C1827BD4AFC0033803A /* BaseTotalQuizViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTotalQuizViewController.swift; sourceTree = "<group>"; };
+		822F6C1827BD4AFC0033803A /* QuizResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizResultsViewController.swift; sourceTree = "<group>"; };
 		82319E0528E8D1280053CEF5 /* QuizHalloween.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizHalloween.swift; sourceTree = "<group>"; };
 		82319E0C28E8D84E0053CEF5 /* halloween.background.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = halloween.background.jpeg; sourceTree = "<group>"; };
 		82319E0E28E8D8E90053CEF5 /* halloween1.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = halloween1.jpeg; sourceTree = "<group>"; };
@@ -1018,7 +1018,7 @@
 		829DC8992965B44E006C9D91 /* TextRecognitionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextRecognitionManager.swift; sourceTree = "<group>"; };
 		82A01BFC27C51CFF00DCBD6F /* RoundedImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedImageView.swift; sourceTree = "<group>"; };
 		82A08C7C28F488A70072A940 /* QuizResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizResult.swift; sourceTree = "<group>"; };
-		82A08C7E28F488E90072A940 /* QuizResultViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizResultViewModel.swift; sourceTree = "<group>"; };
+		82A08C7E28F488E90072A940 /* QuizResultsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizResultsViewModel.swift; sourceTree = "<group>"; };
 		82A08C8028F48E8E0072A940 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 		82A1D8C327FB25490044EEA6 /* DeleteTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteTableViewCell.swift; sourceTree = "<group>"; };
 		82A1D8C727FB4C3D0044EEA6 /* PhotoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoTableViewCell.swift; sourceTree = "<group>"; };
@@ -1298,7 +1298,7 @@
 			isa = PBXGroup;
 			children = (
 				82D35C1F29633A3B000EB277 /* Extensions */,
-				82D35BDD296312D1000EB277 /* Delegates */,
+				82D35BDD296312D1000EB277 /* Protocols */,
 				8295F1912950AA9F000E033E /* Services */,
 				8295F1922950AB10000E033E /* ViewModels */,
 				8295F1992950B5F7000E033E /* Modules */,
@@ -1348,7 +1348,7 @@
 				8295F1C72950C113000E033E /* Quiz Modules */,
 				8295F1C82950C13F000E033E /* Players Module */,
 				8295F1C92950C150000E033E /* Profile Module */,
-				82D35C3F2963AE41000EB277 /* Voice Command */,
+				8281647F29670946001E00DF /* Voice Command Module */,
 			);
 			path = "MVVM Modules";
 			sourceTree = "<group>";
@@ -1402,7 +1402,7 @@
 		821C69E528739E1A004FD9E1 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				821C69E728739E32004FD9E1 /* PlayersViewModel.swift */,
+				821C69E728739E32004FD9E1 /* PlayerListViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -1723,6 +1723,14 @@
 				8295F1C02950BB43000E033E /* newyear20.jpeg */,
 			);
 			path = "New Year";
+			sourceTree = "<group>";
+		};
+		8281647F29670946001E00DF /* Voice Command Module */ = {
+			isa = PBXGroup;
+			children = (
+				82D35C3F2963AE41000EB277 /* Voice Command MVVM Combine */,
+			);
+			path = "Voice Command Module";
 			sourceTree = "<group>";
 		};
 		82848CF3281C6ED40068A4AE /* category icons */ = {
@@ -2151,7 +2159,7 @@
 				82CBE7F22870A8480045616B /* Quiz Categories MVVM */,
 				82CBE7FC2870D3AA0045616B /* Quiz Tasks MVVM */,
 				82A82AE128A92BB100011B6F /* QuizBase MVVM Observable */,
-				82A08C7828F488590072A940 /* Quiz Total MVVM + RxSwift */,
+				82A08C7828F488590072A940 /* Quiz Results MVVM + RxSwift */,
 			);
 			path = "Quiz Modules";
 			sourceTree = "<group>";
@@ -2242,20 +2250,20 @@
 			path = "Text Recognition";
 			sourceTree = "<group>";
 		};
-		82A08C7828F488590072A940 /* Quiz Total MVVM + RxSwift */ = {
+		82A08C7828F488590072A940 /* Quiz Results MVVM + RxSwift */ = {
 			isa = PBXGroup;
 			children = (
 				82A08C7B28F4887E0072A940 /* Model */,
 				82A08C7A28F4887C0072A940 /* View */,
 				82A08C7928F488790072A940 /* ViewModel */,
 			);
-			path = "Quiz Total MVVM + RxSwift";
+			path = "Quiz Results MVVM + RxSwift";
 			sourceTree = "<group>";
 		};
 		82A08C7928F488790072A940 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				82A08C7E28F488E90072A940 /* QuizResultViewModel.swift */,
+				82A08C7E28F488E90072A940 /* QuizResultsViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -2263,7 +2271,7 @@
 		82A08C7A28F4887C0072A940 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				822F6C1827BD4AFC0033803A /* BaseTotalQuizViewController.swift */,
+				822F6C1827BD4AFC0033803A /* QuizResultsViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -2678,12 +2686,12 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		82D35BDD296312D1000EB277 /* Delegates */ = {
+		82D35BDD296312D1000EB277 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
 				82D35BDE2963130A000EB277 /* CustomViewCellDelegate.swift */,
 			);
-			path = Delegates;
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 		82D35BE229631AF9000EB277 /* Question */ = {
@@ -2987,14 +2995,14 @@
 			path = VoiceCommandSettingTableViewCell;
 			sourceTree = "<group>";
 		};
-		82D35C3F2963AE41000EB277 /* Voice Command */ = {
+		82D35C3F2963AE41000EB277 /* Voice Command MVVM Combine */ = {
 			isa = PBXGroup;
 			children = (
 				82D35C422963AE55000EB277 /* Model */,
 				82D35C412963AE53000EB277 /* View */,
 				82D35C402963AE51000EB277 /* ViewModel */,
 			);
-			path = "Voice Command";
+			path = "Voice Command MVVM Combine";
 			sourceTree = "<group>";
 		};
 		82D35C402963AE51000EB277 /* ViewModel */ = {
@@ -3781,10 +3789,10 @@
 				820D303B28F340710031CFCD /* Profile.swift in Sources */,
 				82F564722940D1FB0031F7BD /* CategoryTableViewController.swift in Sources */,
 				8261BC2227E10F1B0089CC94 /* TotalTableViewController.swift in Sources */,
-				822F6C1927BD4AFC0033803A /* BaseTotalQuizViewController.swift in Sources */,
+				822F6C1927BD4AFC0033803A /* QuizResultsViewController.swift in Sources */,
 				82EA02A528240872008A0240 /* RestartTableViewCell.swift in Sources */,
 				82CBE7EA287093C50045616B /* NewsListViewModel.swift in Sources */,
-				82A08C7F28F488E90072A940 /* QuizResultViewModel.swift in Sources */,
+				82A08C7F28F488E90072A940 /* QuizResultsViewModel.swift in Sources */,
 				82B760EA27CA75E800540E0F /* QuizCategoryModel.swift in Sources */,
 				829DC87C2964C2C2006C9D91 /* SpeechRecognitionManager.swift in Sources */,
 				82D35C462963AED5000EB277 /* VoiceCommandViewModel.swift in Sources */,
@@ -3812,7 +3820,7 @@
 				8244DCE827E39C1700F5C59B /* QuizInformatics.swift in Sources */,
 				8237D98E286D02230097FE69 /* QuizUnderwater.swift in Sources */,
 				8209462D27FA676000F44E83 /* RoadTraffic.swift in Sources */,
-				821C69E928739E32004FD9E1 /* PlayersViewModel.swift in Sources */,
+				821C69E928739E32004FD9E1 /* PlayerListViewModel.swift in Sources */,
 				820C628127BBA3CA004894FA /* SceneDelegate.swift in Sources */,
 				82A1D8C427FB25490044EEA6 /* DeleteTableViewCell.swift in Sources */,
 				82CBE7F92870A8F30045616B /* CategoriesViewModel.swift in Sources */,
