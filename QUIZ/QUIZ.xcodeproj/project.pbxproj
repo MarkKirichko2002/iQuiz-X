@@ -416,7 +416,7 @@
 		82BDEB14283C630100B1AD7F /* literature12.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 82BDEB0A283C630100B1AD7F /* literature12.jpeg */; };
 		82BDEB15283C630100B1AD7F /* literature15.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 82BDEB0B283C630100B1AD7F /* literature15.jpeg */; };
 		82C18EEE2832ECEA00348599 /* key.png in Resources */ = {isa = PBXBuildFile; fileRef = 82C18EED2832ECEA00348599 /* key.png */; };
-		82C2B5A327BD0E5700C66946 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82C2B5A227BD0E5700C66946 /* ViewController.swift */; };
+		82C2B5A327BD0E5700C66946 /* QuizTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82C2B5A227BD0E5700C66946 /* QuizTabBarController.swift */; };
 		82C2B5A527BD115A00C66946 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82C2B5A427BD115A00C66946 /* ProfileViewController.swift */; };
 		82C2B5B327BD2F8800C66946 /* AnimationsClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82C2B5B227BD2F8800C66946 /* AnimationsClass.swift */; };
 		82CBE7E9287093C50045616B /* NewsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82CBE7E5287093C50045616B /* NewsTableViewController.swift */; };
@@ -1050,7 +1050,7 @@
 		82BDEB0A283C630100B1AD7F /* literature12.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = literature12.jpeg; sourceTree = "<group>"; };
 		82BDEB0B283C630100B1AD7F /* literature15.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = literature15.jpeg; sourceTree = "<group>"; };
 		82C18EED2832ECEA00348599 /* key.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = key.png; sourceTree = "<group>"; };
-		82C2B5A227BD0E5700C66946 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		82C2B5A227BD0E5700C66946 /* QuizTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizTabBarController.swift; sourceTree = "<group>"; };
 		82C2B5A427BD115A00C66946 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		82C2B5B227BD2F8800C66946 /* AnimationsClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationsClass.swift; sourceTree = "<group>"; };
 		82CBE7E5287093C50045616B /* NewsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsTableViewController.swift; sourceTree = "<group>"; };
@@ -1861,7 +1861,7 @@
 		8290FCA327FCC15B00E05DDA /* TabBar  */ = {
 			isa = PBXGroup;
 			children = (
-				82C2B5A227BD0E5700C66946 /* ViewController.swift */,
+				82C2B5A227BD0E5700C66946 /* QuizTabBarController.swift */,
 			);
 			path = "TabBar ";
 			sourceTree = "<group>";
@@ -3763,7 +3763,7 @@
 				829DC8972965A968006C9D91 /* QuizTaskDetailViewController.swift in Sources */,
 				820C627F27BBA3CA004894FA /* AppDelegate.swift in Sources */,
 				8238058328F192F70006A736 /* QuizMediaLibraryModel.swift in Sources */,
-				82C2B5A327BD0E5700C66946 /* ViewController.swift in Sources */,
+				82C2B5A327BD0E5700C66946 /* QuizTabBarController.swift in Sources */,
 				82319E0628E8D1280053CEF5 /* QuizHalloween.swift in Sources */,
 				82CBE8032870D4B40045616B /* TasksViewModel.swift in Sources */,
 				826E12B128009F1300465E16 /* SpeachTableViewCell.swift in Sources */,

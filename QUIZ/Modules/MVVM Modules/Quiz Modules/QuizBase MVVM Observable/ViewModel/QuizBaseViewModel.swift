@@ -1258,10 +1258,9 @@ class QuizBaseViewModel {
         audioEngine.inputNode.removeTap(onBus: 0)
     }
     
-    
     func exit() {
         DispatchQueue.main.async {
-            guard let vc = self.storyboard?.instantiateViewController(identifier: "ViewController") else {return}
+            guard let vc = self.storyboard?.instantiateViewController(identifier: "QuizTabBarController") else {return}
             guard let window = self.view?.window else {return}
             window.rootViewController = vc
             UserDefaults.standard.set(false, forKey: "music")

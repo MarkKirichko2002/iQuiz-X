@@ -14,6 +14,7 @@ struct QuizCategoryModel {
     var base: QuizBaseViewModel
     var quizpath: String
     var voiceCommand: String
+    var date: String
     var background: String
     var complete: Bool
     var score: Int
