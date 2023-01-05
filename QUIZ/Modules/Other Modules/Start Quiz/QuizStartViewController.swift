@@ -52,5 +52,4 @@ class QuizStartViewController: UIViewController {
             self.viewModel.GoToQuiz(quiz: self.base!, category: self.category!)
         }
     }
-    
 }

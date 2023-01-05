@@ -14,28 +14,27 @@ import UIKit
 
 class QuizBaseViewModel {
     
-    var pl = AVAudioPlayer()
-    var music = UserDefaults.standard.object(forKey: "music") as? Bool
-    let isAttemptsOn = UserDefaults.standard.object(forKey: "onstatusattempts") as? Bool
-    var isRecordOn = UserDefaults.standard.object(forKey: "onstatus") as? Bool
-    var isRecordOnAudio = UserDefaults.standard.object(forKey: "onstatusaudio") as? Bool
-    var GestureRecording = true
-    var VoiceRecording = true
-    var HintsStatus = true
-    var SpeachStatus = true
-    var MusicStatus = true
-    var TimerStatus = true
-    var AttemptsStatus = true
-    var isTalking = false
-    let synthesizer = AVSpeechSynthesizer()
-    var quiznumber = 0
+    private let pl = AVAudioPlayer()
+    private var music = UserDefaults.standard.object(forKey: "music") as? Bool
+    private let isAttemptsOn = UserDefaults.standard.object(forKey: "onstatusattempts") as? Bool
+    private var isRecordOn = UserDefaults.standard.object(forKey: "onstatus") as? Bool
+    private var isRecordOnAudio = UserDefaults.standard.object(forKey: "onstatusaudio") as? Bool
+    private var GestureRecording = true
+    private var VoiceRecording = true
+    private var HintsStatus = true
+    private var SpeachStatus = true
+    private var MusicStatus = true
+    private var TimerStatus = true
+    private var AttemptsStatus = true
+    private var isTalking = false
+    private let synthesizer = AVSpeechSynthesizer()
+    private var quiznumber = 0
     var questionNumber = 0;
     var score = 0;
-    var sound = ""
+    private var sound = ""
     var quiz: QuizCategoryModel?
     let speechRecognitionManager = SpeechRecognitionManager()
-    
-    let date = Date()
+    private let dateManager = DateManager()
     
     enum RemoteCommand: String {
         case none
@@ -44,7 +43,7 @@ class QuizBaseViewModel {
     }
     
     var animation = AnimationClass()
-    
+
     var timer = Timer()
     
     var AnswersCounter = 5
@@ -145,14 +144,6 @@ class QuizBaseViewModel {
         picker.allowsEditing = true
         picker.delegate = self.viewController as? any UIImagePickerControllerDelegate & UINavigationControllerDelegate
         self.viewController?.present(picker, animated: true)
-    }
-    
-    func GetCurrentDate()-> String {
-        var currentDate = ""
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "dd/MM/yyyy"
-        currentDate = dateFormatter.string(from: date)
-        return currentDate
     }
     
     func SkipQuestion() {
@@ -1346,7 +1337,7 @@ class QuizBaseViewModel {
                 "icon": image,
                 "background": background,
                 "sound": quiz?.sound ?? "",
-                "date": GetCurrentDate()
+                "date": dateManager.GetCurrentDate()
             ]
         ]) { err in
             if let err = err {
@@ -1368,7 +1359,7 @@ class QuizBaseViewModel {
                 "complete": true,
                 "category": category.name,
                 "music": quiz?.music ?? "",
-                "date": GetCurrentDate()
+                "date": dateManager.GetCurrentDate()
             ]
         ]) { err in
             if let err = err {

@@ -385,6 +385,7 @@
 		829A514C296735E10056A7DB /* SettingsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 829A514B296735E10056A7DB /* SettingsManager.swift */; };
 		829A514E296739530056A7DB /* ProfileInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 829A514D296739530056A7DB /* ProfileInfoViewModel.swift */; };
 		829A5151296744BF0056A7DB /* NavigationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 829A5150296744BF0056A7DB /* NavigationManager.swift */; };
+		829A515429675E790056A7DB /* DateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 829A515329675E790056A7DB /* DateManager.swift */; };
 		829DC874296445F2006C9D91 /* skip.png in Resources */ = {isa = PBXBuildFile; fileRef = 829DC873296445F2006C9D91 /* skip.png */; };
 		829DC87C2964C2C2006C9D91 /* SpeechRecognitionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 829DC87B2964C2C2006C9D91 /* SpeechRecognitionManager.swift */; };
 		829DC8972965A968006C9D91 /* QuizTaskDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 829DC8962965A968006C9D91 /* QuizTaskDetailViewController.swift */; };
@@ -1018,6 +1019,7 @@
 		829A514B296735E10056A7DB /* SettingsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsManager.swift; sourceTree = "<group>"; };
 		829A514D296739530056A7DB /* ProfileInfoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileInfoViewModel.swift; sourceTree = "<group>"; };
 		829A5150296744BF0056A7DB /* NavigationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationManager.swift; sourceTree = "<group>"; };
+		829A515329675E790056A7DB /* DateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateManager.swift; sourceTree = "<group>"; };
 		829DC873296445F2006C9D91 /* skip.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = skip.png; sourceTree = "<group>"; };
 		829DC87B2964C2C2006C9D91 /* SpeechRecognitionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechRecognitionManager.swift; sourceTree = "<group>"; };
 		829DC8962965A968006C9D91 /* QuizTaskDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizTaskDetailViewController.swift; sourceTree = "<group>"; };
@@ -2087,6 +2089,7 @@
 				829A514A296735CF0056A7DB /* Settings Manager */,
 				82CE538F28EA076C00D44A6E /* Firebase Manager */,
 				829DC87A2964C2AD006C9D91 /* Speech Recognition */,
+				829A515229675E4B0056A7DB /* Date Manager */,
 				829DC8982965B432006C9D91 /* Text Recognition */,
 				82CE536C28E9D55F00D44A6E /* AudioPlayer */,
 				8295F1972950B3FF000E033E /* Rounded Image */,
@@ -2211,6 +2214,14 @@
 				829A5150296744BF0056A7DB /* NavigationManager.swift */,
 			);
 			path = "Navigation Manager";
+			sourceTree = "<group>";
+		};
+		829A515229675E4B0056A7DB /* Date Manager */ = {
+			isa = PBXGroup;
+			children = (
+				829A515329675E790056A7DB /* DateManager.swift */,
+			);
+			path = "Date Manager";
 			sourceTree = "<group>";
 		};
 		829D3D372950EB3600B4C924 /* Cells */ = {
@@ -3788,6 +3799,7 @@
 				82A01BFD27C51CFF00DCBD6F /* RoundedImageView.swift in Sources */,
 				82C2B5B327BD2F8800C66946 /* AnimationsClass.swift in Sources */,
 				82B760F727CAA13500540E0F /* Question.swift in Sources */,
+				829A515429675E790056A7DB /* DateManager.swift in Sources */,
 				828E4B43293FD2EC002A55B1 /* PlayerDetailViewController.swift in Sources */,
 				8243F16927C2617C00CD9CE4 /* QuizBaseViewModel.swift in Sources */,
 				82CD6BF428885DFF00716443 /* QuizSegmentedViewController.swift in Sources */,
