@@ -12,7 +12,6 @@ import Vision
 import Firebase
 import SCLAlertView
 
-
 class StartViewController: UIViewController {
     
     @IBOutlet weak var StartButton: UIButton!
@@ -22,13 +21,12 @@ class StartViewController: UIViewController {
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var view2: UIView!
     
-    var player = SoundClass()
-    var viewModel = CategoriesViewModel()
-    var timer = Timer()
-    var animation = AnimationClass()
-    var quizes = [QuizPlanets(), QuizHistory(), QuizAnatomy(), QuizSport(), QuizGames(), QuizIQ(), QuizEconomy(), QuizGeography(), QuizEconomy(), QuizPhysics(), QuizChemistry(), QuizInformatics(), QuizLiterature(), QuizRoadTraffic(), QuizSwift(), QuizUnderwater(), QuizChess(), QuizHalloween(), QuizNewYear()]
-    var sound = ""
-    let randomindex = UserDefaults.standard.object(forKey: "index") as? Int ?? 0
+    private let player = SoundClass()
+    private let viewModel = CategoriesViewModel()
+    private let timer = Timer()
+    private let animation = AnimationClass()
+    private var sound = ""
+    private let randomindex = UserDefaults.standard.object(forKey: "index") as? Int ?? 0
     
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
@@ -48,7 +46,6 @@ class StartViewController: UIViewController {
         StartButton.layer.borderWidth = 2
         StartButton.layer.borderColor = UIColor.black.cgColor
         
-        
         TodayQuizButton.layer.cornerRadius = TodayQuizButton.frame.size.width / 10
         TodayQuizButton.clipsToBounds = true
         
@@ -66,14 +63,14 @@ class StartViewController: UIViewController {
     
     func GenerateRandomIndex() {
         
-        var randomindex = Int.random(in: 0..<quizes.count - 1)
+        var randomindex = Int.random(in: 0..<viewModel.quizcategories.count - 1)
         
         UserDefaults.standard.set(randomindex, forKey: "index") as? Int
         
-        var savedindex = UserDefaults.standard.object(forKey: "index") as? Int
+        let savedindex = UserDefaults.standard.object(forKey: "index") as? Int
         
         if randomindex == savedindex {
-            randomindex = Int.random(in: 0..<quizes.count-1)
+            randomindex = Int.random(in: 0..<viewModel.quizcategories.count-1)
         } else {}
     }
     
@@ -139,7 +136,7 @@ class StartViewController: UIViewController {
             
             currentday = ("\(weakdays) \(months)")
             
-            self.TitleName.text = ("Сегодня \(currentday ?? "") \n 🕐: \(currentdate)")
+            self.TitleName.text = ("Сегодня \(currentday) \n 🕐: \(currentdate)")
             
             print("april")
             
@@ -263,7 +260,7 @@ class StartViewController: UIViewController {
             GenerateRandomIndex()
             DailyQuiz()
             UserDefaults.standard.set(currentdate, forKey: "saveddate")
-        }else if currentdate == saveddate {
+        } else if currentdate == saveddate {
             print("today")
             print("текущая дата \(currentdate)")
             print("сохраненная дата \(saveddate ?? "")")
@@ -278,8 +275,6 @@ class StartViewController: UIViewController {
     }
     
     func DailyQuiz() {
-        
-        quizes[randomindex].quiz = viewModel.quizcategories[randomindex]
         
         Image.sound = viewModel.quizcategories[randomindex].sound
         sound = viewModel.quizcategories[randomindex].sound
@@ -446,10 +441,10 @@ class StartViewController: UIViewController {
         player.PlaySound(resource: sound)
         self.animation.springButton(button: self.TodayQuizButton)
         
-        let c = quizes[randomindex]
+        let c = viewModel.quizcategories[randomindex]
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-            self.viewModel.goToQuize(quiz: c, category: self.viewModel.quizcategories[self.randomindex])
+            self.viewModel.GoToQuiz(quiz: c.base, category: c)
         }
     }
     

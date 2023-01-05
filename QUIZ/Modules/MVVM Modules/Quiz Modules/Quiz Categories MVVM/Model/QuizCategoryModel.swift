@@ -8,13 +8,14 @@
 import Foundation
 
 struct QuizCategoryModel {
+    var id: Int
     var name: String
     var image: String
     var base: QuizBaseViewModel
+    var quizpath: String
     var voiceCommand: String
     var background: String
     var complete: Bool
-    var id: Int
     var score: Int
     var sound: String
     var music: String

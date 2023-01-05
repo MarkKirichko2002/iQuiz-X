@@ -49,7 +49,7 @@ class QuizStartViewController: UIViewController {
         TimerLabeL.textColor = .white
         timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(time), userInfo: nil, repeats: true)
         DispatchQueue.main.asyncAfter(deadline: .now() + 6) {
-            self.viewModel.goToQuize(quiz: self.base!, category: self.category!)
+            self.viewModel.GoToQuiz(quiz: self.base!, category: self.category!)
         }
     }
     
