@@ -23,10 +23,11 @@ class FirebaseManager {
     private var quizTaskViewModel: QuizTaskViewModel?
     private var players = [Player]()
     let voicepassword = UserDefaults.standard.object(forKey: "voicepassword") as? String
+    var email = Auth.auth().currentUser?.email ?? ""
     
     // загрузить данные о категориях викторины
     func LoadQuizCategoriesData(quizpath: String, completion: @escaping(QuizCategoryViewModel)->()) {
-        let docRef = db.collection("users").document(Auth.auth().currentUser?.email ?? "")
+        let docRef = db.collection("users").document(email)
         
         docRef.getDocument { document, error in
             if let error = error as NSError? {
@@ -37,7 +38,6 @@ class FirebaseManager {
                         let complete = category["complete"] as? Bool ?? false
                         let bestscore = category["bestscore"] as? Int ?? 0
                         let CorrectAnswersCounter = category["CorrectAnswersCounter"] as? Int ?? 0
-                        let category = category["category"] as? String ?? ""
                         
                         self.quizCategoryViewModel = QuizCategoryViewModel(score: bestscore, CorrectAnswersCounter: CorrectAnswersCounter, complete: complete)
                         guard let model = self.quizCategoryViewModel else {return}
@@ -77,10 +77,8 @@ class FirebaseManager {
         docRef.getDocument { document, error in
             if let error = error as NSError? {
                 print("Error getting document: \(error.localizedDescription)")
-            }
-            else {
+            } else {
                 if let document = document {
-                    let data = document.data()
                     if let category = document["lastquiz"] as? [String: Any] {
                         let CorrectAnswersCounter = category["CorrectAnswersCounter"] as? Int
                         let icon = category["icon"] as? String
@@ -202,10 +200,8 @@ class FirebaseManager {
                 print("Error getting document: \(error.localizedDescription)")
             } else {
                 if let document = document {
-                    
                     if let category = document["lastquiz"] as? [String: Any] {
                         let sound = category["sound"] as? String ?? ""
-                        
                         self.player.PlaySound(resource: sound)
                     }
                 }

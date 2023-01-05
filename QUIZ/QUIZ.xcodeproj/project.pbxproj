@@ -55,7 +55,7 @@
 		821C69E128739845004FD9E1 /* chess19.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 821C69DF28739845004FD9E1 /* chess19.jpeg */; };
 		821C69E228739845004FD9E1 /* chess18.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 821C69E028739845004FD9E1 /* chess18.jpeg */; };
 		821C69E42873995C004FD9E1 /* chess20.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 821C69E32873995C004FD9E1 /* chess20.jpeg */; };
-		821C69E928739E32004FD9E1 /* PlayerListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 821C69E728739E32004FD9E1 /* PlayerListViewModel.swift */; };
+		821C69E928739E32004FD9E1 /* PlayersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 821C69E728739E32004FD9E1 /* PlayersViewModel.swift */; };
 		822139102874E72D0065A0C3 /* example_5s0_hand_model.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 8221390F2874E72D0065A0C3 /* example_5s0_hand_model.mlmodel */; };
 		822139122874E75B0065A0C3 /* anatomy music.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 822139112874E75B0065A0C3 /* anatomy music.mp3 */; };
 		822139142874E7630065A0C3 /* chemistry music.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 822139132874E7630065A0C3 /* chemistry music.mp3 */; };
@@ -685,7 +685,7 @@
 		821C69DF28739845004FD9E1 /* chess19.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = chess19.jpeg; sourceTree = "<group>"; };
 		821C69E028739845004FD9E1 /* chess18.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = chess18.jpeg; sourceTree = "<group>"; };
 		821C69E32873995C004FD9E1 /* chess20.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = chess20.jpeg; sourceTree = "<group>"; };
-		821C69E728739E32004FD9E1 /* PlayerListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerListViewModel.swift; sourceTree = "<group>"; };
+		821C69E728739E32004FD9E1 /* PlayersViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayersViewModel.swift; sourceTree = "<group>"; };
 		8221390F2874E72D0065A0C3 /* example_5s0_hand_model.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = example_5s0_hand_model.mlmodel; sourceTree = "<group>"; };
 		822139112874E75B0065A0C3 /* anatomy music.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "anatomy music.mp3"; sourceTree = "<group>"; };
 		822139132874E7630065A0C3 /* chemistry music.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "chemistry music.mp3"; sourceTree = "<group>"; };
@@ -1365,7 +1365,7 @@
 			isa = PBXGroup;
 			children = (
 				8295F1982950B5AF000E033E /* App */,
-				82C039C927CEC2EF00E69661 /* image */,
+				82C039C927CEC2EF00E69661 /* images */,
 				827F8BF227E8185100F6D7B3 /* sounds */,
 				82E91ECD27F6840B003D7E80 /* ML model */,
 			);
@@ -1402,7 +1402,7 @@
 		821C69E528739E1A004FD9E1 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				821C69E728739E32004FD9E1 /* PlayerListViewModel.swift */,
+				821C69E728739E32004FD9E1 /* PlayersViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -2375,7 +2375,7 @@
 			path = ViewControllers;
 			sourceTree = "<group>";
 		};
-		82C039C927CEC2EF00E69661 /* image */ = {
+		82C039C927CEC2EF00E69661 /* images */ = {
 			isa = PBXGroup;
 			children = (
 				8295F1B82950B777000E033E /* category images */,
@@ -2383,7 +2383,7 @@
 				82848CF3281C6ED40068A4AE /* category icons */,
 				8254A38D28145E13006B330B /* other images */,
 			);
-			path = image;
+			path = images;
 			sourceTree = "<group>";
 		};
 		82C2B5B127BD2F7000C66946 /* Animation Class */ = {
@@ -3820,7 +3820,7 @@
 				8244DCE827E39C1700F5C59B /* QuizInformatics.swift in Sources */,
 				8237D98E286D02230097FE69 /* QuizUnderwater.swift in Sources */,
 				8209462D27FA676000F44E83 /* RoadTraffic.swift in Sources */,
-				821C69E928739E32004FD9E1 /* PlayerListViewModel.swift in Sources */,
+				821C69E928739E32004FD9E1 /* PlayersViewModel.swift in Sources */,
 				820C628127BBA3CA004894FA /* SceneDelegate.swift in Sources */,
 				82A1D8C427FB25490044EEA6 /* DeleteTableViewCell.swift in Sources */,
 				82CBE7F92870A8F30045616B /* CategoriesViewModel.swift in Sources */,
