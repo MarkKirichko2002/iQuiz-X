@@ -10,16 +10,21 @@ import UIKit
 class EditProfileTableViewCell: UITableViewCell {
 
     static let identifier = "EditProfileTableViewCell"
+    private let settingsManager = SettingsManager()
     
     @IBOutlet weak var NameLabel: UILabel!
     @IBOutlet weak var EmailLabel: UILabel!
     @IBOutlet weak var PasswordLabel: UILabel!
     
-    var auth = FirebaseManager()
-    
     override func awakeFromNib() {
         super.awakeFromNib()
-        auth.loadSecretInfo(namelabel: NameLabel, emailLabel: EmailLabel, passwordLabel: PasswordLabel)
+        settingsManager.loadProfileInfo { info in
+            DispatchQueue.main.async {
+                self.NameLabel.text = info.name
+                self.EmailLabel.text = info.email
+                self.PasswordLabel.text = info.password
+            }
+        }
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

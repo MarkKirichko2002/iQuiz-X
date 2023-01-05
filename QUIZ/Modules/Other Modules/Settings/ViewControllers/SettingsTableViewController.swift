@@ -9,16 +9,24 @@ import UIKit
 import SCLAlertView
 import Firebase
 
-final class SettingsTableViewController: UITableViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, CustomViewCellDelegate {
+final class SettingsTableViewController: UITableViewController, CustomViewCellDelegate {
     
     private var urlString = ""
-    private let auth = FirebaseManager()
+    private let firebaseManager = FirebaseManager()
     private let db = Firestore.firestore()
     private let storage = Storage.storage().reference()
     private var saved = false
+    private let settingsManager = SettingsManager()
+    private let navigationManager = NavigationManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        // настройки
+        settingsManager.view = self.view
+        settingsManager.vc = self
+        // навигация
+        navigationManager.view = self.view
+        navigationManager.storyboard = self.storyboard
         self.SetUpCells()
     }
     
@@ -62,50 +70,6 @@ final class SettingsTableViewController: UITableViewController, UIImagePickerCon
         self.tableView.register(UINib(nibName: ExitTableViewCell.identifier, bundle: nil), forCellReuseIdentifier: ExitTableViewCell.identifier)
     }
     
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        picker.dismiss(animated: true, completion: nil)
-        guard let image = info[UIImagePickerController.InfoKey.editedImage] as? UIImage else {
-            return
-        }
-        
-        guard let imageData = image.pngData() else {
-            return
-        }
-        
-        
-        storage.child("images/\(Auth.auth().currentUser?.email ?? "")").putData(imageData,
-                                                                                metadata: nil,
-                                                                                completion: { _, error in
-            guard error == nil else {
-                print("Failed to upload")
-                return
-            }
-            
-            
-            self.storage.child("images/\(Auth.auth().currentUser?.email ?? "")").downloadURL(completion : { url, error in
-                guard let url = url, error == nil else {
-                    return
-                }
-                
-                self.saved = true
-                var save = UserDefaults.standard.setValue(self.saved, forKey: "save")
-                print(self.saved)
-                
-                self.urlString = url.absoluteString
-                self.auth.write(string: self.urlString)
-                print("loading now")
-                self.tableView.reloadData()
-                
-                print("Download URL: \(self.urlString)")
-                UserDefaults.standard.set(self.urlString, forKey: "url")
-            })
-        })
-    }
-    
-    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
-        picker.dismiss(animated: true, completion: nil)
-    }
-    
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 4
     }
@@ -141,7 +105,7 @@ final class SettingsTableViewController: UITableViewController, UIImagePickerCon
                 print("biometric")
             } else if indexPath.row == 1 {
                 print("voice password")
-                alert2()
+                settingsManager.ChangeVoicePassword()
             }
             
         case 1:
@@ -150,7 +114,7 @@ final class SettingsTableViewController: UITableViewController, UIImagePickerCon
                 print("photo")
                 self.didTapButton()
             } else if indexPath.row == 1 {
-                alert()
+                ChangeProfileData()
             } else if indexPath.row == 2 {
                 print("statistic")
                 if let cell = tableView.cellForRow(at: indexPath) as? StatisticTableViewCell {
@@ -159,6 +123,7 @@ final class SettingsTableViewController: UITableViewController, UIImagePickerCon
             }
             
         case 2:
+            
             if indexPath.row == 0 {
                 print("voice command")
                 let vc = VoiceCommandsTableViewController()
@@ -182,14 +147,13 @@ final class SettingsTableViewController: UITableViewController, UIImagePickerCon
         case 3:
             
             if indexPath.row == 0 {
-                auth.delete()
-                auth.SignOutAction()
-                self.showLoginVC()
+                firebaseManager.DeleteAccount()
+                firebaseManager.SignOutAction()
+                navigationManager.ShowLoginScreen()
             } else if indexPath.row == 1 {
-                auth.SignOutAction()
-                self.showLoginVC()
+                firebaseManager.SignOutAction()
+                navigationManager.ShowLoginScreen()
             }
-            
             
         default:
             break
@@ -208,6 +172,7 @@ final class SettingsTableViewController: UITableViewController, UIImagePickerCon
        let view = UIView(frame: CGRect(x: 0, y: 0, width: tableView.frame.width, height: 40))
        let lbl = UILabel(frame: CGRect(x: 15, y: 0, width: view.frame.width - 15, height: 40))
        lbl.font = UIFont.systemFont(ofSize: 25)
+        
         switch section {
             
         case 0:
@@ -258,7 +223,7 @@ final class SettingsTableViewController: UITableViewController, UIImagePickerCon
                 
                 if self.saved == true {
                     print("Сохранено")
-                    self.auth.load(profileimage: cell.SettingsImage)
+                    
                 }
                 
                 return cell
@@ -345,7 +310,7 @@ final class SettingsTableViewController: UITableViewController, UIImagePickerCon
         }
     }
     
-    func alert() {
+    func ChangeProfileData() {
         let defaults = UserDefaults.standard
         let email = defaults.object(forKey:"email") as? String ?? ""
         
@@ -379,6 +344,8 @@ final class SettingsTableViewController: UITableViewController, UIImagePickerCon
             if name != "" && email != "" && password != ""  {
                 self.db.collection("users").document((Auth.auth().currentUser?.email)!).updateData([
                     "name": name,
+                    "email": email,
+                    "password": password
                 ]) { err in
                     if let err = err {
                         print("Error writing document: \(err)")
@@ -405,46 +372,50 @@ final class SettingsTableViewController: UITableViewController, UIImagePickerCon
         present(alert, animated: true, completion: nil)
         
     }
+}
+
+extension SettingsTableViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
-    func alert2() {
-        let defaults = UserDefaults.standard
-        var voicepassword = defaults.object(forKey:"voicepassword") as? String
-        
-        print("нет голосового пароля")
-        
-        let alert = UIAlertController(title: "Изменение данных для голосового пароля", message: "Вы точно хотите перезаписать данные?", preferredStyle: .alert)
-        
-        alert.addTextField { (textField) in
-            textField.text = ""
-            textField.placeholder = "Введите пароль"
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        picker.dismiss(animated: true, completion: nil)
+        guard let image = info[UIImagePickerController.InfoKey.editedImage] as? UIImage else {
+            return
         }
         
-        alert.addAction(UIAlertAction(title: "нет", style: .cancel, handler: { (action: UIAlertAction!) in
-            print("Handle Cancel Logic here")
-        }))
+        guard let imageData = image.pngData() else {
+            return
+        }
         
-        alert.addAction(UIAlertAction(title: "да", style: .default, handler: { [weak alert] (_) in
-            let textField = alert?.textFields![0]
-            
-            voicepassword = textField?.text
-            
-            if voicepassword == "" || voicepassword == nil {
-                SCLAlertView().showError("Данные не введены!", subTitle: "введите пароль")
-                print(voicepassword ?? "")
-            } else {
-                defaults.set(voicepassword, forKey: "voicepassword")
+        storage.child("images/\(Auth.auth().currentUser?.email ?? "")").putData(imageData,
+                                                                                metadata: nil,
+                                                                                completion: { _, error in
+            guard error == nil else {
+                print("Failed to upload")
+                return
             }
             
-        }))
-        
-        present(alert, animated: true, completion: nil)
-        
+            
+            self.storage.child("images/\(Auth.auth().currentUser?.email ?? "")").downloadURL(completion : { url, error in
+                guard let url = url, error == nil else {
+                    return
+                }
+                
+                self.saved = true
+                var save = UserDefaults.standard.setValue(self.saved, forKey: "save")
+                print(self.saved)
+                
+                self.urlString = url.absoluteString
+                self.firebaseManager.UpdateProfilePhoto(string: self.urlString)
+                print("loading now")
+                self.tableView.reloadData()
+                
+                print("Download URL: \(self.urlString)")
+                UserDefaults.standard.set(self.urlString, forKey: "url")
+            })
+        })
     }
     
-    private func showLoginVC() {
-        guard let vc = storyboard?.instantiateViewController(identifier: "LoginViewController") else {return}
-        guard let window = self.view.window else {return}
-        window.rootViewController = vc
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        picker.dismiss(animated: true, completion: nil)
     }
-    
 }

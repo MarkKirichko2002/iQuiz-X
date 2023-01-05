@@ -22,7 +22,8 @@ class StartViewController: UIViewController {
     @IBOutlet weak var view2: UIView!
     
     private let player = SoundClass()
-    private let viewModel = CategoriesViewModel()
+    private let navigationManager = NavigationManager()
+    private let categoriesViewModel = CategoriesViewModel()
     private let timer = Timer()
     private let animation = AnimationClass()
     private var sound = ""
@@ -35,8 +36,13 @@ class StartViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        viewModel.view = self.view
-        viewModel.storyboard = self.storyboard
+        categoriesViewModel.view = self.view
+        categoriesViewModel.storyboard = self.storyboard
+        // навигация
+        navigationManager.storyboard = self.storyboard
+        navigationManager.vc = self
+        navigationManager.button = self.StartButton
+        
         self.CheckTime()
         self.Image.color = .white
         
@@ -52,7 +58,7 @@ class StartViewController: UIViewController {
         TodayQuizButton.layer.borderWidth = 2
         TodayQuizButton.layer.borderColor = UIColor.black.cgColor
         
-        let tap = UITapGestureRecognizer(target: self, action: #selector(GoToQuizApp))
+        let tap = UITapGestureRecognizer(target: navigationManager, action: #selector(navigationManager.GoToQuizApp))
         self.StartButton.isUserInteractionEnabled = true
         self.StartButton.addGestureRecognizer(tap)
         
@@ -63,14 +69,14 @@ class StartViewController: UIViewController {
     
     func GenerateRandomIndex() {
         
-        var randomindex = Int.random(in: 0..<viewModel.quizcategories.count - 1)
+        var randomindex = Int.random(in: 0..<categoriesViewModel.quizcategories.count - 1)
         
         UserDefaults.standard.set(randomindex, forKey: "index") as? Int
         
         let savedindex = UserDefaults.standard.object(forKey: "index") as? Int
         
         if randomindex == savedindex {
-            randomindex = Int.random(in: 0..<viewModel.quizcategories.count-1)
+            randomindex = Int.random(in: 0..<categoriesViewModel.quizcategories.count-1)
         } else {}
     }
     
@@ -276,14 +282,14 @@ class StartViewController: UIViewController {
     
     func DailyQuiz() {
         
-        Image.sound = viewModel.quizcategories[randomindex].sound
-        sound = viewModel.quizcategories[randomindex].sound
+        Image.sound = categoriesViewModel.quizcategories[randomindex].sound
+        sound = categoriesViewModel.quizcategories[randomindex].sound
         
-        self.TodayQuizButton.setTitle(viewModel.quizcategories[randomindex].name, for: .normal)
-        self.view.backgroundColor = UIColor(patternImage: UIImage(named: viewModel.quizcategories[randomindex].background)!)
-        self.scrollView.backgroundColor = UIColor(patternImage: UIImage(named: viewModel.quizcategories[randomindex].background)!)
-        self.view2.backgroundColor = UIColor(patternImage: UIImage(named: viewModel.quizcategories[randomindex].background)!)
-        self.Image.image = UIImage(named: viewModel.quizcategories[randomindex].image)
+        self.TodayQuizButton.setTitle(categoriesViewModel.quizcategories[randomindex].name, for: .normal)
+        self.view.backgroundColor = UIColor(patternImage: UIImage(named: categoriesViewModel.quizcategories[randomindex].background)!)
+        self.scrollView.backgroundColor = UIColor(patternImage: UIImage(named: categoriesViewModel.quizcategories[randomindex].background)!)
+        self.view2.backgroundColor = UIColor(patternImage: UIImage(named: categoriesViewModel.quizcategories[randomindex].background)!)
+        self.Image.image = UIImage(named: categoriesViewModel.quizcategories[randomindex].image)
     }
     
     @objc func GoToRandomQuiz() {
@@ -291,23 +297,10 @@ class StartViewController: UIViewController {
         player.PlaySound(resource: sound)
         self.animation.springButton(button: self.TodayQuizButton)
         
-        let c = viewModel.quizcategories[randomindex]
+        let c = categoriesViewModel.quizcategories[randomindex]
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-            self.viewModel.GoToQuiz(quiz: c.base, category: c)
-        }
-    }
-    
-    @objc func GoToQuizApp() {
-        
-        self.player.PlaySound(resource: "future click sound.wav")
-        self.animation.springButton(button: self.StartButton)
-        
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-            guard let controller = self.storyboard?.instantiateViewController(withIdentifier: "ViewController") as? UIViewController else {return}
-            controller.modalPresentationStyle = .fullScreen
-            controller.modalTransitionStyle = .flipHorizontal
-            self.present(controller, animated: true, completion: nil)
+            self.categoriesViewModel.GoToQuiz(quiz: c.base, category: c)
         }
     }
 }

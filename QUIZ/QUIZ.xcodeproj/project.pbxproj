@@ -382,6 +382,9 @@
 		8295F1C22950BB43000E033E /* newyear19.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 8295F1BF2950BB43000E033E /* newyear19.jpeg */; };
 		8295F1C32950BB43000E033E /* newyear20.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 8295F1C02950BB43000E033E /* newyear20.jpeg */; };
 		8295F1CC2950C735000E033E /* TasksTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8295F1CB2950C735000E033E /* TasksTableViewCell.xib */; };
+		829A514C296735E10056A7DB /* SettingsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 829A514B296735E10056A7DB /* SettingsManager.swift */; };
+		829A514E296739530056A7DB /* ProfileInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 829A514D296739530056A7DB /* ProfileInfoViewModel.swift */; };
+		829A5151296744BF0056A7DB /* NavigationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 829A5150296744BF0056A7DB /* NavigationManager.swift */; };
 		829DC874296445F2006C9D91 /* skip.png in Resources */ = {isa = PBXBuildFile; fileRef = 829DC873296445F2006C9D91 /* skip.png */; };
 		829DC87C2964C2C2006C9D91 /* SpeechRecognitionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 829DC87B2964C2C2006C9D91 /* SpeechRecognitionManager.swift */; };
 		829DC8972965A968006C9D91 /* QuizTaskDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 829DC8962965A968006C9D91 /* QuizTaskDetailViewController.swift */; };
@@ -1012,6 +1015,9 @@
 		8295F1BF2950BB43000E033E /* newyear19.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = newyear19.jpeg; sourceTree = "<group>"; };
 		8295F1C02950BB43000E033E /* newyear20.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = newyear20.jpeg; sourceTree = "<group>"; };
 		8295F1CB2950C735000E033E /* TasksTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TasksTableViewCell.xib; sourceTree = "<group>"; };
+		829A514B296735E10056A7DB /* SettingsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsManager.swift; sourceTree = "<group>"; };
+		829A514D296739530056A7DB /* ProfileInfoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileInfoViewModel.swift; sourceTree = "<group>"; };
+		829A5150296744BF0056A7DB /* NavigationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationManager.swift; sourceTree = "<group>"; };
 		829DC873296445F2006C9D91 /* skip.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = skip.png; sourceTree = "<group>"; };
 		829DC87B2964C2C2006C9D91 /* SpeechRecognitionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechRecognitionManager.swift; sourceTree = "<group>"; };
 		829DC8962965A968006C9D91 /* QuizTaskDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizTaskDetailViewController.swift; sourceTree = "<group>"; };
@@ -2077,9 +2083,11 @@
 		8295F1912950AA9F000E033E /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				829A514F296744A10056A7DB /* Navigation Manager */,
+				829A514A296735CF0056A7DB /* Settings Manager */,
+				82CE538F28EA076C00D44A6E /* Firebase Manager */,
 				829DC87A2964C2AD006C9D91 /* Speech Recognition */,
 				829DC8982965B432006C9D91 /* Text Recognition */,
-				82CE538F28EA076C00D44A6E /* Firebase Manager */,
 				82CE536C28E9D55F00D44A6E /* AudioPlayer */,
 				8295F1972950B3FF000E033E /* Rounded Image */,
 				82C2B5B127BD2F7000C66946 /* Animation Class */,
@@ -2092,6 +2100,7 @@
 			children = (
 				8295F1932950AB25000E033E /* QuizCategoryViewModel.swift */,
 				8295F1952950AB3A000E033E /* QuizTaskViewModel.swift */,
+				829A514D296739530056A7DB /* ProfileInfoViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -2186,6 +2195,22 @@
 				82CBE7E4287093890045616B /* News MVVM Event Bus */,
 			);
 			path = "News Module";
+			sourceTree = "<group>";
+		};
+		829A514A296735CF0056A7DB /* Settings Manager */ = {
+			isa = PBXGroup;
+			children = (
+				829A514B296735E10056A7DB /* SettingsManager.swift */,
+			);
+			path = "Settings Manager";
+			sourceTree = "<group>";
+		};
+		829A514F296744A10056A7DB /* Navigation Manager */ = {
+			isa = PBXGroup;
+			children = (
+				829A5150296744BF0056A7DB /* NavigationManager.swift */,
+			);
+			path = "Navigation Manager";
 			sourceTree = "<group>";
 		};
 		829D3D372950EB3600B4C924 /* Cells */ = {
@@ -3033,13 +3058,13 @@
 		82DF98E427BCE73700548B38 /* Other Modules */ = {
 			isa = PBXGroup;
 			children = (
-				823CFF7027FA1117001FF6D9 /* Start  */,
 				823CFF7127FA1126001FF6D9 /* Auth */,
 				82D35C1C2963336F000EB277 /* Onboarding */,
-				8290FCA327FCC15B00E05DDA /* TabBar  */,
-				823CFF6D27FA10DC001FF6D9 /* Settings */,
-				82CF0D3828A583C3006B53F4 /* Start Quiz */,
 				8209F79A2847F2390093147A /* Splash Screen */,
+				823CFF7027FA1117001FF6D9 /* Start  */,
+				8290FCA327FCC15B00E05DDA /* TabBar  */,
+				82CF0D3828A583C3006B53F4 /* Start Quiz */,
+				823CFF6D27FA10DC001FF6D9 /* Settings */,
 				8238057B28F191B20006A736 /* Quiz Media Library */,
 				82222A2B288C801900C1954D /* Segmented Control */,
 				8261BC1F27E10EF30089CC94 /* Statistics */,
@@ -3767,7 +3792,9 @@
 				8243F16927C2617C00CD9CE4 /* QuizBaseViewModel.swift in Sources */,
 				82CD6BF428885DFF00716443 /* QuizSegmentedViewController.swift in Sources */,
 				826E129227FF509800465E16 /* QuizSwift.swift in Sources */,
+				829A5151296744BF0056A7DB /* NavigationManager.swift in Sources */,
 				82D35C1E29633398000EB277 /* OnboardingViewController.swift in Sources */,
+				829A514C296735E10056A7DB /* SettingsManager.swift in Sources */,
 				82F7918B27CC04A00041DAB3 /* QuizEconomy.swift in Sources */,
 				8261BC2927E1139A0089CC94 /* QuizChemistry.swift in Sources */,
 				827F8C0E27E81B7400F6D7B3 /* SoundClass.swift in Sources */,
@@ -3808,6 +3835,7 @@
 				82D35C2429634355000EB277 /* OnboardingSlide.swift in Sources */,
 				8213BF7127D6AAC800D07512 /* QuizPhysics.swift in Sources */,
 				8243F16527C25A1200CD9CE4 /* QuizTaskModel.swift in Sources */,
+				829A514E296739530056A7DB /* ProfileInfoViewModel.swift in Sources */,
 				82CF0D3A28A583D9006B53F4 /* QuizStartViewController.swift in Sources */,
 				82D35C2129633A55000EB277 /* UIView+Extensions.swift in Sources */,
 				82DC6E1C27E65E790077D107 /* StartViewController.swift in Sources */,

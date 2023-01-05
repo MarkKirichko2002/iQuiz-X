@@ -13,16 +13,13 @@ import SCLAlertView
 
 class FirebaseManager {
     
-    private let defaults = UserDefaults.standard
     private let db = Firestore.firestore()
-    private var view = UIView()
     private let storage = Storage.storage().reference()
-    private var player = SoundClass()
-    private var image = ""
+    private let player = SoundClass()
     private var quizCategoryViewModel: QuizCategoryViewModel?
     private var quizTaskViewModel: QuizTaskViewModel?
     private var players = [Player]()
-    let voicepassword = UserDefaults.standard.object(forKey: "voicepassword") as? String
+    private let settingsManager = SettingsManager()
     var email = Auth.auth().currentUser?.email ?? ""
     
     // загрузить данные о категориях викторины
@@ -70,7 +67,7 @@ class FirebaseManager {
         }
     }
     
-    // загрузить данные о последней категории
+    // загрузить данные о последней категории викторины
     func LoadLastQuizCategoryData(completion: @escaping(QuizResult)->()) {
         let docRef = db.collection("users").document((Auth.auth().currentUser?.email)!)
         
@@ -146,7 +143,7 @@ class FirebaseManager {
                         let bestscore = category["bestscore"] as? Int ?? 0
                         let category = category["category"] as? String ?? ""
                         
-                        let user = Profile(name: name, email: email ?? "", score: bestscore, correctAnswers: CorrectAnswersCounter, category: category, image: image, icon: icon, background: background ?? "", password: password ?? "", voicepassword: self.voicepassword ?? "", categorysound: sound, categoryDate: date)
+                        let user = Profile(name: name, email: email ?? "", score: bestscore, correctAnswers: CorrectAnswersCounter, category: category, image: image, icon: icon, background: background ?? "", password: password ?? "", voicepassword: self.settingsManager.voicepassword, categorysound: sound, categoryDate: date)
                         completion(user)
                     }
                 }
@@ -193,6 +190,7 @@ class FirebaseManager {
         }
     }
     
+    // воспроизвести звук последней категории викторины
     func PlayLastQuizSound() {
         let docRef = db.collection("users").document((Auth.auth().currentUser?.email) ?? "")
         docRef.getDocument { document, error in
@@ -209,29 +207,8 @@ class FirebaseManager {
         }
     }
     
-    func load(profileimage: UIImageView) {
-        guard let urlString = UserDefaults.standard.value(forKey: "url") as? String,
-              let url = URL(string: urlString) else {
-            return
-        }
-        
-        let task = URLSession.shared.dataTask(with: url, completionHandler: {data, _, error in
-            
-            guard let data = data, error == nil else {
-                return
-            }
-            
-            DispatchQueue.main.async {
-                let image = UIImage(data: data)
-                profileimage.image = image
-            }
-        })
-        
-        task.resume()
-    }
-    
-    
-    func write(string: String) {
+    // обновить фото профиля
+    func UpdateProfilePhoto(string: String) {
         db.collection("users").document(Auth.auth().currentUser?.email ?? "").updateData([
             "image": string
         ]) { err in
@@ -244,78 +221,29 @@ class FirebaseManager {
         }
     }
     
-    func delete() {
+    func DeleteAccount() {
         
         if Auth.auth().currentUser?.email != nil {
            
             let user = Auth.auth().currentUser
-            
-            let email = defaults.object(forKey: "email") as? String
-            print(email ?? "")
             
             user?.delete { error in
                 if let error = error {
                     SCLAlertView().showError("Ошибка!", subTitle: "что-то пошло не так")
                 } else {
                     print("удален \(user)")
-                    self.db.collection("users").document(email ?? "").delete()
-                    self.storage.child("images/\(email ?? "")").delete()
-                    self.defaults.set("", forKey: "email")
-                    self.defaults.set("", forKey: "password")
-                    self.defaults.set(false, forKey: "off")
-                    self.defaults.set(false, forKey: "offaudio")
-                    self.defaults.set(false, forKey: "offhints")
-                    self.defaults.set(false, forKey: "offspeach")
-                    self.defaults.set(false, forKey: "offmusic")
-                    self.defaults.set(false, forKey: "offtimer")
-                    self.defaults.set(false, forKey: "offattempts")
-                    
-                    self.defaults.set(false, forKey: "onstatus")
-                    self.defaults.set(false, forKey: "onstatusaudio")
-                    self.defaults.set(false, forKey: "onstatushints")
-                    self.defaults.set(false, forKey: "onstatusspeach")
-                    self.defaults.set(false, forKey: "onstatusmusic")
-                    
+                    self.db.collection("users").document(self.email).delete()
+                    self.storage.child("images/\(self.email)").delete()
+                    self.settingsManager.ResetSettings()
                     SCLAlertView().showSuccess("Успех!", subTitle: "пользователь успешно удален")
                 }
             }
-            
         } else {
             print("no user")
-        }
-    }
-    
-    func loadVoiceInfo(passwordLabel: UILabel) {
-        var voicepassword = defaults.object(forKey: "voicepassword") as? String
-        passwordLabel.text = voicepassword
-    }
-    
-    func loadSecretInfo(namelabel: UILabel, emailLabel: UILabel, passwordLabel: UILabel) {
-        
-        let name = defaults.object(forKey:"name") as? String
-        let email = defaults.object(forKey:"email") as? String
-        let password = defaults.object(forKey:"password") as? String
-        
-        namelabel.text = name
-        emailLabel.text = email
-        passwordLabel.text = password
-        
-        if name == "" || name == nil {
-            emailLabel.text = "нет имени"
-        }
-        
-        if email == "" || email == nil {
-            emailLabel.text = "нет email"
-        }
-        
-        if password == "" || password == nil {
-            passwordLabel.text = "нет пароля"
         }
     }
     
     func SignOutAction() {
         try? Auth.auth().signOut()
     }
-    
 }
-
