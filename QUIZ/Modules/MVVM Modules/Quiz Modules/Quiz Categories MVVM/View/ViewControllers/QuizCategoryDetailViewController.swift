@@ -15,9 +15,11 @@ final class QuizCategoryDetailViewController: UIViewController {
     @IBOutlet weak var CompleteStatus: UILabel!
     @IBOutlet weak var CategoryScore: UILabel!
     @IBOutlet weak var PlayButton: UIButton!
+    @IBOutlet weak var VoiceCommandLabel: UILabel!
+    @IBOutlet weak var DateLabel: UILabel!
     
     var category: QuizCategoryModel?
-    var player = SoundClass()
+    private let player = SoundClass()
     private let categoriesViewModel = CategoriesViewModel()
     private let animation = AnimationClass()
     
@@ -30,11 +32,14 @@ final class QuizCategoryDetailViewController: UIViewController {
         CategoryIcon.image = UIImage(named: category.image)
         CategoryIcon.color = .white
         CategoryIcon.sound = category.sound
-        CategoryName.textColor = .white
         CategoryName.text = category.name
-        CategoryScore.textColor = .white
+        CategoryName.textColor = .white
         CategoryScore.text = "\(category.score)/100"
-        CompleteStatus.textColor = .white
+        CategoryScore.textColor = .white
+        VoiceCommandLabel.text = "Ваша голосовая команда: \n\"\(category.voiceCommand)\""
+        VoiceCommandLabel.textColor = UIColor.white
+        DateLabel.text = "Вы играли последний раз: \n🗓️ \(category.date)"
+        DateLabel.textColor = UIColor.white
         PlayButton.tintColor = .white
         switch category.complete {
             
@@ -46,6 +51,7 @@ final class QuizCategoryDetailViewController: UIViewController {
             CompleteStatus.text = "не пройдено"
             CompleteStatus.textColor = .systemGray
         }
+        CompleteStatus.textColor = .white
     }
     
     override func viewDidAppear(_ animated: Bool) {

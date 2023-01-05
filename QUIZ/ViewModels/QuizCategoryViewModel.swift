@@ -11,4 +11,5 @@ struct QuizCategoryViewModel {
     var score: Int
     var CorrectAnswersCounter: Int
     var complete: Bool
+    var date: String
 }

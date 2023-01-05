@@ -34,7 +34,7 @@ class NavigationManager {
         }
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-            guard let controller = self.storyboard?.instantiateViewController(withIdentifier: "ViewController") as? UIViewController else {return}
+            guard let controller = self.storyboard?.instantiateViewController(withIdentifier: "QuizTabBarController") as? UIViewController else {return}
             controller.modalPresentationStyle = .fullScreen
             controller.modalTransitionStyle = .flipHorizontal
             self.vc?.present(controller, animated: true, completion: nil)

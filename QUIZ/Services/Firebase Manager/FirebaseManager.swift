@@ -35,8 +35,9 @@ class FirebaseManager {
                         let complete = category["complete"] as? Bool ?? false
                         let bestscore = category["bestscore"] as? Int ?? 0
                         let CorrectAnswersCounter = category["CorrectAnswersCounter"] as? Int ?? 0
+                        let date = category["date"] as? String ?? "дата отсутствует"
                         
-                        self.quizCategoryViewModel = QuizCategoryViewModel(score: bestscore, CorrectAnswersCounter: CorrectAnswersCounter, complete: complete)
+                        self.quizCategoryViewModel = QuizCategoryViewModel(score: bestscore, CorrectAnswersCounter: CorrectAnswersCounter, complete: complete, date: date)
                         guard let model = self.quizCategoryViewModel else {return}
                         completion(model)
                     }
@@ -77,14 +78,14 @@ class FirebaseManager {
             } else {
                 if let document = document {
                     if let category = document["lastquiz"] as? [String: Any] {
-                        let CorrectAnswersCounter = category["CorrectAnswersCounter"] as? Int
-                        let icon = category["icon"] as? String
-                        let sound = category["sound"] as? String
-                        let background = category["background"] as? String
+                        let CorrectAnswersCounter = category["CorrectAnswersCounter"] as? Int ?? 0
+                        let icon = category["icon"] as? String ?? ""
+                        let sound = category["sound"] as? String ?? ""
+                        let background = category["background"] as? String ?? ""
                         let bestscore = category["bestscore"] as? Int ?? 0
                         let category = category["category"] as? String ?? ""
                         
-                        let result = QuizResult(categoryName: category, icon: icon ?? "", bestscore: bestscore, CorrectAnswersCounter: CorrectAnswersCounter ?? 0, background: background ?? "", sound: sound ?? "")
+                        let result = QuizResult(categoryName: category, icon: icon, bestscore: bestscore, CorrectAnswersCounter: CorrectAnswersCounter, background: background, sound: sound)
                         completion(result)
                     }
                 }
@@ -99,19 +100,19 @@ class FirebaseManager {
                 print("Error getting documents : \(err)")
             } else {
                 for document in QuerySnapshot!.documents {
-                    let name = document.get("name") as? String
-                    let email = document.get("email") as? String
-                    let photo = document.get("image") as? String
+                    let name = document.get("name") as? String ?? "нет имени"
+                    let email = document.get("email") as? String ?? "нет email"
+                    let photo = document.get("image") as? String ?? ""
                     
                     if let category = document["lastquiz"] as? [String: Any] {
                         let sound = category["sound"] as? String ?? ""
                         let music = category["music"] as? String ?? ""
-                        let CorrectAnswersCounter = category["CorrectAnswersCounter"] as? Int
-                        let background = category["background"] as? String
+                        let CorrectAnswersCounter = category["CorrectAnswersCounter"] as? Int ?? 0
+                        let background = category["background"] as? String ?? ""
                         let bestscore = category["bestscore"] as? Int ?? 0
                         let category = category["category"] as? String ?? ""
                         
-                        self.players.append(Player(name: name ?? "", counter: bestscore , email: email ?? "", CorrectAnswersCounter: CorrectAnswersCounter ?? 0, category: category, categoryMusic: music , image: photo ?? "", background: background ?? "", sound: sound))
+                        self.players.append(Player(name: name, counter: bestscore , email: email, CorrectAnswersCounter: CorrectAnswersCounter, category: category, categoryMusic: music , image: photo, background: background, sound: sound))
                     }
                     self.players.sort(by: { $0.counter > $1.counter })
                     completion(self.players)
@@ -129,21 +130,21 @@ class FirebaseManager {
             } else {
                 if let document = document {
                     let data = document.data()
-                    let name = data?["name"] as? String ?? ""
-                    let email = data?["email"] as? String
+                    let name = data?["name"] as? String ?? "нет имени"
+                    let email = data?["email"] as? String ?? "нет email"
                     let image = data?["image"] as? String ?? "https://cdn-icons-png.flaticon.com/512/3637/3637624.png"
-                    let password = data?["password"] as? String
+                    let password = data?["password"] as? String ?? ""
                     
                     if let category = document["lastquiz"] as? [String: Any] {
                         let CorrectAnswersCounter = category["CorrectAnswersCounter"] as? Int ?? 0
                         let icon = category["icon"] as? String ?? ""
                         let date = category["date"] as? String ?? ""
                         let sound = category["sound"] as? String ?? ""
-                        let background = category["background"] as? String
+                        let background = category["background"] as? String ?? ""
                         let bestscore = category["bestscore"] as? Int ?? 0
                         let category = category["category"] as? String ?? ""
                         
-                        let user = Profile(name: name, email: email ?? "", score: bestscore, correctAnswers: CorrectAnswersCounter, category: category, image: image, icon: icon, background: background ?? "", password: password ?? "", voicepassword: self.settingsManager.voicepassword, categorysound: sound, categoryDate: date)
+                        let user = Profile(name: name, email: email, score: bestscore, correctAnswers: CorrectAnswersCounter, category: category, image: image, icon: icon, background: background, password: password, voicepassword: self.settingsManager.voicepassword, categorysound: sound, categoryDate: date)
                         completion(user)
                     }
                 }

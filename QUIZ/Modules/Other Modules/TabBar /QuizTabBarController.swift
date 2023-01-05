@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  QuizTabBarController.swift
 //  QUIZ
 //
 //  Created by Марк Киричко on 16.02.2022.
@@ -8,7 +8,7 @@
 import UIKit
 import Speech
 
-class ViewController: UITabBarController {
+class QuizTabBarController: UITabBarController {
     
     private let player = SoundClass()
     private let button = UIButton()
@@ -38,7 +38,7 @@ class ViewController: UITabBarController {
         button.frame = CGRect(x: 0, y: 0, width: 44, height: 44)
         button.layer.borderWidth = 2
         self.view.insertSubview(button, aboveSubview: self.tabBar)
-        button.addTarget(self, action:  #selector(ViewController.VoiceCommands(_:)), for: .touchUpInside)
+        button.addTarget(self, action:  #selector(QuizTabBarController.VoiceCommands(_:)), for: .touchUpInside)
     }
     
     override func viewDidLayoutSubviews() {
@@ -169,16 +169,17 @@ class ViewController: UITabBarController {
          
         // выбор категории викторины
         case _ where self.text != "":
-           
             for i in 0...5 {
                 for value in self.categoriesViewModel.categories[i].categories {
                     if self.text.lowercased().contains(value.voiceCommand) {
-                        self.icon = value.image
-                        self.button.setImage(UIImage(named: self.icon), for: .normal)
-                        self.animation.springButton(button: self.button)
-                        self.player.PlaySound(resource: value.sound)
-                        self.sound = value.sound
-                        self.categoriesViewModel.GoToStart(quiz: value.base, category: value)
+                        DispatchQueue.main.async {
+                            self.icon = value.image
+                            self.button.setImage(UIImage(named: self.icon), for: .normal)
+                            self.animation.springButton(button: self.button)
+                            self.player.PlaySound(resource: value.sound)
+                            self.sound = value.sound
+                            self.categoriesViewModel.GoToStart(quiz: value.base, category: value)
+                        }
                     }
                 }
             }
@@ -279,7 +280,7 @@ class ViewController: UITabBarController {
     }
 }
 
-extension ViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+extension QuizTabBarController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
