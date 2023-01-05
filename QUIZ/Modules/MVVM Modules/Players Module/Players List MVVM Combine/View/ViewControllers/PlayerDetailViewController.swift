@@ -5,19 +5,20 @@
 //  Created by Марк Киричко on 06.12.2022.
 //
 
-import Foundation
 import UIKit
 import SnapKit
 import SDWebImage
+import Combine
 
 class PlayerDetailViewController: UIViewController {
     
-    var PlayerImage = RoundedImageView()
-    var PlayerName = UILabel()
-    var PlayerEmail = UILabel()
-    var PlayerScore = UILabel()
-    var table = UITableView()
-    var playersViewModel = PlayersViewModel()
+    private let PlayerImage = RoundedImageView()
+    private let PlayerName = UILabel()
+    private let PlayerEmail = UILabel()
+    private let PlayerScore = UILabel()
+    private let table = UITableView()
+    private let playersViewModel = PlayersViewModel()
+    private var cancellation: Set<AnyCancellable> = []
     var player: Player?
     
     override func viewDidLoad() {
@@ -26,6 +27,12 @@ class PlayerDetailViewController: UIViewController {
         table.delegate = self
         table.dataSource = self
         table.register(UINib(nibName: CategoryTableViewCell.identifier, bundle: nil), forCellReuseIdentifier: CategoryTableViewCell.identifier)
+        playersViewModel.$categories.sink {[weak self] _ in
+            DispatchQueue.main.async {
+                self?.table.reloadData()
+            }
+        }.store(in: &cancellation)
+        playersViewModel.LoadResults()
         SetUpView()
         SetUpConstraints()
     }
@@ -102,9 +109,7 @@ extension PlayerDetailViewController: UITableViewDelegate, UITableViewDataSource
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: CategoryTableViewCell.identifier, for: indexPath) as! CategoryTableViewCell
-        playersViewModel.configure(playersViewModel.categories[indexPath.row], CategoryImage: cell.CategoryImage, CategoryText: cell.CategoryText, isComplete: cell.isComplete, CategoryScore: cell.CategoryScore, background: cell)
-        cell.CategoryImage.sound = playersViewModel.categories[indexPath.row].sound
-        cell.CategoryImage.color = .white
+        cell.ConfigureCell(category: playersViewModel.categories[indexPath.row])
         return cell
     }
 
