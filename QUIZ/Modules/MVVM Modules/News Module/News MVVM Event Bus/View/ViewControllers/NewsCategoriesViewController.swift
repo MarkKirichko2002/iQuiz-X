@@ -10,7 +10,7 @@ import UIKit
 class NewsCategoriesViewController: UIViewController {
     
     private var newsListViewModel = NewsListViewModel()
-    private let categories = [NewsCategoryModel(id: 1, name: "главное", icon: "newspaper", sound: "literature.mp3"), NewsCategoryModel(id: 2, name: "технологии", icon: "technology", sound: "technology.wav"), NewsCategoryModel(id: 3, name: "спорт", icon: "sport", sound: "sport.mp3"),NewsCategoryModel(id: 4, name: "бизнес", icon: "business", sound: "economics.mp3"), NewsCategoryModel(id: 5, name: "наука", icon: "science", sound: "chemistry.mp3")]
+    private let categories = [NewsCategoryModel(id: 1, name: "главное", icon: "newspaper", sound: "literature.mp3"), NewsCategoryModel(id: 2, name: "технологии", icon: "technology", sound: "technology.wav"), NewsCategoryModel(id: 3, name: "спорт", icon: "sport.jpeg", sound: "sport.mp3"),NewsCategoryModel(id: 4, name: "бизнес", icon: "business", sound: "economics.mp3"), NewsCategoryModel(id: 5, name: "наука", icon: "science", sound: "chemistry.mp3")]
     private var category: NewsCategoryModel?
     private let animation = AnimationClass()
     private let player = SoundClass()
