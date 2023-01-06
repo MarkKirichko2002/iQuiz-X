@@ -242,7 +242,7 @@
                     </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="Mze-v6-U77">
-                        <rect key="frame" x="0.0" y="59" width="430" height="104.33333333333334"/>
+                        <rect key="frame" x="0.0" y="59" width="430" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <textAttributes key="largeTitleTextAttributes">
                             <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1909,7 +1909,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="erK-ie-9FO">
-                                <rect key="frame" x="158.66666666666666" y="444" width="112.99999999999997" height="44"/>
+                                <rect key="frame" x="50" y="416" width="330" height="44"/>
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="играть">
@@ -1931,20 +1931,39 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ваша голосовая команда: &quot;астрономия&quot;" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3K1-OV-Lk7">
+                                <rect key="frame" x="30" y="239" width="370" height="48"/>
+                                <fontDescription key="fontDescription" type="system" weight="black" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Вы играли последний раз: 🗓️дата" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FOA-a6-Nnc">
+                                <rect key="frame" x="30" y="317" width="370" height="24"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="LiB-Kq-PIR"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="yxe-Cq-0VG" firstAttribute="top" secondItem="LiB-Kq-PIR" secondAttribute="top" constant="30" id="50Z-cj-hik"/>
-                            <constraint firstItem="erK-ie-9FO" firstAttribute="centerY" secondItem="X7h-cy-ZhV" secondAttribute="centerY" id="8p7-Xw-qDQ"/>
+                            <constraint firstItem="LiB-Kq-PIR" firstAttribute="trailing" secondItem="FOA-a6-Nnc" secondAttribute="trailing" constant="30" id="Dti-t7-Pym"/>
                             <constraint firstItem="nXU-7M-TKZ" firstAttribute="leading" secondItem="yxe-Cq-0VG" secondAttribute="trailing" constant="20" id="JW7-7c-42r"/>
                             <constraint firstItem="Pjo-1p-TZy" firstAttribute="leading" secondItem="yxe-Cq-0VG" secondAttribute="trailing" constant="20" id="KEq-yI-2hl"/>
+                            <constraint firstItem="erK-ie-9FO" firstAttribute="leading" secondItem="LiB-Kq-PIR" secondAttribute="leading" constant="50" id="ONI-ji-N0R"/>
+                            <constraint firstItem="erK-ie-9FO" firstAttribute="top" secondItem="FOA-a6-Nnc" secondAttribute="bottom" constant="75" id="Tk9-cK-trW"/>
+                            <constraint firstItem="FOA-a6-Nnc" firstAttribute="leading" secondItem="LiB-Kq-PIR" secondAttribute="leading" constant="30" id="aaY-vq-gHF"/>
                             <constraint firstItem="LiB-Kq-PIR" firstAttribute="trailing" secondItem="Pjo-1p-TZy" secondAttribute="trailing" constant="30" id="alT-9z-Uf4"/>
                             <constraint firstItem="jzo-TH-b1Y" firstAttribute="top" secondItem="Pjo-1p-TZy" secondAttribute="bottom" constant="20" id="fJP-Op-Cq5"/>
                             <constraint firstItem="nXU-7M-TKZ" firstAttribute="top" secondItem="jzo-TH-b1Y" secondAttribute="bottom" constant="20" id="fKR-iO-vda"/>
                             <constraint firstItem="yxe-Cq-0VG" firstAttribute="leading" secondItem="LiB-Kq-PIR" secondAttribute="leading" constant="30" id="fe8-zI-NR5"/>
-                            <constraint firstItem="erK-ie-9FO" firstAttribute="centerX" secondItem="X7h-cy-ZhV" secondAttribute="centerX" id="mv8-J8-0Od"/>
+                            <constraint firstItem="LiB-Kq-PIR" firstAttribute="trailing" secondItem="erK-ie-9FO" secondAttribute="trailing" constant="50" id="gaW-0d-FYS"/>
+                            <constraint firstItem="3K1-OV-Lk7" firstAttribute="top" secondItem="yxe-Cq-0VG" secondAttribute="bottom" constant="30" id="hx0-1e-Oha"/>
+                            <constraint firstItem="FOA-a6-Nnc" firstAttribute="top" secondItem="3K1-OV-Lk7" secondAttribute="bottom" constant="30" id="iOf-uG-rRA"/>
+                            <constraint firstItem="LiB-Kq-PIR" firstAttribute="trailing" secondItem="3K1-OV-Lk7" secondAttribute="trailing" constant="30" id="mTC-yZ-xpJ"/>
                             <constraint firstItem="LiB-Kq-PIR" firstAttribute="trailing" secondItem="jzo-TH-b1Y" secondAttribute="trailing" constant="30" id="nF8-sh-Qmh"/>
+                            <constraint firstItem="3K1-OV-Lk7" firstAttribute="leading" secondItem="LiB-Kq-PIR" secondAttribute="leading" constant="30" id="o6O-At-TfD"/>
                             <constraint firstItem="LiB-Kq-PIR" firstAttribute="trailing" secondItem="nXU-7M-TKZ" secondAttribute="trailing" constant="30" id="tgJ-4w-cR9"/>
                             <constraint firstItem="Pjo-1p-TZy" firstAttribute="top" secondItem="LiB-Kq-PIR" secondAttribute="top" constant="30" id="vEy-JY-gSw"/>
                             <constraint firstItem="jzo-TH-b1Y" firstAttribute="leading" secondItem="yxe-Cq-0VG" secondAttribute="trailing" constant="20" id="xXi-om-RuL"/>
@@ -1956,7 +1975,9 @@
                         <outlet property="CategoryName" destination="Pjo-1p-TZy" id="mgk-B0-rAr"/>
                         <outlet property="CategoryScore" destination="nXU-7M-TKZ" id="t7W-tb-t7z"/>
                         <outlet property="CompleteStatus" destination="jzo-TH-b1Y" id="tfW-BF-gPd"/>
+                        <outlet property="DateLabel" destination="FOA-a6-Nnc" id="E4u-NM-HRG"/>
                         <outlet property="PlayButton" destination="erK-ie-9FO" id="bKf-Gu-Rgh"/>
+                        <outlet property="VoiceCommandLabel" destination="3K1-OV-Lk7" id="gYa-jE-Ygz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Dy5-s9-Umd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
