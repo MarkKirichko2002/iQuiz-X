@@ -39,9 +39,12 @@ class StartViewController: UIViewController {
         categoriesViewModel.view = self.view
         categoriesViewModel.storyboard = self.storyboard
         // навигация
+        navigationManager.view = self.view
         navigationManager.storyboard = self.storyboard
         navigationManager.vc = self
         navigationManager.button = self.StartButton
+        navigationManager.button2 = self.TodayQuizButton
+        navigationManager.category = self.categoriesViewModel.quizcategories[randomindex]
         
         self.CheckTime()
         self.Image.color = .white
@@ -62,7 +65,7 @@ class StartViewController: UIViewController {
         self.StartButton.isUserInteractionEnabled = true
         self.StartButton.addGestureRecognizer(tap)
         
-        let tap2 = UITapGestureRecognizer(target: self, action: #selector(GoToRandomQuiz))
+        let tap2 = UITapGestureRecognizer(target: navigationManager, action: #selector(navigationManager.GoToDailyQuiz))
         self.TodayQuizButton.isUserInteractionEnabled = true
         self.TodayQuizButton.addGestureRecognizer(tap2)
     }

@@ -389,6 +389,7 @@
 		829A515E296856690056A7DB /* entertainment.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 829A5158296856690056A7DB /* entertainment.mp3 */; };
 		829A51602968566A0056A7DB /* technology.wav in Resources */ = {isa = PBXBuildFile; fileRef = 829A515A296856690056A7DB /* technology.wav */; };
 		829A51622968566A0056A7DB /* sport.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 829A515C296856690056A7DB /* sport.mp3 */; };
+		829A5166296874F40056A7DB /* DailyQuizViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 829A5165296874F40056A7DB /* DailyQuizViewController.swift */; };
 		829DC874296445F2006C9D91 /* skip.png in Resources */ = {isa = PBXBuildFile; fileRef = 829DC873296445F2006C9D91 /* skip.png */; };
 		829DC87C2964C2C2006C9D91 /* SpeechRecognitionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 829DC87B2964C2C2006C9D91 /* SpeechRecognitionManager.swift */; };
 		829DC8972965A968006C9D91 /* QuizTaskDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 829DC8962965A968006C9D91 /* QuizTaskDetailViewController.swift */; };
@@ -1026,6 +1027,7 @@
 		829A5158296856690056A7DB /* entertainment.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = entertainment.mp3; path = "../../../../../../../Downloads/News-VIPER-updates/NewsAPI/NewsAPI/NewsAPIPackage/Sources/NewsAPIPackage/sounds/entertainment.mp3"; sourceTree = "<group>"; };
 		829A515A296856690056A7DB /* technology.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = technology.wav; path = "../../../../../../../Downloads/News-VIPER-updates/NewsAPI/NewsAPI/NewsAPIPackage/Sources/NewsAPIPackage/sounds/technology.wav"; sourceTree = "<group>"; };
 		829A515C296856690056A7DB /* sport.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = sport.mp3; path = "../../../../../../../Downloads/News-VIPER-updates/NewsAPI/NewsAPI/NewsAPIPackage/Sources/NewsAPIPackage/sounds/sport.mp3"; sourceTree = "<group>"; };
+		829A5165296874F40056A7DB /* DailyQuizViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyQuizViewController.swift; sourceTree = "<group>"; };
 		829DC873296445F2006C9D91 /* skip.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = skip.png; sourceTree = "<group>"; };
 		829DC87B2964C2C2006C9D91 /* SpeechRecognitionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechRecognitionManager.swift; sourceTree = "<group>"; };
 		829DC8962965A968006C9D91 /* QuizTaskDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizTaskDetailViewController.swift; sourceTree = "<group>"; };
@@ -2249,6 +2251,14 @@
 			path = "news category sounds";
 			sourceTree = "<group>";
 		};
+		829A5164296874DB0056A7DB /* Daily Quiz */ = {
+			isa = PBXGroup;
+			children = (
+				829A5165296874F40056A7DB /* DailyQuizViewController.swift */,
+			);
+			path = "Daily Quiz";
+			sourceTree = "<group>";
+		};
 		829D3D372950EB3600B4C924 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
@@ -3094,6 +3104,7 @@
 		82DF98E427BCE73700548B38 /* Other Modules */ = {
 			isa = PBXGroup;
 			children = (
+				829A5164296874DB0056A7DB /* Daily Quiz */,
 				823CFF7127FA1126001FF6D9 /* Auth */,
 				82D35C1C2963336F000EB277 /* Onboarding */,
 				8209F79A2847F2390093147A /* Splash Screen */,
@@ -3869,6 +3880,7 @@
 				82CBE7EB287093C50045616B /* NewsModel.swift in Sources */,
 				82BC0189294770D400AEB659 /* TasksTableViewController.swift in Sources */,
 				82F564712940D1FB0031F7BD /* QuizCategoryDetailViewController.swift in Sources */,
+				829A5166296874F40056A7DB /* DailyQuizViewController.swift in Sources */,
 				82AFAF6827FA3C25001B04A0 /* ExitTableViewCell.swift in Sources */,
 				82D35C3A2963AA64000EB277 /* VoiceCommandSettingTableViewCell.swift in Sources */,
 				82CBE7E9287093C50045616B /* NewsTableViewController.swift in Sources */,
