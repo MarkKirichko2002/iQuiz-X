@@ -58,15 +58,21 @@ final class QuizCategoryDetailViewController: UIViewController {
         super.viewDidAppear(animated)
         guard let category = self.category else {return}
         self.player.PlaySound(resource: category.music)
+        self.animation.StartRotateImage(image: self.CategoryIcon)
     }
     
     @IBAction func PlayQuiz() {
         guard let category = self.category else {return}
-        animation.springImage(image: self.CategoryIcon)
-        animation.springLabel(label: self.CategoryName)
-        animation.springButton(button: self.PlayButton)
-        player.StopSound(resource: category.music)
-        player.PlaySound(resource: category.sound)
-        categoriesViewModel.GoToStart(quiz: category.base, category: category)
+        DispatchQueue.main.async {
+            self.animation.springImage(image: self.CategoryIcon)
+            self.animation.springLabel(label: self.CategoryName)
+            self.animation.springLabel(label: self.CategoryScore)
+            self.animation.springLabel(label: self.CompleteStatus)
+            self.animation.springButton(button: self.PlayButton)
+            self.player.StopSound(resource: category.music)
+            self.player.PlaySound(resource: category.sound)
+            self.animation.StopRotateImage(image: self.CategoryIcon)
+            self.categoriesViewModel.GoToStart(quiz: category.base, category: category)
+        }
     }
 }

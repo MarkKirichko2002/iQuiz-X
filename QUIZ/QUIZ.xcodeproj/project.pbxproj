@@ -361,7 +361,7 @@
 		8294095427CECE1900AFF603 /* geography5.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 8294094A27CECE1900AFF603 /* geography5.jpeg */; };
 		8295F1942950AB25000E033E /* QuizCategoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8295F1932950AB25000E033E /* QuizCategoryViewModel.swift */; };
 		8295F1962950AB3A000E033E /* QuizTaskViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8295F1952950AB3A000E033E /* QuizTaskViewModel.swift */; };
-		8295F19B2950B68A000E033E /* Quiz.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8295F19A2950B68A000E033E /* Quiz.swift */; };
+		8295F19B2950B68A000E033E /* QuizCategoriesSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8295F19A2950B68A000E033E /* QuizCategoriesSection.swift */; };
 		8295F1A92950B70B000E033E /* underwater2.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 8295F19C2950B709000E033E /* underwater2.jpeg */; };
 		8295F1AA2950B70B000E033E /* underwater10.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 8295F19D2950B709000E033E /* underwater10.jpeg */; };
 		8295F1AB2950B70B000E033E /* underwater6.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 8295F19E2950B709000E033E /* underwater6.jpeg */; };
@@ -995,7 +995,7 @@
 		8294094A27CECE1900AFF603 /* geography5.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = geography5.jpeg; sourceTree = "<group>"; };
 		8295F1932950AB25000E033E /* QuizCategoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizCategoryViewModel.swift; sourceTree = "<group>"; };
 		8295F1952950AB3A000E033E /* QuizTaskViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizTaskViewModel.swift; sourceTree = "<group>"; };
-		8295F19A2950B68A000E033E /* Quiz.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quiz.swift; sourceTree = "<group>"; };
+		8295F19A2950B68A000E033E /* QuizCategoriesSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizCategoriesSection.swift; sourceTree = "<group>"; };
 		8295F19C2950B709000E033E /* underwater2.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = underwater2.jpeg; sourceTree = "<group>"; };
 		8295F19D2950B709000E033E /* underwater10.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = underwater10.jpeg; sourceTree = "<group>"; };
 		8295F19E2950B709000E033E /* underwater6.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = underwater6.jpeg; sourceTree = "<group>"; };
@@ -2497,7 +2497,7 @@
 		82CBE7F72870A8770045616B /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				8295F19A2950B68A000E033E /* Quiz.swift */,
+				8295F19A2950B68A000E033E /* QuizCategoriesSection.swift */,
 				82B760E927CA75E800540E0F /* QuizCategoryModel.swift */,
 			);
 			path = Model;
@@ -3815,7 +3815,7 @@
 				82D35BDF2963130A000EB277 /* CustomViewCellDelegate.swift in Sources */,
 				82251C34287E661F00723057 /* URLViewController.swift in Sources */,
 				8243F16B27C266F800CD9CE4 /* QuizBaseViewController.swift in Sources */,
-				8295F19B2950B68A000E033E /* Quiz.swift in Sources */,
+				8295F19B2950B68A000E033E /* QuizCategoriesSection.swift in Sources */,
 				827B545327C01092000ACB31 /* QuizGames.swift in Sources */,
 				826E12AD27FF89DA00465E16 /* HintsTableViewCell.swift in Sources */,
 				823A8EB927FF06F600C7965B /* MicrophoneTableViewCell.swift in Sources */,
