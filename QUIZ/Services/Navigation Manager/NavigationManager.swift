@@ -15,9 +15,12 @@ class NavigationManager {
     var storyboard: UIStoryboard?
     var vc: UIViewController?
     var button: UIButton?
+    var button2: UIButton?
     
     private let animation = AnimationClass()
     private let player = SoundClass()
+    var sound = ""
+    var category: QuizCategoryModel?
     
     // показать экран логина
     func ShowLoginScreen() {
@@ -38,6 +41,24 @@ class NavigationManager {
             controller.modalPresentationStyle = .fullScreen
             controller.modalTransitionStyle = .flipHorizontal
             self.vc?.present(controller, animated: true, completion: nil)
+        }
+    }
+    
+    @objc func GoToDailyQuiz() {
+        
+        if let category = self.category {
+            
+            if let button2 = self.button2 {
+                self.player.PlaySound(resource: category.sound)
+                self.animation.springButton(button: button2)
+            }
+            
+            DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                guard let vc = self.storyboard?.instantiateViewController(identifier: "DailyQuizViewController") else {return}
+                (vc as? DailyQuizViewController)?.category = category
+                guard let window = self.view?.window else {return}
+                window.rootViewController = vc
+            }
         }
     }
 }
