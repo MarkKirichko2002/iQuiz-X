@@ -386,6 +386,9 @@
 		829A514E296739530056A7DB /* ProfileInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 829A514D296739530056A7DB /* ProfileInfoViewModel.swift */; };
 		829A5151296744BF0056A7DB /* NavigationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 829A5150296744BF0056A7DB /* NavigationManager.swift */; };
 		829A515429675E790056A7DB /* DateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 829A515329675E790056A7DB /* DateManager.swift */; };
+		829A515E296856690056A7DB /* entertainment.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 829A5158296856690056A7DB /* entertainment.mp3 */; };
+		829A51602968566A0056A7DB /* technology.wav in Resources */ = {isa = PBXBuildFile; fileRef = 829A515A296856690056A7DB /* technology.wav */; };
+		829A51622968566A0056A7DB /* sport.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 829A515C296856690056A7DB /* sport.mp3 */; };
 		829DC874296445F2006C9D91 /* skip.png in Resources */ = {isa = PBXBuildFile; fileRef = 829DC873296445F2006C9D91 /* skip.png */; };
 		829DC87C2964C2C2006C9D91 /* SpeechRecognitionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 829DC87B2964C2C2006C9D91 /* SpeechRecognitionManager.swift */; };
 		829DC8972965A968006C9D91 /* QuizTaskDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 829DC8962965A968006C9D91 /* QuizTaskDetailViewController.swift */; };
@@ -1020,6 +1023,9 @@
 		829A514D296739530056A7DB /* ProfileInfoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileInfoViewModel.swift; sourceTree = "<group>"; };
 		829A5150296744BF0056A7DB /* NavigationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationManager.swift; sourceTree = "<group>"; };
 		829A515329675E790056A7DB /* DateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateManager.swift; sourceTree = "<group>"; };
+		829A5158296856690056A7DB /* entertainment.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = entertainment.mp3; path = "../../../../../../../Downloads/News-VIPER-updates/NewsAPI/NewsAPI/NewsAPIPackage/Sources/NewsAPIPackage/sounds/entertainment.mp3"; sourceTree = "<group>"; };
+		829A515A296856690056A7DB /* technology.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = technology.wav; path = "../../../../../../../Downloads/News-VIPER-updates/NewsAPI/NewsAPI/NewsAPIPackage/Sources/NewsAPIPackage/sounds/technology.wav"; sourceTree = "<group>"; };
+		829A515C296856690056A7DB /* sport.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = sport.mp3; path = "../../../../../../../Downloads/News-VIPER-updates/NewsAPI/NewsAPI/NewsAPIPackage/Sources/NewsAPIPackage/sounds/sport.mp3"; sourceTree = "<group>"; };
 		829DC873296445F2006C9D91 /* skip.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = skip.png; sourceTree = "<group>"; };
 		829DC87B2964C2C2006C9D91 /* SpeechRecognitionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechRecognitionManager.swift; sourceTree = "<group>"; };
 		829DC8962965A968006C9D91 /* QuizTaskDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizTaskDetailViewController.swift; sourceTree = "<group>"; };
@@ -1305,6 +1311,7 @@
 		820C627227BBA3CA004894FA = {
 			isa = PBXGroup;
 			children = (
+				829A515629684BFC0056A7DB /* Custom Views */,
 				82D35C1F29633A3B000EB277 /* Extensions */,
 				82D35BDD296312D1000EB277 /* Protocols */,
 				8295F1912950AA9F000E033E /* Services */,
@@ -1698,8 +1705,9 @@
 		827F8BF227E8185100F6D7B3 /* sounds */ = {
 			isa = PBXGroup;
 			children = (
+				829A5157296856160056A7DB /* news category sounds */,
 				82CE536B28E9D54300D44A6E /* quiz sounds */,
-				82CE535A28E9D42200D44A6E /* category sounds */,
+				82CE535A28E9D42200D44A6E /* quiz category sounds */,
 				82CE535B28E9D43100D44A6E /* ui sounds */,
 				82CE535D28E9D4B300D44A6E /* themes */,
 			);
@@ -2092,7 +2100,6 @@
 				829A515229675E4B0056A7DB /* Date Manager */,
 				829DC8982965B432006C9D91 /* Text Recognition */,
 				82CE536C28E9D55F00D44A6E /* AudioPlayer */,
-				8295F1972950B3FF000E033E /* Rounded Image */,
 				82C2B5B127BD2F7000C66946 /* Animation Class */,
 			);
 			path = Services;
@@ -2222,6 +2229,24 @@
 				829A515329675E790056A7DB /* DateManager.swift */,
 			);
 			path = "Date Manager";
+			sourceTree = "<group>";
+		};
+		829A515629684BFC0056A7DB /* Custom Views */ = {
+			isa = PBXGroup;
+			children = (
+				8295F1972950B3FF000E033E /* Rounded Image */,
+			);
+			path = "Custom Views";
+			sourceTree = "<group>";
+		};
+		829A5157296856160056A7DB /* news category sounds */ = {
+			isa = PBXGroup;
+			children = (
+				829A5158296856690056A7DB /* entertainment.mp3 */,
+				829A515C296856690056A7DB /* sport.mp3 */,
+				829A515A296856690056A7DB /* technology.wav */,
+			);
+			path = "news category sounds";
 			sourceTree = "<group>";
 		};
 		829D3D372950EB3600B4C924 /* Cells */ = {
@@ -2592,7 +2617,7 @@
 			path = Ecology;
 			sourceTree = "<group>";
 		};
-		82CE535A28E9D42200D44A6E /* category sounds */ = {
+		82CE535A28E9D42200D44A6E /* quiz category sounds */ = {
 			isa = PBXGroup;
 			children = (
 				8286518728FEF93B004806D3 /* space.wav */,
@@ -2616,7 +2641,7 @@
 				8286519928FEF9B8004806D3 /* swift.mp3 */,
 				82811694293A891A00AA7C8E /* newyear.mp3 */,
 			);
-			path = "category sounds";
+			path = "quiz category sounds";
 			sourceTree = "<group>";
 		};
 		82CE535B28E9D43100D44A6E /* ui sounds */ = {
@@ -3441,6 +3466,7 @@
 				8213BF8627D6AC0100D07512 /* physics10.jpeg in Resources */,
 				82EA1F40286BCCB900E49D0F /* economy20.jpeg in Resources */,
 				8243A61D2820810E00427553 /* physics15.jpeg in Resources */,
+				829A515E296856690056A7DB /* entertainment.mp3 in Resources */,
 				82848D10281C6F4C0068A4AE /* drive.jpeg in Resources */,
 				82848D28281C6F5B0068A4AE /* geography.background.jpeg in Resources */,
 				8281168D293A88DC00AA7C8E /* newyear7.jpeg in Resources */,
@@ -3517,6 +3543,7 @@
 				8216FE3027E560AB00DFB0CF /* Assets.xcassets in Resources */,
 				822139122874E75B0065A0C3 /* anatomy music.mp3 in Resources */,
 				82EA1F91286BCD2300E49D0F /* anatomy14.jpeg in Resources */,
+				829A51602968566A0056A7DB /* technology.wav in Resources */,
 				82EA1EE8286BCC1300E49D0F /* Swift3.jpeg in Resources */,
 				829408E227CECA2F00AFF603 /* anatomy8.jpeg in Resources */,
 				82848D2C281C6F5B0068A4AE /* IQ.background.jpeg in Resources */,
@@ -3640,6 +3667,7 @@
 				8288F0972872662400C6A182 /* chess4.jpeg in Resources */,
 				8244DCFA27E39D8500F5C59B /* informatics10.jpeg in Resources */,
 				82E4C6E8282F062C00379856 /* roadtraffic14.jpeg in Resources */,
+				829A51622968566A0056A7DB /* sport.mp3 in Resources */,
 				822139352874E8650065A0C3 /* Swift13.jpeg in Resources */,
 				82CBF25527D1861F0046E3BE /* ecology9.jpeg in Resources */,
 				82EA1FA5286BCD4200E49D0F /* history15.jpeg in Resources */,

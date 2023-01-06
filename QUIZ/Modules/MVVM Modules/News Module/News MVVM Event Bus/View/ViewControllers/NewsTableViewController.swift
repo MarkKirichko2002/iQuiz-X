@@ -14,9 +14,12 @@ final class NewsTableViewController: UITableViewController, CustomViewCellDelega
     private var newsViewModel = NewsListViewModel()
     private let RefreshControl = UIRefreshControl()
     private let player = SoundClass()
+    private let dateManager = DateManager()
+    @IBOutlet weak var DiceButton: UIBarButtonItem!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationItem.title = "Сегодня: \(dateManager.GetCurrentDate())"
         self.tableView.register(UINib(nibName: NewsTableViewCell.identifier, bundle: nil), forCellReuseIdentifier: NewsTableViewCell.identifier)
         RefreshControl.addTarget(self, action: #selector(refresh(_:)), for: .valueChanged)
         tableView.addSubview(RefreshControl)
@@ -33,6 +36,10 @@ final class NewsTableViewController: UITableViewController, CustomViewCellDelega
             }
         }
         newsViewModel.GetNews()
+    }
+    
+    @IBAction func GenerateRandomNews() {
+        newsViewModel.GenerateRandomNews()
     }
     
     @objc func refresh(_ sender: AnyObject) {
