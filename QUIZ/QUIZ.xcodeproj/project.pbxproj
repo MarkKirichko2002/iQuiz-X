@@ -390,6 +390,8 @@
 		829A51602968566A0056A7DB /* technology.wav in Resources */ = {isa = PBXBuildFile; fileRef = 829A515A296856690056A7DB /* technology.wav */; };
 		829A51622968566A0056A7DB /* sport.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 829A515C296856690056A7DB /* sport.mp3 */; };
 		829A5166296874F40056A7DB /* DailyQuizViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 829A5165296874F40056A7DB /* DailyQuizViewController.swift */; };
+		829A51682968AFA60056A7DB /* NewsCategoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 829A51672968AFA60056A7DB /* NewsCategoriesViewController.swift */; };
+		829A516A2968B2F70056A7DB /* NewsCategoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 829A51692968B2F70056A7DB /* NewsCategoryModel.swift */; };
 		829DC874296445F2006C9D91 /* skip.png in Resources */ = {isa = PBXBuildFile; fileRef = 829DC873296445F2006C9D91 /* skip.png */; };
 		829DC87C2964C2C2006C9D91 /* SpeechRecognitionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 829DC87B2964C2C2006C9D91 /* SpeechRecognitionManager.swift */; };
 		829DC8972965A968006C9D91 /* QuizTaskDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 829DC8962965A968006C9D91 /* QuizTaskDetailViewController.swift */; };
@@ -1028,6 +1030,8 @@
 		829A515A296856690056A7DB /* technology.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = technology.wav; path = "../../../../../../../Downloads/News-VIPER-updates/NewsAPI/NewsAPI/NewsAPIPackage/Sources/NewsAPIPackage/sounds/technology.wav"; sourceTree = "<group>"; };
 		829A515C296856690056A7DB /* sport.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = sport.mp3; path = "../../../../../../../Downloads/News-VIPER-updates/NewsAPI/NewsAPI/NewsAPIPackage/Sources/NewsAPIPackage/sounds/sport.mp3"; sourceTree = "<group>"; };
 		829A5165296874F40056A7DB /* DailyQuizViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyQuizViewController.swift; sourceTree = "<group>"; };
+		829A51672968AFA60056A7DB /* NewsCategoriesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsCategoriesViewController.swift; sourceTree = "<group>"; };
+		829A51692968B2F70056A7DB /* NewsCategoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsCategoryModel.swift; sourceTree = "<group>"; };
 		829DC873296445F2006C9D91 /* skip.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = skip.png; sourceTree = "<group>"; };
 		829DC87B2964C2C2006C9D91 /* SpeechRecognitionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechRecognitionManager.swift; sourceTree = "<group>"; };
 		829DC8962965A968006C9D91 /* QuizTaskDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizTaskDetailViewController.swift; sourceTree = "<group>"; };
@@ -1855,6 +1859,7 @@
 			children = (
 				82CBE7E5287093C50045616B /* NewsTableViewController.swift */,
 				82251C33287E661F00723057 /* URLViewController.swift */,
+				829A51672968AFA60056A7DB /* NewsCategoriesViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -2481,6 +2486,7 @@
 			isa = PBXGroup;
 			children = (
 				82CBE7E7287093C50045616B /* NewsModel.swift */,
+				829A51692968B2F70056A7DB /* NewsCategoryModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -3827,6 +3833,7 @@
 				829DC89A2965B44E006C9D91 /* TextRecognitionManager.swift in Sources */,
 				82D35C29296346D5000EB277 /* OnboardingCollectionViewCell.swift in Sources */,
 				82DF98EC27BCEB4A00548B38 /* QuizAnatomy.swift in Sources */,
+				829A516A2968B2F70056A7DB /* NewsCategoryModel.swift in Sources */,
 				8238057F28F1922E0006A736 /* QuizMediaLibraryTableViewController.swift in Sources */,
 				8283D15127FA209600A71545 /* StatisticTableViewCell.swift in Sources */,
 				82A82B1628A9438200011B6F /* QuizBaseObserver.swift in Sources */,
@@ -3885,6 +3892,7 @@
 				82D35C3A2963AA64000EB277 /* VoiceCommandSettingTableViewCell.swift in Sources */,
 				82CBE7E9287093C50045616B /* NewsTableViewController.swift in Sources */,
 				82D35C2429634355000EB277 /* OnboardingSlide.swift in Sources */,
+				829A51682968AFA60056A7DB /* NewsCategoriesViewController.swift in Sources */,
 				8213BF7127D6AAC800D07512 /* QuizPhysics.swift in Sources */,
 				8243F16527C25A1200CD9CE4 /* QuizTaskModel.swift in Sources */,
 				829A514E296739530056A7DB /* ProfileInfoViewModel.swift in Sources */,
