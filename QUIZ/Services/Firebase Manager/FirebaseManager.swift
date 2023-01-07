@@ -11,7 +11,7 @@ import Firebase
 import SDWebImage
 import SCLAlertView
 
-class FirebaseManager {
+class FirebaseManager: FirebaseManagerProtocol {
     
     private let db = Firestore.firestore()
     private let storage = Storage.storage().reference()

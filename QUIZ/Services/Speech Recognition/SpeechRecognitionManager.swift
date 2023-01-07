@@ -8,7 +8,7 @@
 import Foundation
 import Speech
 
-class SpeechRecognitionManager {
+class SpeechRecognitionManager: SpeechRecognitionManagerProtocol {
     
     func configureAudioSession() {
         

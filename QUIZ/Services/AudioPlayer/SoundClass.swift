@@ -7,7 +7,7 @@
 import Foundation
 import AVFoundation
 
-class SoundClass {
+class SoundClass: SoundClassProtocol {
     
     var player: AVAudioPlayer?
     

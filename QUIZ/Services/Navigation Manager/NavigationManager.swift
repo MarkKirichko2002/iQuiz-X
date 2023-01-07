@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-class NavigationManager {
+class NavigationManager: NavigationManagerProtocol {
     
     // View
     var view: UIView?

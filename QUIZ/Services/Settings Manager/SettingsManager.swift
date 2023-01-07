@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 import SCLAlertView
 
-class SettingsManager {
+class SettingsManager: SettingsManagerProtocol {
     
     private let name = UserDefaults.standard.object(forKey:"name") as? String ?? "нет имени"
     private let email = UserDefaults.standard.object(forKey:"email") as? String ?? "нет email"

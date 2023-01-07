@@ -7,7 +7,7 @@
 
 import AVFoundation
 
-class SpeechSynthesizerManager {
+class SpeechSynthesizerManager: SpeechSynthesizerManagerProtocol {
     
     private let synthesizer = AVSpeechSynthesizer()
     

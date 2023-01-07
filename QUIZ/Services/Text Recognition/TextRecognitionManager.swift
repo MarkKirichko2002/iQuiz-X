@@ -8,7 +8,7 @@
 import UIKit
 import Vision
 
-class TextRecognitionManager {
+class TextRecognitionManager: TextRecognitionManagerProtocol {
     
     func recognizeText(image: UIImage,completion: @escaping(String)->()) {
         guard let cgImage = image.cgImage else {
