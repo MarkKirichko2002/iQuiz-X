@@ -22,7 +22,8 @@ final class QuizCategoryDetailViewController: UIViewController {
     private let player = SoundClass()
     private let categoriesViewModel = CategoriesViewModel()
     private let animation = AnimationClass()
-    
+    private let speechSynthesizerManager = SpeechSynthesizerManager()
+   
     override func viewDidLoad() {
         super.viewDidLoad()
         guard let category = self.category else {return}
@@ -56,6 +57,7 @@ final class QuizCategoryDetailViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        setupLabelTap()
         guard let category = self.category else {return}
         self.player.PlaySound(resource: category.music)
         self.animation.StartRotateImage(image: self.CategoryIcon)
@@ -74,5 +76,15 @@ final class QuizCategoryDetailViewController: UIViewController {
             self.animation.StopRotateImage(image: self.CategoryIcon)
             self.categoriesViewModel.GoToStart(quiz: category.base, category: category)
         }
+    }
+    
+    @objc func SayVoiceCommand(_ sender: UITapGestureRecognizer) {
+        speechSynthesizerManager.sayComment(comment: self.VoiceCommandLabel.text!)
+    }
+    
+    private func setupLabelTap() {
+        let labelTap = UITapGestureRecognizer(target: self, action: #selector(SayVoiceCommand(_:)))
+        self.VoiceCommandLabel.isUserInteractionEnabled = true
+        self.VoiceCommandLabel.addGestureRecognizer(labelTap)
     }
 }
