@@ -190,7 +190,6 @@ class QuizBaseViewController: UIViewController {
         self.quiz?.level()
         Image.layer.cornerRadius = Image.frame.size.width / 20
         Image.clipsToBounds = true
-        PauseButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 15)
         questionText.font = UIFont.boldSystemFont(ofSize: 20)
         Time.font = UIFont.boldSystemFont(ofSize: 15)
         Attempts.font = UIFont.boldSystemFont(ofSize: 15)

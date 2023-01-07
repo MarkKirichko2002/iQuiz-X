@@ -105,6 +105,15 @@
 		82319E3328E8F3880053CEF5 /* halloween19.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 82319E3228E8F3870053CEF5 /* halloween19.jpeg */; };
 		82319E3528E8F4180053CEF5 /* halloween20.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 82319E3428E8F4180053CEF5 /* halloween20.jpeg */; };
 		8234A6592969BA6400A7FA2B /* SpeechSynthesizerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8234A6582969BA6400A7FA2B /* SpeechSynthesizerManager.swift */; };
+		8234A65B296A2F2400A7FA2B /* SettingsManagerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8234A65A296A2F2400A7FA2B /* SettingsManagerProtocol.swift */; };
+		8234A65D296A303700A7FA2B /* FirebaseManagerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8234A65C296A303700A7FA2B /* FirebaseManagerProtocol.swift */; };
+		8234A65F296A30E700A7FA2B /* SpeechRecognitionManagerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8234A65E296A30E700A7FA2B /* SpeechRecognitionManagerProtocol.swift */; };
+		8234A661296A311F00A7FA2B /* SpeechSynthesizerManagerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8234A660296A311F00A7FA2B /* SpeechSynthesizerManagerProtocol.swift */; };
+		8234A663296A316900A7FA2B /* DateManagerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8234A662296A316900A7FA2B /* DateManagerProtocol.swift */; };
+		8234A665296A31A600A7FA2B /* TextRecognitionManagerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8234A664296A31A600A7FA2B /* TextRecognitionManagerProtocol.swift */; };
+		8234A667296A31EE00A7FA2B /* SoundClassProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8234A666296A31EE00A7FA2B /* SoundClassProtocol.swift */; };
+		8234A669296A322B00A7FA2B /* AnimationClassProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8234A668296A322B00A7FA2B /* AnimationClassProtocol.swift */; };
+		8234A66B296A32A200A7FA2B /* NavigationManagerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8234A66A296A32A200A7FA2B /* NavigationManagerProtocol.swift */; };
 		8237D98E286D02230097FE69 /* QuizUnderwater.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8237D98D286D02230097FE69 /* QuizUnderwater.swift */; };
 		8237D9B3286E1BCF0097FE69 /* swift.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 8237D9B2286E1BCF0097FE69 /* swift.jpeg */; };
 		8238057F28F1922E0006A736 /* QuizMediaLibraryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8238057E28F1922E0006A736 /* QuizMediaLibraryTableViewController.swift */; };
@@ -746,6 +755,15 @@
 		82319E3228E8F3870053CEF5 /* halloween19.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = halloween19.jpeg; sourceTree = "<group>"; };
 		82319E3428E8F4180053CEF5 /* halloween20.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = halloween20.jpeg; sourceTree = "<group>"; };
 		8234A6582969BA6400A7FA2B /* SpeechSynthesizerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechSynthesizerManager.swift; sourceTree = "<group>"; };
+		8234A65A296A2F2400A7FA2B /* SettingsManagerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsManagerProtocol.swift; sourceTree = "<group>"; };
+		8234A65C296A303700A7FA2B /* FirebaseManagerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseManagerProtocol.swift; sourceTree = "<group>"; };
+		8234A65E296A30E700A7FA2B /* SpeechRecognitionManagerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechRecognitionManagerProtocol.swift; sourceTree = "<group>"; };
+		8234A660296A311F00A7FA2B /* SpeechSynthesizerManagerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechSynthesizerManagerProtocol.swift; sourceTree = "<group>"; };
+		8234A662296A316900A7FA2B /* DateManagerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateManagerProtocol.swift; sourceTree = "<group>"; };
+		8234A664296A31A600A7FA2B /* TextRecognitionManagerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextRecognitionManagerProtocol.swift; sourceTree = "<group>"; };
+		8234A666296A31EE00A7FA2B /* SoundClassProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundClassProtocol.swift; sourceTree = "<group>"; };
+		8234A668296A322B00A7FA2B /* AnimationClassProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationClassProtocol.swift; sourceTree = "<group>"; };
+		8234A66A296A32A200A7FA2B /* NavigationManagerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationManagerProtocol.swift; sourceTree = "<group>"; };
 		8237D98D286D02230097FE69 /* QuizUnderwater.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizUnderwater.swift; sourceTree = "<group>"; };
 		8237D9B2286E1BCF0097FE69 /* swift.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = swift.jpeg; sourceTree = "<group>"; };
 		8238057E28F1922E0006A736 /* QuizMediaLibraryTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizMediaLibraryTableViewController.swift; sourceTree = "<group>"; };
@@ -1471,6 +1489,86 @@
 				8234A6582969BA6400A7FA2B /* SpeechSynthesizerManager.swift */,
 			);
 			path = "Speech Synthesizer";
+			sourceTree = "<group>";
+		};
+		8234A66C296A332100A7FA2B /* AnimationClassProtocol */ = {
+			isa = PBXGroup;
+			children = (
+				8234A668296A322B00A7FA2B /* AnimationClassProtocol.swift */,
+			);
+			path = AnimationClassProtocol;
+			sourceTree = "<group>";
+		};
+		8234A66D296A332700A7FA2B /* SoundClassProtocol */ = {
+			isa = PBXGroup;
+			children = (
+				8234A666296A31EE00A7FA2B /* SoundClassProtocol.swift */,
+			);
+			path = SoundClassProtocol;
+			sourceTree = "<group>";
+		};
+		8234A66E296A332900A7FA2B /* TextRecognitionManagerProtocol */ = {
+			isa = PBXGroup;
+			children = (
+				8234A664296A31A600A7FA2B /* TextRecognitionManagerProtocol.swift */,
+			);
+			path = TextRecognitionManagerProtocol;
+			sourceTree = "<group>";
+		};
+		8234A66F296A332B00A7FA2B /* DateManagerProtocol */ = {
+			isa = PBXGroup;
+			children = (
+				8234A662296A316900A7FA2B /* DateManagerProtocol.swift */,
+			);
+			path = DateManagerProtocol;
+			sourceTree = "<group>";
+		};
+		8234A670296A332D00A7FA2B /* SpeechSynthesizerManagerProtocol */ = {
+			isa = PBXGroup;
+			children = (
+				8234A660296A311F00A7FA2B /* SpeechSynthesizerManagerProtocol.swift */,
+			);
+			path = SpeechSynthesizerManagerProtocol;
+			sourceTree = "<group>";
+		};
+		8234A671296A333000A7FA2B /* SpeechRecognitionManagerProtocol */ = {
+			isa = PBXGroup;
+			children = (
+				8234A65E296A30E700A7FA2B /* SpeechRecognitionManagerProtocol.swift */,
+			);
+			path = SpeechRecognitionManagerProtocol;
+			sourceTree = "<group>";
+		};
+		8234A672296A333800A7FA2B /* FirebaseManagerProtocol */ = {
+			isa = PBXGroup;
+			children = (
+				8234A65C296A303700A7FA2B /* FirebaseManagerProtocol.swift */,
+			);
+			path = FirebaseManagerProtocol;
+			sourceTree = "<group>";
+		};
+		8234A673296A333B00A7FA2B /* SettingsManagerProtocol */ = {
+			isa = PBXGroup;
+			children = (
+				8234A65A296A2F2400A7FA2B /* SettingsManagerProtocol.swift */,
+			);
+			path = SettingsManagerProtocol;
+			sourceTree = "<group>";
+		};
+		8234A674296A333E00A7FA2B /* NavigationManagerProtocol */ = {
+			isa = PBXGroup;
+			children = (
+				8234A66A296A32A200A7FA2B /* NavigationManagerProtocol.swift */,
+			);
+			path = NavigationManagerProtocol;
+			sourceTree = "<group>";
+		};
+		8234A675296A334000A7FA2B /* CustomViewCellDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				82D35BDE2963130A000EB277 /* CustomViewCellDelegate.swift */,
+			);
+			path = CustomViewCellDelegate;
 			sourceTree = "<group>";
 		};
 		8238057B28F191B20006A736 /* Quiz Media Library */ = {
@@ -2777,7 +2875,16 @@
 		82D35BDD296312D1000EB277 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
-				82D35BDE2963130A000EB277 /* CustomViewCellDelegate.swift */,
+				8234A675296A334000A7FA2B /* CustomViewCellDelegate */,
+				8234A674296A333E00A7FA2B /* NavigationManagerProtocol */,
+				8234A673296A333B00A7FA2B /* SettingsManagerProtocol */,
+				8234A672296A333800A7FA2B /* FirebaseManagerProtocol */,
+				8234A671296A333000A7FA2B /* SpeechRecognitionManagerProtocol */,
+				8234A670296A332D00A7FA2B /* SpeechSynthesizerManagerProtocol */,
+				8234A66F296A332B00A7FA2B /* DateManagerProtocol */,
+				8234A66E296A332900A7FA2B /* TextRecognitionManagerProtocol */,
+				8234A66D296A332700A7FA2B /* SoundClassProtocol */,
+				8234A66C296A332100A7FA2B /* AnimationClassProtocol */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -3845,6 +3952,8 @@
 				82D35C29296346D5000EB277 /* OnboardingCollectionViewCell.swift in Sources */,
 				82DF98EC27BCEB4A00548B38 /* QuizAnatomy.swift in Sources */,
 				829A516A2968B2F70056A7DB /* NewsCategoryModel.swift in Sources */,
+				8234A66B296A32A200A7FA2B /* NavigationManagerProtocol.swift in Sources */,
+				8234A65B296A2F2400A7FA2B /* SettingsManagerProtocol.swift in Sources */,
 				8238057F28F1922E0006A736 /* QuizMediaLibraryTableViewController.swift in Sources */,
 				8283D15127FA209600A71545 /* StatisticTableViewCell.swift in Sources */,
 				82A82B1628A9438200011B6F /* QuizBaseObserver.swift in Sources */,
@@ -3860,6 +3969,7 @@
 				828E4B43293FD2EC002A55B1 /* PlayerDetailViewController.swift in Sources */,
 				8243F16927C2617C00CD9CE4 /* QuizBaseViewModel.swift in Sources */,
 				82CD6BF428885DFF00716443 /* QuizSegmentedViewController.swift in Sources */,
+				8234A663296A316900A7FA2B /* DateManagerProtocol.swift in Sources */,
 				826E129227FF509800465E16 /* QuizSwift.swift in Sources */,
 				829A5151296744BF0056A7DB /* NavigationManager.swift in Sources */,
 				82D35C1E29633398000EB277 /* OnboardingViewController.swift in Sources */,
@@ -3880,11 +3990,13 @@
 				820C62AE27BC22AA004894FA /* QuizPlanets.swift in Sources */,
 				82A4588027C12C2F0082BE4C /* QuizIQ.swift in Sources */,
 				8234A6592969BA6400A7FA2B /* SpeechSynthesizerManager.swift in Sources */,
+				8234A65F296A30E700A7FA2B /* SpeechRecognitionManagerProtocol.swift in Sources */,
 				82C2B5A527BD115A00C66946 /* ProfileViewController.swift in Sources */,
 				823CFF9327FA1BAF001FF6D9 /* BiometricTableViewCell.swift in Sources */,
 				8209F79C2847F2600093147A /* SplashScreenController.swift in Sources */,
 				820D303B28F340710031CFCD /* Profile.swift in Sources */,
 				82F564722940D1FB0031F7BD /* CategoryTableViewController.swift in Sources */,
+				8234A661296A311F00A7FA2B /* SpeechSynthesizerManagerProtocol.swift in Sources */,
 				8261BC2227E10F1B0089CC94 /* TotalTableViewController.swift in Sources */,
 				822F6C1927BD4AFC0033803A /* QuizResultsViewController.swift in Sources */,
 				82EA02A528240872008A0240 /* RestartTableViewCell.swift in Sources */,
@@ -3900,12 +4012,15 @@
 				82BC0189294770D400AEB659 /* TasksTableViewController.swift in Sources */,
 				82F564712940D1FB0031F7BD /* QuizCategoryDetailViewController.swift in Sources */,
 				829A5166296874F40056A7DB /* DailyQuizViewController.swift in Sources */,
+				8234A65D296A303700A7FA2B /* FirebaseManagerProtocol.swift in Sources */,
+				8234A665296A31A600A7FA2B /* TextRecognitionManagerProtocol.swift in Sources */,
 				82AFAF6827FA3C25001B04A0 /* ExitTableViewCell.swift in Sources */,
 				82D35C3A2963AA64000EB277 /* VoiceCommandSettingTableViewCell.swift in Sources */,
 				82CBE7E9287093C50045616B /* NewsTableViewController.swift in Sources */,
 				82D35C2429634355000EB277 /* OnboardingSlide.swift in Sources */,
 				829A51682968AFA60056A7DB /* NewsCategoriesViewController.swift in Sources */,
 				8213BF7127D6AAC800D07512 /* QuizPhysics.swift in Sources */,
+				8234A669296A322B00A7FA2B /* AnimationClassProtocol.swift in Sources */,
 				8243F16527C25A1200CD9CE4 /* QuizTaskModel.swift in Sources */,
 				829A514E296739530056A7DB /* ProfileInfoViewModel.swift in Sources */,
 				82CF0D3A28A583D9006B53F4 /* QuizStartViewController.swift in Sources */,
@@ -3921,6 +4036,7 @@
 				8237D98E286D02230097FE69 /* QuizUnderwater.swift in Sources */,
 				8209462D27FA676000F44E83 /* RoadTraffic.swift in Sources */,
 				821C69E928739E32004FD9E1 /* PlayersViewModel.swift in Sources */,
+				8234A667296A31EE00A7FA2B /* SoundClassProtocol.swift in Sources */,
 				820C628127BBA3CA004894FA /* SceneDelegate.swift in Sources */,
 				82A1D8C427FB25490044EEA6 /* DeleteTableViewCell.swift in Sources */,
 				82CBE7F92870A8F30045616B /* CategoriesViewModel.swift in Sources */,

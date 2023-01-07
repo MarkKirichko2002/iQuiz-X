@@ -8,9 +8,9 @@
 import Foundation
 import UIKit
 
-class AnimationClass {
+class AnimationClass: AnimationClassProtocol {
         
-    let rotationAnimation : CABasicAnimation = CABasicAnimation(keyPath: "transform.rotation.z")
+    private let rotationAnimation : CABasicAnimation = CABasicAnimation(keyPath: "transform.rotation.z")
     
     func springLabel(label: UILabel) {
         let animation = CASpringAnimation(keyPath: "transform.scale")
