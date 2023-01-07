@@ -104,6 +104,7 @@
 		82319E3128E8F2F40053CEF5 /* halloween18.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 82319E3028E8F2F40053CEF5 /* halloween18.jpeg */; };
 		82319E3328E8F3880053CEF5 /* halloween19.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 82319E3228E8F3870053CEF5 /* halloween19.jpeg */; };
 		82319E3528E8F4180053CEF5 /* halloween20.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 82319E3428E8F4180053CEF5 /* halloween20.jpeg */; };
+		8234A6592969BA6400A7FA2B /* SpeechSynthesizerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8234A6582969BA6400A7FA2B /* SpeechSynthesizerManager.swift */; };
 		8237D98E286D02230097FE69 /* QuizUnderwater.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8237D98D286D02230097FE69 /* QuizUnderwater.swift */; };
 		8237D9B3286E1BCF0097FE69 /* swift.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 8237D9B2286E1BCF0097FE69 /* swift.jpeg */; };
 		8238057F28F1922E0006A736 /* QuizMediaLibraryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8238057E28F1922E0006A736 /* QuizMediaLibraryTableViewController.swift */; };
@@ -744,6 +745,7 @@
 		82319E3028E8F2F40053CEF5 /* halloween18.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = halloween18.jpeg; sourceTree = "<group>"; };
 		82319E3228E8F3870053CEF5 /* halloween19.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = halloween19.jpeg; sourceTree = "<group>"; };
 		82319E3428E8F4180053CEF5 /* halloween20.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = halloween20.jpeg; sourceTree = "<group>"; };
+		8234A6582969BA6400A7FA2B /* SpeechSynthesizerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechSynthesizerManager.swift; sourceTree = "<group>"; };
 		8237D98D286D02230097FE69 /* QuizUnderwater.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizUnderwater.swift; sourceTree = "<group>"; };
 		8237D9B2286E1BCF0097FE69 /* swift.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = swift.jpeg; sourceTree = "<group>"; };
 		8238057E28F1922E0006A736 /* QuizMediaLibraryTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizMediaLibraryTableViewController.swift; sourceTree = "<group>"; };
@@ -1463,6 +1465,14 @@
 			path = Halloween;
 			sourceTree = "<group>";
 		};
+		8234A6572969BA4C00A7FA2B /* Speech Synthesizer */ = {
+			isa = PBXGroup;
+			children = (
+				8234A6582969BA6400A7FA2B /* SpeechSynthesizerManager.swift */,
+			);
+			path = "Speech Synthesizer";
+			sourceTree = "<group>";
+		};
 		8238057B28F191B20006A736 /* Quiz Media Library */ = {
 			isa = PBXGroup;
 			children = (
@@ -2104,6 +2114,7 @@
 				829A514A296735CF0056A7DB /* Settings Manager */,
 				82CE538F28EA076C00D44A6E /* Firebase Manager */,
 				829DC87A2964C2AD006C9D91 /* Speech Recognition */,
+				8234A6572969BA4C00A7FA2B /* Speech Synthesizer */,
 				829A515229675E4B0056A7DB /* Date Manager */,
 				829DC8982965B432006C9D91 /* Text Recognition */,
 				82CE536C28E9D55F00D44A6E /* AudioPlayer */,
@@ -3868,6 +3879,7 @@
 				8288F08A2872601600C6A182 /* QuizChess.swift in Sources */,
 				820C62AE27BC22AA004894FA /* QuizPlanets.swift in Sources */,
 				82A4588027C12C2F0082BE4C /* QuizIQ.swift in Sources */,
+				8234A6592969BA6400A7FA2B /* SpeechSynthesizerManager.swift in Sources */,
 				82C2B5A527BD115A00C66946 /* ProfileViewController.swift in Sources */,
 				823CFF9327FA1BAF001FF6D9 /* BiometricTableViewCell.swift in Sources */,
 				8209F79C2847F2600093147A /* SplashScreenController.swift in Sources */,
