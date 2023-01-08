@@ -106,6 +106,4 @@ final class QuizCategoriesTableViewController: UIViewController, UITableViewDele
         cell.ConfigureCell(category: categoriesViewModel.categories[indexPath.section].categories[indexPath.row])
         return cell
     }
-    
 }
-

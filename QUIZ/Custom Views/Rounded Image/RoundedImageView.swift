@@ -10,10 +10,13 @@ import AVFoundation
 
 class RoundedImageView: UIImageView {
     
-    var player = SoundClass()
+    private let player = SoundClass()
+    private let animation = AnimationClass()
+    var isPlaying = false
     var sound = "IQ.mp3"
     var color = UIColor.black
     var borderWidth = 3
+    var music = ""
     
     override func layoutSubviews() {
         self.layer.cornerRadius = self.bounds.width / 2
@@ -26,7 +29,24 @@ class RoundedImageView: UIImageView {
     }
     
     @IBAction func tapFunction(sender: UITapGestureRecognizer) {
+       
         player.PlaySound(resource: sound)
+        
+        if music != "" {
+            if isPlaying == false {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                    self.animation.StartRotateImage(image: self)
+                    self.player.PlaySound(resource: self.music)
+                    self.isPlaying = true
+                }
+            } else {
+                animation.StopRotateImage(image: self)
+                player.StopSound(resource: music)
+                player.PlaySound(resource: sound)
+                isPlaying = false
+            }
+        }
+        
         DispatchQueue.main.async {
             UIView.animate(withDuration: 0.75,
                            delay: 0,

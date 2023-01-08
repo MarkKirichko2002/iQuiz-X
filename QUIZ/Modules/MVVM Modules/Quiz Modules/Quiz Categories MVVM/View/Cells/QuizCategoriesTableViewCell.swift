@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import Firebase
 
 class QuizCategoriesTableViewCell: UITableViewCell {
     
@@ -22,6 +21,7 @@ class QuizCategoriesTableViewCell: UITableViewCell {
     func ConfigureCell(category: QuizCategoryModel) {
         CategoryImage.image = UIImage(named: category.image)
         CategoryImage.sound = category.sound
+        CategoryImage.music = category.music
         CategoryImage.color = .white
         CategoryText.text = category.name
         CategoryScore.text = "\(category.score)/100 баллов"
@@ -43,5 +43,4 @@ class QuizCategoriesTableViewCell: UITableViewCell {
         animation.springLabel(label: CategoryScore)
         delegate?.didElementClick()
     }
-    
 }
