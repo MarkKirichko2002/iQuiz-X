@@ -89,7 +89,7 @@
                     </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="ehL-FL-StP">
-                        <rect key="frame" x="0.0" y="59" width="430" height="96"/>
+                        <rect key="frame" x="0.0" y="59" width="430" height="104.33333333333334"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -142,7 +142,7 @@
                     </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="1EA-1C-7wQ">
-                        <rect key="frame" x="0.0" y="59" width="430" height="104.33333333333334"/>
+                        <rect key="frame" x="0.0" y="59" width="430" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -217,7 +217,7 @@
                     </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="ZVb-tp-CnA">
-                        <rect key="frame" x="0.0" y="59" width="430" height="104.33333333333334"/>
+                        <rect key="frame" x="0.0" y="59" width="430" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <textAttributes key="largeTitleTextAttributes">
                             <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -297,14 +297,14 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k0D-BQ-VpH">
-                                <rect key="frame" x="158.66666666666666" y="409.66666666666669" width="112.99999999999997" height="44"/>
+                                <rect key="frame" x="30" y="411" width="370" height="44"/>
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="играть">
                                     <fontDescription key="titleFontDescription" type="system" weight="black" pointSize="25"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <action selector="PlayQuiz" destination="kUH-cP-YQn" eventType="touchUpInside" id="LZW-1o-oVH"/>
+                                    <action selector="PlayQuiz" destination="kUH-cP-YQn" eventType="touchUpInside" id="gRu-HG-g4J"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="пройдено" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XqH-Ho-SIz">
@@ -331,26 +331,41 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zkw-fl-R2t">
+                                <rect key="frame" x="30" y="485" width="370" height="44"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="закрыть">
+                                    <fontDescription key="titleFontDescription" type="system" weight="black" pointSize="25"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="CloseDetailScreen" destination="kUH-cP-YQn" eventType="touchUpInside" id="OPh-2C-7PY"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="WVc-KQ-2Sd"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="k0D-BQ-VpH" firstAttribute="top" secondItem="uwy-Oh-S0n" secondAttribute="bottom" constant="70" id="1hP-d0-37s"/>
+                            <constraint firstItem="zkw-fl-R2t" firstAttribute="top" secondItem="k0D-BQ-VpH" secondAttribute="bottom" constant="30" id="7nv-Jj-b9O"/>
                             <constraint firstItem="uwy-Oh-S0n" firstAttribute="leading" secondItem="WVc-KQ-2Sd" secondAttribute="leading" constant="30" id="7rg-hp-EoG"/>
                             <constraint firstItem="9DT-LH-jSw" firstAttribute="top" secondItem="XqH-Ho-SIz" secondAttribute="bottom" constant="20" id="8bs-Eh-J7E"/>
+                            <constraint firstItem="k0D-BQ-VpH" firstAttribute="leading" secondItem="WVc-KQ-2Sd" secondAttribute="leading" constant="30" id="F2I-GI-TKG"/>
                             <constraint firstItem="gpN-I2-tCN" firstAttribute="leading" secondItem="WVc-KQ-2Sd" secondAttribute="leading" constant="30" id="GlH-tv-jkC"/>
-                            <constraint firstItem="k0D-BQ-VpH" firstAttribute="centerY" secondItem="l7h-Sm-YHG" secondAttribute="centerY" id="IWP-bG-F1J"/>
                             <constraint firstItem="sQ2-So-BDX" firstAttribute="leading" secondItem="gpN-I2-tCN" secondAttribute="trailing" constant="20" id="Ofg-T5-oL9"/>
                             <constraint firstItem="XqH-Ho-SIz" firstAttribute="top" secondItem="sQ2-So-BDX" secondAttribute="bottom" constant="20" id="Ouq-dX-p6Z"/>
                             <constraint firstItem="uwy-Oh-S0n" firstAttribute="top" secondItem="AIA-K7-Eng" secondAttribute="bottom" constant="30" id="Pby-Jf-vRq"/>
                             <constraint firstItem="WVc-KQ-2Sd" firstAttribute="trailing" secondItem="sQ2-So-BDX" secondAttribute="trailing" constant="30" id="TqG-Q2-xOg"/>
+                            <constraint firstItem="zkw-fl-R2t" firstAttribute="leading" secondItem="WVc-KQ-2Sd" secondAttribute="leading" constant="30" id="UlY-KC-ETu"/>
                             <constraint firstItem="9DT-LH-jSw" firstAttribute="leading" secondItem="gpN-I2-tCN" secondAttribute="trailing" constant="20" id="bIR-Pp-ag5"/>
-                            <constraint firstItem="k0D-BQ-VpH" firstAttribute="centerX" secondItem="l7h-Sm-YHG" secondAttribute="centerX" id="bh4-Ls-ncb"/>
                             <constraint firstItem="WVc-KQ-2Sd" firstAttribute="trailing" secondItem="AIA-K7-Eng" secondAttribute="trailing" constant="30" id="btG-j7-L0O"/>
                             <constraint firstItem="WVc-KQ-2Sd" firstAttribute="trailing" secondItem="uwy-Oh-S0n" secondAttribute="trailing" constant="30" id="dx7-6O-7ZO"/>
                             <constraint firstItem="XqH-Ho-SIz" firstAttribute="leading" secondItem="gpN-I2-tCN" secondAttribute="trailing" constant="20" id="eJa-sq-jpb"/>
+                            <constraint firstItem="WVc-KQ-2Sd" firstAttribute="trailing" secondItem="zkw-fl-R2t" secondAttribute="trailing" constant="30" id="fJc-Ah-O07"/>
                             <constraint firstItem="WVc-KQ-2Sd" firstAttribute="trailing" secondItem="XqH-Ho-SIz" secondAttribute="trailing" constant="30" id="fcC-ZW-ykd"/>
                             <constraint firstItem="gpN-I2-tCN" firstAttribute="top" secondItem="WVc-KQ-2Sd" secondAttribute="top" constant="30" id="hFy-b2-kPZ"/>
                             <constraint firstItem="AIA-K7-Eng" firstAttribute="top" secondItem="gpN-I2-tCN" secondAttribute="bottom" constant="30" id="pXl-BJ-gft"/>
+                            <constraint firstItem="WVc-KQ-2Sd" firstAttribute="trailing" secondItem="k0D-BQ-VpH" secondAttribute="trailing" constant="30" id="srk-k1-mSj"/>
                             <constraint firstItem="WVc-KQ-2Sd" firstAttribute="trailing" secondItem="9DT-LH-jSw" secondAttribute="trailing" constant="30" id="vWV-VI-P9G"/>
                             <constraint firstItem="AIA-K7-Eng" firstAttribute="leading" secondItem="WVc-KQ-2Sd" secondAttribute="leading" constant="30" id="x1K-Cu-iBi"/>
                             <constraint firstItem="sQ2-So-BDX" firstAttribute="top" secondItem="WVc-KQ-2Sd" secondAttribute="top" constant="30" id="zC0-QO-btP"/>
@@ -361,9 +376,10 @@
                         <outlet property="CategoryIcon" destination="gpN-I2-tCN" id="kph-Af-iLF"/>
                         <outlet property="CategoryName" destination="sQ2-So-BDX" id="7rS-AY-rfG"/>
                         <outlet property="CategoryScore" destination="9DT-LH-jSw" id="D1n-1M-aiM"/>
+                        <outlet property="CloseButton" destination="zkw-fl-R2t" id="aBL-vC-APL"/>
                         <outlet property="CompleteStatus" destination="XqH-Ho-SIz" id="qq8-nL-ZMO"/>
                         <outlet property="DateLabel" destination="uwy-Oh-S0n" id="aiQ-9N-xgi"/>
-                        <outlet property="PlayButton" destination="k0D-BQ-VpH" id="bfA-iZ-NaE"/>
+                        <outlet property="PlayButton" destination="k0D-BQ-VpH" id="fwr-gD-LNU"/>
                         <outlet property="VoiceCommandLabel" destination="AIA-K7-Eng" id="ge8-Ik-csv"/>
                     </connections>
                 </viewController>
@@ -1028,51 +1044,51 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="astronomy.png" translatesAutoresizingMaskIntoConstraints="NO" id="jk2-Rf-OEy" customClass="RoundedImageView" customModule="QUIZ" customModuleProvider="target">
-                                <rect key="frame" x="30" y="193.33333333333334" width="100" height="100.00000000000003"/>
+                                <rect key="frame" x="30" y="185" width="100" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="0YD-SN-was"/>
                                     <constraint firstAttribute="width" constant="100" id="swr-th-aen"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="имя" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Zs-j0-R8W">
-                                <rect key="frame" x="150" y="193.33333333333334" width="250" height="23"/>
+                                <rect key="frame" x="150" y="185" width="250" height="23"/>
                                 <fontDescription key="fontDescription" type="system" weight="black" pointSize="19"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="email" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aOT-mJ-RDh">
-                                <rect key="frame" x="150" y="236.33333333333334" width="250" height="23.000000000000028"/>
+                                <rect key="frame" x="150" y="228" width="250" height="23"/>
                                 <fontDescription key="fontDescription" type="system" weight="black" pointSize="19"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="счет" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k28-xc-24A">
-                                <rect key="frame" x="150" y="279.33333333333331" width="230" height="23"/>
+                                <rect key="frame" x="150" y="271" width="230" height="23"/>
                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="19"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="history.jpeg" translatesAutoresizingMaskIntoConstraints="NO" id="vnU-xD-zGe" customClass="RoundedImageView" customModule="QUIZ" customModuleProvider="target">
-                                <rect key="frame" x="30" y="352.33333333333331" width="100" height="100"/>
+                                <rect key="frame" x="30" y="344" width="100" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="100" id="8pZ-FD-RLQ"/>
                                     <constraint firstAttribute="height" constant="100" id="yIN-al-5tA"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5r2-Ya-kL0">
-                                <rect key="frame" x="150" y="352.33333333333331" width="250" height="23"/>
+                                <rect key="frame" x="150" y="344" width="250" height="23"/>
                                 <fontDescription key="fontDescription" type="system" weight="black" pointSize="19"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZGd-mn-SvB">
-                                <rect key="frame" x="150" y="395.33333333333331" width="250" height="23"/>
+                                <rect key="frame" x="150" y="387" width="250" height="23"/>
                                 <fontDescription key="fontDescription" type="system" weight="black" pointSize="19"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nYL-gI-i95">
-                                <rect key="frame" x="150" y="438.33333333333331" width="250" height="23"/>
+                                <rect key="frame" x="150" y="430" width="250" height="23"/>
                                 <fontDescription key="fontDescription" type="system" weight="black" pointSize="19"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -1933,11 +1949,11 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="erK-ie-9FO">
-                                <rect key="frame" x="50" y="416" width="330" height="44"/>
+                                <rect key="frame" x="50" y="416" width="330" height="41.666666666666686"/>
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="играть">
-                                    <fontDescription key="titleFontDescription" type="system" weight="black" pointSize="25"/>
+                                    <fontDescription key="titleFontDescription" type="system" weight="black" pointSize="24"/>
                                 </buttonConfiguration>
                                 <connections>
                                     <action selector="PlayQuiz" destination="2Kg-KP-BnE" eventType="touchUpInside" id="5GI-Ge-zw9"/>
@@ -1967,6 +1983,18 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E1g-Ab-wob">
+                                <rect key="frame" x="30" y="507.66666666666669" width="370" height="41.666666666666686"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="закрыть">
+                                    <fontDescription key="titleFontDescription" type="system" weight="black" pointSize="24"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="CloseDetailScreen" destination="2Kg-KP-BnE" eventType="touchUpInside" id="Ber-UR-iIt"/>
+                                    <action selector="PlayQuiz" destination="2Kg-KP-BnE" eventType="touchUpInside" id="Pmu-2R-Eeo"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="LiB-Kq-PIR"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -1976,6 +2004,7 @@
                             <constraint firstItem="nXU-7M-TKZ" firstAttribute="leading" secondItem="yxe-Cq-0VG" secondAttribute="trailing" constant="20" id="JW7-7c-42r"/>
                             <constraint firstItem="Pjo-1p-TZy" firstAttribute="leading" secondItem="yxe-Cq-0VG" secondAttribute="trailing" constant="20" id="KEq-yI-2hl"/>
                             <constraint firstItem="erK-ie-9FO" firstAttribute="leading" secondItem="LiB-Kq-PIR" secondAttribute="leading" constant="50" id="ONI-ji-N0R"/>
+                            <constraint firstItem="E1g-Ab-wob" firstAttribute="leading" secondItem="LiB-Kq-PIR" secondAttribute="leading" constant="30" id="RSe-KS-bvI"/>
                             <constraint firstItem="erK-ie-9FO" firstAttribute="top" secondItem="FOA-a6-Nnc" secondAttribute="bottom" constant="75" id="Tk9-cK-trW"/>
                             <constraint firstItem="FOA-a6-Nnc" firstAttribute="leading" secondItem="LiB-Kq-PIR" secondAttribute="leading" constant="30" id="aaY-vq-gHF"/>
                             <constraint firstItem="LiB-Kq-PIR" firstAttribute="trailing" secondItem="Pjo-1p-TZy" secondAttribute="trailing" constant="30" id="alT-9z-Uf4"/>
@@ -1985,9 +2014,11 @@
                             <constraint firstItem="LiB-Kq-PIR" firstAttribute="trailing" secondItem="erK-ie-9FO" secondAttribute="trailing" constant="50" id="gaW-0d-FYS"/>
                             <constraint firstItem="3K1-OV-Lk7" firstAttribute="top" secondItem="yxe-Cq-0VG" secondAttribute="bottom" constant="30" id="hx0-1e-Oha"/>
                             <constraint firstItem="FOA-a6-Nnc" firstAttribute="top" secondItem="3K1-OV-Lk7" secondAttribute="bottom" constant="30" id="iOf-uG-rRA"/>
+                            <constraint firstItem="LiB-Kq-PIR" firstAttribute="trailing" secondItem="E1g-Ab-wob" secondAttribute="trailing" constant="30" id="l13-dS-ygL"/>
                             <constraint firstItem="LiB-Kq-PIR" firstAttribute="trailing" secondItem="3K1-OV-Lk7" secondAttribute="trailing" constant="30" id="mTC-yZ-xpJ"/>
                             <constraint firstItem="LiB-Kq-PIR" firstAttribute="trailing" secondItem="jzo-TH-b1Y" secondAttribute="trailing" constant="30" id="nF8-sh-Qmh"/>
                             <constraint firstItem="3K1-OV-Lk7" firstAttribute="leading" secondItem="LiB-Kq-PIR" secondAttribute="leading" constant="30" id="o6O-At-TfD"/>
+                            <constraint firstItem="E1g-Ab-wob" firstAttribute="top" secondItem="erK-ie-9FO" secondAttribute="bottom" constant="50" id="oho-mx-TCo"/>
                             <constraint firstItem="LiB-Kq-PIR" firstAttribute="trailing" secondItem="nXU-7M-TKZ" secondAttribute="trailing" constant="30" id="tgJ-4w-cR9"/>
                             <constraint firstItem="Pjo-1p-TZy" firstAttribute="top" secondItem="LiB-Kq-PIR" secondAttribute="top" constant="30" id="vEy-JY-gSw"/>
                             <constraint firstItem="jzo-TH-b1Y" firstAttribute="leading" secondItem="yxe-Cq-0VG" secondAttribute="trailing" constant="20" id="xXi-om-RuL"/>
@@ -1998,6 +2029,7 @@
                         <outlet property="CategoryIcon" destination="yxe-Cq-0VG" id="480-nC-EAr"/>
                         <outlet property="CategoryName" destination="Pjo-1p-TZy" id="mgk-B0-rAr"/>
                         <outlet property="CategoryScore" destination="nXU-7M-TKZ" id="t7W-tb-t7z"/>
+                        <outlet property="CloseButton" destination="E1g-Ab-wob" id="2OY-vJ-06i"/>
                         <outlet property="CompleteStatus" destination="jzo-TH-b1Y" id="tfW-BF-gPd"/>
                         <outlet property="DateLabel" destination="FOA-a6-Nnc" id="E4u-NM-HRG"/>
                         <outlet property="PlayButton" destination="erK-ie-9FO" id="bKf-Gu-Rgh"/>

@@ -15,6 +15,7 @@ final class QuizCategoryDetailViewController: UIViewController {
     @IBOutlet weak var CompleteStatus: UILabel!
     @IBOutlet weak var CategoryScore: UILabel!
     @IBOutlet weak var PlayButton: UIButton!
+    @IBOutlet weak var CloseButton: UIButton!
     @IBOutlet weak var VoiceCommandLabel: UILabel!
     @IBOutlet weak var DateLabel: UILabel!
     
@@ -42,6 +43,7 @@ final class QuizCategoryDetailViewController: UIViewController {
         DateLabel.text = "Вы играли последний раз: \n🗓️ \(category.date)"
         DateLabel.textColor = UIColor.white
         PlayButton.tintColor = .white
+        CloseButton.tintColor = .white
         switch category.complete {
             
         case true:
@@ -75,6 +77,15 @@ final class QuizCategoryDetailViewController: UIViewController {
             self.player.PlaySound(resource: category.sound)
             self.animation.StopRotateImage(image: self.CategoryIcon)
             self.categoriesViewModel.GoToStart(quiz: category.base, category: category)
+        }
+    }
+    
+    @IBAction func CloseDetailScreen() {
+        guard let category = self.category else {return}
+        self.animation.springButton(button: self.CloseButton)
+        self.player.PlaySound(resource: category.sound)
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+            self.dismiss(animated: true)
         }
     }
     
