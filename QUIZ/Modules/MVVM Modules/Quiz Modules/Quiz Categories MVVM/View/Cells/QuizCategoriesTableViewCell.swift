@@ -32,7 +32,7 @@ class QuizCategoriesTableViewCell: UITableViewCell {
             isComplete.textColor = .systemGreen
         case false:
             isComplete.text = "не пройдено"
-            isComplete.textColor = .systemGray
+            isComplete.textColor = .white
         }
     }
     
