@@ -86,6 +86,7 @@ final class ProfileViewController: UIViewController {
             // информация о последней викторине
             self.LastQuizCategoryIcon.image = UIImage(named: user.icon)
             self.LastQuizCategoryIcon.sound = user.categorysound
+            self.LastQuizCategoryIcon.music = user.categorymusic
             self.LastQuizCategoryName.text = user.category
             self.BestScore.text = "лучший счет: \(user.score)/100"
             self.CorrectAnswersCountLabel.text = "ответы: \(user.correctAnswers)/20"

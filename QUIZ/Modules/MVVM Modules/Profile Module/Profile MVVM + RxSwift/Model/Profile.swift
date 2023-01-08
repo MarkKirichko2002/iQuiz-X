@@ -18,5 +18,6 @@ struct Profile {
     let password: String
     let voicepassword: String
     let categorysound: String
+    let categorymusic: String
     let categoryDate: String
 }

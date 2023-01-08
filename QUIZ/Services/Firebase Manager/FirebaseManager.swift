@@ -141,10 +141,11 @@ class FirebaseManager: FirebaseManagerProtocol {
                         let date = category["date"] as? String ?? ""
                         let sound = category["sound"] as? String ?? ""
                         let background = category["background"] as? String ?? ""
+                        let music = category["music"] as? String ?? ""
                         let bestscore = category["bestscore"] as? Int ?? 0
                         let category = category["category"] as? String ?? ""
                         
-                        let user = Profile(name: name, email: email, score: bestscore, correctAnswers: CorrectAnswersCounter, category: category, image: image, icon: icon, background: background, password: password, voicepassword: self.settingsManager.voicepassword, categorysound: sound, categoryDate: date)
+                        let user = Profile(name: name, email: email, score: bestscore, correctAnswers: CorrectAnswersCounter, category: category, image: image, icon: icon, background: background, password: password, voicepassword: self.settingsManager.voicepassword, categorysound: sound, categorymusic: music, categoryDate: date)
                         completion(user)
                     }
                 }
