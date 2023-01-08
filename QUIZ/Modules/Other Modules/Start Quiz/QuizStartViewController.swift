@@ -7,24 +7,24 @@
 
 import UIKit
 
-class QuizStartViewController: UIViewController {
+final class QuizStartViewController: UIViewController {
     
     @IBOutlet weak var Icon: RoundedImageView!
     @IBOutlet weak var CategoryName: UILabel!
     @IBOutlet weak var QuestionLabel: UILabel!
     @IBOutlet weak var TimerLabeL: UILabel!
     
-    var viewModel = CategoriesViewModel()
+    private let viewModel = CategoriesViewModel()
     var base: QuizBaseViewModel?
     var category: QuizCategoryModel?
-    var seconds = 6 {
+    private var seconds = 6 {
         didSet {
             animation.springLabel(label: TimerLabeL)
             TimerLabeL.text = ("\(seconds)")
         }
     }
-    var animation = AnimationClass()
-    var timer = Timer()
+    private let animation = AnimationClass()
+    private var timer = Timer()
     
     @objc func time() {
         seconds -= 1

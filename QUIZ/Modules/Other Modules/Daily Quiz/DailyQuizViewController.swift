@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-class DailyQuizViewController: UIViewController {
+final class DailyQuizViewController: UIViewController {
     
     var category: QuizCategoryModel?
     private let dateManager = DateManager()

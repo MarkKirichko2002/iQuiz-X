@@ -10,7 +10,7 @@ import SnapKit
 import SDWebImage
 import Combine
 
-class PlayerDetailViewController: UIViewController {
+final class PlayerDetailViewController: UIViewController {
     
     private let PlayerImage = RoundedImageView()
     private let PlayerName = UILabel()
@@ -26,7 +26,7 @@ class PlayerDetailViewController: UIViewController {
         playersViewModel.player = player
         table.delegate = self
         table.dataSource = self
-        table.register(UINib(nibName: CategoryTableViewCell.identifier, bundle: nil), forCellReuseIdentifier: CategoryTableViewCell.identifier)
+        table.register(UINib(nibName: QuizCategoriesTableViewCell.identifier, bundle: nil), forCellReuseIdentifier: QuizCategoriesTableViewCell.identifier)
         playersViewModel.$categories.sink {[weak self] _ in
             DispatchQueue.main.async {
                 self?.table.reloadData()
@@ -42,7 +42,7 @@ class PlayerDetailViewController: UIViewController {
         playersViewModel.PlayCurrentCategoryMusic()
     }
     
-    func SetUpView() {
+    private func SetUpView() {
         view.backgroundColor = UIColor(patternImage: UIImage(named: player?.background ?? "")!)
         PlayerImage.sd_setImage(with: URL(string: player?.image ?? ""))
         PlayerImage.color = .white
@@ -64,7 +64,7 @@ class PlayerDetailViewController: UIViewController {
         view.addSubview(table)
     }
     
-    func SetUpConstraints() {
+    private func SetUpConstraints() {
         PlayerImage.snp.makeConstraints { maker in
             maker.left.equalToSuperview().inset(50)
             maker.top.equalToSuperview().inset(100)
@@ -108,7 +108,7 @@ extension PlayerDetailViewController: UITableViewDelegate, UITableViewDataSource
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: CategoryTableViewCell.identifier, for: indexPath) as! CategoryTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: QuizCategoriesTableViewCell.identifier, for: indexPath) as! QuizCategoriesTableViewCell
         cell.ConfigureCell(category: playersViewModel.categories[indexPath.row])
         return cell
     }

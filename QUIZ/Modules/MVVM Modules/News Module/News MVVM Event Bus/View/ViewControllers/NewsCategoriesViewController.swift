@@ -7,7 +7,7 @@
 
 import UIKit
 
-class NewsCategoriesViewController: UIViewController {
+final class NewsCategoriesViewController: UIViewController {
     
     private var newsListViewModel = NewsListViewModel()
     private let categories = [NewsCategoryModel(id: 1, name: "главное", icon: "newspaper", sound: "literature.mp3"), NewsCategoryModel(id: 2, name: "технологии", icon: "technology", sound: "technology.wav"), NewsCategoryModel(id: 3, name: "спорт", icon: "sport.jpeg", sound: "sport.mp3"),NewsCategoryModel(id: 4, name: "бизнес", icon: "business", sound: "economics.mp3"), NewsCategoryModel(id: 5, name: "наука", icon: "science", sound: "chemistry.mp3")]

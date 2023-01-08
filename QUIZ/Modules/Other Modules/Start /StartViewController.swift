@@ -12,7 +12,7 @@ import Vision
 import Firebase
 import SCLAlertView
 
-class StartViewController: UIViewController {
+final class StartViewController: UIViewController {
     
     @IBOutlet weak var StartButton: UIButton!
     @IBOutlet weak var TodayQuizButton: UIButton!

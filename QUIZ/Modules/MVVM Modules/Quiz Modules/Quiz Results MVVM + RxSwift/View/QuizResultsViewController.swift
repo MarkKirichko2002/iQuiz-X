@@ -9,7 +9,7 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-class QuizResultsViewController: UIViewController {
+final class QuizResultsViewController: UIViewController {
     
     @IBOutlet weak var Image: RoundedImageView!
     @IBOutlet weak var ScoreLabel: UILabel!

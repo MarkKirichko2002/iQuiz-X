@@ -8,7 +8,7 @@
 import UIKit
 import Combine
 
-class VoiceCommandsTableViewController: UITableViewController {
+final class VoiceCommandsTableViewController: UITableViewController {
     
     private var voiceCommandViewModel = VoiceCommandViewModel()
     private var cancellation: Set<AnyCancellable> = []

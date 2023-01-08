@@ -7,7 +7,7 @@
 
 import UIKit
 
-class QuizSegmentedViewController: UIViewController {
+final class QuizSegmentedViewController: UIViewController {
     
     @IBOutlet var segmentedControl: UISegmentedControl!
     
@@ -35,12 +35,12 @@ class QuizSegmentedViewController: UIViewController {
         updateView()
     }
     
-    private lazy var categoriesViewController: CategoryTableViewController = {
+    private lazy var categoriesViewController: QuizCategoriesTableViewController = {
         // Load Storyboard
         let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
         
         // Instantiate View Controller
-        var viewController = storyboard.instantiateViewController(withIdentifier: "CategoryTableViewController") as! CategoryTableViewController
+        var viewController = storyboard.instantiateViewController(withIdentifier: "QuizCategoriesTableViewController") as! QuizCategoriesTableViewController
         
         // Add View Controller as Child View Controller
         self.add(asChildViewController: viewController)

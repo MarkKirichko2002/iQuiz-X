@@ -143,7 +143,7 @@
                     </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="1EA-1C-7wQ">
-                        <rect key="frame" x="0.0" y="59" width="430" height="104.33333333333334"/>
+                        <rect key="frame" x="0.0" y="59" width="430" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -218,7 +218,7 @@
                     </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="ZVb-tp-CnA">
-                        <rect key="frame" x="0.0" y="59" width="430" height="104.33333333333334"/>
+                        <rect key="frame" x="0.0" y="59" width="430" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <textAttributes key="largeTitleTextAttributes">
                             <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -242,7 +242,7 @@
                     </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="Mze-v6-U77">
-                        <rect key="frame" x="0.0" y="59" width="430" height="104.33333333333334"/>
+                        <rect key="frame" x="0.0" y="59" width="430" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <textAttributes key="largeTitleTextAttributes">
                             <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -257,10 +257,10 @@
             </objects>
             <point key="canvasLocation" x="5504" y="1422"/>
         </scene>
-        <!--Category Table View Controller-->
+        <!--Quiz Categories Table View Controller-->
         <scene sceneID="hCA-c7-1cW">
             <objects>
-                <viewController storyboardIdentifier="CategoryTableViewController" id="Ibg-XJ-agA" customClass="CategoryTableViewController" customModule="QUIZ" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="QuizCategoriesTableViewController" id="Ibg-XJ-agA" customClass="QuizCategoriesTableViewController" customModule="QUIZ" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Hno-fP-5Vm">
                         <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -551,7 +551,7 @@
                     </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="BBW-Fp-iCQ">
-                        <rect key="frame" x="0.0" y="59" width="430" height="104.33333333333334"/>
+                        <rect key="frame" x="0.0" y="59" width="430" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -1177,7 +1177,7 @@
         <!--Категории-->
         <scene sceneID="Sqd-f4-4Rt">
             <objects>
-                <tableViewController id="45m-09-y8z" customClass="TotalTableViewController" customModule="QUIZ" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="45m-09-y8z" customClass="QuizStatisticTableViewController" customModule="QUIZ" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="0Bc-Ul-44U">
                         <rect key="frame" x="0.0" y="0.0" width="430" height="863"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1760,7 +1760,7 @@
                                 <rect key="frame" x="0.0" y="59" width="430" height="839"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="di3-qZ-ayZ">
-                                        <rect key="frame" x="0.0" y="0.0" width="430" height="862.66666666666663"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="430" height="863"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="planets.jpeg" translatesAutoresizingMaskIntoConstraints="NO" id="gQI-k6-exZ" customClass="RoundedImageView" customModule="QUIZ" customModuleProvider="target">
                                                 <rect key="frame" x="140" y="120" width="150" height="150"/>
