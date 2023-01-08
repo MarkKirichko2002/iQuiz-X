@@ -155,12 +155,24 @@ class CategoriesViewModel {
                 }
             }
             
+            fbManager.LoadLastQuizCategoryData { quizcategory in
+                if category.name == quizcategory.categoryName {
+                    self.categories[0].categories[0].name = "\(category.name) (недавно)"
+                }
+            }
+            
         case 2:
             fbManager.LoadQuizCategoriesData(quizpath: category.quizpath) { result in
                 DispatchQueue.main.async {
                     self.categories[0].categories[1].score = result.score
                     self.categories[0].categories[1].complete = result.complete
                     self.categories[0].categories[1].date = result.date
+                }
+            }
+            
+            fbManager.LoadLastQuizCategoryData { quizcategory in
+                if category.name == quizcategory.categoryName {
+                    self.categories[0].categories[1].name = "\(category.name) (недавно)"
                 }
             }
             
@@ -173,6 +185,11 @@ class CategoriesViewModel {
                 }
             }
             
+            fbManager.LoadLastQuizCategoryData { quizcategory in
+                if category.name == quizcategory.categoryName {
+                    self.categories[0].categories[2].name = "\(category.name) (недавно)"
+                }
+            }
             
         case 4:
             fbManager.LoadQuizCategoriesData(quizpath: category.quizpath) { result in
@@ -180,6 +197,12 @@ class CategoriesViewModel {
                     self.categories[0].categories[3].score = result.score
                     self.categories[0].categories[3].complete = result.complete
                     self.categories[0].categories[3].date = result.date
+                }
+            }
+            
+            fbManager.LoadLastQuizCategoryData { quizcategory in
+                if category.name == quizcategory.categoryName {
+                    self.categories[0].categories[3].name = "\(category.name) (недавно)"
                 }
             }
             
@@ -192,12 +215,24 @@ class CategoriesViewModel {
                 }
             }
             
+            fbManager.LoadLastQuizCategoryData { quizcategory in
+                if category.name == quizcategory.categoryName {
+                    self.categories[1].categories[0].name = "\(category.name) (недавно)"
+                }
+            }
+            
         case 6:
             fbManager.LoadQuizCategoriesData(quizpath: category.quizpath) { result in
                 DispatchQueue.main.async {
                     self.categories[1].categories[1].score = result.score
                     self.categories[1].categories[1].complete = result.complete
                     self.categories[1].categories[1].date = result.date
+                }
+            }
+            
+            fbManager.LoadLastQuizCategoryData { quizcategory in
+                if category.name == quizcategory.categoryName {
+                    self.categories[1].categories[1].name = "\(category.name) (недавно)"
                 }
             }
             
@@ -210,12 +245,24 @@ class CategoriesViewModel {
                 }
             }
             
+            fbManager.LoadLastQuizCategoryData { quizcategory in
+                if category.name == quizcategory.categoryName {
+                    self.categories[1].categories[2].name = "\(category.name) (недавно)"
+                }
+            }
+            
         case 8:
             fbManager.LoadQuizCategoriesData(quizpath: category.quizpath) { result in
                 DispatchQueue.main.async {
                     self.categories[1].categories[3].score = result.score
                     self.categories[1].categories[3].complete = result.complete
                     self.categories[1].categories[3].date = result.date
+                }
+            }
+            
+            fbManager.LoadLastQuizCategoryData { quizcategory in
+                if category.name == quizcategory.categoryName {
+                    self.categories[1].categories[3].name = "\(category.name) (недавно)"
                 }
             }
             
@@ -228,12 +275,24 @@ class CategoriesViewModel {
                 }
             }
             
+            fbManager.LoadLastQuizCategoryData { quizcategory in
+                if category.name == quizcategory.categoryName {
+                    self.categories[1].categories[4].name = "\(category.name) (недавно)"
+                }
+            }
+            
         case 10:
             fbManager.LoadQuizCategoriesData(quizpath: category.quizpath) { result in
                 DispatchQueue.main.async {
                     self.categories[1].categories[5].score = result.score
                     self.categories[1].categories[5].complete = result.complete
                     self.categories[1].categories[5].date = result.date
+                }
+            }
+            
+            fbManager.LoadLastQuizCategoryData { quizcategory in
+                if category.name == quizcategory.categoryName {
+                    self.categories[1].categories[5].name = "\(category.name) (недавно)"
                 }
             }
             
@@ -246,12 +305,24 @@ class CategoriesViewModel {
                 }
             }
             
+            fbManager.LoadLastQuizCategoryData { quizcategory in
+                if category.name == quizcategory.categoryName {
+                    self.categories[1].categories[6].name = "\(category.name) (недавно)"
+                }
+            }
+            
         case 12:
             fbManager.LoadQuizCategoriesData(quizpath: category.quizpath) { result in
                 DispatchQueue.main.async {
                     self.categories[1].categories[7].score = result.score
                     self.categories[1].categories[7].complete = result.complete
                     self.categories[1].categories[7].date = result.date
+                }
+            }
+            
+            fbManager.LoadLastQuizCategoryData { quizcategory in
+                if category.name == quizcategory.categoryName {
+                    self.categories[1].categories[7].name = "\(category.name) (недавно)"
                 }
             }
             
@@ -264,12 +335,24 @@ class CategoriesViewModel {
                 }
             }
             
+            fbManager.LoadLastQuizCategoryData { quizcategory in
+                if category.name == quizcategory.categoryName {
+                    self.categories[2].categories[0].name = "\(category.name) (недавно)"
+                }
+            }
+            
         case 14:
             fbManager.LoadQuizCategoriesData(quizpath: category.quizpath) { result in
                 DispatchQueue.main.async {
                     self.categories[2].categories[1].score = result.score
                     self.categories[2].categories[1].complete = result.complete
                     self.categories[2].categories[1].date = result.date
+                }
+            }
+            
+            fbManager.LoadLastQuizCategoryData { quizcategory in
+                if category.name == quizcategory.categoryName {
+                    self.categories[2].categories[1].name = "\(category.name) (недавно)"
                 }
             }
             
@@ -282,12 +365,24 @@ class CategoriesViewModel {
                 }
             }
             
+            fbManager.LoadLastQuizCategoryData { quizcategory in
+                if category.name == quizcategory.categoryName {
+                    self.categories[2].categories[2].name = "\(category.name) (недавно)"
+                }
+            }
+            
         case 16:
             fbManager.LoadQuizCategoriesData(quizpath: category.quizpath) { result in
                 DispatchQueue.main.async {
                     self.categories[3].categories[0].score = result.score
                     self.categories[3].categories[0].complete = result.complete
                     self.categories[3].categories[0].date = result.date
+                }
+            }
+            
+            fbManager.LoadLastQuizCategoryData { quizcategory in
+                if category.name == quizcategory.categoryName {
+                    self.categories[3].categories[0].name = "\(category.name) (недавно)"
                 }
             }
             
@@ -300,6 +395,12 @@ class CategoriesViewModel {
                 }
             }
             
+            fbManager.LoadLastQuizCategoryData { quizcategory in
+                if category.name == quizcategory.categoryName {
+                    self.categories[3].categories[1].name = "\(category.name) (недавно)"
+                }
+            }
+            
         case 18:
             fbManager.LoadQuizCategoriesData(quizpath: category.quizpath) { result in
                 DispatchQueue.main.async {
@@ -309,12 +410,24 @@ class CategoriesViewModel {
                 }
             }
             
+            fbManager.LoadLastQuizCategoryData { quizcategory in
+                if category.name == quizcategory.categoryName {
+                    self.categories[4].categories[0].name = "\(category.name) (недавно)"
+                }
+            }
+            
         case 19:
             fbManager.LoadQuizCategoriesData(quizpath: category.quizpath) { result in
                 DispatchQueue.main.async {
                     self.categories[5].categories[0].score = result.score
                     self.categories[5].categories[0].complete = result.complete
                     self.categories[5].categories[0].date = result.date
+                }
+            }
+            
+            fbManager.LoadLastQuizCategoryData { quizcategory in
+                if category.name == quizcategory.categoryName {
+                    self.categories[5].categories[0].name = "\(category.name) (недавно)"
                 }
             }
             
