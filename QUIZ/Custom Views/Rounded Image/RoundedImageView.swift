@@ -11,7 +11,7 @@ import AVFoundation
 class RoundedImageView: UIImageView {
     
     var player = SoundClass()
-    var sound = "newyear.mp3"
+    var sound = "IQ.mp3"
     var color = UIColor.black
     var borderWidth = 3
     

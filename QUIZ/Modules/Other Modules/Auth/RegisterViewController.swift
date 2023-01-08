@@ -93,13 +93,11 @@ final class RegisterViewController: UIViewController, UIImagePickerControllerDel
         }
     }
     
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = UIColor(patternImage: UIImage(named: "newyear.background.jpeg")!)
-        view2.backgroundColor = UIColor(patternImage: UIImage(named: "newyear.background.jpeg")!)
-        scrollView.backgroundColor = UIColor(patternImage: UIImage(named: "newyear.background.jpeg")!)
+        view.backgroundColor = UIColor(patternImage: UIImage(named: "earth.background.jpeg")!)
+        view2.backgroundColor = UIColor(patternImage: UIImage(named: "earth.background.jpeg")!)
+        scrollView.backgroundColor = UIColor(patternImage: UIImage(named: "earth.background.jpeg")!)
         
         RegisterButton.layer.cornerRadius = RegisterButton.frame.size.width / 20
         RegisterButton.clipsToBounds = true
@@ -237,17 +235,13 @@ final class RegisterViewController: UIViewController, UIImagePickerControllerDel
                     print("Download URL: \(self.urlString)")
                     UserDefaults.standard.set(self.urlString, forKey: "url")
                 })
-                
-                
             })
         }
-        
     }
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         picker.dismiss(animated: true, completion: nil)
     }
-    
 
     @IBAction func register() {
         guard let email = loginTextField.text, loginTextField.hasText,
@@ -265,7 +259,11 @@ final class RegisterViewController: UIViewController, UIImagePickerControllerDel
             }
             
             if UserDefaults.standard.bool(forKey: "isOnboarding") {
-                
+                DispatchQueue.main.async {
+                    guard let vc = self?.storyboard?.instantiateViewController(identifier: "StartViewController") else {return}
+                    guard let window = self!.view.window else {return}
+                    window.rootViewController = vc
+               }
             } else {
                 DispatchQueue.main.async {
                     guard let vc = self?.storyboard?.instantiateViewController(identifier: "OnboardingViewController") else {return}
@@ -273,7 +271,6 @@ final class RegisterViewController: UIViewController, UIImagePickerControllerDel
                     window.rootViewController = vc
                }
             }
-            
             self!.write()
         }
     }

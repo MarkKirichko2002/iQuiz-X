@@ -7,11 +7,12 @@
 
 import UIKit
 import SDWebImage
+import Firebase
 
 class PlayerTableViewCell: UITableViewCell {
     
     static let identifier = "PlayerTableViewCell"
-    var animation = AnimationClass()
+    private let animation = AnimationClass()
     
     @IBOutlet weak var PlayerImage: RoundedImageView!
     @IBOutlet weak var UserName: UILabel!
@@ -28,13 +29,18 @@ class PlayerTableViewCell: UITableViewCell {
     func configure(players: Player) {
         PlayerImage.sd_setImage(with: URL(string: players.image))
         PlayerImage.sound = players.sound
-        UserName.text = players.name
-        UserName.textColor = UIColor.white
+        PlayerImage.color = UIColor.white
+        if players.email == Auth.auth().currentUser?.email {
+            UserName.text = "Вы (\(players.name))"
+            UserName.textColor = UIColor.systemGreen
+        } else {
+            UserName.text = players.name
+            UserName.textColor = UIColor.white
+        }
         UserEmail.text = players.email
         UserEmail.textColor = UIColor.white
         PlayerBestScore.text = "\(players.counter)/100 (\(players.category))"
         PlayerBestScore.textColor = UIColor.white
         backgroundColor = UIColor(patternImage: UIImage(named: players.background)!)
     }
-    
 }

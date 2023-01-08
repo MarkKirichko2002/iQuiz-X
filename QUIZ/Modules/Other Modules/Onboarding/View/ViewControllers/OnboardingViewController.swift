@@ -14,7 +14,7 @@ final class OnboardingViewController: UIViewController {
     @IBOutlet weak var nextBtn: UIButton!
     @IBOutlet weak var pageControl: UIPageControl!
     
-    private var slides: [OnboardingSlide] = []
+    private let slides = [OnboardingSlide(title: "новости", description: "читайте новости каждый день", image: "newspaper.png"), OnboardingSlide(title: "распознавание речи", description: "выбирайте правильный вариант ответа в викторине сказав 1,2,3 или выберите нужную категории сказав название категории", image: "voice.png"), OnboardingSlide(title: "биометрия", description: "авторизация с помощью Face ID/Touch ID", image: "FACE ID.png"), OnboardingSlide(title: "играйте в викторину", description: "на данный момент доступно 19 различных категорий", image: "astronomy.png")]
     
     private var currentPage = 0 {
         didSet {
@@ -31,7 +31,7 @@ final class OnboardingViewController: UIViewController {
         super.viewDidLoad()
         collectionView.delegate = self
         collectionView.dataSource = self
-        slides = [OnboardingSlide(title: "новости", description: "читайте новости каждый день", image: "newspaper.png"), OnboardingSlide(title: "распознавание речи", description: "выбирайте правильный вариант ответа в викторине сказав 1,2,3 или выберите нужную категории сказав название категории", image: "voice.png"), OnboardingSlide(title: "биометрия", description: "авторизация с помощью Face ID/Touch ID", image: "FACE ID.png"), OnboardingSlide(title: "играйте в викторину", description: "на данный момент доступно 19 различных категорий", image: "planets.jpeg")]
+        collectionView.register(UINib(nibName: OnboardingCollectionViewCell.identifier, bundle: nil), forCellWithReuseIdentifier: OnboardingCollectionViewCell.identifier)
     }
     
     @IBAction func NextBtnClicked(_ sender: UIButton) {

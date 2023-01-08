@@ -28,9 +28,7 @@ final class LoginViewController: UIViewController {
     @IBOutlet weak var view2: UIView!
     
     private var token: AuthStateDidChangeListenerHandle!
-    
     let mycontext: LAContext = LAContext()
-    
     var auth = FirebaseManager()
     var UnlockVoiceFailsCounter = 0
     var UnlockBiometricFailsCounter = 0
@@ -66,9 +64,9 @@ final class LoginViewController: UIViewController {
             self.navigationItem.hidesBackButton = true
         }
         
-        view.backgroundColor = UIColor(patternImage: UIImage(named: "newyear.background.jpeg")!)
-        view2.backgroundColor = UIColor(patternImage: UIImage(named: "newyear.background.jpeg")!)
-        scrollView.backgroundColor = UIColor(patternImage: UIImage(named: "newyear.background.jpeg")!)
+        view.backgroundColor = UIColor(patternImage: UIImage(named: "earth.background.jpeg")!)
+        view2.backgroundColor = UIColor(patternImage: UIImage(named: "earth.background.jpeg")!)
+        scrollView.backgroundColor = UIColor(patternImage: UIImage(named: "earth.background.jpeg")!)
         
         loginButton.layer.cornerRadius = loginButton.frame.size.width / 20
         loginButton.clipsToBounds = true
@@ -142,8 +140,6 @@ final class LoginViewController: UIViewController {
         
         var password = defaults.object(forKey:"password") as? String
         
-        //let photo = defaults.object(forKey: "url") as? String
-        
         print(email)
         print(password)
        
@@ -190,17 +186,11 @@ final class LoginViewController: UIViewController {
                 
                 let b = defaults.set(password, forKey: "password")
                 
-                //email = defaults.set(textField?.text, forKey: "email")
-                
-                //password = defaults.set(self.textField2.text, forKey: "password")
-                
                 print(a)
                 print(b)
-                // print(photo)
                 
             }))
             
-            // 4. Present the alert.
             self.present(alert, animated: true, completion: nil)
             
         } else {
@@ -214,8 +204,6 @@ final class LoginViewController: UIViewController {
                     
                     if let document = document {
                         let data = document.data()
-                        //let email = data?["email"] as? String ?? ""
-                        //let password = data?["password"] as? String ?? ""
                         let image = data?["image"] as? String ?? ""
                         let name = data?["name"] as? String ?? ""
                         
@@ -333,19 +321,12 @@ final class LoginViewController: UIViewController {
                 self.request.endAudio()
                 self.recognitionTask?.cancel()
                 self.audioEngine.inputNode.removeTap(onBus: 0)
-                //stop = sender.isSelected
-                
+               
                 self.VoiceButton.setImage(UIImage(systemName: "mic.slash"), for: .normal)
                 self.VoiceButton.sendActions(for: .touchUpInside)
             }
-            
-            
         }
-        
-        //self.recognizeButton.sendActions(for: .touchUpInside)
     }
-    
-    
     
     @IBAction func RecordPassword(_ sender: UIButton) {
         

@@ -10,12 +10,12 @@ import Combine
 
 final class PlayerBoardTableViewController: UITableViewController {
     
-    @IBOutlet var SortButton: UIBarButtonItem!
+    private var cancellation: Set<AnyCancellable> = []
+    private let player = SoundClass()
+    private let playersViewModel = PlayersViewModel()
+    private var sorted = false
     
-    var playersViewModel = PlayersViewModel()
-    var cancellation: Set<AnyCancellable> = []
-    var player = SoundClass()
-    var sorted = false
+    @IBOutlet var SortButton: UIBarButtonItem!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -77,10 +77,7 @@ final class PlayerBoardTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: PlayerTableViewCell.identifier, for: indexPath) as! PlayerTableViewCell
-        
         cell.configure(players: playersViewModel.players[indexPath.row])
-        cell.PlayerImage.sound = playersViewModel.players[indexPath.row].sound
-        cell.PlayerImage.color = .white
         return cell
     }
 }
