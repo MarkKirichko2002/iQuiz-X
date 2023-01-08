@@ -12,6 +12,11 @@ import RxCocoa
 
 final class ProfileViewController: UIViewController {
     
+    private let animation = AnimationClass()
+    private let profileViewModel = ProfileViewModel()
+    private let disposeBag = DisposeBag()
+    private let player = SoundClass()
+    
     @IBOutlet weak var ProfileImage: RoundedImageView!
     @IBOutlet weak var EmailLabel: UILabel!
     @IBOutlet weak var NameLabel: UILabel!
@@ -21,11 +26,6 @@ final class ProfileViewController: UIViewController {
     @IBOutlet weak var BestScore: UILabel!
     @IBOutlet weak var CorrectAnswersCountLabel: UILabel!
     @IBOutlet weak var SettingsButton: UIButton!
-    
-    private let animation = AnimationClass()
-    private let profileViewModel = ProfileViewModel()
-    private let disposeBag = DisposeBag()
-    private let player = SoundClass()
     
     @IBAction func ShowSettings() {
         animation.springButton(button: SettingsButton)

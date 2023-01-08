@@ -21,14 +21,14 @@ final class SplashScreenController: UIViewController {
         Image.color = .white
         animation.springImage(image: Image)
         Text.textColor = UIColor.white
-        view.backgroundColor = UIColor(patternImage: UIImage(named: "newyear.background.jpeg")!)
+        view.backgroundColor = UIColor(patternImage: UIImage(named: "earth.background.jpeg")!)
         SplashScreen()
     }
    
     private func SplashScreen() {
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-            self.Text.text = "Викторина 2023"
+            self.Text.text = "iQuiz X"
             self.animation.springLabel(label: self.Text)
         }
         

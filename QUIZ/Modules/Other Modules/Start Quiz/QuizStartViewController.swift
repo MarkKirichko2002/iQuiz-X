@@ -40,7 +40,7 @@ final class QuizStartViewController: UIViewController {
         viewModel.storyboard = self.storyboard
         view.backgroundColor = UIColor(patternImage: UIImage(named: category?.background ?? "")!)
         Icon.sound = category?.sound ?? "space.wav"
-        Icon.image = UIImage(named: category?.image ?? "planets.jpeg")
+        Icon.image = UIImage(named: category?.image ?? "astronomy.png")
         Icon.color = .white
         Icon.borderWidth = 5
         CategoryName.text = category?.name

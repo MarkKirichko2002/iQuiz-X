@@ -79,10 +79,10 @@ final class QuizTabBarController: UITabBarController {
             self.animation.springButton(button: self.button)
             self.player.PlaySound(resource: "newspaper.mp3")
         case 1:
-            self.icon = "newyear.png"
+            self.icon = "astronomy.png"
             self.button.setImage(UIImage(named: self.icon), for: .normal)
             self.animation.springButton(button: self.button)
-            self.player.PlaySound(resource: "newyear.mp3")
+            self.player.PlaySound(resource: "IQ.mp3")
         case 3:
             self.icon = "trophy.png"
             self.button.setImage(UIImage(named: self.icon), for: .normal)
@@ -146,7 +146,7 @@ final class QuizTabBarController: UITabBarController {
             
         case _ where self.text.contains("Категори") || self.text.contains("категори"):
             self.selectedIndex = 1
-            self.icon = "newyear.png"
+            self.icon = "astronomy.png"
             self.button.setImage(UIImage(named: self.icon), for: .normal)
             self.animation.springButton(button: self.button)
             self.player.PlaySound(resource: "IQ.mp3")
@@ -186,9 +186,9 @@ final class QuizTabBarController: UITabBarController {
                 
         // Включение/Выключение музыки
         case _ where self.text.contains("Муз") || self.text.contains("муз"):
-            self.icon = "newyear.png"
+            self.icon = "astronomy.png"
             self.button.setImage(UIImage(named: self.icon), for: .normal)
-            self.sound = "newyear music.mp3"
+            self.sound = "space music.mp3"
             self.player.PlaySound(resource: self.sound)
             self.animation.StartRotateImage(image: self.button.imageView!)
             
@@ -272,7 +272,7 @@ final class QuizTabBarController: UITabBarController {
             startSpeechRecognization()
         } else {
             player.PlaySound(resource: "pause_sound.mp3")
-            self.icon = "newyear.png"
+            self.icon = "astronomy.png"
             button.setImage(UIImage(named: self.icon), for: .normal)
             animation.springButton(button: button)
             cancelSpeechRecognization()

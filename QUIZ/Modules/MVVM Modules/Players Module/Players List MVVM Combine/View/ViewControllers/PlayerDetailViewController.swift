@@ -18,6 +18,7 @@ final class PlayerDetailViewController: UIViewController {
     private let PlayerScore = UILabel()
     private let table = UITableView()
     private let playersViewModel = PlayersViewModel()
+    private let animation = AnimationClass()
     private var cancellation: Set<AnyCancellable> = []
     var player: Player?
     
@@ -57,6 +58,7 @@ final class PlayerDetailViewController: UIViewController {
         PlayerEmail.textColor = .white
         PlayerEmail.font = UIFont.boldSystemFont(ofSize: 18.0)
         view.addSubview(PlayerEmail)
+        PlayerScore.numberOfLines = 0
         PlayerScore.text = "\(player?.counter ?? 0)/100 (\(player?.category ?? ""))"
         PlayerScore.textColor = .white
         PlayerScore.font = UIFont.boldSystemFont(ofSize: 18.0)
@@ -109,6 +111,9 @@ extension PlayerDetailViewController: UITableViewDelegate, UITableViewDataSource
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: QuizCategoriesTableViewCell.identifier, for: indexPath) as! QuizCategoriesTableViewCell
+        if player!.category == playersViewModel.categories[indexPath.row].name {
+            self.animation.StartRotateImage(image: cell.CategoryImage)
+        }
         cell.ConfigureCell(category: playersViewModel.categories[indexPath.row])
         return cell
     }

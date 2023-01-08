@@ -114,6 +114,8 @@
 		8234A667296A31EE00A7FA2B /* SoundClassProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8234A666296A31EE00A7FA2B /* SoundClassProtocol.swift */; };
 		8234A669296A322B00A7FA2B /* AnimationClassProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8234A668296A322B00A7FA2B /* AnimationClassProtocol.swift */; };
 		8234A66B296A32A200A7FA2B /* NavigationManagerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8234A66A296A32A200A7FA2B /* NavigationManagerProtocol.swift */; };
+		8234A678296A53F900A7FA2B /* astronomy.png in Resources */ = {isa = PBXBuildFile; fileRef = 8234A677296A53F900A7FA2B /* astronomy.png */; };
+		8234A67A296A5A2600A7FA2B /* OnboardingCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8234A679296A5A2600A7FA2B /* OnboardingCollectionViewCell.xib */; };
 		8237D98E286D02230097FE69 /* QuizUnderwater.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8237D98D286D02230097FE69 /* QuizUnderwater.swift */; };
 		8237D9B3286E1BCF0097FE69 /* swift.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 8237D9B2286E1BCF0097FE69 /* swift.jpeg */; };
 		8238057F28F1922E0006A736 /* QuizMediaLibraryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8238057E28F1922E0006A736 /* QuizMediaLibraryTableViewController.swift */; };
@@ -168,7 +170,6 @@
 		826E129227FF509800465E16 /* QuizSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 826E129127FF509800465E16 /* QuizSwift.swift */; };
 		826E12AD27FF89DA00465E16 /* HintsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 826E12AC27FF89DA00465E16 /* HintsTableViewCell.swift */; };
 		826E12B128009F1300465E16 /* SpeachTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 826E12B028009F1300465E16 /* SpeachTableViewCell.swift */; };
-		826F33672825E80200FB6CF8 /* planets.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 826F33662825E7E800FB6CF8 /* planets.jpeg */; };
 		826F33692826BBA500FB6CF8 /* literature.background.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 826F33682826BBA500FB6CF8 /* literature.background.jpeg */; };
 		82729E7B27D38F460042944C /* ecology2.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 82729E7A27D38F460042944C /* ecology2.jpeg */; };
 		82729E7F27D38F690042944C /* geography2.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 82729E7E27D38F690042944C /* geography2.jpeg */; };
@@ -764,6 +765,8 @@
 		8234A666296A31EE00A7FA2B /* SoundClassProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundClassProtocol.swift; sourceTree = "<group>"; };
 		8234A668296A322B00A7FA2B /* AnimationClassProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationClassProtocol.swift; sourceTree = "<group>"; };
 		8234A66A296A32A200A7FA2B /* NavigationManagerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationManagerProtocol.swift; sourceTree = "<group>"; };
+		8234A677296A53F900A7FA2B /* astronomy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = astronomy.png; path = ../../../../../../../Downloads/astronomy.png; sourceTree = "<group>"; };
+		8234A679296A5A2600A7FA2B /* OnboardingCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OnboardingCollectionViewCell.xib; sourceTree = "<group>"; };
 		8237D98D286D02230097FE69 /* QuizUnderwater.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizUnderwater.swift; sourceTree = "<group>"; };
 		8237D9B2286E1BCF0097FE69 /* swift.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = swift.jpeg; sourceTree = "<group>"; };
 		8238057E28F1922E0006A736 /* QuizMediaLibraryTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizMediaLibraryTableViewController.swift; sourceTree = "<group>"; };
@@ -818,7 +821,6 @@
 		826E129127FF509800465E16 /* QuizSwift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizSwift.swift; sourceTree = "<group>"; };
 		826E12AC27FF89DA00465E16 /* HintsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HintsTableViewCell.swift; sourceTree = "<group>"; };
 		826E12B028009F1300465E16 /* SpeachTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeachTableViewCell.swift; sourceTree = "<group>"; };
-		826F33662825E7E800FB6CF8 /* planets.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = planets.jpeg; sourceTree = "<group>"; };
 		826F33682826BBA500FB6CF8 /* literature.background.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = literature.background.jpeg; sourceTree = "<group>"; };
 		82729E7A27D38F460042944C /* ecology2.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = ecology2.jpeg; sourceTree = "<group>"; };
 		82729E7E27D38F690042944C /* geography2.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = geography2.jpeg; sourceTree = "<group>"; };
@@ -1866,7 +1868,7 @@
 		82848CF3281C6ED40068A4AE /* category icons */ = {
 			isa = PBXGroup;
 			children = (
-				826F33662825E7E800FB6CF8 /* planets.jpeg */,
+				8234A677296A53F900A7FA2B /* astronomy.png */,
 				82848CFE281C6F4B0068A4AE /* history.jpeg */,
 				82848CF6281C6F4B0068A4AE /* anatomy.jpeg */,
 				82848D02281C6F4C0068A4AE /* sport.jpeg */,
@@ -3169,6 +3171,7 @@
 			isa = PBXGroup;
 			children = (
 				82D35C28296346D5000EB277 /* OnboardingCollectionViewCell.swift */,
+				8234A679296A5A2600A7FA2B /* OnboardingCollectionViewCell.xib */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -3453,6 +3456,7 @@
 				82EA1F69286BCCEB00E49D0F /* games11.jpeg in Resources */,
 				8295F1B42950B70B000E033E /* underwater12.jpeg in Resources */,
 				82EA1EBE286BCB7C00E49D0F /* roadtraffic8.jpeg in Resources */,
+				8234A678296A53F900A7FA2B /* astronomy.png in Resources */,
 				82319E1F28E8E6F60053CEF5 /* halloween9.jpeg in Resources */,
 				82EA1F94286BCD2300E49D0F /* anatomy18.jpeg in Resources */,
 				8244DCF627E39D8500F5C59B /* informatics2.jpeg in Resources */,
@@ -3601,6 +3605,7 @@
 				8213BF8627D6AC0100D07512 /* physics10.jpeg in Resources */,
 				82EA1F40286BCCB900E49D0F /* economy20.jpeg in Resources */,
 				8243A61D2820810E00427553 /* physics15.jpeg in Resources */,
+				8234A67A296A5A2600A7FA2B /* OnboardingCollectionViewCell.xib in Resources */,
 				829A515E296856690056A7DB /* entertainment.mp3 in Resources */,
 				82848D10281C6F4C0068A4AE /* drive.jpeg in Resources */,
 				82848D28281C6F5B0068A4AE /* geography.background.jpeg in Resources */,
@@ -3777,7 +3782,6 @@
 				82EA1F1A286BCC7800E49D0F /* ecology19.jpeg in Resources */,
 				82848D34281C6F5B0068A4AE /* swift.background.jpeg in Resources */,
 				82848D12281C6F4C0068A4AE /* sport.jpeg in Resources */,
-				826F33672825E80200FB6CF8 /* planets.jpeg in Resources */,
 				8294090C27CECB9100AFF603 /* games1.jpeg in Resources */,
 				8243A6212820810E00427553 /* physics18.jpeg in Resources */,
 				82848D2F281C6F5B0068A4AE /* informatics.background.jpeg in Resources */,
@@ -4194,7 +4198,7 @@
 				DEVELOPMENT_TEAM = 265GKHT32M;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = QUIZ/Resources/App/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = "Викторина 2023";
+				INFOPLIST_KEY_CFBundleDisplayName = "iQuiz X";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.trivia-games";
 				INFOPLIST_KEY_NSCameraUsageDescription = "";
 				INFOPLIST_KEY_NSFaceIDUsageDescription = "";
@@ -4234,7 +4238,7 @@
 				DEVELOPMENT_TEAM = 265GKHT32M;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = QUIZ/Resources/App/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = "Викторина 2023";
+				INFOPLIST_KEY_CFBundleDisplayName = "iQuiz X";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.trivia-games";
 				INFOPLIST_KEY_NSCameraUsageDescription = "";
 				INFOPLIST_KEY_NSFaceIDUsageDescription = "";

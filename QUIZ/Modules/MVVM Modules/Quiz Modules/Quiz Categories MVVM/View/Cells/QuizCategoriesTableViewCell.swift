@@ -11,8 +11,7 @@ import Firebase
 class QuizCategoriesTableViewCell: UITableViewCell {
     
     static let identifier = "QuizCategoriesTableViewCell"
-    var animation = AnimationClass()
-   
+    private let animation = AnimationClass()
     var delegate: CustomViewCellDelegate?
     
     @IBOutlet weak var CategoryText: UILabel!

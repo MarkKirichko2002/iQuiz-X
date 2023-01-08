@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="OnboardingCollectionViewCell" id="aig-Yb-UhT" customClass="OnboardingCollectionViewCell" customModule="QUIZ" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="430" height="687"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="QiH-c0-gk7">
+                <rect key="frame" x="0.0" y="0.0" width="430" height="687"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fPd-pb-aCH">
+                        <rect key="frame" x="0.0" y="0.0" width="430" height="600"/>
+                    </imageView>
+                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="W8g-69-cfA">
+                        <rect key="frame" x="16" y="600" width="398" height="71"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Викторина 2023" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bpD-qg-qma">
+                                <rect key="frame" x="0.0" y="0.0" width="398" height="37"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="31"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Добро пожаловать в QUIZ 2023" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sdw-yh-fq8">
+                                <rect key="frame" x="0.0" y="53" width="398" height="18"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="sdw-yh-fq8" firstAttribute="top" secondItem="bpD-qg-qma" secondAttribute="bottom" constant="16" id="Bv4-J1-gdp"/>
+                            <constraint firstAttribute="trailing" secondItem="sdw-yh-fq8" secondAttribute="trailing" id="QHX-7V-eOW"/>
+                            <constraint firstItem="sdw-yh-fq8" firstAttribute="top" secondItem="bpD-qg-qma" secondAttribute="bottom" constant="16" id="XcO-cO-iA4"/>
+                            <constraint firstItem="sdw-yh-fq8" firstAttribute="leading" secondItem="W8g-69-cfA" secondAttribute="leading" id="ZeX-wG-zxk"/>
+                            <constraint firstAttribute="trailing" secondItem="bpD-qg-qma" secondAttribute="trailing" id="bze-7O-LT9"/>
+                            <constraint firstItem="bpD-qg-qma" firstAttribute="top" secondItem="W8g-69-cfA" secondAttribute="top" id="lrV-dB-VrH"/>
+                            <constraint firstAttribute="bottom" secondItem="sdw-yh-fq8" secondAttribute="bottom" id="pSu-gQ-g21"/>
+                            <constraint firstItem="bpD-qg-qma" firstAttribute="leading" secondItem="W8g-69-cfA" secondAttribute="leading" id="rXf-wr-jcb"/>
+                        </constraints>
+                    </stackView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="W8g-69-cfA" firstAttribute="top" secondItem="fPd-pb-aCH" secondAttribute="bottom" id="1Qz-i7-VT6"/>
+                    <constraint firstAttribute="bottom" secondItem="W8g-69-cfA" secondAttribute="bottom" constant="16" id="A6c-Vf-Dah"/>
+                    <constraint firstItem="fPd-pb-aCH" firstAttribute="top" secondItem="QiH-c0-gk7" secondAttribute="top" id="DDT-OC-phh"/>
+                    <constraint firstItem="W8g-69-cfA" firstAttribute="leading" secondItem="QiH-c0-gk7" secondAttribute="leading" constant="16" id="Jrw-FW-M3E"/>
+                    <constraint firstAttribute="trailing" secondItem="W8g-69-cfA" secondAttribute="trailing" constant="16" id="Z05-FI-NC3"/>
+                    <constraint firstItem="fPd-pb-aCH" firstAttribute="leading" secondItem="QiH-c0-gk7" secondAttribute="leading" id="ZpH-al-r8C"/>
+                    <constraint firstAttribute="trailing" secondItem="fPd-pb-aCH" secondAttribute="trailing" id="cQP-bU-TVI"/>
+                </constraints>
+            </collectionViewCellContentView>
+            <size key="customSize" width="430" height="687"/>
+            <connections>
+                <outlet property="slideDescriptionLbl" destination="sdw-yh-fq8" id="8DQ-u0-T5i"/>
+                <outlet property="slideImageView" destination="fPd-pb-aCH" id="vTc-5G-tc2"/>
+                <outlet property="slideTitleLbl" destination="bpD-qg-qma" id="dwR-JT-nEE"/>
+            </connections>
+            <point key="canvasLocation" x="2" y="20"/>
+        </collectionViewCell>
+    </objects>
+</document>
