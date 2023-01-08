@@ -8,7 +8,7 @@
 import UIKit
 import Speech
 
-class QuizTabBarController: UITabBarController {
+final class QuizTabBarController: UITabBarController {
     
     private let player = SoundClass()
     private let button = UIButton()

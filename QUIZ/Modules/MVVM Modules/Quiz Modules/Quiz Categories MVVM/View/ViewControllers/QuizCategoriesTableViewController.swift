@@ -1,5 +1,5 @@
 //
-//  CategoryTableViewController.swift
+//  QuizCategoriesTableViewController.swift
 //  QUIZ
 //
 //  Created by Марк Киричко on 26.02.2022.
@@ -8,7 +8,7 @@
 import UIKit
 import Combine
 
-final class CategoryTableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, CustomViewCellDelegate {
+final class QuizCategoriesTableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, CustomViewCellDelegate {
     
     private var categoriesViewModel = CategoriesViewModel()
     private var player = SoundClass()
@@ -45,7 +45,7 @@ final class CategoryTableViewController: UIViewController, UITableViewDelegate, 
         tableView.frame = view.bounds
         tableView.delegate = self
         tableView.dataSource = self
-        self.tableView.register(UINib(nibName: CategoryTableViewCell.identifier, bundle: nil), forCellReuseIdentifier: CategoryTableViewCell.identifier)
+        self.tableView.register(UINib(nibName: QuizCategoriesTableViewCell.identifier, bundle: nil), forCellReuseIdentifier: QuizCategoriesTableViewCell.identifier)
     }
     
     func didElementClick() {
@@ -66,7 +66,7 @@ final class CategoryTableViewController: UIViewController, UITableViewDelegate, 
         
         player.PlaySound(resource: categoriesViewModel.categories[indexPath.section].categories[indexPath.row].sound)
         
-        if let cell = tableView.cellForRow(at: indexPath) as? CategoryTableViewCell {
+        if let cell = tableView.cellForRow(at: indexPath) as? QuizCategoriesTableViewCell {
             cell.didSelect(indexPath: indexPath)
         }
     }
@@ -101,7 +101,7 @@ final class CategoryTableViewController: UIViewController, UITableViewDelegate, 
     }
     
      func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: CategoryTableViewCell.identifier, for: indexPath) as! CategoryTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: QuizCategoriesTableViewCell.identifier, for: indexPath) as! QuizCategoriesTableViewCell
         cell.delegate = self
         cell.ConfigureCell(category: categoriesViewModel.categories[indexPath.section].categories[indexPath.row])
         return cell

@@ -9,7 +9,7 @@ import UIKit
 import SCLAlertView
 import AVFoundation
 
-class PauseTableViewController: UITableViewController {
+final class PauseTableViewController: UITableViewController {
     
     var currentquiz: QuizBaseViewModel?
     var currentcategory: QuizCategoryModel?

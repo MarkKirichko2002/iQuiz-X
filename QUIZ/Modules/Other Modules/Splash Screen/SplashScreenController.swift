@@ -8,12 +8,12 @@
 import Foundation
 import UIKit
 
-class SplashScreenController: UIViewController {
+final class SplashScreenController: UIViewController {
     
     @IBOutlet weak var Image: RoundedImageView!
     @IBOutlet weak var Text: UILabel!
     
-    var animation = AnimationClass()
+    private let animation = AnimationClass()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,7 +25,7 @@ class SplashScreenController: UIViewController {
         SplashScreen()
     }
    
-    func SplashScreen() {
+    private func SplashScreen() {
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
             self.Text.text = "Викторина 2023"

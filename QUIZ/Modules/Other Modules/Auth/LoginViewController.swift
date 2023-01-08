@@ -14,7 +14,7 @@ import SDWebImage
 import AVFoundation
 import Speech
 
-class LoginViewController: UIViewController {
+final class LoginViewController: UIViewController {
     
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var loginImageView: UIImageView!

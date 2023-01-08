@@ -47,6 +47,7 @@ final class QuizTaskDetailViewController: UIViewController {
         super.viewDidAppear(animated)
         guard let category = self.category else {return}
         self.player.PlaySound(resource: category.music)
+        self.animation.StartRotateImage(image: self.TaskIcon)
     }
     
     @IBAction func StartTask() {
@@ -56,6 +57,7 @@ final class QuizTaskDetailViewController: UIViewController {
         animation.springLabel(label: self.TaskName)
         player.StopSound(resource: category.music)
         player.PlaySound(resource: category.sound)
+        self.animation.StopRotateImage(image: self.TaskIcon)
         categoriesViewModel.GoToStart(quiz: category.base, category: category)
     }
 }

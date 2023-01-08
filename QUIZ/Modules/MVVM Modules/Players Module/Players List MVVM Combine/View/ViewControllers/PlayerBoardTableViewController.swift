@@ -8,7 +8,7 @@
 import UIKit
 import Combine
 
-class PlayerBoardTableViewController: UITableViewController {
+final class PlayerBoardTableViewController: UITableViewController {
     
     @IBOutlet var SortButton: UIBarButtonItem!
     

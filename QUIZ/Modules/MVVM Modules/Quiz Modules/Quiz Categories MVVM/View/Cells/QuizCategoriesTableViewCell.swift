@@ -1,5 +1,5 @@
 //
-//  CategoryTableViewCell.swift
+//  QuizCategoriesTableViewCell.swift
 //  QUIZ
 //
 //  Created by Марк Киричко on 26.02.2022.
@@ -8,9 +8,9 @@
 import UIKit
 import Firebase
 
-class CategoryTableViewCell: UITableViewCell {
+class QuizCategoriesTableViewCell: UITableViewCell {
     
-    static let identifier = "CategoryTableViewCell"
+    static let identifier = "QuizCategoriesTableViewCell"
     var animation = AnimationClass()
    
     var delegate: CustomViewCellDelegate?
