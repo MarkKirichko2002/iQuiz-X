@@ -43,5 +43,4 @@ class QuizCategoriesTableViewCell: UITableViewCell {
         animation.springLabel(label: CategoryScore)
         delegate?.didElementClick()
     }
-    
 }

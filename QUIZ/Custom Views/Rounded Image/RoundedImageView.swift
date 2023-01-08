@@ -12,7 +12,7 @@ class RoundedImageView: UIImageView {
     
     private let player = SoundClass()
     private let animation = AnimationClass()
-    private var isPlaying = false
+    var isPlaying = false
     var sound = "IQ.mp3"
     var color = UIColor.black
     var borderWidth = 3
