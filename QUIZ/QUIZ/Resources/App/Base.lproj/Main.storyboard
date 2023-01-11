@@ -89,7 +89,7 @@
                     </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="ehL-FL-StP">
-                        <rect key="frame" x="0.0" y="59" width="430" height="104.33333333333334"/>
+                        <rect key="frame" x="0.0" y="59" width="430" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -241,7 +241,7 @@
                     </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="Mze-v6-U77">
-                        <rect key="frame" x="0.0" y="59" width="430" height="104.33333333333334"/>
+                        <rect key="frame" x="0.0" y="59" width="430" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <textAttributes key="largeTitleTextAttributes">
                             <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1555,6 +1555,17 @@
                                     <action selector="SelectCategory" destination="lrY-xL-OjY" eventType="touchUpInside" id="rA5-KB-qvz"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vwo-3J-axZ">
+                                <rect key="frame" x="30" y="403" width="370" height="38"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="закрыть">
+                                    <fontDescription key="titleFontDescription" type="system" weight="black" pointSize="20"/>
+                                    <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="CloseNewsCategoriesScreen" destination="lrY-xL-OjY" eventType="touchUpInside" id="rwa-5N-9gW"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="AE4-9Z-Azb"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -1568,6 +1579,9 @@
                             <constraint firstItem="M7W-AU-tCT" firstAttribute="top" secondItem="mkN-fZ-Dtj" secondAttribute="bottom" constant="50" id="eep-mg-yEM"/>
                             <constraint firstItem="XV5-tc-edH" firstAttribute="top" secondItem="IJY-4Y-BQd" secondAttribute="bottom" constant="30" id="gue-MM-coF"/>
                             <constraint firstItem="IJY-4Y-BQd" firstAttribute="top" secondItem="AE4-9Z-Azb" secondAttribute="top" constant="30" id="iOH-fT-w0c"/>
+                            <constraint firstItem="vwo-3J-axZ" firstAttribute="leading" secondItem="AE4-9Z-Azb" secondAttribute="leading" constant="30" id="pOU-vP-x7h"/>
+                            <constraint firstItem="AE4-9Z-Azb" firstAttribute="trailing" secondItem="vwo-3J-axZ" secondAttribute="trailing" constant="30" id="ssv-Si-Kxb"/>
+                            <constraint firstItem="vwo-3J-axZ" firstAttribute="top" secondItem="M7W-AU-tCT" secondAttribute="bottom" constant="30" id="xtt-RW-Enp"/>
                             <constraint firstItem="M7W-AU-tCT" firstAttribute="leading" secondItem="AE4-9Z-Azb" secondAttribute="leading" constant="30" id="ySr-mG-3X0"/>
                             <constraint firstItem="mkN-fZ-Dtj" firstAttribute="top" secondItem="AE4-9Z-Azb" secondAttribute="top" constant="10" id="yjK-Jk-KWW"/>
                         </constraints>
@@ -1576,6 +1590,7 @@
                         <outlet property="CategoryIcon" destination="IJY-4Y-BQd" id="ldB-Sn-HBN"/>
                         <outlet property="CategoryName" destination="XV5-tc-edH" id="yz9-KV-jdK"/>
                         <outlet property="CategoryPicker" destination="mkN-fZ-Dtj" id="icE-eI-8HF"/>
+                        <outlet property="CloseNewsCategoriesButton" destination="vwo-3J-axZ" id="KTE-x1-6yI"/>
                         <outlet property="SelectCategoryButton" destination="M7W-AU-tCT" id="Kks-0k-guq"/>
                     </connections>
                 </viewController>

@@ -18,6 +18,7 @@ final class NewsCategoriesViewController: UIViewController {
     @IBOutlet weak var CategoryName: UILabel!
     @IBOutlet weak var CategoryPicker: UIPickerView!
     @IBOutlet weak var SelectCategoryButton: UIButton!
+    @IBOutlet weak var CloseNewsCategoriesButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,6 +39,15 @@ final class NewsCategoriesViewController: UIViewController {
             animation.springButton(button: self.SelectCategoryButton)
         }
     }
+    
+    @IBAction func CloseNewsCategoriesScreen() {
+        player.PlaySound(resource: "technology.wav")
+        animation.springButton(button: self.CloseNewsCategoriesButton)
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+            self.dismiss(animated: true)
+        }
+    }
+    
 }
 
 extension NewsCategoriesViewController: UIPickerViewDelegate, UIPickerViewDataSource {
