@@ -89,7 +89,7 @@
                     </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="ehL-FL-StP">
-                        <rect key="frame" x="0.0" y="59" width="430" height="104.33333333333334"/>
+                        <rect key="frame" x="0.0" y="59" width="430" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -142,7 +142,7 @@
                     </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="1EA-1C-7wQ">
-                        <rect key="frame" x="0.0" y="59" width="430" height="96"/>
+                        <rect key="frame" x="0.0" y="59" width="430" height="104.33333333333334"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -154,10 +154,10 @@
             </objects>
             <point key="canvasLocation" x="6561" y="-228"/>
         </scene>
-        <!--Лига Игроков 🏆-->
+        <!--Лига Игроков 2023 🏆-->
         <scene sceneID="0qz-ua-avC">
             <objects>
-                <tableViewController id="gLe-iQ-EKP" customClass="PlayerBoardTableViewController" customModule="QUIZ" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="gLe-iQ-EKP" customClass="PlayersLeagueTableViewController" customModule="QUIZ" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="kfr-NV-DTD">
                         <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -177,11 +177,11 @@
                             <outlet property="delegate" destination="gLe-iQ-EKP" id="1Ra-CD-orZ"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Лига Игроков 🏆" id="cdP-K7-CzW">
+                    <navigationItem key="navigationItem" title="Лига Игроков 2023 🏆" id="cdP-K7-CzW">
                         <barButtonItem key="rightBarButtonItem" image="sort" style="plain" id="03y-fl-XPP">
                             <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
-                                <action selector="sort" destination="gLe-iQ-EKP" id="XQv-RS-xdl"/>
+                                <action selector="sort" destination="gLe-iQ-EKP" id="oIp-AB-v09"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -241,7 +241,7 @@
                     </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="Mze-v6-U77">
-                        <rect key="frame" x="0.0" y="59" width="430" height="104.33333333333334"/>
+                        <rect key="frame" x="0.0" y="59" width="430" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <textAttributes key="largeTitleTextAttributes">
                             <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
