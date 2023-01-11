@@ -21,13 +21,10 @@ final class PauseTableViewController: UITableViewController {
     var score = 0
     var questionNumber = 0
     
-    private let timer = Timer()
-    
     private let player = SoundClass()
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        UserDefaults.standard.set(false, forKey: "music")
     }
     
     override func viewDidLoad() {
@@ -38,7 +35,6 @@ final class PauseTableViewController: UITableViewController {
         self.categoriesViewModel.storyboard = self.storyboard
         self.SetUpCells()
     }
-    
     
     private func SetUpCells() {
         self.tableView.register(UINib(nibName: CurrentCategoryTableViewCell.identifier, bundle: nil), forCellReuseIdentifier: CurrentCategoryTableViewCell.identifier)
@@ -65,9 +61,15 @@ final class PauseTableViewController: UITableViewController {
         case 0: print("category")
             
         case 1: print("restart")
+            if let cell = tableView.cellForRow(at: indexPath) as? RestartTableViewCell {
+                cell.didSelect(indexPath: indexPath)
+            }
             restart()
             
         case 2: print("exit")
+            if let cell = tableView.cellForRow(at: indexPath) as? ExitTableViewCell {
+                cell.didSelect(indexPath: indexPath)
+            }
             quizBaseViewModel.exit()
             
         default: break
@@ -108,7 +110,6 @@ final class PauseTableViewController: UITableViewController {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "ExitTableViewCell") as? ExitTableViewCell
             else { return UITableViewCell() }
             return cell
-            
         }
     }
 }

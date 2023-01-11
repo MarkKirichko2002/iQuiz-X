@@ -134,6 +134,7 @@ final class QuizTabBarController: UITabBarController {
     }
     
     func CheckVoiceCommands() {
+        
         switch self.text {
             
         // Навигация по приложению

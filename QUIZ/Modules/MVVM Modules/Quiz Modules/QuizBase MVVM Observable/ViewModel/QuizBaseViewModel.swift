@@ -1259,7 +1259,7 @@ class QuizBaseViewModel {
     }
     
     func exit() {
-        DispatchQueue.main.async {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
             guard let vc = self.storyboard?.instantiateViewController(identifier: "QuizTabBarController") else {return}
             guard let window = self.view?.window else {return}
             window.rootViewController = vc

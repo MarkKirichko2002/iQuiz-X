@@ -45,6 +45,11 @@ class AnimationClass: AnimationClassProtocol {
         button.layer.add(animation, forKey: nil)
     }
     
+    func RotateImage(image: UIImageView) {
+        rotationAnimation.toValue = NSNumber(value: 180)
+        image.layer.add(rotationAnimation, forKey: "rotationAnimation")
+    }
+    
     func StartRotateImage(image: UIImageView) {
         rotationAnimation.toValue = NSNumber(value: .pi * 2.0)
         rotationAnimation.duration = 2.0;

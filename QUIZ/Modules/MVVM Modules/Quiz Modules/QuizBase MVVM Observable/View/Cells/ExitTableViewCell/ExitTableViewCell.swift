@@ -10,13 +10,14 @@ import UIKit
 class ExitTableViewCell: UITableViewCell {
 
     static let identifier = "ExitTableViewCell"
+    private let animation = AnimationClass()
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-
+    @IBOutlet weak var ExitIcon: RoundedImageView!
+    @IBOutlet weak var ExitLabel: UILabel!
+    
+    func didSelect(indexPath: IndexPath) {
+        animation.springImage(image: ExitIcon)
+        animation.springLabel(label: ExitLabel)
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-    }
+    
 }
