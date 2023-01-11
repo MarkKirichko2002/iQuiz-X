@@ -1,5 +1,5 @@
 //
-//  PlayerBoardTableViewController.swift
+//  PlayersLeagueTableViewController.swift
 //  QUIZ
 //
 //  Created by Марк Киричко on 25.02.2022.
@@ -8,14 +8,14 @@
 import UIKit
 import Combine
 
-final class PlayerBoardTableViewController: UITableViewController {
+final class PlayersLeagueTableViewController: UITableViewController {
+    
+    @IBOutlet var SortButton: UIBarButtonItem!
     
     private var cancellation: Set<AnyCancellable> = []
     private let player = SoundClass()
     private let playersViewModel = PlayersViewModel()
     private var sorted = false
-    
-    @IBOutlet var SortButton: UIBarButtonItem!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,12 +28,10 @@ final class PlayerBoardTableViewController: UITableViewController {
         self.playersViewModel.GetPlayers()
     }
     
-
     @IBAction func sort() {
         player.PlaySound(resource: "future click sound.wav")
         SortTable()
     }
-    
     
     func SortTable() {
         player.PlaySound(resource: "future click sound.wav")
@@ -49,7 +47,6 @@ final class PlayerBoardTableViewController: UITableViewController {
             print(sorted)
         }
     }
-    
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return playersViewModel.players.count
