@@ -40,6 +40,10 @@
                 </constraints>
             </tableViewCellContentView>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <connections>
+                <outlet property="ExitIcon" destination="E3w-wN-cXF" id="sYh-zm-gWu"/>
+                <outlet property="ExitLabel" destination="Dnj-R0-lt6" id="5XA-6e-nyP"/>
+            </connections>
             <point key="canvasLocation" x="2" y="21"/>
         </tableViewCell>
     </objects>

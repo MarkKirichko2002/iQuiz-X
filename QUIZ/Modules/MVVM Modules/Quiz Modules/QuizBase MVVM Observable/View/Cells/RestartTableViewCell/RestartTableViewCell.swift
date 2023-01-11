@@ -10,5 +10,13 @@ import UIKit
 class RestartTableViewCell: UITableViewCell {
 
     static let identifier = "RestartTableViewCell"
+    private let animation = AnimationClass()
     
+    @IBOutlet weak var RestartIcon: RoundedImageView!
+    @IBOutlet weak var RestartLabel: UILabel!
+    
+    func didSelect(indexPath: IndexPath) {
+        animation.springImage(image: RestartIcon)
+        animation.springLabel(label: RestartLabel)
+    }
 }

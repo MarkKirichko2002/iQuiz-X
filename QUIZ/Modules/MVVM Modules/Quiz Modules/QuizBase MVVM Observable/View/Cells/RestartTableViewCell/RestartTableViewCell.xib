@@ -40,6 +40,10 @@
                 </constraints>
             </tableViewCellContentView>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <connections>
+                <outlet property="RestartIcon" destination="HgX-Ld-LC9" id="Yko-9Y-8pI"/>
+                <outlet property="RestartLabel" destination="pGY-Le-Miy" id="FIo-gf-jK4"/>
+            </connections>
             <point key="canvasLocation" x="56" y="21"/>
         </tableViewCell>
     </objects>
