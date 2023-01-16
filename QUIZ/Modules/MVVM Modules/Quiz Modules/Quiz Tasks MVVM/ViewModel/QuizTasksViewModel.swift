@@ -1,5 +1,5 @@
 //
-//  TasksViewModel.swift
+//  QuizTasksViewModel.swift
 //  QUIZ
 //
 //  Created by Марк Киричко on 02.07.2022.
@@ -8,7 +8,7 @@
 import Foundation
 import Combine
 
-class TasksViewModel {
+class QuizTasksViewModel {
     
     @Published var tasks = [QuizTaskModel]()
     private let firebaseManager = FirebaseManager()
