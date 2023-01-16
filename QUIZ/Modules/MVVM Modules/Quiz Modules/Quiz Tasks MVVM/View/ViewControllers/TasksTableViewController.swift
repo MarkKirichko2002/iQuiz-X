@@ -10,7 +10,7 @@ import Combine
 
 final class TasksTableViewController: UITableViewController, CustomViewCellDelegate {
    
-    private let categoriesViewModel = CategoriesViewModel()
+    private let quizCategoriesViewModel = QuizCategoriesViewModel()
     private let tasksViewModel = TasksViewModel()
     private let player = SoundClass()
     private var cancellation: Set<AnyCancellable> = []
@@ -18,8 +18,8 @@ final class TasksTableViewController: UITableViewController, CustomViewCellDeleg
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tableView.register(UINib(nibName: TasksTableViewCell.identifier, bundle: nil), forCellReuseIdentifier: TasksTableViewCell.identifier)
-        categoriesViewModel.view = self.view
-        categoriesViewModel.storyboard = self.storyboard
+        quizCategoriesViewModel.view = self.view
+        quizCategoriesViewModel.storyboard = self.storyboard
         tasksViewModel.$tasks.sink { [weak self] category in
             DispatchQueue.main.async {
                 self?.tableView.reloadData()
@@ -52,7 +52,7 @@ final class TasksTableViewController: UITableViewController, CustomViewCellDeleg
            let destinationController = segue.destination as? QuizTaskDetailViewController,
            let indexSelectedCell = tableView.indexPathForSelectedRow {
            let task = tasksViewModel.tasks[indexSelectedCell.row]
-           let category = categoriesViewModel.quizcategories[indexSelectedCell.row]
+           let category = quizCategoriesViewModel.quizcategories[indexSelectedCell.row]
            destinationController.task = task
            destinationController.category = category
         }

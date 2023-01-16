@@ -21,15 +21,15 @@ final class QuizCategoryDetailViewController: UIViewController {
     
     var category: QuizCategoryModel?
     private let player = SoundClass()
-    private let categoriesViewModel = CategoriesViewModel()
+    private let quizCategoriesViewModel = QuizCategoriesViewModel()
     private let animation = AnimationClass()
     private let speechSynthesizerManager = SpeechSynthesizerManager()
    
     override func viewDidLoad() {
         super.viewDidLoad()
         guard let category = self.category else {return}
-        categoriesViewModel.view = self.view
-        categoriesViewModel.storyboard = self.storyboard
+        quizCategoriesViewModel.view = self.view
+        quizCategoriesViewModel.storyboard = self.storyboard
         view?.backgroundColor = UIColor(patternImage: UIImage(named: category.background)!)
         CategoryIcon.image = UIImage(named: category.image)
         CategoryIcon.color = .white
@@ -76,7 +76,7 @@ final class QuizCategoryDetailViewController: UIViewController {
             self.player.StopSound(resource: category.music)
             self.player.PlaySound(resource: category.sound)
             self.animation.StopRotateImage(image: self.CategoryIcon)
-            self.categoriesViewModel.GoToStart(quiz: category.base, category: category)
+            self.quizCategoriesViewModel.GoToStart(quiz: category.base, category: category)
         }
     }
     

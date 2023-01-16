@@ -14,7 +14,7 @@ final class QuizTaskDetailViewController: UIViewController {
     var category: QuizCategoryModel?
     private let player = SoundClass()
     private let animation = AnimationClass()
-    private let categoriesViewModel = CategoriesViewModel()
+    private let quizCategoriesViewModel = QuizCategoriesViewModel()
     
     @IBOutlet weak var TaskIcon: RoundedImageView!
     @IBOutlet weak var TaskName: UILabel!
@@ -25,8 +25,8 @@ final class QuizTaskDetailViewController: UIViewController {
         super.viewDidLoad()
         guard let task = self.task else {return}
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: task.background)!)
-        self.categoriesViewModel.view = self.view
-        self.categoriesViewModel.storyboard = self.storyboard
+        self.quizCategoriesViewModel.view = self.view
+        self.quizCategoriesViewModel.storyboard = self.storyboard
         TaskIcon.image = UIImage(named: task.image)
         TaskIcon.color = UIColor.white
         TaskIcon.sound = task.sound
@@ -58,6 +58,6 @@ final class QuizTaskDetailViewController: UIViewController {
         player.StopSound(resource: category.music)
         player.PlaySound(resource: category.sound)
         self.animation.StopRotateImage(image: self.TaskIcon)
-        categoriesViewModel.GoToStart(quiz: category.base, category: category)
+        quizCategoriesViewModel.GoToStart(quiz: category.base, category: category)
     }
 }

@@ -15,7 +15,7 @@ final class PauseTableViewController: UITableViewController {
     var currentcategory: QuizCategoryModel?
     
     private let quizBaseViewModel = QuizBaseViewModel()
-    private let categoriesViewModel = CategoriesViewModel()
+    private let quizCategoriesViewModel = QuizCategoriesViewModel()
     
     var icon = ""
     var score = 0
@@ -31,8 +31,8 @@ final class PauseTableViewController: UITableViewController {
         super.viewDidLoad()
         quizBaseViewModel.view = view
         quizBaseViewModel.storyboard = storyboard
-        self.categoriesViewModel.view = self.view
-        self.categoriesViewModel.storyboard = self.storyboard
+        self.quizCategoriesViewModel.view = self.view
+        self.quizCategoriesViewModel.storyboard = self.storyboard
         self.SetUpCells()
     }
     
@@ -47,7 +47,7 @@ final class PauseTableViewController: UITableViewController {
             self.currentquiz?.stopSpeechRecognition()
             self.currentquiz?.captureSession.stopRunning()
             self.currentquiz?.questionNumber = 0
-            self.categoriesViewModel.GoToStart(quiz: self.currentquiz ?? QuizPlanets(), category: self.currentcategory!)
+            self.quizCategoriesViewModel.GoToStart(quiz: self.currentquiz ?? QuizPlanets(), category: self.currentcategory!)
         }
     }
     

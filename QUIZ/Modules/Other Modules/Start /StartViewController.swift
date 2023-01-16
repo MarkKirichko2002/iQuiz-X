@@ -23,7 +23,7 @@ final class StartViewController: UIViewController {
     
     private let player = SoundClass()
     private let navigationManager = NavigationManager()
-    private let categoriesViewModel = CategoriesViewModel()
+    private let quizCategoriesViewModel = QuizCategoriesViewModel()
     private let timer = Timer()
     private let animation = AnimationClass()
     private var sound = ""
@@ -36,15 +36,15 @@ final class StartViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        categoriesViewModel.view = self.view
-        categoriesViewModel.storyboard = self.storyboard
+        quizCategoriesViewModel.view = self.view
+        quizCategoriesViewModel.storyboard = self.storyboard
         // навигация
         navigationManager.view = self.view
         navigationManager.storyboard = self.storyboard
         navigationManager.vc = self
         navigationManager.button = self.StartButton
         navigationManager.button2 = self.TodayQuizButton
-        navigationManager.category = self.categoriesViewModel.quizcategories[randomindex]
+        navigationManager.category = self.quizCategoriesViewModel.quizcategories[randomindex]
         
         self.CheckTime()
         self.Image.color = .white
@@ -72,14 +72,14 @@ final class StartViewController: UIViewController {
     
     func GenerateRandomIndex() {
         
-        var randomindex = Int.random(in: 0..<categoriesViewModel.quizcategories.count - 1)
+        var randomindex = Int.random(in: 0..<quizCategoriesViewModel.quizcategories.count - 1)
         
         UserDefaults.standard.set(randomindex, forKey: "index") as? Int
         
         let savedindex = UserDefaults.standard.object(forKey: "index") as? Int
         
         if randomindex == savedindex {
-            randomindex = Int.random(in: 0..<categoriesViewModel.quizcategories.count-1)
+            randomindex = Int.random(in: 0..<quizCategoriesViewModel.quizcategories.count-1)
         } else {}
     }
     
@@ -285,14 +285,14 @@ final class StartViewController: UIViewController {
     
     func DailyQuiz() {
         
-        Image.sound = categoriesViewModel.quizcategories[randomindex].sound
-        sound = categoriesViewModel.quizcategories[randomindex].sound
+        Image.sound = quizCategoriesViewModel.quizcategories[randomindex].sound
+        sound = quizCategoriesViewModel.quizcategories[randomindex].sound
         
-        self.TodayQuizButton.setTitle(categoriesViewModel.quizcategories[randomindex].name, for: .normal)
-        self.view.backgroundColor = UIColor(patternImage: UIImage(named: categoriesViewModel.quizcategories[randomindex].background)!)
-        self.scrollView.backgroundColor = UIColor(patternImage: UIImage(named: categoriesViewModel.quizcategories[randomindex].background)!)
-        self.view2.backgroundColor = UIColor(patternImage: UIImage(named: categoriesViewModel.quizcategories[randomindex].background)!)
-        self.Image.image = UIImage(named: categoriesViewModel.quizcategories[randomindex].image)
+        self.TodayQuizButton.setTitle(quizCategoriesViewModel.quizcategories[randomindex].name, for: .normal)
+        self.view.backgroundColor = UIColor(patternImage: UIImage(named: quizCategoriesViewModel.quizcategories[randomindex].background)!)
+        self.scrollView.backgroundColor = UIColor(patternImage: UIImage(named: quizCategoriesViewModel.quizcategories[randomindex].background)!)
+        self.view2.backgroundColor = UIColor(patternImage: UIImage(named: quizCategoriesViewModel.quizcategories[randomindex].background)!)
+        self.Image.image = UIImage(named: quizCategoriesViewModel.quizcategories[randomindex].image)
     }
     
     @objc func GoToRandomQuiz() {
@@ -300,10 +300,10 @@ final class StartViewController: UIViewController {
         player.PlaySound(resource: sound)
         self.animation.springButton(button: self.TodayQuizButton)
         
-        let c = categoriesViewModel.quizcategories[randomindex]
+        let c = quizCategoriesViewModel.quizcategories[randomindex]
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-            self.categoriesViewModel.GoToQuiz(quiz: c.base, category: c)
+            self.quizCategoriesViewModel.GoToQuiz(quiz: c.base, category: c)
         }
     }
 }

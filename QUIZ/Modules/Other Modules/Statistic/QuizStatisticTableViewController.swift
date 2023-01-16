@@ -10,31 +10,31 @@ import Combine
 
 final class QuizStatisticTableViewController: UITableViewController {
 
-    private let categoriesViewModel = CategoriesViewModel()
+    private let quizCategoriesViewModel = QuizCategoriesViewModel()
     private var cancellation: Set<AnyCancellable> = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tableView.register(UINib(nibName: QuizCategoriesTableViewCell.identifier, bundle: nil), forCellReuseIdentifier: QuizCategoriesTableViewCell.identifier)
-        categoriesViewModel.$categories.sink { [weak self] category in
+        quizCategoriesViewModel.$categories.sink { [weak self] category in
             DispatchQueue.main.async {
                 self?.tableView.reloadData()
             }
         }.store(in: &cancellation)
-        self.categoriesViewModel.LoadCategoriesResults()
+        self.quizCategoriesViewModel.LoadCategoriesResults()
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return categoriesViewModel.categories.count
+        return quizCategoriesViewModel.categories.count
     }
     
    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-       categoriesViewModel.categories[section].categories.count
+       quizCategoriesViewModel.categories[section].categories.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: QuizCategoriesTableViewCell.identifier, for: indexPath) as! QuizCategoriesTableViewCell
-        cell.ConfigureCell(category: categoriesViewModel.categories[indexPath.section].categories[indexPath.row])
+        cell.ConfigureCell(category: quizCategoriesViewModel.categories[indexPath.section].categories[indexPath.row])
         return cell
     }
 }

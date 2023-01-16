@@ -14,12 +14,12 @@ class PlayersViewModel {
     @Published var categories = [QuizCategoryModel]()
     private let audioPlayer = SoundClass()
     private let firebaseManager = FirebaseManager()
-    private let categoriesViewModel = CategoriesViewModel()
+    private let quizCategoriesViewModel = QuizCategoriesViewModel()
     private let db = Firestore.firestore()
     var player: Player?
     
     init() {
-        categories = categoriesViewModel.quizcategories
+        categories = quizCategoriesViewModel.quizcategories
     }
     
     func GetPlayers() {

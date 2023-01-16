@@ -1,5 +1,5 @@
 //
-//  CategoriesViewModel.swift
+//  QuizCategoriesViewModel.swift
 //  QUIZ
 //
 //  Created by Марк Киричко on 02.07.2022.
@@ -10,7 +10,7 @@ import UIKit
 import Combine
 import SnapKit
 
-class CategoriesViewModel {
+class QuizCategoriesViewModel {
     
     private let fbManager = FirebaseManager()
     private let spinner = RoundedImageView()
