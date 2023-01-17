@@ -50,57 +50,6 @@
             </objects>
             <point key="canvasLocation" x="4555" y="-689"/>
         </scene>
-        <!--Quiz Segmented View Controller-->
-        <scene sceneID="zfV-gS-vlh">
-            <objects>
-                <viewController id="KHi-0t-hHL" customClass="QuizSegmentedViewController" customModule="QUIZ" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="r6v-hq-a3E">
-                        <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="qUC-S3-VHw"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="UFr-n5-cvM">
-                        <nil key="title"/>
-                        <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" id="Np1-r3-WXO">
-                            <rect key="frame" x="150.66666666666666" y="5.6666666666666679" width="128.99999999999997" height="33"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <segments>
-                                <segment title="" image="categories"/>
-                                <segment title="" image="tasks"/>
-                                <segment title="" image="player"/>
-                            </segments>
-                        </segmentedControl>
-                    </navigationItem>
-                    <connections>
-                        <outlet property="segmentedControl" destination="Np1-r3-WXO" id="uKh-hN-Tef"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="b5P-SG-7eN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="4319.1588785046724" y="369.97840172786181"/>
-        </scene>
-        <!--Категории-->
-        <scene sceneID="WlZ-s0-qh2">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="hzq-6I-Ltf" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Категории" image="categories" selectedImage="categories selected" id="QnA-IZ-4hT">
-                        <color key="badgeColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    </tabBarItem>
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="ehL-FL-StP">
-                        <rect key="frame" x="0.0" y="59" width="430" height="104.33333333333334"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="Ibg-XJ-agA" kind="relationship" relationship="rootViewController" id="BcY-8e-o5v"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="244-fk-FoF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="6561" y="-1030"/>
-        </scene>
         <!--Задания-->
         <scene sceneID="TCN-V7-UY3">
             <objects>
@@ -132,27 +81,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tVA-Ge-64k" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="7677" y="-228"/>
-        </scene>
-        <!--Задания-->
-        <scene sceneID="xkS-Xk-ICf">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="tAx-dD-Fep" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Задания" image="tasks" selectedImage="tasks selected" id="FwR-XD-8hd">
-                        <color key="badgeColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    </tabBarItem>
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="1EA-1C-7wQ">
-                        <rect key="frame" x="0.0" y="59" width="430" height="96"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="0Za-4a-tg5" kind="relationship" relationship="rootViewController" id="20i-Cn-XRk"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="CUI-br-fq2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="6561" y="-228"/>
         </scene>
         <!--Лига Игроков 2023 🏆-->
         <scene sceneID="0qz-ua-avC">
@@ -566,7 +494,7 @@
                     </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="BBW-Fp-iCQ">
-                        <rect key="frame" x="0.0" y="59" width="430" height="104.33333333333334"/>
+                        <rect key="frame" x="0.0" y="59" width="430" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -1694,18 +1622,34 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="2iF-fV-SI2" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" tag="2" title="Викторина" image="categories" selectedImage="categories selected" id="bJb-Ka-8Cg"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Jls-dM-Ufx">
-                        <rect key="frame" x="0.0" y="59" width="430" height="44"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="Jls-dM-Ufx">
+                        <rect key="frame" x="0.0" y="59" width="430" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="KHi-0t-hHL" kind="relationship" relationship="rootViewController" id="64f-no-Umm"/>
+                        <segue destination="fs7-pX-dph" kind="relationship" relationship="rootViewController" id="l3f-2k-U6x"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rWt-4N-qvP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3419.1588785046729" y="369.97840172786181"/>
+        </scene>
+        <!--Викторина-->
+        <scene sceneID="zZq-Si-JTV">
+            <objects>
+                <viewController id="fs7-pX-dph" customClass="QuizSectionsTableViewController" customModule="QUIZ" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="okI-Gs-6CU">
+                        <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="tED-I5-qfa"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Викторина" id="jyL-IO-IL5"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="R2w-jM-NHx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4401" y="370"/>
         </scene>
         <!--Quiz Results View Controller-->
         <scene sceneID="JSX-At-7Xp">
@@ -2180,13 +2124,10 @@
         <image name="newspaper.png" width="384" height="384"/>
         <image name="pause " width="24" height="24"/>
         <image name="planets1.jpeg" width="720" height="450"/>
-        <image name="player" width="24" height="24"/>
         <image name="profile" width="24" height="24"/>
         <image name="profile selected" width="24" height="24"/>
         <image name="settings" width="24" height="24"/>
         <image name="sort" width="24" height="24"/>
-        <image name="tasks" width="24" height="24"/>
-        <image name="tasks selected" width="24" height="24"/>
         <image name="today" width="24" height="24"/>
         <image name="today selected" width="24" height="24"/>
         <systemColor name="systemBackgroundColor">
