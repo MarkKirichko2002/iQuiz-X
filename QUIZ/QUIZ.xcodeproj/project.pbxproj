@@ -28,7 +28,7 @@
 		820C628B27BBA3CB004894FA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 820C628927BBA3CB004894FA /* LaunchScreen.storyboard */; };
 		820C629D27BBCD29004894FA /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820C629C27BBCD29004894FA /* LoginViewController.swift */; };
 		820C62A827BBDAC4004894FA /* QuizHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820C62A727BBDAC4004894FA /* QuizHistory.swift */; };
-		820C62AE27BC22AA004894FA /* QuizPlanets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820C62AD27BC22AA004894FA /* QuizPlanets.swift */; };
+		820C62AE27BC22AA004894FA /* QuizAstronomy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820C62AD27BC22AA004894FA /* QuizAstronomy.swift */; };
 		820D303B28F340710031CFCD /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820D303A28F340710031CFCD /* Profile.swift */; };
 		821120E72822EC4D009C2801 /* PauseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 821120E62822EC4D009C2801 /* PauseTableViewController.swift */; };
 		821120E92822EE5E009C2801 /* CurrentCategoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 821120E82822EE5E009C2801 /* CurrentCategoryTableViewCell.swift */; };
@@ -680,7 +680,7 @@
 		820C628C27BBA3CB004894FA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		820C629C27BBCD29004894FA /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		820C62A727BBDAC4004894FA /* QuizHistory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizHistory.swift; sourceTree = "<group>"; };
-		820C62AD27BC22AA004894FA /* QuizPlanets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizPlanets.swift; sourceTree = "<group>"; };
+		820C62AD27BC22AA004894FA /* QuizAstronomy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizAstronomy.swift; sourceTree = "<group>"; };
 		820D303A28F340710031CFCD /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 		821120E62822EC4D009C2801 /* PauseTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PauseTableViewController.swift; sourceTree = "<group>"; };
 		821120E82822EE5E009C2801 /* CurrentCategoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentCategoryTableViewCell.swift; sourceTree = "<group>"; };
@@ -1604,7 +1604,6 @@
 			isa = PBXGroup;
 			children = (
 				820C629C27BBCD29004894FA /* LoginViewController.swift */,
-				8277BCF827C709A800B5F9D0 /* RegisterViewController.swift */,
 			);
 			path = Auth;
 			sourceTree = "<group>";
@@ -1671,6 +1670,14 @@
 				827D4B5C28205C0E007B3895 /* informatics20.jpeg */,
 			);
 			path = Informatics;
+			sourceTree = "<group>";
+		};
+		8247A2F9297715F200838BB8 /* Register */ = {
+			isa = PBXGroup;
+			children = (
+				8277BCF827C709A800B5F9D0 /* RegisterViewController.swift */,
+			);
+			path = Register;
 			sourceTree = "<group>";
 		};
 		8254A36228145DC2006B330B /* Swift */ = {
@@ -2304,7 +2311,7 @@
 		8295F1C82950C13F000E033E /* Players Module */ = {
 			isa = PBXGroup;
 			children = (
-				82CBE8062870DE1A0045616B /* Players List MVVM Combine */,
+				82CBE8062870DE1A0045616B /* Players MVVM Combine */,
 			);
 			path = "Players Module";
 			sourceTree = "<group>";
@@ -2690,14 +2697,14 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		82CBE8062870DE1A0045616B /* Players List MVVM Combine */ = {
+		82CBE8062870DE1A0045616B /* Players MVVM Combine */ = {
 			isa = PBXGroup;
 			children = (
 				82CBE8092870DE370045616B /* Model */,
 				82CBE8082870DE350045616B /* View */,
 				821C69E528739E1A004FD9E1 /* ViewModel */,
 			);
-			path = "Players List MVVM Combine";
+			path = "Players MVVM Combine";
 			sourceTree = "<group>";
 		};
 		82CBE8082870DE350045616B /* View */ = {
@@ -2965,7 +2972,7 @@
 		82D35BE929631C0C000EB277 /* February 2022 */ = {
 			isa = PBXGroup;
 			children = (
-				820C62AD27BC22AA004894FA /* QuizPlanets.swift */,
+				820C62AD27BC22AA004894FA /* QuizAstronomy.swift */,
 				820C62A727BBDAC4004894FA /* QuizHistory.swift */,
 				82DF98EB27BCEB4A00548B38 /* QuizAnatomy.swift */,
 				82CC60DB27BEA32A00038618 /* QuizSport.swift */,
@@ -3231,8 +3238,9 @@
 		82DF98E427BCE73700548B38 /* Other Modules */ = {
 			isa = PBXGroup;
 			children = (
-				829A5164296874DB0056A7DB /* Daily Quiz */,
 				823CFF7127FA1126001FF6D9 /* Auth */,
+				8247A2F9297715F200838BB8 /* Register */,
+				829A5164296874DB0056A7DB /* Daily Quiz */,
 				82D35C1C2963336F000EB277 /* Onboarding */,
 				8209F79A2847F2390093147A /* Splash Screen */,
 				823CFF7027FA1117001FF6D9 /* Start  */,
@@ -3991,7 +3999,7 @@
 				826E12AD27FF89DA00465E16 /* HintsTableViewCell.swift in Sources */,
 				823A8EB927FF06F600C7965B /* MicrophoneTableViewCell.swift in Sources */,
 				8288F08A2872601600C6A182 /* QuizChess.swift in Sources */,
-				820C62AE27BC22AA004894FA /* QuizPlanets.swift in Sources */,
+				820C62AE27BC22AA004894FA /* QuizAstronomy.swift in Sources */,
 				82A4588027C12C2F0082BE4C /* QuizIQ.swift in Sources */,
 				8234A6592969BA6400A7FA2B /* SpeechSynthesizerManager.swift in Sources */,
 				8234A65F296A30E700A7FA2B /* SpeechRecognitionManagerProtocol.swift in Sources */,

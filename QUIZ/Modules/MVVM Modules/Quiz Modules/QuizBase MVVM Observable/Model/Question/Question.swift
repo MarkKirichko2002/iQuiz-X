@@ -6,26 +6,16 @@
 //
 
 import Foundation
-struct Question { //convention to make struct the file name
+
+struct Question {
     let question: String
     let choices: [String]
     let answer: String
     let image: String
     let levelOfdifficulty: levelOfdifficulty
-    
     enum levelOfdifficulty {
         case easy
         case normal
         case hard
     }
-    
-    init(question: String, choices: [String], answer: String, image: String, levelOfdifficulty: levelOfdifficulty) {
-        self.question = question
-        self.choices = choices
-        self.answer = answer
-        self.image = image
-        self.levelOfdifficulty = levelOfdifficulty
-    }
 }
-
-

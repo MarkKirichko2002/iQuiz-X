@@ -1,5 +1,5 @@
 //
-//  QuizPlanets.swift
+//  QuizAstronomy.swift
 //  QUIZ
 //
 //  Created by Марк Киричко on 15.02.2022.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-class QuizPlanets: QuizBaseViewModel {
+class QuizAstronomy: QuizBaseViewModel {
     
     override func questions() -> [Question] {
         return [
@@ -30,9 +30,6 @@ class QuizPlanets: QuizBaseViewModel {
         Question(question: "Какая пилотируемая космическая программа США в итоге доставила 12 человек на Луну?", choices: ["Аполлон", "Джемини", "Вояджер"], answer: "Аполлон", image: "planets17.jpeg", levelOfdifficulty: .easy),
         Question(question: "Какая планета с 1978 по 1999 гг. находилась дальше остальных от Солнца?", choices: ["Сатурн", "Уран", "Нептун"], answer: "Нептун", image: "planets18.jpeg", levelOfdifficulty: .normal),
         Question(question: "Какая из этих планет не имеет колец?", choices: ["Сатурн", "Венера", "Нептун"], answer: "Венера", image: "planets19.jpeg", levelOfdifficulty: .hard),
-        Question(question: "Сколько планет находится в Солнечной системе (согласно учебникам)?", choices: ["8", "9", "10"], answer: "8", image: "planets20.jpeg", levelOfdifficulty: .easy),
-        
-    ]
-        
+        Question(question: "Сколько планет находится в Солнечной системе (согласно учебникам)?", choices: ["8", "9", "10"], answer: "8", image: "planets20.jpeg", levelOfdifficulty: .easy)]
     }
 }
