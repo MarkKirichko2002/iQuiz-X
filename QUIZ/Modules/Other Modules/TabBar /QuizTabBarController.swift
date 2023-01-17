@@ -17,7 +17,7 @@ final class QuizTabBarController: UITabBarController {
     private let speechReconizer = SFSpeechRecognizer(locale: Locale.init(identifier: "ru-RU"))
     private let request = SFSpeechAudioBufferRecognitionRequest()
     private var task: SFSpeechRecognitionTask?
-    private let categoriesViewModel = CategoriesViewModel()
+    private let quizCategoriesViewModel = QuizCategoriesViewModel()
     private var isStart: Bool = false
     private var icon = "voice.png"
     private var quizBaseViewModel = QuizBaseViewModel()
@@ -29,10 +29,10 @@ final class QuizTabBarController: UITabBarController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.categoriesViewModel.CreateCategories()
+        self.quizCategoriesViewModel.CreateCategories()
         quizBaseViewModel.viewController = self
-        categoriesViewModel.view = self.view
-        categoriesViewModel.storyboard = self.storyboard
+        quizCategoriesViewModel.view = self.view
+        quizCategoriesViewModel.storyboard = self.storyboard
         speechRecognitionManager.configureAudioSession()
         selectedIndex = UserDefaults.standard.object(forKey: "index") as? Int ?? 0
         button.frame = CGRect(x: 0, y: 0, width: 44, height: 44)
@@ -171,7 +171,7 @@ final class QuizTabBarController: UITabBarController {
         // выбор категории викторины
         case _ where self.text != "":
             for i in 0...5 {
-                for value in self.categoriesViewModel.categories[i].categories {
+                for value in self.quizCategoriesViewModel.categories[i].categories {
                     if self.text.lowercased().contains(value.voiceCommand) {
                         DispatchQueue.main.async {
                             self.icon = value.image
@@ -179,7 +179,7 @@ final class QuizTabBarController: UITabBarController {
                             self.animation.springButton(button: self.button)
                             self.player.PlaySound(resource: value.sound)
                             self.sound = value.sound
-                            self.categoriesViewModel.GoToStart(quiz: value.base, category: value)
+                            self.quizCategoriesViewModel.GoToStart(quiz: value.base, category: value)
                         }
                     }
                 }
@@ -297,7 +297,7 @@ extension QuizTabBarController: UIImagePickerControllerDelegate, UINavigationCon
             return
         }
         
-        categoriesViewModel.CheckText(image: image)
+        quizCategoriesViewModel.CheckText(image: image)
         DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
             picker.dismiss(animated: true, completion: nil)
             self.startSpeechRecognization()

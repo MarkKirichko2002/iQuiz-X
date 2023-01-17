@@ -14,7 +14,7 @@ class QuizResultsViewModel {
     
     var quizresult = PublishSubject<QuizResult>()
     var category: QuizCategoryModel?
-    let categoriesViewModel = CategoriesViewModel()
+    let quizCategoriesViewModel = QuizCategoriesViewModel()
     private let firebaseManager = FirebaseManager()
     private let db = Firestore.firestore()
     
@@ -28,7 +28,7 @@ class QuizResultsViewModel {
     }
     
     func GetQuizResult() {
-        categoriesViewModel.CreateCategories()
+        quizCategoriesViewModel.CreateCategories()
         firebaseManager.LoadLastQuizCategoryData { result in
             self.quizresult.onNext(result)
         }
@@ -48,9 +48,9 @@ class QuizResultsViewModel {
                         if let category = document["lastquiz"] as? [String: Any] {
                             let category = category["category"] as? String ?? ""
                             
-                            for i in self.categoriesViewModel.quizcategories {
+                            for i in self.quizCategoriesViewModel.quizcategories {
                                 if category == i.name {
-                                    self.categoriesViewModel.GoToQuiz(quiz: i.base, category: i)
+                                    self.quizCategoriesViewModel.GoToQuiz(quiz: i.base, category: i)
                                 }
                             }
                         }

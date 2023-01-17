@@ -28,8 +28,8 @@ final class QuizResultsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.quizResultsViewModel.categoriesViewModel.view = self.view
-        self.quizResultsViewModel.categoriesViewModel.storyboard = self.storyboard
+        self.quizResultsViewModel.quizCategoriesViewModel.view = self.view
+        self.quizResultsViewModel.quizCategoriesViewModel.storyboard = self.storyboard
         self.Image.color = .white
         quizResultsViewModel.SetupView(view: self.view, storyboard: self.storyboard!)
         quizResultsViewModel.quizresult.subscribe(onNext: { result in

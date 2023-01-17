@@ -26,7 +26,7 @@ final class QuizBaseViewController: UIViewController {
     var category: QuizCategoryModel?
     
     func BindViewModel() {
-        quiz?.setQuizeModel(base: quiz ?? QuizPlanets())
+        quiz?.setQuizeModel(base: quiz ?? QuizAstronomy())
         
         // Labels
         quiz?.questionTextStatus.bind({(questionTextStatus) in

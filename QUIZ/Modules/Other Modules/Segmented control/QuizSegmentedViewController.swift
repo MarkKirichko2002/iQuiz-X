@@ -48,12 +48,12 @@ final class QuizSegmentedViewController: UIViewController {
         return viewController
     }()
     
-    private lazy var tasksViewController: TasksTableViewController = {
+    private lazy var tasksViewController: QuizTasksTableViewController = {
         // Load Storyboard
         let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
         
         // Instantiate View Controller
-        var viewController = storyboard.instantiateViewController(withIdentifier: "TasksTableViewController") as! TasksTableViewController
+        var viewController = storyboard.instantiateViewController(withIdentifier: "QuizTasksTableViewController") as! QuizTasksTableViewController
         
         // Add View Controller as Child View Controller
         self.add(asChildViewController: viewController)

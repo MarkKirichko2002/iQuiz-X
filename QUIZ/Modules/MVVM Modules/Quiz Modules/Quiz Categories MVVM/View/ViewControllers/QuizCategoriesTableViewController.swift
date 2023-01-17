@@ -10,7 +10,7 @@ import Combine
 
 final class QuizCategoriesTableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, CustomViewCellDelegate {
     
-    private var categoriesViewModel = CategoriesViewModel()
+    private var quizCategoriesViewModel = QuizCategoriesViewModel()
     private var player = SoundClass()
     private var delegate: CustomViewCellDelegate?
     private var cancellation: Set<AnyCancellable> = []
@@ -22,22 +22,22 @@ final class QuizCategoriesTableViewController: UIViewController, UITableViewDele
         tableView.addSubview(refreshControl)
         refreshControl.addTarget(self, action: #selector(refresh), for: .valueChanged)
         SetUpTable()
-        categoriesViewModel.view = self.view
-        categoriesViewModel.$categories.sink { [weak self] category in
+        quizCategoriesViewModel.view = self.view
+        quizCategoriesViewModel.$categories.sink { [weak self] category in
             DispatchQueue.main.async {
                 self?.tableView.reloadData()
             }
         }.store(in: &cancellation)
-        self.categoriesViewModel.ShowLoading()
+        self.quizCategoriesViewModel.ShowLoading()
     }
     
     @objc func refresh() {
         DispatchQueue.main.async {
-            self.categoriesViewModel.categories = []
+            self.quizCategoriesViewModel.categories = []
             self.tableView.reloadData()
             self.refreshControl.endRefreshing()
         }
-        categoriesViewModel.ShowLoading()
+        quizCategoriesViewModel.ShowLoading()
     }
     
     func SetUpTable() {
@@ -55,16 +55,16 @@ final class QuizCategoriesTableViewController: UIViewController, UITableViewDele
     }
     
      func numberOfSections(in tableView: UITableView) -> Int {
-        return categoriesViewModel.categories.count
+        return quizCategoriesViewModel.categories.count
     }
     
      func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return categoriesViewModel.categories[section].categories.count
+        return quizCategoriesViewModel.categories[section].categories.count
     }
     
      func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        player.PlaySound(resource: categoriesViewModel.categories[indexPath.section].categories[indexPath.row].sound)
+        player.PlaySound(resource: quizCategoriesViewModel.categories[indexPath.section].categories[indexPath.row].sound)
         
         if let cell = tableView.cellForRow(at: indexPath) as? QuizCategoriesTableViewCell {
             cell.didSelect(indexPath: indexPath)
@@ -75,7 +75,7 @@ final class QuizCategoriesTableViewController: UIViewController, UITableViewDele
         if segue.identifier == "showCategoryDetail",
            let destinationController = segue.destination as? QuizCategoryDetailViewController,
            let indexSelectedCell = tableView.indexPathForSelectedRow {
-            let category = categoriesViewModel.categories[indexSelectedCell.section].categories[indexSelectedCell.row]
+            let category = quizCategoriesViewModel.categories[indexSelectedCell.section].categories[indexSelectedCell.row]
             destinationController.category = category
         }
     }
@@ -91,7 +91,7 @@ final class QuizCategoriesTableViewController: UIViewController, UITableViewDele
         let view = UIView(frame: CGRect(x: 0, y: 0, width: tableView.frame.width, height: 40))
         let lbl = UILabel(frame: CGRect(x: 15, y: 0, width: view.frame.width - 15, height: 40))
         lbl.font = UIFont.systemFont(ofSize: 25)
-        lbl.text = categoriesViewModel.categories[section].releaseDate
+        lbl.text = quizCategoriesViewModel.categories[section].releaseDate
         view.addSubview(lbl)
         return view
     }
@@ -103,7 +103,7 @@ final class QuizCategoriesTableViewController: UIViewController, UITableViewDele
      func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: QuizCategoriesTableViewCell.identifier, for: indexPath) as! QuizCategoriesTableViewCell
         cell.delegate = self
-        cell.ConfigureCell(category: categoriesViewModel.categories[indexPath.section].categories[indexPath.row])
+        cell.ConfigureCell(category: quizCategoriesViewModel.categories[indexPath.section].categories[indexPath.row])
         return cell
     }
 }

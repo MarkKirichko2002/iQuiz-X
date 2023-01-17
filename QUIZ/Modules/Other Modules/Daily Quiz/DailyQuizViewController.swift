@@ -12,7 +12,7 @@ final class DailyQuizViewController: UIViewController {
     
     var category: QuizCategoryModel?
     private let dateManager = DateManager()
-    private let categoriesViewModel = CategoriesViewModel()
+    private let quizCategoriesViewModel = QuizCategoriesViewModel()
     
     @IBOutlet weak var DailyQuizCategoryIcon: RoundedImageView!
     @IBOutlet weak var DailyQuizCategoryName: UILabel!
@@ -20,8 +20,8 @@ final class DailyQuizViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.categoriesViewModel.view = self.view
-        self.categoriesViewModel.storyboard = self.storyboard
+        self.quizCategoriesViewModel.view = self.view
+        self.quizCategoriesViewModel.storyboard = self.storyboard
         if let category = self.category {
             view.backgroundColor = UIColor(patternImage: UIImage(named: category.background)!)
             DailyQuizCategoryIcon.image = UIImage(named: category.image)
@@ -32,7 +32,7 @@ final class DailyQuizViewController: UIViewController {
             CurrentDateLabel.text = "сегодня: \(dateManager.GetCurrentDate())"
             CurrentDateLabel.textColor = UIColor.white
             DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-                self.categoriesViewModel.GoToQuiz(quiz: category.base, category: category)
+                self.quizCategoriesViewModel.GoToQuiz(quiz: category.base, category: category)
             }
         }
     }

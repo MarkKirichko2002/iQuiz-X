@@ -14,7 +14,7 @@ final class QuizStartViewController: UIViewController {
     @IBOutlet weak var QuestionLabel: UILabel!
     @IBOutlet weak var TimerLabeL: UILabel!
     
-    private let viewModel = CategoriesViewModel()
+    private let quizCategoriesViewModel = QuizCategoriesViewModel()
     var base: QuizBaseViewModel?
     var category: QuizCategoryModel?
     private var seconds = 6 {
@@ -36,8 +36,8 @@ final class QuizStartViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        viewModel.view = self.view
-        viewModel.storyboard = self.storyboard
+        quizCategoriesViewModel.view = self.view
+        quizCategoriesViewModel.storyboard = self.storyboard
         view.backgroundColor = UIColor(patternImage: UIImage(named: category?.background ?? "")!)
         Icon.sound = category?.sound ?? "space.wav"
         Icon.image = UIImage(named: category?.image ?? "astronomy.png")
@@ -49,7 +49,7 @@ final class QuizStartViewController: UIViewController {
         TimerLabeL.textColor = .white
         timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(time), userInfo: nil, repeats: true)
         DispatchQueue.main.asyncAfter(deadline: .now() + 6) {
-            self.viewModel.GoToQuiz(quiz: self.base!, category: self.category!)
+            self.quizCategoriesViewModel.GoToQuiz(quiz: self.base!, category: self.category!)
         }
     }
 }
