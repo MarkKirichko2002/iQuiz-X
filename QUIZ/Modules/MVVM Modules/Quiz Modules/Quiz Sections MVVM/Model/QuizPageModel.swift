@@ -11,4 +11,7 @@ struct QuizSectionModel {
     var id: Int
     var name: String
     var icon: String
+    var sound: String
+    var itemsCount: Int
+    var percentage: Int
 }
