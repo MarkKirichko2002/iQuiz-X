@@ -60,13 +60,13 @@ extension QuizSectionsTableViewController: UITableViewDelegate, UITableViewDataS
             
         case 1:
             if let vc = storyboard?.instantiateViewController(withIdentifier: "QuizCategoriesTableViewController") as? QuizCategoriesTableViewController {
-                vc.title = "Категории"
+                vc.title = "Категории \(section.itemsCount)/19"
                 self.navigationController?.pushViewController(vc, animated: true)
             }
             
         case 2:
             if let vc = storyboard?.instantiateViewController(withIdentifier: "QuizTasksTableViewController") as? QuizTasksTableViewController {
-                vc.title = "Задания"
+                vc.title = "Задания \(section.itemsCount)/19"
                 self.navigationController?.pushViewController(vc, animated: true)
             }
             
@@ -77,8 +77,8 @@ extension QuizSectionsTableViewController: UITableViewDelegate, UITableViewDataS
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: QuizSectionsTableViewCell.identifier, for: indexPath) as? QuizSectionsTableViewCell else {return UITableViewCell()}
+        cell.vc = self
         cell.configure(section: quizSectionsViewModel.sections[indexPath.row])
         return cell
     }
-    
 }

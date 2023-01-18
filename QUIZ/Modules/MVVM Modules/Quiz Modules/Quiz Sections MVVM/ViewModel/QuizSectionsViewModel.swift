@@ -16,7 +16,7 @@ class QuizSectionsViewModel {
     private var completePercentage = 0
     private let quizCategoriesViewModel = QuizCategoriesViewModel()
     private let quizTasksViewModel = QuizTasksViewModel()
-    @Published var sections = [QuizSectionModel(id: 1, name: "категории", icon: "astronomy", sound: "IQ.mp3", itemsCount: 0, percentage: 0), QuizSectionModel(id: 2, name: "задания", icon: "tasks icon", sound: "IQ.mp3", itemsCount: 0, percentage: 0)]
+    @Published var sections = [QuizSectionModel(id: 1, name: "категории", icon: "astronomy", sound: "IQ.mp3", info: "На данный момент существует 19 категорий.", itemsCount: 0, percentage: 0), QuizSectionModel(id: 2, name: "задания", icon: "tasks icon", sound: "IQ.mp3", info: "На данный момент существует 19 заданий.", itemsCount: 0, percentage: 0)]
     
     func GetQuizSectionData() {
         
@@ -30,7 +30,7 @@ class QuizSectionsViewModel {
                 if category.complete == true {
                     self.completedQuizCategories.append(category)
                     print(self.completedQuizCategories.count)
-                    self.completePercentage = (self.completedQuizCategories.count * 100) / 20
+                    self.completePercentage = (self.completedQuizCategories.count * 100) / 19
                     self.sections[0].itemsCount = self.completedQuizCategories.count
                     self.sections[0].percentage = self.completePercentage
                 }
@@ -42,7 +42,7 @@ class QuizSectionsViewModel {
                 if task.complete == true {
                     self.completedQuizTasks.append(task)
                     print(self.completedQuizTasks.count)
-                    self.completePercentage = (self.completedQuizCategories.count * 100) / 20
+                    self.completePercentage = (self.completedQuizCategories.count * 100) / 19
                     self.sections[1].itemsCount = self.completedQuizTasks.count
                     self.sections[1].percentage = self.completePercentage
                 }

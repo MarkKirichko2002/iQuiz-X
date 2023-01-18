@@ -11,6 +11,7 @@ class QuizCategoriesTableViewCell: UITableViewCell {
     
     static let identifier = "QuizCategoriesTableViewCell"
     private let animation = AnimationClass()
+    private var percentage = 0
     var delegate: CustomViewCellDelegate?
     
     @IBOutlet weak var CategoryText: UILabel!
@@ -25,13 +26,14 @@ class QuizCategoriesTableViewCell: UITableViewCell {
         CategoryImage.color = .white
         CategoryText.text = category.name
         CategoryScore.text = "\(category.score)/100 баллов"
+        percentage = (category.score * 100) / 100
         contentView.backgroundColor = UIColor(patternImage: UIImage(named: category.background)!)
         switch category.complete {
         case true:
-            isComplete.text = "пройдено"
+            isComplete.text = "пройдено: \(percentage)%"
             isComplete.textColor = .systemGreen
         case false:
-            isComplete.text = "не пройдено"
+            isComplete.text = "пройдено: \(percentage)%"
             isComplete.textColor = .white
         }
     }
