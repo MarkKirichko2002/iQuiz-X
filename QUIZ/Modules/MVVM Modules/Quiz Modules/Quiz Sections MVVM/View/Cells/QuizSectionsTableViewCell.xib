@@ -42,9 +42,18 @@
                         <color key="textColor" systemColor="systemGreenColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OvM-p6-8yj">
+                        <rect key="frame" x="332" y="45" width="78" height="38"/>
+                        <state key="normal" title="Button"/>
+                        <buttonConfiguration key="configuration" style="plain" image="info"/>
+                        <connections>
+                            <action selector="ShowInfo" destination="Y1c-yE-Wfj" eventType="touchUpInside" id="nvs-Nb-Nlx"/>
+                        </connections>
+                    </button>
                 </subviews>
                 <constraints>
                     <constraint firstItem="yHT-DX-mKo" firstAttribute="leading" secondItem="kwm-i2-c22" secondAttribute="trailing" constant="16" id="3fd-QY-atN"/>
+                    <constraint firstItem="OvM-p6-8yj" firstAttribute="leading" secondItem="BKc-j9-Oex" secondAttribute="trailing" constant="10" id="A68-h1-sSX"/>
                     <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="BKc-j9-Oex" secondAttribute="trailing" constant="20" symbolic="YES" id="CfR-6a-hL4"/>
                     <constraint firstItem="BKc-j9-Oex" firstAttribute="leading" secondItem="a9V-iC-KcT" secondAttribute="leading" id="DzW-nj-46q"/>
                     <constraint firstItem="kwm-i2-c22" firstAttribute="leading" secondItem="82i-fb-FdV" secondAttribute="leadingMargin" constant="16" id="Ebj-Bu-HXn"/>
@@ -54,11 +63,14 @@
                     <constraint firstAttribute="trailingMargin" secondItem="a9V-iC-KcT" secondAttribute="trailing" constant="16" id="dc5-Ah-dtr"/>
                     <constraint firstItem="kwm-i2-c22" firstAttribute="top" secondItem="82i-fb-FdV" secondAttribute="topMargin" constant="8" id="eCk-06-pfR"/>
                     <constraint firstItem="a9V-iC-KcT" firstAttribute="leading" secondItem="kwm-i2-c22" secondAttribute="trailing" constant="16" id="edB-yr-xhc"/>
+                    <constraint firstAttribute="trailing" secondItem="OvM-p6-8yj" secondAttribute="trailing" constant="20" id="nOd-7V-v1T"/>
                     <constraint firstItem="a9V-iC-KcT" firstAttribute="top" secondItem="kwm-i2-c22" secondAttribute="top" id="uwT-op-pCa"/>
+                    <constraint firstItem="OvM-p6-8yj" firstAttribute="top" secondItem="82i-fb-FdV" secondAttribute="top" constant="45" id="wNx-4Y-z1T"/>
                     <constraint firstAttribute="bottomMargin" secondItem="kwm-i2-c22" secondAttribute="bottom" constant="8" id="xFb-EA-i7J"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
+                <outlet property="InfoButton" destination="OvM-p6-8yj" id="SZJ-X0-78e"/>
                 <outlet property="PercentageLabel" destination="yHT-DX-mKo" id="1a3-qi-e6J"/>
                 <outlet property="QuizSectionCategoryName" destination="a9V-iC-KcT" id="EQ2-FA-vwV"/>
                 <outlet property="QuizSectionIcon" destination="kwm-i2-c22" id="jTj-XM-n79"/>
@@ -69,6 +81,7 @@
     </objects>
     <resources>
         <image name="astronomy.png" width="512" height="512"/>
+        <image name="info" width="24" height="24"/>
         <systemColor name="systemGreenColor">
             <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
