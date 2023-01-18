@@ -6,11 +6,14 @@
 //
 
 import UIKit
+import Combine
 
 class QuizSectionsTableViewController: UIViewController {
     
-    private var sections = [QuizSectionModel(id: 1, name: "категории", icon: "astronomy"), QuizSectionModel(id: 2, name: "задания", icon: "tasks icon")]
     private var tableView = UITableView()
+    private var cancellation: Set<AnyCancellable> = []
+    private let player = SoundClass()
+    private var quizSectionsViewModel = QuizSectionsViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,6 +21,12 @@ class QuizSectionsTableViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(UINib(nibName: QuizSectionsTableViewCell.identifier, bundle: nil), forCellReuseIdentifier: QuizSectionsTableViewCell.identifier)
+        quizSectionsViewModel.$sections.sink { [weak self] _ in
+            DispatchQueue.main.async {
+                self?.tableView.reloadData()
+            }
+        }.store(in: &cancellation)
+        quizSectionsViewModel.GetQuizSectionData()
     }
     
     override func viewDidLayoutSubviews() {
@@ -29,11 +38,20 @@ class QuizSectionsTableViewController: UIViewController {
 extension QuizSectionsTableViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return sections.count
+        return quizSectionsViewModel.sections.count
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        self.GoToQuizSection(section: sections[indexPath.row])
+        
+        player.PlaySound(resource: quizSectionsViewModel.sections[indexPath.row].sound)
+        
+        if let cell = tableView.cellForRow(at: indexPath) as? QuizSectionsTableViewCell {
+            cell.didSelect(indexPath: indexPath)
+        }
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+            self.GoToQuizSection(section: self.quizSectionsViewModel.sections[indexPath.row])
+        }
     }
     
     func GoToQuizSection(section: QuizSectionModel) {
@@ -51,7 +69,7 @@ extension QuizSectionsTableViewController: UITableViewDelegate, UITableViewDataS
                 vc.title = "Задания"
                 self.navigationController?.pushViewController(vc, animated: true)
             }
-                        
+            
         default:
             break
         }
@@ -59,7 +77,7 @@ extension QuizSectionsTableViewController: UITableViewDelegate, UITableViewDataS
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: QuizSectionsTableViewCell.identifier, for: indexPath) as? QuizSectionsTableViewCell else {return UITableViewCell()}
-        cell.configure(section: sections[indexPath.row])
+        cell.configure(section: quizSectionsViewModel.sections[indexPath.row])
         return cell
     }
     
