@@ -169,7 +169,7 @@
                     </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="Mze-v6-U77">
-                        <rect key="frame" x="0.0" y="59" width="430" height="96"/>
+                        <rect key="frame" x="0.0" y="59" width="430" height="104.33333333333334"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <textAttributes key="largeTitleTextAttributes">
                             <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -2006,11 +2006,11 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0zO-ZL-Fwr">
-                                <rect key="frame" x="157" y="409.66666666666669" width="116" height="44"/>
+                                <rect key="frame" x="159.33333333333334" y="410.33333333333331" width="111.66666666666666" height="42.666666666666686"/>
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="начать">
-                                    <fontDescription key="titleFontDescription" type="system" weight="black" pointSize="25"/>
+                                    <fontDescription key="titleFontDescription" type="system" weight="black" pointSize="24"/>
                                 </buttonConfiguration>
                                 <connections>
                                     <action selector="StartTask" destination="mas-vS-HXm" eventType="touchUpInside" id="1KG-mp-GN8"/>
@@ -2022,24 +2022,39 @@
                                 <color key="textColor" systemColor="systemGreenColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2on-xN-DBt">
+                                <rect key="frame" x="30" y="503.00000000000006" width="370" height="42.666666666666686"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="закрыть">
+                                    <fontDescription key="titleFontDescription" type="system" weight="black" pointSize="24"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="CloseDetailScreen" destination="mas-vS-HXm" eventType="touchUpInside" id="04x-GK-AIL"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="JD0-vf-xqk"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="dDS-cy-Cos" firstAttribute="top" secondItem="Wi3-tM-Go3" secondAttribute="bottom" constant="20" id="5CS-Vs-X2Q"/>
                             <constraint firstItem="JD0-vf-xqk" firstAttribute="trailing" secondItem="Wi3-tM-Go3" secondAttribute="trailing" constant="30" id="ATx-P4-Yxg"/>
+                            <constraint firstItem="JD0-vf-xqk" firstAttribute="trailing" secondItem="2on-xN-DBt" secondAttribute="trailing" constant="30" id="PAs-PU-5BG"/>
                             <constraint firstItem="0zO-ZL-Fwr" firstAttribute="centerY" secondItem="jtg-aO-3nO" secondAttribute="centerY" id="Wew-gC-b6u"/>
                             <constraint firstItem="dDS-cy-Cos" firstAttribute="leading" secondItem="FmP-BT-hff" secondAttribute="trailing" constant="20" id="b7J-wB-QU1"/>
                             <constraint firstItem="0zO-ZL-Fwr" firstAttribute="centerX" secondItem="jtg-aO-3nO" secondAttribute="centerX" id="bp7-ds-4JJ"/>
                             <constraint firstItem="Wi3-tM-Go3" firstAttribute="top" secondItem="JD0-vf-xqk" secondAttribute="top" constant="30" id="des-nl-KlW"/>
                             <constraint firstItem="Wi3-tM-Go3" firstAttribute="leading" secondItem="FmP-BT-hff" secondAttribute="trailing" constant="20" id="eNs-Sa-x4p"/>
                             <constraint firstItem="JD0-vf-xqk" firstAttribute="trailing" secondItem="dDS-cy-Cos" secondAttribute="trailing" constant="30" id="jof-8r-bSz"/>
+                            <constraint firstItem="2on-xN-DBt" firstAttribute="leading" secondItem="JD0-vf-xqk" secondAttribute="leading" constant="30" id="kvx-D3-AZ8"/>
                             <constraint firstItem="FmP-BT-hff" firstAttribute="leading" secondItem="JD0-vf-xqk" secondAttribute="leading" constant="30" id="mrU-cn-fpX"/>
                             <constraint firstItem="FmP-BT-hff" firstAttribute="top" secondItem="JD0-vf-xqk" secondAttribute="top" constant="30" id="mvH-RX-i1R"/>
+                            <constraint firstItem="2on-xN-DBt" firstAttribute="top" secondItem="0zO-ZL-Fwr" secondAttribute="bottom" constant="50" id="obu-Z9-QMt"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="2XW-Tr-fdB"/>
                     <connections>
+                        <outlet property="CloseButton" destination="2on-xN-DBt" id="gRo-Ci-OqP"/>
                         <outlet property="StartTaskButton" destination="0zO-ZL-Fwr" id="yIG-2s-C6y"/>
                         <outlet property="TaskCompleteStatus" destination="dDS-cy-Cos" id="7xl-hc-V4V"/>
                         <outlet property="TaskIcon" destination="FmP-BT-hff" id="xO9-EI-NcJ"/>
@@ -2048,7 +2063,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Yum-b4-4Eq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="8700" y="-229"/>
+            <point key="canvasLocation" x="8700" y="-229.18454935622319"/>
         </scene>
         <!--Daily Quiz View Controller-->
         <scene sceneID="WqL-fK-YAb">

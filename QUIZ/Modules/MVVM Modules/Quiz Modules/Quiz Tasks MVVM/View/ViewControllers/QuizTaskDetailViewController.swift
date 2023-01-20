@@ -20,6 +20,7 @@ final class QuizTaskDetailViewController: UIViewController {
     @IBOutlet weak var TaskName: UILabel!
     @IBOutlet weak var TaskCompleteStatus: UILabel!
     @IBOutlet weak var StartTaskButton: UIButton!
+    @IBOutlet weak var CloseButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,8 +33,9 @@ final class QuizTaskDetailViewController: UIViewController {
         TaskIcon.sound = task.sound
         TaskName.textColor = UIColor.white
         TaskName.text = task.name
-        TaskCompleteStatus.textColor = .white
+        TaskCompleteStatus.textColor = UIColor.white
         StartTaskButton.tintColor = UIColor.white
+        CloseButton.tintColor = UIColor.white
         switch task.complete {
         case true:
             TaskCompleteStatus.text = "пройдено"
@@ -59,5 +61,14 @@ final class QuizTaskDetailViewController: UIViewController {
         player.PlaySound(resource: category.sound)
         self.animation.StopRotateImage(image: self.TaskIcon)
         quizCategoriesViewModel.GoToStart(quiz: category.base, category: category)
+    }
+    
+    @IBAction func CloseDetailScreen() {
+        guard let task = self.task else {return}
+        self.animation.springButton(button: self.CloseButton)
+        self.player.PlaySound(resource: task.sound)
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+            self.dismiss(animated: true)
+        }
     }
 }
