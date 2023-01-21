@@ -27,7 +27,7 @@ class QuizSectionsViewModel {
         
         for i in quizCategoriesViewModel.quizcategories {
             firebaseManager.LoadQuizCategoriesData(quizpath: i.quizpath) { category in
-                if category.complete == true {
+                if category.complete == true && category.score == 100 {
                     self.completedQuizCategories.append(category)
                     print(self.completedQuizCategories.count)
                     self.completePercentage = (self.completedQuizCategories.count * 100) / 19
@@ -42,7 +42,7 @@ class QuizSectionsViewModel {
                 if task.complete == true {
                     self.completedQuizTasks.append(task)
                     print(self.completedQuizTasks.count)
-                    self.completePercentage = (self.completedQuizCategories.count * 100) / 19
+                    self.completePercentage = (self.completedQuizTasks.count * 100) / 19
                     self.sections[1].itemsCount = self.completedQuizTasks.count
                     self.sections[1].percentage = self.completePercentage
                 }

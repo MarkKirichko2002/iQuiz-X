@@ -49,21 +49,17 @@ final class PlayerDetailViewController: UIViewController {
         PlayerImage.color = .white
         PlayerImage.clipsToBounds = true
         PlayerImage.sound = player?.sound ?? ""
-        view.addSubview(PlayerImage)
         PlayerName.text = player?.name ?? ""
         PlayerName.textColor = .white
         PlayerName.font = UIFont.boldSystemFont(ofSize: 18.0)
-        view.addSubview(PlayerName)
         PlayerEmail.text = player?.email ?? ""
         PlayerEmail.textColor = .white
         PlayerEmail.font = UIFont.boldSystemFont(ofSize: 18.0)
-        view.addSubview(PlayerEmail)
         PlayerScore.numberOfLines = 0
         PlayerScore.text = "\(player?.counter ?? 0)/100 (\(player?.category ?? ""))"
         PlayerScore.textColor = .white
         PlayerScore.font = UIFont.boldSystemFont(ofSize: 18.0)
-        view.addSubview(PlayerScore)
-        view.addSubview(table)
+        view.addSubviews(PlayerImage, PlayerName, PlayerEmail, PlayerScore, table)
     }
     
     private func SetUpConstraints() {
@@ -114,6 +110,7 @@ extension PlayerDetailViewController: UITableViewDelegate, UITableViewDataSource
         if player!.category == playersViewModel.categories[indexPath.row].name {
             self.animation.StartRotateImage(image: cell.CategoryImage)
         }
+        cell.CategoryImage.isUserInteractionEnabled = false
         cell.ConfigureCell(category: playersViewModel.categories[indexPath.row])
         return cell
     }
