@@ -1377,14 +1377,8 @@
 		820C627D27BBA3CA004894FA /* QUIZ */ = {
 			isa = PBXGroup;
 			children = (
-				82E56A19297E3AE700879E21 /* CollectionView Categories */,
-				829A515629684BFC0056A7DB /* Custom Views */,
-				82D35C1F29633A3B000EB277 /* Extensions */,
-				82D35BDD296312D1000EB277 /* Protocols */,
-				8295F1912950AA9F000E033E /* Services */,
-				8295F1922950AB10000E033E /* ViewModels */,
-				8295F1992950B5F7000E033E /* Modules */,
 				820D304B28F387010031CFCD /* Resources */,
+				82C5AC032981DBFC00D26D7C /* Sources */,
 			);
 			path = QUIZ;
 			sourceTree = "<group>";
@@ -1428,10 +1422,12 @@
 		820D304B28F387010031CFCD /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				8295F1982950B5AF000E033E /* App */,
-				82C039C927CEC2EF00E69661 /* images */,
-				827F8BF227E8185100F6D7B3 /* sounds */,
-				82E91ECD27F6840B003D7E80 /* ML model */,
+				829A515629684BFC0056A7DB /* Custom Views */,
+				82D35C1F29633A3B000EB277 /* Extensions */,
+				82D35BDD296312D1000EB277 /* Protocols */,
+				8295F1912950AA9F000E033E /* Services */,
+				8295F1922950AB10000E033E /* ViewModels */,
+				8295F1992950B5F7000E033E /* Modules */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -2662,6 +2658,17 @@
 			path = "Animation Class";
 			sourceTree = "<group>";
 		};
+		82C5AC032981DBFC00D26D7C /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				8295F1982950B5AF000E033E /* App */,
+				82C039C927CEC2EF00E69661 /* images */,
+				827F8BF227E8185100F6D7B3 /* sounds */,
+				82E91ECD27F6840B003D7E80 /* ML model */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
 		82CBE7E4287093890045616B /* News MVVM Event Bus */ = {
 			isa = PBXGroup;
 			children = (
@@ -2721,6 +2728,7 @@
 		82CBE7F62870A8720045616B /* View */ = {
 			isa = PBXGroup;
 			children = (
+				82E56A19297E3AE700879E21 /* CollectionView Categories */,
 				82F5646E2940D1D30031F7BD /* ViewControllers */,
 				828E4B4A293FD6B5002A55B1 /* Cells */,
 			);
@@ -4301,7 +4309,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 265GKHT32M;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = QUIZ/Resources/App/Info.plist;
+				INFOPLIST_FILE = QUIZ/Sources/App/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "iQuiz X";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.trivia-games";
 				INFOPLIST_KEY_NSCameraUsageDescription = "";
@@ -4341,7 +4349,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 265GKHT32M;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = QUIZ/Resources/App/Info.plist;
+				INFOPLIST_FILE = QUIZ/Sources/App/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "iQuiz X";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.trivia-games";
 				INFOPLIST_KEY_NSCameraUsageDescription = "";
