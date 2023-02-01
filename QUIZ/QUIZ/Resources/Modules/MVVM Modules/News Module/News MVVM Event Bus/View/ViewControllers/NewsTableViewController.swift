@@ -75,7 +75,6 @@ final class NewsTableViewController: UITableViewController, CustomViewCellDelega
         }
     }
     
-    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return newsViewModel.news.count
     }
@@ -84,7 +83,6 @@ final class NewsTableViewController: UITableViewController, CustomViewCellDelega
         let cell = tableView.dequeueReusableCell(withIdentifier: NewsTableViewCell.identifier, for: indexPath) as! NewsTableViewCell
         cell.delegate = self
         cell.configure(news: newsViewModel.news[indexPath.row])
-        
         return cell
     }
 }

@@ -97,7 +97,6 @@ final class QuizTabBarController: UITabBarController {
             self.firebaseManager.PlayLastQuizSound()
         default:
             break
-            
         }
     }
     
