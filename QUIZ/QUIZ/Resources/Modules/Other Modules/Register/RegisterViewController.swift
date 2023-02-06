@@ -12,7 +12,7 @@ import FirebaseFirestore
 import FirebaseStorage
 import LocalAuthentication
 
-final class RegisterViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+final class RegisterViewController: UIViewController {
 
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var loginTextField: UITextField!
@@ -25,17 +25,12 @@ final class RegisterViewController: UIViewController, UIImagePickerControllerDel
     @IBOutlet weak var view2: UIView!
     
     private var token: AuthStateDidChangeListenerHandle!
-    
     private let storage = Storage.storage().reference()
+    private let db = Firestore.firestore()
+    private var urlString = ""
+    private let mycontext: LAContext = LAContext()
     
-    let db = Firestore.firestore()
-    
-    var urlString = ""
-    
-    let mycontext: LAContext = LAContext()
-    
-    
-    func ReturnTologin() {
+    private func ReturnTologin() {
         DispatchQueue.main.async {
             guard let vc = self.storyboard?.instantiateViewController(identifier: "LoginViewController") else {return}
             guard let window = self.view.window else {return}
@@ -43,8 +38,7 @@ final class RegisterViewController: UIViewController, UIImagePickerControllerDel
         }
     }
     
-    
-    func write() {
+    private func write() {
         
         let defaults = UserDefaults.standard
         
@@ -200,48 +194,6 @@ final class RegisterViewController: UIViewController, UIImagePickerControllerDel
         picker.allowsEditing = true
         present(picker, animated: true)
     }
-    
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        picker.dismiss(animated: true, completion: nil)
-        guard let image = info[UIImagePickerController.InfoKey.editedImage] as? UIImage else {
-            return
-        }
-        
-        guard let imageData = image.pngData() else {
-            return
-        }
-        
-        if self.loginTextField.text != "" {
-            storage.child("images/\(self.loginTextField.text ?? "")").putData(imageData,
-                                                                            metadata: nil,
-                                                                            completion: { _, error in
-                                                                                guard error == nil else {
-                                                                                print("Failed to upload")
-                                                                                    return
-                                                                                }
-                
-                
-                self.storage.child("images/\(self.loginTextField.text ?? "")").downloadURL(completion : { url, error in
-                    guard let url = url, error == nil else {
-                        return
-                    }
-                    
-                    self.urlString = url.absoluteString
-                    
-                    DispatchQueue.main.async {
-                        self.Image.image = image
-                    }
-                    
-                    print("Download URL: \(self.urlString)")
-                    UserDefaults.standard.set(self.urlString, forKey: "url")
-                })
-            })
-        }
-    }
-    
-    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
-        picker.dismiss(animated: true, completion: nil)
-    }
 
     @IBAction func register() {
         guard let email = loginTextField.text, loginTextField.hasText,
@@ -302,3 +254,48 @@ final class RegisterViewController: UIViewController, UIImagePickerControllerDel
 }
 
 
+extension RegisterViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        picker.dismiss(animated: true, completion: nil)
+        guard let image = info[UIImagePickerController.InfoKey.editedImage] as? UIImage else {
+            return
+        }
+        
+        guard let imageData = image.pngData() else {
+            return
+        }
+        
+        if self.loginTextField.text != "" {
+            storage.child("images/\(self.loginTextField.text ?? "")").putData(imageData,
+                                                                            metadata: nil,
+                                                                            completion: { _, error in
+                                                                                guard error == nil else {
+                                                                                print("Failed to upload")
+                                                                                    return
+                                                                                }
+                
+                
+                self.storage.child("images/\(self.loginTextField.text ?? "")").downloadURL(completion : { url, error in
+                    guard let url = url, error == nil else {
+                        return
+                    }
+                    
+                    self.urlString = url.absoluteString
+                    
+                    DispatchQueue.main.async {
+                        self.Image.image = image
+                    }
+                    
+                    print("Download URL: \(self.urlString)")
+                    UserDefaults.standard.set(self.urlString, forKey: "url")
+                })
+            })
+        }
+    }
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        picker.dismiss(animated: true, completion: nil)
+    }
+}
