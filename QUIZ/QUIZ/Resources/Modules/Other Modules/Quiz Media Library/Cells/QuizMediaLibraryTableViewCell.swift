@@ -30,7 +30,6 @@ class QuizMediaLibraryTableViewCell: UITableViewCell {
     }
     
     @IBAction func PlayMusic() {
-        
         if isPlaying == false {
             PlayButton.setImage(UIImage(named: "player selected"), for: .normal)
             player.PlaySound(resource: music)

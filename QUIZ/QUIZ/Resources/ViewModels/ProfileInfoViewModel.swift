@@ -8,7 +8,7 @@
 import Foundation
 
 struct ProfileInfoViewModel {
-    var name: String
-    var email: String
-    var password: String
+    let name: String
+    let email: String
+    let password: String
 }

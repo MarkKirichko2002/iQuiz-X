@@ -5,7 +5,6 @@
 //  Created by Марк Киричко on 02.07.2022.
 //
 
-import Firebase
 import Combine
 
 class PlayersViewModel {
@@ -15,7 +14,6 @@ class PlayersViewModel {
     private let audioPlayer = SoundClass()
     private let firebaseManager = FirebaseManager()
     private let quizCategoriesViewModel = QuizCategoriesViewModel()
-    private let db = Firestore.firestore()
     var player: Player?
     
     init() {

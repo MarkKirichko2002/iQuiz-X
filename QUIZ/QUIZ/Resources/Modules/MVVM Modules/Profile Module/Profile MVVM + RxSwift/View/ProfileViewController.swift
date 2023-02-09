@@ -53,7 +53,7 @@ final class ProfileViewController: UIViewController {
         self.DisplayProfileData()
     }
     
-    func HideUI() {
+    private func HideUI() {
         ProfileImage.isHidden = true
         NameLabel.isHidden = true
         EmailLabel.isHidden = true
@@ -64,7 +64,7 @@ final class ProfileViewController: UIViewController {
         CorrectAnswersCountLabel.isHidden = true
     }
     
-    func ShowUI() {
+    private func ShowUI() {
         ProfileImage.isHidden = false
         NameLabel.isHidden = false
         EmailLabel.isHidden = false
