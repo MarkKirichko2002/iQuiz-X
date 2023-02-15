@@ -54,11 +54,11 @@ final class QuizSplashScreenController: UIViewController {
             QuizTitleLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             QuizTitleLabel.centerYAnchor.constraint(equalTo: view.centerYAnchor),
             QuizTitleLabel.heightAnchor.constraint(equalToConstant: 30),
-            QuizTitleLabel.topAnchor.constraint(equalTo: QuizIcon.bottomAnchor, constant: 25),
+            QuizTitleLabel.topAnchor.constraint(equalTo: QuizIcon.bottomAnchor, constant: 40),
             
             AnniversaryLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             AnniversaryLabel.heightAnchor.constraint(equalToConstant: 30),
-            AnniversaryLabel.topAnchor.constraint(equalTo: QuizTitleLabel.bottomAnchor, constant: 30),
+            AnniversaryLabel.topAnchor.constraint(equalTo: QuizTitleLabel.bottomAnchor, constant: 40),
             
         ])
     }
