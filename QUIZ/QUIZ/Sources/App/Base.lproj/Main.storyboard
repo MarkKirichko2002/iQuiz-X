@@ -1967,51 +1967,9 @@
                     <view key="view" contentMode="scaleToFill" id="MLV-XS-Y8Q">
                         <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="🗓️ дата" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A3X-TO-d8A">
-                                <rect key="frame" x="50" y="544" width="330" height="52"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="52" id="KeK-A0-6vH"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="28"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Астрономия" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="beB-vN-Hf0">
-                                <rect key="frame" x="50" y="442" width="330" height="52"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="52" id="YJ1-fQ-tC8"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" weight="black" pointSize="28"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="astronomy.png" translatesAutoresizingMaskIntoConstraints="NO" id="blv-a0-yU4" customClass="RoundedImageView" customModule="QUIZ" customModuleProvider="target">
-                                <rect key="frame" x="140" y="191" width="150" height="150"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="150" id="YBx-vC-79i"/>
-                                    <constraint firstAttribute="height" constant="150" id="rpe-Kz-nT2"/>
-                                </constraints>
-                            </imageView>
-                        </subviews>
                         <viewLayoutGuide key="safeArea" id="oOh-fe-Hxp"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="oOh-fe-Hxp" firstAttribute="trailing" secondItem="A3X-TO-d8A" secondAttribute="trailing" constant="50" id="Bkb-ox-BTr"/>
-                            <constraint firstItem="blv-a0-yU4" firstAttribute="centerY" secondItem="MLV-XS-Y8Q" secondAttribute="centerY" constant="-200" id="JhY-8a-yMx"/>
-                            <constraint firstItem="A3X-TO-d8A" firstAttribute="leading" secondItem="oOh-fe-Hxp" secondAttribute="leading" constant="50" id="MQB-IA-XDY"/>
-                            <constraint firstItem="blv-a0-yU4" firstAttribute="centerX" secondItem="MLV-XS-Y8Q" secondAttribute="centerX" id="TyG-XO-pAD"/>
-                            <constraint firstItem="oOh-fe-Hxp" firstAttribute="trailing" secondItem="beB-vN-Hf0" secondAttribute="trailing" constant="50" id="Y2a-sq-zqY"/>
-                            <constraint firstItem="A3X-TO-d8A" firstAttribute="top" secondItem="beB-vN-Hf0" secondAttribute="bottom" constant="50" id="adX-pW-zVH"/>
-                            <constraint firstItem="oOh-fe-Hxp" firstAttribute="bottom" secondItem="A3X-TO-d8A" secondAttribute="bottom" constant="302" id="fB0-sD-Gt4"/>
-                            <constraint firstItem="beB-vN-Hf0" firstAttribute="leading" secondItem="oOh-fe-Hxp" secondAttribute="leading" constant="50" id="gGp-E7-rL4"/>
-                        </constraints>
                     </view>
-                    <connections>
-                        <outlet property="CurrentDateLabel" destination="A3X-TO-d8A" id="mYb-dW-N8Y"/>
-                        <outlet property="DailyQuizCategoryIcon" destination="blv-a0-yU4" id="Iyo-bH-H3r"/>
-                        <outlet property="DailyQuizCategoryName" destination="beB-vN-Hf0" id="PEs-5x-bQx"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pKN-pc-3kR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
