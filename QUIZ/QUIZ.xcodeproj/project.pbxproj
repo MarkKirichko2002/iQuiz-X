@@ -21,7 +21,7 @@
 		8207E24E286E5CC200CB017A /* underwater16.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 8207E249286E5CC200CB017A /* underwater16.jpeg */; };
 		8207E250286F0DCA00CB017A /* underwater.background.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 8207E24F286F0DCA00CB017A /* underwater.background.jpeg */; };
 		8209462D27FA676000F44E83 /* RoadTraffic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8209462C27FA676000F44E83 /* RoadTraffic.swift */; };
-		8209F79C2847F2600093147A /* SplashScreenController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8209F79B2847F2600093147A /* SplashScreenController.swift */; };
+		8209F79C2847F2600093147A /* QuizSplashScreenController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8209F79B2847F2600093147A /* QuizSplashScreenController.swift */; };
 		820C627F27BBA3CA004894FA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820C627E27BBA3CA004894FA /* AppDelegate.swift */; };
 		820C628127BBA3CA004894FA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820C628027BBA3CA004894FA /* SceneDelegate.swift */; };
 		820C628627BBA3CA004894FA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 820C628427BBA3CA004894FA /* Main.storyboard */; };
@@ -680,7 +680,7 @@
 		8207E249286E5CC200CB017A /* underwater16.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = underwater16.jpeg; sourceTree = "<group>"; };
 		8207E24F286F0DCA00CB017A /* underwater.background.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = underwater.background.jpeg; sourceTree = "<group>"; };
 		8209462C27FA676000F44E83 /* RoadTraffic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoadTraffic.swift; sourceTree = "<group>"; };
-		8209F79B2847F2600093147A /* SplashScreenController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenController.swift; sourceTree = "<group>"; };
+		8209F79B2847F2600093147A /* QuizSplashScreenController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizSplashScreenController.swift; sourceTree = "<group>"; };
 		820C627B27BBA3CA004894FA /* QUIZ.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QUIZ.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		820C627E27BBA3CA004894FA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		820C628027BBA3CA004894FA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -1351,7 +1351,7 @@
 		8209F79A2847F2390093147A /* Splash Screen */ = {
 			isa = PBXGroup;
 			children = (
-				8209F79B2847F2600093147A /* SplashScreenController.swift */,
+				8209F79B2847F2600093147A /* QuizSplashScreenController.swift */,
 			);
 			path = "Splash Screen";
 			sourceTree = "<group>";
@@ -4105,7 +4105,7 @@
 				8234A65F296A30E700A7FA2B /* SpeechRecognitionManagerProtocol.swift in Sources */,
 				82C2B5A527BD115A00C66946 /* ProfileViewController.swift in Sources */,
 				823CFF9327FA1BAF001FF6D9 /* BiometricTableViewCell.swift in Sources */,
-				8209F79C2847F2600093147A /* SplashScreenController.swift in Sources */,
+				8209F79C2847F2600093147A /* QuizSplashScreenController.swift in Sources */,
 				820D303B28F340710031CFCD /* Profile.swift in Sources */,
 				82F564722940D1FB0031F7BD /* QuizCategoriesTableViewController.swift in Sources */,
 				8234A661296A311F00A7FA2B /* SpeechSynthesizerManagerProtocol.swift in Sources */,

@@ -106,7 +106,7 @@ final class LoginViewController: UIViewController {
         token = Auth.auth().addStateDidChangeListener{[weak self] auth, user in
             guard user != nil else {return}
             DispatchQueue.main.async {
-                guard let vc = self?.storyboard?.instantiateViewController(identifier: "SplashScreenController") else {return}
+                guard let vc = self?.storyboard?.instantiateViewController(identifier: "QuizSplashScreenController") else {return}
                 guard let window = self!.view.window else {return}
                 window.rootViewController = vc
             }
