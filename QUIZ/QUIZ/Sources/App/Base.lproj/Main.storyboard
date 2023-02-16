@@ -1437,7 +1437,7 @@
                             <barButtonItem image="list" id="X2s-ld-KhH">
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
-                                    <segue destination="lrY-xL-OjY" kind="showDetail" id="flJ-bI-CmB"/>
+                                    <segue destination="lrY-xL-OjY" kind="showDetail" id="Q45-J4-jj6"/>
                                 </connections>
                             </barButtonItem>
                             <barButtonItem image="dice" id="HtO-1O-1vk">
@@ -1463,61 +1463,13 @@
                     <view key="view" contentMode="scaleToFill" id="vSK-PH-Ekt">
                         <rect key="frame" x="0.0" y="0.0" width="430" height="863"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="newspaper.png" translatesAutoresizingMaskIntoConstraints="NO" id="IJY-4Y-BQd" customClass="RoundedImageView" customModule="QUIZ" customModuleProvider="target">
-                                <rect key="frame" x="30" y="89" width="100" height="100"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="100" id="L4m-eQ-Vtl"/>
-                                    <constraint firstAttribute="height" constant="100" id="xOg-EW-zSL"/>
-                                </constraints>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="главное" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XV5-tc-edH">
-                                <rect key="frame" x="30" y="219" width="100" height="20.333333333333343"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mkN-fZ-Dtj">
-                                <rect key="frame" x="170" y="69" width="240" height="216"/>
-                            </pickerView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M7W-AU-tCT">
-                                <rect key="frame" x="30" y="335" width="370" height="38"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="выбрать категорию">
-                                    <fontDescription key="titleFontDescription" type="system" weight="black" pointSize="20"/>
-                                    <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </buttonConfiguration>
-                                <connections>
-                                    <action selector="SelectCategory" destination="lrY-xL-OjY" eventType="touchUpInside" id="rA5-KB-qvz"/>
-                                </connections>
-                            </button>
-                        </subviews>
                         <viewLayoutGuide key="safeArea" id="AE4-9Z-Azb"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="AE4-9Z-Azb" firstAttribute="trailing" secondItem="mkN-fZ-Dtj" secondAttribute="trailing" constant="20" id="5fT-WD-YGS"/>
-                            <constraint firstItem="mkN-fZ-Dtj" firstAttribute="leading" secondItem="IJY-4Y-BQd" secondAttribute="trailing" constant="40" id="Blv-oR-QlX"/>
-                            <constraint firstItem="XV5-tc-edH" firstAttribute="leading" secondItem="AE4-9Z-Azb" secondAttribute="leading" constant="30" id="DIH-b4-Mqe"/>
-                            <constraint firstItem="AE4-9Z-Azb" firstAttribute="trailing" secondItem="M7W-AU-tCT" secondAttribute="trailing" constant="30" id="EEA-SE-mhX"/>
-                            <constraint firstItem="IJY-4Y-BQd" firstAttribute="leading" secondItem="AE4-9Z-Azb" secondAttribute="leading" constant="30" id="Ic6-lp-MYU"/>
-                            <constraint firstItem="mkN-fZ-Dtj" firstAttribute="leading" secondItem="XV5-tc-edH" secondAttribute="trailing" constant="40" id="aLJ-mq-E4r"/>
-                            <constraint firstItem="M7W-AU-tCT" firstAttribute="top" secondItem="mkN-fZ-Dtj" secondAttribute="bottom" constant="50" id="eep-mg-yEM"/>
-                            <constraint firstItem="XV5-tc-edH" firstAttribute="top" secondItem="IJY-4Y-BQd" secondAttribute="bottom" constant="30" id="gue-MM-coF"/>
-                            <constraint firstItem="IJY-4Y-BQd" firstAttribute="top" secondItem="AE4-9Z-Azb" secondAttribute="top" constant="30" id="iOH-fT-w0c"/>
-                            <constraint firstItem="M7W-AU-tCT" firstAttribute="leading" secondItem="AE4-9Z-Azb" secondAttribute="leading" constant="30" id="ySr-mG-3X0"/>
-                            <constraint firstItem="mkN-fZ-Dtj" firstAttribute="top" secondItem="AE4-9Z-Azb" secondAttribute="top" constant="10" id="yjK-Jk-KWW"/>
-                        </constraints>
                     </view>
-                    <connections>
-                        <outlet property="CategoryIcon" destination="IJY-4Y-BQd" id="ldB-Sn-HBN"/>
-                        <outlet property="CategoryName" destination="XV5-tc-edH" id="yz9-KV-jdK"/>
-                        <outlet property="CategoryPicker" destination="mkN-fZ-Dtj" id="icE-eI-8HF"/>
-                        <outlet property="SelectCategoryButton" destination="M7W-AU-tCT" id="Kks-0k-guq"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jdt-B5-xeT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7675.8139534883721" y="-2526.1802575107299"/>
+            <point key="canvasLocation" x="7676" y="-2582"/>
         </scene>
         <!--URL View Controller-->
         <scene sceneID="N7a-b9-MUR">
@@ -1576,7 +1528,7 @@
                     <tabBarItem key="tabBarItem" tag="2" title="Викторина" image="categories" selectedImage="categories selected" id="bJb-Ka-8Cg"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="Jls-dM-Ufx">
-                        <rect key="frame" x="0.0" y="59" width="430" height="96"/>
+                        <rect key="frame" x="0.0" y="59" width="430" height="104.33333333333334"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -2047,7 +1999,6 @@
         <image name="list" width="24" height="24"/>
         <image name="microphone" width="24" height="24"/>
         <image name="music button selected" width="24" height="24"/>
-        <image name="newspaper.png" width="384" height="384"/>
         <image name="pause " width="24" height="24"/>
         <image name="planets1.jpeg" width="720" height="450"/>
         <image name="profile" width="24" height="24"/>
