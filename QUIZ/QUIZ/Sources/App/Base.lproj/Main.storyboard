@@ -1561,64 +1561,9 @@
                     <view key="view" contentMode="scaleToFill" id="Dmt-PE-BXQ">
                         <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1iw-i4-fUU">
-                                <rect key="frame" x="50" y="646" width="330" height="52"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="52" id="mnQ-RQ-hSf"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" weight="black" pointSize="28"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Вы готовы?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TZU-Cw-hvl">
-                                <rect key="frame" x="50" y="544" width="330" height="52"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="52" id="DhQ-NK-4yQ"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="28"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Астрономия" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jrZ-2t-tgE">
-                                <rect key="frame" x="50" y="442" width="330" height="52"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="52" id="rJH-7b-1G4"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" weight="black" pointSize="28"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="astronomy.png" translatesAutoresizingMaskIntoConstraints="NO" id="ebK-OF-PKg" customClass="RoundedImageView" customModule="QUIZ" customModuleProvider="target">
-                                <rect key="frame" x="140" y="191" width="150" height="150"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="150" id="NM1-zM-m8O"/>
-                                    <constraint firstAttribute="width" constant="150" id="yfI-Yo-bq0"/>
-                                </constraints>
-                            </imageView>
-                        </subviews>
                         <viewLayoutGuide key="safeArea" id="FDO-aZ-kre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="TZU-Cw-hvl" firstAttribute="leading" secondItem="FDO-aZ-kre" secondAttribute="leading" constant="50" id="7Ki-9z-pqz"/>
-                            <constraint firstItem="FDO-aZ-kre" firstAttribute="bottom" secondItem="1iw-i4-fUU" secondAttribute="bottom" constant="200" id="IXV-bq-d2r"/>
-                            <constraint firstItem="ebK-OF-PKg" firstAttribute="centerY" secondItem="Dmt-PE-BXQ" secondAttribute="centerY" constant="-200" id="KZO-Y0-Ww0"/>
-                            <constraint firstItem="FDO-aZ-kre" firstAttribute="trailing" secondItem="jrZ-2t-tgE" secondAttribute="trailing" constant="50" id="MP7-8R-Ehp"/>
-                            <constraint firstItem="ebK-OF-PKg" firstAttribute="centerX" secondItem="Dmt-PE-BXQ" secondAttribute="centerX" id="PEt-3d-VtH"/>
-                            <constraint firstItem="FDO-aZ-kre" firstAttribute="trailing" secondItem="TZU-Cw-hvl" secondAttribute="trailing" constant="50" id="U7b-fh-5IT"/>
-                            <constraint firstItem="1iw-i4-fUU" firstAttribute="top" secondItem="TZU-Cw-hvl" secondAttribute="bottom" constant="50" id="kRM-CI-EpB"/>
-                            <constraint firstItem="1iw-i4-fUU" firstAttribute="leading" secondItem="FDO-aZ-kre" secondAttribute="leading" constant="50" id="rjf-V8-0jI"/>
-                            <constraint firstItem="FDO-aZ-kre" firstAttribute="trailing" secondItem="1iw-i4-fUU" secondAttribute="trailing" constant="50" id="shn-kv-hlw"/>
-                            <constraint firstItem="jrZ-2t-tgE" firstAttribute="leading" secondItem="FDO-aZ-kre" secondAttribute="leading" constant="50" id="wTs-La-PXp"/>
-                            <constraint firstItem="TZU-Cw-hvl" firstAttribute="top" secondItem="jrZ-2t-tgE" secondAttribute="bottom" constant="50" id="zNx-DC-CLU"/>
-                        </constraints>
                     </view>
-                    <connections>
-                        <outlet property="CategoryName" destination="jrZ-2t-tgE" id="i4l-AZ-zTu"/>
-                        <outlet property="Icon" destination="ebK-OF-PKg" id="7XX-al-NEu"/>
-                        <outlet property="QuestionLabel" destination="TZU-Cw-hvl" id="fRD-ug-AB7"/>
-                        <outlet property="TimerLabeL" destination="1iw-i4-fUU" id="huG-SB-S5a"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Az1-7E-Pu1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
