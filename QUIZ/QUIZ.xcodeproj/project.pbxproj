@@ -2067,7 +2067,7 @@
 			path = "TabBar ";
 			sourceTree = "<group>";
 		};
-		829408A627CEC44F00AFF603 /* Planets */ = {
+		829408A627CEC44F00AFF603 /* Astronomy */ = {
 			isa = PBXGroup;
 			children = (
 				82EA1EF2286BCC1E00E49D0F /* planets1.jpeg */,
@@ -2091,7 +2091,7 @@
 				82EA1EF4286BCC3E00E49D0F /* planets19.jpeg */,
 				82EA1EF7286BCC3E00E49D0F /* planets20.jpeg */,
 			);
-			path = Planets;
+			path = Astronomy;
 			sourceTree = "<group>";
 		};
 		829408C227CEC8DA00AFF603 /* History */ = {
@@ -2343,7 +2343,7 @@
 		8295F1B82950B777000E033E /* category images */ = {
 			isa = PBXGroup;
 			children = (
-				829408A627CEC44F00AFF603 /* Planets */,
+				829408A627CEC44F00AFF603 /* Astronomy */,
 				829408C227CEC8DA00AFF603 /* History */,
 				829408D727CEC9D400AFF603 /* Anatomy */,
 				829408EC27CECA7800AFF603 /* Sport */,
