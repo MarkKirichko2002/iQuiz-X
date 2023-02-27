@@ -113,7 +113,6 @@
 		8234A667296A31EE00A7FA2B /* SoundClassProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8234A666296A31EE00A7FA2B /* SoundClassProtocol.swift */; };
 		8234A669296A322B00A7FA2B /* AnimationClassProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8234A668296A322B00A7FA2B /* AnimationClassProtocol.swift */; };
 		8234A66B296A32A200A7FA2B /* NavigationManagerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8234A66A296A32A200A7FA2B /* NavigationManagerProtocol.swift */; };
-		8234A678296A53F900A7FA2B /* astronomy.png in Resources */ = {isa = PBXBuildFile; fileRef = 8234A677296A53F900A7FA2B /* astronomy.png */; };
 		8234A67A296A5A2600A7FA2B /* OnboardingCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8234A679296A5A2600A7FA2B /* OnboardingCollectionViewCell.xib */; };
 		8237D98E286D02230097FE69 /* QuizUnderwater.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8237D98D286D02230097FE69 /* QuizUnderwater.swift */; };
 		8237D9B3286E1BCF0097FE69 /* swift.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 8237D9B2286E1BCF0097FE69 /* swift.jpeg */; };
@@ -401,9 +400,6 @@
 		829A514E296739530056A7DB /* ProfileInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 829A514D296739530056A7DB /* ProfileInfoViewModel.swift */; };
 		829A5151296744BF0056A7DB /* NavigationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 829A5150296744BF0056A7DB /* NavigationManager.swift */; };
 		829A515429675E790056A7DB /* DateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 829A515329675E790056A7DB /* DateManager.swift */; };
-		829A515E296856690056A7DB /* entertainment.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 829A5158296856690056A7DB /* entertainment.mp3 */; };
-		829A51602968566A0056A7DB /* technology.wav in Resources */ = {isa = PBXBuildFile; fileRef = 829A515A296856690056A7DB /* technology.wav */; };
-		829A51622968566A0056A7DB /* sport.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 829A515C296856690056A7DB /* sport.mp3 */; };
 		829A5166296874F40056A7DB /* DailyQuizViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 829A5165296874F40056A7DB /* DailyQuizViewController.swift */; };
 		829A51682968AFA60056A7DB /* NewsCategoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 829A51672968AFA60056A7DB /* NewsCategoriesViewController.swift */; };
 		829A516A2968B2F70056A7DB /* NewsCategoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 829A51692968B2F70056A7DB /* NewsCategoryModel.swift */; };
@@ -462,6 +458,10 @@
 		82CE537428E9E58B00D44A6E /* halloween music.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 82CE537328E9E58B00D44A6E /* halloween music.mp3 */; };
 		82CE537C28E9EC4600D44A6E /* anatomy.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 82CE537B28E9EC4600D44A6E /* anatomy.mp3 */; };
 		82CF0D3A28A583D9006B53F4 /* QuizStartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82CF0D3928A583D9006B53F4 /* QuizStartViewController.swift */; };
+		82D32A8929AD476800A04929 /* technology.wav in Resources */ = {isa = PBXBuildFile; fileRef = 82D32A8629AD476800A04929 /* technology.wav */; };
+		82D32A8A29AD476800A04929 /* entertainment.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 82D32A8729AD476800A04929 /* entertainment.mp3 */; };
+		82D32A8B29AD476800A04929 /* sport.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 82D32A8829AD476800A04929 /* sport.mp3 */; };
+		82D32A8D29AD4C0F00A04929 /* astronomy.png in Resources */ = {isa = PBXBuildFile; fileRef = 82D32A8C29AD4C0F00A04929 /* astronomy.png */; };
 		82D35B47295C520B000EB277 /* PlayerTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 82D35B46295C520B000EB277 /* PlayerTableViewCell.xib */; };
 		82D35B49295C5529000EB277 /* NewsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 82D35B48295C5529000EB277 /* NewsTableViewCell.xib */; };
 		82D35BDC29630F83000EB277 /* QuizMediaLibraryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 82D35BDB29630F83000EB277 /* QuizMediaLibraryTableViewCell.xib */; };
@@ -773,7 +773,6 @@
 		8234A666296A31EE00A7FA2B /* SoundClassProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundClassProtocol.swift; sourceTree = "<group>"; };
 		8234A668296A322B00A7FA2B /* AnimationClassProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationClassProtocol.swift; sourceTree = "<group>"; };
 		8234A66A296A32A200A7FA2B /* NavigationManagerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationManagerProtocol.swift; sourceTree = "<group>"; };
-		8234A677296A53F900A7FA2B /* astronomy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = astronomy.png; path = ../../../../../../../Downloads/astronomy.png; sourceTree = "<group>"; };
 		8234A679296A5A2600A7FA2B /* OnboardingCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OnboardingCollectionViewCell.xib; sourceTree = "<group>"; };
 		8237D98D286D02230097FE69 /* QuizUnderwater.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizUnderwater.swift; sourceTree = "<group>"; };
 		8237D9B2286E1BCF0097FE69 /* swift.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = swift.jpeg; sourceTree = "<group>"; };
@@ -1061,9 +1060,6 @@
 		829A514D296739530056A7DB /* ProfileInfoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileInfoViewModel.swift; sourceTree = "<group>"; };
 		829A5150296744BF0056A7DB /* NavigationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationManager.swift; sourceTree = "<group>"; };
 		829A515329675E790056A7DB /* DateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateManager.swift; sourceTree = "<group>"; };
-		829A5158296856690056A7DB /* entertainment.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = entertainment.mp3; path = "../../../../../../../Downloads/News-VIPER-updates/NewsAPI/NewsAPI/NewsAPIPackage/Sources/NewsAPIPackage/sounds/entertainment.mp3"; sourceTree = "<group>"; };
-		829A515A296856690056A7DB /* technology.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = technology.wav; path = "../../../../../../../Downloads/News-VIPER-updates/NewsAPI/NewsAPI/NewsAPIPackage/Sources/NewsAPIPackage/sounds/technology.wav"; sourceTree = "<group>"; };
-		829A515C296856690056A7DB /* sport.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = sport.mp3; path = "../../../../../../../Downloads/News-VIPER-updates/NewsAPI/NewsAPI/NewsAPIPackage/Sources/NewsAPIPackage/sounds/sport.mp3"; sourceTree = "<group>"; };
 		829A5165296874F40056A7DB /* DailyQuizViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyQuizViewController.swift; sourceTree = "<group>"; };
 		829A51672968AFA60056A7DB /* NewsCategoriesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsCategoriesViewController.swift; sourceTree = "<group>"; };
 		829A51692968B2F70056A7DB /* NewsCategoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsCategoryModel.swift; sourceTree = "<group>"; };
@@ -1122,6 +1118,10 @@
 		82CE537328E9E58B00D44A6E /* halloween music.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "halloween music.mp3"; sourceTree = "<group>"; };
 		82CE537B28E9EC4600D44A6E /* anatomy.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = anatomy.mp3; sourceTree = "<group>"; };
 		82CF0D3928A583D9006B53F4 /* QuizStartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizStartViewController.swift; sourceTree = "<group>"; };
+		82D32A8629AD476800A04929 /* technology.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = technology.wav; sourceTree = "<group>"; };
+		82D32A8729AD476800A04929 /* entertainment.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = entertainment.mp3; sourceTree = "<group>"; };
+		82D32A8829AD476800A04929 /* sport.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = sport.mp3; sourceTree = "<group>"; };
+		82D32A8C29AD4C0F00A04929 /* astronomy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = astronomy.png; path = ../../../../../../../../Downloads/astronomy.png; sourceTree = "<group>"; };
 		82D35B46295C520B000EB277 /* PlayerTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlayerTableViewCell.xib; sourceTree = "<group>"; };
 		82D35B48295C5529000EB277 /* NewsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewsTableViewCell.xib; sourceTree = "<group>"; };
 		82D35BDB29630F83000EB277 /* QuizMediaLibraryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QuizMediaLibraryTableViewCell.xib; sourceTree = "<group>"; };
@@ -1942,7 +1942,7 @@
 		82848CF3281C6ED40068A4AE /* category icons */ = {
 			isa = PBXGroup;
 			children = (
-				8234A677296A53F900A7FA2B /* astronomy.png */,
+				82D32A8C29AD4C0F00A04929 /* astronomy.png */,
 				82848CFE281C6F4B0068A4AE /* history.jpeg */,
 				82848CF6281C6F4B0068A4AE /* anatomy.jpeg */,
 				82848D02281C6F4C0068A4AE /* sport.jpeg */,
@@ -2434,9 +2434,9 @@
 		829A5157296856160056A7DB /* news category sounds */ = {
 			isa = PBXGroup;
 			children = (
-				829A5158296856690056A7DB /* entertainment.mp3 */,
-				829A515C296856690056A7DB /* sport.mp3 */,
-				829A515A296856690056A7DB /* technology.wav */,
+				82D32A8729AD476800A04929 /* entertainment.mp3 */,
+				82D32A8829AD476800A04929 /* sport.mp3 */,
+				82D32A8629AD476800A04929 /* technology.wav */,
 			);
 			path = "news category sounds";
 			sourceTree = "<group>";
@@ -3555,7 +3555,6 @@
 				82EA1F69286BCCEB00E49D0F /* games11.jpeg in Resources */,
 				8295F1B42950B70B000E033E /* underwater12.jpeg in Resources */,
 				82EA1EBE286BCB7C00E49D0F /* roadtraffic8.jpeg in Resources */,
-				8234A678296A53F900A7FA2B /* astronomy.png in Resources */,
 				82319E1F28E8E6F60053CEF5 /* halloween9.jpeg in Resources */,
 				82EA1F94286BCD2300E49D0F /* anatomy18.jpeg in Resources */,
 				8244DCF627E39D8500F5C59B /* informatics2.jpeg in Resources */,
@@ -3575,6 +3574,7 @@
 				82EA1EAD286BCB6000E49D0F /* literature6.jpeg in Resources */,
 				827D4B6228205C0E007B3895 /* informatics18.jpeg in Resources */,
 				82D35C0B296326A8000EB277 /* PhotoTableViewCell.xib in Resources */,
+				82D32A8D29AD4C0F00A04929 /* astronomy.png in Resources */,
 				8294092827CECCA900AFF603 /* IQ2.jpeg in Resources */,
 				82D35C132963278A000EB277 /* SpeachTableViewCell.xib in Resources */,
 				824419B8286E531900203DBA /* underwater20.jpeg in Resources */,
@@ -3644,6 +3644,7 @@
 				82EA1F04286BCC3E00E49D0F /* planets13.jpeg in Resources */,
 				8261BC3B27E114950089CC94 /* chemistry2.jpeg in Resources */,
 				82EA1F07286BCC3E00E49D0F /* planets17.jpeg in Resources */,
+				82D32A8A29AD476800A04929 /* entertainment.mp3 in Resources */,
 				82EA1F7E286BCD0600E49D0F /* sport17.jpeg in Resources */,
 				8294092427CECCA900AFF603 /* IQ7.jpeg in Resources */,
 				82826F5B28F74017008798D5 /* newspaper.mp3 in Resources */,
@@ -3705,7 +3706,6 @@
 				82EA1F40286BCCB900E49D0F /* economy20.jpeg in Resources */,
 				8243A61D2820810E00427553 /* physics15.jpeg in Resources */,
 				8234A67A296A5A2600A7FA2B /* OnboardingCollectionViewCell.xib in Resources */,
-				829A515E296856690056A7DB /* entertainment.mp3 in Resources */,
 				82848D10281C6F4C0068A4AE /* drive.jpeg in Resources */,
 				82848D28281C6F5B0068A4AE /* geography.background.jpeg in Resources */,
 				8281168D293A88DC00AA7C8E /* newyear7.jpeg in Resources */,
@@ -3782,8 +3782,8 @@
 				8294094D27CECE1900AFF603 /* geography10.jpeg in Resources */,
 				8216FE3027E560AB00DFB0CF /* Assets.xcassets in Resources */,
 				822139122874E75B0065A0C3 /* anatomy music.mp3 in Resources */,
+				82D32A8929AD476800A04929 /* technology.wav in Resources */,
 				82EA1F91286BCD2300E49D0F /* anatomy14.jpeg in Resources */,
-				829A51602968566A0056A7DB /* technology.wav in Resources */,
 				82EA1EE8286BCC1300E49D0F /* Swift3.jpeg in Resources */,
 				829408E227CECA2F00AFF603 /* anatomy8.jpeg in Resources */,
 				82848D2C281C6F5B0068A4AE /* IQ.background.jpeg in Resources */,
@@ -3906,7 +3906,7 @@
 				8288F0972872662400C6A182 /* chess4.jpeg in Resources */,
 				8244DCFA27E39D8500F5C59B /* informatics10.jpeg in Resources */,
 				82E4C6E8282F062C00379856 /* roadtraffic14.jpeg in Resources */,
-				829A51622968566A0056A7DB /* sport.mp3 in Resources */,
+				82D32A8B29AD476800A04929 /* sport.mp3 in Resources */,
 				822139352874E8650065A0C3 /* Swift13.jpeg in Resources */,
 				82CBF25527D1861F0046E3BE /* ecology9.jpeg in Resources */,
 				82EA1FA5286BCD4200E49D0F /* history15.jpeg in Resources */,
