@@ -1422,9 +1422,6 @@
                                     <rect key="frame" x="0.0" y="0.0" width="430" height="43.666667938232422"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
-                                <connections>
-                                    <segue destination="c2E-D4-Aqx" kind="showDetail" identifier="ShowWeb" trigger="accessoryAction" id="DwB-fl-FL9"/>
-                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -1471,41 +1468,6 @@
             </objects>
             <point key="canvasLocation" x="7676" y="-2582"/>
         </scene>
-        <!--URL View Controller-->
-        <scene sceneID="N7a-b9-MUR">
-            <objects>
-                <viewController storyboardIdentifier="URLViewController" hidesBottomBarWhenPushed="YES" id="c2E-D4-Aqx" customClass="URLViewController" customModule="QUIZ" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="bcn-Hb-Ffh">
-                        <rect key="frame" x="0.0" y="0.0" width="430" height="863"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DKE-wh-DR8">
-                                <rect key="frame" x="0.0" y="59" width="430" height="804"/>
-                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <wkWebViewConfiguration key="configuration">
-                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
-                                    <wkPreferences key="preferences"/>
-                                </wkWebViewConfiguration>
-                            </wkWebView>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="Vzy-b4-M4e"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="Vzy-b4-M4e" firstAttribute="bottom" secondItem="DKE-wh-DR8" secondAttribute="bottom" id="IsL-la-Zgk"/>
-                            <constraint firstItem="DKE-wh-DR8" firstAttribute="leading" secondItem="Vzy-b4-M4e" secondAttribute="leading" id="Kiu-lm-x0g"/>
-                            <constraint firstItem="Vzy-b4-M4e" firstAttribute="trailing" secondItem="DKE-wh-DR8" secondAttribute="trailing" id="OmF-Nr-uVp"/>
-                            <constraint firstItem="DKE-wh-DR8" firstAttribute="top" secondItem="Vzy-b4-M4e" secondAttribute="top" id="ha9-tb-oSP"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" id="n5I-FN-6cG"/>
-                    <connections>
-                        <outlet property="WVWEBview" destination="DKE-wh-DR8" id="LcU-5K-vAe"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="czl-PW-QnN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="7676" y="-1787"/>
-        </scene>
         <!--Quiz Start View Controller-->
         <scene sceneID="t3o-fa-72R">
             <objects>
@@ -1528,7 +1490,7 @@
                     <tabBarItem key="tabBarItem" tag="2" title="Викторина" image="categories" selectedImage="categories selected" id="bJb-Ka-8Cg"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="Jls-dM-Ufx">
-                        <rect key="frame" x="0.0" y="59" width="430" height="104.33333333333334"/>
+                        <rect key="frame" x="0.0" y="59" width="430" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>

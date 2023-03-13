@@ -10,7 +10,6 @@ import UIKit
 final class NewsCategoriesViewController: UIViewController {
     
     private var newsListViewModel = NewsListViewModel()
-    private let categories = [NewsCategoryModel(id: 1, name: "главное", icon: "newspaper", sound: "literature.mp3"), NewsCategoryModel(id: 2, name: "технологии", icon: "technology", sound: "technology.wav"), NewsCategoryModel(id: 3, name: "спорт", icon: "sport.jpeg", sound: "sport.mp3"),NewsCategoryModel(id: 4, name: "бизнес", icon: "business", sound: "economics.mp3"), NewsCategoryModel(id: 5, name: "наука", icon: "science", sound: "chemistry.mp3")]
     private var category: NewsCategoryModel?
     private let animation = AnimationClass()
     private let player = SoundClass()
@@ -79,7 +78,7 @@ final class NewsCategoriesViewController: UIViewController {
             animation.springButton(button: self.SelectNewsCategoryButton)
             animation.springImage(image: self.NewsCategoryIcon)
             animation.springLabel(label: self.NewsCategoryName)
-            newsListViewModel.CurrentCategory(category: category)
+            newsListViewModel.SelectNewsCategory(category: category)
             DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
                 self.dismiss(animated: true, completion: nil)
             }
@@ -96,20 +95,20 @@ extension NewsCategoriesViewController: UIPickerViewDelegate, UIPickerViewDataSo
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return categories.count
+        return newsListViewModel.categories.count
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int)-> String? {
-        return categories[row].name
+        return newsListViewModel.categories[row].name
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        NewsCategoryIcon.image = UIImage(named: categories[row].icon)
-        NewsCategoryIcon.sound = categories[row].sound
-        NewsCategoryName.text = categories[row].name.capitalized
+        NewsCategoryIcon.image = UIImage(named: newsListViewModel.categories[row].icon)
+        NewsCategoryIcon.sound = newsListViewModel.categories[row].sound
+        NewsCategoryName.text = newsListViewModel.categories[row].name.capitalized
         animation.springImage(image: self.NewsCategoryIcon)
         animation.springLabel(label: self.NewsCategoryName)
-        player.PlaySound(resource: categories[row].sound)
-        category = categories[row]
+        player.PlaySound(resource: newsListViewModel.categories[row].sound)
+        category = newsListViewModel.categories[row]
     }
 }

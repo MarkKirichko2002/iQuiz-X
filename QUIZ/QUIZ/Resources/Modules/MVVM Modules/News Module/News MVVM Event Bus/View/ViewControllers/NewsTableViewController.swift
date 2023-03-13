@@ -6,14 +6,12 @@
 //
 
 import UIKit
-import Alamofire
-import SDWebImage
+import SafariServices
 
 final class NewsTableViewController: UITableViewController, CustomViewCellDelegate {
     
     private var newsViewModel = NewsListViewModel()
     private let RefreshControl = UIRefreshControl()
-    private let player = SoundClass()
     private let dateManager = DateManager()
     @IBOutlet weak var DiceButton: UIBarButtonItem!
     
@@ -35,7 +33,7 @@ final class NewsTableViewController: UITableViewController, CustomViewCellDelega
                 print(error)
             }
         }
-        newsViewModel.GetNews()
+        newsViewModel.GetNews(category: .general)
     }
     
     @IBAction func GenerateRandomNews() {
@@ -44,7 +42,7 @@ final class NewsTableViewController: UITableViewController, CustomViewCellDelega
     
     @objc func refresh(_ sender: AnyObject) {
         DispatchQueue.main.async {
-            self.newsViewModel.GetNews()
+            self.newsViewModel.GetNews(category: .general)
             self.tableView.reloadData()
             self.RefreshControl.endRefreshing()
         }
@@ -57,22 +55,8 @@ final class NewsTableViewController: UITableViewController, CustomViewCellDelega
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-        player.PlaySound(resource: "literature.mp3")
-        
-        if let cell = tableView.cellForRow(at: indexPath) as? NewsTableViewCell {
-            cell.didSelect(indexPath: indexPath)
-        }
-    }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "ShowWeb",
-           let destinationController = segue.destination as? URLViewController,
-           let indexSelectedCell = tableView.indexPathForSelectedRow {
-           let url = newsViewModel.news[indexSelectedCell.row].url
-           guard let url = url else {return}
-           destinationController.url = url
-        }
+        let vc = SFSafariViewController(url: URL(string: self.newsViewModel.news[indexPath.row].url ?? "https://www.apple.com")!)
+        self.present(vc, animated: true)
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

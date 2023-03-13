@@ -59,7 +59,7 @@ extension QuizSectionsTableViewController: UITableViewDelegate, UITableViewDataS
         switch section.id {
             
         case 1:
-            if let vc = storyboard?.instantiateViewController(withIdentifier: "QuizCategoriesViewController") as? QuizCategoriesViewController {
+            if let vc = storyboard?.instantiateViewController(withIdentifier: "QuizCategoriesTableViewController") as? QuizCategoriesTableViewController {
                 vc.title = "Категории \(section.itemsCount)/19"
                 self.navigationController?.pushViewController(vc, animated: true)
             }

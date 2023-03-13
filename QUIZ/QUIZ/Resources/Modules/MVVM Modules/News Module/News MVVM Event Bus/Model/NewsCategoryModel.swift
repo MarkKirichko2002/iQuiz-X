@@ -12,4 +12,5 @@ struct NewsCategoryModel {
     var name: String
     var icon: String
     var sound: String
+    var category: NewsCategory
 }
