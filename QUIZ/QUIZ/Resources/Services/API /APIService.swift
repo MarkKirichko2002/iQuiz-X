@@ -7,14 +7,6 @@
 
 import Alamofire
 
-enum NewsCategory: String {
-    case general
-    case technology
-    case sport
-    case business
-    case science
-}
-
 class APIService: APIServiceProtocol {
     
     static let shared = APIService()

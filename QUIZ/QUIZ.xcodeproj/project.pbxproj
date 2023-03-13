@@ -160,6 +160,7 @@
 		8255249D29BF6E310067EB68 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8255249C29BF6E310067EB68 /* APIService.swift */; };
 		8255249F29BF7EB60067EB68 /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8255249E29BF7EB60067EB68 /* Article.swift */; };
 		825524A129BF7ECF0067EB68 /* Source.swift in Sources */ = {isa = PBXBuildFile; fileRef = 825524A029BF7ECF0067EB68 /* Source.swift */; };
+		825524A329BF87C70067EB68 /* NewsCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 825524A229BF87C70067EB68 /* NewsCategory.swift */; };
 		8261BC2227E10F1B0089CC94 /* QuizStatisticTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8261BC2127E10F1B0089CC94 /* QuizStatisticTableViewController.swift */; };
 		8261BC2927E1139A0089CC94 /* QuizChemistry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8261BC2827E1139A0089CC94 /* QuizChemistry.swift */; };
 		8261BC3427E114950089CC94 /* chemistry8.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 8261BC2627E113750089CC94 /* chemistry8.jpeg */; };
@@ -824,6 +825,7 @@
 		8255249C29BF6E310067EB68 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		8255249E29BF7EB60067EB68 /* Article.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Article.swift; sourceTree = "<group>"; };
 		825524A029BF7ECF0067EB68 /* Source.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Source.swift; sourceTree = "<group>"; };
+		825524A229BF87C70067EB68 /* NewsCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsCategory.swift; sourceTree = "<group>"; };
 		8261BC2127E10F1B0089CC94 /* QuizStatisticTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizStatisticTableViewController.swift; sourceTree = "<group>"; };
 		8261BC2627E113750089CC94 /* chemistry8.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = chemistry8.jpeg; sourceTree = "<group>"; };
 		8261BC2727E1138B0089CC94 /* chemistry4.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = chemistry4.jpeg; sourceTree = "<group>"; };
@@ -1868,6 +1870,7 @@
 		8255249829BF6D230067EB68 /* API  */ = {
 			isa = PBXGroup;
 			children = (
+				825524A229BF87C70067EB68 /* NewsCategory.swift */,
 				8255249C29BF6E310067EB68 /* APIService.swift */,
 			);
 			path = "API ";
@@ -4110,6 +4113,7 @@
 				823BD75229776A89008D9967 /* QuizSectionsViewModel.swift in Sources */,
 				82D35C1E29633398000EB277 /* OnboardingViewController.swift in Sources */,
 				829A514C296735E10056A7DB /* SettingsManager.swift in Sources */,
+				825524A329BF87C70067EB68 /* NewsCategory.swift in Sources */,
 				82F7918B27CC04A00041DAB3 /* QuizEconomy.swift in Sources */,
 				823BD74229775037008D9967 /* QuizSectionModel.swift in Sources */,
 				8261BC2927E1139A0089CC94 /* QuizChemistry.swift in Sources */,
