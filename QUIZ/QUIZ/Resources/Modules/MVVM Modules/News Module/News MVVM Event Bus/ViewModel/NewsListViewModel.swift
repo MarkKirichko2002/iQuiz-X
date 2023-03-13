@@ -12,87 +12,37 @@ struct NewsListViewModel {
     
     var news: [Article] = []
     private let player = SoundClass()
-    private let urls = ["https://newsapi.org/v2/top-headlines?country=ru&category=general&apiKey=c6fb14909d524ae68ea631e5cb55ae67","https://newsapi.org/v2/top-headlines?country=ru&category=science&apiKey=c6fb14909d524ae68ea631e5cb55ae67", "https://newsapi.org/v2/top-headlines?country=ru&category=technology&apiKey=c6fb14909d524ae68ea631e5cb55ae67", "https://newsapi.org/v2/top-headlines?country=ru&category=sport&apiKey=c6fb14909d524ae68ea631e5cb55ae67","https://newsapi.org/v2/top-headlines?country=ru&category=business&apiKey=c6fb14909d524ae68ea631e5cb55ae67"]
-    private var url = "https://newsapi.org/v2/top-headlines?country=ru&category=science&apiKey=c6fb14909d524ae68ea631e5cb55ae67"
+    
+    // категории новостей
+    let categories = [NewsCategoryModel(id: 1, name: "главное", icon: "newspaper", sound: "literature.mp3", category: .general), NewsCategoryModel(id: 2, name: "технологии", icon: "technology", sound: "technology.wav", category: .technology), NewsCategoryModel(id: 3, name: "спорт", icon: "sport.jpeg", sound: "sport.mp3", category: .sport),NewsCategoryModel(id: 4, name: "бизнес", icon: "business", sound: "economics.mp3", category: .business), NewsCategoryModel(id: 5, name: "наука", icon: "science", sound: "chemistry.mp3", category: .science)]
     
     // получить новости
-    func GetNews() {
-       
-        AF.request(url).response { data in
-            guard let data = data.data else {return}
+    func GetNews(category: NewsCategory) {
         
-            var event: NewsFetchEvent
-            var news: NewsResponse
-            
-            do {
-                news = try JSONDecoder().decode(NewsResponse.self, from: data)
-                event = NewsFetchEvent(identifier: UUID().uuidString, result: .success(news.articles))
-            } catch {
-                event = NewsFetchEvent(identifier: UUID().uuidString,
-                                          result: .failure(error))
+        var event: NewsFetchEvent?
+        
+        APIService.shared.execute(type: NewsResponse.self, category: category) { result in
+            switch result {
+            case .success(let data):
+                event = NewsFetchEvent(identifier: UUID().uuidString, result: .success(data.articles))
+                Bus.shared.publish(type: .newsFetch, event: event!)
+            case .failure(let error):
+                event = NewsFetchEvent(identifier: UUID().uuidString, result: .failure(error))
+                Bus.shared.publish(type: .newsFetch, event: event!)
             }
-            Bus.shared.publish(type: .newsFetch, event: event)
         }
     }
     
-    mutating func CurrentCategory(category: NewsCategoryModel) {
-        switch category.id {
-            
-        case 1:
-            url = "https://newsapi.org/v2/top-headlines?country=ru&category=general&apiKey=c6fb14909d524ae68ea631e5cb55ae67"
-            player.PlaySound(resource: "literature.mp3")
-            GetNews()
-            
-        case 2:
-            url = "https://newsapi.org/v2/top-headlines?country=ru&category=technology&apiKey=c6fb14909d524ae68ea631e5cb55ae67"
-            player.PlaySound(resource: "technology.wav")
-            GetNews()
-            
-        case 3:
-            url = "https://newsapi.org/v2/top-headlines?country=ru&category=sport&apiKey=c6fb14909d524ae68ea631e5cb55ae67"
-            player.PlaySound(resource: "sport.mp3")
-            GetNews()
-            
-        case 4:
-            url = "https://newsapi.org/v2/top-headlines?country=ru&category=business&apiKey=c6fb14909d524ae68ea631e5cb55ae67"
-            player.PlaySound(resource: "economics.mp3")
-            GetNews()
-        
-        case 5:
-            url = "https://newsapi.org/v2/top-headlines?country=ru&category=science&apiKey=c6fb14909d524ae68ea631e5cb55ae67"
-            player.PlaySound(resource: "chemistry.mp3")
-            GetNews()
-            
-        default:
-            break
-            
-        }
+    // выбрать конкретную категорию новостей
+    func SelectNewsCategory(category: NewsCategoryModel) {
+        player.PlaySound(resource: category.sound)
+        GetNews(category: category.category)
     }
     
     // сгенерировать случайные статьи
-    mutating func GenerateRandomNews() {
-        self.url = urls.randomElement() ?? ""
-        player.PlaySound(resource: "dice.wav")
-        switch url {
-            
-        case "https://newsapi.org/v2/top-headlines?country=ru&category=general&apiKey=c6fb14909d524ae68ea631e5cb55ae67":
-            player.PlaySound(resource: "literature.mp3")
-          
-        case "https://newsapi.org/v2/top-headlines?country=ru&category=technology&apiKey=c6fb14909d524ae68ea631e5cb55ae67":
-            player.PlaySound(resource: "technology.wav")
-            
-        case "https://newsapi.org/v2/top-headlines?country=ru&category=sport&apiKey=c6fb14909d524ae68ea631e5cb55ae67":
-            player.PlaySound(resource: "sport.mp3")
-            
-        case "https://newsapi.org/v2/top-headlines?country=ru&category=business&apiKey=c6fb14909d524ae68ea631e5cb55ae67":
-            player.PlaySound(resource: "economics.mp3")
-        
-        case "https://newsapi.org/v2/top-headlines?country=ru&category=science&apiKey=c6fb14909d524ae68ea631e5cb55ae67":
-            player.PlaySound(resource: "chemistry.mp3")
-            
-        default:
-            break
-        }
-        GetNews()
+    func GenerateRandomNews() {
+        let randomCategory = categories[Int.random(in: 0..<categories.count - 1)]
+        player.PlaySound(resource: randomCategory.sound)
+        GetNews(category: randomCategory.category)
     }
 }

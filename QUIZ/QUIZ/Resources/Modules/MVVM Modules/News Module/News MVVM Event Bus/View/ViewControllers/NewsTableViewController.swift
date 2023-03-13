@@ -12,7 +12,6 @@ final class NewsTableViewController: UITableViewController, CustomViewCellDelega
     
     private var newsViewModel = NewsListViewModel()
     private let RefreshControl = UIRefreshControl()
-    private let player = SoundClass()
     private let dateManager = DateManager()
     @IBOutlet weak var DiceButton: UIBarButtonItem!
     
@@ -34,7 +33,7 @@ final class NewsTableViewController: UITableViewController, CustomViewCellDelega
                 print(error)
             }
         }
-        newsViewModel.GetNews()
+        newsViewModel.GetNews(category: .general)
     }
     
     @IBAction func GenerateRandomNews() {
@@ -43,7 +42,7 @@ final class NewsTableViewController: UITableViewController, CustomViewCellDelega
     
     @objc func refresh(_ sender: AnyObject) {
         DispatchQueue.main.async {
-            self.newsViewModel.GetNews()
+            self.newsViewModel.GetNews(category: .general)
             self.tableView.reloadData()
             self.RefreshControl.endRefreshing()
         }

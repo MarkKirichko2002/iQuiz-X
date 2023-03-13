@@ -1,17 +1,11 @@
 //
-//  NewsModel.swift
+//  Article.swift
 //  QUIZ
 //
-//  Created by Марк Киричко on 29.06.2022.
+//  Created by Марк Киричко on 13.03.2023.
 //
 
 import Foundation
-
-struct NewsResponse: Codable {
-    let status: String?
-    let totalResults: Int?
-    let articles: [Article]
-}
 
 // MARK: - Article
 struct Article: Codable {
@@ -23,10 +17,4 @@ struct Article: Codable {
     let urlToImage: String?
     let publishedAt: String?
     let content: String?
-}
-
-// MARK: - Source
-struct Source: Codable {
-    let id: String?
-    let name: String?
 }
