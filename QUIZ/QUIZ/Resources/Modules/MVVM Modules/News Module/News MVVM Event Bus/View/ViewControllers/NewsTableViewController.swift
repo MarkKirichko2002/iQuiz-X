@@ -8,12 +8,14 @@
 import UIKit
 import SafariServices
 
-final class NewsTableViewController: UITableViewController, CustomViewCellDelegate {
+final class NewsTableViewController: UITableViewController, CustomViewCellDelegate, UISearchBarDelegate {
     
     private var newsViewModel = NewsListViewModel()
     private let RefreshControl = UIRefreshControl()
     private let dateManager = DateManager()
     @IBOutlet weak var DiceButton: UIBarButtonItem!
+    
+    private let searchVC = UISearchController(searchResultsController: nil)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,6 +36,8 @@ final class NewsTableViewController: UITableViewController, CustomViewCellDelega
             }
         }
         newsViewModel.GetNews(category: .general)
+        navigationItem.searchController = searchVC
+        searchVC.searchBar.delegate = self
     }
     
     @IBAction func GenerateRandomNews() {
@@ -69,4 +73,32 @@ final class NewsTableViewController: UITableViewController, CustomViewCellDelega
         cell.configure(news: newsViewModel.news[indexPath.row])
         return cell
     }
+    
+    // Поиск
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        guard let text = searchBar.text, !text.isEmpty else {
+            return
+        }
+        
+        APIService.shared.search(type: NewsResponse.self, with: text) { [weak self] result in
+            switch result {
+            case .success(let data):
+                self?.newsViewModel.news = data.articles
+            
+                DispatchQueue.main.async {
+                    self?.tableView.reloadData()
+                    self?.searchVC.dismiss(animated: true)
+                }
+            case .failure(let error):
+                print(error)
+            }
+        }
+        print(text)
+    }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        newsViewModel.GetNews(category: .general)
+        self.tableView.reloadData()
+    }
+
 }
