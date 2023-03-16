@@ -161,6 +161,15 @@
 		8255249F29BF7EB60067EB68 /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8255249E29BF7EB60067EB68 /* Article.swift */; };
 		825524A129BF7ECF0067EB68 /* Source.swift in Sources */ = {isa = PBXBuildFile; fileRef = 825524A029BF7ECF0067EB68 /* Source.swift */; };
 		825524A329BF87C70067EB68 /* NewsCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 825524A229BF87C70067EB68 /* NewsCategory.swift */; };
+		825524E329C11C500067EB68 /* NewsSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 825524E229C11C500067EB68 /* NewsSearchViewController.swift */; };
+		825524E529C11C730067EB68 /* NewsSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 825524E429C11C730067EB68 /* NewsSearchView.swift */; };
+		825524E729C11C850067EB68 /* NewsSearchInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 825524E629C11C850067EB68 /* NewsSearchInputView.swift */; };
+		825524E929C11C980067EB68 /* NewsNoSearchResultsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 825524E829C11C980067EB68 /* NewsNoSearchResultsView.swift */; };
+		825524EB29C11CB90067EB68 /* NewsSearchViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 825524EA29C11CB90067EB68 /* NewsSearchViewViewModel.swift */; };
+		825524ED29C11CE50067EB68 /* NewsSearchInputViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 825524EC29C11CE50067EB68 /* NewsSearchInputViewViewModel.swift */; };
+		825524EF29C11D020067EB68 /* NewsNoSearchResultsViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 825524EE29C11D020067EB68 /* NewsNoSearchResultsViewViewModel.swift */; };
+		825524F229C121D00067EB68 /* NewsSearchResultsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 825524F129C121D00067EB68 /* NewsSearchResultsView.swift */; };
+		825524F429C122060067EB68 /* NewsSearchResultsViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 825524F329C122060067EB68 /* NewsSearchResultsViewViewModel.swift */; };
 		8261BC2227E10F1B0089CC94 /* QuizStatisticTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8261BC2127E10F1B0089CC94 /* QuizStatisticTableViewController.swift */; };
 		8261BC2927E1139A0089CC94 /* QuizChemistry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8261BC2827E1139A0089CC94 /* QuizChemistry.swift */; };
 		8261BC3427E114950089CC94 /* chemistry8.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 8261BC2627E113750089CC94 /* chemistry8.jpeg */; };
@@ -826,6 +835,15 @@
 		8255249E29BF7EB60067EB68 /* Article.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Article.swift; sourceTree = "<group>"; };
 		825524A029BF7ECF0067EB68 /* Source.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Source.swift; sourceTree = "<group>"; };
 		825524A229BF87C70067EB68 /* NewsCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsCategory.swift; sourceTree = "<group>"; };
+		825524E229C11C500067EB68 /* NewsSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsSearchViewController.swift; sourceTree = "<group>"; };
+		825524E429C11C730067EB68 /* NewsSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsSearchView.swift; sourceTree = "<group>"; };
+		825524E629C11C850067EB68 /* NewsSearchInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsSearchInputView.swift; sourceTree = "<group>"; };
+		825524E829C11C980067EB68 /* NewsNoSearchResultsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsNoSearchResultsView.swift; sourceTree = "<group>"; };
+		825524EA29C11CB90067EB68 /* NewsSearchViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NewsSearchViewViewModel.swift; path = "QUIZ/Resources/Modules/MVVM Modules/News Modules/Search News/SearchView/NewsSearchViewViewModel.swift"; sourceTree = SOURCE_ROOT; };
+		825524EC29C11CE50067EB68 /* NewsSearchInputViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsSearchInputViewViewModel.swift; sourceTree = "<group>"; };
+		825524EE29C11D020067EB68 /* NewsNoSearchResultsViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsNoSearchResultsViewViewModel.swift; sourceTree = "<group>"; };
+		825524F129C121D00067EB68 /* NewsSearchResultsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsSearchResultsView.swift; sourceTree = "<group>"; };
+		825524F329C122060067EB68 /* NewsSearchResultsViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsSearchResultsViewViewModel.swift; sourceTree = "<group>"; };
 		8261BC2127E10F1B0089CC94 /* QuizStatisticTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizStatisticTableViewController.swift; sourceTree = "<group>"; };
 		8261BC2627E113750089CC94 /* chemistry8.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = chemistry8.jpeg; sourceTree = "<group>"; };
 		8261BC2727E1138B0089CC94 /* chemistry4.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = chemistry4.jpeg; sourceTree = "<group>"; };
@@ -1410,7 +1428,7 @@
 		820D304528F3852A0031CFCD /* MVVM Modules */ = {
 			isa = PBXGroup;
 			children = (
-				8295F1CA2950C165000E033E /* News Module */,
+				8295F1CA2950C165000E033E /* News Modules */,
 				8295F1C72950C113000E033E /* Quiz Modules */,
 				8295F1C82950C13F000E033E /* Players Module */,
 				8295F1C92950C150000E033E /* Profile Module */,
@@ -1882,6 +1900,62 @@
 				8255249A29BF6D5A0067EB68 /* APIServiceProtocol.swift */,
 			);
 			path = APIServiceProtocol;
+			sourceTree = "<group>";
+		};
+		825524DC29C11A670067EB68 /* Search News */ = {
+			isa = PBXGroup;
+			children = (
+				825524E129C11C300067EB68 /* ViewController */,
+				825524DE29C11C040067EB68 /* SearchView */,
+				825524DF29C11C0B0067EB68 /* No Results View */,
+				825524E029C11C1F0067EB68 /* Search Input View */,
+				825524F029C1217A0067EB68 /* Search Results View */,
+			);
+			path = "Search News";
+			sourceTree = "<group>";
+		};
+		825524DE29C11C040067EB68 /* SearchView */ = {
+			isa = PBXGroup;
+			children = (
+				825524E429C11C730067EB68 /* NewsSearchView.swift */,
+				825524EA29C11CB90067EB68 /* NewsSearchViewViewModel.swift */,
+			);
+			path = SearchView;
+			sourceTree = "<group>";
+		};
+		825524DF29C11C0B0067EB68 /* No Results View */ = {
+			isa = PBXGroup;
+			children = (
+				825524E829C11C980067EB68 /* NewsNoSearchResultsView.swift */,
+				825524EE29C11D020067EB68 /* NewsNoSearchResultsViewViewModel.swift */,
+			);
+			path = "No Results View";
+			sourceTree = "<group>";
+		};
+		825524E029C11C1F0067EB68 /* Search Input View */ = {
+			isa = PBXGroup;
+			children = (
+				825524E629C11C850067EB68 /* NewsSearchInputView.swift */,
+				825524EC29C11CE50067EB68 /* NewsSearchInputViewViewModel.swift */,
+			);
+			path = "Search Input View";
+			sourceTree = "<group>";
+		};
+		825524E129C11C300067EB68 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				825524E229C11C500067EB68 /* NewsSearchViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		825524F029C1217A0067EB68 /* Search Results View */ = {
+			isa = PBXGroup;
+			children = (
+				825524F129C121D00067EB68 /* NewsSearchResultsView.swift */,
+				825524F329C122060067EB68 /* NewsSearchResultsViewViewModel.swift */,
+			);
+			path = "Search Results View";
 			sourceTree = "<group>";
 		};
 		8261BC1F27E10EF30089CC94 /* Statistic */ = {
@@ -2419,12 +2493,13 @@
 			path = "Profile Module";
 			sourceTree = "<group>";
 		};
-		8295F1CA2950C165000E033E /* News Module */ = {
+		8295F1CA2950C165000E033E /* News Modules */ = {
 			isa = PBXGroup;
 			children = (
 				82CBE7E4287093890045616B /* News MVVM Event Bus */,
+				825524DC29C11A670067EB68 /* Search News */,
 			);
-			path = "News Module";
+			path = "News Modules";
 			sourceTree = "<group>";
 		};
 		829A514A296735CF0056A7DB /* Settings Manager */ = {
@@ -4062,6 +4137,7 @@
 				820C627F27BBA3CA004894FA /* AppDelegate.swift in Sources */,
 				8238058328F192F70006A736 /* QuizMediaLibraryModel.swift in Sources */,
 				82C2B5A327BD0E5700C66946 /* QuizTabBarController.swift in Sources */,
+				825524ED29C11CE50067EB68 /* NewsSearchInputViewViewModel.swift in Sources */,
 				82319E0628E8D1280053CEF5 /* QuizHalloween.swift in Sources */,
 				82CBE8032870D4B40045616B /* QuizTasksViewModel.swift in Sources */,
 				826E12B128009F1300465E16 /* SpeachTableViewCell.swift in Sources */,
@@ -4069,6 +4145,7 @@
 				82D35C482963B0C9000EB277 /* VoiceCommandTableViewCell.swift in Sources */,
 				822B235D27C868390067ED13 /* Player.swift in Sources */,
 				8238058128F1926A0006A736 /* QuizMediaLibraryTableViewCell.swift in Sources */,
+				825524E329C11C500067EB68 /* NewsSearchViewController.swift in Sources */,
 				82E0EC8228AC5ABA004AA2E3 /* Event.swift in Sources */,
 				8295F1962950AB3A000E033E /* QuizTaskViewModel.swift in Sources */,
 				82A1D8C827FB4C3D0044EEA6 /* PhotoTableViewCell.swift in Sources */,
@@ -4078,6 +4155,7 @@
 				82D35C3E2963ADF6000EB277 /* VoiceCommandsTableViewController.swift in Sources */,
 				82A9796E27F8CB2C001EBF1C /* QuizLiterature.swift in Sources */,
 				82E0EC8028AC5AA7004AA2E3 /* Bus.swift in Sources */,
+				825524F429C122060067EB68 /* NewsSearchResultsViewViewModel.swift in Sources */,
 				82A08C7D28F488A70072A940 /* QuizResult.swift in Sources */,
 				828F0DCF27C82CA10016D337 /* PlayersLeagueTableViewController.swift in Sources */,
 				8283D15327FA217200A71545 /* FirebaseManager.swift in Sources */,
@@ -4101,6 +4179,7 @@
 				82A01BFD27C51CFF00DCBD6F /* RoundedImageView.swift in Sources */,
 				82C2B5B327BD2F8800C66946 /* AnimationsClass.swift in Sources */,
 				82B760F727CAA13500540E0F /* Question.swift in Sources */,
+				825524E929C11C980067EB68 /* NewsNoSearchResultsView.swift in Sources */,
 				829A515429675E790056A7DB /* DateManager.swift in Sources */,
 				828E4B43293FD2EC002A55B1 /* PlayerDetailViewController.swift in Sources */,
 				8243F16927C2617C00CD9CE4 /* QuizBaseViewModel.swift in Sources */,
@@ -4137,6 +4216,7 @@
 				823CFF9327FA1BAF001FF6D9 /* BiometricTableViewCell.swift in Sources */,
 				8209F79C2847F2600093147A /* QuizSplashScreenController.swift in Sources */,
 				820D303B28F340710031CFCD /* Profile.swift in Sources */,
+				825524EF29C11D020067EB68 /* NewsNoSearchResultsViewViewModel.swift in Sources */,
 				82F564722940D1FB0031F7BD /* QuizCategoriesTableViewController.swift in Sources */,
 				8234A661296A311F00A7FA2B /* SpeechSynthesizerManagerProtocol.swift in Sources */,
 				8261BC2227E10F1B0089CC94 /* QuizStatisticTableViewController.swift in Sources */,
@@ -4147,6 +4227,7 @@
 				82E56A21297E3BE900879E21 /* QuizCategoriesCollectionViewCell.swift in Sources */,
 				82B760EA27CA75E800540E0F /* QuizCategoryModel.swift in Sources */,
 				829DC87C2964C2C2006C9D91 /* SpeechRecognitionManager.swift in Sources */,
+				825524E529C11C730067EB68 /* NewsSearchView.swift in Sources */,
 				82D35C462963AED5000EB277 /* VoiceCommandViewModel.swift in Sources */,
 				82D35C442963AE94000EB277 /* VoiceCommandModel.swift in Sources */,
 				82B01736294F86740073452D /* NewsTableViewCell.swift in Sources */,
@@ -4169,6 +4250,7 @@
 				829A514E296739530056A7DB /* ProfileInfoViewModel.swift in Sources */,
 				82E56A1F297E3B7C00879E21 /* QuizCategoriesListViewViewModel.swift in Sources */,
 				82E56A23297E3C1E00879E21 /* QuizCategoriesCollectionViewCellViewModel.swift in Sources */,
+				825524EB29C11CB90067EB68 /* NewsSearchViewViewModel.swift in Sources */,
 				82CF0D3A28A583D9006B53F4 /* QuizStartViewController.swift in Sources */,
 				82D35C2129633A55000EB277 /* UIView+Extensions.swift in Sources */,
 				82DC6E1C27E65E790077D107 /* StartViewController.swift in Sources */,
@@ -4176,6 +4258,8 @@
 				8255249B29BF6D5A0067EB68 /* APIServiceProtocol.swift in Sources */,
 				821120E72822EC4D009C2801 /* PauseTableViewController.swift in Sources */,
 				82BC018B294770DB00AEB659 /* QuizTasksTableViewCell.swift in Sources */,
+				825524E729C11C850067EB68 /* NewsSearchInputView.swift in Sources */,
+				825524F229C121D00067EB68 /* NewsSearchResultsView.swift in Sources */,
 				823BD74429775067008D9967 /* QuizSectionsTableViewController.swift in Sources */,
 				822139102874E72D0065A0C3 /* example_5s0_hand_model.mlmodel in Sources */,
 				8277BCF927C709A800B5F9D0 /* RegisterViewController.swift in Sources */,

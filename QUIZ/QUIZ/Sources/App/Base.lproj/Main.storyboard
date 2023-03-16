@@ -1429,25 +1429,7 @@
                             <outlet property="delegate" destination="Awb-ru-614" id="LIW-P1-rYf"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Сегодня" id="xsk-gv-d5G">
-                        <rightBarButtonItems>
-                            <barButtonItem image="list" id="X2s-ld-KhH">
-                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <connections>
-                                    <segue destination="lrY-xL-OjY" kind="showDetail" id="Q45-J4-jj6"/>
-                                </connections>
-                            </barButtonItem>
-                            <barButtonItem image="dice" id="HtO-1O-1vk">
-                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <connections>
-                                    <action selector="GenerateRandomNews" destination="Awb-ru-614" id="aGT-5o-JTM"/>
-                                </connections>
-                            </barButtonItem>
-                        </rightBarButtonItems>
-                    </navigationItem>
-                    <connections>
-                        <outlet property="DiceButton" destination="HtO-1O-1vk" id="Blz-mU-Giq"/>
-                    </connections>
+                    <navigationItem key="navigationItem" title="Сегодня" id="xsk-gv-d5G"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QNe-4c-l2y" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1458,7 +1440,7 @@
             <objects>
                 <viewController id="lrY-xL-OjY" customClass="NewsCategoriesViewController" customModule="QUIZ" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="vSK-PH-Ekt">
-                        <rect key="frame" x="0.0" y="0.0" width="430" height="863"/>
+                        <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="AE4-9Z-Azb"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -1953,12 +1935,10 @@
         <image name="camera" catalog="system" width="128" height="93"/>
         <image name="categories" width="24" height="24"/>
         <image name="categories selected" width="24" height="24"/>
-        <image name="dice" width="24" height="24"/>
         <image name="hints button" width="24" height="24"/>
         <image name="history.jpeg" width="409.60000610351562" height="409.60000610351562"/>
         <image name="league" width="24" height="24"/>
         <image name="league selected" width="24" height="24"/>
-        <image name="list" width="24" height="24"/>
         <image name="microphone" width="24" height="24"/>
         <image name="music button selected" width="24" height="24"/>
         <image name="pause " width="24" height="24"/>

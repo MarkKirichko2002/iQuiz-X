@@ -8,13 +8,16 @@
 import Foundation
 import Alamofire
 
-struct NewsListViewModel {
+class NewsListViewModel {
     
     var news: [Article] = []
+    var sound = "newspaper.mp3"
     private let player = SoundClass()
+    private let dateManager = DateManager()
+    private var randomCategoryHandler: ((NewsCategoryModel)->Void)?
     
     // категории новостей
-    let categories = [NewsCategoryModel(id: 1, name: "главное", icon: "newspaper", sound: "literature.mp3", category: .general), NewsCategoryModel(id: 2, name: "технологии", icon: "technology", sound: "technology.wav", category: .technology), NewsCategoryModel(id: 3, name: "спорт", icon: "sport.jpeg", sound: "sport.mp3", category: .sport),NewsCategoryModel(id: 4, name: "бизнес", icon: "business", sound: "economics.mp3", category: .business), NewsCategoryModel(id: 5, name: "наука", icon: "science", sound: "chemistry.mp3", category: .science)]
+    let categories = [NewsCategoryModel(id: 1, name: "Главное", icon: "newspaper", categoryicon: "top news icon", sound: "literature.mp3", category: .general), NewsCategoryModel(id: 2, name: "Технологии", icon: "technology", categoryicon: "technology icon", sound: "technology.wav", category: .technology), NewsCategoryModel(id: 3, name: "Спорт", icon: "sport.jpeg", categoryicon: "sport icon", sound: "sport.mp3", category: .sport),NewsCategoryModel(id: 4, name: "Бизнес", icon: "business", categoryicon: "business icon", sound: "economics.mp3", category: .business), NewsCategoryModel(id: 5, name: "Наука", icon: "science", categoryicon: "science icon", sound: "chemistry.mp3", category: .science)]
     
     // получить новости
     func GetNews(category: NewsCategory) {
@@ -24,13 +27,19 @@ struct NewsListViewModel {
         APIService.shared.execute(type: NewsResponse.self, category: category) { result in
             switch result {
             case .success(let data):
-                event = NewsFetchEvent(identifier: UUID().uuidString, result: .success(data.articles))
+                guard let news = data.articles else {return}
+                event = NewsFetchEvent(identifier: UUID().uuidString, result: .success(news))
                 Bus.shared.publish(type: .newsFetch, event: event!)
             case .failure(let error):
                 event = NewsFetchEvent(identifier: UUID().uuidString, result: .failure(error))
                 Bus.shared.publish(type: .newsFetch, event: event!)
             }
         }
+    }
+    
+    // получить текущую дату
+    func GetCurrentDate()-> String {
+        return dateManager.GetCurrentDate()
     }
     
     // выбрать конкретную категорию новостей
@@ -44,5 +53,10 @@ struct NewsListViewModel {
         let randomCategory = categories[Int.random(in: 0..<categories.count - 1)]
         player.PlaySound(resource: randomCategory.sound)
         GetNews(category: randomCategory.category)
+        randomCategoryHandler?(randomCategory)
+    }
+    
+    func registerRandomCategoryHandler(block: @escaping(NewsCategoryModel)-> Void) {
+        self.randomCategoryHandler = block
     }
 }

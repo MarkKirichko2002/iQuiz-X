@@ -12,7 +12,7 @@ class APIService: APIServiceProtocol {
     static let shared = APIService()
     
     struct Contacts {
-        static var url = "https://newsapi.org/v2/top-headlines?country=ru&category=general&apiKey=c6fb14909d524ae68ea631e5cb55ae67"
+        static var url = "https://newsapi.org/v2/top-headlines?country=ru&category=general&apiKey=0532857d0c9949ab8d5979e5153377b7"
         static let searchUrlString = "https://newsapi.org/v2/everything?sortedBy=popularity&apiKey=c6fb14909d524ae68ea631e5cb55ae67&q="
     }
     
@@ -57,7 +57,6 @@ class APIService: APIServiceProtocol {
                 }
             }
         }
-        
         task.resume()
     }
 }
