@@ -32,16 +32,20 @@ class SoundClass: SoundClassProtocol {
     
     func StopSound(resource: String) {
 
-        let path = Bundle.main.path(forResource: resource, ofType:nil)!
-        let url = URL(fileURLWithPath: path)
-
+        guard let url = Bundle.main.url(forResource: resource, withExtension: nil) else { return }
+        
         do {
-            player = try AVAudioPlayer(contentsOf: url)
-            player?.stop()
-        } catch {
+            try AVAudioSession.sharedInstance().setCategory(.playback, mode: .default)
+            try AVAudioSession.sharedInstance().setActive(true)
             
+            player = try AVAudioPlayer(contentsOf: url, fileTypeHint: AVFileType.mp3.rawValue)
+            
+            guard let player = player else { return }
+            
+            player.stop()
+            
+        } catch let error {
+            print(error.localizedDescription)
         }
     }
-    
-    
 }
