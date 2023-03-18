@@ -11,12 +11,10 @@ import Speech
 class SpeechRecognitionManager: SpeechRecognitionManagerProtocol {
     
     func configureAudioSession() {
-        
         do {
             try? AVAudioSession.sharedInstance().setCategory(.playAndRecord, mode: .default, policy: .default, options: .defaultToSpeaker)
-        }  catch  {
+        } catch {
             print(error)
         }
     }
-    
 }
