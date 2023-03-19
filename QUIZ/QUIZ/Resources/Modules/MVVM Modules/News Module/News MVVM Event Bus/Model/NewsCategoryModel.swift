@@ -11,7 +11,6 @@ struct NewsCategoryModel {
     var id: Int
     var name: String
     var icon: String
-    var categoryicon: String
     var sound: String
     var category: NewsCategory
 }
