@@ -6,17 +6,11 @@
 //
 
 import UIKit
-import Speech
 
 final class QuizTabBarController: UITabBarController {
     
     private let player = SoundClass()
     private let button = UIButton()
-    private var text = ""
-    private let audioEngine = AVAudioEngine()
-    private let speechRecognizer = SFSpeechRecognizer(locale: Locale(identifier: "ru_RU"))
-    private let request = SFSpeechAudioBufferRecognitionRequest()
-    var recognitionTask: SFSpeechRecognitionTask?
     private let quizCategoriesViewModel = QuizCategoriesViewModel()
     private var isStart: Bool = false
     private var icon = "voice.png"
@@ -25,6 +19,7 @@ final class QuizTabBarController: UITabBarController {
     private let speechRecognitionManager = SpeechRecognitionManager()
     private let today = Date()
     private var firebaseManager = FirebaseManager()
+    private let speechRecognition = SpeechRecognitionManager()
     private var sound = ""
     
     override func viewDidLoad() {
@@ -49,7 +44,7 @@ final class QuizTabBarController: UITabBarController {
     
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
-        self.cancelSpeechRecognization()
+        self.speechRecognition.cancelSpeechRecognition()
     }
     
     override func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
@@ -100,54 +95,22 @@ final class QuizTabBarController: UITabBarController {
         }
     }
     
-    func startSpeechRecognization() {
-        
-        let node = audioEngine.inputNode
-        let recognitionFormat = node.outputFormat(forBus: 0)
-        
-        node.installTap(onBus: 0, bufferSize: 1024, format: recognitionFormat) {
-            [unowned self](buffer, audioTime) in
-            self.request.append(buffer)
-        }
-        
-        audioEngine.prepare()
-        do {
-            try audioEngine.start()
-        } catch let error {
-            print("\(error.localizedDescription)")
-        }
-        
-        recognitionTask = speechRecognizer?.recognitionTask(with: request, resultHandler: {
-            [unowned self] (result, error) in
-            if let res = result?.bestTranscription {
-                DispatchQueue.main.async {
-                    self.text = res.formattedString
-                    print(self.text)
-                    self.CheckVoiceCommands(text: self.text)
-                }
-                
-            } else if let error = error {
-                print("\(error.localizedDescription)")
-            }
-        })
-    }
-    
     func CheckVoiceCommands(text: String) {
         
         switch text {
             
         // Навигация по приложению
-        case _ where text.contains("Новост") || self.text.contains("новост"):
+        case _ where text.contains("Новост") || text.contains("новост"):
             self.selectedIndex = 0
             icon = "newspaper.png"
             button.setImage(UIImage(named: self.icon), for: .normal)
             animation.springButton(button: self.button)
             player.PlaySound(resource: "newspaper.mp3")
             
-            self.cancelSpeechRecognization()
+            self.speechRecognition.cancelSpeechRecognition()
             
             DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-                self.startSpeechRecognization()
+                self.speechRecognition.startSpeechRecognition()
             }
             
         case _ where selectedIndex == 0  && text.lowercased().contains("категори"):
@@ -157,10 +120,10 @@ final class QuizTabBarController: UITabBarController {
                 self.button.setImage(UIImage(named: self.icon), for: .normal)
                 self.animation.springButton(button: self.button)
                 self.player.PlaySound(resource: "technology.wav")
-                self.cancelSpeechRecognization()
+                self.speechRecognition.cancelSpeechRecognition()
                 
                 DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-                    self.startSpeechRecognization()
+                    self.speechRecognition.startSpeechRecognition()
                 }
             } else if text.lowercased().contains("спорт") {
                 NewsListViewModel().GetNews(category: .sport)
@@ -168,10 +131,10 @@ final class QuizTabBarController: UITabBarController {
                 self.button.setImage(UIImage(named: self.icon), for: .normal)
                 self.animation.springButton(button: self.button)
                 self.player.PlaySound(resource: "sport.mp3")
-                self.cancelSpeechRecognization()
+                self.speechRecognition.cancelSpeechRecognition()
                 
                 DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-                    self.startSpeechRecognization()
+                    self.speechRecognition.startSpeechRecognition()
                 }
             } else if text.lowercased().contains("бизнес") {
                 NewsListViewModel().GetNews(category: .business)
@@ -179,10 +142,10 @@ final class QuizTabBarController: UITabBarController {
                 self.button.setImage(UIImage(named: self.icon), for: .normal)
                 self.animation.springButton(button: self.button)
                 self.player.PlaySound(resource: "economics.mp3")
-                self.cancelSpeechRecognization()
+                self.speechRecognition.cancelSpeechRecognition()
                 
                 DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-                    self.startSpeechRecognization()
+                    self.speechRecognition.startSpeechRecognition()
                 }
             } else if text.lowercased().contains("топ") {
                 NewsListViewModel().GetNews(category: .general)
@@ -190,10 +153,10 @@ final class QuizTabBarController: UITabBarController {
                 self.button.setImage(UIImage(named: self.icon), for: .normal)
                 self.animation.springButton(button: self.button)
                 self.player.PlaySound(resource: "newspaper.mp3")
-                self.cancelSpeechRecognization()
+                self.speechRecognition.cancelSpeechRecognition()
                 
                 DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-                    self.startSpeechRecognization()
+                    self.speechRecognition.startSpeechRecognition()
                 }
             } else {
                 
@@ -206,10 +169,10 @@ final class QuizTabBarController: UITabBarController {
             self.animation.springButton(button: self.button)
             self.player.PlaySound(resource: "IQ.mp3")
             
-            self.cancelSpeechRecognization()
+            self.speechRecognition.cancelSpeechRecognition()
             
             DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-                self.startSpeechRecognization()
+                self.speechRecognition.startSpeechRecognition()
             }
             
         case _ where text.lowercased().contains("категори"):
@@ -220,10 +183,10 @@ final class QuizTabBarController: UITabBarController {
                     self.animation.springButton(button: self.button)
                     self.player.PlaySound(resource: category.sound)
                 }
-                self.cancelSpeechRecognization()
+                self.speechRecognition.cancelSpeechRecognition()
                 
                 DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-                    self.startSpeechRecognization()
+                    self.speechRecognition.startSpeechRecognition()
                 }
             }
             
@@ -250,10 +213,10 @@ final class QuizTabBarController: UITabBarController {
                                 }
                             }
                         }
-                        self.cancelSpeechRecognization()
+                        self.speechRecognition.cancelSpeechRecognition()
                         
                         DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-                            self.startSpeechRecognization()
+                            self.speechRecognition.startSpeechRecognition()
                         }
                     }
                 }
@@ -266,10 +229,10 @@ final class QuizTabBarController: UITabBarController {
             self.animation.springButton(button: self.button)
             self.player.PlaySound(resource: "league.mp3")
             
-            self.cancelSpeechRecognization()
+            self.speechRecognition.cancelSpeechRecognition()
             
             DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-                self.startSpeechRecognization()
+                self.speechRecognition.startSpeechRecognition()
             }
             
         case _ where text.lowercased().contains("проф"):
@@ -281,17 +244,17 @@ final class QuizTabBarController: UITabBarController {
             self.animation.springButton(button: self.button)
             self.firebaseManager.PlayLastQuizSound()
             
-            self.cancelSpeechRecognization()
+            self.speechRecognition.cancelSpeechRecognition()
             
             DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-                self.startSpeechRecognization()
+                self.speechRecognition.startSpeechRecognition()
             }
          
         // выбор категории викторины
         case _ where text != "":
             for i in 0...5 {
                 for value in self.quizCategoriesViewModel.categories[i].categories {
-                    if self.text.lowercased().contains(value.voiceCommand) {
+                    if text.lowercased().contains(value.voiceCommand) {
                         DispatchQueue.main.async {
                             self.icon = value.image
                             self.button.setImage(UIImage(named: self.icon), for: .normal)
@@ -376,26 +339,22 @@ final class QuizTabBarController: UITabBarController {
         }
     }
     
-    func cancelSpeechRecognization(){
-        audioEngine.stop()
-        recognitionTask?.cancel()
-        request.endAudio()
-        audioEngine.inputNode.removeTap(onBus: 0)
-    }
-    
     @objc func VoiceCommands(_ sender: UIButton) {
         isStart = !isStart
         if isStart {
             player.PlaySound(resource: "click sound.wav")
             button.setImage(UIImage(named: "voice.png"), for: .normal)
             animation.springButton(button: button)
-            startSpeechRecognization()
+            speechRecognition.startSpeechRecognition()
+            speechRecognition.registerSpeechRecognitionHandler { text in
+                self.CheckVoiceCommands(text: text)
+            }
         } else {
             player.PlaySound(resource: "pause_sound.mp3")
             self.icon = "astronomy.png"
             button.setImage(UIImage(named: self.icon), for: .normal)
             animation.springButton(button: button)
-            cancelSpeechRecognization()
+            speechRecognition.cancelSpeechRecognition()
         }
     }
 }
@@ -405,7 +364,7 @@ extension QuizTabBarController: UIImagePickerControllerDelegate, UINavigationCon
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
             picker.dismiss(animated: true, completion: nil)
-            self.startSpeechRecognization()
+            self.speechRecognition.startSpeechRecognition()
         }
     }
     
@@ -419,7 +378,7 @@ extension QuizTabBarController: UIImagePickerControllerDelegate, UINavigationCon
         quizCategoriesViewModel.CheckText(image: image)
         DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
             picker.dismiss(animated: true, completion: nil)
-            self.startSpeechRecognization()
+            self.speechRecognition.startSpeechRecognition()
         }
     }
 }
