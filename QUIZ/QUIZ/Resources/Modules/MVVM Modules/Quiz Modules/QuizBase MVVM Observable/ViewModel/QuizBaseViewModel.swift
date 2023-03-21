@@ -6,7 +6,6 @@
 //
 
 import AVFoundation
-import Speech
 import Vision
 import Firebase
 import SCLAlertView
@@ -42,35 +41,26 @@ class QuizBaseViewModel {
         case two = "fist-UB-RHand"
     }
     
-    var animation = AnimationClass()
-
-    var timer = Timer()
-    
+    private let animation = AnimationClass()
+    let speechRecognition = SpeechRecognitionManager()
+    private var timer = Timer()
     var AnswersCounter = 5
-    
     var seconds = 10
-    
     var counter = 0
     var AttemptsCounter = 5
-    
     var CorrectAnswersCounter = 0
     var UnCorrectAnswersCounter = 0
     
     var player = SoundClass()
     var base: QuizBaseViewModel?
     
-    var check2 = ""
+    private var check2 = ""
     
     var isPlaying = true
     
     var word = ("","")
     
     var player2:AVAudioPlayer?
-    
-    let audioEngine = AVAudioEngine()
-    let speechRecognizer = SFSpeechRecognizer(locale: Locale(identifier: "ru_RU"))
-    let request = SFSpeechAudioBufferRecognitionRequest()
-    var recognitionTask: SFSpeechRecognitionTask?
     
     // камера
     let captureSession = AVCaptureSession()
@@ -223,10 +213,10 @@ class QuizBaseViewModel {
         if photoanswer == true && check2 != "" && counter < 100  {
             
             if isRecordOnAudio == true {
-                stopSpeechRecognition()
+                speechRecognition.cancelSpeechRecognition()
                 sayComment(comment: "Правильно")
                 DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
-                    self.startRecognition()
+                    self.speechRecognition.startSpeechRecognition()
                 }
             } else {
                 sayComment(comment: "Правильно")
@@ -275,10 +265,10 @@ class QuizBaseViewModel {
             }
             
             if isRecordOnAudio == true {
-                stopSpeechRecognition()
+                speechRecognition.cancelSpeechRecognition()
                 sayComment(comment: "Не правильно")
                 DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
-                    self.startRecognition()
+                    self.speechRecognition.startSpeechRecognition()
                 }
             } else {
                 sayComment(comment: "Не правильно")
@@ -329,7 +319,7 @@ class QuizBaseViewModel {
         
         if checkvoice == true && check2 != "" && counter < 100  {
             
-            stopSpeechRecognition()
+            speechRecognition.cancelSpeechRecognition()
             
             sayComment(comment: "Правильно")
             
@@ -346,7 +336,7 @@ class QuizBaseViewModel {
             }
             
             DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
-                self.startRecognition()
+                self.speechRecognition.startSpeechRecognition()
             }
             
             if Choice1Status.value == check2 {
@@ -376,7 +366,7 @@ class QuizBaseViewModel {
         
         if checkvoice == false && self.Attempts.value != nil && check2 != "" {
             
-            stopSpeechRecognition()
+            speechRecognition.cancelSpeechRecognition()
             
             sayComment(comment: "Не правильно")
             
@@ -397,7 +387,7 @@ class QuizBaseViewModel {
             }
             
             DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
-                self.startRecognition()
+                self.speechRecognition.startSpeechRecognition()
             }
             
             if Choice1Status.value == check2 {
@@ -424,27 +414,6 @@ class QuizBaseViewModel {
             
             questionTextStatus.value = ("\(check2) не верный ответ 👎👎👎!!!")
             Timer.scheduledTimer(timeInterval:0.2, target: self, selector: #selector(updateUI), userInfo: nil, repeats: false)
-        }
-        
-        //configure player
-        guard let url = Bundle.main.url(forResource: word.0, withExtension: "mp3") else { return }
-        player2 = try? AVAudioPlayer(contentsOf: url)
-        
-        //configure speech recogniton
-        SFSpeechRecognizer.requestAuthorization {[unowned self] (status) in
-            switch status {
-            case .authorized:
-                DispatchQueue.main.async {
-                    [unowned self] in
-                    // sender.isEnabled = true
-                }
-            case .denied:
-                print("statu denied")
-            case .notDetermined:
-                print("statu not determined")
-            case .restricted:
-                print("statu restricted")
-            }
         }
     }
     
@@ -537,10 +506,10 @@ class QuizBaseViewModel {
             self.isRecordingNow()
             
             if isRecordOnAudio == true {
-                stopSpeechRecognition()
+                speechRecognition.cancelSpeechRecognition()
                 sayComment(comment: "Правильно")
                 DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
-                    self.startRecognition()
+                    self.speechRecognition.startSpeechRecognition()
                 }
             } else {
                 sayComment(comment: "Правильно")
@@ -596,10 +565,10 @@ class QuizBaseViewModel {
             isRecordingNow()
             
             if isRecordOnAudio == true {
-                stopSpeechRecognition()
+                speechRecognition.cancelSpeechRecognition()
                 sayComment(comment: "Не правильно")
                 DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
-                    self.startRecognition()
+                    self.speechRecognition.startSpeechRecognition()
                 }
             } else {
                 sayComment(comment: "Не правильно")
@@ -655,10 +624,10 @@ class QuizBaseViewModel {
         if  check! && counter < 100 {
             
             if isRecordOnAudio == true {
-                stopSpeechRecognition()
+                speechRecognition.cancelSpeechRecognition()
                 sayComment(comment: "Правильно")
                 DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
-                    self.startRecognition()
+                    self.speechRecognition.startSpeechRecognition()
                 }
             } else {
                 sayComment(comment: "Правильно")
@@ -693,10 +662,10 @@ class QuizBaseViewModel {
         } else if !check! {
             
             if isRecordOnAudio == true {
-                stopSpeechRecognition()
+                speechRecognition.cancelSpeechRecognition()
                 sayComment(comment: "Не Правильно")
                 DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
-                    self.startRecognition()
+                    self.speechRecognition.startSpeechRecognition()
                 }
             } else {
                 sayComment(comment: "Не Правильно")
@@ -935,12 +904,15 @@ class QuizBaseViewModel {
         
         if isRecordOnAudio == true {
             print("record audio now")
-            startRecognition()
+            speechRecognition.startSpeechRecognition()
+            speechRecognition.registerSpeechRecognitionHandler { text in
+                self.check2 = text
+                self.CheckVoiceCommands()
+            }
         } else if isRecordOnAudio == false || isRecordOnAudio == nil {
             print("record audio not now")
         }
     }
-    
     
     func checkMusicSetting() {
         let isMusicOn = UserDefaults.standard.object(forKey: "onstatusmusic") as? Bool
@@ -1173,20 +1145,20 @@ class QuizBaseViewModel {
                 self.ShowAnswer()
             }
             
-            stopSpeechRecognition()
+            speechRecognition.cancelSpeechRecognition()
             
             DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
-                self.startRecognition()
+                self.speechRecognition.startSpeechRecognition()
             }
             
         case _ where check2.contains("След") || check2.contains("след"):
             check2 = ""
             self.SkipQuestion()
             
-            stopSpeechRecognition()
+            speechRecognition.cancelSpeechRecognition()
             
             DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
-                self.startRecognition()
+                self.speechRecognition.startSpeechRecognition()
             }
             
         case _ where check2.contains("Вопрос") || check2.contains("вопрос"):
@@ -1194,10 +1166,10 @@ class QuizBaseViewModel {
             
             sayComment(comment: "\(base?.checkQuestion() ?? "")\(base?.checkChoices() ?? [""])")
             
-            stopSpeechRecognition()
+            speechRecognition.cancelSpeechRecognition()
             
             DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
-                self.startRecognition()
+                self.speechRecognition.startSpeechRecognition()
             }
             
         case _ where check2.contains("Счёт") || check2.contains("счёт"):
@@ -1205,10 +1177,10 @@ class QuizBaseViewModel {
             
             sayComment(comment: "\(counter)")
             
-            stopSpeechRecognition()
+            speechRecognition.cancelSpeechRecognition()
             
             DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
-                self.startRecognition()
+                self.speechRecognition.startSpeechRecognition()
             }
             
         case _ where check2.contains("Включить музыку") || check2.contains("включить музыку"):
@@ -1216,10 +1188,10 @@ class QuizBaseViewModel {
             
             OnOffButton.value.sendActions(for: .touchUpInside)
             
-            stopSpeechRecognition()
+            speechRecognition.cancelSpeechRecognition()
             
             DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
-                self.startRecognition()
+                self.speechRecognition.startSpeechRecognition()
             }
             
             
@@ -1228,10 +1200,10 @@ class QuizBaseViewModel {
             
             OnOffButton.value.sendActions(for: .touchUpInside)
             
-            stopSpeechRecognition()
+            speechRecognition.cancelSpeechRecognition()
             
             DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
-                self.startRecognition()
+                self.speechRecognition.startSpeechRecognition()
             }
             
             // Открыть камеру
@@ -1249,13 +1221,6 @@ class QuizBaseViewModel {
             check2 = ""
         }
         self.AdvancedSpeechRecognition()
-    }
-    
-    func stopSpeechRecognition() {
-        audioEngine.stop() //AVAudioEngine()
-        recognitionTask?.cancel() //speechRecognizer?.recognitionTask
-        request.endAudio()  //SFSpeechAudioBufferRecognitionRequest?
-        audioEngine.inputNode.removeTap(onBus: 0)
     }
     
     func exit() {
@@ -1288,37 +1253,6 @@ class QuizBaseViewModel {
             isTalking = false
             self.SayQuestionButtonStatus.value = "synthesizer"
         }
-    }
-    
-    func startRecognition () {
-        let node = audioEngine.inputNode
-        let recognitionFormat = node.outputFormat(forBus: 0)
-        
-        node.installTap(onBus: 0, bufferSize: 1024, format: recognitionFormat) {
-            [unowned self](buffer, audioTime) in
-            self.request.append(buffer)
-        }
-        
-        audioEngine.prepare()
-        do {
-            try audioEngine.start()
-        } catch let error {
-            print("\(error.localizedDescription)")
-            return
-        }
-        
-        recognitionTask = speechRecognizer?.recognitionTask(with: request, resultHandler: {
-            [unowned self] (result, error) in
-            if let res = result?.bestTranscription {
-                DispatchQueue.main.async {
-                    self.check2 = res.formattedString
-                    print(self.check2)
-                    self.CheckVoiceCommands()
-                }
-            } else if let error = error {
-                print("\(error.localizedDescription)")
-            }
-        })
     }
     
     func LastQuiz(category: String, image: String, background: String) {
