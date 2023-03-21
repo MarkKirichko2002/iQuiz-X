@@ -219,7 +219,7 @@ final class QuizBaseViewController: UIViewController {
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
         quiz?.captureSession.stopRunning()
-        quiz?.stopSpeechRecognition()
+        quiz?.speechRecognition.cancelSpeechRecognition()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -261,7 +261,7 @@ extension QuizBaseViewController: UIImagePickerControllerDelegate, UINavigationC
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
             picker.dismiss(animated: true, completion: nil)
-            self.quiz?.startRecognition()
+            self.quiz?.speechRecognition.startSpeechRecognition()
         }
     }
     
@@ -276,7 +276,7 @@ extension QuizBaseViewController: UIImagePickerControllerDelegate, UINavigationC
         quiz?.recognizeText(image: image)
         DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
             picker.dismiss(animated: true, completion: nil)
-            self.quiz?.startRecognition()
+            self.quiz?.speechRecognition.startSpeechRecognition()
         }
     }
 }

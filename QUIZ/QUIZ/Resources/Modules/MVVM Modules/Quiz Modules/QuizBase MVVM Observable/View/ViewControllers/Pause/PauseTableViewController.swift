@@ -44,7 +44,7 @@ final class PauseTableViewController: UITableViewController {
     
     private func restart() {
         DispatchQueue.main.async {
-            self.currentquiz?.stopSpeechRecognition()
+            self.currentquiz?.speechRecognition.cancelSpeechRecognition()
             self.currentquiz?.captureSession.stopRunning()
             self.currentquiz?.questionNumber = 0
             self.quizCategoriesViewModel.GoToStart(quiz: self.currentquiz ?? QuizAstronomy(), category: self.currentcategory!)

@@ -21,6 +21,7 @@ final class QuizTabBarController: UITabBarController {
     private var firebaseManager = FirebaseManager()
     private let speechRecognition = SpeechRecognitionManager()
     private var sound = ""
+    private var seconds = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -194,14 +195,14 @@ final class QuizTabBarController: UITabBarController {
                 for value in self.quizCategoriesViewModel.categories[i].categories {
                     if text.lowercased().contains("какой счёт у категории \(value.name)") {
                         firebaseManager.LoadQuizCategoriesData(quizpath: value.quizpath) { category in
-                            var seconds = 2
+                            self.seconds = 2
                             Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { timer in
                                 self.icon = value.image
                                 self.button.setImage(UIImage(named: self.icon), for: .normal)
                                 self.animation.springButton(button: self.button)
                                 self.player.PlaySound(resource: value.sound)
-                                seconds -= 1
-                                if seconds == 0 {
+                                self.seconds -= 1
+                                if self.seconds == 0 {
                                     timer.invalidate()
                                     DispatchQueue.main.async {
                                         self.button.setImage(UIImage(named: ""), for: .normal)
@@ -261,7 +262,19 @@ final class QuizTabBarController: UITabBarController {
                             self.animation.springButton(button: self.button)
                             self.player.PlaySound(resource: value.sound)
                             self.sound = value.sound
-                            self.quizCategoriesViewModel.GoToStart(quiz: value.base, category: value)
+                        }
+                        
+                        var sec = 6
+                        Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { timer in
+                            sec -= 1
+                            print(sec)
+                            self.button.setImage(UIImage(named: ""), for: .normal)
+                            self.button.setTitle("\(sec)", for: .normal)
+                            self.button.setTitleColor(.black, for: .normal)
+                            if sec == 0 {
+                                timer.invalidate()
+                                self.quizCategoriesViewModel.GoToStart(quiz: value.base, category: value)
+                            }
                         }
                     }
                 }
