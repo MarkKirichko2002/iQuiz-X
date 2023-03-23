@@ -16,8 +16,8 @@ class ExitTableViewCell: UITableViewCell {
     @IBOutlet weak var ExitLabel: UILabel!
     
     func didSelect(indexPath: IndexPath) {
-        animation.springImage(image: ExitIcon)
-        animation.springLabel(label: ExitLabel)
+        animation.SpringAnimation(view: ExitIcon)
+        animation.SpringAnimation(view: ExitLabel)
     }
     
 }

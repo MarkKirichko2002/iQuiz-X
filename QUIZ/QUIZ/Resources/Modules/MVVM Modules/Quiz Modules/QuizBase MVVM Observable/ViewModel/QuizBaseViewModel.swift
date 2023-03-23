@@ -655,7 +655,7 @@ class QuizBaseViewModel {
             CorrectAnswersCounter += 1
             
             ScoreStatus.value = ("Счет: \(String(counter))/100")
-            animation.springLabel(label: Score.value)
+            animation.SpringAnimation(view: Score.value)
             
             write(category: quiz!)
             
@@ -697,7 +697,7 @@ class QuizBaseViewModel {
                 UnCorrectAnswersCounter += 1
                 ScoreStatus.value = ("Счет: \(String(counter))/100")
                 AttemptsCountStatus.value = ("Попыток осталось: \(String(AttemptsCounter))")
-                animation.springLabel(label: Attempts.value)
+                animation.SpringAnimation(view: Attempts.value)
                 
                 write(category: quiz!)
                 
@@ -708,7 +708,7 @@ class QuizBaseViewModel {
                 UnCorrectAnswersCounter += 1
                 ScoreStatus.value = ("Счет: \(String(counter))/100")
                 AttemptsCountStatus.value = ("Попыток осталось: \(String(AttemptsCounter))")
-                animation.springLabel(label: Attempts.value)
+                animation.SpringAnimation(view: Attempts.value)
                 
                 write(category: quiz!)
                 
@@ -1342,7 +1342,7 @@ class QuizBaseViewModel {
         
         if Time != nil {
             if (seconds <= 5 ) {
-                animation.springLabel(label: Time.value)
+                animation.SpringAnimation(view: Time.value)
                 TimeStatusColor.value = UIColor.red
             }
             
@@ -1357,7 +1357,6 @@ class QuizBaseViewModel {
             if (seconds == 1) {
                 TimeStatus.value = ("Осталось: \(String(seconds)) секунда")
             }
-            
             
             if (seconds == 0) {
                 
@@ -1374,21 +1373,17 @@ class QuizBaseViewModel {
                     AttemptsCounter -= 1
                     ScoreStatus.value = ("Счет: \(String(counter))/100")
                     AttemptsCountStatus.value = ("Попыток осталось: \(String(AttemptsCounter))")
-                    animation.springLabel(label: Attempts.value)
+                    animation.SpringAnimation(view: Attempts.value)
                 } else if counter > 0 && self.Attempts != nil {
                     AttemptsCounter -= 1
                     ScoreStatus.value = ("Счет: \(String(counter))/100")
                     AttemptsCountStatus.value = ("Попыток осталось: \(String(AttemptsCounter))")
-                    animation.springLabel(label: Attempts.value)
-                    animation.springLabel(label: Score.value)
+                    animation.SpringAnimation(view: Attempts.value)
+                    animation.SpringAnimation(view: Score.value)
                 }
                 
-                //timer.invalidate()
-                
                 base?.nextQuestion()
-                
-                //RestartTimer()
-                
+            
                 Timer.scheduledTimer(timeInterval:0.1, target: self, selector: #selector(updateUI), userInfo: nil, repeats: false)
             }
         }

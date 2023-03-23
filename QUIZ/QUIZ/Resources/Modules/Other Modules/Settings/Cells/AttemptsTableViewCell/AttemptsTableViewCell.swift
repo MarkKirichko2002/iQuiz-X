@@ -27,7 +27,7 @@ class AttemptsTableViewCell: UITableViewCell {
         if mySwitch.isOn == true {
             print("on")
             userDefaults.set(true, forKey: "onstatusattempts")
-            animation.springImage(image: AttemptsImage)
+            animation.SpringAnimation(view: AttemptsImage)
             player.PlaySound(resource: "click sound.wav")
         } else if mySwitch.isOn == false {
             print("off")

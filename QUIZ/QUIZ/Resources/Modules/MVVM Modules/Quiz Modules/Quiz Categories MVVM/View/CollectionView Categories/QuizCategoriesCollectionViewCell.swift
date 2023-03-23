@@ -104,8 +104,6 @@ class QuizCategoriesCollectionViewCell: UICollectionViewCell {
     }
     
     func didCategoryTapped(indexPath: IndexPath) {
-        self.animation.springImage(image: self.CategoryIcon)
+        self.animation.SpringAnimation(view: self.CategoryIcon)
     }
-    
 }
-

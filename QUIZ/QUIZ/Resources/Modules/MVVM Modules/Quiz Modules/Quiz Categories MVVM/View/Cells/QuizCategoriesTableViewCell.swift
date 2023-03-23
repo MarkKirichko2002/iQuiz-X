@@ -39,10 +39,10 @@ class QuizCategoriesTableViewCell: UITableViewCell {
     }
     
     func didSelect(indexPath: IndexPath) {
-        animation.springImage(image: CategoryImage)
-        animation.springLabel(label: CategoryText)
-        animation.springLabel(label: isComplete)
-        animation.springLabel(label: CategoryScore)
+        animation.SpringAnimation(view: CategoryImage)
+        animation.SpringAnimation(view: CategoryText)
+        animation.SpringAnimation(view: isComplete)
+        animation.SpringAnimation(view: CategoryScore)
         delegate?.didElementClick()
     }
 }

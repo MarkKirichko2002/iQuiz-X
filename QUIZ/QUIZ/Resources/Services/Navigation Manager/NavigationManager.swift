@@ -33,7 +33,7 @@ class NavigationManager: NavigationManagerProtocol {
         
         if let button = self.button {
             self.player.PlaySound(resource: "future click sound.wav")
-            self.animation.springButton(button: button)
+            self.animation.SpringAnimation(view: button)
         }
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
@@ -50,7 +50,7 @@ class NavigationManager: NavigationManagerProtocol {
             
             if let button2 = self.button2 {
                 self.player.PlaySound(resource: category.sound)
-                self.animation.springButton(button: button2)
+                self.animation.SpringAnimation(view: button2)
             }
             
             DispatchQueue.main.asyncAfter(deadline: .now() + 2) {

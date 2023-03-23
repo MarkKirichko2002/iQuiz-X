@@ -27,7 +27,7 @@ class TimerTableViewCell: UITableViewCell {
         if mySwitch.isOn == true {
             print("on")
             userDefaults.set(true, forKey: "onstatustimer")
-            animation.springImage(image: TimerImage)
+            animation.SpringAnimation(view: TimerImage)
             player.PlaySound(resource: "click sound.wav")
         } else if mySwitch.isOn == false {
             print("off")

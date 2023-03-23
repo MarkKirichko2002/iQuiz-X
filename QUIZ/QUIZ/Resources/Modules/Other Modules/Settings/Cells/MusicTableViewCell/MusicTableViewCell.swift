@@ -27,7 +27,7 @@ class MusicTableViewCell: UITableViewCell {
         if mySwitch.isOn == true {
             print("on")
             userDefaults.set(true, forKey: "onstatusmusic")
-            animation.springImage(image: MusicImage)
+            animation.SpringAnimation(view: MusicImage)
             player.PlaySound(resource: "click sound.wav")
         } else if mySwitch.isOn == false {
             print("off")

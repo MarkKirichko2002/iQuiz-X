@@ -22,7 +22,7 @@ class QuizSectionsTableViewCell: UITableViewCell {
     @IBOutlet weak var InfoButton: UIButton!
     
     @IBAction func ShowInfo() {
-        animation.springButton(button: self.InfoButton)
+        animation.SpringAnimation(view: self.InfoButton)
         if let section = section {
             ShowAlert(message: section.name, info: section.info)
         }
@@ -51,10 +51,10 @@ class QuizSectionsTableViewCell: UITableViewCell {
     }
     
     func didSelect(indexPath: IndexPath) {
-        animation.springImage(image: QuizSectionIcon)
-        animation.springLabel(label: QuizSectionCategoryName)
-        animation.springLabel(label: QuizSectionItemCount)
-        animation.springLabel(label: PercentageLabel)
+        animation.SpringAnimation(view: QuizSectionIcon)
+        animation.SpringAnimation(view: QuizSectionCategoryName)
+        animation.SpringAnimation(view: QuizSectionItemCount)
+        animation.SpringAnimation(view: PercentageLabel)
     }
     
 }

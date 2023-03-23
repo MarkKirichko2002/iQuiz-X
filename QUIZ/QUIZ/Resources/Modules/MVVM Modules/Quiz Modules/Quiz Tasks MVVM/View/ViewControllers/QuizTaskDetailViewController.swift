@@ -54,9 +54,9 @@ final class QuizTaskDetailViewController: UIViewController {
     
     @IBAction func StartTask() {
         guard let category = self.category else {return}
-        animation.springButton(button: self.StartTaskButton)
-        animation.springImage(image: self.TaskIcon)
-        animation.springLabel(label: self.TaskName)
+        animation.SpringAnimation(view: self.StartTaskButton)
+        animation.SpringAnimation(view: self.TaskIcon)
+        animation.SpringAnimation(view: self.TaskName)
         player.StopSound(resource: category.music)
         player.PlaySound(resource: category.sound)
         self.animation.StopRotateImage(image: self.TaskIcon)
@@ -65,7 +65,7 @@ final class QuizTaskDetailViewController: UIViewController {
     
     @IBAction func CloseDetailScreen() {
         guard let task = self.task else {return}
-        self.animation.springButton(button: self.CloseButton)
+        self.animation.SpringAnimation(view: self.CloseButton)
         self.player.PlaySound(resource: task.sound)
         DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
             self.dismiss(animated: true)

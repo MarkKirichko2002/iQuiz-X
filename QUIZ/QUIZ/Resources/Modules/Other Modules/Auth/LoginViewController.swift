@@ -245,9 +245,8 @@ final class LoginViewController: UIViewController {
                             self.UnlockBiometricFailsCounter += 1
                             self.loginImageView.image = UIImage(named: "FACE ID.png")
                             self.titleLabel.text = "Лицо не распознано"
-                            self.animation.springImage(image: self.loginImageView)
+                            self.animation.SpringAnimation(view: self.loginImageView)
                         }
-                        
                         
                         if self.UnlockBiometricFailsCounter == 3 {
                             self.BiometricAuthButton.isUserInteractionEnabled = false
@@ -308,10 +307,9 @@ final class LoginViewController: UIViewController {
             
             
             self.VoiceButton.setTitle(String(timeLeft), for: .normal)
-            self.animation.springLabel(label: self.VoiceButton.titleLabel!)
+            self.animation.SpringAnimation(view: self.VoiceButton.titleLabel!)
             
             print(timeLeft)
-            
             
             if(timeLeft==0){
                 self.VoiceButton.setTitle(String(timeLeft), for: .normal)
@@ -361,7 +359,7 @@ final class LoginViewController: UIViewController {
         
         if VoiceButton.isSelected && !check2.contains(voicepassword ?? "") && check2 != "" {
             UnlockVoiceFailsCounter += 1
-            animation.springImage(image: loginImageView)
+            animation.SpringAnimation(view: loginImageView)
             titleLabel.text = ("Пароль \(check2) неверный")
             self.loginImageView.image = UIImage(named: "voice.png")
             player.PlaySound(resource: "fail2.mp3")
@@ -372,7 +370,7 @@ final class LoginViewController: UIViewController {
             UnlockVoiceFailsCounter += 1
             self.loginImageView.image = UIImage(named: "voice.png")
             titleLabel.text = ("Повторите пароль")
-            animation.springImage(image: loginImageView)
+            animation.SpringAnimation(view: loginImageView)
             print(UnlockVoiceFailsCounter)
         }
         

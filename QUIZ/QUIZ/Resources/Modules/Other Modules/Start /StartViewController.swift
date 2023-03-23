@@ -293,7 +293,7 @@ final class StartViewController: UIViewController {
     @objc func GoToRandomQuiz() {
         
         player.PlaySound(resource: sound)
-        self.animation.springButton(button: self.TodayQuizButton)
+        self.animation.SpringAnimation(view: self.TodayQuizButton)
         
         let c = quizCategoriesViewModel.quizcategories[randomindex]
         

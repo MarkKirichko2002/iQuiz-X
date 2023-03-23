@@ -5,14 +5,13 @@
 //  Created by Марк Киричко on 16.02.2022.
 //
 
-import Foundation
 import UIKit
 
 class AnimationClass: AnimationClassProtocol {
         
     private let rotationAnimation : CABasicAnimation = CABasicAnimation(keyPath: "transform.rotation.z")
     
-    func springLabel(label: UILabel) {
+    func SpringAnimation<T: UIView>(view: T) {
         let animation = CASpringAnimation(keyPath: "transform.scale")
         animation.fromValue = 0
         animation.toValue = 1
@@ -20,29 +19,7 @@ class AnimationClass: AnimationClassProtocol {
         animation.mass = 1
         animation.duration = 0.5
         animation.beginTime = CACurrentMediaTime() + 0
-        label.layer.add(animation, forKey: nil)
-    }
-
-    func springImage(image: UIImageView) {
-        let animation = CASpringAnimation(keyPath: "transform.scale")
-        animation.fromValue = 0
-        animation.toValue = 1
-        animation.stiffness = 300
-        animation.mass = 1
-        animation.duration = 0.5
-        animation.beginTime = CACurrentMediaTime() + 0
-        image.layer.add(animation, forKey: nil)
-    }
-    
-    func springButton(button: UIButton) {
-        let animation = CASpringAnimation(keyPath: "transform.scale")
-        animation.fromValue = 0
-        animation.toValue = 1
-        animation.stiffness = 300
-        animation.mass = 1
-        animation.duration = 0.5
-        animation.beginTime = CACurrentMediaTime() + 0
-        button.layer.add(animation, forKey: nil)
+        view.layer.add(animation, forKey: nil)
     }
     
     func RotateImage(image: UIImageView) {
@@ -72,5 +49,4 @@ class AnimationClass: AnimationClassProtocol {
         propertyAnimator.addAnimations({ barItemView.transform = .identity }, delayFactor: CGFloat(timeInterval))
         propertyAnimator.startAnimation()
     }
-
 }

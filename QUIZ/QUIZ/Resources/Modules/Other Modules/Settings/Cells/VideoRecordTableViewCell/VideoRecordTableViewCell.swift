@@ -21,40 +21,29 @@ class VideoRecordTableViewCell: UITableViewCell {
     
     @IBAction func switchAction(_ sender: UISwitch) {
         
-        
         userDefaults.set(sender.isOn, forKey: "on")
         userDefaults.set(sender.isOn, forKey: "off")
         
         if mySwitch.isOn == true {
             print("on")
             userDefaults.set(true, forKey: "onstatus")
-            animation.springImage(image: GestureImage)
+            animation.SpringAnimation(view: GestureImage)
             player.PlaySound(resource: "click sound.wav")
         } else if mySwitch.isOn == false {
             print("off")
             userDefaults.set(false, forKey: "onstatus")
             player.PlaySound(resource: "click sound.wav")
         }
-        
     }
 
-    
     override func awakeFromNib() {
         super.awakeFromNib()
         mySwitch.isOn = userDefaults.bool(forKey: "on")
         mySwitch.isOn = userDefaults.bool(forKey: "off")
-        //userDefaults.object(forKey: "off")
-        
         print(userDefaults.bool(forKey: "on"))
-        
-        //mySwitch.isOn = userDefaults.bool(forKey: "on")
-        //mySwitch.isOn = userDefaults.bool(forKey: "on")
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
-
 }

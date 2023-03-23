@@ -35,9 +35,9 @@ class QuizTasksTableViewCell: UITableViewCell {
     }
     
     func didSelect(indexPath: IndexPath) {
-        animation.springImage(image: TaskImage)
-        animation.springLabel(label: TaskText)
-        animation.springLabel(label: TaskStatus)
+        animation.SpringAnimation(view: TaskImage)
+        animation.SpringAnimation(view: TaskText)
+        animation.SpringAnimation(view: TaskStatus)
         delegate?.didElementClick()
     }
     
