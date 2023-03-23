@@ -68,11 +68,11 @@ final class QuizCategoryDetailViewController: UIViewController {
     @IBAction func PlayQuiz() {
         guard let category = self.category else {return}
         DispatchQueue.main.async {
-            self.animation.springImage(image: self.CategoryIcon)
-            self.animation.springLabel(label: self.CategoryName)
-            self.animation.springLabel(label: self.CategoryScore)
-            self.animation.springLabel(label: self.CompleteStatus)
-            self.animation.springButton(button: self.PlayButton)
+            self.animation.SpringAnimation(view: self.CategoryIcon)
+            self.animation.SpringAnimation(view: self.CategoryName)
+            self.animation.SpringAnimation(view: self.CategoryScore)
+            self.animation.SpringAnimation(view: self.CompleteStatus)
+            self.animation.SpringAnimation(view: self.PlayButton)
             self.player.StopSound(resource: category.music)
             self.player.PlaySound(resource: category.sound)
             self.animation.StopRotateImage(image: self.CategoryIcon)
@@ -82,7 +82,7 @@ final class QuizCategoryDetailViewController: UIViewController {
     
     @IBAction func CloseDetailScreen() {
         guard let category = self.category else {return}
-        self.animation.springButton(button: self.CloseButton)
+        self.animation.SpringAnimation(view: self.CloseButton)
         self.player.PlaySound(resource: category.sound)
         DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
             self.dismiss(animated: true)

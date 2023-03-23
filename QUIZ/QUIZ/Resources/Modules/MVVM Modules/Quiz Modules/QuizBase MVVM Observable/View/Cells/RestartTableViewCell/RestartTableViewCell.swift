@@ -16,7 +16,7 @@ class RestartTableViewCell: UITableViewCell {
     @IBOutlet weak var RestartLabel: UILabel!
     
     func didSelect(indexPath: IndexPath) {
-        animation.springImage(image: RestartIcon)
-        animation.springLabel(label: RestartLabel)
+        animation.SpringAnimation(view: RestartIcon)
+        animation.SpringAnimation(view: RestartLabel)
     }
 }

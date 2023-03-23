@@ -8,9 +8,7 @@
 import UIKit
 
 protocol AnimationClassProtocol {
-    func springLabel(label: UILabel)
-    func springImage(image: UIImageView)
-    func springButton(button: UIButton)
+    func SpringAnimation<T: UIView>(view: T)
     func StartRotateImage(image: UIImageView)
     func StopRotateImage(image: UIImageView)
     func TabBarItemAnimation(item: UITabBarItem)

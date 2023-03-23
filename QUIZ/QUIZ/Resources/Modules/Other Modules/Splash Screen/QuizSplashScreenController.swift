@@ -65,16 +65,16 @@ final class QuizSplashScreenController: UIViewController {
    
     private func ShowSplashScreen() {
         
-        animation.springImage(image: QuizIcon)
+        animation.SpringAnimation(view: QuizIcon)
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
             self.QuizTitleLabel.text = "iQuiz X"
-            self.animation.springLabel(label: self.QuizTitleLabel)
+            self.animation.SpringAnimation(view: self.QuizTitleLabel)
         }
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
             self.AnniversaryLabel.text = "1 год 🎉!!!"
-            self.animation.springLabel(label: self.AnniversaryLabel)
+            self.animation.SpringAnimation(view: self.AnniversaryLabel)
         }
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 5) {

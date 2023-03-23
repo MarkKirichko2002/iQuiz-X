@@ -27,7 +27,7 @@ class SpeachTableViewCell: UITableViewCell {
         if mySwitch.isOn == true {
             print("on")
             userDefaults.set(true, forKey: "onstatusspeach")
-            animation.springImage(image: SpeachImage)
+            animation.SpringAnimation(view: SpeachImage)
             player.PlaySound(resource: "click sound.wav")
         } else if mySwitch.isOn == false {
             print("off")

@@ -26,9 +26,9 @@ class NewsTableViewCell: UITableViewCell {
     }
     
     func didSelect(indexPath: IndexPath) {
-        animation.springImage(image: NewsImage)
-        animation.springLabel(label: TitleLabel)
-        animation.springLabel(label: DescriptionLabel)
+        animation.SpringAnimation(view: NewsImage)
+        animation.SpringAnimation(view: TitleLabel)
+        animation.SpringAnimation(view: DescriptionLabel)
         delegate?.didElementClick()
     }
 }

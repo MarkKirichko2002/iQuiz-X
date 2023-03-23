@@ -27,7 +27,7 @@ class HintsTableViewCell: UITableViewCell {
         if mySwitch.isOn == true {
             print("on")
             userDefaults.set(true, forKey: "onstatushints")
-            animation.springImage(image: HintsImage)
+            animation.SpringAnimation(view: HintsImage)
             player.PlaySound(resource: "click sound.wav")
         } else if mySwitch.isOn == false {
             print("off")

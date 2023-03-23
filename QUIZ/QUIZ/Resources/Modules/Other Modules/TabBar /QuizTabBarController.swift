@@ -72,24 +72,24 @@ final class QuizTabBarController: UITabBarController {
         case 0:
             self.icon = "newspaper.png"
             self.button.setImage(UIImage(named: self.icon), for: .normal)
-            self.animation.springButton(button: self.button)
+            self.animation.SpringAnimation(view: self.button)
             self.player.PlaySound(resource: "newspaper.mp3")
         case 1:
             self.icon = "astronomy.png"
             self.button.setImage(UIImage(named: self.icon), for: .normal)
-            self.animation.springButton(button: self.button)
+            self.animation.SpringAnimation(view: self.button)
             self.player.PlaySound(resource: "IQ.mp3")
         case 3:
             self.icon = "trophy.png"
             self.button.setImage(UIImage(named: self.icon), for: .normal)
-            self.animation.springButton(button: self.button)
+            self.animation.SpringAnimation(view: self.button)
             self.player.PlaySound(resource: "league.mp3")
         case 4:
             self.icon = UserDefaults.standard.value(forKey: "url") as? String ?? "https://cdn-icons-png.flaticon.com/512/3637/3637624.png"
             self.button.layer.cornerRadius = self.button.frame.width / 2
             self.button.clipsToBounds = true
             self.button.sd_setImage(with: URL(string: self.icon), for: .normal)
-            self.animation.springButton(button: self.button)
+            self.animation.SpringAnimation(view: self.button)
             self.firebaseManager.PlayLastQuizSound()
         default:
             break
@@ -105,7 +105,7 @@ final class QuizTabBarController: UITabBarController {
             self.selectedIndex = 0
             icon = "newspaper.png"
             button.setImage(UIImage(named: self.icon), for: .normal)
-            animation.springButton(button: self.button)
+            animation.SpringAnimation(view: self.button)
             player.PlaySound(resource: "newspaper.mp3")
             
             self.speechRecognition.cancelSpeechRecognition()
@@ -119,7 +119,7 @@ final class QuizTabBarController: UITabBarController {
                 NewsListViewModel().GetNews(category: .technology)
                 self.icon = "technology"
                 self.button.setImage(UIImage(named: self.icon), for: .normal)
-                self.animation.springButton(button: self.button)
+                self.animation.SpringAnimation(view: self.button)
                 self.player.PlaySound(resource: "technology.wav")
                 self.speechRecognition.cancelSpeechRecognition()
                 
@@ -130,7 +130,7 @@ final class QuizTabBarController: UITabBarController {
                 NewsListViewModel().GetNews(category: .sport)
                 self.icon = "sport.jpeg"
                 self.button.setImage(UIImage(named: self.icon), for: .normal)
-                self.animation.springButton(button: self.button)
+                self.animation.SpringAnimation(view: self.button)
                 self.player.PlaySound(resource: "sport.mp3")
                 self.speechRecognition.cancelSpeechRecognition()
                 
@@ -141,7 +141,7 @@ final class QuizTabBarController: UITabBarController {
                 NewsListViewModel().GetNews(category: .business)
                 self.icon = "business"
                 self.button.setImage(UIImage(named: self.icon), for: .normal)
-                self.animation.springButton(button: self.button)
+                self.animation.SpringAnimation(view: self.button)
                 self.player.PlaySound(resource: "economics.mp3")
                 self.speechRecognition.cancelSpeechRecognition()
                 
@@ -152,7 +152,7 @@ final class QuizTabBarController: UITabBarController {
                 NewsListViewModel().GetNews(category: .general)
                 self.icon = "newspaper"
                 self.button.setImage(UIImage(named: self.icon), for: .normal)
-                self.animation.springButton(button: self.button)
+                self.animation.SpringAnimation(view: self.button)
                 self.player.PlaySound(resource: "newspaper.mp3")
                 self.speechRecognition.cancelSpeechRecognition()
                 
@@ -167,7 +167,7 @@ final class QuizTabBarController: UITabBarController {
             self.selectedIndex = 1
             self.icon = "astronomy.png"
             self.button.setImage(UIImage(named: self.icon), for: .normal)
-            self.animation.springButton(button: self.button)
+            self.animation.SpringAnimation(view: self.button)
             self.player.PlaySound(resource: "IQ.mp3")
             
             self.speechRecognition.cancelSpeechRecognition()
@@ -181,7 +181,7 @@ final class QuizTabBarController: UITabBarController {
                 firebaseManager.LoadLastQuizCategoryData { category in
                     self.icon = category.icon
                     self.button.setImage(UIImage(named: self.icon), for: .normal)
-                    self.animation.springButton(button: self.button)
+                    self.animation.SpringAnimation(view: self.button)
                     self.player.PlaySound(resource: category.sound)
                 }
                 self.speechRecognition.cancelSpeechRecognition()
@@ -199,7 +199,7 @@ final class QuizTabBarController: UITabBarController {
                             Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { timer in
                                 self.icon = value.image
                                 self.button.setImage(UIImage(named: self.icon), for: .normal)
-                                self.animation.springButton(button: self.button)
+                                self.animation.SpringAnimation(view: self.button)
                                 self.player.PlaySound(resource: value.sound)
                                 self.seconds -= 1
                                 if self.seconds == 0 {
@@ -209,7 +209,7 @@ final class QuizTabBarController: UITabBarController {
                                         self.button.setTitleColor(.black, for: .normal)
                                         self.button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 20)
                                         self.button.setTitle("\(category.score)", for: .normal)
-                                        self.animation.springButton(button: self.button)
+                                        self.animation.SpringAnimation(view: self.button)
                                     }
                                 }
                             }
@@ -227,7 +227,7 @@ final class QuizTabBarController: UITabBarController {
             self.selectedIndex = 3
             self.icon = "trophy.png"
             self.button.setImage(UIImage(named: self.icon), for: .normal)
-            self.animation.springButton(button: self.button)
+            self.animation.SpringAnimation(view: self.button)
             self.player.PlaySound(resource: "league.mp3")
             
             self.speechRecognition.cancelSpeechRecognition()
@@ -242,7 +242,7 @@ final class QuizTabBarController: UITabBarController {
             self.button.layer.cornerRadius = self.button.frame.width / 2
             self.button.clipsToBounds = true
             self.button.sd_setImage(with: URL(string: self.icon), for: .normal)
-            self.animation.springButton(button: self.button)
+            self.animation.SpringAnimation(view: self.button)
             self.firebaseManager.PlayLastQuizSound()
             
             self.speechRecognition.cancelSpeechRecognition()
@@ -259,7 +259,7 @@ final class QuizTabBarController: UITabBarController {
                         DispatchQueue.main.async {
                             self.icon = value.image
                             self.button.setImage(UIImage(named: self.icon), for: .normal)
-                            self.animation.springButton(button: self.button)
+                            self.animation.SpringAnimation(view: self.button)
                             self.player.PlaySound(resource: value.sound)
                             self.sound = value.sound
                         }
@@ -304,7 +304,7 @@ final class QuizTabBarController: UITabBarController {
             self.button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 20)
             self.button.setTitle("\(hours):\(minutes)", for: .normal)
             self.quizBaseViewModel.sayComment(comment: "\(hours):\(minutes)")
-            self.animation.springButton(button: self.button)
+            self.animation.SpringAnimation(view: self.button)
             
         // Узнать текущий год
         case _ where text.lowercased().contains("год"):
@@ -314,13 +314,13 @@ final class QuizTabBarController: UITabBarController {
             self.button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 20)
             self.button.setTitle("\(year)", for: .normal)
             self.quizBaseViewModel.sayComment(comment: "\(year)")
-            self.animation.springButton(button: self.button)
+            self.animation.SpringAnimation(view: self.button)
             
         // Открыть камеру
         case _ where text.lowercased().contains("камер"):
             self.icon = "camera.png"
             self.button.setImage(UIImage(named: self.icon), for: .normal)
-            self.animation.springButton(button: self.button)
+            self.animation.SpringAnimation(view: self.button)
             self.player.PlaySound(resource: "camera.mp3")
             self.sound = "camera.mp3"
             DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
@@ -331,7 +331,7 @@ final class QuizTabBarController: UITabBarController {
         case _ where text.lowercased().contains("настрой"):
             self.icon = "gear.png"
             self.button.setImage(UIImage(named: self.icon), for: .normal)
-            self.animation.springButton(button: self.button)
+            self.animation.SpringAnimation(view: self.button)
             self.player.PlaySound(resource: "settings.mp3")
             DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
                 self.performSegue(withIdentifier: "showSettings", sender: nil)
@@ -357,7 +357,7 @@ final class QuizTabBarController: UITabBarController {
         if isStart {
             player.PlaySound(resource: "click sound.wav")
             button.setImage(UIImage(named: "voice.png"), for: .normal)
-            animation.springButton(button: button)
+            animation.SpringAnimation(view: button)
             speechRecognition.startSpeechRecognition()
             speechRecognition.registerSpeechRecognitionHandler { text in
                 self.CheckVoiceCommands(text: text)
@@ -366,7 +366,7 @@ final class QuizTabBarController: UITabBarController {
             player.PlaySound(resource: "pause_sound.mp3")
             self.icon = "astronomy.png"
             button.setImage(UIImage(named: self.icon), for: .normal)
-            animation.springButton(button: button)
+            animation.SpringAnimation(view: button)
             speechRecognition.cancelSpeechRecognition()
         }
     }

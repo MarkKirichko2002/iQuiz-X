@@ -69,7 +69,7 @@ final class QuizResultsViewController: UIViewController {
     }
     
     @IBAction func presentCategoryScreen() {
-        animation.springButton(button: self.ExitButton)
+        animation.SpringAnimation(view: self.ExitButton)
         player.PlaySound(resource: "spring.mp3")
         DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
             self.quizResultsViewModel.PresentCategoryScreen()
@@ -77,7 +77,7 @@ final class QuizResultsViewController: UIViewController {
     }
     
     @IBAction func restart() {
-        animation.springButton(button: self.RetryButton)
+        animation.SpringAnimation(view: self.RetryButton)
         player.PlaySound(resource: "spring.mp3")
         DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
             self.quizResultsViewModel.restartGame()

@@ -20,10 +20,10 @@ class PlayerTableViewCell: UITableViewCell {
     @IBOutlet weak var PlayerBestScore: UILabel!
     
     func didSelect(indexPath: IndexPath) {
-        animation.springImage(image: PlayerImage)
-        animation.springLabel(label: UserName)
-        animation.springLabel(label: UserEmail)
-        animation.springLabel(label: PlayerBestScore)
+        animation.SpringAnimation(view: PlayerImage)
+        animation.SpringAnimation(view: UserName)
+        animation.SpringAnimation(view: UserEmail)
+        animation.SpringAnimation(view: PlayerBestScore)
     }
     
     func configure(players: Player) {

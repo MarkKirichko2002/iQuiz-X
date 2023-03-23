@@ -75,15 +75,15 @@ final class NewsCategoriesViewController: UIViewController {
     
     @objc private func SelectNewsCategory() {
         if let category = self.category {
-            animation.springButton(button: self.SelectNewsCategoryButton)
-            animation.springImage(image: self.NewsCategoryIcon)
-            animation.springLabel(label: self.NewsCategoryName)
+            animation.SpringAnimation(view: self.SelectNewsCategoryButton)
+            animation.SpringAnimation(view: self.NewsCategoryIcon)
+            animation.SpringAnimation(view: self.NewsCategoryName)
             newsListViewModel.SelectNewsCategory(category: category)
             DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
                 self.dismiss(animated: true, completion: nil)
             }
         } else {
-            animation.springButton(button: self.SelectNewsCategoryButton)
+            animation.SpringAnimation(view: self.SelectNewsCategoryButton)
         }
     }
 }
@@ -106,8 +106,8 @@ extension NewsCategoriesViewController: UIPickerViewDelegate, UIPickerViewDataSo
         NewsCategoryIcon.image = UIImage(named: newsListViewModel.categories[row].icon)
         NewsCategoryIcon.sound = newsListViewModel.categories[row].sound
         NewsCategoryName.text = newsListViewModel.categories[row].name.capitalized
-        animation.springImage(image: self.NewsCategoryIcon)
-        animation.springLabel(label: self.NewsCategoryName)
+        animation.SpringAnimation(view: self.NewsCategoryIcon)
+        animation.SpringAnimation(view: self.NewsCategoryName)
         player.PlaySound(resource: newsListViewModel.categories[row].sound)
         category = newsListViewModel.categories[row]
     }

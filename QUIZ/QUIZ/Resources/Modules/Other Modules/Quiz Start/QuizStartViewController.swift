@@ -13,7 +13,7 @@ final class QuizStartViewController: UIViewController {
     var category: QuizCategoryModel?
     private var seconds = 6 {
         didSet {
-            animation.springLabel(label: TimerLabeL)
+            animation.SpringAnimation(view: TimerLabeL)
             TimerLabeL.text = ("\(seconds)")
         }
     }

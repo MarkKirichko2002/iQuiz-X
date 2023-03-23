@@ -27,7 +27,7 @@ class MicrophoneTableViewCell: UITableViewCell {
         if mySwitch.isOn == true {
             print("on")
             userDefaults.set(true, forKey: "onstatusaudio")
-            animation.springImage(image: MicrophoneImage)
+            animation.SpringAnimation(view: MicrophoneImage)
             player.PlaySound(resource: "click sound.wav")
         } else if mySwitch.isOn == false {
             print("off")

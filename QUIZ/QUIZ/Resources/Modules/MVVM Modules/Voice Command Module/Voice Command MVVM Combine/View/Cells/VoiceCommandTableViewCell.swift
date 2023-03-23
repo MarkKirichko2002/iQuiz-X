@@ -24,8 +24,8 @@ class VoiceCommandTableViewCell: UITableViewCell {
         guard let voicecommand = self.voicecommand else {return}
         voiceCommandViewModel.UpdateVoiceCommand(id: voicecommand.id, voicecommand: voicecommand, text: VoiceCommandTextField.text!)
         self.player.PlaySound(resource: voicecommand.sound)
-        self.animation.springImage(image: self.Icon)
-        self.animation.springLabel(label: self.Title)
+        self.animation.SpringAnimation(view: self.Icon)
+        self.animation.SpringAnimation(view: self.Title)
     }
     
     func configure(voicecommand: VoiceCommandModel) {
