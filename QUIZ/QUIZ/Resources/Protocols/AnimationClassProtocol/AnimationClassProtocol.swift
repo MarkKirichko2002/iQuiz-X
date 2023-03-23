@@ -9,7 +9,7 @@ import UIKit
 
 protocol AnimationClassProtocol {
     func SpringAnimation<T: UIView>(view: T)
-    func StartRotateImage(image: UIImageView)
-    func StopRotateImage(image: UIImageView)
+    func StartRotateAnimation<T: UIView>(view: T)
+    func StopRotateAnimation<T: UIView>(view: T)
     func TabBarItemAnimation(item: UITabBarItem)
 }

@@ -108,7 +108,7 @@ class QuizCategoriesViewModel {
         loadingText.font = UIFont.boldSystemFont(ofSize: 22.0)
         view?.addSubview(loadingText)
         makeConstraints()
-        animation.StartRotateImage(image: spinner)
+        animation.StartRotateAnimation(view: spinner)
         DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
             self.LoadCategoriesResults()
             self.spinner.removeFromSuperview()

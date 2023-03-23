@@ -49,7 +49,7 @@ final class QuizTaskDetailViewController: UIViewController {
         super.viewDidAppear(animated)
         guard let category = self.category else {return}
         self.player.PlaySound(resource: category.music)
-        self.animation.StartRotateImage(image: self.TaskIcon)
+        self.animation.StartRotateAnimation(view: self.TaskIcon)
     }
     
     @IBAction func StartTask() {
@@ -59,7 +59,7 @@ final class QuizTaskDetailViewController: UIViewController {
         animation.SpringAnimation(view: self.TaskName)
         player.StopSound(resource: category.music)
         player.PlaySound(resource: category.sound)
-        self.animation.StopRotateImage(image: self.TaskIcon)
+        self.animation.StopRotateAnimation(view: self.TaskIcon)
         quizCategoriesViewModel.GoToStart(quiz: category.base, category: category)
     }
     

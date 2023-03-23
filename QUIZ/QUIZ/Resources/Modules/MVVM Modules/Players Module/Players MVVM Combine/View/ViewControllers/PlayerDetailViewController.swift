@@ -108,11 +108,10 @@ extension PlayerDetailViewController: UITableViewDelegate, UITableViewDataSource
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: QuizCategoriesTableViewCell.identifier, for: indexPath) as! QuizCategoriesTableViewCell
         if player!.category == playersViewModel.categories[indexPath.row].name {
-            self.animation.StartRotateImage(image: cell.CategoryImage)
+            self.animation.StartRotateAnimation(view: cell.CategoryImage)
         }
         cell.CategoryImage.isUserInteractionEnabled = false
         cell.ConfigureCell(category: playersViewModel.categories[indexPath.row])
         return cell
     }
-
 }
