@@ -35,12 +35,12 @@ class RoundedImageView: UIImageView {
         if music != "" {
             if isPlaying == false {
                 DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-                    self.animation.StartRotateImage(image: self)
+                    self.animation.StartRotateAnimation(view: self)
                     self.player.PlaySound(resource: self.music)
                     self.isPlaying = true
                 }
             } else {
-                animation.StopRotateImage(image: self)
+                animation.StopRotateAnimation(view: self)
                 player.StopSound(resource: music)
                 player.PlaySound(resource: sound)
                 isPlaying = false

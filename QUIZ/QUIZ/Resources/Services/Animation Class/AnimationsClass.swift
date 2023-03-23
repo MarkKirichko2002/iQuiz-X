@@ -8,7 +8,7 @@
 import UIKit
 
 class AnimationClass: AnimationClassProtocol {
-        
+    
     private let rotationAnimation : CABasicAnimation = CABasicAnimation(keyPath: "transform.rotation.z")
     
     func SpringAnimation<T: UIView>(view: T) {
@@ -27,18 +27,18 @@ class AnimationClass: AnimationClassProtocol {
         image.layer.add(rotationAnimation, forKey: "rotationAnimation")
     }
     
-    func StartRotateImage(image: UIImageView) {
+    func StartRotateAnimation<T: UIView>(view: T) {
         rotationAnimation.toValue = NSNumber(value: .pi * 2.0)
         rotationAnimation.duration = 2.0;
         rotationAnimation.isCumulative = true;
         rotationAnimation.repeatCount = .infinity;
-        image.layer.add(rotationAnimation, forKey: "rotationAnimation")
+        view.layer.add(rotationAnimation, forKey: "rotationAnimation")
     }
     
-    func StopRotateImage(image: UIImageView) {
-        image.layer.removeAnimation(forKey: "rotationAnimation")
+    func StopRotateAnimation<T: UIView>(view: T) {
+        view.layer.removeAnimation(forKey: "rotationAnimation")
     }
-    
+   
     func TabBarItemAnimation(item: UITabBarItem) {
         guard let barItemView = item.value(forKey: "view") as? UIView else { return }
         

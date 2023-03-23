@@ -62,7 +62,7 @@ final class QuizCategoryDetailViewController: UIViewController {
         setupLabelTap()
         guard let category = self.category else {return}
         self.player.PlaySound(resource: category.music)
-        self.animation.StartRotateImage(image: self.CategoryIcon)
+        self.animation.StartRotateAnimation(view: self.CategoryIcon)
     }
     
     @IBAction func PlayQuiz() {
@@ -75,7 +75,7 @@ final class QuizCategoryDetailViewController: UIViewController {
             self.animation.SpringAnimation(view: self.PlayButton)
             self.player.StopSound(resource: category.music)
             self.player.PlaySound(resource: category.sound)
-            self.animation.StopRotateImage(image: self.CategoryIcon)
+            self.animation.StopRotateAnimation(view: self.CategoryIcon)
             self.quizCategoriesViewModel.GoToStart(quiz: category.base, category: category)
         }
     }

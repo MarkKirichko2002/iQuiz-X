@@ -40,7 +40,7 @@ final class ProfileViewController: UIViewController {
         DispatchQueue.main.async {
             self.ProfileImage.sd_setImage(with: URL(string: UserDefaults.standard.object(forKey: "url") as? String ?? ""))
             if self.LastQuizCategoryIcon.isPlaying {
-                self.animation.StartRotateImage(image: self.LastQuizCategoryIcon)
+                self.animation.StartRotateAnimation(view: self.LastQuizCategoryIcon)
             }
         }
     }

@@ -286,13 +286,13 @@ final class QuizTabBarController: UITabBarController {
             self.button.setImage(UIImage(named: self.icon), for: .normal)
             self.sound = "space music.mp3"
             self.player.PlaySound(resource: self.sound)
-            self.animation.StartRotateImage(image: self.button.imageView!)
+            self.animation.StartRotateAnimation(view: self.button.imageView!)
             
         case _ where text.lowercased().contains("выкл"):
             self.icon = "voice.png"
             self.button.setImage(UIImage(named: self.icon), for: .normal)
             self.player.StopSound(resource: self.sound)
-            self.animation.StopRotateImage(image: self.button.imageView!)
+            self.animation.StopRotateAnimation(view: self.button.imageView!)
             
         // Узнать текущее время
         case _ where text.lowercased().contains("врем"):
