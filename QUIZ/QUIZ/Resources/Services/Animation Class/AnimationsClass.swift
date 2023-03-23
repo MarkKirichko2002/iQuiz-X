@@ -9,8 +9,9 @@ import UIKit
 
 class AnimationClass: AnimationClassProtocol {
     
-    private let rotationAnimation : CABasicAnimation = CABasicAnimation(keyPath: "transform.rotation.z")
+    private let rotationAnimation: CABasicAnimation = CABasicAnimation(keyPath: "transform.rotation.z")
     
+    // пружинная анимация
     func SpringAnimation<T: UIView>(view: T) {
         let animation = CASpringAnimation(keyPath: "transform.scale")
         animation.fromValue = 0
@@ -22,11 +23,13 @@ class AnimationClass: AnimationClassProtocol {
         view.layer.add(animation, forKey: nil)
     }
     
-    func RotateImage(image: UIImageView) {
+    // анимация вращения
+    func RotateAnimation<T: UIView>(view: T) {
         rotationAnimation.toValue = NSNumber(value: 180)
-        image.layer.add(rotationAnimation, forKey: "rotationAnimation")
+        view.layer.add(rotationAnimation, forKey: "rotationAnimation")
     }
     
+    // начать анимацию вращения
     func StartRotateAnimation<T: UIView>(view: T) {
         rotationAnimation.toValue = NSNumber(value: .pi * 2.0)
         rotationAnimation.duration = 2.0;
@@ -35,10 +38,12 @@ class AnimationClass: AnimationClassProtocol {
         view.layer.add(rotationAnimation, forKey: "rotationAnimation")
     }
     
+    // завершить анимацию вращения
     func StopRotateAnimation<T: UIView>(view: T) {
         view.layer.removeAnimation(forKey: "rotationAnimation")
     }
    
+    // анимация TabBarItem
     func TabBarItemAnimation(item: UITabBarItem) {
         guard let barItemView = item.value(forKey: "view") as? UIView else { return }
         
