@@ -6,11 +6,6 @@
 //
 
 import UIKit
-import AVFoundation
-import AVKit
-import Vision
-import Firebase
-import SCLAlertView
 
 final class StartViewController: UIViewController {
     
