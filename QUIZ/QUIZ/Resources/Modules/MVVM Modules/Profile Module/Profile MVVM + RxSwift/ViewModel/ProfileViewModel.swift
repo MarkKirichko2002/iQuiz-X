@@ -4,7 +4,7 @@
 //
 //  Created by Марк Киричко on 09.10.2022.
 //
-import Foundation
+
 import RxSwift
 import RxCocoa
 import SDWebImage
