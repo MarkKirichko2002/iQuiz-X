@@ -13,18 +13,16 @@ class QuizAchievementsViewModel {
     
     private let firebaseManager = FirebaseManager()
     
-    var achievements = [QuizAchievementModel(id: 1, name: "астроном", description: "пройдите категорию Астрономия на 100 баллов", icon: "astronomy", path: "quizastronomy", conditions: [ConditionModel(score: 100, complete: true)], complete: false)]
+    var achievements = [QuizAchievementModel(id: 1, name: "астроном", description: "пройдите категорию Астрономия на 100 баллов", icon: "astronomy", path: "quizachievement1", conditions: [ConditionModel(score: 100, complete: true)], complete: false)]
     
-    func LoadData() {
-        firebaseManager.LoadQuizAchievementsData(achievement: achievements[0]) { achievement in
-            for i in self.achievements {
-                if achievement.conditions == i.conditions {
+    func GetAchievementsData() {
+        for i in self.achievements {
+            self.firebaseManager.LoadQuizAchievementsData(quizachievement: i) { achievement in
+                if achievement.conditions[0].complete == i.conditions[i.id - 1].complete && achievement.conditions[0].score == i.conditions[i.id - 1].score {
                     self.achievements[i.id - 1].complete = true
                     self.delegate?.achievementsDidLoaded(achievements: self.achievements)
-                }
+                } 
             }
         }
     }
 }
-
-

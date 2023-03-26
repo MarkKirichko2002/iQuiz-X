@@ -15,7 +15,7 @@ class QuizAchievementsTableViewController: UITableViewController, QuizAchievemen
         super.viewDidLoad()
         quizAchievementsViewModel.delegate = self
         tableView.register(UINib(nibName: QuizAchievementsTableViewCell.identifier, bundle: nil), forCellReuseIdentifier: QuizAchievementsTableViewCell.identifier)
-        quizAchievementsViewModel.LoadData()
+        quizAchievementsViewModel.GetAchievementsData()
     }
     
     func achievementsDidLoaded(achievements: [QuizAchievementModel]) {

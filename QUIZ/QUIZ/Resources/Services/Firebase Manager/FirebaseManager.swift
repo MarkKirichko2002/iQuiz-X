@@ -93,12 +93,41 @@ class FirebaseManager: FirebaseManagerProtocol {
         }
     }
     
+    func write(achievement: QuizAchievementModel, score: Int, complete: Bool) {
+        let db = Firestore.firestore()
+        let ref = db.collection("users").document((Auth.auth().currentUser?.email)!)
+        ref.updateData([
+            achievement.path: [
+                "score": score,
+                "complete": complete
+            ]
+        ]) { err in
+            if let err = err {
+                print("Error writing document: \(err)")
+            } else {
+                print("success")
+                print(ref)
+            }
+        }
+    }
+    
     // загрузить данные о достижениях викторины
-    func LoadQuizAchievementsData(achievement: QuizAchievementModel, completion: @escaping(QuizAchievementViewModel)->()) {
-        LoadQuizCategoriesData(quizpath: achievement.path) { category in
-            if category.score == achievement.conditions[0].score && category.complete == achievement.conditions[0].complete {
-                let model = QuizAchievementViewModel(conditions: [ConditionModel(score: category.score, complete: category.complete)])
-                completion(model)
+    func LoadQuizAchievementsData(quizachievement: QuizAchievementModel, completion: @escaping(QuizAchievementViewModel)->()) {
+        let docRef = db.collection("users").document(email)
+        
+        docRef.getDocument { document, error in
+            if let error = error as NSError? {
+                print("Error getting document: \(error.localizedDescription)")
+            } else {
+                if let document = document {
+                    if let achievement = document[quizachievement.path] as? [String: Any] {
+                        let complete = achievement["complete"] as? Bool ?? false
+                        let score = achievement["score"] as? Int ?? 0
+                        
+                        let model = QuizAchievementViewModel(conditions: [ConditionModel(score: score, complete: complete)])
+                        completion(model)
+                    }
+                }
             }
         }
     }
