@@ -70,6 +70,12 @@ extension QuizSectionsTableViewController: UITableViewDelegate, UITableViewDataS
                 self.navigationController?.pushViewController(vc, animated: true)
             }
             
+        case 3:
+            if let vc = storyboard?.instantiateViewController(withIdentifier: "QuizAchievementsTableViewController") as? QuizAchievementsTableViewController {
+                vc.title = "Достижения \(section.itemsCount)/1"
+                self.navigationController?.pushViewController(vc, animated: true)
+            }
+            
         default:
             break
         }

@@ -184,6 +184,34 @@
             </objects>
             <point key="canvasLocation" x="5504" y="1422"/>
         </scene>
+        <!--Quiz Achievements Table View Controller-->
+        <scene sceneID="8ee-vi-gKz">
+            <objects>
+                <tableViewController storyboardIdentifier="QuizAchievementsTableViewController" id="lPJ-zI-2f7" customClass="QuizAchievementsTableViewController" customModule="QUIZ" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="D8h-WQ-LPP">
+                        <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="QMS-tB-Mzh">
+                                <rect key="frame" x="0.0" y="50" width="430" height="43.666667938232422"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="QMS-tB-Mzh" id="iRf-3N-kKl">
+                                    <rect key="frame" x="0.0" y="0.0" width="430" height="43.666667938232422"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="lPJ-zI-2f7" id="ZYX-ph-t5c"/>
+                            <outlet property="delegate" destination="lPJ-zI-2f7" id="vDi-dT-jsQ"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vb7-dU-5yg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6561" y="-1030"/>
+        </scene>
         <!--Quiz Categories Table View Controller-->
         <scene sceneID="hCA-c7-1cW">
             <objects>
@@ -972,51 +1000,51 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="astronomy.png" translatesAutoresizingMaskIntoConstraints="NO" id="jk2-Rf-OEy" customClass="RoundedImageView" customModule="QUIZ" customModuleProvider="target">
-                                <rect key="frame" x="30" y="185" width="100" height="100"/>
+                                <rect key="frame" x="30" y="193.33333333333334" width="100" height="100.00000000000003"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="0YD-SN-was"/>
                                     <constraint firstAttribute="width" constant="100" id="swr-th-aen"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="имя" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Zs-j0-R8W">
-                                <rect key="frame" x="150" y="185" width="250" height="23"/>
+                                <rect key="frame" x="150" y="193.33333333333334" width="250" height="23"/>
                                 <fontDescription key="fontDescription" type="system" weight="black" pointSize="19"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="email" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aOT-mJ-RDh">
-                                <rect key="frame" x="150" y="228" width="250" height="23"/>
+                                <rect key="frame" x="150" y="236.33333333333334" width="250" height="23.000000000000028"/>
                                 <fontDescription key="fontDescription" type="system" weight="black" pointSize="19"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="счет" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k28-xc-24A">
-                                <rect key="frame" x="150" y="271" width="230" height="23"/>
+                                <rect key="frame" x="150" y="279.33333333333331" width="230" height="23"/>
                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="19"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="history.jpeg" translatesAutoresizingMaskIntoConstraints="NO" id="vnU-xD-zGe" customClass="RoundedImageView" customModule="QUIZ" customModuleProvider="target">
-                                <rect key="frame" x="30" y="344" width="100" height="100"/>
+                                <rect key="frame" x="30" y="352.33333333333331" width="100" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="100" id="8pZ-FD-RLQ"/>
                                     <constraint firstAttribute="height" constant="100" id="yIN-al-5tA"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5r2-Ya-kL0">
-                                <rect key="frame" x="150" y="344" width="250" height="23"/>
+                                <rect key="frame" x="150" y="352.33333333333331" width="250" height="23"/>
                                 <fontDescription key="fontDescription" type="system" weight="black" pointSize="19"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZGd-mn-SvB">
-                                <rect key="frame" x="150" y="387" width="250" height="23"/>
+                                <rect key="frame" x="150" y="395.33333333333331" width="250" height="23"/>
                                 <fontDescription key="fontDescription" type="system" weight="black" pointSize="19"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nYL-gI-i95">
-                                <rect key="frame" x="150" y="430" width="250" height="23"/>
+                                <rect key="frame" x="150" y="438.33333333333331" width="250" height="23"/>
                                 <fontDescription key="fontDescription" type="system" weight="black" pointSize="19"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>

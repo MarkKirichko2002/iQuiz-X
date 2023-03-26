@@ -45,7 +45,7 @@ class QuizSectionsTableViewCell: UITableViewCell {
         QuizSectionIcon.image = UIImage(named: section.icon)
         QuizSectionIcon.sound = section.sound
         QuizSectionCategoryName.text = section.name
-        QuizSectionItemCount.text = "пройдено: \(section.itemsCount)/19"
+        QuizSectionItemCount.text = "пройдено: \(section.completedItemsCount)/\(section.itemsCount)"
         PercentageLabel.text = "итог: \(section.percentage)%"
         self.section = section
     }

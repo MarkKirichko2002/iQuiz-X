@@ -16,7 +16,7 @@ class QuizSectionsViewModel {
     private var completePercentage = 0
     private let quizCategoriesViewModel = QuizCategoriesViewModel()
     private let quizTasksViewModel = QuizTasksViewModel()
-    @Published var sections = [QuizSectionModel(id: 1, name: "категории", icon: "astronomy", sound: "IQ.mp3", info: "На данный момент существует 19 категорий.", itemsCount: 0, percentage: 0), QuizSectionModel(id: 2, name: "задания", icon: "tasks icon", sound: "IQ.mp3", info: "На данный момент существует 19 заданий.", itemsCount: 0, percentage: 0)]
+    @Published var sections = [QuizSectionModel(id: 1, name: "категории", icon: "astronomy", sound: "IQ.mp3", info: "На данный момент существует 19 категорий.", itemsCount: 19, completedItemsCount: 0, percentage: 0), QuizSectionModel(id: 2, name: "задания", icon: "tasks icon", sound: "IQ.mp3", info: "На данный момент существует 19 заданий.", itemsCount: 19, completedItemsCount: 0, percentage: 0), QuizSectionModel(id: 3, name: "достижения", icon: "trophy.png", sound: "league.mp3", info: "получите все достижения в iQuiz X!", itemsCount: 1, completedItemsCount: 0, percentage: 0)]
     
     func GetQuizSectionData() {
         
@@ -31,7 +31,7 @@ class QuizSectionsViewModel {
                     self.completedQuizCategories.append(category)
                     print(self.completedQuizCategories.count)
                     self.completePercentage = (self.completedQuizCategories.count * 100) / 19
-                    self.sections[0].itemsCount = self.completedQuizCategories.count
+                    self.sections[0].completedItemsCount = self.completedQuizCategories.count
                     self.sections[0].percentage = self.completePercentage
                 }
             }
@@ -43,7 +43,7 @@ class QuizSectionsViewModel {
                     self.completedQuizTasks.append(task)
                     print(self.completedQuizTasks.count)
                     self.completePercentage = (self.completedQuizTasks.count * 100) / 19
-                    self.sections[1].itemsCount = self.completedQuizTasks.count
+                    self.sections[1].completedItemsCount = self.completedQuizTasks.count
                     self.sections[1].percentage = self.completePercentage
                 }
             }

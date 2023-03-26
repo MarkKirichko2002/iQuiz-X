@@ -93,6 +93,16 @@ class FirebaseManager: FirebaseManagerProtocol {
         }
     }
     
+    // загрузить данные о достижениях викторины
+    func LoadQuizAchievementsData(achievement: QuizAchievementModel, completion: @escaping(QuizAchievementViewModel)->()) {
+        LoadQuizCategoriesData(quizpath: achievement.path) { category in
+            if category.score == achievement.conditions[0].score && category.complete == achievement.conditions[0].complete {
+                let model = QuizAchievementViewModel(conditions: [ConditionModel(score: category.score, complete: category.complete)])
+                completion(model)
+            }
+        }
+    }
+    
     // загрузить список игроков
     func LoadPlayers(completion: @escaping([Player])->()) {
         db.collection("users").getDocuments() { (QuerySnapshot, err) in
