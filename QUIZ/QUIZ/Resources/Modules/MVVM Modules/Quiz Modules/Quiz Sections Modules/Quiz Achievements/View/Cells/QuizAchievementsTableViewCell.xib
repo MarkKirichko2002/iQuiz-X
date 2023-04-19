@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="QuizAchievementsTableViewCell" id="J84-7R-Bau" customClass="QuizAchievementsTableViewCell" customModule="QUIZ" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="430" height="138.33332824707031"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="J84-7R-Bau" id="8Xv-sP-Iqy">
+                <rect key="frame" x="0.0" y="0.0" width="430" height="138.33332824707031"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="astronomy.png" translatesAutoresizingMaskIntoConstraints="NO" id="BEN-IF-Zmc" customClass="RoundedImageView" customModule="QUIZ" customModuleProvider="target">
+                        <rect key="frame" x="30" y="19" width="100" height="100"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="100" id="1jW-GN-yli"/>
+                            <constraint firstAttribute="width" constant="100" id="y2L-Rw-dBi"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="мастер iQuiz X" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2vs-3p-egn">
+                        <rect key="frame" x="150" y="19" width="244" height="20.333333333333329"/>
+                        <fontDescription key="fontDescription" type="system" weight="black" pointSize="17"/>
+                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="пройти все категории" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dWl-b7-hG6">
+                        <rect key="frame" x="150" y="54.333333333333336" width="250" height="20.333333333333336"/>
+                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="пройдено" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ty1-RK-PdA">
+                        <rect key="frame" x="150" y="88.666666666666671" width="81.666666666666686" height="20.333333333333329"/>
+                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                        <color key="textColor" systemColor="systemGreenColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailingMargin" secondItem="2vs-3p-egn" secondAttribute="trailing" constant="16" id="33Y-9S-ARb"/>
+                    <constraint firstItem="2vs-3p-egn" firstAttribute="top" secondItem="BEN-IF-Zmc" secondAttribute="top" id="405-3w-iLH"/>
+                    <constraint firstAttribute="trailing" secondItem="dWl-b7-hG6" secondAttribute="trailing" constant="30" id="GPP-DU-TZJ"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="BEN-IF-Zmc" secondAttribute="bottom" constant="8" id="Gfu-tg-fTH"/>
+                    <constraint firstItem="BEN-IF-Zmc" firstAttribute="top" secondItem="8Xv-sP-Iqy" secondAttribute="topMargin" constant="8" id="O8U-Cx-DDN"/>
+                    <constraint firstItem="ty1-RK-PdA" firstAttribute="leading" secondItem="2vs-3p-egn" secondAttribute="leading" id="RVk-gq-EMB"/>
+                    <constraint firstAttribute="bottom" secondItem="ty1-RK-PdA" secondAttribute="bottom" constant="10" id="X2E-Ga-KEf"/>
+                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="ty1-RK-PdA" secondAttribute="trailing" constant="20" symbolic="YES" id="btS-P7-QO7"/>
+                    <constraint firstItem="ty1-RK-PdA" firstAttribute="top" secondItem="dWl-b7-hG6" secondAttribute="bottom" constant="14" id="gnK-KC-Wi3"/>
+                    <constraint firstItem="dWl-b7-hG6" firstAttribute="top" secondItem="2vs-3p-egn" secondAttribute="bottom" constant="15" id="uB4-ta-ZnY"/>
+                    <constraint firstItem="dWl-b7-hG6" firstAttribute="leading" secondItem="BEN-IF-Zmc" secondAttribute="trailing" constant="20" id="up0-X8-83X"/>
+                    <constraint firstItem="BEN-IF-Zmc" firstAttribute="leading" secondItem="8Xv-sP-Iqy" secondAttribute="leadingMargin" constant="10" id="waM-o5-EJ9"/>
+                    <constraint firstItem="ty1-RK-PdA" firstAttribute="leading" secondItem="dWl-b7-hG6" secondAttribute="leading" id="zVW-Ds-W2X"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="QuizAchievementComplete" destination="ty1-RK-PdA" id="nYW-8F-Qqp"/>
+                <outlet property="QuizAchievementDescription" destination="dWl-b7-hG6" id="W9M-t6-zMS"/>
+                <outlet property="QuizAchievementIcon" destination="BEN-IF-Zmc" id="O9g-vw-LA1"/>
+                <outlet property="QuizAchievementName" destination="2vs-3p-egn" id="DCT-SF-K9L"/>
+            </connections>
+            <point key="canvasLocation" x="-119.08396946564885" y="1.7605633802816902"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="astronomy.png" width="512" height="512"/>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

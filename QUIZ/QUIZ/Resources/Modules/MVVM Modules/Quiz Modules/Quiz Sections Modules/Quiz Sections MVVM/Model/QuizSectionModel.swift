@@ -14,5 +14,6 @@ struct QuizSectionModel {
     var sound: String
     var info: String
     var itemsCount: Int
+    var completedItemsCount: Int
     var percentage: Int
 }

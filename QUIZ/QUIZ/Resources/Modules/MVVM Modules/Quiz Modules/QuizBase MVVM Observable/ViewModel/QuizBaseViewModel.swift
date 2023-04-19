@@ -34,6 +34,8 @@ class QuizBaseViewModel {
     var quiz: QuizCategoryModel?
     let speechRecognitionManager = SpeechRecognitionManager()
     private let dateManager = DateManager()
+    private let firebaseManager = FirebaseManager()
+    private let quizAchievementsViewModel = QuizAchievementsViewModel()
     
     enum RemoteCommand: String {
         case none
@@ -1300,6 +1302,14 @@ class QuizBaseViewModel {
             } else {
                 print("success")
                 print(ref)
+            }
+        }
+        
+        firebaseManager.LoadQuizAchievementsData(quizachievement: quizAchievementsViewModel.achievements[0]) { achievement in
+            if achievement.conditions[0].score == self.quizAchievementsViewModel.achievements[0].conditions[0].score && achievement.conditions[0].complete == self.quizAchievementsViewModel.achievements[0].conditions[0].complete {
+                
+            } else {
+                self.firebaseManager.write(achievement: self.quizAchievementsViewModel.achievements[0], score: self.counter, complete: true)
             }
         }
         guard let category = quiz else {return}
