@@ -155,6 +155,7 @@
 		8244DCFA27E39D8500F5C59B /* informatics10.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 8244DCF027E39D0900F5C59B /* informatics10.jpeg */; };
 		8244DCFC27E39D8500F5C59B /* informatics8.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 8244DCF227E39D7A00F5C59B /* informatics8.jpeg */; };
 		8244DCFD27E39D8500F5C59B /* informatics4.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 8244DCF327E39D8500F5C59B /* informatics4.jpeg */; };
+		8246589129F081E400EE7AC4 /* QuizCategoriesTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8246589029F081E400EE7AC4 /* QuizCategoriesTableViewCell.xib */; };
 		824D0C8E280377B100C2BE4B /* TimerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 824D0C8D280377B100C2BE4B /* TimerTableViewCell.swift */; };
 		8255249B29BF6D5A0067EB68 /* APIServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8255249A29BF6D5A0067EB68 /* APIServiceProtocol.swift */; };
 		8255249D29BF6E310067EB68 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8255249C29BF6E310067EB68 /* APIService.swift */; };
@@ -446,7 +447,6 @@
 		82CBAEC729CFACCF00AA9569 /* QuizAchievementsViewModelDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82CBAEC629CFACCF00AA9569 /* QuizAchievementsViewModelDelegate.swift */; };
 		82CBAECA29CFAF0B00AA9569 /* QuizAchievementsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82CBAEC829CFAF0B00AA9569 /* QuizAchievementsTableViewCell.swift */; };
 		82CBAECB29CFAF0B00AA9569 /* QuizAchievementsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 82CBAEC929CFAF0B00AA9569 /* QuizAchievementsTableViewCell.xib */; };
-		82CBAECF29CFB53E00AA9569 /* QuizCategoriesTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 82CBAECE29CFB53E00AA9569 /* QuizCategoriesTableViewCell.xib */; };
 		82CBAED129CFBD6400AA9569 /* QuizAchievementViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82CBAED029CFBD6400AA9569 /* QuizAchievementViewModel.swift */; };
 		82CBAED329CFC19A00AA9569 /* QuizAchievenementsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82CBAED229CFC19A00AA9569 /* QuizAchievenementsViewModel.swift */; };
 		82CBAED529CFC74600AA9569 /* ConditionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82CBAED429CFC74600AA9569 /* ConditionModel.swift */; };
@@ -828,6 +828,7 @@
 		8244DCF027E39D0900F5C59B /* informatics10.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = informatics10.jpeg; sourceTree = "<group>"; };
 		8244DCF227E39D7A00F5C59B /* informatics8.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = informatics8.jpeg; sourceTree = "<group>"; };
 		8244DCF327E39D8500F5C59B /* informatics4.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = informatics4.jpeg; sourceTree = "<group>"; };
+		8246589029F081E400EE7AC4 /* QuizCategoriesTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = QuizCategoriesTableViewCell.xib; path = "../../../../../../../../../../../../../Downloads/QUIZ-main/QUIZ/QUIZ/Resources/Modules/MVVM Modules/Quiz Modules/Quiz Categories MVVM/View/Cells/QuizCategoriesTableViewCell.xib"; sourceTree = "<group>"; };
 		824D0C8D280377B100C2BE4B /* TimerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerTableViewCell.swift; sourceTree = "<group>"; };
 		8255249A29BF6D5A0067EB68 /* APIServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIServiceProtocol.swift; sourceTree = "<group>"; };
 		8255249C29BF6E310067EB68 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
@@ -1119,7 +1120,6 @@
 		82CBAEC629CFACCF00AA9569 /* QuizAchievementsViewModelDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizAchievementsViewModelDelegate.swift; sourceTree = "<group>"; };
 		82CBAEC829CFAF0B00AA9569 /* QuizAchievementsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizAchievementsTableViewCell.swift; sourceTree = "<group>"; };
 		82CBAEC929CFAF0B00AA9569 /* QuizAchievementsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QuizAchievementsTableViewCell.xib; sourceTree = "<group>"; };
-		82CBAECE29CFB53E00AA9569 /* QuizCategoriesTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = QuizCategoriesTableViewCell.xib; path = ../../../../../../../../../../../../../.Trash/QuizCategoriesTableViewCell.xib; sourceTree = "<group>"; };
 		82CBAED029CFBD6400AA9569 /* QuizAchievementViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizAchievementViewModel.swift; sourceTree = "<group>"; };
 		82CBAED229CFC19A00AA9569 /* QuizAchievenementsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizAchievenementsViewModel.swift; sourceTree = "<group>"; };
 		82CBAED429CFC74600AA9569 /* ConditionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConditionModel.swift; sourceTree = "<group>"; };
@@ -2094,7 +2094,7 @@
 			isa = PBXGroup;
 			children = (
 				82F5646B2940D1C60031F7BD /* QuizCategoriesTableViewCell.swift */,
-				82CBAECE29CFB53E00AA9569 /* QuizCategoriesTableViewCell.xib */,
+				8246589029F081E400EE7AC4 /* QuizCategoriesTableViewCell.xib */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -4000,7 +4000,7 @@
 				8288F09E2872662400C6A182 /* chess5.jpeg in Resources */,
 				82EA1F1A286BCC7800E49D0F /* ecology19.jpeg in Resources */,
 				82848D34281C6F5B0068A4AE /* swift.background.jpeg in Resources */,
-				82CBAECF29CFB53E00AA9569 /* QuizCategoriesTableViewCell.xib in Resources */,
+				8246589129F081E400EE7AC4 /* QuizCategoriesTableViewCell.xib in Resources */,
 				82848D12281C6F4C0068A4AE /* sport.jpeg in Resources */,
 				8294090C27CECB9100AFF603 /* games1.jpeg in Resources */,
 				8243A6212820810E00427553 /* physics18.jpeg in Resources */,
