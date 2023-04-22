@@ -14,6 +14,7 @@ final class QuizTabBarController: UITabBarController {
     private let quizCategoriesViewModel = QuizCategoriesViewModel()
     private var isStart: Bool = false
     private var icon = "voice.png"
+    private var currentIcon = ""
     private var quizBaseViewModel = QuizBaseViewModel()
     private let animation = AnimationClass()
     private let speechRecognitionManager = SpeechRecognitionManager()
@@ -65,7 +66,7 @@ final class QuizTabBarController: UITabBarController {
         }
     }
     
-    func tabChangedTo(selectedIndex: Int) {
+    private func tabChangedTo(selectedIndex: Int) {
         UserDefaults.standard.set(selectedIndex, forKey: "index")
         switch selectedIndex {
             
@@ -94,9 +95,11 @@ final class QuizTabBarController: UITabBarController {
         default:
             break
         }
+        
+        self.currentIcon = icon
     }
     
-    func CheckVoiceCommands(text: String) {
+    private func CheckVoiceCommands(text: String) {
         
         switch text {
             
@@ -352,7 +355,7 @@ final class QuizTabBarController: UITabBarController {
         }
     }
     
-    @objc func VoiceCommands(_ sender: UIButton) {
+    @objc private func VoiceCommands(_ sender: UIButton) {
         isStart = !isStart
         if isStart {
             player.PlaySound(resource: "click sound.wav")
@@ -364,8 +367,7 @@ final class QuizTabBarController: UITabBarController {
             }
         } else {
             player.PlaySound(resource: "pause_sound.mp3")
-            self.icon = "astronomy.png"
-            button.setImage(UIImage(named: self.icon), for: .normal)
+            button.setImage(UIImage(named: self.currentIcon), for: .normal)
             animation.SpringAnimation(view: button)
             speechRecognition.cancelSpeechRecognition()
         }

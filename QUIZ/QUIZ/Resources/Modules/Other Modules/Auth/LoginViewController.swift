@@ -113,7 +113,7 @@ final class LoginViewController: UIViewController {
         }
     }
     
-    func CheckBiometricSetting() {
+    private func CheckBiometricSetting() {
         var isBiometricOn = UserDefaults.standard.object(forKey: "onstatusbiometric") as? Bool
         
         print(isBiometricOn)
@@ -132,7 +132,7 @@ final class LoginViewController: UIViewController {
         } else {}
     }
     
-    func loadData() {
+    private func loadData() {
         
         let defaults = UserDefaults.standard
         
@@ -263,7 +263,7 @@ final class LoginViewController: UIViewController {
     
     // Voice Unlock
     
-    func CheckChoiceNumber() {
+    private func CheckChoiceNumber() {
         
         if check2.contains("один") || check2.contains("Один") {
             check2 = "1"
@@ -297,8 +297,7 @@ final class LoginViewController: UIViewController {
         
     }
     
-    
-    func stop() {
+    private func stop() {
         var timeLeft = 4
         Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { timer in
             print("timer fired!")
@@ -502,13 +501,12 @@ final class LoginViewController: UIViewController {
         }
     }
     
-    
-    @objc func hideKeyboard() {
+    @objc private func hideKeyboard() {
         self.scrollView.endEditing(true)
     }
     
     // Когда клавиатура появляется
-    @objc func keyboardWasShown(notification: Notification) {
+    @objc private func keyboardWasShown(notification: Notification) {
         
         // Получаем размер клавиатуры
         let info = notification.userInfo! as NSDictionary
@@ -521,7 +519,7 @@ final class LoginViewController: UIViewController {
     }
     
     // Когда клавиатура исчезает
-    @objc func keyboardWillBeHidden(notification: Notification) {
+    @objc private func keyboardWillBeHidden(notification: Notification) {
         // Устанавливаем отступ внизу UIScrollView, равный 0
         let contentInsets = UIEdgeInsets.zero
         scrollView?.contentInset = contentInsets
