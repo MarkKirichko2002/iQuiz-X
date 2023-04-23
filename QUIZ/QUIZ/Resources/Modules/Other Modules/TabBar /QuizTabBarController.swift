@@ -73,29 +73,25 @@ final class QuizTabBarController: UITabBarController {
         case 0:
             self.icon = "newspaper.png"
             self.button.setImage(UIImage(named: self.icon), for: .normal)
-            self.animation.SpringAnimation(view: self.button)
             self.player.PlaySound(resource: "newspaper.mp3")
         case 1:
             self.icon = "astronomy.png"
             self.button.setImage(UIImage(named: self.icon), for: .normal)
-            self.animation.SpringAnimation(view: self.button)
             self.player.PlaySound(resource: "IQ.mp3")
         case 3:
             self.icon = "trophy.png"
             self.button.setImage(UIImage(named: self.icon), for: .normal)
-            self.animation.SpringAnimation(view: self.button)
             self.player.PlaySound(resource: "league.mp3")
         case 4:
             self.icon = UserDefaults.standard.value(forKey: "url") as? String ?? "https://cdn-icons-png.flaticon.com/512/3637/3637624.png"
             self.button.layer.cornerRadius = self.button.frame.width / 2
             self.button.clipsToBounds = true
             self.button.sd_setImage(with: URL(string: self.icon), for: .normal)
-            self.animation.SpringAnimation(view: self.button)
             self.firebaseManager.PlayLastQuizSound()
         default:
             break
         }
-        
+        self.animation.SpringAnimation(view: self.button)
         self.currentIcon = icon
     }
     

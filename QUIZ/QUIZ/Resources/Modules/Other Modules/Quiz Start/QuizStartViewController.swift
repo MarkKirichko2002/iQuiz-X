@@ -13,8 +13,11 @@ final class QuizStartViewController: UIViewController {
     var category: QuizCategoryModel?
     private var seconds = 6 {
         didSet {
-            animation.SpringAnimation(view: TimerLabeL)
-            TimerLabeL.text = ("\(seconds)")
+            DispatchQueue.main.async {
+                self.TimerLabeL.text = ("\(self.seconds)")
+                self.animation.FlipAnimation(view: self.QuizCategoryIcon)
+                self.animation.SpringAnimation(view: self.TimerLabeL)
+            }
         }
     }
     private let animation = AnimationClass()

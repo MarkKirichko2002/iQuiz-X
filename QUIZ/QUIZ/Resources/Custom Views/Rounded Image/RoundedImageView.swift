@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import AVFoundation
 
 class RoundedImageView: UIImageView {
     
@@ -46,17 +45,6 @@ class RoundedImageView: UIImageView {
                 isPlaying = false
             }
         }
-        
-        DispatchQueue.main.async {
-            UIView.animate(withDuration: 0.75,
-                           delay: 0,
-                           usingSpringWithDamping: 0.50,
-                           initialSpringVelocity: 0.50,
-                           options: [.allowUserInteraction],
-                           animations: {
-                self.bounds = self.bounds.insetBy(dx: 15, dy: 15)
-            },
-                           completion: nil)
-        }
+        animation.SpringAnimation(view: self)
     }
 }
