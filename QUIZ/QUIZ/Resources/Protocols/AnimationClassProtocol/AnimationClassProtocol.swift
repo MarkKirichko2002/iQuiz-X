@@ -13,4 +13,5 @@ protocol AnimationClassProtocol {
     func StartRotateAnimation<T: UIView>(view: T)
     func StopRotateAnimation<T: UIView>(view: T)
     func TabBarItemAnimation(item: UITabBarItem)
+    func FlipAnimation<T: UIView>(view: T)
 }

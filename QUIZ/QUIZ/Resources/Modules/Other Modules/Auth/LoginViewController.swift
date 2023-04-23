@@ -526,4 +526,3 @@ final class LoginViewController: UIViewController {
         scrollView.scrollIndicatorInsets = contentInsets
     }
 }
-
