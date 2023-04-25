@@ -9,28 +9,25 @@ import UIKit
 
 final class StartViewController: UIViewController {
     
+    private let player = SoundClass()
+    private let navigationManager = NavigationManager()
+    private let quizCategoriesViewModel = QuizCategoriesViewModel()
+    private let animation = AnimationClass()
+    private let randomindex = UserDefaults.standard.object(forKey: "index") as? Int ?? 0
+    
     @IBOutlet weak var StartButton: UIButton!
     @IBOutlet weak var TodayQuizButton: UIButton!
     @IBOutlet weak var Image: RoundedImageView!
     @IBOutlet weak var TitleName: UILabel!
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var view2: UIView!
-    
-    private let player = SoundClass()
-    private let navigationManager = NavigationManager()
-    private let quizCategoriesViewModel = QuizCategoriesViewModel()
-    private let timer = Timer()
-    private let animation = AnimationClass()
-    private var sound = ""
-    private let randomindex = UserDefaults.standard.object(forKey: "index") as? Int ?? 0
-    
-    override func viewDidDisappear(_ animated: Bool) {
-        super.viewDidDisappear(animated)
-        timer.invalidate()
-    }
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        SetUpView()
+    }
+    
+    private func SetUpView() {
         quizCategoriesViewModel.view = self.view
         quizCategoriesViewModel.storyboard = self.storyboard
         // навигация
@@ -65,11 +62,11 @@ final class StartViewController: UIViewController {
         self.TodayQuizButton.addGestureRecognizer(tap2)
     }
     
-    func GenerateRandomIndex() {
+    private func GenerateRandomIndex() {
         
         var randomindex = Int.random(in: 0..<quizCategoriesViewModel.quizcategories.count - 1)
         
-        UserDefaults.standard.set(randomindex, forKey: "index") as? Int
+        UserDefaults.standard.set(randomindex, forKey: "index")
         
         let savedindex = UserDefaults.standard.object(forKey: "index") as? Int
         
@@ -78,183 +75,16 @@ final class StartViewController: UIViewController {
         } else {}
     }
     
-    
-    @objc func UpdateTime() {
+    private func CheckTime() {
+        
         let date = Date()
         let calendar = Calendar.current
-        let hour = calendar.component(.hour, from: date)
-        let minutes = calendar.component(.minute, from: date)
-        let sec = calendar.component(.second, from: date)
-        let hourString = String(hour)
-        let minutesString = String(minutes)
-        let seconds = String(sec)
-        
-        var weakday = calendar.component(.day, from: date)
-        let month = calendar.component(.month, from: date)
-        
-        var weakdays = String(weakday)
-        var months = String(month)
-        
-        var currentdate = ("\(hourString) ч. : \(minutesString) м. : \(seconds) с.")
-        
-        var currentday = weakdays + "/" + months
-        
-        print(currentday)
-        
-        switch month {
-            
-            
-        case 1:
-            
-            months = "Января"
-            
-            currentday = ("\(weakdays) \(months)")
-            
-            self.TitleName.text = ("Сегодня \(currentday) \n 🕐: \(currentdate)")
-            
-            print("january")
-            
-        case 2:
-            
-            months = "Февраля"
-            
-            currentday = ("\(weakdays) \(months)")
-            
-            self.TitleName.text = ("Сегодня \(currentday) \n 🕐: \(currentdate)")
-            
-            print("february")
-            
-        case 3:
-            
-            months = "Марта"
-            
-            currentday = ("\(weakdays) \(months)")
-            
-            self.TitleName.text = ("Сегодня \(currentday) \n 🕐: \(currentdate)")
-            
-            print("march")
-            
-        case 4:
-            
-            months = "Апреля"
-            
-            currentday = ("\(weakdays) \(months)")
-            
-            self.TitleName.text = ("Сегодня \(currentday) \n 🕐: \(currentdate)")
-            
-            print("april")
-            
-        case 5:
-            
-            months = "Мая"
-            
-            currentday = ("\(weakdays) \(months)")
-            
-            self.TitleName.text = ("Сегодня \(currentday) \n 🕐: \(currentdate)")
-            
-            print("may")
-            
-            
-        case 6:
-            
-            months = "Июня"
-            
-            currentday = ("\(weakdays) \(months)")
-            
-            self.TitleName.text = ("Сегодня \(currentday) \n 🕐: \(currentdate)")
-            
-            print("june")
-            
-            
-        case 7:
-            
-            months = "Июля"
-            
-            currentday = ("\(weakdays) \(months)")
-            
-            self.TitleName.text = ("Сегодня \(currentday) \n 🕐: \(currentdate)")
-            
-            print("july")
-            
-            
-        case 8:
-            
-            months = "Августа"
-            
-            currentday = ("\(weakdays) \(months)")
-            
-            self.TitleName.text = ("Сегодня \(currentday) \n 🕐: \(currentdate)")
-            
-            print("august")
-            
-        case 9:
-            
-            months = "Сентября"
-            
-            currentday = ("\(weakdays) \(months)")
-            
-            self.TitleName.text = ("Сегодня \(currentday) \n 🕐: \(currentdate)")
-            
-            print("september")
-            
-        case 10:
-            
-            months = "Октября"
-            
-            currentday = ("\(weakdays) \(months)")
-            
-            self.TitleName.text = ("Сегодня \(currentday) \n 🕐: \(currentdate)")
-            
-            print("october")
-            
-        case 11:
-            
-            months = "Ноября"
-            
-            currentday = ("\(weakdays) \(months)")
-            
-            self.TitleName.text = ("Сегодня \(currentday) \n 🕐: \(currentdate)")
-            
-            print("november")
-            
-        case 12:
-            
-            months = "Декабрь"
-            
-            currentday = ("\(weakdays) \(months)")
-            
-            self.TitleName.text = ("Сегодня \(currentday) \n 🕐: \(currentdate)")
-            print("december")
-            
-        default: break
-            
-        }
-        
-        if hourString == "00" && minutesString == "0" && seconds == "0" {
-            self.GenerateRandomIndex()
-            self.DailyQuiz()
-        }
-        
-    }
-    
-    func CheckTime() {
-        let date = Date()
-        let calendar = Calendar.current
-        let hour = calendar.component(.hour, from: date)
-        let minutes = calendar.component(.minute, from: date)
-        let sec = calendar.component(.second, from: date)
         let day = calendar.component(.day, from: date)
         let month = calendar.component(.month, from: date)
-        
-        let hourString = String(hour)
-        let minutesString = String(minutes)
-        let seconds = String(sec)
         let days = String(day)
         let months = String(month)
-        
-        var currentdate = days + "/" + months
-        
-        var saveddate = UserDefaults.standard.object(forKey: "saveddate") as? String
+        let currentdate = days + "/" + months
+        let saveddate = UserDefaults.standard.object(forKey: "saveddate") as? String
         
         if currentdate != saveddate {
             print("next day")
@@ -273,15 +103,9 @@ final class StartViewController: UIViewController {
         }
     }
     
-    func writedate(date: String, key: String) {
-        UserDefaults.standard.set(date, forKey: key)
-        print(UserDefaults.standard.object(forKey: key) ?? "")
-    }
-    
-    func DailyQuiz() {
+    private func DailyQuiz() {
         
         Image.sound = quizCategoriesViewModel.quizcategories[randomindex].sound
-        sound = quizCategoriesViewModel.quizcategories[randomindex].sound
         
         self.TodayQuizButton.setTitle(quizCategoriesViewModel.quizcategories[randomindex].name, for: .normal)
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: quizCategoriesViewModel.quizcategories[randomindex].background)!)
@@ -290,9 +114,9 @@ final class StartViewController: UIViewController {
         self.Image.image = UIImage(named: quizCategoriesViewModel.quizcategories[randomindex].image)
     }
     
-    @objc func GoToRandomQuiz() {
+    @objc private func GoToRandomQuiz() {
         
-        player.PlaySound(resource: sound)
+        player.PlaySound(resource: quizCategoriesViewModel.quizcategories[randomindex].sound)
         self.animation.SpringAnimation(view: self.TodayQuizButton)
         
         let c = quizCategoriesViewModel.quizcategories[randomindex]
