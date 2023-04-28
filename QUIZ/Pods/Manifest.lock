@@ -454,6 +454,9 @@ PODS:
     - SDWebImage/Core (= 5.12.3)
   - SDWebImage/Core (5.12.3)
   - SnapKit (5.6.0)
+  - Swinject (2.7.1)
+  - SwinjectStoryboard (2.2.2):
+    - Swinject (~> 2.7.1)
 
 DEPENDENCIES:
   - Alamofire
@@ -466,6 +469,7 @@ DEPENDENCIES:
   - SCLAlertView
   - SDWebImage
   - SnapKit
+  - SwinjectStoryboard
 
 SPEC REPOS:
   trunk:
@@ -493,6 +497,8 @@ SPEC REPOS:
     - SCLAlertView
     - SDWebImage
     - SnapKit
+    - Swinject
+    - SwinjectStoryboard
 
 SPEC CHECKSUMS:
   abseil: 6c8eb7892aefa08d929b39f9bb108e5367e3228f
@@ -519,7 +525,9 @@ SPEC CHECKSUMS:
   SCLAlertView: 6a77bb2edfc65e04dbe57725546cb4107a506b85
   SDWebImage: 53179a2dba77246efa8a9b85f5c5b21f8f43e38f
   SnapKit: e01d52ebb8ddbc333eefe2132acf85c8227d9c25
+  Swinject: ddf78b8486dd9b71a667b852cad919ab4484478e
+  SwinjectStoryboard: 240ce371396da09a4c43c72ee5c148108500e184
 
-PODFILE CHECKSUM: e8d334bbef30e5c3743e2bae82de263d53f505ba
+PODFILE CHECKSUM: ba38b833d442d605063cd6dbc44df9aba9db6533
 
 COCOAPODS: 1.10.2

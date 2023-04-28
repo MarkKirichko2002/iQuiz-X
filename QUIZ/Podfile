@@ -16,4 +16,6 @@ target 'QUIZ' do
   pod 'RxSwift'
   pod 'RxCocoa'
   pod 'SnapKit'
+  pod 'SwinjectStoryboard'
+
 end
