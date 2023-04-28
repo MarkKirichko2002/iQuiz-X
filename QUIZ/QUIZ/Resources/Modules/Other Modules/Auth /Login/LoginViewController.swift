@@ -13,6 +13,8 @@ import LocalAuthentication
 import SDWebImage
 import AVFoundation
 import Speech
+import Swinject
+import SwinjectStoryboard
 
 final class LoginViewController: UIViewController {
     
@@ -49,6 +51,17 @@ final class LoginViewController: UIViewController {
     let speaker = AVSpeechSynthesizer()
     let dialogue = AVSpeechUtterance(string: "доступ разрешен")
     private let speechRecognitionManager = SpeechRecognitionManager()
+    
+    private let container: Container = {
+        let container = Container()
+        container.storyboardInitCompleted(QuizSplashScreenController.self) { r, c in
+            c.animation = r.resolve(AnimationClassProtocol.self)
+        }
+        container.register(AnimationClassProtocol.self) { _ in
+            return AnimationClass()
+        }
+        return container
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -103,10 +116,12 @@ final class LoginViewController: UIViewController {
         // Присваиваем его UIScrollVIew
         scrollView.addGestureRecognizer(hideKeyboardGesture)
         
+        let storyboard = SwinjectStoryboard.create(name: "Main", bundle: nil, container: container)
+        let vc = storyboard.instantiateViewController(withIdentifier: "QuizSplashScreenController")
+        
         token = Auth.auth().addStateDidChangeListener{[weak self] auth, user in
             guard user != nil else {return}
             DispatchQueue.main.async {
-                guard let vc = self?.storyboard?.instantiateViewController(identifier: "QuizSplashScreenController") else {return}
                 guard let window = self!.view.window else {return}
                 window.rootViewController = vc
             }
@@ -114,7 +129,8 @@ final class LoginViewController: UIViewController {
     }
     
     private func CheckBiometricSetting() {
-        var isBiometricOn = UserDefaults.standard.object(forKey: "onstatusbiometric") as? Bool
+        
+        let isBiometricOn = UserDefaults.standard.object(forKey: "onstatusbiometric") as? Bool
         
         print(isBiometricOn)
         
