@@ -152,7 +152,6 @@
 		8244DCFA27E39D8500F5C59B /* informatics10.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 8244DCF027E39D0900F5C59B /* informatics10.jpeg */; };
 		8244DCFC27E39D8500F5C59B /* informatics8.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 8244DCF227E39D7A00F5C59B /* informatics8.jpeg */; };
 		8244DCFD27E39D8500F5C59B /* informatics4.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 8244DCF327E39D8500F5C59B /* informatics4.jpeg */; };
-		8246589129F081E400EE7AC4 /* QuizCategoriesTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8246589029F081E400EE7AC4 /* QuizCategoriesTableViewCell.xib */; };
 		824D0C8E280377B100C2BE4B /* TimerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 824D0C8D280377B100C2BE4B /* TimerTableViewCell.swift */; };
 		8255249B29BF6D5A0067EB68 /* APIServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8255249A29BF6D5A0067EB68 /* APIServiceProtocol.swift */; };
 		8255249D29BF6E310067EB68 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8255249C29BF6E310067EB68 /* APIService.swift */; };
@@ -420,6 +419,7 @@
 		82A9796E27F8CB2C001EBF1C /* QuizLiterature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82A9796D27F8CB2C001EBF1C /* QuizLiterature.swift */; };
 		82AFAF6827FA3C25001B04A0 /* ExitTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82AFAF6727FA3C25001B04A0 /* ExitTableViewCell.swift */; };
 		82B01736294F86740073452D /* NewsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82B01735294F86730073452D /* NewsTableViewCell.swift */; };
+		82B466E42A0B2AD40097C578 /* QuizCategoriesTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 82B466E32A0B2AD40097C578 /* QuizCategoriesTableViewCell.xib */; };
 		82B760F727CAA13500540E0F /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82B760F627CAA13500540E0F /* Question.swift */; };
 		82BC0189294770D400AEB659 /* QuizTasksTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82BC0188294770D400AEB659 /* QuizTasksTableViewController.swift */; };
 		82BC018B294770DB00AEB659 /* QuizTasksTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82BC018A294770DB00AEB659 /* QuizTasksTableViewCell.swift */; };
@@ -820,7 +820,6 @@
 		8244DCF027E39D0900F5C59B /* informatics10.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = informatics10.jpeg; sourceTree = "<group>"; };
 		8244DCF227E39D7A00F5C59B /* informatics8.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = informatics8.jpeg; sourceTree = "<group>"; };
 		8244DCF327E39D8500F5C59B /* informatics4.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = informatics4.jpeg; sourceTree = "<group>"; };
-		8246589029F081E400EE7AC4 /* QuizCategoriesTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = QuizCategoriesTableViewCell.xib; path = "../../../../../../../../../../../../../Downloads/QUIZ-main/QUIZ/QUIZ/Resources/Modules/MVVM Modules/Quiz Modules/Quiz Categories MVVM/View/Cells/QuizCategoriesTableViewCell.xib"; sourceTree = "<group>"; };
 		824D0C8D280377B100C2BE4B /* TimerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerTableViewCell.swift; sourceTree = "<group>"; };
 		8255249A29BF6D5A0067EB68 /* APIServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIServiceProtocol.swift; sourceTree = "<group>"; };
 		8255249C29BF6E310067EB68 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
@@ -1088,6 +1087,7 @@
 		82A9796D27F8CB2C001EBF1C /* QuizLiterature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizLiterature.swift; sourceTree = "<group>"; };
 		82AFAF6727FA3C25001B04A0 /* ExitTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExitTableViewCell.swift; sourceTree = "<group>"; };
 		82B01735294F86730073452D /* NewsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsTableViewCell.swift; sourceTree = "<group>"; };
+		82B466E32A0B2AD40097C578 /* QuizCategoriesTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QuizCategoriesTableViewCell.xib; sourceTree = "<group>"; };
 		82B760F627CAA13500540E0F /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
 		82BC0188294770D400AEB659 /* QuizTasksTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuizTasksTableViewController.swift; sourceTree = "<group>"; };
 		82BC018A294770DB00AEB659 /* QuizTasksTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuizTasksTableViewCell.swift; sourceTree = "<group>"; };
@@ -2075,7 +2075,7 @@
 			isa = PBXGroup;
 			children = (
 				82F5646B2940D1C60031F7BD /* QuizCategoriesTableViewCell.swift */,
-				8246589029F081E400EE7AC4 /* QuizCategoriesTableViewCell.xib */,
+				82B466E32A0B2AD40097C578 /* QuizCategoriesTableViewCell.xib */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -3952,7 +3952,6 @@
 				8288F09E2872662400C6A182 /* chess5.jpeg in Resources */,
 				82EA1F1A286BCC7800E49D0F /* ecology19.jpeg in Resources */,
 				82848D34281C6F5B0068A4AE /* swift.background.jpeg in Resources */,
-				8246589129F081E400EE7AC4 /* QuizCategoriesTableViewCell.xib in Resources */,
 				82848D12281C6F4C0068A4AE /* sport.jpeg in Resources */,
 				8294090C27CECB9100AFF603 /* games1.jpeg in Resources */,
 				8243A6212820810E00427553 /* physics18.jpeg in Resources */,
@@ -4007,6 +4006,7 @@
 				82848D48281C77030068A4AE /* chemistry20.jpeg in Resources */,
 				82EA1F19286BCC7800E49D0F /* ecology15.jpeg in Resources */,
 				8261BC3627E114950089CC94 /* chemistry1.jpeg in Resources */,
+				82B466E42A0B2AD40097C578 /* QuizCategoriesTableViewCell.xib in Resources */,
 				82848D42281C77030068A4AE /* chemistry12.jpeg in Resources */,
 				82848D0C281C6F4C0068A4AE /* ecology.jpeg in Resources */,
 				8295F1CC2950C735000E033E /* QuizTasksTableViewCell.xib in Resources */,
