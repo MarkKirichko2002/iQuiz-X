@@ -82,42 +82,19 @@
             </objects>
             <point key="canvasLocation" x="7677" y="-228"/>
         </scene>
-        <!--Лига Игроков 2023 🏆-->
-        <scene sceneID="0qz-ua-avC">
+        <!--Лига Игроков 2023-->
+        <scene sceneID="IW3-Bv-phy">
             <objects>
-                <tableViewController id="gLe-iQ-EKP" customClass="PlayersLeagueTableViewController" customModule="QUIZ" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="kfr-NV-DTD">
+                <viewController id="cLg-EO-fTK" customClass="PlayersListViewController" customModule="QUIZ" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="rai-YQ-mkH">
                         <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="ukd-6q-8jM"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="h1A-0S-zbw">
-                                <rect key="frame" x="0.0" y="50" width="430" height="43.666667938232422"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="h1A-0S-zbw" id="DdI-Km-azc">
-                                    <rect key="frame" x="0.0" y="0.0" width="430" height="43.666667938232422"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="gLe-iQ-EKP" id="Feb-YE-W8p"/>
-                            <outlet property="delegate" destination="gLe-iQ-EKP" id="1Ra-CD-orZ"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" title="Лига Игроков 2023 🏆" id="cdP-K7-CzW">
-                        <barButtonItem key="rightBarButtonItem" image="sort" style="plain" id="03y-fl-XPP">
-                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            <connections>
-                                <action selector="sort" destination="gLe-iQ-EKP" id="oIp-AB-v09"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
-                    <connections>
-                        <outlet property="SortButton" destination="03y-fl-XPP" id="8Ga-bU-KvS"/>
-                    </connections>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Z7v-74-Nee" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Лига Игроков 2023" id="UEE-Rd-gre"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Gqc-l4-X0e" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="6561" y="573"/>
         </scene>
@@ -145,7 +122,7 @@
                     </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="ZVb-tp-CnA">
-                        <rect key="frame" x="0.0" y="59" width="430" height="96"/>
+                        <rect key="frame" x="0.0" y="59" width="430" height="104.33333333333334"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <textAttributes key="largeTitleTextAttributes">
                             <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -153,7 +130,7 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="gLe-iQ-EKP" kind="relationship" relationship="rootViewController" id="3XQ-jX-q8B"/>
+                        <segue destination="cLg-EO-fTK" kind="relationship" relationship="rootViewController" id="xFr-Ph-ySw"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xkp-0h-Tci" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -169,7 +146,7 @@
                     </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="Mze-v6-U77">
-                        <rect key="frame" x="0.0" y="59" width="430" height="96"/>
+                        <rect key="frame" x="0.0" y="59" width="430" height="104.33333333333334"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <textAttributes key="largeTitleTextAttributes">
                             <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1997,7 +1974,6 @@
         <image name="profile" width="24" height="24"/>
         <image name="profile selected" width="24" height="24"/>
         <image name="settings" width="24" height="24"/>
-        <image name="sort" width="24" height="24"/>
         <image name="today" width="24" height="24"/>
         <image name="today selected" width="24" height="24"/>
         <systemColor name="systemBackgroundColor">
