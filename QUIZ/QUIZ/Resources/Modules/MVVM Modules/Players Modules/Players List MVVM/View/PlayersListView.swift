@@ -7,8 +7,13 @@
 
 import UIKit
 
+protocol PlayersListViewDelegate: AnyObject {
+    func showCurrentPlayer(player: Player)
+}
+
 class PlayersListView: UIView {
     
+    public weak var delegate: PlayersListViewDelegate?
     private var viewModel: PlayersListViewViewModel?
     
     private let tableView: UITableView = {
@@ -52,5 +57,9 @@ extension PlayersListView: PlayersListViewViewModelDelegate {
     
     func playersLoaded() {
         self.tableView.reloadData()
+    }
+    
+    func playerWasSelected(player: Player) {
+        delegate?.showCurrentPlayer(player: player)
     }
 }

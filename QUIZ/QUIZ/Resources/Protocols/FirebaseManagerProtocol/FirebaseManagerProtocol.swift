@@ -15,7 +15,6 @@ protocol FirebaseManagerProtocol {
     func LoadProfileInfo(completion: @escaping(Profile)->())
     func SaveCustomVoiceCommand(id: Int, voicecommand: VoiceCommandModel, text: String)
     func LoadVoiceCommands(command: String, completion: @escaping(String)->())
-    func PlayLastQuizSound()
     func UpdateProfilePhoto(string: String)
     func DeleteAccount()
     func SignOutAction()

@@ -291,6 +291,12 @@
 		828E93EF2A12BC7B00CD7A0C /* PlayersListViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 828E93EE2A12BC7B00CD7A0C /* PlayersListViewViewModel.swift */; };
 		828E93F12A12BD7200CD7A0C /* PlayersListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 828E93F02A12BD7200CD7A0C /* PlayersListView.swift */; };
 		828E93F32A12BF0D00CD7A0C /* PlayersListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 828E93F22A12BF0D00CD7A0C /* PlayersListViewController.swift */; };
+		828E93F82A12C7A900CD7A0C /* PlayerDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 828E93F72A12C7A900CD7A0C /* PlayerDetailView.swift */; };
+		828E93FA2A12C80400CD7A0C /* PlayerDetailViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 828E93F92A12C80400CD7A0C /* PlayerDetailViewViewModel.swift */; };
+		828E93FD2A12CE6700CD7A0C /* PlayerInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 828E93FB2A12CE6700CD7A0C /* PlayerInfoTableViewCell.swift */; };
+		828E93FE2A12CE6700CD7A0C /* PlayerInfoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 828E93FC2A12CE6700CD7A0C /* PlayerInfoTableViewCell.xib */; };
+		828E94002A12D57D00CD7A0C /* PlayerDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 828E93FF2A12D57D00CD7A0C /* PlayerDetailViewController.swift */; };
+		828E94022A12E2CD00CD7A0C /* QuizCategories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 828E94012A12E2CD00CD7A0C /* QuizCategories.swift */; };
 		828F0DD127C82D4C0016D337 /* PlayerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 828F0DD027C82D4C0016D337 /* PlayerTableViewCell.swift */; };
 		82900D632801AB9D00742925 /* MusicTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82900D622801AB9D00742925 /* MusicTableViewCell.swift */; };
 		8292EAE52906BAF200EDFFD5 /* camera.png in Resources */ = {isa = PBXBuildFile; fileRef = 8292EAE42906BAF200EDFFD5 /* camera.png */; };
@@ -959,6 +965,12 @@
 		828E93EE2A12BC7B00CD7A0C /* PlayersListViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayersListViewViewModel.swift; sourceTree = "<group>"; };
 		828E93F02A12BD7200CD7A0C /* PlayersListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayersListView.swift; sourceTree = "<group>"; };
 		828E93F22A12BF0D00CD7A0C /* PlayersListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayersListViewController.swift; sourceTree = "<group>"; };
+		828E93F72A12C7A900CD7A0C /* PlayerDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerDetailView.swift; sourceTree = "<group>"; };
+		828E93F92A12C80400CD7A0C /* PlayerDetailViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerDetailViewViewModel.swift; sourceTree = "<group>"; };
+		828E93FB2A12CE6700CD7A0C /* PlayerInfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerInfoTableViewCell.swift; sourceTree = "<group>"; };
+		828E93FC2A12CE6700CD7A0C /* PlayerInfoTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlayerInfoTableViewCell.xib; sourceTree = "<group>"; };
+		828E93FF2A12D57D00CD7A0C /* PlayerDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerDetailViewController.swift; sourceTree = "<group>"; };
+		828E94012A12E2CD00CD7A0C /* QuizCategories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizCategories.swift; sourceTree = "<group>"; };
 		828F0DD027C82D4C0016D337 /* PlayerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerTableViewCell.swift; sourceTree = "<group>"; };
 		82900D622801AB9D00742925 /* MusicTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicTableViewCell.swift; sourceTree = "<group>"; };
 		8292EAE42906BAF200EDFFD5 /* camera.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = camera.png; sourceTree = "<group>"; };
@@ -1418,7 +1430,7 @@
 			children = (
 				8295F1CA2950C165000E033E /* News Module */,
 				8295F1C72950C113000E033E /* Quiz Modules */,
-				8295F1C82950C13F000E033E /* Players Module */,
+				8295F1C82950C13F000E033E /* Players Modules */,
 				8295F1C92950C150000E033E /* Profile Module */,
 				8281647F29670946001E00DF /* Voice Command Module */,
 			);
@@ -2062,6 +2074,35 @@
 			path = Cells;
 			sourceTree = "<group>";
 		};
+		828E93F42A12C73200CD7A0C /* Player Detail MVVM */ = {
+			isa = PBXGroup;
+			children = (
+				828E93F62A12C74100CD7A0C /* View */,
+				828E93F52A12C73F00CD7A0C /* ViewModel */,
+			);
+			name = "Player Detail MVVM";
+			path = "../Players Module/Player Detail MVVM";
+			sourceTree = "<group>";
+		};
+		828E93F52A12C73F00CD7A0C /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				828E93F92A12C80400CD7A0C /* PlayerDetailViewViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		828E93F62A12C74100CD7A0C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				828E93FF2A12D57D00CD7A0C /* PlayerDetailViewController.swift */,
+				828E93F72A12C7A900CD7A0C /* PlayerDetailView.swift */,
+				828E93FB2A12CE6700CD7A0C /* PlayerInfoTableViewCell.swift */,
+				828E93FC2A12CE6700CD7A0C /* PlayerInfoTableViewCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		8290FCA327FCC15B00E05DDA /* TabBar  */ = {
 			isa = PBXGroup;
 			children = (
@@ -2381,12 +2422,13 @@
 			path = "Quiz Modules";
 			sourceTree = "<group>";
 		};
-		8295F1C82950C13F000E033E /* Players Module */ = {
+		8295F1C82950C13F000E033E /* Players Modules */ = {
 			isa = PBXGroup;
 			children = (
 				82CBE8062870DE1A0045616B /* Players List MVVM */,
+				828E93F42A12C73200CD7A0C /* Player Detail MVVM */,
 			);
-			path = "Players Module";
+			path = "Players Modules";
 			sourceTree = "<group>";
 		};
 		8295F1C92950C150000E033E /* Profile Module */ = {
@@ -2818,6 +2860,7 @@
 			children = (
 				8295F19A2950B68A000E033E /* QuizCategoriesSection.swift */,
 				82CBAEB829CFA72600AA9569 /* QuizCategoryModel.swift */,
+				828E94012A12E2CD00CD7A0C /* QuizCategories.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -3575,6 +3618,7 @@
 				8294091027CECB9200AFF603 /* games3.jpeg in Resources */,
 				82EA1EFE286BCC3E00E49D0F /* planets19.jpeg in Resources */,
 				8294093D27CECD6100AFF603 /* economy7.jpeg in Resources */,
+				828E93FE2A12CE6700CD7A0C /* PlayerInfoTableViewCell.xib in Resources */,
 				82EA1F1B286BCC7800E49D0F /* ecology16.jpeg in Resources */,
 				82EA1EC7286BCBA300E49D0F /* delete.png in Resources */,
 				82EA1F6F286BCCEB00E49D0F /* games20.jpeg in Resources */,
@@ -4096,6 +4140,7 @@
 				82E0EC8228AC5ABA004AA2E3 /* Event.swift in Sources */,
 				828E93EF2A12BC7B00CD7A0C /* PlayersListViewViewModel.swift in Sources */,
 				8295F1962950AB3A000E033E /* QuizTaskViewModel.swift in Sources */,
+				828E94022A12E2CD00CD7A0C /* QuizCategories.swift in Sources */,
 				82A1D8C827FB4C3D0044EEA6 /* PhotoTableViewCell.swift in Sources */,
 				82CBAECA29CFAF0B00AA9569 /* QuizAchievementsTableViewCell.swift in Sources */,
 				821120E92822EE5E009C2801 /* CurrentCategoryTableViewCell.swift in Sources */,
@@ -4126,6 +4171,7 @@
 				82A01BFD27C51CFF00DCBD6F /* RoundedImageView.swift in Sources */,
 				82C2B5B327BD2F8800C66946 /* AnimationsClass.swift in Sources */,
 				82B760F727CAA13500540E0F /* Question.swift in Sources */,
+				828E93F82A12C7A900CD7A0C /* PlayerDetailView.swift in Sources */,
 				829A515429675E790056A7DB /* DateManager.swift in Sources */,
 				8243F16927C2617C00CD9CE4 /* QuizBaseViewModel.swift in Sources */,
 				825524A129BF7ECF0067EB68 /* Source.swift in Sources */,
@@ -4166,6 +4212,7 @@
 				8234A661296A311F00A7FA2B /* SpeechSynthesizerManagerProtocol.swift in Sources */,
 				8261BC2227E10F1B0089CC94 /* QuizStatisticTableViewController.swift in Sources */,
 				82CBAEB929CFA72700AA9569 /* QuizCategoryModel.swift in Sources */,
+				828E94002A12D57D00CD7A0C /* PlayerDetailViewController.swift in Sources */,
 				822F6C1927BD4AFC0033803A /* QuizResultsViewController.swift in Sources */,
 				82EA02A528240872008A0240 /* RestartTableViewCell.swift in Sources */,
 				82CBE7EA287093C50045616B /* NewsListViewModel.swift in Sources */,
@@ -4180,12 +4227,14 @@
 				82A08C8128F48E8E0072A940 /* ProfileViewModel.swift in Sources */,
 				82CBE7EB287093C50045616B /* NewsResponse.swift in Sources */,
 				82BC0189294770D400AEB659 /* QuizTasksTableViewController.swift in Sources */,
+				828E93FA2A12C80400CD7A0C /* PlayerDetailViewViewModel.swift in Sources */,
 				82F564712940D1FB0031F7BD /* QuizCategoryDetailViewController.swift in Sources */,
 				829A5166296874F40056A7DB /* DailyQuizViewController.swift in Sources */,
 				8234A65D296A303700A7FA2B /* FirebaseManagerProtocol.swift in Sources */,
 				8234A665296A31A600A7FA2B /* TextRecognitionManagerProtocol.swift in Sources */,
 				82AFAF6827FA3C25001B04A0 /* ExitTableViewCell.swift in Sources */,
 				82D35C3A2963AA64000EB277 /* VoiceCommandSettingTableViewCell.swift in Sources */,
+				828E93FD2A12CE6700CD7A0C /* PlayerInfoTableViewCell.swift in Sources */,
 				82CBE7E9287093C50045616B /* NewsTableViewController.swift in Sources */,
 				82D35C2429634355000EB277 /* OnboardingSlide.swift in Sources */,
 				829A51682968AFA60056A7DB /* NewsCategoriesViewController.swift in Sources */,

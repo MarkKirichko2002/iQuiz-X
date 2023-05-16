@@ -5,25 +5,19 @@
 //  Created by Марк Киричко on 03.04.2022.
 //
 
-import Foundation
-import UIKit
 import Firebase
-import SDWebImage
 import SCLAlertView
 
 class FirebaseManager: FirebaseManagerProtocol {
     
     private let db = Firestore.firestore()
     private let storage = Storage.storage().reference()
-    private let player = SoundClass()
-    private var quizCategoryViewModel: QuizCategoryViewModel?
-    private var quizTaskViewModel: QuizTaskViewModel?
-    private var players = [Player]()
     private let settingsManager = SettingsManager()
     var email = Auth.auth().currentUser?.email ?? ""
     
     // загрузить данные о категориях викторины
     func LoadQuizCategoriesData(quizpath: String, completion: @escaping(QuizCategoryViewModel)->()) {
+        
         let docRef = db.collection("users").document(email)
         
         docRef.getDocument { document, error in
@@ -37,8 +31,7 @@ class FirebaseManager: FirebaseManagerProtocol {
                         let CorrectAnswersCounter = category["CorrectAnswersCounter"] as? Int ?? 0
                         let date = category["date"] as? String ?? "дата отсутствует"
                         
-                        self.quizCategoryViewModel = QuizCategoryViewModel(score: bestscore, CorrectAnswersCounter: CorrectAnswersCounter, complete: complete, date: date)
-                        guard let model = self.quizCategoryViewModel else {return}
+                        let model = QuizCategoryViewModel(score: bestscore, CorrectAnswersCounter: CorrectAnswersCounter, complete: complete, date: date)
                         completion(model)
                     }
                 }
@@ -59,8 +52,7 @@ class FirebaseManager: FirebaseManagerProtocol {
                     if let category = document[quizpath] as? [String: Any] {
                         let complete = category["complete"] as? Bool ?? false
                         
-                        self.quizTaskViewModel = QuizTaskViewModel(complete: complete)
-                        guard let model = self.quizTaskViewModel else {return}
+                        let model = QuizTaskViewModel(complete: complete)
                         completion(model)
                     }
                 }
@@ -70,6 +62,7 @@ class FirebaseManager: FirebaseManagerProtocol {
     
     // загрузить данные о последней категории викторины
     func LoadLastQuizCategoryData(completion: @escaping(QuizResult)->()) {
+        
         let docRef = db.collection("users").document((Auth.auth().currentUser?.email)!)
         
         docRef.getDocument { document, error in
@@ -113,6 +106,7 @@ class FirebaseManager: FirebaseManagerProtocol {
     
     // загрузить данные о достижениях викторины
     func LoadQuizAchievementsData(quizachievement: QuizAchievementModel, completion: @escaping(QuizAchievementViewModel)->()) {
+        
         let docRef = db.collection("users").document(email)
         
         docRef.getDocument { document, error in
@@ -134,6 +128,7 @@ class FirebaseManager: FirebaseManagerProtocol {
     
     // загрузить список игроков
     func LoadPlayers(completion: @escaping([Player])->()) {
+        var players = [Player]()
         db.collection("users").getDocuments() { (QuerySnapshot, err) in
             if let err = err {
                 print("Error getting documents : \(err)")
@@ -149,12 +144,14 @@ class FirebaseManager: FirebaseManagerProtocol {
                         let CorrectAnswersCounter = category["CorrectAnswersCounter"] as? Int ?? 0
                         let background = category["background"] as? String ?? ""
                         let bestscore = category["bestscore"] as? Int ?? 0
+                        let date = category["date"] as? String ?? ""
+                        let icon = category["icon"] as? String ?? ""
                         let category = category["category"] as? String ?? ""
                         
-                        self.players.append(Player(name: name, counter: bestscore , email: email, CorrectAnswersCounter: CorrectAnswersCounter, category: category, categoryMusic: music , image: photo, background: background, sound: sound))
+                        players.append(Player(name: name, counter: bestscore , email: email, CorrectAnswersCounter: CorrectAnswersCounter, category: category, date: date, categoryIcon: icon, categoryMusic: music , image: photo, background: background, sound: sound))
                     }
-                    self.players.sort(by: { $0.counter > $1.counter })
-                    completion(self.players)
+                    players.sort(by: { $0.counter > $1.counter })
+                    completion(players)
                 }
             }
         }
@@ -162,7 +159,9 @@ class FirebaseManager: FirebaseManagerProtocol {
     
     // загрузить информацию о профиле
     func LoadProfileInfo(completion: @escaping(Profile)->()) {
+        
         let docRef = db.collection("users").document((Auth.auth().currentUser?.email) ?? "")
+        
         docRef.getDocument { document, error in
             if let error = error as NSError? {
                 print("Error getting document: \(error.localizedDescription)")
@@ -194,6 +193,7 @@ class FirebaseManager: FirebaseManagerProtocol {
     
     // сохранить свою голосовую команду
     func SaveCustomVoiceCommand(id: Int, voicecommand: VoiceCommandModel, text: String) {
+        
         let db = Firestore.firestore()
         
         if voicecommand.id == id {
@@ -215,6 +215,7 @@ class FirebaseManager: FirebaseManagerProtocol {
     
     // загрузить голосовые команды
     func LoadVoiceCommands(command: String, completion: @escaping(String)->()) {
+        
         let docRef = db.collection("users").document(Auth.auth().currentUser?.email ?? "")
         
         docRef.getDocument { document, error in
@@ -231,25 +232,9 @@ class FirebaseManager: FirebaseManagerProtocol {
         }
     }
     
-    // воспроизвести звук последней категории викторины
-    func PlayLastQuizSound() {
-        let docRef = db.collection("users").document((Auth.auth().currentUser?.email) ?? "")
-        docRef.getDocument { document, error in
-            if let error = error as NSError? {
-                print("Error getting document: \(error.localizedDescription)")
-            } else {
-                if let document = document {
-                    if let category = document["lastquiz"] as? [String: Any] {
-                        let sound = category["sound"] as? String ?? ""
-                        self.player.PlaySound(resource: sound)
-                    }
-                }
-            }
-        }
-    }
-    
     // обновить фото профиля
     func UpdateProfilePhoto(string: String) {
+        
         db.collection("users").document(Auth.auth().currentUser?.email ?? "").updateData([
             "image": string
         ]) { err in

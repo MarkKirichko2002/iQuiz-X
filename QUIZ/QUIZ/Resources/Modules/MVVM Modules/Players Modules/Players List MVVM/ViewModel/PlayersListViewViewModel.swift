@@ -10,6 +10,7 @@ import Combine
 
 protocol PlayersListViewViewModelDelegate: AnyObject {
     func playersLoaded()
+    func playerWasSelected(player: Player)
 }
 
 class PlayersListViewViewModel: NSObject {
@@ -33,6 +34,10 @@ extension PlayersListViewViewModel: UITableViewDelegate, UITableViewDataSource {
         return players.count
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        delegate?.playerWasSelected(player: players[indexPath.row])
+    }
+        
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: PlayerTableViewCell.identifier, for: indexPath) as? PlayerTableViewCell else {
             fatalError("Unsupported cell")
