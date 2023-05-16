@@ -18,6 +18,7 @@ class PlayersListViewController: UIViewController {
     private func makeConstraints() {
         let viewModel = PlayersListViewViewModel()
         let playersListView = PlayersListView(frame: .zero, viewModel: viewModel)
+        playersListView.delegate = self
         view.addSubview(playersListView)
         NSLayoutConstraint.activate([
             playersListView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
@@ -25,5 +26,14 @@ class PlayersListViewController: UIViewController {
             playersListView.rightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.rightAnchor),
             playersListView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
         ])
+    }
+}
+
+extension PlayersListViewController: PlayersListViewDelegate {
+    
+    func showCurrentPlayer(player: Player) {
+       let viewModel = PlayerDetailViewViewModel(player: player)
+       let vc = PlayerDetailViewController(viewModel: viewModel)
+       self.navigationController?.pushViewController(vc, animated: true)
     }
 }

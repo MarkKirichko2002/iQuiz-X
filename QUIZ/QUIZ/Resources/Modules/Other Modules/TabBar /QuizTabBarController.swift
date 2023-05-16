@@ -87,7 +87,9 @@ final class QuizTabBarController: UITabBarController {
             self.button.layer.cornerRadius = self.button.frame.width / 2
             self.button.clipsToBounds = true
             self.button.sd_setImage(with: URL(string: self.icon), for: .normal)
-            self.firebaseManager.PlayLastQuizSound()
+            self.firebaseManager.LoadLastQuizCategoryData { result in
+                self.player.PlaySound(resource: result.sound)
+            }
         default:
             break
         }
@@ -242,7 +244,9 @@ final class QuizTabBarController: UITabBarController {
             self.button.clipsToBounds = true
             self.button.sd_setImage(with: URL(string: self.icon), for: .normal)
             self.animation.SpringAnimation(view: self.button)
-            self.firebaseManager.PlayLastQuizSound()
+            self.firebaseManager.LoadLastQuizCategoryData { result in
+                self.player.PlaySound(resource: result.sound)
+            }
             
             self.speechRecognition.cancelSpeechRecognition()
             
