@@ -50,38 +50,6 @@
             </objects>
             <point key="canvasLocation" x="4555" y="-689"/>
         </scene>
-        <!--Задания-->
-        <scene sceneID="TCN-V7-UY3">
-            <objects>
-                <tableViewController storyboardIdentifier="QuizTasksTableViewController" id="0Za-4a-tg5" customClass="QuizTasksTableViewController" customModule="QUIZ" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="dPD-yX-gEs">
-                        <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="mjT-to-bag">
-                                <rect key="frame" x="0.0" y="50" width="430" height="43.666667938232422"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="mjT-to-bag" id="C3Y-Xh-3xQ">
-                                    <rect key="frame" x="0.0" y="0.0" width="430" height="43.666667938232422"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                                <connections>
-                                    <segue destination="mas-vS-HXm" kind="showDetail" identifier="showTaskDetail" trigger="accessoryAction" id="kZW-Ri-W6z"/>
-                                </connections>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="0Za-4a-tg5" id="gB6-U8-4gO"/>
-                            <outlet property="delegate" destination="0Za-4a-tg5" id="t1l-yP-j6P"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" title="Задания" id="vj4-AA-NGG"/>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="tVA-Ge-64k" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="7677" y="-228"/>
-        </scene>
         <!--Лига Игроков 2023-->
         <scene sceneID="IW3-Bv-phy">
             <objects>
@@ -122,7 +90,7 @@
                     </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="ZVb-tp-CnA">
-                        <rect key="frame" x="0.0" y="59" width="430" height="104.33333333333334"/>
+                        <rect key="frame" x="0.0" y="59" width="430" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <textAttributes key="largeTitleTextAttributes">
                             <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -146,7 +114,7 @@
                     </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="Mze-v6-U77">
-                        <rect key="frame" x="0.0" y="59" width="430" height="104.33333333333334"/>
+                        <rect key="frame" x="0.0" y="59" width="430" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <textAttributes key="largeTitleTextAttributes">
                             <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1745,6 +1713,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hgG-G9-sBd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="5503" y="-229"/>
+        </scene>
+        <!--Quiz Tasks List View Controller-->
+        <scene sceneID="7Ed-LF-PPz">
+            <objects>
+                <viewController storyboardIdentifier="QuizTasksListViewController" id="oSc-3R-FJe" customClass="QuizTasksListViewController" customModule="QUIZ" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Zhp-fC-acV">
+                        <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="Ysb-xF-VVS"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <connections>
+                        <segue destination="mas-vS-HXm" kind="show" identifier="showTaskDetail" id="f56-ds-6r1"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hJh-LI-WMp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="7676" y="-229"/>
         </scene>
         <!--Quiz Task Detail View Controller-->
         <scene sceneID="4Ms-KA-qDf">
