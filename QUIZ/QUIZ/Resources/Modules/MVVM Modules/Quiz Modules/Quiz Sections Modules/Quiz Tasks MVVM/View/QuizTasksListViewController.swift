@@ -30,16 +30,12 @@ class QuizTasksListViewController: UIViewController {
         ])
     }
     
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        if segue.identifier == "showTaskDetail",
-//           let destinationController = segue.destination as? QuizTaskDetailViewController,
-//           let indexSelectedCell = tableView.indexPathForSelectedRow {
-//           let task = quizTasksViewModel.tasks[indexSelectedCell.row]
-//           let category = quizCategoriesViewModel.quizcategories[indexSelectedCell.row]
-//           destinationController.task = task
-//           destinationController.category = category
-//        }
-//    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showTaskDetail" {
+            let destinationController = segue.destination as? QuizTaskDetailViewController
+            destinationController!.task = task
+        }
+    }
 }
 
 // MARK: - QuizTasksListViewDelegate
@@ -49,5 +45,4 @@ extension QuizTasksListViewController: QuizTasksListViewDelegate {
         self.task = task
         performSegue(withIdentifier: "showTaskDetail", sender: self)
     }
-    
 }

@@ -17,8 +17,11 @@ class QuizTasksListViewViewModel: NSObject {
     weak var delegate: QuizTasksListViewViewModelDelegate?
     private var tasks = QuizTasks.tasks
     
+    // MARK: - сервисы
+    private let firebaseManager = FirebaseManager()
+    private let player = SoundClass()
+    
     func LoadTasksResults() {
-        let firebaseManager = FirebaseManager()
         for task in tasks {
             firebaseManager.LoadQuizTasksData(quizpath: task.quizpath) { result in
                 DispatchQueue.main.async {
@@ -37,7 +40,15 @@ extension QuizTasksListViewViewModel: UITableViewDelegate, UITableViewDataSource
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        delegate?.QuizTaskSelected(task: tasks[indexPath.row])
+        
+        player.PlaySound(resource: tasks[indexPath.row].sound)
+        
+        if let cell = tableView.cellForRow(at: indexPath) as? QuizTasksTableViewCell {
+            cell.didSelect(indexPath: indexPath)
+        }
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+            self.delegate?.QuizTaskSelected(task: self.tasks[indexPath.row])
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

@@ -5,13 +5,11 @@
 //  Created by Марк Киричко on 04.01.2023.
 //
 
-import Foundation
 import UIKit
 
 final class QuizTaskDetailViewController: UIViewController {
     
     var task: QuizTaskModel?
-    var category: QuizCategoryModel?
     private let player = SoundClass()
     private let animation = AnimationClass()
     private let quizCategoriesViewModel = QuizCategoriesViewModel()
@@ -47,13 +45,13 @@ final class QuizTaskDetailViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        guard let category = self.category else {return}
+        guard let category = self.task?.category else {return}
         self.player.PlaySound(resource: category.music)
         self.animation.StartRotateAnimation(view: self.TaskIcon)
     }
     
     @IBAction func StartTask() {
-        guard let category = self.category else {return}
+        guard let category = self.task?.category else {return}
         animation.SpringAnimation(view: self.StartTaskButton)
         animation.SpringAnimation(view: self.TaskIcon)
         animation.SpringAnimation(view: self.TaskName)
