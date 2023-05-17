@@ -15,8 +15,6 @@ class QuizSectionsViewModel {
     private var completedQuizTasks = [QuizTaskViewModel]()
     private var completedQuizAchievements = [QuizAchievementViewModel]()
     private var completePercentage = 0
-    private let quizCategoriesViewModel = QuizCategoriesViewModel()
-    private let quizTasksViewModel = QuizTasksViewModel()
     private let quizAchievementsViewModel = QuizAchievementsViewModel()
     
     @Published var sections = [QuizSectionModel(id: 1, name: "категории", icon: "astronomy", sound: "IQ.mp3", info: "На данный момент существует 19 категорий.", itemsCount: 19, completedItemsCount: 0, percentage: 0), QuizSectionModel(id: 2, name: "задания", icon: "tasks icon", sound: "IQ.mp3", info: "На данный момент существует 19 заданий.", itemsCount: 19, completedItemsCount: 0, percentage: 0), QuizSectionModel(id: 3, name: "достижения", icon: "trophy.png", sound: "league.mp3", info: "получите все достижения в iQuiz X!", itemsCount: 1, completedItemsCount: 0, percentage: 0)]
@@ -30,7 +28,7 @@ class QuizSectionsViewModel {
         }
         
         // категории
-        for i in quizCategoriesViewModel.quizcategories {
+        for i in QuizCategories.categories {
             firebaseManager.LoadQuizCategoriesData(quizpath: i.quizpath) { category in
                 if category.complete == true && category.score == 100 {
                     self.completedQuizCategories.append(category)
@@ -43,7 +41,7 @@ class QuizSectionsViewModel {
         }
         
         // задания
-        for i in quizTasksViewModel.tasks {
+        for i in QuizTasks.tasks {
             firebaseManager.LoadQuizTasksData(quizpath: i.quizpath) { task in
                 if task.complete == true {
                     self.completedQuizTasks.append(task)

@@ -1,37 +1,37 @@
 //
-//  PlayersListView.swift
+//  QuizTasksListView.swift
 //  QUIZ
 //
-//  Created by Марк Киричко on 15.05.2023.
+//  Created by Марк Киричко on 16.05.2023.
 //
 
 import UIKit
 
-protocol PlayersListViewDelegate: AnyObject {
-    func showCurrentPlayer(player: Player)
+protocol QuizTasksListViewDelegate: AnyObject {
+    func ShowCurrentQuizTask(task: QuizTaskModel)
 }
 
-class PlayersListView: UIView {
+class QuizTasksListView: UIView {
     
-    public weak var delegate: PlayersListViewDelegate?
-    private var viewModel: PlayersListViewViewModel?
+    public weak var delegate: QuizTasksListViewDelegate?
+    private var viewModel: QuizTasksListViewViewModel?
     
     private let tableView: UITableView = {
         let tableView = UITableView()
-        tableView.register(UINib(nibName: PlayerTableViewCell.identifier, bundle: nil), forCellReuseIdentifier: PlayerTableViewCell.identifier)
+        tableView.register(UINib(nibName: QuizTasksTableViewCell.identifier, bundle: nil), forCellReuseIdentifier: QuizTasksTableViewCell.identifier)
         tableView.translatesAutoresizingMaskIntoConstraints = false
         return tableView
     }()
     
     // MARK: - Init
-    init(frame: CGRect, viewModel: PlayersListViewViewModel?) {
+    init(frame: CGRect, viewModel: QuizTasksListViewViewModel?) {
         super.init(frame: frame)
         self.viewModel = viewModel
         translatesAutoresizingMaskIntoConstraints = false
         addSubview(tableView)
         SetUpConstraints()
         SetUpTable()
-        self.viewModel?.GetPlayers()
+        self.viewModel?.LoadTasksResults()
     }
     
     required init?(coder: NSCoder) {
@@ -54,14 +54,15 @@ class PlayersListView: UIView {
     }
 }
 
-// MARK: - PlayersListViewViewModelDelegate
-extension PlayersListView: PlayersListViewViewModelDelegate {
+// MARK: - QuizTasksListViewViewModelDelegate
+extension QuizTasksListView: QuizTasksListViewViewModelDelegate {
     
-    func playersLoaded() {
-        self.tableView.reloadData()
+    func QuizTasksResultsLoaded() {
+        tableView.reloadData()
     }
     
-    func playerWasSelected(player: Player) {
-        delegate?.showCurrentPlayer(player: player)
+    func QuizTaskSelected(task: QuizTaskModel) {
+        delegate?.ShowCurrentQuizTask(task: task)
     }
+    
 }

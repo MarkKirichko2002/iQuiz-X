@@ -172,10 +172,9 @@ final class LoginViewController: UIViewController {
         
         if email == nil || email == ""  {
             print("нет email")
-            //1. Create the alert controller.
+            
             let alert = UIAlertController(title: "У вас отсутствуют данные для биометрической аутентификация. Хотите добавить данные для \(auth)", message: "Введите логин и пароль", preferredStyle: .alert)
             
-            //2. Add the text field. You can configure it however you need.
             alert.addTextField { (textField) in
                 textField.text = ""
                 textField.placeholder = "Введите логин"
@@ -185,7 +184,6 @@ final class LoginViewController: UIViewController {
                     textField.placeholder = "Введите пароль"
                 }
             }
-            // 3. Grab the value from the text field, and print it when the user clicks OK.
             
             alert.addAction(UIAlertAction(title: "нет", style: .cancel, handler: { (action: UIAlertAction!) in
                 print("Handle Cancel Logic here")
@@ -488,7 +486,6 @@ final class LoginViewController: UIViewController {
               let password = passwordTextField.text, passwordTextField.hasText
         
         else {
-            //SCLAlertView().showError("Данные не введены", subTitle: "введите логин или пароль")
             return
         }
         
