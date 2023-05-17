@@ -1725,7 +1725,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <connections>
-                        <segue destination="mas-vS-HXm" kind="show" identifier="showTaskDetail" id="f56-ds-6r1"/>
+                        <segue destination="mas-vS-HXm" kind="showDetail" identifier="showTaskDetail" id="Tij-JT-bmO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hJh-LI-WMp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

@@ -8,12 +8,13 @@
 import Foundation
 
 struct QuizTaskModel {
-    var id: Int
-    var name: String
-    var image: String
-    var background: String
+    let id: Int
+    let name: String
+    let image: String
+    let background: String
     var complete: Bool
-    var quizpath: String
-    var sound: String
+    let quizpath: String
+    let sound: String
+    let category: QuizCategoryModel
 }
 
