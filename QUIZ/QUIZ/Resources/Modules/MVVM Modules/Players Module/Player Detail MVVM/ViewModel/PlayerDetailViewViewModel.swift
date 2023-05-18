@@ -17,7 +17,12 @@ class PlayerDetailViewViewModel: NSObject {
     private var player: Player
     private var categories = QuizCategories.categories
     
-    init(player: Player) {
+    // MARK: - сервисы
+    private let fireBaseManager: FirebaseManagerProtocol?
+    
+    // MARK: - Init
+    init(fireBaseManager: FirebaseManagerProtocol?, player: Player) {
+        self.fireBaseManager = fireBaseManager
         self.player = player
     }
     
