@@ -9,7 +9,7 @@ import UIKit
 import Swinject
 
 class PlayersListViewController: UIViewController {
-
+    
     private let container: Container = {
         let container = Container()
         // Firebase
@@ -23,8 +23,8 @@ class PlayersListViewController: UIViewController {
         // ViewModel
         container.register(PlayersListViewViewModel.self) { resolver in
             let viewModel = PlayersListViewViewModel(
-                firebaseManager: container.resolve(FirebaseManagerProtocol.self),
-                audioPlayer: container.resolve(SoundClassProtocol.self)
+                firebaseManager: resolver.resolve(FirebaseManagerProtocol.self),
+                audioPlayer: resolver.resolve(SoundClassProtocol.self)
             )
             return viewModel
         }
@@ -53,8 +53,7 @@ class PlayersListViewController: UIViewController {
 extension PlayersListViewController: PlayersListViewDelegate {
     
     func showCurrentPlayer(player: Player) {
-       let viewModel = PlayerDetailViewViewModel(player: player)
-       let vc = PlayerDetailViewController(viewModel: viewModel)
-       self.navigationController?.pushViewController(vc, animated: true)
+        let vc = PlayerDetailViewController(player: player)
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 }

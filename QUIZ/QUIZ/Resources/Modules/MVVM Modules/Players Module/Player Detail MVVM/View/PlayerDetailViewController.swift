@@ -6,15 +6,14 @@
 //
 
 import UIKit
+import Swinject
 
 class PlayerDetailViewController: UIViewController {
 
-    private var playerDetailView: PlayerDetailView
-    private var viewModel: PlayerDetailViewViewModel
+    private var player: Player
     
-    init(viewModel: PlayerDetailViewViewModel) {
-        self.viewModel = viewModel
-        self.playerDetailView = PlayerDetailView(frame: .zero, viewModel: viewModel)
+    init(player: Player) {
+        self.player = player
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -28,7 +27,22 @@ class PlayerDetailViewController: UIViewController {
         makeConstraints()
     }
     
+    private func setUpDependencies()->Container {
+        let container = Container()
+        // Firebase
+        container.register(FirebaseManagerProtocol.self) { resolver in
+            return FirebaseManager()
+        }
+        // ViewModel
+        container.register(PlayerDetailViewViewModel.self) { resolver in
+            let viewModel = PlayerDetailViewViewModel(fireBaseManager: resolver.resolve(FirebaseManagerProtocol.self), player: self.player)
+            return viewModel
+        }
+        return container
+    }
+    
     private func makeConstraints() {
+        let playerDetailView = PlayerDetailView(frame: .zero, viewModel: setUpDependencies().resolve(PlayerDetailViewViewModel.self))
         view.addSubview(playerDetailView)
         NSLayoutConstraint.activate([
             playerDetailView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
