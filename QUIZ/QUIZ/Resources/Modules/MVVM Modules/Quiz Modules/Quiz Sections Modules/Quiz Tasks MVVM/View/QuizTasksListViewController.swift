@@ -6,10 +6,32 @@
 //
 
 import UIKit
+import Swinject
 
 class QuizTasksListViewController: UIViewController {
     
     private var task: QuizTaskModel?
+    
+    private let container: Container = {
+        let container = Container()
+        // Firebase
+        container.register(FirebaseManagerProtocol.self) { _ in
+            return FirebaseManager()
+        }
+        // Audio
+        container.register(SoundClassProtocol.self) { _ in
+            return SoundClass()
+        }
+        // ViewModel
+        container.register(QuizTasksListViewViewModel.self) { resolver in
+            let viewModel = QuizTasksListViewViewModel(
+                firebaseManager: container.resolve(FirebaseManagerProtocol.self),
+                audioPlayer: container.resolve(SoundClassProtocol.self)
+            )
+            return viewModel
+        }
+        return container
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,8 +40,7 @@ class QuizTasksListViewController: UIViewController {
     }
     
     private func makeConstraints() {
-        let viewModel = QuizTasksListViewViewModel()
-        let quizTasksListView = QuizTasksListView(frame: .zero, viewModel: viewModel)
+        let quizTasksListView = QuizTasksListView(frame: .zero, viewModel: container.resolve(QuizTasksListViewViewModel.self))
         quizTasksListView.delegate = self
         view.addSubview(quizTasksListView)
         NSLayoutConstraint.activate([

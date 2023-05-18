@@ -6,9 +6,31 @@
 //
 
 import UIKit
+import Swinject
 
 class PlayersListViewController: UIViewController {
 
+    private let container: Container = {
+        let container = Container()
+        // Firebase
+        container.register(FirebaseManagerProtocol.self) { _ in
+            return FirebaseManager()
+        }
+        // Audio
+        container.register(SoundClassProtocol.self) { _ in
+            return SoundClass()
+        }
+        // ViewModel
+        container.register(PlayersListViewViewModel.self) { resolver in
+            let viewModel = PlayersListViewViewModel(
+                firebaseManager: container.resolve(FirebaseManagerProtocol.self),
+                audioPlayer: container.resolve(SoundClassProtocol.self)
+            )
+            return viewModel
+        }
+        return container
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
@@ -16,8 +38,7 @@ class PlayersListViewController: UIViewController {
     }
     
     private func makeConstraints() {
-        let viewModel = PlayersListViewViewModel()
-        let playersListView = PlayersListView(frame: .zero, viewModel: viewModel)
+        let playersListView = PlayersListView(frame: .zero, viewModel: container.resolve(PlayersListViewViewModel.self))
         playersListView.delegate = self
         view.addSubview(playersListView)
         NSLayoutConstraint.activate([
