@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import Combine
 
 protocol PlayersListViewViewModelDelegate: AnyObject {
     func playersLoaded()
@@ -19,11 +18,17 @@ class PlayersListViewViewModel: NSObject {
     private var players = [Player]()
     
     // MARK: - сервисы
-    private let firebaseManager = FirebaseManager()
-    private let audioPlayer = SoundClass()
+    private let firebaseManager: FirebaseManagerProtocol?
+    private let audioPlayer: SoundClassProtocol?
+    
+    // MARK: - Init
+    init(firebaseManager: FirebaseManagerProtocol?, audioPlayer: SoundClassProtocol?) {
+        self.firebaseManager = firebaseManager
+        self.audioPlayer = audioPlayer
+    }
     
     func GetPlayers() {
-        firebaseManager.LoadPlayers { players in
+        firebaseManager?.LoadPlayers { players in
             DispatchQueue.main.async {
                 self.players = players
                 self.delegate?.playersLoaded()
@@ -39,7 +44,7 @@ extension PlayersListViewViewModel: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        audioPlayer.PlaySound(resource: players[indexPath.row].sound)
+        audioPlayer?.PlaySound(resource: players[indexPath.row].sound)
         
         if let cell = tableView.cellForRow(at: indexPath) as? PlayerTableViewCell {
             cell.didSelect(indexPath: indexPath)

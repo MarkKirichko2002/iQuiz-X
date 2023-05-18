@@ -18,12 +18,18 @@ class QuizTasksListViewViewModel: NSObject {
     private var tasks = QuizTasks.tasks
     
     // MARK: - сервисы
-    private let firebaseManager = FirebaseManager()
-    private let player = SoundClass()
+    private let firebaseManager: FirebaseManagerProtocol?
+    private let audioPlayer: SoundClassProtocol?
+    
+    // MARK: - Init
+    init(firebaseManager: FirebaseManagerProtocol?, audioPlayer: SoundClassProtocol?) {
+        self.firebaseManager = firebaseManager
+        self.audioPlayer = audioPlayer
+    }
     
     func LoadTasksResults() {
         for task in tasks {
-            firebaseManager.LoadQuizTasksData(quizpath: task.quizpath) { result in
+            firebaseManager?.LoadQuizTasksData(quizpath: task.quizpath) { result in
                 DispatchQueue.main.async {
                     self.tasks[task.id - 1].complete = result.complete
                     self.delegate?.QuizTasksResultsLoaded()
@@ -41,7 +47,7 @@ extension QuizTasksListViewViewModel: UITableViewDelegate, UITableViewDataSource
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        player.PlaySound(resource: tasks[indexPath.row].sound)
+        audioPlayer?.PlaySound(resource: tasks[indexPath.row].sound)
         
         if let cell = tableView.cellForRow(at: indexPath) as? QuizTasksTableViewCell {
             cell.didSelect(indexPath: indexPath)
