@@ -1001,9 +1001,10 @@ class QuizBaseViewModel {
             
             self.player.StopSound(resource: self.sound)
             
-            let vc = self.storyboard?.instantiateViewController(identifier: "QuizResultsViewController") as? QuizResultsViewController
+            let storyboard = UIStoryboard(name: "QuizResultsViewController", bundle: nil)
+            guard let vc = storyboard.instantiateViewController(identifier: "QuizResultsViewController") as? QuizResultsViewController else {return}
             guard let window = self.view?.window else {return}
-            vc?.quizBaseViewModel = self.base
+            vc.quizBaseViewModel = self.base
             window.rootViewController = vc
         }
     }
@@ -1227,7 +1228,8 @@ class QuizBaseViewModel {
     
     func exit() {
         DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-            guard let vc = self.storyboard?.instantiateViewController(identifier: "QuizTabBarController") else {return}
+            let storyboard = UIStoryboard(name: "QuizTabBarController", bundle: nil)
+            let vc = storyboard.instantiateViewController(identifier: "QuizTabBarController")
             guard let window = self.view?.window else {return}
             window.rootViewController = vc
             UserDefaults.standard.set(false, forKey: "music")

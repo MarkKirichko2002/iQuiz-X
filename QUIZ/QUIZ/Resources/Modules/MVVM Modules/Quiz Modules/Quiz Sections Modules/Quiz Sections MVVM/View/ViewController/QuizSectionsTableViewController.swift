@@ -17,6 +17,7 @@ class QuizSectionsTableViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        title = "Викторина"
         view.addSubview(tableView)
         tableView.delegate = self
         tableView.dataSource = self
@@ -59,22 +60,21 @@ extension QuizSectionsTableViewController: UITableViewDelegate, UITableViewDataS
         switch section.id {
             
         case 1:
-            if let vc = storyboard?.instantiateViewController(withIdentifier: "QuizCategoriesTableViewController") as? QuizCategoriesTableViewController {
-                vc.title = "Категории \(section.itemsCount)/19"
-                self.navigationController?.pushViewController(vc, animated: true)
-            }
+            let storyboard = UIStoryboard(name: "QuizCategoriesTableViewController", bundle: nil)
+            let vc = storyboard.instantiateViewController(withIdentifier: "QuizCategoriesTableViewController")
+            vc.title = "Категории \(section.itemsCount)/19"
+            self.navigationController?.pushViewController(vc, animated: true)
             
         case 2:
-            if let vc = storyboard?.instantiateViewController(withIdentifier: "QuizTasksListViewController") as? QuizTasksListViewController {
-                vc.title = "Задания \(section.itemsCount)/19"
-                self.navigationController?.pushViewController(vc, animated: true)
-            }
+            let storyboard = UIStoryboard(name: "QuizTasksListViewController", bundle: nil)
+            let vc = storyboard.instantiateViewController(withIdentifier: "QuizTasksListViewController")
+            vc.title = "Задания \(section.itemsCount)/19"
+            self.navigationController?.pushViewController(vc, animated: true)
             
         case 3:
-            if let vc = storyboard?.instantiateViewController(withIdentifier: "QuizAchievementsTableViewController") as? QuizAchievementsTableViewController {
-                vc.title = "Достижения \(section.itemsCount)/1"
-                self.navigationController?.pushViewController(vc, animated: true)
-            }
+            let vc = QuizAchievementsTableViewController()
+            vc.title = "Достижения \(section.itemsCount)/1"
+            self.navigationController?.pushViewController(vc, animated: true)
             
         default:
             break

@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="2Qa-OO-Awl">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Quiz Categories Table View Controller-->
+        <scene sceneID="La3-fj-A1A">
+            <objects>
+                <viewController storyboardIdentifier="QuizCategoriesTableViewController" id="2Qa-OO-Awl" customClass="QuizCategoriesTableViewController" customModule="QUIZ" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="td9-1g-kAv">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="2WV-Fv-grg"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="F1b-o5-0g9"/>
+                    <connections>
+                        <segue destination="cfJ-bs-rrf" kind="showDetail" identifier="showCategoryDetail" id="ZEg-v5-n7e"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QPo-LM-5hy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="7676" y="-1030"/>
+        </scene>
+        <!--Quiz Category Detail View Controller-->
+        <scene sceneID="FfM-e0-Hzw">
+            <objects>
+                <viewController storyboardIdentifier="QuizCategoryDetailViewController" id="cfJ-bs-rrf" customClass="QuizCategoryDetailViewController" customModule="QUIZ" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="eah-vT-wcd">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="astronomy.png" translatesAutoresizingMaskIntoConstraints="NO" id="NXx-aV-adf" customClass="RoundedImageView" customModule="QUIZ" customModuleProvider="target">
+                                <rect key="frame" x="30" y="30" width="120" height="120"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="120" id="Kbs-fr-EVL"/>
+                                    <constraint firstAttribute="height" constant="120" id="XJB-Fe-OJZ"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="астрономия" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L0B-6b-Axh">
+                                <rect key="frame" x="170" y="30" width="193" height="26.666666666666671"/>
+                                <fontDescription key="fontDescription" type="system" weight="black" pointSize="22"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ICG-2D-pcc">
+                                <rect key="frame" x="30" y="376" width="333" height="44"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="играть">
+                                    <fontDescription key="titleFontDescription" type="system" weight="black" pointSize="25"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="PlayQuiz" destination="cfJ-bs-rrf" eventType="touchUpInside" id="pOS-Rm-Ndc"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="пройдено" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CEr-Y4-oex">
+                                <rect key="frame" x="170" y="76.666666666666671" width="193" height="27"/>
+                                <fontDescription key="fontDescription" type="system" weight="black" pointSize="22"/>
+                                <color key="textColor" systemColor="systemGreenColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100/100" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ceT-rg-u4E">
+                                <rect key="frame" x="170" y="123.66666666666669" width="193" height="27"/>
+                                <fontDescription key="fontDescription" type="system" weight="black" pointSize="22"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ваша голосовая команда: &quot;астрономия&quot;" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gLX-eE-MsI">
+                                <rect key="frame" x="30" y="180" width="333" height="48"/>
+                                <fontDescription key="fontDescription" type="system" weight="black" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Вы играли последний раз: 🗓️ дата" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W0S-sp-2XT">
+                                <rect key="frame" x="30" y="258" width="333" height="48"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EJh-H6-IJh">
+                                <rect key="frame" x="30" y="450" width="333" height="44"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="закрыть">
+                                    <fontDescription key="titleFontDescription" type="system" weight="black" pointSize="25"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="CloseDetailScreen" destination="cfJ-bs-rrf" eventType="touchUpInside" id="PU6-ak-KYD"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="POE-1P-krr"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="gLX-eE-MsI" firstAttribute="leading" secondItem="POE-1P-krr" secondAttribute="leading" constant="30" id="1aU-Nl-nmg"/>
+                            <constraint firstItem="ceT-rg-u4E" firstAttribute="leading" secondItem="NXx-aV-adf" secondAttribute="trailing" constant="20" id="44m-an-okT"/>
+                            <constraint firstItem="gLX-eE-MsI" firstAttribute="top" secondItem="NXx-aV-adf" secondAttribute="bottom" constant="30" id="4AO-ud-nrP"/>
+                            <constraint firstItem="POE-1P-krr" firstAttribute="trailing" secondItem="L0B-6b-Axh" secondAttribute="trailing" constant="30" id="7BK-nf-axP"/>
+                            <constraint firstItem="W0S-sp-2XT" firstAttribute="top" secondItem="gLX-eE-MsI" secondAttribute="bottom" constant="30" id="7OK-Ky-Xmi"/>
+                            <constraint firstItem="NXx-aV-adf" firstAttribute="leading" secondItem="POE-1P-krr" secondAttribute="leading" constant="30" id="A5O-h6-cKS"/>
+                            <constraint firstItem="POE-1P-krr" firstAttribute="trailing" secondItem="ICG-2D-pcc" secondAttribute="trailing" constant="30" id="A6r-92-EkD"/>
+                            <constraint firstItem="NXx-aV-adf" firstAttribute="top" secondItem="POE-1P-krr" secondAttribute="top" constant="30" id="ALm-GB-eQq"/>
+                            <constraint firstItem="ICG-2D-pcc" firstAttribute="leading" secondItem="POE-1P-krr" secondAttribute="leading" constant="30" id="GY0-NX-Fbg"/>
+                            <constraint firstItem="EJh-H6-IJh" firstAttribute="top" secondItem="ICG-2D-pcc" secondAttribute="bottom" constant="30" id="Hdq-LW-9yo"/>
+                            <constraint firstItem="L0B-6b-Axh" firstAttribute="top" secondItem="POE-1P-krr" secondAttribute="top" constant="30" id="KbJ-NF-XBO"/>
+                            <constraint firstItem="W0S-sp-2XT" firstAttribute="leading" secondItem="POE-1P-krr" secondAttribute="leading" constant="30" id="OCq-kD-ThK"/>
+                            <constraint firstItem="CEr-Y4-oex" firstAttribute="leading" secondItem="NXx-aV-adf" secondAttribute="trailing" constant="20" id="QWG-X3-yle"/>
+                            <constraint firstItem="POE-1P-krr" firstAttribute="trailing" secondItem="gLX-eE-MsI" secondAttribute="trailing" constant="30" id="UAl-jw-ylZ"/>
+                            <constraint firstItem="POE-1P-krr" firstAttribute="trailing" secondItem="ceT-rg-u4E" secondAttribute="trailing" constant="30" id="VbY-LU-1Rj"/>
+                            <constraint firstItem="POE-1P-krr" firstAttribute="trailing" secondItem="CEr-Y4-oex" secondAttribute="trailing" constant="30" id="VyB-2I-FwE"/>
+                            <constraint firstItem="ceT-rg-u4E" firstAttribute="top" secondItem="CEr-Y4-oex" secondAttribute="bottom" constant="20" id="WwQ-Hl-tk0"/>
+                            <constraint firstItem="POE-1P-krr" firstAttribute="trailing" secondItem="EJh-H6-IJh" secondAttribute="trailing" constant="30" id="Z2z-ir-Q2p"/>
+                            <constraint firstItem="ICG-2D-pcc" firstAttribute="top" secondItem="W0S-sp-2XT" secondAttribute="bottom" constant="70" id="eHz-gq-hSO"/>
+                            <constraint firstItem="POE-1P-krr" firstAttribute="trailing" secondItem="W0S-sp-2XT" secondAttribute="trailing" constant="30" id="gC8-F1-icu"/>
+                            <constraint firstItem="L0B-6b-Axh" firstAttribute="leading" secondItem="NXx-aV-adf" secondAttribute="trailing" constant="20" id="h8h-uP-g3H"/>
+                            <constraint firstItem="CEr-Y4-oex" firstAttribute="top" secondItem="L0B-6b-Axh" secondAttribute="bottom" constant="20" id="qLU-n4-HC1"/>
+                            <constraint firstItem="EJh-H6-IJh" firstAttribute="leading" secondItem="POE-1P-krr" secondAttribute="leading" constant="30" id="uo0-8l-eit"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="i3p-Cg-5o7"/>
+                    <connections>
+                        <outlet property="CategoryIcon" destination="NXx-aV-adf" id="wdZ-B2-D39"/>
+                        <outlet property="CategoryName" destination="L0B-6b-Axh" id="ioG-jR-frn"/>
+                        <outlet property="CategoryScore" destination="ceT-rg-u4E" id="Yk8-rB-NfI"/>
+                        <outlet property="CloseButton" destination="EJh-H6-IJh" id="YKT-zo-UT0"/>
+                        <outlet property="CompleteStatus" destination="CEr-Y4-oex" id="VnP-w1-42M"/>
+                        <outlet property="DateLabel" destination="W0S-sp-2XT" id="Sgd-1T-LM3"/>
+                        <outlet property="PlayButton" destination="ICG-2D-pcc" id="eXT-4t-4M0"/>
+                        <outlet property="VoiceCommandLabel" destination="gLX-eE-MsI" id="F4G-7w-ulx"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="39F-ef-Wi3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="8700" y="-1030"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="astronomy.png" width="512" height="512"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
