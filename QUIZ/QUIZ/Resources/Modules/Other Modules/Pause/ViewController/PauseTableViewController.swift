@@ -11,8 +11,7 @@ import AVFoundation
 
 final class PauseTableViewController: UITableViewController {
     
-    var currentquiz: QuizBaseViewModel?
-    var currentcategory: QuizCategoryModel?
+    var category: QuizCategoryModel?
     
     private let quizBaseViewModel = QuizBaseViewModel()
     private let quizCategoriesViewModel = QuizCategoriesViewModel()
@@ -44,10 +43,10 @@ final class PauseTableViewController: UITableViewController {
     
     private func restart() {
         DispatchQueue.main.async {
-            self.currentquiz?.speechRecognition.cancelSpeechRecognition()
-            self.currentquiz?.captureSession.stopRunning()
-            self.currentquiz?.questionNumber = 0
-            self.quizCategoriesViewModel.GoToStart(quiz: self.currentquiz ?? QuizAstronomy(), category: self.currentcategory!)
+            self.category?.base.speechRecognition.cancelSpeechRecognition()
+            self.category?.base.captureSession.stopRunning()
+            self.category?.base.questionNumber = 0
+            self.quizCategoriesViewModel.GoToStart(quiz: self.category?.base ?? QuizAstronomy(), category: self.category ?? QuizCategories.categories[0])
         }
     }
     
@@ -84,16 +83,16 @@ final class PauseTableViewController: UITableViewController {
         case 0:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "CurrentCategoryTableViewCell") as? CurrentCategoryTableViewCell
             else { return UITableViewCell() }
-            cell.CurrentImage.image = UIImage(named: currentcategory?.image ?? "")
+            cell.CurrentImage.image = UIImage(named: category?.image ?? "")
             cell.CurrentImage.color = .white
-            cell.CurrentImage.sound = currentcategory?.sound ?? ""
-            cell.CurrentName.text = currentcategory?.name
+            cell.CurrentImage.sound = category?.sound ?? ""
+            cell.CurrentName.text = category?.name
             cell.CurrentName.textColor = .white
             cell.CurrentScore.text = "счет: \(score)/100"
             cell.CurrentScore.textColor = .white
             cell.CurrentQuestion.text = "вопрос: \(questionNumber)/20"
             cell.CurrentQuestion.textColor = .white
-            cell.contentView.backgroundColor = UIColor(patternImage: UIImage(named: currentcategory?.background ?? "")!)
+            cell.contentView.backgroundColor = UIColor(patternImage: UIImage(named: category?.background ?? "")!)
             return cell
             
         case 1:

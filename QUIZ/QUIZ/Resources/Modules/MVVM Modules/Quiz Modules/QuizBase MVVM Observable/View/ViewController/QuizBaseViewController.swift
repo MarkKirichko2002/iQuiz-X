@@ -221,15 +221,7 @@ final class QuizBaseViewController: UIViewController {
         quiz?.captureSession.stopRunning()
         quiz?.speechRecognition.cancelSpeechRecognition()
     }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let vc = segue.destination as! PauseTableViewController
-        vc.currentcategory = category
-        vc.currentquiz = quiz
-        vc.score = quiz?.score ?? 100
-        vc.questionNumber = (quiz?.questionNumber ?? 0) + 1
-    }
-    
+        
     @IBAction func OpenCamera() {
         quiz?.OpenCamera()
     }
@@ -247,8 +239,12 @@ final class QuizBaseViewController: UIViewController {
     }
     
     @IBAction func PresentСategoryScreen() {
-        performSegue(withIdentifier: "segue", sender: self)
+        let vc = PauseTableViewController()
+        vc.category = category
+        vc.score = quiz?.score ?? 100
+        vc.questionNumber = (quiz?.questionNumber ?? 0) + 1
         quiz?.player.PlaySound(resource: "pause_sound.mp3")
+        self.present(vc, animated: true)
     }
     
     @IBAction func showAnswer() {

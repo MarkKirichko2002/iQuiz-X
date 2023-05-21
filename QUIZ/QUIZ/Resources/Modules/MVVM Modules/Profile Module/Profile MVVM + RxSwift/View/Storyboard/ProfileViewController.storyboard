@@ -5,7 +5,6 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -109,9 +108,6 @@
                                     <action selector="ShowSettings" destination="RZz-eO-o7P" eventType="touchUpInside" id="ovE-Q8-aKd"/>
                                 </connections>
                             </button>
-                            <connections>
-                                <segue destination="rtK-yf-EUw" kind="showDetail" identifier="showSettings" id="LUL-5u-dMq"/>
-                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
@@ -131,42 +127,10 @@
             </objects>
             <point key="canvasLocation" x="7160" y="1420"/>
         </scene>
-        <!--Настройки -->
-        <scene sceneID="RTV-rZ-zbE">
-            <objects>
-                <tableViewController storyboardIdentifier="SettingsTableViewController" hidesBottomBarWhenPushed="YES" clearsSelectionOnViewWillAppear="NO" id="rtK-yf-EUw" customClass="SettingsTableViewController" customModule="QUIZ" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="bg0-GF-Utm">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="AAk-6h-pq7">
-                                <rect key="frame" x="0.0" y="50" width="393" height="43.666667938232422"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="AAk-6h-pq7" id="USy-cd-ila">
-                                    <rect key="frame" x="0.0" y="0.0" width="393" height="43.666667938232422"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="rtK-yf-EUw" id="H8M-tk-cUJ"/>
-                            <outlet property="delegate" destination="rtK-yf-EUw" id="ziP-7u-hGe"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" title="Настройки " id="RFR-4a-1nJ"/>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="0U0-oF-E9g" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="8306" y="1420"/>
-        </scene>
     </scenes>
     <resources>
         <image name="astronomy.png" width="512" height="512"/>
         <image name="history.jpeg" width="409.60000610351562" height="409.60000610351562"/>
         <image name="settings" width="24" height="24"/>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
     </resources>
 </document>
