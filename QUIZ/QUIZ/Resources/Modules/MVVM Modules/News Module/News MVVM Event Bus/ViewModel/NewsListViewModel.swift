@@ -1,31 +1,43 @@
 //
-//  NewsAPI.swift
+//  NewsListViewModel.swift
 //  QUIZ
 //
 //  Created by Марк Киричко on 29.06.2022.
 //
 
-import Foundation
-import Alamofire
+import UIKit
 
-struct NewsListViewModel {
+class NewsListViewModel {
     
     var news: [Article] = []
-    private let player = SoundClass()
     
     // категории новостей
-    let categories = [NewsCategoryModel(id: 1, name: "главное", icon: "newspaper", sound: "literature.mp3", category: .general), NewsCategoryModel(id: 2, name: "технологии", icon: "technology", sound: "technology.wav", category: .technology), NewsCategoryModel(id: 3, name: "спорт", icon: "sport.jpeg", sound: "sport.mp3", category: .sport),NewsCategoryModel(id: 4, name: "бизнес", icon: "business", sound: "economics.mp3", category: .business), NewsCategoryModel(id: 5, name: "наука", icon: "science", sound: "chemistry.mp3", category: .science)]
+    let categories = NewsCategories.categories
+    
+    private let player: SoundClassProtocol?
+    private var categoryChangedHandler: ((NewsCategoryViewModel)->Void)?
+    
+    // MARK: - Init
+    init(player: SoundClassProtocol?) {
+        self.player = player
+    }
+    
+    func registerCategoryChangedHandler(block: @escaping(NewsCategoryViewModel)->Void) {
+        self.categoryChangedHandler = block
+    }
     
     // получить новости
-    func GetNews(category: NewsCategory) {
+    func GetNews(category: NewsCategoryModel) {
         
         var event: NewsFetchEvent?
         
-        APIService.shared.execute(type: NewsResponse.self, category: category) { result in
+        APIService.shared.execute(type: NewsResponse.self, category: category.endpoint) { result in
             switch result {
             case .success(let data):
                 event = NewsFetchEvent(identifier: UUID().uuidString, result: .success(data.articles))
                 Bus.shared.publish(type: .newsFetch, event: event!)
+                let category = NewsCategoryViewModel(name: category.name, articlesCount: data.articles.count)
+                self.categoryChangedHandler?(category)
             case .failure(let error):
                 event = NewsFetchEvent(identifier: UUID().uuidString, result: .failure(error))
                 Bus.shared.publish(type: .newsFetch, event: event!)
@@ -33,16 +45,26 @@ struct NewsListViewModel {
         }
     }
     
+    var categoryMenu: UIMenu {
+        let menuActions = NewsCategories.categories.map({ (item) -> UIAction in
+            let name = item.name
+            return UIAction(title: name.capitalized, image: UIImage(named: item.icon)) { (_) in
+                self.SelectNewsCategory(category: item)
+            }
+        })
+        return UIMenu(title: "Выберите категорию", children: menuActions)
+    }
+    
     // выбрать конкретную категорию новостей
     func SelectNewsCategory(category: NewsCategoryModel) {
-        player.PlaySound(resource: category.sound)
-        GetNews(category: category.category)
+        player?.PlaySound(resource: category.sound)
+        GetNews(category: category)
     }
     
     // сгенерировать случайные статьи
     func GenerateRandomNews() {
         let randomCategory = categories[Int.random(in: 0..<categories.count - 1)]
-        player.PlaySound(resource: randomCategory.sound)
-        GetNews(category: randomCategory.category)
+        player?.PlaySound(resource: randomCategory.sound)
+        GetNews(category: randomCategory)
     }
 }

@@ -9,20 +9,23 @@ import UIKit
 
 final class QuizTabBarController: UITabBarController {
     
-    private let player = SoundClass()
     private let button = UIButton()
-    private let quizCategoriesViewModel = QuizCategoriesViewModel()
     private var isStart: Bool = false
     private var icon = "voice.png"
     private var currentIcon = ""
+    private var sound = ""
+    private let today = Date()
+    private var seconds = 0
+    
+    // MARK: - сервисы
+    private let newsListViewModel = NewsListViewModel(player: SoundClass())
     private var quizBaseViewModel = QuizBaseViewModel()
     private let animation = AnimationClass()
     private let speechRecognitionManager = SpeechRecognitionManager()
-    private let today = Date()
+    private let quizCategoriesViewModel = QuizCategoriesViewModel()
+    private let player = SoundClass()
     private var firebaseManager = FirebaseManager()
     private let speechRecognition = SpeechRecognitionManager()
-    private var sound = ""
-    private var seconds = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -115,55 +118,23 @@ final class QuizTabBarController: UITabBarController {
                 self.speechRecognition.startSpeechRecognition()
             }
             
-        case _ where selectedIndex == 0  && text.lowercased().contains("категори"):
-            if text.lowercased().contains("техно") {
-                NewsListViewModel().GetNews(category: .technology)
-                self.icon = "technology"
-                self.button.setImage(UIImage(named: self.icon), for: .normal)
-                self.animation.SpringAnimation(view: self.button)
-                self.player.PlaySound(resource: "technology.wav")
-                self.speechRecognition.cancelSpeechRecognition()
-                
-                DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-                    self.speechRecognition.startSpeechRecognition()
+        case _ where selectedIndex == 0  && text.lowercased().contains("поиск"):
+            for category in NewsCategories.categories {
+                if text.lowercased().contains(category.voiceCommand) {
+                    self.newsListViewModel.GetNews(category: category)
+                    self.icon = category.icon
+                    self.button.setImage(UIImage(named: self.icon), for: .normal)
+                    self.animation.SpringAnimation(view: self.button)
+                    self.player.PlaySound(resource: category.sound)
+                    
+                    self.speechRecognition.cancelSpeechRecognition()
+
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                        self.speechRecognition.startSpeechRecognition()
+                    }
                 }
-            } else if text.lowercased().contains("спорт") {
-                NewsListViewModel().GetNews(category: .sport)
-                self.icon = "sport.jpeg"
-                self.button.setImage(UIImage(named: self.icon), for: .normal)
-                self.animation.SpringAnimation(view: self.button)
-                self.player.PlaySound(resource: "sport.mp3")
-                self.speechRecognition.cancelSpeechRecognition()
-                
-                DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-                    self.speechRecognition.startSpeechRecognition()
-                }
-            } else if text.lowercased().contains("бизнес") {
-                NewsListViewModel().GetNews(category: .business)
-                self.icon = "business"
-                self.button.setImage(UIImage(named: self.icon), for: .normal)
-                self.animation.SpringAnimation(view: self.button)
-                self.player.PlaySound(resource: "economics.mp3")
-                self.speechRecognition.cancelSpeechRecognition()
-                
-                DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-                    self.speechRecognition.startSpeechRecognition()
-                }
-            } else if text.lowercased().contains("топ") {
-                NewsListViewModel().GetNews(category: .general)
-                self.icon = "newspaper"
-                self.button.setImage(UIImage(named: self.icon), for: .normal)
-                self.animation.SpringAnimation(view: self.button)
-                self.player.PlaySound(resource: "newspaper.mp3")
-                self.speechRecognition.cancelSpeechRecognition()
-                
-                DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-                    self.speechRecognition.startSpeechRecognition()
-                }
-            } else {
-                
             }
-        
+            
         case _ where text.lowercased().contains("викторин"):
             self.selectedIndex = 1
             self.icon = "astronomy.png"
@@ -253,7 +224,7 @@ final class QuizTabBarController: UITabBarController {
             DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
                 self.speechRecognition.startSpeechRecognition()
             }
-         
+            
         // выбор категории викторины
         case _ where text != "":
             for i in 0...5 {
@@ -282,7 +253,7 @@ final class QuizTabBarController: UITabBarController {
                     }
                 }
             }
-                
+            
         // Включение/Выключение музыки
         case _ where text.lowercased().contains("муз"):
             self.icon = "astronomy.png"
