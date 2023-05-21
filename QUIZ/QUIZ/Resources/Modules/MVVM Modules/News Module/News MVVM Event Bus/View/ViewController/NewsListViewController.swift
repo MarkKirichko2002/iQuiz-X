@@ -66,6 +66,7 @@ final class NewsListViewController: UITableViewController, CustomViewCellDelegat
         let categoryBarButton = UIBarButtonItem(title: nil, image: UIImage(named: "list"), primaryAction: nil, menu: newsListViewModel?.categoryMenu)
         categoryBarButton.tintColor = .black
         navigationItem.rightBarButtonItem = categoryBarButton
+        title = "Сегодня"
         newsListViewModel?.registerCategoryChangedHandler { category in
             self.navigationItem.title = "\(category.name): \(category.articlesCount)"
         }

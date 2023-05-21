@@ -33,6 +33,7 @@ class PlayersListViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        title = "Лига Игроков 2023"
         view.backgroundColor = .systemBackground
         makeConstraints()
     }

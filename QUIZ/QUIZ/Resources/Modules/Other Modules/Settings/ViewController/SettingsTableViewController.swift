@@ -9,7 +9,7 @@ import UIKit
 import SCLAlertView
 import Firebase
 
-final class SettingsTableViewController: UITableViewController, CustomViewCellDelegate {
+final class SettingsTableViewController: UITableViewController {
     
     private var urlString = ""
     private let firebaseManager = FirebaseManager()
@@ -120,6 +120,8 @@ final class SettingsTableViewController: UITableViewController, CustomViewCellDe
                 if let cell = tableView.cellForRow(at: indexPath) as? StatisticTableViewCell {
                        cell.didSelect(indexPath: indexPath)
                 }
+                let vc = QuizStatisticTableViewController()
+                self.present(vc, animated: true)
             }
             
         case 2:
@@ -236,7 +238,6 @@ final class SettingsTableViewController: UITableViewController, CustomViewCellDe
             } else if indexPath.row == 2 {
                 guard let cell = tableView.dequeueReusableCell(withIdentifier: "StatisticTableViewCell") as? StatisticTableViewCell
                 else { return UITableViewCell() }
-                cell.delegate = self
                 return cell
             }
             
@@ -302,12 +303,6 @@ final class SettingsTableViewController: UITableViewController, CustomViewCellDe
             
         }
         return UITableViewCell()
-    }
-    
-    func didElementClick() {
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-            self.performSegue(withIdentifier: "ShowStatistic", sender: nil)
-        }
     }
     
     func ChangeProfileData() {

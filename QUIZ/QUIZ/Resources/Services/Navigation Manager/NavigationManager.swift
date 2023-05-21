@@ -37,7 +37,7 @@ class NavigationManager: NavigationManagerProtocol {
         }
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let storyboard = UIStoryboard(name: "QuizTabBarController", bundle: nil)
             guard let controller = storyboard.instantiateViewController(withIdentifier: "QuizTabBarController") as? QuizTabBarController else {return}
             controller.modalPresentationStyle = .fullScreen
             controller.modalTransitionStyle = .flipHorizontal

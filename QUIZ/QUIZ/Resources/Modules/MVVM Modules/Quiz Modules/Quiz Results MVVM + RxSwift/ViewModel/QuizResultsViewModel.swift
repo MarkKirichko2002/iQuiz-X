@@ -62,7 +62,8 @@ class QuizResultsViewModel {
     // переход к экрану с категориями
     func PresentCategoryScreen() {
         DispatchQueue.main.async {
-            guard let vc = self.storyboard?.instantiateViewController(identifier: "QuizTabBarController") else {return}
+            let storyboard = UIStoryboard(name: "QuizTabBarController", bundle: nil)
+            let vc = storyboard.instantiateViewController(identifier: "QuizTabBarController")
             guard let window = self.view?.window else {return}
             window.rootViewController = vc
         }

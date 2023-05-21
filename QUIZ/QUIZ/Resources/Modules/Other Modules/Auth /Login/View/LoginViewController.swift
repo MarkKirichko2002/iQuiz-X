@@ -13,8 +13,6 @@ import LocalAuthentication
 import SDWebImage
 import AVFoundation
 import Speech
-import Swinject
-import SwinjectStoryboard
 
 final class LoginViewController: UIViewController {
     
@@ -51,17 +49,6 @@ final class LoginViewController: UIViewController {
     let speaker = AVSpeechSynthesizer()
     let dialogue = AVSpeechUtterance(string: "доступ разрешен")
     private let speechRecognitionManager = SpeechRecognitionManager()
-    
-    private let container: Container = {
-        let container = Container()
-        container.storyboardInitCompleted(QuizSplashScreenController.self) { r, c in
-            c.animation = r.resolve(AnimationClassProtocol.self)
-        }
-        container.register(AnimationClassProtocol.self) { _ in
-            return AnimationClass()
-        }
-        return container
-    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -116,8 +103,7 @@ final class LoginViewController: UIViewController {
         // Присваиваем его UIScrollVIew
         scrollView.addGestureRecognizer(hideKeyboardGesture)
         
-        let storyboard = SwinjectStoryboard.create(name: "QuizSplashScreenController", bundle: nil, container: container)
-        let vc = storyboard.instantiateViewController(withIdentifier: "QuizSplashScreenController")
+        let vc = QuizSplashScreenController(animation: AnimationClass())
         
         token = Auth.auth().addStateDidChangeListener{[weak self] auth, user in
             guard user != nil else {return}
@@ -276,7 +262,6 @@ final class LoginViewController: UIViewController {
     }
     
     // Voice Unlock
-    
     private func CheckChoiceNumber() {
         
         if check2.contains("один") || check2.contains("Один") {

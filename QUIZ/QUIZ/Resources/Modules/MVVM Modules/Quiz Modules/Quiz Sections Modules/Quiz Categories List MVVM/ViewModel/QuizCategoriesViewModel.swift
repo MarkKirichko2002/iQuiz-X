@@ -437,7 +437,7 @@ class QuizCategoriesViewModel {
     
     func GoToQuiz(quiz: QuizBaseViewModel, category: QuizCategoryModel) {
         DispatchQueue.main.async {
-            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let storyboard = UIStoryboard(name: "QuizBaseViewController", bundle: nil)
             guard let vc = storyboard.instantiateViewController(identifier: "QuizBaseViewController") as? QuizBaseViewController else {return}
             vc.quiz = quiz
             vc.category = category
@@ -448,8 +448,8 @@ class QuizCategoriesViewModel {
     
     func GoToStart(quiz: QuizBaseViewModel, category: QuizCategoryModel) {
         DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
-            guard let vc = self.storyboard?.instantiateViewController(identifier: "QuizStartViewController") else {return}
-            (vc as? QuizStartViewController)?.category = category
+            let vc = QuizStartViewController()
+            vc.category = category
             guard let window = self.view?.window else {return}
             window.rootViewController = vc
         }

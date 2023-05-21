@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="8kO-lQ-GxG">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Quiz Tasks List View Controller-->
+        <scene sceneID="6PL-9s-xeL">
+            <objects>
+                <viewController storyboardIdentifier="QuizTasksListViewController" id="8kO-lQ-GxG" customClass="QuizTasksListViewController" customModule="QUIZ" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="gVu-ex-vSR">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="k2V-ig-yQU"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <connections>
+                        <segue destination="cM2-Fv-QDg" kind="showDetail" identifier="showTaskDetail" id="1hd-5z-Kaw"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gK6-2h-ss5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="7676" y="-229"/>
+        </scene>
+        <!--Quiz Task Detail View Controller-->
+        <scene sceneID="hNm-iw-DIe">
+            <objects>
+                <viewController id="cM2-Fv-QDg" customClass="QuizTaskDetailViewController" customModule="QUIZ" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="cDx-RZ-BO4">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="astronomy.png" translatesAutoresizingMaskIntoConstraints="NO" id="iv6-AH-wlB" customClass="RoundedImageView" customModule="QUIZ" customModuleProvider="target">
+                                <rect key="frame" x="30" y="30" width="120" height="120"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="120" id="Bfb-Z4-XbR"/>
+                                    <constraint firstAttribute="width" constant="120" id="fqF-1A-416"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="пройти викторину в категории &quot;астрономия&quot;" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xxv-t9-H6d">
+                                <rect key="frame" x="170" y="29.999999999999993" width="193" height="105.33333333333331"/>
+                                <fontDescription key="fontDescription" type="system" weight="black" pointSize="22"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W8V-gh-D3m">
+                                <rect key="frame" x="140.66666666666666" y="399.66666666666669" width="111.66666666666666" height="42.666666666666686"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="начать">
+                                    <fontDescription key="titleFontDescription" type="system" weight="black" pointSize="24"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="StartTask" destination="cM2-Fv-QDg" eventType="touchUpInside" id="ywN-HN-vaM"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="пройдено" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Da3-WO-tOL">
+                                <rect key="frame" x="170" y="155.33333333333334" width="193" height="27"/>
+                                <fontDescription key="fontDescription" type="system" weight="black" pointSize="22"/>
+                                <color key="textColor" systemColor="systemGreenColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8I7-a9-ChN">
+                                <rect key="frame" x="30" y="492.33333333333331" width="333" height="42.666666666666686"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="закрыть">
+                                    <fontDescription key="titleFontDescription" type="system" weight="black" pointSize="24"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="CloseDetailScreen" destination="cM2-Fv-QDg" eventType="touchUpInside" id="XbA-e0-u5N"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="cBn-Ti-KXF"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="W8V-gh-D3m" firstAttribute="centerY" secondItem="cDx-RZ-BO4" secondAttribute="centerY" id="1y8-yg-Q7Z"/>
+                            <constraint firstItem="cBn-Ti-KXF" firstAttribute="trailing" secondItem="Da3-WO-tOL" secondAttribute="trailing" constant="30" id="InI-WU-W6O"/>
+                            <constraint firstItem="Xxv-t9-H6d" firstAttribute="leading" secondItem="iv6-AH-wlB" secondAttribute="trailing" constant="20" id="Ksh-7g-YDg"/>
+                            <constraint firstItem="Xxv-t9-H6d" firstAttribute="top" secondItem="cBn-Ti-KXF" secondAttribute="top" constant="30" id="OzP-gp-rHG"/>
+                            <constraint firstItem="8I7-a9-ChN" firstAttribute="leading" secondItem="cBn-Ti-KXF" secondAttribute="leading" constant="30" id="XcW-04-epz"/>
+                            <constraint firstItem="Da3-WO-tOL" firstAttribute="leading" secondItem="iv6-AH-wlB" secondAttribute="trailing" constant="20" id="d8l-Yb-RqX"/>
+                            <constraint firstItem="iv6-AH-wlB" firstAttribute="leading" secondItem="cBn-Ti-KXF" secondAttribute="leading" constant="30" id="iEd-fl-m4r"/>
+                            <constraint firstItem="cBn-Ti-KXF" firstAttribute="trailing" secondItem="8I7-a9-ChN" secondAttribute="trailing" constant="30" id="kTu-R8-Cur"/>
+                            <constraint firstItem="Da3-WO-tOL" firstAttribute="top" secondItem="Xxv-t9-H6d" secondAttribute="bottom" constant="20" id="oLm-8g-6Jh"/>
+                            <constraint firstItem="8I7-a9-ChN" firstAttribute="top" secondItem="W8V-gh-D3m" secondAttribute="bottom" constant="50" id="pbI-y4-jkz"/>
+                            <constraint firstItem="cBn-Ti-KXF" firstAttribute="trailing" secondItem="Xxv-t9-H6d" secondAttribute="trailing" constant="30" id="qNA-HE-mAx"/>
+                            <constraint firstItem="W8V-gh-D3m" firstAttribute="centerX" secondItem="cDx-RZ-BO4" secondAttribute="centerX" id="r8Q-wp-EXs"/>
+                            <constraint firstItem="iv6-AH-wlB" firstAttribute="top" secondItem="cBn-Ti-KXF" secondAttribute="top" constant="30" id="wHM-DR-zGA"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="Lku-Ye-8Q1"/>
+                    <connections>
+                        <outlet property="CloseButton" destination="8I7-a9-ChN" id="sn4-qS-QNo"/>
+                        <outlet property="StartTaskButton" destination="W8V-gh-D3m" id="ZHc-6c-3pY"/>
+                        <outlet property="TaskCompleteStatus" destination="Da3-WO-tOL" id="8E5-qu-o0R"/>
+                        <outlet property="TaskIcon" destination="iv6-AH-wlB" id="UFZ-yA-iXH"/>
+                        <outlet property="TaskName" destination="Xxv-t9-H6d" id="B22-Yj-HgH"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6vN-De-Sdn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="8700" y="-229.18454935622319"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="astronomy.png" width="512" height="512"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

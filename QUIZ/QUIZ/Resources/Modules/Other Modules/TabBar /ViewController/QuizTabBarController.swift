@@ -39,6 +39,7 @@ final class QuizTabBarController: UITabBarController {
         button.layer.borderWidth = 2
         self.view.insertSubview(button, aboveSubview: self.tabBar)
         button.addTarget(self, action:  #selector(QuizTabBarController.VoiceCommands(_:)), for: .touchUpInside)
+        SetUpTabs()
     }
     
     override func viewDidLayoutSubviews() {
@@ -72,32 +73,62 @@ final class QuizTabBarController: UITabBarController {
     private func tabChangedTo(selectedIndex: Int) {
         UserDefaults.standard.set(selectedIndex, forKey: "index")
         switch selectedIndex {
-            
         case 0:
             self.icon = "newspaper.png"
             self.button.setImage(UIImage(named: self.icon), for: .normal)
             self.player.PlaySound(resource: "newspaper.mp3")
+            self.animation.SpringAnimation(view: self.button)
         case 1:
             self.icon = "astronomy.png"
             self.button.setImage(UIImage(named: self.icon), for: .normal)
             self.player.PlaySound(resource: "IQ.mp3")
+            self.animation.SpringAnimation(view: self.button)
         case 3:
             self.icon = "trophy.png"
             self.button.setImage(UIImage(named: self.icon), for: .normal)
             self.player.PlaySound(resource: "league.mp3")
+            self.animation.SpringAnimation(view: self.button)
         case 4:
-            self.icon = UserDefaults.standard.value(forKey: "url") as? String ?? "https://cdn-icons-png.flaticon.com/512/3637/3637624.png"
             self.button.layer.cornerRadius = self.button.frame.width / 2
             self.button.clipsToBounds = true
-            self.button.sd_setImage(with: URL(string: self.icon), for: .normal)
             self.firebaseManager.LoadLastQuizCategoryData { result in
-                self.player.PlaySound(resource: result.sound)
+                DispatchQueue.main.async {
+                    self.button.setImage(UIImage(named: result.icon), for: .normal)
+                    self.player.PlaySound(resource: result.sound)
+                    self.animation.SpringAnimation(view: self.button)
+                }
             }
         default:
             break
         }
-        self.animation.SpringAnimation(view: self.button)
         self.currentIcon = icon
+    }
+    
+    private func SetUpTabs() {
+        // MARK: - новости
+        let newsListVC = NewsListViewController(newsListViewModel: newsListViewModel)
+        newsListVC.navigationItem.largeTitleDisplayMode = .automatic
+        newsListVC.tabBarItem = UITabBarItem(title: "Новости", image: UIImage(named: "today"), selectedImage: UIImage(named: "today selected"))
+        let newsNavVC = UINavigationController(rootViewController: newsListVC)
+        // MARK: - викторина
+        let quizSectionsVC = QuizSectionsTableViewController()
+        quizSectionsVC.navigationItem.largeTitleDisplayMode = .automatic
+        quizSectionsVC.tabBarItem = UITabBarItem(title: "Викторина", image: UIImage(named: "categories"), selectedImage: UIImage(named: "categories selected"))
+        let quizSectionsNavVC = UINavigationController(rootViewController: quizSectionsVC)
+        // MARK: - кнопка
+        let middleButton = UIViewController()
+        // MARK: - лига игроков
+        let playersVC = PlayersListViewController()
+        playersVC.navigationItem.largeTitleDisplayMode = .automatic
+        playersVC.tabBarItem = UITabBarItem(title: "Лига Игроков", image: UIImage(named: "league"), selectedImage: UIImage(named: "league selected"))
+        let playersNavVC = UINavigationController(rootViewController: playersVC)
+        // MARK: - профиль
+        let storyboardProfile = UIStoryboard(name: "ProfileViewController", bundle: nil)
+        let profileVC = storyboardProfile.instantiateViewController(withIdentifier: "ProfileViewController")
+        profileVC.navigationItem.largeTitleDisplayMode = .automatic
+        profileVC.tabBarItem = UITabBarItem(title: "Профиль", image: UIImage(named: "profile"), selectedImage: UIImage(named: "profile selected"))
+        let profileNavVC = UINavigationController(rootViewController: profileVC)
+        self.setViewControllers([newsNavVC, quizSectionsNavVC, middleButton, playersNavVC, profileNavVC], animated: true)
     }
     
     private func CheckVoiceCommands(text: String) {

@@ -24,7 +24,6 @@
 		8209F79C2847F2600093147A /* QuizSplashScreenController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8209F79B2847F2600093147A /* QuizSplashScreenController.swift */; };
 		820C627F27BBA3CA004894FA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820C627E27BBA3CA004894FA /* AppDelegate.swift */; };
 		820C628127BBA3CA004894FA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820C628027BBA3CA004894FA /* SceneDelegate.swift */; };
-		820C628627BBA3CA004894FA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 820C628427BBA3CA004894FA /* Main.storyboard */; };
 		820C628B27BBA3CB004894FA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 820C628927BBA3CB004894FA /* LaunchScreen.storyboard */; };
 		820C629D27BBCD29004894FA /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820C629C27BBCD29004894FA /* LoginViewController.swift */; };
 		820C62A827BBDAC4004894FA /* QuizHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820C62A727BBDAC4004894FA /* QuizHistory.swift */; };
@@ -178,12 +177,17 @@
 		826E12B128009F1300465E16 /* SpeachTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 826E12B028009F1300465E16 /* SpeachTableViewCell.swift */; };
 		826E2E4D2A1A5268009FA1DC /* NewsCategories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 826E2E4C2A1A5268009FA1DC /* NewsCategories.swift */; };
 		826E2E4F2A1A6575009FA1DC /* NewsCategoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 826E2E4E2A1A6575009FA1DC /* NewsCategoryViewModel.swift */; };
-		826E2E542A1A7E1C009FA1DC /* QuizSplashScreenController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 826E2E532A1A7E1C009FA1DC /* QuizSplashScreenController.storyboard */; };
 		826E2E562A1A7F04009FA1DC /* StartViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 826E2E552A1A7F04009FA1DC /* StartViewController.storyboard */; };
 		826E2E582A1A804C009FA1DC /* LoginViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 826E2E572A1A804C009FA1DC /* LoginViewController.storyboard */; };
 		826E2E5A2A1A82E5009FA1DC /* RegisterViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 826E2E592A1A82E5009FA1DC /* RegisterViewController.storyboard */; };
 		826E2E5D2A1A860C009FA1DC /* OnboardingViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 826E2E5C2A1A860C009FA1DC /* OnboardingViewController.storyboard */; };
 		826E2E652A1A884B009FA1DC /* DailyQuizViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 826E2E642A1A884B009FA1DC /* DailyQuizViewController.storyboard */; };
+		826E2E752A1A9A29009FA1DC /* ProfileViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 826E2E742A1A9A29009FA1DC /* ProfileViewController.storyboard */; };
+		826E2E772A1A9BB1009FA1DC /* QuizCategoriesTableViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 826E2E762A1A9BB0009FA1DC /* QuizCategoriesTableViewController.storyboard */; };
+		826E2E7E2A1A9D6A009FA1DC /* QuizTasksListViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 826E2E7D2A1A9D6A009FA1DC /* QuizTasksListViewController.storyboard */; };
+		826E2E922A1AA6C1009FA1DC /* QuizBaseViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 826E2E912A1AA6C1009FA1DC /* QuizBaseViewController.storyboard */; };
+		826E2E962A1AA94F009FA1DC /* QuizResultsViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 826E2E952A1AA94F009FA1DC /* QuizResultsViewController.storyboard */; };
+		826E2E9C2A1AA9AE009FA1DC /* QuizTabBarController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 826E2E9B2A1AA9AE009FA1DC /* QuizTabBarController.storyboard */; };
 		826F33692826BBA500FB6CF8 /* literature.background.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 826F33682826BBA500FB6CF8 /* literature.background.jpeg */; };
 		82729E7B27D38F460042944C /* ecology2.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 82729E7A27D38F460042944C /* ecology2.jpeg */; };
 		82729E7F27D38F690042944C /* geography2.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 82729E7E27D38F690042944C /* geography2.jpeg */; };
@@ -701,7 +705,6 @@
 		820C627B27BBA3CA004894FA /* QUIZ.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QUIZ.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		820C627E27BBA3CA004894FA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		820C628027BBA3CA004894FA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		820C628527BBA3CA004894FA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		820C628727BBA3CB004894FA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		820C628A27BBA3CB004894FA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		820C628C27BBA3CB004894FA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -856,12 +859,17 @@
 		826E12B028009F1300465E16 /* SpeachTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeachTableViewCell.swift; sourceTree = "<group>"; };
 		826E2E4C2A1A5268009FA1DC /* NewsCategories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsCategories.swift; sourceTree = "<group>"; };
 		826E2E4E2A1A6575009FA1DC /* NewsCategoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsCategoryViewModel.swift; sourceTree = "<group>"; };
-		826E2E532A1A7E1C009FA1DC /* QuizSplashScreenController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = QuizSplashScreenController.storyboard; sourceTree = "<group>"; };
 		826E2E552A1A7F04009FA1DC /* StartViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = StartViewController.storyboard; sourceTree = "<group>"; };
 		826E2E572A1A804C009FA1DC /* LoginViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LoginViewController.storyboard; sourceTree = "<group>"; };
 		826E2E592A1A82E5009FA1DC /* RegisterViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RegisterViewController.storyboard; sourceTree = "<group>"; };
 		826E2E5C2A1A860C009FA1DC /* OnboardingViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = OnboardingViewController.storyboard; sourceTree = "<group>"; };
 		826E2E642A1A884B009FA1DC /* DailyQuizViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DailyQuizViewController.storyboard; sourceTree = "<group>"; };
+		826E2E742A1A9A29009FA1DC /* ProfileViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ProfileViewController.storyboard; sourceTree = "<group>"; };
+		826E2E762A1A9BB0009FA1DC /* QuizCategoriesTableViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = QuizCategoriesTableViewController.storyboard; sourceTree = "<group>"; };
+		826E2E7D2A1A9D6A009FA1DC /* QuizTasksListViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = QuizTasksListViewController.storyboard; path = "QUIZ/Resources/Modules/MVVM Modules/Quiz Modules/Quiz Sections Modules/Quiz Tasks List MVVM/View/ViewController/QuizTasksListViewController.storyboard"; sourceTree = SOURCE_ROOT; };
+		826E2E912A1AA6C1009FA1DC /* QuizBaseViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = QuizBaseViewController.storyboard; sourceTree = "<group>"; };
+		826E2E952A1AA94F009FA1DC /* QuizResultsViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = QuizResultsViewController.storyboard; sourceTree = "<group>"; };
+		826E2E9B2A1AA9AE009FA1DC /* QuizTabBarController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = QuizTabBarController.storyboard; sourceTree = "<group>"; };
 		826F33682826BBA500FB6CF8 /* literature.background.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = literature.background.jpeg; sourceTree = "<group>"; };
 		82729E7A27D38F460042944C /* ecology2.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = ecology2.jpeg; sourceTree = "<group>"; };
 		82729E7E27D38F690042944C /* geography2.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = geography2.jpeg; sourceTree = "<group>"; };
@@ -1386,7 +1394,6 @@
 			isa = PBXGroup;
 			children = (
 				826E2E5E2A1A8616009FA1DC /* View */,
-				826E2E5F2A1A861B009FA1DC /* Storyboard */,
 			);
 			path = "Splash Screen";
 			sourceTree = "<group>";
@@ -1421,7 +1428,8 @@
 		820D303828F340490031CFCD /* View */ = {
 			isa = PBXGroup;
 			children = (
-				82C2B5A427BD115A00C66946 /* ProfileViewController.swift */,
+				826E2E8C2A1AA5C9009FA1DC /* Storyboard */,
+				826E2E8B2A1AA5C0009FA1DC /* ViewController */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1626,21 +1634,21 @@
 			path = CustomViewCellDelegate;
 			sourceTree = "<group>";
 		};
-		823BD7472977515D008D9967 /* Cells */ = {
+		823BD7472977515D008D9967 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
 				823BD7492977518A008D9967 /* QuizSectionsTableViewCell.swift */,
 				823BD74B297751E9008D9967 /* QuizSectionsTableViewCell.xib */,
 			);
-			path = Cells;
+			path = Cell;
 			sourceTree = "<group>";
 		};
-		823BD74829775164008D9967 /* ViewControllers */ = {
+		823BD74829775164008D9967 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
 				823BD74329775067008D9967 /* QuizSectionsTableViewController.swift */,
 			);
-			path = ViewControllers;
+			path = ViewController;
 			sourceTree = "<group>";
 		};
 		823BD74D29776A1E008D9967 /* Quiz Sections MVVM */ = {
@@ -1664,8 +1672,8 @@
 		823BD74F29776A37008D9967 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				823BD74829775164008D9967 /* ViewControllers */,
-				823BD7472977515D008D9967 /* Cells */,
+				823BD74829775164008D9967 /* ViewController */,
+				823BD7472977515D008D9967 /* Cell */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1681,7 +1689,7 @@
 		823CFF6D27FA10DC001FF6D9 /* Settings */ = {
 			isa = PBXGroup;
 			children = (
-				829D3D382950EB3900B4C924 /* ViewControllers */,
+				829D3D382950EB3900B4C924 /* ViewController */,
 				829D3D372950EB3600B4C924 /* Cells */,
 			);
 			path = Settings;
@@ -1690,8 +1698,8 @@
 		823CFF7027FA1117001FF6D9 /* Start  */ = {
 			isa = PBXGroup;
 			children = (
-				82DC6E1B27E65E790077D107 /* StartViewController.swift */,
-				826E2E552A1A7F04009FA1DC /* StartViewController.storyboard */,
+				826E2E942A1AA719009FA1DC /* Storyboard */,
+				826E2E932A1AA717009FA1DC /* ViewController */,
 			);
 			path = "Start ";
 			sourceTree = "<group>";
@@ -1974,14 +1982,6 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		826E2E5F2A1A861B009FA1DC /* Storyboard */ = {
-			isa = PBXGroup;
-			children = (
-				826E2E532A1A7E1C009FA1DC /* QuizSplashScreenController.storyboard */,
-			);
-			path = Storyboard;
-			sourceTree = "<group>";
-		};
 		826E2E602A1A862E009FA1DC /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -2028,6 +2028,212 @@
 				829A5165296874F40056A7DB /* DailyQuizViewController.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		826E2E702A1A981A009FA1DC /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				828E93F22A12BF0D00CD7A0C /* PlayersListViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		826E2E712A1A9821009FA1DC /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				828F0DD027C82D4C0016D337 /* PlayerTableViewCell.swift */,
+				82D35B46295C520B000EB277 /* PlayerTableViewCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		826E2E732A1A983E009FA1DC /* View */ = {
+			isa = PBXGroup;
+			children = (
+				828E93F02A12BD7200CD7A0C /* PlayersListView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		826E2E782A1A9BB8009FA1DC /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				826E2E762A1A9BB0009FA1DC /* QuizCategoriesTableViewController.storyboard */,
+			);
+			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		826E2E792A1A9D08009FA1DC /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				82BC018A294770DB00AEB659 /* QuizTasksTableViewCell.swift */,
+				8295F1CB2950C735000E033E /* QuizTasksTableViewCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		826E2E7A2A1A9D0A009FA1DC /* View */ = {
+			isa = PBXGroup;
+			children = (
+				82A30ABC2A13DF490036AF6E /* QuizTasksListView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		826E2E7B2A1A9D0C009FA1DC /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				826C6CA42A154E23002059B1 /* QuizTasksListViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		826E2E7C2A1A9D59009FA1DC /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				826E2E7D2A1A9D6A009FA1DC /* QuizTasksListViewController.storyboard */,
+			);
+			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		826E2E822A1A9EF9009FA1DC /* Quiz Detail Modules */ = {
+			isa = PBXGroup;
+			children = (
+				826E2E832A1A9F1A009FA1DC /* Quiz Categories Detail */,
+				826E2E842A1A9F21009FA1DC /* Quiz Tasks Detail */,
+			);
+			path = "Quiz Detail Modules";
+			sourceTree = "<group>";
+		};
+		826E2E832A1A9F1A009FA1DC /* Quiz Categories Detail */ = {
+			isa = PBXGroup;
+			children = (
+				826E2E852A1A9F30009FA1DC /* ViewController */,
+			);
+			path = "Quiz Categories Detail";
+			sourceTree = "<group>";
+		};
+		826E2E842A1A9F21009FA1DC /* Quiz Tasks Detail */ = {
+			isa = PBXGroup;
+			children = (
+				826E2E872A1A9F45009FA1DC /* ViewController */,
+			);
+			path = "Quiz Tasks Detail";
+			sourceTree = "<group>";
+		};
+		826E2E852A1A9F30009FA1DC /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				82F5646F2940D1FB0031F7BD /* QuizCategoryDetailViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		826E2E872A1A9F45009FA1DC /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				829DC8962965A968006C9D91 /* QuizTaskDetailViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		826E2E8B2A1AA5C0009FA1DC /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				82C2B5A427BD115A00C66946 /* ProfileViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		826E2E8C2A1AA5C9009FA1DC /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				826E2E742A1A9A29009FA1DC /* ProfileViewController.storyboard */,
+			);
+			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		826E2E8D2A1AA63E009FA1DC /* Pause */ = {
+			isa = PBXGroup;
+			children = (
+				826E2E8E2A1AA658009FA1DC /* ViewController */,
+				826E2E8F2A1AA660009FA1DC /* Cells */,
+			);
+			path = Pause;
+			sourceTree = "<group>";
+		};
+		826E2E8E2A1AA658009FA1DC /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				821120E62822EC4D009C2801 /* PauseTableViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		826E2E8F2A1AA660009FA1DC /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				82D35BEA29631CE1000EB277 /* CurrentCategoryTableViewCell */,
+				82D35BEB29631CEA000EB277 /* RestartTableViewCell */,
+				82D35BEC29631CF2000EB277 /* ExitTableViewCell */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		826E2E902A1AA69F009FA1DC /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				826E2E912A1AA6C1009FA1DC /* QuizBaseViewController.storyboard */,
+			);
+			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		826E2E932A1AA717009FA1DC /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				82DC6E1B27E65E790077D107 /* StartViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		826E2E942A1AA719009FA1DC /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				826E2E552A1A7F04009FA1DC /* StartViewController.storyboard */,
+			);
+			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		826E2E972A1AA969009FA1DC /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				822F6C1827BD4AFC0033803A /* QuizResultsViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		826E2E982A1AA96B009FA1DC /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				826E2E952A1AA94F009FA1DC /* QuizResultsViewController.storyboard */,
+			);
+			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		826E2E992A1AA993009FA1DC /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				82C2B5A227BD0E5700C66946 /* QuizTabBarController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		826E2E9A2A1AA995009FA1DC /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				826E2E9B2A1AA9AE009FA1DC /* QuizTabBarController.storyboard */,
+			);
+			path = Storyboard;
 			sourceTree = "<group>";
 		};
 		827F8BF227E8185100F6D7B3 /* sounds */ = {
@@ -2166,13 +2372,13 @@
 			path = ViewController;
 			sourceTree = "<group>";
 		};
-		828E4B4A293FD6B5002A55B1 /* Cells */ = {
+		828E4B4A293FD6B5002A55B1 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
 				82F5646B2940D1C60031F7BD /* QuizCategoriesTableViewCell.swift */,
 				82B466E32A0B2AD40097C578 /* QuizCategoriesTableViewCell.xib */,
 			);
-			path = Cells;
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		828E93F42A12C73200CD7A0C /* Player Detail MVVM */ = {
@@ -2207,7 +2413,8 @@
 		8290FCA327FCC15B00E05DDA /* TabBar  */ = {
 			isa = PBXGroup;
 			children = (
-				82C2B5A227BD0E5700C66946 /* QuizTabBarController.swift */,
+				826E2E9A2A1AA995009FA1DC /* Storyboard */,
+				826E2E992A1AA993009FA1DC /* ViewController */,
 			);
 			path = "TabBar ";
 			sourceTree = "<group>";
@@ -2470,7 +2677,6 @@
 			children = (
 				820C627E27BBA3CA004894FA /* AppDelegate.swift */,
 				820C628027BBA3CA004894FA /* SceneDelegate.swift */,
-				820C628427BBA3CA004894FA /* Main.storyboard */,
 				820C628727BBA3CB004894FA /* Assets.xcassets */,
 				820C628927BBA3CB004894FA /* LaunchScreen.storyboard */,
 				829408A727CEC4F100AFF603 /* GoogleService-Info.plist */,
@@ -2621,12 +2827,12 @@
 			path = Cells;
 			sourceTree = "<group>";
 		};
-		829D3D382950EB3900B4C924 /* ViewControllers */ = {
+		829D3D382950EB3900B4C924 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
 				823CFF6E27FA1100001FF6D9 /* SettingsTableViewController.swift */,
 			);
-			path = ViewControllers;
+			path = ViewController;
 			sourceTree = "<group>";
 		};
 		829DC87A2964C2AD006C9D91 /* Speech Recognition */ = {
@@ -2637,21 +2843,21 @@
 			path = "Speech Recognition";
 			sourceTree = "<group>";
 		};
-		829DC87D2964D202006C9D91 /* Cells */ = {
+		829DC87D2964D202006C9D91 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
 				82D35C472963B0C9000EB277 /* VoiceCommandTableViewCell.swift */,
 				82D35C492963B18D000EB277 /* VoiceCommandTableViewCell.xib */,
 			);
-			path = Cells;
+			path = Cell;
 			sourceTree = "<group>";
 		};
-		829DC87E2964D204006C9D91 /* ViewControllers */ = {
+		829DC87E2964D204006C9D91 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
 				82D35C3D2963ADF6000EB277 /* VoiceCommandsTableViewController.swift */,
 			);
-			path = ViewControllers;
+			path = ViewController;
 			sourceTree = "<group>";
 		};
 		829DC8982965B432006C9D91 /* Text Recognition */ = {
@@ -2683,7 +2889,8 @@
 		82A08C7A28F4887C0072A940 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				822F6C1827BD4AFC0033803A /* QuizResultsViewController.swift */,
+				826E2E982A1AA96B009FA1DC /* Storyboard */,
+				826E2E972A1AA969009FA1DC /* ViewController */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -2718,8 +2925,8 @@
 		82A82AE328A92BC600011B6F /* View */ = {
 			isa = PBXGroup;
 			children = (
-				82A82AE628A92C2E00011B6F /* ViewControllers */,
-				82A82AE528A92C2B00011B6F /* Cells */,
+				826E2E902A1AA69F009FA1DC /* Storyboard */,
+				82A82AE628A92C2E00011B6F /* ViewController */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -2733,23 +2940,12 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		82A82AE528A92C2B00011B6F /* Cells */ = {
+		82A82AE628A92C2E00011B6F /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				82D35BEA29631CE1000EB277 /* CurrentCategoryTableViewCell */,
-				82D35BEB29631CEA000EB277 /* RestartTableViewCell */,
-				82D35BEC29631CF2000EB277 /* ExitTableViewCell */,
+				8243F16A27C266F800CD9CE4 /* QuizBaseViewController.swift */,
 			);
-			path = Cells;
-			sourceTree = "<group>";
-		};
-		82A82AE628A92C2E00011B6F /* ViewControllers */ = {
-			isa = PBXGroup;
-			children = (
-				82D35BF429631E22000EB277 /* Base */,
-				82D35BF329631E1F000EB277 /* Pause */,
-			);
-			path = ViewControllers;
+			path = ViewController;
 			sourceTree = "<group>";
 		};
 		82A82B1328A9436800011B6F /* QuizBaseObserver */ = {
@@ -2821,8 +3017,8 @@
 		82CBAEBC29CFA8D900AA9569 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				82CBAECC29CFAF4900AA9569 /* ViewControllers */,
-				82CBAECD29CFAF5600AA9569 /* Cells */,
+				82CBAECC29CFAF4900AA9569 /* ViewController */,
+				82CBAECD29CFAF5600AA9569 /* Cell */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -2840,8 +3036,8 @@
 			isa = PBXGroup;
 			children = (
 				823BD74D29776A1E008D9967 /* Quiz Sections MVVM */,
-				82CBE7F22870A8480045616B /* Quiz Categories MVVM */,
-				82CBE7FC2870D3AA0045616B /* Quiz Tasks MVVM */,
+				82CBE7F22870A8480045616B /* Quiz Categories List MVVM */,
+				82CBE7FC2870D3AA0045616B /* Quiz Tasks List MVVM */,
 				82CBAEBA29CFA8B600AA9569 /* Quiz Achievements */,
 			);
 			path = "Quiz Sections Modules";
@@ -2855,21 +3051,21 @@
 			path = Delegate;
 			sourceTree = "<group>";
 		};
-		82CBAECC29CFAF4900AA9569 /* ViewControllers */ = {
+		82CBAECC29CFAF4900AA9569 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
 				82CBAEC329CFAAC300AA9569 /* QuizAchievementsTableViewController.swift */,
 			);
-			path = ViewControllers;
+			path = ViewController;
 			sourceTree = "<group>";
 		};
-		82CBAECD29CFAF5600AA9569 /* Cells */ = {
+		82CBAECD29CFAF5600AA9569 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
 				82CBAEC829CFAF0B00AA9569 /* QuizAchievementsTableViewCell.swift */,
 				82CBAEC929CFAF0B00AA9569 /* QuizAchievementsTableViewCell.xib */,
 			);
-			path = Cells;
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		82CBE7E4287093890045616B /* News MVVM Event Bus */ = {
@@ -2911,14 +3107,14 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
-		82CBE7F22870A8480045616B /* Quiz Categories MVVM */ = {
+		82CBE7F22870A8480045616B /* Quiz Categories List MVVM */ = {
 			isa = PBXGroup;
 			children = (
 				82CBE7F72870A8770045616B /* Model */,
 				82CBE7F62870A8720045616B /* View */,
 				82CBE7F52870A86E0045616B /* ViewModel */,
 			);
-			path = "Quiz Categories MVVM";
+			path = "Quiz Categories List MVVM";
 			sourceTree = "<group>";
 		};
 		82CBE7F52870A86E0045616B /* ViewModel */ = {
@@ -2932,8 +3128,9 @@
 		82CBE7F62870A8720045616B /* View */ = {
 			isa = PBXGroup;
 			children = (
-				82F5646E2940D1D30031F7BD /* ViewControllers */,
-				828E4B4A293FD6B5002A55B1 /* Cells */,
+				826E2E782A1A9BB8009FA1DC /* Storyboard */,
+				82F5646E2940D1D30031F7BD /* ViewController */,
+				828E4B4A293FD6B5002A55B1 /* Cell */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -2948,14 +3145,14 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		82CBE7FC2870D3AA0045616B /* Quiz Tasks MVVM */ = {
+		82CBE7FC2870D3AA0045616B /* Quiz Tasks List MVVM */ = {
 			isa = PBXGroup;
 			children = (
 				82CBE8002870D3CC0045616B /* Model */,
 				82CBE8012870D4530045616B /* View */,
 				82CBE7FE2870D3C20045616B /* ViewModel */,
 			);
-			path = "Quiz Tasks MVVM";
+			path = "Quiz Tasks List MVVM";
 			sourceTree = "<group>";
 		};
 		82CBE7FE2870D3C20045616B /* ViewModel */ = {
@@ -2978,11 +3175,10 @@
 		82CBE8012870D4530045616B /* View */ = {
 			isa = PBXGroup;
 			children = (
-				826C6CA42A154E23002059B1 /* QuizTasksListViewController.swift */,
-				82A30ABC2A13DF490036AF6E /* QuizTasksListView.swift */,
-				82BC018A294770DB00AEB659 /* QuizTasksTableViewCell.swift */,
-				8295F1CB2950C735000E033E /* QuizTasksTableViewCell.xib */,
-				829DC8962965A968006C9D91 /* QuizTaskDetailViewController.swift */,
+				826E2E7C2A1A9D59009FA1DC /* Storyboard */,
+				826E2E7B2A1A9D0C009FA1DC /* ViewController */,
+				826E2E7A2A1A9D0A009FA1DC /* View */,
+				826E2E792A1A9D08009FA1DC /* Cell */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -3000,10 +3196,9 @@
 		82CBE8082870DE350045616B /* View */ = {
 			isa = PBXGroup;
 			children = (
-				828E93F22A12BF0D00CD7A0C /* PlayersListViewController.swift */,
-				828E93F02A12BD7200CD7A0C /* PlayersListView.swift */,
-				828F0DD027C82D4C0016D337 /* PlayerTableViewCell.swift */,
-				82D35B46295C520B000EB277 /* PlayerTableViewCell.xib */,
+				826E2E702A1A981A009FA1DC /* ViewController */,
+				826E2E732A1A983E009FA1DC /* View */,
+				826E2E712A1A9821009FA1DC /* Cell */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -3275,22 +3470,6 @@
 			path = ExitTableViewCell;
 			sourceTree = "<group>";
 		};
-		82D35BF329631E1F000EB277 /* Pause */ = {
-			isa = PBXGroup;
-			children = (
-				821120E62822EC4D009C2801 /* PauseTableViewController.swift */,
-			);
-			path = Pause;
-			sourceTree = "<group>";
-		};
-		82D35BF429631E22000EB277 /* Base */ = {
-			isa = PBXGroup;
-			children = (
-				8243F16A27C266F800CD9CE4 /* QuizBaseViewController.swift */,
-			);
-			path = Base;
-			sourceTree = "<group>";
-		};
 		82D35BF52963227C000EB277 /* DeleteTableViewCell */ = {
 			isa = PBXGroup;
 			children = (
@@ -3490,8 +3669,8 @@
 		82D35C412963AE53000EB277 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				829DC87E2964D204006C9D91 /* ViewControllers */,
-				829DC87D2964D202006C9D91 /* Cells */,
+				829DC87E2964D204006C9D91 /* ViewController */,
+				829DC87D2964D202006C9D91 /* Cell */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -3507,9 +3686,11 @@
 		82DF98E427BCE73700548B38 /* Other Modules */ = {
 			isa = PBXGroup;
 			children = (
+				826E2E822A1A9EF9009FA1DC /* Quiz Detail Modules */,
 				8209F79A2847F2390093147A /* Splash Screen */,
 				822B1F0F29F999730007957C /* Auth  */,
 				823CFF7027FA1117001FF6D9 /* Start  */,
+				826E2E8D2A1AA63E009FA1DC /* Pause */,
 				829A5164296874DB0056A7DB /* Daily Quiz */,
 				82D35C1C2963336F000EB277 /* Onboarding */,
 				8290FCA327FCC15B00E05DDA /* TabBar  */,
@@ -3544,13 +3725,12 @@
 			path = "ML model";
 			sourceTree = "<group>";
 		};
-		82F5646E2940D1D30031F7BD /* ViewControllers */ = {
+		82F5646E2940D1D30031F7BD /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
 				82F564702940D1FB0031F7BD /* QuizCategoriesTableViewController.swift */,
-				82F5646F2940D1FB0031F7BD /* QuizCategoryDetailViewController.swift */,
 			);
-			path = ViewControllers;
+			path = ViewController;
 			sourceTree = "<group>";
 		};
 		C084AC94B5F45D5B9FB284D9 /* Pods */ = {
@@ -3741,6 +3921,7 @@
 				822139282874E8250065A0C3 /* underwater.png in Resources */,
 				82848D30281C6F5B0068A4AE /* physics.background.jpeg in Resources */,
 				8295F1AD2950B70B000E033E /* underwater11.jpeg in Resources */,
+				826E2E772A1A9BB1009FA1DC /* QuizCategoriesTableViewController.storyboard in Resources */,
 				82EA1EA7286BCB6000E49D0F /* literature8.jpeg in Resources */,
 				827D4B41281FED88007B3895 /* informatics6.jpeg in Resources */,
 				82EA1F2D286BCC9700E49D0F /* geography20.jpeg in Resources */,
@@ -4006,7 +4187,6 @@
 				82EA1EA4286BCB6000E49D0F /* literature5.jpeg in Resources */,
 				8288F09D2872662400C6A182 /* chess8.jpeg in Resources */,
 				82D35C1129632721000EB277 /* HintsTableViewCell.xib in Resources */,
-				826E2E542A1A7E1C009FA1DC /* QuizSplashScreenController.storyboard in Resources */,
 				82EA1EA5286BCB6000E49D0F /* literature7.jpeg in Resources */,
 				82EA1F17286BCC7800E49D0F /* ecology12.jpeg in Resources */,
 				829408D327CEC93100AFF603 /* history7.jpeg in Resources */,
@@ -4024,10 +4204,12 @@
 				82319E0F28E8D8EA0053CEF5 /* halloween1.jpeg in Resources */,
 				82EA1F7B286BCD0600E49D0F /* sport14.jpeg in Resources */,
 				82EA1F93286BCD2300E49D0F /* anatomy11.jpeg in Resources */,
+				826E2E962A1AA94F009FA1DC /* QuizResultsViewController.storyboard in Resources */,
 				82D35C4A2963B18D000EB277 /* VoiceCommandTableViewCell.xib in Resources */,
 				82848D2B281C6F5B0068A4AE /* random.background.jpeg in Resources */,
 				82811699293A8A3300AA7C8E /* newyear.background.jpeg in Resources */,
 				82BDEB14283C630100B1AD7F /* literature12.jpeg in Resources */,
+				826E2E9C2A1AA9AE009FA1DC /* QuizTabBarController.storyboard in Resources */,
 				82BDEB0F283C630100B1AD7F /* literature16.jpeg in Resources */,
 				82EA1F58286BCCD200E49D0F /* IQ16.jpeg in Resources */,
 				829408FF27CECAC800AFF603 /* sport5.jpeg in Resources */,
@@ -4038,6 +4220,7 @@
 				82CD6BF2288851FB00716443 /* click sound.wav in Resources */,
 				82EA1EBA286BCB7C00E49D0F /* roadtraffic6.jpeg in Resources */,
 				82EA1F3F286BCCB900E49D0F /* economy16.jpeg in Resources */,
+				826E2E7E2A1A9D6A009FA1DC /* QuizTasksListViewController.storyboard in Resources */,
 				82848D33281C6F5B0068A4AE /* ecology.background.jpeg in Resources */,
 				8295F1AC2950B70B000E033E /* underwater1.jpeg in Resources */,
 				8261BC3C27E114950089CC94 /* chemistry7.jpeg in Resources */,
@@ -4062,6 +4245,7 @@
 				8288F09E2872662400C6A182 /* chess5.jpeg in Resources */,
 				82EA1F1A286BCC7800E49D0F /* ecology19.jpeg in Resources */,
 				82848D34281C6F5B0068A4AE /* swift.background.jpeg in Resources */,
+				826E2E752A1A9A29009FA1DC /* ProfileViewController.storyboard in Resources */,
 				82848D12281C6F4C0068A4AE /* sport.jpeg in Resources */,
 				8294090C27CECB9100AFF603 /* games1.jpeg in Resources */,
 				8243A6212820810E00427553 /* physics18.jpeg in Resources */,
@@ -4083,7 +4267,6 @@
 				829408EB27CECA2F00AFF603 /* anatomy4.jpeg in Resources */,
 				82EA1F16286BCC7800E49D0F /* ecology20.jpeg in Resources */,
 				82EA1EA9286BCB6000E49D0F /* literature4.jpeg in Resources */,
-				820C628627BBA3CA004894FA /* Main.storyboard in Resources */,
 				8288F0972872662400C6A182 /* chess4.jpeg in Resources */,
 				8244DCFA27E39D8500F5C59B /* informatics10.jpeg in Resources */,
 				82E4C6E8282F062C00379856 /* roadtraffic14.jpeg in Resources */,
@@ -4150,6 +4333,7 @@
 				8294095027CECE1900AFF603 /* geography3.jpeg in Resources */,
 				8294090E27CECB9200AFF603 /* games9.jpeg in Resources */,
 				82EA1F55286BCCD200E49D0F /* IQ15.jpeg in Resources */,
+				826E2E922A1AA6C1009FA1DC /* QuizBaseViewController.storyboard in Resources */,
 				829408E527CECA2F00AFF603 /* anatomy10.jpeg in Resources */,
 				82EA1EAA286BCB6000E49D0F /* literature10.jpeg in Resources */,
 				8281168A293A88DC00AA7C8E /* newyear3.jpeg in Resources */,
@@ -4352,14 +4536,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		820C628427BBA3CA004894FA /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				820C628527BBA3CA004894FA /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		820C628927BBA3CB004894FA /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -4509,7 +4685,6 @@
 				INFOPLIST_KEY_NSSpeechRecognitionUsageDescription = "";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -4518,7 +4693,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.5;
+				MARKETING_VERSION = 3.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.QUIZ-2022";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -4549,7 +4724,6 @@
 				INFOPLIST_KEY_NSSpeechRecognitionUsageDescription = "";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -4558,7 +4732,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.5;
+				MARKETING_VERSION = 3.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.QUIZ-2022";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
