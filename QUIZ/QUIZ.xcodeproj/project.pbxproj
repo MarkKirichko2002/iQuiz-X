@@ -178,6 +178,12 @@
 		826E12B128009F1300465E16 /* SpeachTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 826E12B028009F1300465E16 /* SpeachTableViewCell.swift */; };
 		826E2E4D2A1A5268009FA1DC /* NewsCategories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 826E2E4C2A1A5268009FA1DC /* NewsCategories.swift */; };
 		826E2E4F2A1A6575009FA1DC /* NewsCategoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 826E2E4E2A1A6575009FA1DC /* NewsCategoryViewModel.swift */; };
+		826E2E542A1A7E1C009FA1DC /* QuizSplashScreenController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 826E2E532A1A7E1C009FA1DC /* QuizSplashScreenController.storyboard */; };
+		826E2E562A1A7F04009FA1DC /* StartViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 826E2E552A1A7F04009FA1DC /* StartViewController.storyboard */; };
+		826E2E582A1A804C009FA1DC /* LoginViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 826E2E572A1A804C009FA1DC /* LoginViewController.storyboard */; };
+		826E2E5A2A1A82E5009FA1DC /* RegisterViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 826E2E592A1A82E5009FA1DC /* RegisterViewController.storyboard */; };
+		826E2E5D2A1A860C009FA1DC /* OnboardingViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 826E2E5C2A1A860C009FA1DC /* OnboardingViewController.storyboard */; };
+		826E2E652A1A884B009FA1DC /* DailyQuizViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 826E2E642A1A884B009FA1DC /* DailyQuizViewController.storyboard */; };
 		826F33692826BBA500FB6CF8 /* literature.background.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 826F33682826BBA500FB6CF8 /* literature.background.jpeg */; };
 		82729E7B27D38F460042944C /* ecology2.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 82729E7A27D38F460042944C /* ecology2.jpeg */; };
 		82729E7F27D38F690042944C /* geography2.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 82729E7E27D38F690042944C /* geography2.jpeg */; };
@@ -850,6 +856,12 @@
 		826E12B028009F1300465E16 /* SpeachTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeachTableViewCell.swift; sourceTree = "<group>"; };
 		826E2E4C2A1A5268009FA1DC /* NewsCategories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsCategories.swift; sourceTree = "<group>"; };
 		826E2E4E2A1A6575009FA1DC /* NewsCategoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsCategoryViewModel.swift; sourceTree = "<group>"; };
+		826E2E532A1A7E1C009FA1DC /* QuizSplashScreenController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = QuizSplashScreenController.storyboard; sourceTree = "<group>"; };
+		826E2E552A1A7F04009FA1DC /* StartViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = StartViewController.storyboard; sourceTree = "<group>"; };
+		826E2E572A1A804C009FA1DC /* LoginViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LoginViewController.storyboard; sourceTree = "<group>"; };
+		826E2E592A1A82E5009FA1DC /* RegisterViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RegisterViewController.storyboard; sourceTree = "<group>"; };
+		826E2E5C2A1A860C009FA1DC /* OnboardingViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = OnboardingViewController.storyboard; sourceTree = "<group>"; };
+		826E2E642A1A884B009FA1DC /* DailyQuizViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DailyQuizViewController.storyboard; sourceTree = "<group>"; };
 		826F33682826BBA500FB6CF8 /* literature.background.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = literature.background.jpeg; sourceTree = "<group>"; };
 		82729E7A27D38F460042944C /* ecology2.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = ecology2.jpeg; sourceTree = "<group>"; };
 		82729E7E27D38F690042944C /* geography2.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = geography2.jpeg; sourceTree = "<group>"; };
@@ -1373,7 +1385,8 @@
 		8209F79A2847F2390093147A /* Splash Screen */ = {
 			isa = PBXGroup;
 			children = (
-				8209F79B2847F2600093147A /* QuizSplashScreenController.swift */,
+				826E2E5E2A1A8616009FA1DC /* View */,
+				826E2E5F2A1A861B009FA1DC /* Storyboard */,
 			);
 			path = "Splash Screen";
 			sourceTree = "<group>";
@@ -1678,6 +1691,7 @@
 			isa = PBXGroup;
 			children = (
 				82DC6E1B27E65E790077D107 /* StartViewController.swift */,
+				826E2E552A1A7F04009FA1DC /* StartViewController.storyboard */,
 			);
 			path = "Start ";
 			sourceTree = "<group>";
@@ -1685,7 +1699,8 @@
 		823CFF7127FA1126001FF6D9 /* Login */ = {
 			isa = PBXGroup;
 			children = (
-				820C629C27BBCD29004894FA /* LoginViewController.swift */,
+				826E2E602A1A862E009FA1DC /* View */,
+				826E2E612A1A8632009FA1DC /* Storyboard */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -1757,7 +1772,8 @@
 		8247A2F9297715F200838BB8 /* Register */ = {
 			isa = PBXGroup;
 			children = (
-				8277BCF827C709A800B5F9D0 /* RegisterViewController.swift */,
+				826E2E632A1A8645009FA1DC /* View */,
+				826E2E622A1A8643009FA1DC /* Storyboard */,
 			);
 			path = Register;
 			sourceTree = "<group>";
@@ -1942,6 +1958,78 @@
 			path = Service;
 			sourceTree = "<group>";
 		};
+		826E2E5B2A1A85F9009FA1DC /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				826E2E5C2A1A860C009FA1DC /* OnboardingViewController.storyboard */,
+			);
+			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		826E2E5E2A1A8616009FA1DC /* View */ = {
+			isa = PBXGroup;
+			children = (
+				8209F79B2847F2600093147A /* QuizSplashScreenController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		826E2E5F2A1A861B009FA1DC /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				826E2E532A1A7E1C009FA1DC /* QuizSplashScreenController.storyboard */,
+			);
+			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		826E2E602A1A862E009FA1DC /* View */ = {
+			isa = PBXGroup;
+			children = (
+				820C629C27BBCD29004894FA /* LoginViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		826E2E612A1A8632009FA1DC /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				826E2E572A1A804C009FA1DC /* LoginViewController.storyboard */,
+			);
+			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		826E2E622A1A8643009FA1DC /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				826E2E592A1A82E5009FA1DC /* RegisterViewController.storyboard */,
+			);
+			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		826E2E632A1A8645009FA1DC /* View */ = {
+			isa = PBXGroup;
+			children = (
+				8277BCF827C709A800B5F9D0 /* RegisterViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		826E2E662A1A8872009FA1DC /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				826E2E642A1A884B009FA1DC /* DailyQuizViewController.storyboard */,
+			);
+			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		826E2E672A1A8874009FA1DC /* View */ = {
+			isa = PBXGroup;
+			children = (
+				829A5165296874F40056A7DB /* DailyQuizViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		827F8BF227E8185100F6D7B3 /* sounds */ = {
 			isa = PBXGroup;
 			children = (
@@ -2070,12 +2158,12 @@
 			path = Chess;
 			sourceTree = "<group>";
 		};
-		828E4B47293FD638002A55B1 /* ViewControllers */ = {
+		828E4B47293FD638002A55B1 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
 				82CBE7E5287093C50045616B /* NewsListViewController.swift */,
 			);
-			path = ViewControllers;
+			path = ViewController;
 			sourceTree = "<group>";
 		};
 		828E4B4A293FD6B5002A55B1 /* Cells */ = {
@@ -2506,7 +2594,8 @@
 		829A5164296874DB0056A7DB /* Daily Quiz */ = {
 			isa = PBXGroup;
 			children = (
-				829A5165296874F40056A7DB /* DailyQuizViewController.swift */,
+				826E2E672A1A8874009FA1DC /* View */,
+				826E2E662A1A8872009FA1DC /* Storyboard */,
 			);
 			path = "Daily Quiz";
 			sourceTree = "<group>";
@@ -2671,13 +2760,13 @@
 			path = QuizBaseObserver;
 			sourceTree = "<group>";
 		};
-		82B01734294F861E0073452D /* Cells */ = {
+		82B01734294F861E0073452D /* Cell */ = {
 			isa = PBXGroup;
 			children = (
 				82B01735294F86730073452D /* NewsTableViewCell.swift */,
 				82D35B48295C5529000EB277 /* NewsTableViewCell.xib */,
 			);
-			path = Cells;
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		82C039C927CEC2EF00E69661 /* images */ = {
@@ -2808,8 +2897,8 @@
 		82CBE7EE287093DA0045616B /* View */ = {
 			isa = PBXGroup;
 			children = (
-				828E4B47293FD638002A55B1 /* ViewControllers */,
-				82B01734294F861E0073452D /* Cells */,
+				828E4B47293FD638002A55B1 /* ViewController */,
+				82B01734294F861E0073452D /* Cell */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -3347,27 +3436,28 @@
 		82D35C252963435A000EB277 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				82D35C27296346A7000EB277 /* ViewControllers */,
-				82D35C26296346A3000EB277 /* Cells */,
+				826E2E5B2A1A85F9009FA1DC /* Storyboard */,
+				82D35C27296346A7000EB277 /* ViewController */,
+				82D35C26296346A3000EB277 /* Cell */,
 			);
 			path = View;
 			sourceTree = "<group>";
 		};
-		82D35C26296346A3000EB277 /* Cells */ = {
+		82D35C26296346A3000EB277 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
 				82D35C28296346D5000EB277 /* OnboardingCollectionViewCell.swift */,
 				8234A679296A5A2600A7FA2B /* OnboardingCollectionViewCell.xib */,
 			);
-			path = Cells;
+			path = Cell;
 			sourceTree = "<group>";
 		};
-		82D35C27296346A7000EB277 /* ViewControllers */ = {
+		82D35C27296346A7000EB277 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
 				82D35C1D29633398000EB277 /* OnboardingViewController.swift */,
 			);
-			path = ViewControllers;
+			path = ViewController;
 			sourceTree = "<group>";
 		};
 		82D35C382963A9FF000EB277 /* VoiceCommandSettingTableViewCell */ = {
@@ -3419,9 +3509,9 @@
 			children = (
 				8209F79A2847F2390093147A /* Splash Screen */,
 				822B1F0F29F999730007957C /* Auth  */,
+				823CFF7027FA1117001FF6D9 /* Start  */,
 				829A5164296874DB0056A7DB /* Daily Quiz */,
 				82D35C1C2963336F000EB277 /* Onboarding */,
-				823CFF7027FA1117001FF6D9 /* Start  */,
 				8290FCA327FCC15B00E05DDA /* TabBar  */,
 				82CF0D3828A583C3006B53F4 /* Quiz Start */,
 				823CFF6D27FA10DC001FF6D9 /* Settings */,
@@ -3532,6 +3622,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				826E2E582A1A804C009FA1DC /* LoginViewController.storyboard in Resources */,
 				8294093A27CECD6100AFF603 /* economy3.jpeg in Resources */,
 				82CE537428E9E58B00D44A6E /* halloween music.mp3 in Resources */,
 				822139372874E8650065A0C3 /* Swift15.jpeg in Resources */,
@@ -3565,6 +3656,7 @@
 				82EA1F82286BCD0600E49D0F /* sport12.jpeg in Resources */,
 				82319E1728E8DF030053CEF5 /* halloween5.jpeg in Resources */,
 				82848D09281C6F4C0068A4AE /* geography.jpeg in Resources */,
+				826E2E652A1A884B009FA1DC /* DailyQuizViewController.storyboard in Resources */,
 				82EA1EEA286BCC1300E49D0F /* Swift9.jpeg in Resources */,
 				82EA1F90286BCD2300E49D0F /* anatomy19.jpeg in Resources */,
 				827D4B6528205C0E007B3895 /* informatics11.jpeg in Resources */,
@@ -3751,6 +3843,7 @@
 				82848D07281C6F4C0068A4AE /* chemistry.jpeg in Resources */,
 				8294089C27CEC43E00AFF603 /* planets7.jpeg in Resources */,
 				82848D47281C77030068A4AE /* chemistry14.jpeg in Resources */,
+				826E2E5A2A1A82E5009FA1DC /* RegisterViewController.storyboard in Resources */,
 				8213BF8927D6AC0100D07512 /* physics6.jpeg in Resources */,
 				829408D127CEC93100AFF603 /* history2.jpeg in Resources */,
 				8286518628FEF916004806D3 /* league.mp3 in Resources */,
@@ -3832,6 +3925,7 @@
 				82848D6A281DACAB0068A4AE /* literature music.mp3 in Resources */,
 				8288F09B2872662400C6A182 /* chess2.jpeg in Resources */,
 				8243A6222820810E00427553 /* physics16.jpeg in Resources */,
+				826E2E562A1A7F04009FA1DC /* StartViewController.storyboard in Resources */,
 				82319E2B28E8F05E0053CEF5 /* halloween15.jpeg in Resources */,
 				82319E2728E8EDD30053CEF5 /* halloween13.jpeg in Resources */,
 				8243A6232820810E00427553 /* physics14.jpeg in Resources */,
@@ -3912,6 +4006,7 @@
 				82EA1EA4286BCB6000E49D0F /* literature5.jpeg in Resources */,
 				8288F09D2872662400C6A182 /* chess8.jpeg in Resources */,
 				82D35C1129632721000EB277 /* HintsTableViewCell.xib in Resources */,
+				826E2E542A1A7E1C009FA1DC /* QuizSplashScreenController.storyboard in Resources */,
 				82EA1EA5286BCB6000E49D0F /* literature7.jpeg in Resources */,
 				82EA1F17286BCC7800E49D0F /* ecology12.jpeg in Resources */,
 				829408D327CEC93100AFF603 /* history7.jpeg in Resources */,
@@ -3938,6 +4033,7 @@
 				829408FF27CECAC800AFF603 /* sport5.jpeg in Resources */,
 				82D35C0329632596000EB277 /* BiometricTableViewCell.xib in Resources */,
 				82D35B49295C5529000EB277 /* NewsTableViewCell.xib in Resources */,
+				826E2E5D2A1A860C009FA1DC /* OnboardingViewController.storyboard in Resources */,
 				82EA1EC9286BCBB500E49D0F /* exit.png in Resources */,
 				82CD6BF2288851FB00716443 /* click sound.wav in Resources */,
 				82EA1EBA286BCB7C00E49D0F /* roadtraffic6.jpeg in Resources */,

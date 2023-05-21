@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="0LL-OW-cWW">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Start View Controller-->
+        <scene sceneID="tP2-iC-dO1">
+            <objects>
+                <viewController storyboardIdentifier="StartViewController" id="0LL-OW-cWW" customClass="StartViewController" customModule="QUIZ" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="j6L-dR-DpB">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TbA-B9-Get">
+                                <rect key="frame" x="0.0" y="59" width="393" height="759"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hyo-dz-Cgj">
+                                        <rect key="frame" x="0.0" y="0.0" width="393" height="626"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="astronomy.png" translatesAutoresizingMaskIntoConstraints="NO" id="cT7-oO-JIt" customClass="RoundedImageView" customModule="QUIZ" customModuleProvider="target">
+                                                <rect key="frame" x="136.66666666666666" y="40" width="119.99999999999997" height="120"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="120" id="jqo-nj-i2E"/>
+                                                    <constraint firstAttribute="height" constant="120" id="zcr-VU-hLI"/>
+                                                </constraints>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="iQuiz X" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AJR-E8-4rg">
+                                                <rect key="frame" x="24" y="180" width="345" height="36"/>
+                                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="30"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8eK-MS-lKe">
+                                                <rect key="frame" x="135" y="395" width="123" height="36"/>
+                                                <color key="backgroundColor" systemColor="systemGreenColor"/>
+                                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="20"/>
+                                                <state key="normal" title=" Играть ">
+                                                    <color key="titleColor" systemColor="systemBackgroundColor"/>
+                                                </state>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ruY-TT-V8g">
+                                                <rect key="frame" x="179.66666666666666" y="71" width="30" height="34"/>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vbc-Mv-2xo">
+                                                <rect key="frame" x="135" y="495" width="123" height="36"/>
+                                                <color key="backgroundColor" systemColor="systemRedColor"/>
+                                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="20"/>
+                                                <state key="normal" title=" Ежед. QUIZ ">
+                                                    <color key="titleColor" systemColor="systemBackgroundColor"/>
+                                                </state>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="vbc-Mv-2xo" firstAttribute="centerY" secondItem="Hyo-dz-Cgj" secondAttribute="centerY" constant="200" id="DI1-R1-bkT"/>
+                                            <constraint firstAttribute="trailing" secondItem="AJR-E8-4rg" secondAttribute="trailing" constant="24" id="FD0-1k-mkl"/>
+                                            <constraint firstItem="8eK-MS-lKe" firstAttribute="centerX" secondItem="Hyo-dz-Cgj" secondAttribute="centerX" id="KRZ-e4-9ZO"/>
+                                            <constraint firstItem="ruY-TT-V8g" firstAttribute="centerY" secondItem="Hyo-dz-Cgj" secondAttribute="centerY" constant="-225" id="Lid-bk-hbs"/>
+                                            <constraint firstItem="ruY-TT-V8g" firstAttribute="centerX" secondItem="Hyo-dz-Cgj" secondAttribute="centerX" constant="-2" id="MFx-So-jKt"/>
+                                            <constraint firstItem="cT7-oO-JIt" firstAttribute="centerX" secondItem="Hyo-dz-Cgj" secondAttribute="centerX" id="Qkq-vR-CGM"/>
+                                            <constraint firstItem="vbc-Mv-2xo" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="8eK-MS-lKe" secondAttribute="trailing" id="XED-2n-q9Q"/>
+                                            <constraint firstItem="AJR-E8-4rg" firstAttribute="leading" secondItem="Hyo-dz-Cgj" secondAttribute="leading" constant="24" id="brs-ic-Lgy"/>
+                                            <constraint firstItem="8eK-MS-lKe" firstAttribute="centerY" secondItem="Hyo-dz-Cgj" secondAttribute="centerY" constant="100" id="fpA-rU-VAX"/>
+                                            <constraint firstItem="vbc-Mv-2xo" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="8eK-MS-lKe" secondAttribute="leading" id="gYK-IF-1EM"/>
+                                            <constraint firstItem="AJR-E8-4rg" firstAttribute="top" secondItem="cT7-oO-JIt" secondAttribute="bottom" constant="20" id="npu-3F-Z7P"/>
+                                            <constraint firstItem="cT7-oO-JIt" firstAttribute="top" secondItem="Hyo-dz-Cgj" secondAttribute="top" constant="40" id="rKe-BZ-Yhi"/>
+                                            <constraint firstItem="AJR-E8-4rg" firstAttribute="top" secondItem="ruY-TT-V8g" secondAttribute="bottom" constant="75" id="ukS-dz-ak5"/>
+                                            <constraint firstItem="vbc-Mv-2xo" firstAttribute="centerX" secondItem="Hyo-dz-Cgj" secondAttribute="centerX" id="uzX-G5-Os2"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="startColor">
+                                                <color key="value" systemColor="systemBlueColor"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="endColor">
+                                                <color key="value" systemColor="systemGreenColor"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="startLocation">
+                                                <real key="value" value="0.0"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="endLocation">
+                                                <real key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="point" keyPath="startPoint">
+                                                <point key="value" x="0.0" y="2"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="point" keyPath="endPoint">
+                                                <point key="value" x="1" y="2"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="Hyo-dz-Cgj" firstAttribute="leading" secondItem="TbA-B9-Get" secondAttribute="leading" id="4Kj-3c-muo"/>
+                                    <constraint firstItem="Hyo-dz-Cgj" firstAttribute="top" secondItem="TbA-B9-Get" secondAttribute="top" id="5WT-d3-m6K"/>
+                                    <constraint firstItem="Hyo-dz-Cgj" firstAttribute="top" secondItem="TbA-B9-Get" secondAttribute="top" id="8Kr-j8-F2f"/>
+                                    <constraint firstItem="Hyo-dz-Cgj" firstAttribute="leading" secondItem="TbA-B9-Get" secondAttribute="leading" id="DfC-Hw-PNP"/>
+                                    <constraint firstAttribute="trailing" secondItem="Hyo-dz-Cgj" secondAttribute="trailing" id="RtS-cy-96X"/>
+                                    <constraint firstAttribute="bottom" secondItem="Hyo-dz-Cgj" secondAttribute="bottom" id="a2B-pv-FSB"/>
+                                    <constraint firstAttribute="trailing" secondItem="Hyo-dz-Cgj" secondAttribute="trailing" id="tJ0-Y1-6fC"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="mFO-PQ-gZM"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="TbA-B9-Get" firstAttribute="leading" secondItem="mFO-PQ-gZM" secondAttribute="leading" id="0V4-7g-fVX"/>
+                            <constraint firstItem="Hyo-dz-Cgj" firstAttribute="width" secondItem="j6L-dR-DpB" secondAttribute="width" id="C5S-vR-02H"/>
+                            <constraint firstItem="TbA-B9-Get" firstAttribute="width" secondItem="j6L-dR-DpB" secondAttribute="width" id="HVL-Pk-uOj"/>
+                            <constraint firstItem="mFO-PQ-gZM" firstAttribute="bottom" secondItem="TbA-B9-Get" secondAttribute="bottom" id="QxU-AE-E6H"/>
+                            <constraint firstItem="TbA-B9-Get" firstAttribute="top" secondItem="mFO-PQ-gZM" secondAttribute="top" id="RK1-GJ-QdM"/>
+                            <constraint firstItem="mFO-PQ-gZM" firstAttribute="trailing" secondItem="TbA-B9-Get" secondAttribute="trailing" id="m99-qx-gGT"/>
+                            <constraint firstItem="Hyo-dz-Cgj" firstAttribute="width" secondItem="j6L-dR-DpB" secondAttribute="width" id="r8l-EO-zAf"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="color" keyPath="startColor">
+                                <color key="value" systemColor="systemBlueColor"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="color" keyPath="endColor">
+                                <color key="value" systemColor="systemGreenColor"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="startLocation">
+                                <real key="value" value="0.0"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="endLocation">
+                                <real key="value" value="1"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="point" keyPath="startPoint">
+                                <point key="value" x="0.0" y="2"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="point" keyPath="endPoint">
+                                <point key="value" x="1" y="2"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                    <navigationItem key="navigationItem" id="OvI-jp-1Hu"/>
+                    <connections>
+                        <outlet property="Image" destination="cT7-oO-JIt" id="6BZ-wj-2RV"/>
+                        <outlet property="StartButton" destination="8eK-MS-lKe" id="Tdl-uB-vzR"/>
+                        <outlet property="TitleName" destination="AJR-E8-4rg" id="EHI-3H-knp"/>
+                        <outlet property="TodayQuizButton" destination="vbc-Mv-2xo" id="mCE-es-uwY"/>
+                        <outlet property="scrollView" destination="TbA-B9-Get" id="6aQ-89-jIr"/>
+                        <outlet property="view2" destination="Hyo-dz-Cgj" id="KO8-Jb-azh"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DAT-DP-1zS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2539" y="-490"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="astronomy.png" width="512" height="512"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBlueColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

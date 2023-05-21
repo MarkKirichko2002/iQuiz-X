@@ -91,7 +91,8 @@ final class QuizSplashScreenController: UIViewController {
         }
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
-            if let controller = self.storyboard?.instantiateViewController(withIdentifier: "StartViewController") as? StartViewController {
+            let storyboard = UIStoryboard(name: "StartViewController", bundle: nil)
+            if let controller = storyboard.instantiateViewController(withIdentifier: "StartViewController") as? StartViewController {
                 controller.modalTransitionStyle = .crossDissolve
                 controller.modalPresentationStyle = .currentContext
                 self.present(controller, animated: false, completion: nil)

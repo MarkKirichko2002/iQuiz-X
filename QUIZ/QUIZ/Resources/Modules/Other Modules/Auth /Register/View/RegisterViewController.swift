@@ -30,9 +30,10 @@ final class RegisterViewController: UIViewController {
     private var urlString = ""
     private let mycontext: LAContext = LAContext()
     
-    private func ReturnTologin() {
+    private func ReturnToLogin() {
         DispatchQueue.main.async {
-            guard let vc = self.storyboard?.instantiateViewController(identifier: "LoginViewController") else {return}
+            let storyboard = UIStoryboard(name: "LoginViewController", bundle: nil)
+            guard let vc = storyboard.instantiateViewController(identifier: "LoginViewController") as? LoginViewController else {return}
             guard let window = self.view.window else {return}
             window.rootViewController = vc
         }
@@ -184,7 +185,7 @@ final class RegisterViewController: UIViewController {
     }
 
     @IBAction func GotoLogScreen() {
-        self.ReturnTologin()
+        self.ReturnToLogin()
     }
     
     @IBAction func didTapButton() {
@@ -203,7 +204,7 @@ final class RegisterViewController: UIViewController {
             return
         }
         
-        Auth.auth().createUser(withEmail: email, password: password) {[weak self] authResult, error in
+        Auth.auth().createUser(withEmail: email, password: password) { [weak self] authResult, error in
             
             if let error = error {
                 SCLAlertView().showError("Ошибка FireBase", subTitle: error.localizedDescription)
@@ -212,14 +213,16 @@ final class RegisterViewController: UIViewController {
             
             if UserDefaults.standard.bool(forKey: "isOnboarding") {
                 DispatchQueue.main.async {
-                    guard let vc = self?.storyboard?.instantiateViewController(identifier: "StartViewController") else {return}
-                    guard let window = self!.view.window else {return}
+                    let storyboard = UIStoryboard(name: "StartViewController", bundle: nil)
+                    guard let vc = storyboard.instantiateViewController(identifier: "StartViewController") as? StartViewController else {return}
+                    guard let window = self?.view.window else {return}
                     window.rootViewController = vc
                }
             } else {
                 DispatchQueue.main.async {
-                    guard let vc = self?.storyboard?.instantiateViewController(identifier: "OnboardingViewController") else {return}
-                    guard let window = self!.view.window else {return}
+                    let storyboard = UIStoryboard(name: "OnboardingViewController", bundle: nil)
+                    guard let vc = storyboard.instantiateViewController(identifier: "OnboardingViewController") as? OnboardingViewController else {return}
+                    guard let window = self?.view.window else {return}
                     window.rootViewController = vc
                }
             }
@@ -255,7 +258,6 @@ final class RegisterViewController: UIViewController {
 
 
 extension RegisterViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-    
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         picker.dismiss(animated: true, completion: nil)
