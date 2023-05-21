@@ -334,12 +334,13 @@ final class QuizTabBarController: UITabBarController {
             
         // показать экран настроек
         case _ where text.lowercased().contains("настрой"):
+            let vc = SettingsTableViewController()
             self.icon = "gear.png"
             self.button.setImage(UIImage(named: self.icon), for: .normal)
             self.animation.SpringAnimation(view: self.button)
             self.player.PlaySound(resource: "settings.mp3")
             DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-                self.performSegue(withIdentifier: "showSettings", sender: nil)
+                self.present(vc, animated: true)
             }
             
         case _ where text.lowercased().contains("закр"):

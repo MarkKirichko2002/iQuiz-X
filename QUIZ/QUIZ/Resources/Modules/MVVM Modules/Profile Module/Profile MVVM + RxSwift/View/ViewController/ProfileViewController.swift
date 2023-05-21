@@ -28,10 +28,11 @@ final class ProfileViewController: UIViewController {
     @IBOutlet weak var SettingsButton: UIButton!
     
     @IBAction func ShowSettings() {
+        let vc = SettingsTableViewController()
         animation.RotateAnimation(view: SettingsButton.imageView!)
         player.PlaySound(resource: "settings.mp3")
         DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-            self.performSegue(withIdentifier: "showSettings", sender: nil)
+            self.present(vc, animated: true)
         }
     }
         

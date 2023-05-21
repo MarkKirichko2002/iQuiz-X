@@ -5,7 +5,6 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -29,7 +28,6 @@
                                         </buttonConfiguration>
                                         <connections>
                                             <action selector="PresentСategoryScreen" destination="x36-Nc-G6o" eventType="touchUpInside" id="HmQ-1M-gxV"/>
-                                            <segue destination="DH6-T7-wHK" kind="show" identifier="segue" id="fGh-nQ-Au7"/>
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="запись не идет" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jQN-sl-ajz">
@@ -179,35 +177,6 @@
             </objects>
             <point key="canvasLocation" x="9617" y="-1030"/>
         </scene>
-        <!--ПАУЗА-->
-        <scene sceneID="LFW-xW-cJa">
-            <objects>
-                <tableViewController storyboardIdentifier="PauseTableViewController" id="DH6-T7-wHK" customClass="PauseTableViewController" customModule="QUIZ" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="A4G-Px-g6R">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="tBS-3h-d4l">
-                                <rect key="frame" x="0.0" y="50" width="393" height="43.666667938232422"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="tBS-3h-d4l" id="M1P-ac-9vF">
-                                    <rect key="frame" x="0.0" y="0.0" width="393" height="43.666667938232422"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="DH6-T7-wHK" id="4vO-WS-K7q"/>
-                            <outlet property="delegate" destination="DH6-T7-wHK" id="mF5-4F-2XB"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" title="ПАУЗА" id="qtm-mK-oHp"/>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="fxs-dT-Ks6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="10676" y="-1764"/>
-        </scene>
     </scenes>
     <resources>
         <image name="camera" catalog="system" width="128" height="93"/>
@@ -215,8 +184,5 @@
         <image name="music button selected" width="24" height="24"/>
         <image name="pause " width="24" height="24"/>
         <image name="planets1.jpeg" width="720" height="450"/>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
     </resources>
 </document>
