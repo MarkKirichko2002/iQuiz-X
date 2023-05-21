@@ -116,13 +116,13 @@ final class LoginViewController: UIViewController {
         // Присваиваем его UIScrollVIew
         scrollView.addGestureRecognizer(hideKeyboardGesture)
         
-        let storyboard = SwinjectStoryboard.create(name: "Main", bundle: nil, container: container)
+        let storyboard = SwinjectStoryboard.create(name: "QuizSplashScreenController", bundle: nil, container: container)
         let vc = storyboard.instantiateViewController(withIdentifier: "QuizSplashScreenController")
         
         token = Auth.auth().addStateDidChangeListener{[weak self] auth, user in
             guard user != nil else {return}
             DispatchQueue.main.async {
-                guard let window = self!.view.window else {return}
+                guard let window = self?.view.window else {return}
                 window.rootViewController = vc
             }
         }
@@ -508,7 +508,8 @@ final class LoginViewController: UIViewController {
     
     @IBAction func register() {
         DispatchQueue.main.async {
-            guard let vc = self.storyboard?.instantiateViewController(identifier: "RegisterViewController") else {return}
+            let storyboard = UIStoryboard(name: "RegisterViewController", bundle: nil)
+            guard let vc = storyboard.instantiateViewController(identifier: "RegisterViewController") as? RegisterViewController else {return}
             guard let window = self.view.window else {return}
             window.rootViewController = vc
         }

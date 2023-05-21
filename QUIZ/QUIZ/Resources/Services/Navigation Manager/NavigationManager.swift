@@ -5,7 +5,6 @@
 //  Created by Марк Киричко on 05.01.2023.
 //
 
-import Foundation
 import UIKit
 
 class NavigationManager: NavigationManagerProtocol {
@@ -24,7 +23,8 @@ class NavigationManager: NavigationManagerProtocol {
     
     // показать экран логина
     func ShowLoginScreen() {
-        guard let vc = storyboard?.instantiateViewController(identifier: "LoginViewController") else {return}
+        let storyboard = UIStoryboard(name: "LoginViewController", bundle: nil)
+        guard let vc = storyboard.instantiateViewController(identifier: "LoginViewController") as? LoginViewController else {return}
         guard let window = self.view?.window else {return}
         window.rootViewController = vc
     }
@@ -37,7 +37,8 @@ class NavigationManager: NavigationManagerProtocol {
         }
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-            guard let controller = self.storyboard?.instantiateViewController(withIdentifier: "QuizTabBarController") as? UIViewController else {return}
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            guard let controller = storyboard.instantiateViewController(withIdentifier: "QuizTabBarController") as? QuizTabBarController else {return}
             controller.modalPresentationStyle = .fullScreen
             controller.modalTransitionStyle = .flipHorizontal
             self.vc?.present(controller, animated: true, completion: nil)
@@ -54,8 +55,9 @@ class NavigationManager: NavigationManagerProtocol {
             }
             
             DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-                guard let vc = self.storyboard?.instantiateViewController(identifier: "DailyQuizViewController") else {return}
-                (vc as? DailyQuizViewController)?.category = category
+                let storyboard = UIStoryboard(name: "DailyQuizViewController", bundle: nil)
+                guard let vc = storyboard.instantiateViewController(identifier: "DailyQuizViewController") as? DailyQuizViewController else {return}
+                vc.category = category
                 guard let window = self.view?.window else {return}
                 window.rootViewController = vc
             }
