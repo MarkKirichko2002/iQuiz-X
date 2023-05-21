@@ -1385,7 +1385,7 @@
         <!--Сегодня-->
         <scene sceneID="8Ys-Iv-Gwq">
             <objects>
-                <tableViewController id="Awb-ru-614" customClass="NewsTableViewController" customModule="QUIZ" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="Awb-ru-614" customClass="NewsListViewController" customModule="QUIZ" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="p68-HQ-4gy">
                         <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1405,44 +1405,11 @@
                             <outlet property="delegate" destination="Awb-ru-614" id="LIW-P1-rYf"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Сегодня" id="xsk-gv-d5G">
-                        <rightBarButtonItems>
-                            <barButtonItem image="list" id="X2s-ld-KhH">
-                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <connections>
-                                    <segue destination="lrY-xL-OjY" kind="showDetail" id="Q45-J4-jj6"/>
-                                </connections>
-                            </barButtonItem>
-                            <barButtonItem image="dice" id="HtO-1O-1vk">
-                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <connections>
-                                    <action selector="GenerateRandomNews" destination="Awb-ru-614" id="aGT-5o-JTM"/>
-                                </connections>
-                            </barButtonItem>
-                        </rightBarButtonItems>
-                    </navigationItem>
-                    <connections>
-                        <outlet property="DiceButton" destination="HtO-1O-1vk" id="Blz-mU-Giq"/>
-                    </connections>
+                    <navigationItem key="navigationItem" title="Сегодня" id="xsk-gv-d5G"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QNe-4c-l2y" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="6561" y="-1787"/>
-        </scene>
-        <!--News Categories View Controller-->
-        <scene sceneID="gxF-Nd-4Q0">
-            <objects>
-                <viewController id="lrY-xL-OjY" customClass="NewsCategoriesViewController" customModule="QUIZ" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="vSK-PH-Ekt">
-                        <rect key="frame" x="0.0" y="0.0" width="430" height="922"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="AE4-9Z-Azb"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Jdt-B5-xeT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="7676" y="-2582"/>
         </scene>
         <!--Quiz Start View Controller-->
         <scene sceneID="t3o-fa-72R">
@@ -1947,12 +1914,10 @@
         <image name="camera" catalog="system" width="128" height="93"/>
         <image name="categories" width="24" height="24"/>
         <image name="categories selected" width="24" height="24"/>
-        <image name="dice" width="24" height="24"/>
         <image name="hints button" width="24" height="24"/>
         <image name="history.jpeg" width="409.60000610351562" height="409.60000610351562"/>
         <image name="league" width="24" height="24"/>
         <image name="league selected" width="24" height="24"/>
-        <image name="list" width="24" height="24"/>
         <image name="microphone" width="24" height="24"/>
         <image name="music button selected" width="24" height="24"/>
         <image name="pause " width="24" height="24"/>

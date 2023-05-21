@@ -7,7 +7,6 @@
 
 import Foundation
 
-// MARK: - Article
 struct Article: Codable {
     let source: Source?
     let author: String?

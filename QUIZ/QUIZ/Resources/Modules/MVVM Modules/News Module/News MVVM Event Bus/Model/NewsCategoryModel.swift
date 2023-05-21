@@ -8,9 +8,11 @@
 import Foundation
 
 struct NewsCategoryModel {
-    var id: Int
-    var name: String
-    var icon: String
-    var sound: String
-    var category: NewsCategory
+    let id: Int
+    let name: String
+    let icon: String
+    let sound: String
+    let endpoint: NewsCategory
+    var articlesCount: Int
+    let voiceCommand: String
 }

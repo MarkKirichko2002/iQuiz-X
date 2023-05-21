@@ -13,4 +13,6 @@ enum NewsCategory: String {
     case sport
     case business
     case science
+    case entertainment
+    case health
 }
