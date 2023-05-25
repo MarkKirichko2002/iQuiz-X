@@ -1465,11 +1465,9 @@
 		820D304B28F387010031CFCD /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				829A515629684BFC0056A7DB /* Custom Views */,
-				82D35C1F29633A3B000EB277 /* Extensions */,
+				8256CA282A1F990300A541E4 /* Other */,
 				82D35BDD296312D1000EB277 /* Protocols */,
 				8295F1912950AA9F000E033E /* Services */,
-				8295F1922950AB10000E033E /* ViewModels */,
 				8295F1992950B5F7000E033E /* Modules */,
 			);
 			path = Resources;
@@ -1911,6 +1909,16 @@
 				8255249A29BF6D5A0067EB68 /* APIServiceProtocol.swift */,
 			);
 			path = APIServiceProtocol;
+			sourceTree = "<group>";
+		};
+		8256CA282A1F990300A541E4 /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				82D35C1F29633A3B000EB277 /* Extensions */,
+				8295F1922950AB10000E033E /* ViewModels */,
+				829A515629684BFC0056A7DB /* Custom Views */,
+			);
+			path = Other;
 			sourceTree = "<group>";
 		};
 		8261BC1F27E10EF30089CC94 /* Statistic */ = {
