@@ -684,6 +684,7 @@
 		82F564712940D1FB0031F7BD /* QuizCategoryDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82F5646F2940D1FB0031F7BD /* QuizCategoryDetailViewController.swift */; };
 		82F564722940D1FB0031F7BD /* QuizCategoriesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82F564702940D1FB0031F7BD /* QuizCategoriesTableViewController.swift */; };
 		82F7918B27CC04A00041DAB3 /* QuizEconomy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82F7918A27CC04A00041DAB3 /* QuizEconomy.swift */; };
+		82FD136A2A20307600A6EFE4 /* QuizAchievements.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82FD13692A20307600A6EFE4 /* QuizAchievements.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -1366,6 +1367,7 @@
 		82F5646F2940D1FB0031F7BD /* QuizCategoryDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuizCategoryDetailViewController.swift; sourceTree = "<group>"; };
 		82F564702940D1FB0031F7BD /* QuizCategoriesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuizCategoriesTableViewController.swift; sourceTree = "<group>"; };
 		82F7918A27CC04A00041DAB3 /* QuizEconomy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizEconomy.swift; sourceTree = "<group>"; };
+		82FD13692A20307600A6EFE4 /* QuizAchievements.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizAchievements.swift; sourceTree = "<group>"; };
 		EAFF1E91430D577DD710F241 /* Pods-QUIZ.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QUIZ.debug.xcconfig"; path = "Target Support Files/Pods-QUIZ/Pods-QUIZ.debug.xcconfig"; sourceTree = "<group>"; };
 		F11BE561E76D3C121DE3FC1E /* Pods_QUIZ.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_QUIZ.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -3036,6 +3038,7 @@
 			children = (
 				82CBAEBE29CFA8F300AA9569 /* QuizAchievementModel.swift */,
 				82CBAED429CFC74600AA9569 /* ConditionModel.swift */,
+				82FD13692A20307600A6EFE4 /* QuizAchievements.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -4497,6 +4500,7 @@
 				826C6CA32A15492C002059B1 /* QuizTasksListViewViewModel.swift in Sources */,
 				82D35C442963AE94000EB277 /* VoiceCommandModel.swift in Sources */,
 				82CBAED129CFBD6400AA9569 /* QuizAchievementViewModel.swift in Sources */,
+				82FD136A2A20307600A6EFE4 /* QuizAchievements.swift in Sources */,
 				82B01736294F86740073452D /* NewsTableViewCell.swift in Sources */,
 				82A08C8128F48E8E0072A940 /* ProfileViewModel.swift in Sources */,
 				82CBE7EB287093C50045616B /* NewsResponse.swift in Sources */,

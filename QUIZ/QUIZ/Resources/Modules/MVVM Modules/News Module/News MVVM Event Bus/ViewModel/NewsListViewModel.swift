@@ -14,8 +14,10 @@ class NewsListViewModel {
     // категории новостей
     let categories = NewsCategories.categories
     
-    private let player: SoundClassProtocol?
     private var categoryChangedHandler: ((NewsCategoryViewModel)->Void)?
+    
+    // MARK: - сервисы
+    private let player: SoundClassProtocol?
     
     // MARK: - Init
     init(player: SoundClassProtocol?) {
