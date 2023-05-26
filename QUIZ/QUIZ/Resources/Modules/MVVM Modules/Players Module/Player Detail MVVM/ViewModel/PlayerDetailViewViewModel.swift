@@ -16,6 +16,7 @@ class PlayerDetailViewViewModel: NSObject {
     public weak var delegate: PlayerDetailViewViewModelDelegate?
     private var player: Player
     private var categories = QuizCategories.categories
+    private var tasks = QuizTasks.tasks
     
     // MARK: - сервисы
     private let fireBaseManager: FirebaseManagerProtocol?
@@ -29,10 +30,17 @@ class PlayerDetailViewViewModel: NSObject {
     func GetPlayerInfo() {
         let fireBaseManager = FirebaseManager()
         fireBaseManager.email = player.email
+        // категории
         for category in categories {
             fireBaseManager.LoadQuizCategoriesData(quizpath: category.quizpath) { result in
                 self.categories[category.id - 1].score = result.score
                 self.categories[category.id - 1].complete = result.complete
+            }
+        }
+        // задания
+        for task in tasks {
+            fireBaseManager.LoadQuizTasksData(quizpath: task.quizpath) { result in
+                self.tasks[task.id - 1].complete = result.complete
                 self.delegate?.PlayerInfoWasLoaded()
             }
         }
@@ -42,7 +50,7 @@ class PlayerDetailViewViewModel: NSObject {
 extension PlayerDetailViewViewModel: UITableViewDelegate, UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 3
+        return 4
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -53,6 +61,8 @@ extension PlayerDetailViewViewModel: UITableViewDelegate, UITableViewDataSource 
             return 1
         case 2:
             return categories.count
+        case 3:
+            return tasks.count
         default:
             return 0
         }
@@ -69,6 +79,8 @@ extension PlayerDetailViewViewModel: UITableViewDelegate, UITableViewDataSource 
             lbl.text = "Последняя Викторина"
         case 2:
             lbl.text = "Категории"
+        case 3:
+            lbl.text = "Задания"
         default:
             lbl.text = ""
         }
@@ -117,6 +129,13 @@ extension PlayerDetailViewViewModel: UITableViewDelegate, UITableViewDataSource 
             }
             cell.CategoryImage.isUserInteractionEnabled = false
             cell.ConfigureCell(category: categories[indexPath.row])
+            return cell
+        case 3:
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: QuizTasksTableViewCell.identifier, for: indexPath) as? QuizTasksTableViewCell else {
+                fatalError("Unsupported cell")
+            }
+            cell.TaskImage.isUserInteractionEnabled = false
+            cell.ConfigureCell(task: tasks[indexPath.row])
             return cell
         default:
             return UITableViewCell()

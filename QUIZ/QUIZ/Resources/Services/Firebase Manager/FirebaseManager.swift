@@ -41,7 +41,8 @@ class FirebaseManager: FirebaseManagerProtocol {
     
     // загрузить данные о заданиях викторины
     func LoadQuizTasksData(quizpath: String, completion: @escaping(QuizTaskViewModel)->()) {
-        let docRef = db.collection("users").document((Auth.auth().currentUser?.email)!)
+        
+        let docRef = db.collection("users").document(email)
         
         docRef.getDocument { document, error in
             if let error = error as NSError? {

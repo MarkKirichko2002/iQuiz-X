@@ -15,10 +15,12 @@ class PlayerDetailView: UIView {
         let tableView = UITableView()
         tableView.register(UINib(nibName: PlayerInfoTableViewCell.identifier, bundle: nil), forCellReuseIdentifier: PlayerInfoTableViewCell.identifier)
         tableView.register(UINib(nibName: QuizCategoriesTableViewCell.identifier, bundle: nil), forCellReuseIdentifier: QuizCategoriesTableViewCell.identifier)
+        tableView.register(UINib(nibName: QuizTasksTableViewCell.identifier, bundle: nil), forCellReuseIdentifier: QuizTasksTableViewCell.identifier)
         tableView.translatesAutoresizingMaskIntoConstraints = false
         return tableView
     }()
     
+    // MARK: - Init
     init(frame: CGRect, viewModel: PlayerDetailViewViewModel?) {
         super.init(frame: frame)
         self.viewModel = viewModel
