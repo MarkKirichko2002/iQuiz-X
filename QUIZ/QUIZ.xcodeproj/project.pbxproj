@@ -685,6 +685,8 @@
 		82F564722940D1FB0031F7BD /* QuizCategoriesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82F564702940D1FB0031F7BD /* QuizCategoriesTableViewController.swift */; };
 		82F7918B27CC04A00041DAB3 /* QuizEconomy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82F7918A27CC04A00041DAB3 /* QuizEconomy.swift */; };
 		82FD136A2A20307600A6EFE4 /* QuizAchievements.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82FD13692A20307600A6EFE4 /* QuizAchievements.swift */; };
+		82FD136D2A20354800A6EFE4 /* QuizCategoryDetailViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 82FD136C2A20354800A6EFE4 /* QuizCategoryDetailViewController.storyboard */; };
+		82FD136F2A20B12900A6EFE4 /* VoiceCommands.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82FD136E2A20B12900A6EFE4 /* VoiceCommands.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -1368,6 +1370,8 @@
 		82F564702940D1FB0031F7BD /* QuizCategoriesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuizCategoriesTableViewController.swift; sourceTree = "<group>"; };
 		82F7918A27CC04A00041DAB3 /* QuizEconomy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizEconomy.swift; sourceTree = "<group>"; };
 		82FD13692A20307600A6EFE4 /* QuizAchievements.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizAchievements.swift; sourceTree = "<group>"; };
+		82FD136C2A20354800A6EFE4 /* QuizCategoryDetailViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = QuizCategoryDetailViewController.storyboard; path = "QUIZ/Resources/Modules/Other Modules/Quiz Detail Modules/Quiz Categories Detail/ViewController/QuizCategoryDetailViewController.storyboard"; sourceTree = SOURCE_ROOT; };
+		82FD136E2A20B12900A6EFE4 /* VoiceCommands.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceCommands.swift; sourceTree = "<group>"; };
 		EAFF1E91430D577DD710F241 /* Pods-QUIZ.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QUIZ.debug.xcconfig"; path = "Target Support Files/Pods-QUIZ/Pods-QUIZ.debug.xcconfig"; sourceTree = "<group>"; };
 		F11BE561E76D3C121DE3FC1E /* Pods_QUIZ.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_QUIZ.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -2118,6 +2122,7 @@
 		826E2E832A1A9F1A009FA1DC /* Quiz Categories Detail */ = {
 			isa = PBXGroup;
 			children = (
+				82FD136B2A20353900A6EFE4 /* Storyboard */,
 				826E2E852A1A9F30009FA1DC /* ViewController */,
 			);
 			path = "Quiz Categories Detail";
@@ -3690,6 +3695,7 @@
 			isa = PBXGroup;
 			children = (
 				82D35C432963AE94000EB277 /* VoiceCommandModel.swift */,
+				82FD136E2A20B12900A6EFE4 /* VoiceCommands.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -3742,6 +3748,14 @@
 				82F564702940D1FB0031F7BD /* QuizCategoriesTableViewController.swift */,
 			);
 			path = ViewController;
+			sourceTree = "<group>";
+		};
+		82FD136B2A20353900A6EFE4 /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				82FD136C2A20354800A6EFE4 /* QuizCategoryDetailViewController.storyboard */,
+			);
+			path = Storyboard;
 			sourceTree = "<group>";
 		};
 		C084AC94B5F45D5B9FB284D9 /* Pods */ = {
@@ -4092,6 +4106,7 @@
 				82CBF25327D1861F0046E3BE /* ecology8.jpeg in Resources */,
 				82848D44281C77030068A4AE /* chemistry15.jpeg in Resources */,
 				82EA1F0A286BCC4F00E49D0F /* informatics13.png in Resources */,
+				82FD136D2A20354800A6EFE4 /* QuizCategoryDetailViewController.storyboard in Resources */,
 				8294095327CECE1900AFF603 /* geography4.jpeg in Resources */,
 				82BDEB15283C630100B1AD7F /* literature15.jpeg in Resources */,
 				82E4C6E3282F025900379856 /* roadtraffic17.jpeg in Resources */,
@@ -4473,6 +4488,7 @@
 				828E93F32A12BF0D00CD7A0C /* PlayersListViewController.swift in Sources */,
 				8295F19B2950B68A000E033E /* QuizCategoriesSection.swift in Sources */,
 				823BD74A2977518A008D9967 /* QuizSectionsTableViewCell.swift in Sources */,
+				82FD136F2A20B12900A6EFE4 /* VoiceCommands.swift in Sources */,
 				827B545327C01092000ACB31 /* QuizGames.swift in Sources */,
 				826E12AD27FF89DA00465E16 /* HintsTableViewCell.swift in Sources */,
 				823A8EB927FF06F600C7965B /* MicrophoneTableViewCell.swift in Sources */,

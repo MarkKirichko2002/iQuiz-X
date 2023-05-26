@@ -8,7 +8,7 @@
 import Foundation
 
 struct QuizSectionModel {
-    var id: Int
+    let id: Int
     var name: String
     var icon: String
     var sound: String
