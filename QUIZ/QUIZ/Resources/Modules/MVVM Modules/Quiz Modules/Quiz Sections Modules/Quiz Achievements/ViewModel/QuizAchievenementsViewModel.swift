@@ -13,7 +13,7 @@ class QuizAchievementsViewModel {
     
     private let firebaseManager = FirebaseManager()
     
-    var achievements = [QuizAchievementModel(id: 1, name: "астроном", description: "пройдите категорию Астрономия на 100 баллов", icon: "astronomy", path: "quizachievement1", conditions: [ConditionModel(score: 100, complete: true)], complete: false)]
+    var achievements = QuizAchievements.achievements
     
     func GetAchievementsData() {
         for i in self.achievements {
