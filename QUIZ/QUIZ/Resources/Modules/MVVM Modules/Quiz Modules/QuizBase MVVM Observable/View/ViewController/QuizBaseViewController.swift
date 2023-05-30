@@ -19,13 +19,12 @@ final class QuizBaseViewController: UIViewController {
     @IBOutlet weak var Time: UILabel!
     @IBOutlet weak var RecordVideoLabeL: UILabel!
     @IBOutlet weak var PauseButton: UIButton!
-    @IBOutlet weak var AnswersButton: UIButton!
-    @IBOutlet weak var MusicButton: UIButton!
+    @IBOutlet weak var ContextButton: UIButton!
     
     var quiz: QuizBaseViewModel?
     var category: QuizCategoryModel?
     
-    func BindViewModel() {
+    private func BindViewModel() {
         quiz?.setQuizeModel(base: quiz ?? QuizAstronomy())
         
         // Labels
@@ -126,28 +125,6 @@ final class QuizBaseViewController: UIViewController {
             }
         })
         
-        quiz?.OnOffButtonStatusTitle.bind({OnOffButtonStatusTitle in
-            DispatchQueue.main.async {
-                self.MusicButton.setTitle(OnOffButtonStatusTitle, for: .normal)
-            }
-        })
-        
-        quiz?.AnswersButtonStatus.bind({(AnswersButtonStatus) in
-            DispatchQueue.main.async {
-                if self.AnswersButton != nil {
-                    self.AnswersButton.setTitle(AnswersButtonStatus, for: .normal)
-                }
-            }
-        })
-        
-        quiz?.OnOffButton.value = self.MusicButton
-        
-        quiz?.OnOffButtonStatus.bind({OnOffButtonStatus in
-            DispatchQueue.main.async {
-                self.MusicButton.setImage(UIImage(named: OnOffButtonStatus), for: .normal)
-            }
-        })
-        
         // Image
         
         quiz?.ImageStatus.bind({(ImageStatus) in
@@ -171,12 +148,34 @@ final class QuizBaseViewController: UIViewController {
         })
     }
     
+    private func MakeContextMenu() {
+        
+        let answers = UIAction(title: "подсказки", image: UIImage(named: "hints button")) { _ in
+            self.quiz?.ShowAnswer()
+        }
+        
+        let camera = UIAction(title: "камера", image: UIImage(systemName: "camera")) { _ in
+            self.quiz?.OpenCamera()
+        }
+        
+        let photoLibrary = UIAction(title: "галерея", image: UIImage(systemName: "photo")) { _ in
+            self.quiz?.OpenPhotoLibrary()
+        }
+        
+        let skip = UIAction(title: "следующий вопрос", image: UIImage(systemName: "arrow.forward")) { _ in
+            self.quiz?.SkipQuestion()
+        }
+        
+        ContextButton.showsMenuAsPrimaryAction = true
+        ContextButton.menu = UIMenu(title: "", children: [answers, camera, photoLibrary, skip])
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.BindViewModel()
+        self.MakeContextMenu()
         self.quiz?.quiz = category
         self.quiz?.SetQuizTheme()
-        self.quiz?.checkHintsSetting(sender: AnswersButton)
         self.quiz?.checkGestureSetting()
         self.quiz?.checkSpeachSetting()
         self.quiz?.speechRecognitionManager.configureAudioSession()
@@ -194,7 +193,6 @@ final class QuizBaseViewController: UIViewController {
         Time.font = UIFont.boldSystemFont(ofSize: 15)
         Attempts.font = UIFont.boldSystemFont(ofSize: 15)
         Score.font = UIFont.boldSystemFont(ofSize: 15)
-        AnswersButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 17)
         
         Choice1.layer.cornerRadius = Choice1.frame.size.width / 10
         Choice1.clipsToBounds = true
@@ -222,18 +220,6 @@ final class QuizBaseViewController: UIViewController {
         quiz?.speechRecognition.cancelSpeechRecognition()
     }
         
-    @IBAction func OpenCamera() {
-        quiz?.OpenCamera()
-    }
-    
-    @IBAction func SkipQuestion() {
-        quiz?.SkipQuestion()
-    }
-    
-    @IBAction func OnOffSound() {
-        self.quiz?.OnOffSound()
-    }
-    
     @IBAction func answerSelected(_ sender: UIButton) {
         self.quiz?.answerSelected(sender: sender)
     }
@@ -245,10 +231,6 @@ final class QuizBaseViewController: UIViewController {
         vc.questionNumber = (quiz?.questionNumber ?? 0) + 1
         quiz?.player.PlaySound(resource: "pause_sound.mp3")
         self.present(vc, animated: true)
-    }
-    
-    @IBAction func showAnswer() {
-        quiz?.ShowAnswer()
     }
 }
 
