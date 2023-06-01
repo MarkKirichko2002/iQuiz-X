@@ -67,6 +67,7 @@ final class QuizCategoryDetailViewController: UIViewController {
     
     @IBAction func PlayQuiz() {
         guard let category = self.category else {return}
+        UIApplication.shared.setAlternateIconName(category.AppIcon)
         DispatchQueue.main.async {
             self.animation.SpringAnimation(view: self.CategoryIcon)
             self.animation.SpringAnimation(view: self.CategoryName)
