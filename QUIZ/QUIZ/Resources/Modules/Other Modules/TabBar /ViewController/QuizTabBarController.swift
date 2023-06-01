@@ -29,7 +29,6 @@ final class QuizTabBarController: UITabBarController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.quizCategoriesViewModel.CreateCategories()
         quizBaseViewModel.viewController = self
         quizCategoriesViewModel.view = self.view
         quizCategoriesViewModel.storyboard = self.storyboard
@@ -135,7 +134,7 @@ final class QuizTabBarController: UITabBarController {
         
         switch text {
             
-        // Навигация по приложению
+            // Навигация по приложению
         case _ where text.contains("Новост") || text.contains("новост"):
             self.selectedIndex = 0
             icon = "newspaper.png"
@@ -159,7 +158,7 @@ final class QuizTabBarController: UITabBarController {
                     self.player.PlaySound(resource: category.sound)
                     
                     self.speechRecognition.cancelSpeechRecognition()
-
+                    
                     DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
                         self.speechRecognition.startSpeechRecognition()
                     }
@@ -194,16 +193,15 @@ final class QuizTabBarController: UITabBarController {
                 }
             }
             
-            for i in 0...5 {
-                for value in self.quizCategoriesViewModel.categories[i].categories {
-                    if text.lowercased().contains("какой счёт у категории \(value.name)") {
-                        firebaseManager.LoadQuizCategoriesData(quizpath: value.quizpath) { category in
+                for category in self.quizCategoriesViewModel.quizcategories {
+                    if text.lowercased().contains("какой счёт у категории \(category.name)") {
+                        firebaseManager.LoadQuizCategoriesData(quizpath: category.quizpath) { result in
                             self.seconds = 2
                             Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { timer in
-                                self.icon = value.image
+                                self.icon = category.image
                                 self.button.setImage(UIImage(named: self.icon), for: .normal)
                                 self.animation.SpringAnimation(view: self.button)
-                                self.player.PlaySound(resource: value.sound)
+                                self.player.PlaySound(resource: category.sound)
                                 self.seconds -= 1
                                 if self.seconds == 0 {
                                     timer.invalidate()
@@ -211,7 +209,7 @@ final class QuizTabBarController: UITabBarController {
                                         self.button.setImage(UIImage(named: ""), for: .normal)
                                         self.button.setTitleColor(.black, for: .normal)
                                         self.button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 20)
-                                        self.button.setTitle("\(category.score)", for: .normal)
+                                        self.button.setTitle("\(result.score)", for: .normal)
                                         self.animation.SpringAnimation(view: self.button)
                                     }
                                 }
@@ -224,7 +222,7 @@ final class QuizTabBarController: UITabBarController {
                         }
                     }
                 }
-            }
+            
             
         case _ where text.lowercased().contains("куб"):
             self.selectedIndex = 3
@@ -258,34 +256,33 @@ final class QuizTabBarController: UITabBarController {
             
         // выбор категории викторины
         case _ where text != "":
-            for i in 0...5 {
-                for value in self.quizCategoriesViewModel.categories[i].categories {
-                    if text.lowercased().contains(value.voiceCommand) {
-                        DispatchQueue.main.async {
-                            self.icon = value.image
-                            self.button.setImage(UIImage(named: self.icon), for: .normal)
-                            self.animation.SpringAnimation(view: self.button)
-                            self.player.PlaySound(resource: value.sound)
-                            self.sound = value.sound
-                        }
-                        
-                        var sec = 6
-                        Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { timer in
-                            sec -= 1
-                            print(sec)
-                            self.button.setImage(UIImage(named: ""), for: .normal)
-                            self.button.setTitle("\(sec)", for: .normal)
-                            self.button.setTitleColor(.black, for: .normal)
-                            if sec == 0 {
-                                timer.invalidate()
-                                self.quizCategoriesViewModel.GoToStart(quiz: value.base, category: value)
-                            }
+            for category in self.quizCategoriesViewModel.quizcategories {
+                if text.lowercased().contains(category.voiceCommand) {
+                    DispatchQueue.main.async {
+                        self.icon = category.image
+                        self.button.setImage(UIImage(named: self.icon), for: .normal)
+                        self.animation.SpringAnimation(view: self.button)
+                        self.player.PlaySound(resource: category.sound)
+                        self.sound = category.sound
+                    }
+                    
+                    var sec = 6
+                    Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { timer in
+                        sec -= 1
+                        print(sec)
+                        self.button.setImage(UIImage(named: ""), for: .normal)
+                        self.button.setTitle("\(sec)", for: .normal)
+                        self.button.setTitleColor(.black, for: .normal)
+                        if sec == 0 {
+                            timer.invalidate()
+                            self.quizCategoriesViewModel.GoToStart(quiz: category.base, category: category)
                         }
                     }
                 }
             }
             
-        // Включение/Выключение музыки
+            
+            // Включение/Выключение музыки
         case _ where text.lowercased().contains("муз"):
             self.icon = "astronomy.png"
             self.button.setImage(UIImage(named: self.icon), for: .normal)
@@ -299,7 +296,7 @@ final class QuizTabBarController: UITabBarController {
             self.player.StopSound(resource: self.sound)
             self.animation.StopRotateAnimation(view: self.button.imageView!)
             
-        // Узнать текущее время
+            // Узнать текущее время
         case _ where text.lowercased().contains("врем"):
             let hours   = (Calendar.current.component(.hour, from: self.today))
             let minutes = (Calendar.current.component(.minute, from: self.today))
@@ -311,7 +308,7 @@ final class QuizTabBarController: UITabBarController {
             self.quizBaseViewModel.sayComment(comment: "\(hours):\(minutes)")
             self.animation.SpringAnimation(view: self.button)
             
-        // Узнать текущий год
+            // Узнать текущий год
         case _ where text.lowercased().contains("год"):
             let year = (Calendar.current.component(.year, from: self.today))
             self.button.setImage(UIImage(named: ""), for: .normal)
@@ -321,7 +318,7 @@ final class QuizTabBarController: UITabBarController {
             self.quizBaseViewModel.sayComment(comment: "\(year)")
             self.animation.SpringAnimation(view: self.button)
             
-        // Открыть камеру
+            // Открыть камеру
         case _ where text.lowercased().contains("камер"):
             self.icon = "camera.png"
             self.button.setImage(UIImage(named: self.icon), for: .normal)
@@ -332,7 +329,7 @@ final class QuizTabBarController: UITabBarController {
                 self.quizBaseViewModel.OpenCamera()
             }
             
-        // показать экран настроек
+            // показать экран настроек
         case _ where text.lowercased().contains("настрой"):
             let vc = SettingsTableViewController()
             self.icon = "gear.png"
@@ -346,7 +343,7 @@ final class QuizTabBarController: UITabBarController {
         case _ where text.lowercased().contains("закр"):
             self.dismiss(animated: true)
             
-        // выключить распознавание речи
+            // выключить распознавание речи
         case _ where text.lowercased().contains("cтоп"):
             self.button.sendActions(for: .touchUpInside)
             

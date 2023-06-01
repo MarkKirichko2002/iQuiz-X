@@ -27,7 +27,6 @@ class QuizResultsViewModel {
     }
     
     func GetQuizResult() {
-        quizCategoriesViewModel.CreateCategories()
         firebaseManager.LoadLastQuizCategoryData { result in
             self.quizresult.onNext(result)
         }

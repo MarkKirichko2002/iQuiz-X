@@ -20,7 +20,7 @@
                                 <rect key="frame" x="16" y="59" width="361" height="759"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LE2-CZ-mEo">
-                                        <rect key="frame" x="0.0" y="0.0" width="361" height="38.333333333333336"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="361" height="33.333333333333336"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" image="pause ">
@@ -31,45 +31,76 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="запись не идет" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jQN-sl-ajz">
-                                        <rect key="frame" x="0.0" y="40.333333333333329" width="361" height="21.666666666666671"/>
+                                        <rect key="frame" x="0.0" y="35.333333333333329" width="361" height="19"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="1000" text="Счет: 0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gzw-KV-vFZ">
-                                        <rect key="frame" x="0.0" y="64" width="361" height="18"/>
+                                        <rect key="frame" x="0.0" y="56.333333333333329" width="361" height="16"/>
                                         <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="15"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Осталось: cекунд" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Waj-pd-qix">
-                                        <rect key="frame" x="0.0" y="84" width="361" height="18.333333333333329"/>
+                                        <rect key="frame" x="0.0" y="74.333333333333343" width="361" height="15.666666666666671"/>
                                         <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="15"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Попыток осталось: 5" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fhf-Lg-ht3">
-                                        <rect key="frame" x="0.0" y="104.33333333333334" width="361" height="18"/>
+                                        <rect key="frame" x="0.0" y="92" width="361" height="15.666666666666671"/>
                                         <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="15"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eB3-Y2-YBD">
-                                        <rect key="frame" x="0.0" y="124.33333333333336" width="361" height="40.666666666666671"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6r1-rf-ghh">
+                                        <rect key="frame" x="0.0" y="109.66666666666666" width="361" height="33.666666666666657"/>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" image="ellipsis" catalog="system">
-                                            <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="pointSize" pointSize="22"/>
+                                        <buttonConfiguration key="configuration" style="plain" image="hints button" title=" 5">
                                             <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </buttonConfiguration>
+                                        <connections>
+                                            <action selector="showAnswer" destination="x36-Nc-G6o" eventType="touchUpInside" id="oXN-XP-XG5"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dUl-2m-sVZ">
+                                        <rect key="frame" x="0.0" y="145.33333333333334" width="361" height="30"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" image="camera" catalog="system">
+                                            <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="OpenCamera" destination="x36-Nc-G6o" eventType="touchUpInside" id="bJJ-UJ-10E"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eB3-Y2-YBD">
+                                        <rect key="frame" x="0.0" y="177.33333333333334" width="361" height="30"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="пропустить вопрос">
+                                            <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="SkipQuestion" destination="x36-Nc-G6o" eventType="touchUpInside" id="Agd-2C-JS4"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S65-VY-pMG">
+                                        <rect key="frame" x="0.0" y="209.33333333333331" width="361" height="33.666666666666657"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" image="music button selected" title=" space music.mp3"/>
+                                        <connections>
+                                            <action selector="OnOffSound" destination="x36-Nc-G6o" eventType="touchUpInside" id="9tL-qA-iA3"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalCompressionResistancePriority="1000" text="Question Text" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xaK-ST-lqd">
-                                        <rect key="frame" x="0.0" y="167" width="361" height="23"/>
+                                        <rect key="frame" x="0.0" y="245" width="361" height="23"/>
                                         <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="19"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="planets1.jpeg" translatesAutoresizingMaskIntoConstraints="NO" id="XC3-bU-R3F">
-                                        <rect key="frame" x="0.0" y="192" width="361" height="321"/>
+                                        <rect key="frame" x="0.0" y="270" width="361" height="243"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </imageView>
                                     <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a3o-Od-K89">
@@ -128,12 +159,13 @@
                     </view>
                     <navigationItem key="navigationItem" id="53F-vg-jcG"/>
                     <connections>
+                        <outlet property="AnswersButton" destination="6r1-rf-ghh" id="0UN-Fx-Hc5"/>
                         <outlet property="Attempts" destination="fhf-Lg-ht3" id="JNZ-8j-Kh0"/>
                         <outlet property="Choice1" destination="a3o-Od-K89" id="G3v-pE-4QR"/>
                         <outlet property="Choice2" destination="81u-uK-Hxc" id="zAi-w0-cu9"/>
                         <outlet property="Choice3" destination="rct-OY-Jbw" id="r2J-Fm-4Qi"/>
-                        <outlet property="ContextButton" destination="eB3-Y2-YBD" id="wbp-K6-rcK"/>
                         <outlet property="Image" destination="XC3-bU-R3F" id="BvO-Hm-mMQ"/>
+                        <outlet property="MusicButton" destination="S65-VY-pMG" id="u1t-zj-3NB"/>
                         <outlet property="PauseButton" destination="LE2-CZ-mEo" id="856-KD-Qh4"/>
                         <outlet property="RecordVideoLabeL" destination="jQN-sl-ajz" id="pde-Uw-ol7"/>
                         <outlet property="Score" destination="gzw-KV-vFZ" id="Pyv-9n-XkH"/>
@@ -147,7 +179,9 @@
         </scene>
     </scenes>
     <resources>
-        <image name="ellipsis" catalog="system" width="128" height="37"/>
+        <image name="camera" catalog="system" width="128" height="93"/>
+        <image name="hints button" width="24" height="24"/>
+        <image name="music button selected" width="24" height="24"/>
         <image name="pause " width="24" height="24"/>
         <image name="planets1.jpeg" width="720" height="450"/>
     </resources>

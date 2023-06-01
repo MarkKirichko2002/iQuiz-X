@@ -119,7 +119,7 @@ class QuizBaseViewModel {
     var Attempts = QuizBaseObserver(UILabel())
     
     // buttons
-    var OnOffButton = QuizBaseObserver(UIAction(title: "", image: nil) { _ in })
+    var OnOffButton = QuizBaseObserver(UIButton())
     
     // storyboard and view
     var storyboard: UIStoryboard?
@@ -138,14 +138,6 @@ class QuizBaseViewModel {
         self.viewController?.present(picker, animated: true)
     }
     
-    func OpenPhotoLibrary() {
-        let picker = UIImagePickerController()
-        picker.sourceType = .photoLibrary
-        picker.allowsEditing = true
-        picker.delegate = self.viewController as? any UIImagePickerControllerDelegate & UINavigationControllerDelegate
-        self.viewController?.present(picker, animated: true)
-    }
-
     func SkipQuestion() {
         
         if self.base?.questionNumber ?? 0 < 19 {
@@ -871,6 +863,27 @@ class QuizBaseViewModel {
         } else {}
     }
     
+    func checkHintsSetting(sender: UIButton) {
+        let isHintsOn = UserDefaults.standard.object(forKey: "onstatushints") as? Bool
+        
+        print(isHintsOn)
+        
+        if isHintsOn == true {
+            print("hints now")
+        } else if isHintsOn == false || isHintsOn == nil {
+            print("hints not now")
+            //self.captureSession.stopRunning()
+            self.HintsStatus = false
+        }
+        
+        if self.HintsStatus == false {
+            print("hints doesnt working")
+            sender.removeFromSuperview()
+        } else {
+            
+        }
+    }
+    
     func checkGestureSetting() {
         
         if isRecordOn == true {
@@ -912,6 +925,7 @@ class QuizBaseViewModel {
             print("music now")
         } else if isMusicOn == false || isMusicOn == nil {
             print("music not now")
+            //self.captureSession.stopRunning()
             self.MusicStatus = false
         }
         
@@ -1086,11 +1100,12 @@ class QuizBaseViewModel {
         }
     }
     
-    
     func StopMusicOption(id: Int, resource: String) {
         if base?.checkid() == id {
             if MusicStatus == false {
                 player.StopSound(resource: resource)
+                OnOffButton.value.isUserInteractionEnabled = false
+                OnOffButton.value.removeFromSuperview()
             }
         }
     }
@@ -1174,6 +1189,8 @@ class QuizBaseViewModel {
         case _ where check2.contains("Включить музыку") || check2.contains("включить музыку"):
             check2 = ""
             
+            OnOffButton.value.sendActions(for: .touchUpInside)
+            
             speechRecognition.cancelSpeechRecognition()
             
             DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
@@ -1183,7 +1200,9 @@ class QuizBaseViewModel {
             
         case _ where check2.contains("Выключить музыку") || check2.contains("выключить музыку"):
             check2 = ""
-                        
+            
+            OnOffButton.value.sendActions(for: .touchUpInside)
+            
             speechRecognition.cancelSpeechRecognition()
             
             DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
@@ -1500,4 +1519,5 @@ extension QuizBaseViewModel: AVCaptureVideoDataOutputSampleBufferDelegate {
     var description: String {
         return ""
     }
+    
 }

@@ -8,16 +8,17 @@
 import Foundation
 
 struct QuizCategoryModel {
-    var id: Int
+    let id: Int
     var name: String
-    var image: String
-    var base: QuizBaseViewModel
-    var quizpath: String
+    let image: String
+    let AppIcon: String
+    let base: QuizBaseViewModel
+    let quizpath: String
     var voiceCommand: String
     var date: String
-    var background: String
+    let background: String
     var complete: Bool
     var score: Int
-    var sound: String
-    var music: String
+    let sound: String
+    let music: String
 }
