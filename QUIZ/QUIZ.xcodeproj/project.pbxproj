@@ -120,6 +120,7 @@
 		823BD74A2977518A008D9967 /* QuizSectionsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 823BD7492977518A008D9967 /* QuizSectionsTableViewCell.swift */; };
 		823BD74C297751E9008D9967 /* QuizSectionsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 823BD74B297751E9008D9967 /* QuizSectionsTableViewCell.xib */; };
 		823BD75229776A89008D9967 /* QuizSectionsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 823BD75129776A89008D9967 /* QuizSectionsViewModel.swift */; };
+		823CC8442A2939CE0069FE02 /* Encodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 823CC8432A2939CE0069FE02 /* Encodable.swift */; };
 		823CFF6F27FA1100001FF6D9 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 823CFF6E27FA1100001FF6D9 /* SettingsTableViewController.swift */; };
 		823CFF9327FA1BAF001FF6D9 /* BiometricTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 823CFF9227FA1BAF001FF6D9 /* BiometricTableViewCell.swift */; };
 		823D9F7328247F7000EC0FE7 /* pause_sound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 823D9F7228247F6F00EC0FE7 /* pause_sound.mp3 */; };
@@ -805,6 +806,7 @@
 		823BD7492977518A008D9967 /* QuizSectionsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizSectionsTableViewCell.swift; sourceTree = "<group>"; };
 		823BD74B297751E9008D9967 /* QuizSectionsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QuizSectionsTableViewCell.xib; sourceTree = "<group>"; };
 		823BD75129776A89008D9967 /* QuizSectionsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizSectionsViewModel.swift; sourceTree = "<group>"; };
+		823CC8432A2939CE0069FE02 /* Encodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Encodable.swift; sourceTree = "<group>"; };
 		823CFF6E27FA1100001FF6D9 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
 		823CFF9227FA1BAF001FF6D9 /* BiometricTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BiometricTableViewCell.swift; sourceTree = "<group>"; };
 		823D9F7228247F6F00EC0FE7 /* pause_sound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = pause_sound.mp3; sourceTree = "<group>"; };
@@ -3624,6 +3626,7 @@
 			isa = PBXGroup;
 			children = (
 				82D35C2029633A55000EB277 /* UIView+Extensions.swift */,
+				823CC8432A2939CE0069FE02 /* Encodable.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -4509,6 +4512,7 @@
 				822F6C1927BD4AFC0033803A /* QuizResultsViewController.swift in Sources */,
 				82EA02A528240872008A0240 /* RestartTableViewCell.swift in Sources */,
 				82CBE7EA287093C50045616B /* NewsListViewModel.swift in Sources */,
+				823CC8442A2939CE0069FE02 /* Encodable.swift in Sources */,
 				82CBAED329CFC19A00AA9569 /* QuizAchievenementsViewModel.swift in Sources */,
 				82A08C7F28F488E90072A940 /* QuizResultsViewModel.swift in Sources */,
 				829DC87C2964C2C2006C9D91 /* SpeechRecognitionManager.swift in Sources */,

@@ -7,9 +7,13 @@
 
 import Foundation
 
-struct QuizCategoryViewModel {
+struct QuizCategoryViewModel: Hashable, Codable {
+    let category: String
     let score: Int
+    let UnCorrectAnswersCounter: Int
     let CorrectAnswersCounter: Int
     let complete: Bool
     let date: String
+    let music: String
+    var voiceCommand: String
 }

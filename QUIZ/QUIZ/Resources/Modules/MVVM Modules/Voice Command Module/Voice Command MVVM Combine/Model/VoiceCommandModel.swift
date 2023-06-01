@@ -17,5 +17,6 @@ struct VoiceCommandModel: Codable {
     let name: String
     let icon: String
     var voiceCommand: String
+    let path: String
     let sound: String
 }
