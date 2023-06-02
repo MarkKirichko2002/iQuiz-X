@@ -62,6 +62,8 @@ class QuizCategoriesViewModel {
         firebaseManager.LoadQuizCategoriesData(quizpath: category.quizpath) { result in
             self.quizcategories[category.id - 1].score = result.score
             self.quizcategories[category.id - 1].complete = result.complete
+            self.quizcategories[category.id - 1].voiceCommand = result.voiceCommand
+            self.quizcategories[category.id - 1].date = result.date
         }
     }
     
