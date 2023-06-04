@@ -31,7 +31,8 @@ class PlayersListView: UIView {
         addSubview(tableView)
         SetUpConstraints()
         SetUpTable()
-        self.viewModel?.GetPlayers()
+        viewModel?.GetPlayers()
+        viewModel?.ObservePlayers()
     }
     
     required init?(coder: NSCoder) {

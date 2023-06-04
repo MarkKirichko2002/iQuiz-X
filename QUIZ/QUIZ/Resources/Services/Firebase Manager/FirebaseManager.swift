@@ -15,6 +15,16 @@ class FirebaseManager: FirebaseManagerProtocol {
     private let settingsManager = SettingsManager()
     var email = Auth.auth().currentUser?.email ?? ""
     
+    func ObservePlayers(block: @escaping()->Void) {
+        
+        let docRef = db.collection("users")
+        
+        docRef.addSnapshotListener { snapshot, error in
+            
+            block()
+        }
+    }
+    
     // загрузить данные о категориях викторины
     func LoadQuizCategoriesData(quizpath: String, completion: @escaping(QuizCategoryViewModel)->()) {
         
