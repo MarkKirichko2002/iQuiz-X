@@ -47,6 +47,7 @@ class NewsListViewModel {
         }
     }
     
+    // Список категорий новостей
     var categoryMenu: UIMenu {
         let menuActions = NewsCategories.categories.map({ (item) -> UIAction in
             let name = item.name
@@ -61,6 +62,7 @@ class NewsListViewModel {
     func SelectNewsCategory(category: NewsCategoryModel) {
         player?.PlaySound(resource: category.sound)
         GetNews(category: category)
+        NotificationCenter.default.post(name: Notification.Name("newsCategorySelected"), object: category)
     }
     
     // сгенерировать случайные статьи
@@ -68,5 +70,6 @@ class NewsListViewModel {
         let randomCategory = categories[Int.random(in: 0..<categories.count - 1)]
         player?.PlaySound(resource: randomCategory.sound)
         GetNews(category: randomCategory)
+        NotificationCenter.default.post(name: Notification.Name("randomNewsGenerated"), object: randomCategory)
     }
 }

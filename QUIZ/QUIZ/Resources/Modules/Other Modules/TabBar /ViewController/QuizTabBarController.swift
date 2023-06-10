@@ -37,9 +37,12 @@ final class QuizTabBarController: UITabBarController {
         selectedIndex = UserDefaults.standard.object(forKey: "index") as? Int ?? 0
         button.frame = CGRect(x: 0, y: 0, width: 44, height: 44)
         button.layer.borderWidth = 2
+        
         self.view.insertSubview(button, aboveSubview: self.tabBar)
         button.addTarget(self, action:  #selector(QuizTabBarController.VoiceCommands(_:)), for: .touchUpInside)
         SetUpTabs()
+        ObserveRandomNews()
+        ObserveNewsCategory()
     }
     
     override func viewDidLayoutSubviews() {
@@ -76,6 +79,7 @@ final class QuizTabBarController: UITabBarController {
         case 0:
             self.icon = "newspaper.png"
             self.button.setImage(UIImage(named: self.icon), for: .normal)
+            self.button.clipsToBounds = true
             self.player.PlaySound(resource: "newspaper.mp3")
             self.animation.SpringAnimation(view: self.button)
         case 1:
@@ -102,6 +106,24 @@ final class QuizTabBarController: UITabBarController {
             break
         }
         self.currentIcon = icon
+    }
+    
+    private func ObserveRandomNews() {
+        NotificationCenter.default.addObserver(forName: Notification.Name("randomNewsGenerated"), object: nil, queue: .main) { notification in
+            if let category = notification.object as? NewsCategoryModel {
+                self.button.setImage(UIImage(named: category.icon), for: .normal)
+                self.animation.SpringAnimation(view: self.button)
+            }
+        }
+    }
+    
+    private func ObserveNewsCategory() {
+        NotificationCenter.default.addObserver(forName: Notification.Name("newsCategorySelected"), object: nil, queue: .main) { notification in
+            if let category = notification.object as? NewsCategoryModel {
+                self.button.setImage(UIImage(named: category.icon), for: .normal)
+                self.animation.SpringAnimation(view: self.button)
+            }
+        }
     }
     
     private func SetUpTabs() {
