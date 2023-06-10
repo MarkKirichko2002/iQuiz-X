@@ -15,6 +15,16 @@ class FirebaseManager: FirebaseManagerProtocol {
     private let settingsManager = SettingsManager()
     var email = Auth.auth().currentUser?.email ?? ""
     
+    func ObservePlayers(block: @escaping()->Void) {
+        
+        let docRef = db.collection("users")
+        
+        docRef.addSnapshotListener { snapshot, error in
+            
+            block()
+        }
+    }
+    
     // загрузить данные о категориях викторины
     func LoadQuizCategoriesData(quizpath: String, completion: @escaping(QuizCategoryViewModel)->()) {
         
@@ -26,12 +36,25 @@ class FirebaseManager: FirebaseManagerProtocol {
             } else {
                 if let document = document {
                     if let category = document[quizpath] as? [String: Any] {
-                        let complete = category["complete"] as? Bool ?? false
-                        let bestscore = category["bestscore"] as? Int ?? 0
+                        let UnCorrectAnswersCounter = category["UnCorrectAnswersCounter"] as? Int ?? 0
                         let CorrectAnswersCounter = category["CorrectAnswersCounter"] as? Int ?? 0
-                        let date = category["date"] as? String ?? "дата отсутствует"
+                        let voiceCommand = category["voiceCommand"] as? String ?? ""
+                        let bestscore = category["bestscore"] as? Int ?? 0
+                        let music = category["music"] as? String ?? ""
+                        let date = category["date"] as? String ?? ""
+                        let complete = category["complete"] as? Bool ?? false
+                        let category = category["category"] as? String ?? ""
                         
-                        let model = QuizCategoryViewModel(score: bestscore, CorrectAnswersCounter: CorrectAnswersCounter, complete: complete, date: date)
+                        let model = QuizCategoryViewModel(
+                            category: category,
+                            score: bestscore,
+                            UnCorrectAnswersCounter: UnCorrectAnswersCounter,
+                            CorrectAnswersCounter: CorrectAnswersCounter,
+                            complete: complete,
+                            date: date,
+                            music: music,
+                            voiceCommand: voiceCommand
+                        )
                         completion(model)
                     }
                 }
@@ -197,18 +220,43 @@ class FirebaseManager: FirebaseManagerProtocol {
         
         let db = Firestore.firestore()
         
+        var category = QuizCategoryViewModel(
+            category: QuizCategories.categories[id - 1].name,
+            score:  QuizCategories.categories[id - 1].score,
+            UnCorrectAnswersCounter: 0,
+            CorrectAnswersCounter: 0,
+            complete: false,
+            date: "",
+            music:  QuizCategories.categories[id - 1].music,
+            voiceCommand: text
+        )
+        
+        let ref = db.collection("users").document(email)
+        
+        LoadQuizCategoriesData(quizpath: voicecommand.path) { result in
+            category = QuizCategoryViewModel(
+                category: result.category,
+                score: result.score,
+                UnCorrectAnswersCounter: result.UnCorrectAnswersCounter,
+                CorrectAnswersCounter: result.CorrectAnswersCounter,
+                complete: result.complete,
+                date: result.date,
+                music: result.music,
+                voiceCommand: text
+            )
+        }
+        
         if voicecommand.id == id {
-            let ref = db.collection("users").document((Auth.auth().currentUser?.email)!)
-            ref.updateData([
-                voicecommand.name: [
-                    "voicecommand": text,
-                ]
-            ]) { err in
-                if let err = err {
-                    print("Error writing document: \(err)")
-                } else {
-                    print("success")
-                    print(ref)
+            DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+                ref.updateData([
+                    voicecommand.path: category.asDictionary()
+                ]) { err in
+                    if let err = err {
+                        print("Error writing document: \(err)")
+                    } else {
+                        print("success")
+                        print(ref)
+                    }
                 }
             }
         }
@@ -251,7 +299,7 @@ class FirebaseManager: FirebaseManagerProtocol {
     func DeleteAccount() {
         
         if Auth.auth().currentUser?.email != nil {
-           
+            
             let user = Auth.auth().currentUser
             
             user?.delete { error in

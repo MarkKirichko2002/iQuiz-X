@@ -1274,7 +1274,8 @@ class QuizBaseViewModel {
                 "icon": image,
                 "background": background,
                 "sound": quiz?.sound ?? "",
-                "date": dateManager.GetCurrentDate()
+                "date": dateManager.GetCurrentDate(),
+                "voiceCommand": quiz?.voiceCommand ?? ""
             ]
         ]) { err in
             if let err = err {
@@ -1296,7 +1297,8 @@ class QuizBaseViewModel {
                 "complete": true,
                 "category": category.name,
                 "music": quiz?.music ?? "",
-                "date": dateManager.GetCurrentDate()
+                "date": dateManager.GetCurrentDate(),
+                "voiceCommand": quiz?.voiceCommand ?? ""
             ]
         ]) { err in
             if let err = err {

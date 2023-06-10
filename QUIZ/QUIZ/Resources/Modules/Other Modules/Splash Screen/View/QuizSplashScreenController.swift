@@ -9,13 +9,13 @@ import UIKit
 
 final class QuizSplashScreenController: UIViewController {
     
-    // анимация
+    // MARK: - сервисы
     var animation: AnimationClassProtocol?
+    var firebaseManager: FirebaseManagerProtocol?
     
     // иконка
     private let QuizIcon: RoundedImageView = {
         let icon = RoundedImageView()
-        icon.image = UIImage(named: "astronomy")
         icon.borderWidth = 5
         icon.color = UIColor.white
         icon.translatesAutoresizingMaskIntoConstraints = false
@@ -43,14 +43,14 @@ final class QuizSplashScreenController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.addSubviews(QuizIcon, QuizTitleLabel, AnniversaryLabel)
-        view.backgroundColor = UIColor(patternImage: UIImage(named: "earth.background.jpeg")!)
         SetUpConstraints()
-        ShowSplashScreen()
+        DisplayLastQuizCategory()
     }
     
     // MARK: - Init
-    init(animation: AnimationClassProtocol?) {
+    init(animation: AnimationClassProtocol?, firebaseManager: FirebaseManagerProtocol?) {
         self.animation = animation
+        self.firebaseManager = firebaseManager
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -74,6 +74,21 @@ final class QuizSplashScreenController: UIViewController {
             AnniversaryLabel.heightAnchor.constraint(equalToConstant: 30),
             AnniversaryLabel.topAnchor.constraint(equalTo: QuizTitleLabel.bottomAnchor, constant: 40),
         ])
+    }
+    
+    private func DisplayLastQuizCategory() {
+        firebaseManager?.LoadLastQuizCategoryData(completion: { lastquiz in
+            DispatchQueue.main.async {
+                self.QuizIcon.image = UIImage(named: lastquiz.icon)
+                self.QuizIcon.sound = lastquiz.sound
+                if let background = UIImage(named: lastquiz.background) {
+                    self.view.backgroundColor = UIColor(patternImage: background)
+                } else {}
+            }
+        })
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
+            self.ShowSplashScreen()
+        }
     }
    
     private func ShowSplashScreen() {

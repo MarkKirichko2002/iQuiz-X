@@ -35,6 +35,14 @@ class PlayersListViewViewModel: NSObject {
             }
         }
     }
+    
+    func ObservePlayers() {
+        firebaseManager?.ObservePlayers(block: {
+            DispatchQueue.main.async {
+                self.GetPlayers()
+            }
+        })
+    }
 }
 
 extension PlayersListViewViewModel: UITableViewDelegate, UITableViewDataSource {
@@ -53,7 +61,7 @@ extension PlayersListViewViewModel: UITableViewDelegate, UITableViewDataSource {
             self.delegate?.playerWasSelected(player: self.players[indexPath.row])
         }
     }
-        
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: PlayerTableViewCell.identifier, for: indexPath) as? PlayerTableViewCell else {
             fatalError("Unsupported cell")

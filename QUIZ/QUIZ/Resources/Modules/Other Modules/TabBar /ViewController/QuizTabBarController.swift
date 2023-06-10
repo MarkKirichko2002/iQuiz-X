@@ -29,6 +29,7 @@ final class QuizTabBarController: UITabBarController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        quizCategoriesViewModel.LoadCategoriesResults()
         quizBaseViewModel.viewController = self
         quizCategoriesViewModel.view = self.view
         quizCategoriesViewModel.storyboard = self.storyboard
@@ -134,7 +135,7 @@ final class QuizTabBarController: UITabBarController {
         
         switch text {
             
-            // Навигация по приложению
+        // Навигация по приложению
         case _ where text.contains("Новост") || text.contains("новост"):
             self.selectedIndex = 0
             icon = "newspaper.png"
@@ -266,6 +267,8 @@ final class QuizTabBarController: UITabBarController {
                         self.sound = category.sound
                     }
                     
+                    UIApplication.shared.setAlternateIconName(category.AppIcon)
+                    
                     var sec = 6
                     Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { timer in
                         sec -= 1
@@ -282,7 +285,7 @@ final class QuizTabBarController: UITabBarController {
             }
             
             
-            // Включение/Выключение музыки
+        // Включение/Выключение музыки
         case _ where text.lowercased().contains("муз"):
             self.icon = "astronomy.png"
             self.button.setImage(UIImage(named: self.icon), for: .normal)
@@ -296,7 +299,7 @@ final class QuizTabBarController: UITabBarController {
             self.player.StopSound(resource: self.sound)
             self.animation.StopRotateAnimation(view: self.button.imageView!)
             
-            // Узнать текущее время
+        // Узнать текущее время
         case _ where text.lowercased().contains("врем"):
             let hours   = (Calendar.current.component(.hour, from: self.today))
             let minutes = (Calendar.current.component(.minute, from: self.today))
@@ -308,7 +311,7 @@ final class QuizTabBarController: UITabBarController {
             self.quizBaseViewModel.sayComment(comment: "\(hours):\(minutes)")
             self.animation.SpringAnimation(view: self.button)
             
-            // Узнать текущий год
+        // Узнать текущий год
         case _ where text.lowercased().contains("год"):
             let year = (Calendar.current.component(.year, from: self.today))
             self.button.setImage(UIImage(named: ""), for: .normal)
@@ -318,7 +321,7 @@ final class QuizTabBarController: UITabBarController {
             self.quizBaseViewModel.sayComment(comment: "\(year)")
             self.animation.SpringAnimation(view: self.button)
             
-            // Открыть камеру
+        // Открыть камеру
         case _ where text.lowercased().contains("камер"):
             self.icon = "camera.png"
             self.button.setImage(UIImage(named: self.icon), for: .normal)
@@ -329,7 +332,7 @@ final class QuizTabBarController: UITabBarController {
                 self.quizBaseViewModel.OpenCamera()
             }
             
-            // показать экран настроек
+        // показать экран настроек
         case _ where text.lowercased().contains("настрой"):
             let vc = SettingsTableViewController()
             self.icon = "gear.png"
@@ -343,7 +346,7 @@ final class QuizTabBarController: UITabBarController {
         case _ where text.lowercased().contains("закр"):
             self.dismiss(animated: true)
             
-            // выключить распознавание речи
+        // выключить распознавание речи
         case _ where text.lowercased().contains("cтоп"):
             self.button.sendActions(for: .touchUpInside)
             

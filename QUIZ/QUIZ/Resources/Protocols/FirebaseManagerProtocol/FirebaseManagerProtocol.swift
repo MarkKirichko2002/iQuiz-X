@@ -8,6 +8,7 @@
 import Foundation
 
 protocol FirebaseManagerProtocol {
+    func ObservePlayers(block: @escaping()->Void) 
     func LoadQuizCategoriesData(quizpath: String, completion: @escaping(QuizCategoryViewModel)->())
     func LoadQuizTasksData(quizpath: String, completion: @escaping(QuizTaskViewModel)->())
     func LoadLastQuizCategoryData(completion: @escaping(QuizResult)->())

@@ -103,7 +103,7 @@ final class LoginViewController: UIViewController {
         // Присваиваем его UIScrollVIew
         scrollView.addGestureRecognizer(hideKeyboardGesture)
         
-        let vc = QuizSplashScreenController(animation: AnimationClass())
+        let vc = QuizSplashScreenController(animation: AnimationClass(), firebaseManager: FirebaseManager())
         
         token = Auth.auth().addStateDidChangeListener{[weak self] auth, user in
             guard user != nil else {return}
