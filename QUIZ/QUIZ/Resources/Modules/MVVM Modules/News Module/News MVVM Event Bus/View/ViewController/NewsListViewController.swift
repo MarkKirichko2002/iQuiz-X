@@ -29,6 +29,17 @@ final class NewsListViewController: UITableViewController, CustomViewCellDelegat
         SetUpViewModel()
         configureNavigation()
         SetUpTable()
+        becomeFirstResponder()
+    }
+    
+    override var canBecomeFirstResponder: Bool {
+        return true
+    }
+    
+    override func motionEnded(_ motion: UIEvent.EventSubtype, with event: UIEvent?) {
+        if motion == .motionShake {
+            newsListViewModel?.GenerateRandomNews()
+        }
     }
     
     private func SetUpViewModel() {

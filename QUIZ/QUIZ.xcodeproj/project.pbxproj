@@ -1372,7 +1372,7 @@
 		82F564702940D1FB0031F7BD /* QuizCategoriesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuizCategoriesTableViewController.swift; sourceTree = "<group>"; };
 		82F7918A27CC04A00041DAB3 /* QuizEconomy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizEconomy.swift; sourceTree = "<group>"; };
 		82FD13692A20307600A6EFE4 /* QuizAchievements.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizAchievements.swift; sourceTree = "<group>"; };
-		82FD136C2A20354800A6EFE4 /* QuizCategoryDetailViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = QuizCategoryDetailViewController.storyboard; path = "QUIZ/Resources/Modules/Other Modules/Quiz Detail Modules/Quiz Categories Detail/New Group/QuizCategoryDetailViewController.storyboard"; sourceTree = SOURCE_ROOT; };
+		82FD136C2A20354800A6EFE4 /* QuizCategoryDetailViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = QuizCategoryDetailViewController.storyboard; path = "QUIZ/Resources/Modules/Other Modules/Quiz Detail Modules/Quiz Categories Detail/Storyboard/QuizCategoryDetailViewController.storyboard"; sourceTree = SOURCE_ROOT; };
 		82FD136E2A20B12900A6EFE4 /* VoiceCommands.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceCommands.swift; sourceTree = "<group>"; };
 		EAFF1E91430D577DD710F241 /* Pods-QUIZ.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QUIZ.debug.xcconfig"; path = "Target Support Files/Pods-QUIZ/Pods-QUIZ.debug.xcconfig"; sourceTree = "<group>"; };
 		F11BE561E76D3C121DE3FC1E /* Pods_QUIZ.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_QUIZ.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -1506,6 +1506,14 @@
 				8243A61A2820810E00427553 /* physics20.jpeg */,
 			);
 			path = Physics;
+			sourceTree = "<group>";
+		};
+		8218C1192A34CEB600818AAA /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				82FD136C2A20354800A6EFE4 /* QuizCategoryDetailViewController.storyboard */,
+			);
+			path = Storyboard;
 			sourceTree = "<group>";
 		};
 		821C69E528739E1A004FD9E1 /* ViewModel */ = {
@@ -1964,14 +1972,6 @@
 			path = Chemistry;
 			sourceTree = "<group>";
 		};
-		8262631A2A28DB2C003C9E98 /* Storyboard */ = {
-			isa = PBXGroup;
-			children = (
-				82FD136C2A20354800A6EFE4 /* QuizCategoryDetailViewController.storyboard */,
-			);
-			path = Storyboard;
-			sourceTree = "<group>";
-		};
 		826E2E4A2A1A5223009FA1DC /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -2132,7 +2132,7 @@
 		826E2E832A1A9F1A009FA1DC /* Quiz Categories Detail */ = {
 			isa = PBXGroup;
 			children = (
-				8262631A2A28DB2C003C9E98 /* Storyboard */,
+				8218C1192A34CEB600818AAA /* Storyboard */,
 				826E2E852A1A9F30009FA1DC /* ViewController */,
 			);
 			path = "Quiz Categories Detail";
