@@ -76,7 +76,7 @@ final class NewsListViewController: UITableViewController, CustomViewCellDelegat
     private func configureNavigation() {
         let categoryBarButton = UIBarButtonItem(title: nil, image: UIImage(named: "list"), primaryAction: nil, menu: newsListViewModel?.categoryMenu)
         categoryBarButton.tintColor = .black
-        let diceButton = UIBarButtonItem(image: UIImage(systemName: "dice"), style: .plain, target: self, action: #selector(GenerateRandomNews))
+        let diceButton = UIBarButtonItem(image: UIImage(named: "dice"), style: .plain, target: self, action: #selector(GenerateRandomNews))
         diceButton.tintColor = .black
         navigationItem.rightBarButtonItems = [categoryBarButton, diceButton]
         newsListViewModel?.registerCategoryChangedHandler { category in
