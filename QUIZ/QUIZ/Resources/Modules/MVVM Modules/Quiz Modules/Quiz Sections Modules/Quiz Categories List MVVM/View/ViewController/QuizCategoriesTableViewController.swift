@@ -62,6 +62,8 @@ final class QuizCategoriesTableViewController: UIViewController, UITableViewDele
         
         player.PlaySound(resource: quizCategoriesViewModel.quizcategories[indexPath.row].sound)
         
+         NotificationCenter.default.post(name: Notification.Name("quizCategorySelected"), object: quizCategoriesViewModel.quizcategories[indexPath.row])
+         
         if let cell = tableView.cellForRow(at: indexPath) as? QuizCategoriesTableViewCell {
             cell.didSelect(indexPath: indexPath)
         }

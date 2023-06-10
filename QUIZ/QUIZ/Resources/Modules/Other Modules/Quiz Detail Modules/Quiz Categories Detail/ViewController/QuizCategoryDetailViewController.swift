@@ -65,6 +65,11 @@ final class QuizCategoryDetailViewController: UIViewController {
         self.animation.StartRotateAnimation(view: self.CategoryIcon)
     }
     
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        NotificationCenter.default.post(name: Notification.Name("quizCategoryDetailScreenWasClosed"), object: nil)
+    }
+    
     @IBAction func PlayQuiz() {
         guard let category = self.category else {return}
         UIApplication.shared.setAlternateIconName(category.AppIcon)
@@ -86,6 +91,7 @@ final class QuizCategoryDetailViewController: UIViewController {
         self.animation.SpringAnimation(view: self.CloseButton)
         self.player.PlaySound(resource: category.sound)
         DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+            NotificationCenter.default.post(name: Notification.Name("quizCategoryDetailScreenWasClosed"), object: nil)
             self.dismiss(animated: true)
         }
     }
