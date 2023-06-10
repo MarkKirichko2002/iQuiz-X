@@ -37,12 +37,12 @@ final class QuizTabBarController: UITabBarController {
         selectedIndex = UserDefaults.standard.object(forKey: "index") as? Int ?? 0
         button.frame = CGRect(x: 0, y: 0, width: 44, height: 44)
         button.layer.borderWidth = 2
-        
         self.view.insertSubview(button, aboveSubview: self.tabBar)
         button.addTarget(self, action:  #selector(QuizTabBarController.VoiceCommands(_:)), for: .touchUpInside)
         SetUpTabs()
         ObserveRandomNews()
         ObserveNewsCategory()
+        ObserveQuizCategories()
     }
     
     override func viewDidLayoutSubviews() {
@@ -123,6 +123,18 @@ final class QuizTabBarController: UITabBarController {
                 self.button.setImage(UIImage(named: category.icon), for: .normal)
                 self.animation.SpringAnimation(view: self.button)
             }
+        }
+    }
+    
+    func ObserveQuizCategories() {
+        NotificationCenter.default.addObserver(forName: Notification.Name("quizCategorySelected"), object: nil, queue: .main) { notification in
+            if let category = notification.object as? QuizCategoryModel {
+                self.button.setImage(UIImage(named: category.image), for: .normal)
+                self.animation.SpringAnimation(view: self.button)
+            }
+        }
+        NotificationCenter.default.addObserver(forName: Notification.Name("quizCategoryDetailScreenWasClosed"), object: nil, queue: .main) { _ in
+            self.button.setImage(UIImage(named: "astronomy"), for: .normal)
         }
     }
     
