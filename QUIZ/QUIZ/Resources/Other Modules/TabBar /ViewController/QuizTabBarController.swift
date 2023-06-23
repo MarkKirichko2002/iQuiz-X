@@ -35,20 +35,11 @@ final class QuizTabBarController: UITabBarController {
         quizCategoriesViewModel.storyboard = self.storyboard
         speechRecognitionManager.configureAudioSession()
         selectedIndex = UserDefaults.standard.object(forKey: "index") as? Int ?? 0
-        button.frame = CGRect(x: 0, y: 0, width: 44, height: 44)
-        button.layer.borderWidth = 2
-        self.view.insertSubview(button, aboveSubview: self.tabBar)
-        button.addTarget(self, action:  #selector(QuizTabBarController.VoiceCommands(_:)), for: .touchUpInside)
         SetUpTabs()
+        createMiddleButton()
         ObserveRandomNews()
         ObserveNewsCategory()
         ObserveQuizCategories()
-    }
-    
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-        button.frame = CGRect.init(x: self.tabBar.center.x - 32, y: self.view.bounds.height - 100, width: 64, height: 64)
-        button.layer.cornerRadius = 32
     }
     
     override func viewDidDisappear(_ animated: Bool) {
@@ -71,6 +62,18 @@ final class QuizTabBarController: UITabBarController {
         didSet {
             tabChangedTo(selectedIndex: selectedIndex)
         }
+    }
+    
+    private func createMiddleButton() {
+        button.layer.borderWidth = 2
+        button.layer.cornerRadius = 32
+        button.frame = CGRect(x: 0, y: 0, width: 64, height: 64)
+        // Устанавливаем положение кнопки по середине TabBar
+        button.center = CGPoint(x: tabBar.frame.width / 2, y: tabBar.frame.height / 2 - 5)
+        // Назначаем действие для кнопки
+        button.addTarget(self, action: #selector(VoiceCommands), for: .touchUpInside)
+        // Добавляем кнопку на TabBar
+        tabBar.addSubview(button)
     }
     
     private func tabChangedTo(selectedIndex: Int) {
