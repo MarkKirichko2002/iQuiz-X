@@ -21,11 +21,10 @@ final class QuizTabBarController: UITabBarController {
     private let newsListViewModel = NewsListViewModel(player: SoundClass())
     private var quizBaseViewModel = QuizBaseViewModel()
     private let animation = AnimationClass()
-    private let speechRecognitionManager = SpeechRecognitionManager()
-    private let quizCategoriesViewModel = QuizCategoriesViewModel()
+    let quizCategoriesViewModel = QuizCategoriesViewModel()
     private let player = SoundClass()
     private var firebaseManager = FirebaseManager()
-    private let speechRecognition = SpeechRecognitionManager()
+    let speechRecognition = SpeechRecognitionManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,7 +32,6 @@ final class QuizTabBarController: UITabBarController {
         quizBaseViewModel.viewController = self
         quizCategoriesViewModel.view = self.view
         quizCategoriesViewModel.storyboard = self.storyboard
-        speechRecognitionManager.configureAudioSession()
         selectedIndex = UserDefaults.standard.object(forKey: "index") as? Int ?? 0
         SetUpTabs()
         createMiddleButton()
@@ -410,30 +408,6 @@ final class QuizTabBarController: UITabBarController {
             button.setImage(UIImage(named: self.currentIcon), for: .normal)
             animation.SpringAnimation(view: button)
             speechRecognition.cancelSpeechRecognition()
-        }
-    }
-}
-
-extension QuizTabBarController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-    
-    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-            picker.dismiss(animated: true, completion: nil)
-            self.speechRecognition.startSpeechRecognition()
-        }
-    }
-    
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
-        
-        guard let image = info[UIImagePickerController.InfoKey.editedImage] as?
-                UIImage else {
-            return
-        }
-        
-        quizCategoriesViewModel.CheckText(image: image)
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-            picker.dismiss(animated: true, completion: nil)
-            self.speechRecognition.startSpeechRecognition()
         }
     }
 }
