@@ -8,14 +8,14 @@
 import UIKit
 import Combine
 
-final class QuizCategoriesTableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, CustomViewCellDelegate {
+final class QuizCategoriesTableViewController: UIViewController {
     
-    private var quizCategoriesViewModel = QuizCategoriesViewModel()
-    private var player = SoundClass()
+    let quizCategoriesViewModel = QuizCategoriesViewModel()
+    let player = SoundClass()
+    let tableView = UITableView()
     private var delegate: CustomViewCellDelegate?
     private var cancellation: Set<AnyCancellable> = []
-    private var tableView = UITableView()
-    private var refreshControl = UIRefreshControl()
+    private let refreshControl = UIRefreshControl()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,43 +46,5 @@ final class QuizCategoriesTableViewController: UIViewController, UITableViewDele
         tableView.delegate = self
         tableView.dataSource = self
         self.tableView.register(UINib(nibName: QuizCategoriesTableViewCell.identifier, bundle: nil), forCellReuseIdentifier: QuizCategoriesTableViewCell.identifier)
-    }
-    
-    func didElementClick() {
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-            self.performSegue(withIdentifier: "showCategoryDetail", sender: nil)
-        }
-    }
-    
-     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-         return quizCategoriesViewModel.quizcategories.count
-    }
-    
-     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-        player.PlaySound(resource: quizCategoriesViewModel.quizcategories[indexPath.row].sound)
-        
-         NotificationCenter.default.post(name: Notification.Name("quizCategorySelected"), object: quizCategoriesViewModel.quizcategories[indexPath.row])
-         
-        if let cell = tableView.cellForRow(at: indexPath) as? QuizCategoriesTableViewCell {
-            cell.didSelect(indexPath: indexPath)
-        }
-    }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "showCategoryDetail",
-           let destinationController = segue.destination as? QuizCategoryDetailViewController,
-           let indexSelectedCell = tableView.indexPathForSelectedRow {
-           let category = quizCategoriesViewModel.quizcategories[indexSelectedCell.row]
-           destinationController.category = category
-        }
-    }
-    
-        
-     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: QuizCategoriesTableViewCell.identifier, for: indexPath) as! QuizCategoriesTableViewCell
-        cell.delegate = self
-        cell.ConfigureCell(category: quizCategoriesViewModel.quizcategories[indexPath.row])
-        return cell
     }
 }
