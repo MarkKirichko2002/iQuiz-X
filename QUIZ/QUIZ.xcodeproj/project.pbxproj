@@ -424,6 +424,12 @@
 		829A515429675E790056A7DB /* DateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 829A515329675E790056A7DB /* DateManager.swift */; };
 		829A5166296874F40056A7DB /* DailyQuizViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 829A5165296874F40056A7DB /* DailyQuizViewController.swift */; };
 		829A516A2968B2F70056A7DB /* NewsCategoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 829A51692968B2F70056A7DB /* NewsCategoryModel.swift */; };
+		829C49A72A4868FF0007976B /* QuizTasksListViewController + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 829C49A62A4868FF0007976B /* QuizTasksListViewController + Extensions.swift */; };
+		829C49A92A48692E0007976B /* QuizTasksListView + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 829C49A82A48692E0007976B /* QuizTasksListView + Extensions.swift */; };
+		829C49AC2A4869D20007976B /* QuizAchievementsTableViewController + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 829C49AB2A4869D20007976B /* QuizAchievementsTableViewController + Extensions.swift */; };
+		829C49AF2A486A7A0007976B /* QuizBaseViewController + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 829C49AE2A486A7A0007976B /* QuizBaseViewController + Extensions.swift */; };
+		829C49B12A486B920007976B /* RegisterViewController + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 829C49B02A486B920007976B /* RegisterViewController + Extension.swift */; };
+		829C49B42A486C4B0007976B /* NewsListViewController + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 829C49B32A486C4B0007976B /* NewsListViewController + Extensions.swift */; };
 		829DC874296445F2006C9D91 /* skip.png in Resources */ = {isa = PBXBuildFile; fileRef = 829DC873296445F2006C9D91 /* skip.png */; };
 		829DC87C2964C2C2006C9D91 /* SpeechRecognitionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 829DC87B2964C2C2006C9D91 /* SpeechRecognitionManager.swift */; };
 		829DC8972965A968006C9D91 /* QuizTaskDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 829DC8962965A968006C9D91 /* QuizTaskDetailViewController.swift */; };
@@ -1115,6 +1121,12 @@
 		829A515329675E790056A7DB /* DateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateManager.swift; sourceTree = "<group>"; };
 		829A5165296874F40056A7DB /* DailyQuizViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyQuizViewController.swift; sourceTree = "<group>"; };
 		829A51692968B2F70056A7DB /* NewsCategoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsCategoryModel.swift; sourceTree = "<group>"; };
+		829C49A62A4868FF0007976B /* QuizTasksListViewController + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "QuizTasksListViewController + Extensions.swift"; sourceTree = "<group>"; };
+		829C49A82A48692E0007976B /* QuizTasksListView + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "QuizTasksListView + Extensions.swift"; sourceTree = "<group>"; };
+		829C49AB2A4869D20007976B /* QuizAchievementsTableViewController + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "QuizAchievementsTableViewController + Extensions.swift"; sourceTree = "<group>"; };
+		829C49AE2A486A7A0007976B /* QuizBaseViewController + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "QuizBaseViewController + Extensions.swift"; sourceTree = "<group>"; };
+		829C49B02A486B920007976B /* RegisterViewController + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RegisterViewController + Extension.swift"; sourceTree = "<group>"; };
+		829C49B32A486C4B0007976B /* NewsListViewController + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NewsListViewController + Extensions.swift"; sourceTree = "<group>"; };
 		829DC873296445F2006C9D91 /* skip.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = skip.png; sourceTree = "<group>"; };
 		829DC87B2964C2C2006C9D91 /* SpeechRecognitionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechRecognitionManager.swift; sourceTree = "<group>"; };
 		829DC8962965A968006C9D91 /* QuizTaskDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizTaskDetailViewController.swift; sourceTree = "<group>"; };
@@ -2046,6 +2058,7 @@
 			isa = PBXGroup;
 			children = (
 				8277BCF827C709A800B5F9D0 /* RegisterViewController.swift */,
+				829C49B02A486B920007976B /* RegisterViewController + Extension.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -2835,6 +2848,30 @@
 			path = "Daily Quiz";
 			sourceTree = "<group>";
 		};
+		829C49AA2A4869A50007976B /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				829C49AB2A4869D20007976B /* QuizAchievementsTableViewController + Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		829C49AD2A486A4B0007976B /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				829C49AE2A486A7A0007976B /* QuizBaseViewController + Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		829C49B22A486C330007976B /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				829C49B32A486C4B0007976B /* NewsListViewController + Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		829D3D372950EB3600B4C924 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
@@ -2956,6 +2993,7 @@
 			children = (
 				826E2E902A1AA69F009FA1DC /* Storyboard */,
 				82A82AE628A92C2E00011B6F /* ViewController */,
+				829C49AD2A486A4B0007976B /* Extensions */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -3031,6 +3069,7 @@
 				82CBAEBD29CFA8DB00AA9569 /* Model */,
 				82CBAEBC29CFA8D900AA9569 /* View */,
 				82CBAEBB29CFA8D600AA9569 /* ViewModel */,
+				829C49AA2A4869A50007976B /* Extensions */,
 			);
 			path = "Quiz Achievements";
 			sourceTree = "<group>";
@@ -3125,6 +3164,7 @@
 			children = (
 				828E4B47293FD638002A55B1 /* ViewController */,
 				82B01734294F861E0073452D /* Cell */,
+				829C49B22A486C330007976B /* Extensions */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -3788,6 +3828,8 @@
 			isa = PBXGroup;
 			children = (
 				82FA043E2A476B1F009F04E6 /* QuizTasksListViewViewModel + Extensions.swift */,
+				829C49A62A4868FF0007976B /* QuizTasksListViewController + Extensions.swift */,
+				829C49A82A48692E0007976B /* QuizTasksListView + Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -4485,6 +4527,7 @@
 				82CBAECA29CFAF0B00AA9569 /* QuizAchievementsTableViewCell.swift in Sources */,
 				821120E92822EE5E009C2801 /* CurrentCategoryTableViewCell.swift in Sources */,
 				8287054F28144CF800002EBC /* VoicePasswordTableViewCell.swift in Sources */,
+				829C49AC2A4869D20007976B /* QuizAchievementsTableViewController + Extensions.swift in Sources */,
 				8281167E293A867E00AA7C8E /* QuizNewYear.swift in Sources */,
 				82D35C3E2963ADF6000EB277 /* VoiceCommandsTableViewController.swift in Sources */,
 				82A9796E27F8CB2C001EBF1C /* QuizLiterature.swift in Sources */,
@@ -4541,6 +4584,7 @@
 				82FA04432A476C2D009F04E6 /* PlayersListViewViewModel + Extensions.swift in Sources */,
 				823BD74A2977518A008D9967 /* QuizSectionsTableViewCell.swift in Sources */,
 				82FA04372A4764EB009F04E6 /* QuizTabBarController + Extensions.swift in Sources */,
+				829C49A72A4868FF0007976B /* QuizTasksListViewController + Extensions.swift in Sources */,
 				82FD136F2A20B12900A6EFE4 /* VoiceCommands.swift in Sources */,
 				827B545327C01092000ACB31 /* QuizGames.swift in Sources */,
 				826E12AD27FF89DA00465E16 /* HintsTableViewCell.swift in Sources */,
@@ -4557,6 +4601,7 @@
 				82F564722940D1FB0031F7BD /* QuizCategoriesTableViewController.swift in Sources */,
 				8234A661296A311F00A7FA2B /* SpeechSynthesizerManagerProtocol.swift in Sources */,
 				8261BC2227E10F1B0089CC94 /* QuizStatisticTableViewController.swift in Sources */,
+				829C49AF2A486A7A0007976B /* QuizBaseViewController + Extensions.swift in Sources */,
 				82CBAEB929CFA72700AA9569 /* QuizCategoryModel.swift in Sources */,
 				828E94002A12D57D00CD7A0C /* PlayerDetailViewController.swift in Sources */,
 				822F6C1927BD4AFC0033803A /* QuizResultsViewController.swift in Sources */,
@@ -4604,8 +4649,11 @@
 				8277BCF927C709A800B5F9D0 /* RegisterViewController.swift in Sources */,
 				823CFF6F27FA1100001FF6D9 /* SettingsTableViewController.swift in Sources */,
 				8244DCE827E39C1700F5C59B /* QuizInformatics.swift in Sources */,
+				829C49A92A48692E0007976B /* QuizTasksListView + Extensions.swift in Sources */,
 				828E93F12A12BD7200CD7A0C /* PlayersListView.swift in Sources */,
+				829C49B42A486C4B0007976B /* NewsListViewController + Extensions.swift in Sources */,
 				8237D98E286D02230097FE69 /* QuizUnderwater.swift in Sources */,
+				829C49B12A486B920007976B /* RegisterViewController + Extension.swift in Sources */,
 				826E2E4D2A1A5268009FA1DC /* NewsCategories.swift in Sources */,
 				8209462D27FA676000F44E83 /* RoadTraffic.swift in Sources */,
 				8234A667296A31EE00A7FA2B /* SoundClassProtocol.swift in Sources */,

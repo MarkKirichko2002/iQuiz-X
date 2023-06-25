@@ -9,7 +9,7 @@ import UIKit
 import SafariServices
 import Swinject
 
-final class NewsListViewController: UITableViewController, CustomViewCellDelegate {
+final class NewsListViewController: UITableViewController {
     
     private var newsListViewModel: NewsListViewModel?
     private let RefreshControl = UIRefreshControl()
@@ -99,12 +99,6 @@ final class NewsListViewController: UITableViewController, CustomViewCellDelegat
             self.newsListViewModel?.GetNews(category: NewsCategories.categories[0])
             self.tableView.reloadData()
             self.RefreshControl.endRefreshing()
-        }
-    }
-    
-    func didElementClick() {
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-            self.performSegue(withIdentifier: "ShowWeb", sender: nil)
         }
     }
     

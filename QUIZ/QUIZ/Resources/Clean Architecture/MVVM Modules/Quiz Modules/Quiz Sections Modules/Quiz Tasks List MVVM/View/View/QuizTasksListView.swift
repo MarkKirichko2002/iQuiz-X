@@ -16,7 +16,7 @@ class QuizTasksListView: UIView {
     public weak var delegate: QuizTasksListViewDelegate?
     private var viewModel: QuizTasksListViewViewModel?
     
-    private let tableView: UITableView = {
+    let tableView: UITableView = {
         let tableView = UITableView()
         tableView.register(UINib(nibName: QuizTasksTableViewCell.identifier, bundle: nil), forCellReuseIdentifier: QuizTasksTableViewCell.identifier)
         tableView.translatesAutoresizingMaskIntoConstraints = false
@@ -52,17 +52,4 @@ class QuizTasksListView: UIView {
         tableView.delegate = viewModel
         viewModel?.delegate = self
     }
-}
-
-// MARK: - QuizTasksListViewViewModelDelegate
-extension QuizTasksListView: QuizTasksListViewViewModelDelegate {
-    
-    func QuizTasksResultsLoaded() {
-        tableView.reloadData()
-    }
-    
-    func QuizTaskSelected(task: QuizTaskModel) {
-        delegate?.ShowCurrentQuizTask(task: task)
-    }
-    
 }
