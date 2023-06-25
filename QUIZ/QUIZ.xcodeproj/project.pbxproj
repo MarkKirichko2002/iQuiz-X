@@ -430,6 +430,11 @@
 		829C49AF2A486A7A0007976B /* QuizBaseViewController + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 829C49AE2A486A7A0007976B /* QuizBaseViewController + Extensions.swift */; };
 		829C49B12A486B920007976B /* RegisterViewController + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 829C49B02A486B920007976B /* RegisterViewController + Extension.swift */; };
 		829C49B42A486C4B0007976B /* NewsListViewController + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 829C49B32A486C4B0007976B /* NewsListViewController + Extensions.swift */; };
+		829C49C72A48A9150007976B /* QuizWallpapersListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 829C49C62A48A9150007976B /* QuizWallpapersListViewController.swift */; };
+		829C49C92A48A92F0007976B /* QuizWallpapersListViewController + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 829C49C82A48A92F0007976B /* QuizWallpapersListViewController + Extensions.swift */; };
+		829C49CB2A48ACC90007976B /* QuizWallpaperCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 829C49CA2A48ACC90007976B /* QuizWallpaperCollectionViewCell.swift */; };
+		829C49CE2A48AFBE0007976B /* ImageSaverProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 829C49CD2A48AFBE0007976B /* ImageSaverProtocol.swift */; };
+		829C49D12A48B0050007976B /* ImageSaver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 829C49D02A48B0050007976B /* ImageSaver.swift */; };
 		829DC874296445F2006C9D91 /* skip.png in Resources */ = {isa = PBXBuildFile; fileRef = 829DC873296445F2006C9D91 /* skip.png */; };
 		829DC87C2964C2C2006C9D91 /* SpeechRecognitionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 829DC87B2964C2C2006C9D91 /* SpeechRecognitionManager.swift */; };
 		829DC8972965A968006C9D91 /* QuizTaskDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 829DC8962965A968006C9D91 /* QuizTaskDetailViewController.swift */; };
@@ -1127,6 +1132,11 @@
 		829C49AE2A486A7A0007976B /* QuizBaseViewController + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "QuizBaseViewController + Extensions.swift"; sourceTree = "<group>"; };
 		829C49B02A486B920007976B /* RegisterViewController + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RegisterViewController + Extension.swift"; sourceTree = "<group>"; };
 		829C49B32A486C4B0007976B /* NewsListViewController + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NewsListViewController + Extensions.swift"; sourceTree = "<group>"; };
+		829C49C62A48A9150007976B /* QuizWallpapersListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizWallpapersListViewController.swift; sourceTree = "<group>"; };
+		829C49C82A48A92F0007976B /* QuizWallpapersListViewController + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "QuizWallpapersListViewController + Extensions.swift"; sourceTree = "<group>"; };
+		829C49CA2A48ACC90007976B /* QuizWallpaperCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizWallpaperCollectionViewCell.swift; sourceTree = "<group>"; };
+		829C49CD2A48AFBE0007976B /* ImageSaverProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSaverProtocol.swift; sourceTree = "<group>"; };
+		829C49D02A48B0050007976B /* ImageSaver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSaver.swift; sourceTree = "<group>"; };
 		829DC873296445F2006C9D91 /* skip.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = skip.png; sourceTree = "<group>"; };
 		829DC87B2964C2C2006C9D91 /* SpeechRecognitionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechRecognitionManager.swift; sourceTree = "<group>"; };
 		829DC8962965A968006C9D91 /* QuizTaskDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizTaskDetailViewController.swift; sourceTree = "<group>"; };
@@ -2691,6 +2701,7 @@
 				829DC8982965B432006C9D91 /* Text Recognition */,
 				82CE536C28E9D55F00D44A6E /* AudioPlayer */,
 				82C2B5B127BD2F7000C66946 /* Animation */,
+				829C49CF2A48AFF80007976B /* ImageSaver */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -2870,6 +2881,64 @@
 				829C49B32A486C4B0007976B /* NewsListViewController + Extensions.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		829C49C12A48A8D90007976B /* Wallpapers */ = {
+			isa = PBXGroup;
+			children = (
+				829C49C22A48A8E10007976B /* View */,
+			);
+			path = Wallpapers;
+			sourceTree = "<group>";
+		};
+		829C49C22A48A8E10007976B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				829C49C52A48A8EA0007976B /* ViewController */,
+				829C49C42A48A8E70007976B /* Cell */,
+				829C49C32A48A8E50007976B /* Extensions */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		829C49C32A48A8E50007976B /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				829C49C82A48A92F0007976B /* QuizWallpapersListViewController + Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		829C49C42A48A8E70007976B /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				829C49CA2A48ACC90007976B /* QuizWallpaperCollectionViewCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		829C49C52A48A8EA0007976B /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				829C49C62A48A9150007976B /* QuizWallpapersListViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		829C49CC2A48AFAC0007976B /* ImageSaverProtocol */ = {
+			isa = PBXGroup;
+			children = (
+				829C49CD2A48AFBE0007976B /* ImageSaverProtocol.swift */,
+			);
+			path = ImageSaverProtocol;
+			sourceTree = "<group>";
+		};
+		829C49CF2A48AFF80007976B /* ImageSaver */ = {
+			isa = PBXGroup;
+			children = (
+				829C49D02A48B0050007976B /* ImageSaver.swift */,
+			);
+			path = ImageSaver;
 			sourceTree = "<group>";
 		};
 		829D3D372950EB3600B4C924 /* Cells */ = {
@@ -3430,6 +3499,7 @@
 				8234A66E296A332900A7FA2B /* TextRecognitionManagerProtocol */,
 				8234A66D296A332700A7FA2B /* SoundClassProtocol */,
 				8234A66C296A332100A7FA2B /* AnimationClassProtocol */,
+				829C49CC2A48AFAC0007976B /* ImageSaverProtocol */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -3761,6 +3831,7 @@
 		82DF98E427BCE73700548B38 /* Other Modules */ = {
 			isa = PBXGroup;
 			children = (
+				829C49C12A48A8D90007976B /* Wallpapers */,
 				826E2E822A1A9EF9009FA1DC /* Quiz Detail Modules */,
 				8209F79A2847F2390093147A /* Splash Screen */,
 				822B1F0F29F999730007957C /* Auth  */,
@@ -4531,6 +4602,7 @@
 				8281167E293A867E00AA7C8E /* QuizNewYear.swift in Sources */,
 				82D35C3E2963ADF6000EB277 /* VoiceCommandsTableViewController.swift in Sources */,
 				82A9796E27F8CB2C001EBF1C /* QuizLiterature.swift in Sources */,
+				829C49C72A48A9150007976B /* QuizWallpapersListViewController.swift in Sources */,
 				82E0EC8028AC5AA7004AA2E3 /* Bus.swift in Sources */,
 				82A08C7D28F488A70072A940 /* QuizResult.swift in Sources */,
 				8283D15327FA217200A71545 /* FirebaseManager.swift in Sources */,
@@ -4572,6 +4644,7 @@
 				82FA04462A476D1E009F04E6 /* PlayerDetailViewViewModel + Extensions.swift in Sources */,
 				8261BC2927E1139A0089CC94 /* QuizChemistry.swift in Sources */,
 				8255249D29BF6E310067EB68 /* APIService.swift in Sources */,
+				829C49CE2A48AFBE0007976B /* ImageSaverProtocol.swift in Sources */,
 				82CBAEC429CFAAC300AA9569 /* QuizAchievementsTableViewController.swift in Sources */,
 				827F8C0E27E81B7400F6D7B3 /* SoundClass.swift in Sources */,
 				828F0DD127C82D4C0016D337 /* PlayerTableViewCell.swift in Sources */,
@@ -4656,11 +4729,14 @@
 				829C49B12A486B920007976B /* RegisterViewController + Extension.swift in Sources */,
 				826E2E4D2A1A5268009FA1DC /* NewsCategories.swift in Sources */,
 				8209462D27FA676000F44E83 /* RoadTraffic.swift in Sources */,
+				829C49CB2A48ACC90007976B /* QuizWallpaperCollectionViewCell.swift in Sources */,
 				8234A667296A31EE00A7FA2B /* SoundClassProtocol.swift in Sources */,
 				820C628127BBA3CA004894FA /* SceneDelegate.swift in Sources */,
 				82A1D8C427FB25490044EEA6 /* DeleteTableViewCell.swift in Sources */,
+				829C49D12A48B0050007976B /* ImageSaver.swift in Sources */,
 				82CBE7F92870A8F30045616B /* QuizCategoriesViewModel.swift in Sources */,
 				82CBAEC729CFACCF00AA9569 /* QuizAchievementsViewModelDelegate.swift in Sources */,
+				829C49C92A48A92F0007976B /* QuizWallpapersListViewController + Extensions.swift in Sources */,
 				82CC60DC27BEA32A00038618 /* QuizSport.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
