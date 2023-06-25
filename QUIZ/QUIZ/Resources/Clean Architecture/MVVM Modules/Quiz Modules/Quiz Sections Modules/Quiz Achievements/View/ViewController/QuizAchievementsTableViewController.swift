@@ -7,9 +7,9 @@
 
 import UIKit
 
-class QuizAchievementsTableViewController: UITableViewController, QuizAchievementsViewModelDelegate {
+class QuizAchievementsTableViewController: UITableViewController {
     
-    private let quizAchievementsViewModel = QuizAchievementsViewModel()
+    let quizAchievementsViewModel = QuizAchievementsViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,11 +18,6 @@ class QuizAchievementsTableViewController: UITableViewController, QuizAchievemen
         quizAchievementsViewModel.GetAchievementsData()
     }
     
-    func achievementsDidLoaded(achievements: [QuizAchievementModel]) {
-        quizAchievementsViewModel.achievements = achievements
-        self.tableView.reloadData()
-    }
-
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return quizAchievementsViewModel.achievements.count
     }

@@ -10,7 +10,7 @@ import Swinject
 
 class QuizTasksListViewController: UIViewController {
     
-    private var task: QuizTaskModel?
+    var task: QuizTaskModel?
     
     private let container: Container = {
         let container = Container()
@@ -56,14 +56,5 @@ class QuizTasksListViewController: UIViewController {
             let destinationController = segue.destination as? QuizTaskDetailViewController
             destinationController!.task = task
         }
-    }
-}
-
-// MARK: - QuizTasksListViewDelegate
-extension QuizTasksListViewController: QuizTasksListViewDelegate {
-    
-    func ShowCurrentQuizTask(task: QuizTaskModel) {
-        self.task = task
-        performSegue(withIdentifier: "showTaskDetail", sender: self)
     }
 }
