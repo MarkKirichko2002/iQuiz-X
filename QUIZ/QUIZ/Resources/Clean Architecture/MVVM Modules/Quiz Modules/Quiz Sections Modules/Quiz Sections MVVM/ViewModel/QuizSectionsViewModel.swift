@@ -20,7 +20,8 @@ class QuizSectionsViewModel {
         QuizSectionModel(id: 1, name: "последняя категория", icon: "", sound: "", info: "", itemsCount: 1, completedItemsCount: 0, percentage: 0),
         QuizSectionModel(id: 2, name: "категории", icon: "astronomy", sound: "IQ.mp3", info: "На данный момент существует 19 категорий.", itemsCount: 19, completedItemsCount: 0, percentage: 0),
         QuizSectionModel(id: 3, name: "задания", icon: "tasks icon", sound: "IQ.mp3", info: "На данный момент существует 19 заданий.", itemsCount: 19, completedItemsCount: 0, percentage: 0),
-        QuizSectionModel(id: 4, name: "достижения", icon: "trophy.png", sound: "league.mp3", info: "получите все достижения в iQuiz X!", itemsCount: 1, completedItemsCount: 0, percentage: 0)
+        QuizSectionModel(id: 4, name: "достижения", icon: "trophy.png", sound: "league.mp3", info: "получите все достижения в iQuiz X!", itemsCount: 1, completedItemsCount: 0, percentage: 0),
+        QuizSectionModel(id: 5, name: "iQuiz X обои", icon: "astronomy", sound: "", info: "", itemsCount: 18, completedItemsCount: nil, percentage: nil)
     ]
     
     func GetQuizSectionData() {

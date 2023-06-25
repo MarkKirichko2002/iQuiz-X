@@ -63,6 +63,10 @@ extension QuizSectionsTableViewController {
             vc.title = "Достижения \(section.itemsCount)/1"
             self.navigationController?.pushViewController(vc, animated: true)
             
+        case 5:
+            let vc = QuizWallpapersListViewController()
+            self.navigationController?.pushViewController(vc, animated: true)
+            
         default:
             break
         }
