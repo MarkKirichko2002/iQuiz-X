@@ -181,7 +181,7 @@ final class QuizTabBarController: UITabBarController {
             self.speechRecognition.cancelSpeechRecognition()
             
             DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-                self.speechRecognition.startSpeechRecognition()
+                self.speechRecognition.startRecognize()
             }
             
         case _ where selectedIndex == 0  && text.lowercased().contains("поиск"):
@@ -196,7 +196,7 @@ final class QuizTabBarController: UITabBarController {
                     self.speechRecognition.cancelSpeechRecognition()
                     
                     DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-                        self.speechRecognition.startSpeechRecognition()
+                        self.speechRecognition.startRecognize()
                     }
                 }
             }
@@ -211,7 +211,7 @@ final class QuizTabBarController: UITabBarController {
             self.speechRecognition.cancelSpeechRecognition()
             
             DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-                self.speechRecognition.startSpeechRecognition()
+                self.speechRecognition.startRecognize()
             }
             
         case _ where text.lowercased().contains("категори"):
@@ -225,7 +225,7 @@ final class QuizTabBarController: UITabBarController {
                 self.speechRecognition.cancelSpeechRecognition()
                 
                 DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-                    self.speechRecognition.startSpeechRecognition()
+                    self.speechRecognition.startRecognize()
                 }
             }
             
@@ -254,7 +254,7 @@ final class QuizTabBarController: UITabBarController {
                         self.speechRecognition.cancelSpeechRecognition()
                         
                         DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-                            self.speechRecognition.startSpeechRecognition()
+                            self.speechRecognition.startRecognize()
                         }
                     }
                 }
@@ -270,7 +270,7 @@ final class QuizTabBarController: UITabBarController {
             self.speechRecognition.cancelSpeechRecognition()
             
             DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-                self.speechRecognition.startSpeechRecognition()
+                self.speechRecognition.startRecognize()
             }
             
         case _ where text.lowercased().contains("проф"):
@@ -287,7 +287,7 @@ final class QuizTabBarController: UITabBarController {
             self.speechRecognition.cancelSpeechRecognition()
             
             DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-                self.speechRecognition.startSpeechRecognition()
+                self.speechRecognition.startRecognize()
             }
             
         // выбор категории викторины
@@ -399,7 +399,7 @@ final class QuizTabBarController: UITabBarController {
             player.PlaySound(resource: "click sound.wav")
             button.setImage(UIImage(named: "voice.png"), for: .normal)
             animation.SpringAnimation(view: button)
-            speechRecognition.startSpeechRecognition()
+            speechRecognition.startRecognize()
             speechRecognition.registerSpeechRecognitionHandler { text in
                 self.CheckVoiceCommands(text: text)
             }

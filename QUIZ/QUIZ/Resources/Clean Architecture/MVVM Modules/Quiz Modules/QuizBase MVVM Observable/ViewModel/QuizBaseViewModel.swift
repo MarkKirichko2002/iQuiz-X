@@ -218,7 +218,7 @@ class QuizBaseViewModel {
                 speechRecognition.cancelSpeechRecognition()
                 sayComment(comment: "Правильно")
                 DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
-                    self.speechRecognition.startSpeechRecognition()
+                    self.speechRecognition.startRecognize()
                 }
             } else {
                 sayComment(comment: "Правильно")
@@ -270,7 +270,7 @@ class QuizBaseViewModel {
                 speechRecognition.cancelSpeechRecognition()
                 sayComment(comment: "Не правильно")
                 DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
-                    self.speechRecognition.startSpeechRecognition()
+                    self.speechRecognition.startRecognize()
                 }
             } else {
                 sayComment(comment: "Не правильно")
@@ -338,7 +338,7 @@ class QuizBaseViewModel {
             }
             
             DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
-                self.speechRecognition.startSpeechRecognition()
+                self.speechRecognition.startRecognize()
             }
             
             if Choice1Status.value == check2 {
@@ -389,7 +389,7 @@ class QuizBaseViewModel {
             }
             
             DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
-                self.speechRecognition.startSpeechRecognition()
+                self.speechRecognition.startRecognize()
             }
             
             if Choice1Status.value == check2 {
@@ -511,7 +511,7 @@ class QuizBaseViewModel {
                 speechRecognition.cancelSpeechRecognition()
                 sayComment(comment: "Правильно")
                 DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
-                    self.speechRecognition.startSpeechRecognition()
+                    self.speechRecognition.startRecognize()
                 }
             } else {
                 sayComment(comment: "Правильно")
@@ -570,7 +570,7 @@ class QuizBaseViewModel {
                 speechRecognition.cancelSpeechRecognition()
                 sayComment(comment: "Не правильно")
                 DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
-                    self.speechRecognition.startSpeechRecognition()
+                    self.speechRecognition.startRecognize()
                 }
             } else {
                 sayComment(comment: "Не правильно")
@@ -629,7 +629,7 @@ class QuizBaseViewModel {
                 speechRecognition.cancelSpeechRecognition()
                 sayComment(comment: "Правильно")
                 DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
-                    self.speechRecognition.startSpeechRecognition()
+                    self.speechRecognition.startRecognize()
                 }
             } else {
                 sayComment(comment: "Правильно")
@@ -667,7 +667,7 @@ class QuizBaseViewModel {
                 speechRecognition.cancelSpeechRecognition()
                 sayComment(comment: "Не Правильно")
                 DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
-                    self.speechRecognition.startSpeechRecognition()
+                    self.speechRecognition.startRecognize()
                 }
             } else {
                 sayComment(comment: "Не Правильно")
@@ -906,7 +906,7 @@ class QuizBaseViewModel {
         
         if isRecordOnAudio == true {
             print("record audio now")
-            speechRecognition.startSpeechRecognition()
+            speechRecognition.startRecognize()
             speechRecognition.registerSpeechRecognitionHandler { text in
                 self.check2 = text
                 self.CheckVoiceCommands()
@@ -1151,7 +1151,7 @@ class QuizBaseViewModel {
             speechRecognition.cancelSpeechRecognition()
             
             DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
-                self.speechRecognition.startSpeechRecognition()
+                self.speechRecognition.startRecognize()
             }
             
         case _ where check2.contains("След") || check2.contains("след"):
@@ -1161,7 +1161,7 @@ class QuizBaseViewModel {
             speechRecognition.cancelSpeechRecognition()
             
             DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
-                self.speechRecognition.startSpeechRecognition()
+                self.speechRecognition.startRecognize()
             }
             
         case _ where check2.contains("Вопрос") || check2.contains("вопрос"):
@@ -1172,7 +1172,7 @@ class QuizBaseViewModel {
             speechRecognition.cancelSpeechRecognition()
             
             DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
-                self.speechRecognition.startSpeechRecognition()
+                self.speechRecognition.startRecognize()
             }
             
         case _ where check2.contains("Счёт") || check2.contains("счёт"):
@@ -1183,7 +1183,7 @@ class QuizBaseViewModel {
             speechRecognition.cancelSpeechRecognition()
             
             DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
-                self.speechRecognition.startSpeechRecognition()
+                self.speechRecognition.startRecognize()
             }
             
         case _ where check2.contains("Включить музыку") || check2.contains("включить музыку"):
@@ -1194,7 +1194,7 @@ class QuizBaseViewModel {
             speechRecognition.cancelSpeechRecognition()
             
             DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
-                self.speechRecognition.startSpeechRecognition()
+                self.speechRecognition.startRecognize()
             }
             
             
@@ -1206,7 +1206,7 @@ class QuizBaseViewModel {
             speechRecognition.cancelSpeechRecognition()
             
             DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
-                self.speechRecognition.startSpeechRecognition()
+                self.speechRecognition.startRecognize()
             }
             
             // Открыть камеру
