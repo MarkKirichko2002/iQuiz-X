@@ -326,8 +326,6 @@ final class LoginViewController: UIViewController {
     
     @IBAction func RecordPassword(_ sender: UIButton) {
         
-        speechRecognitionManager.configureAudioSession()
-        
         var voicepassword = UserDefaults.standard.object(forKey: "voicepassword") as? String
         
         if !sender.isSelected{

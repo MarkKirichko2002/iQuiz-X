@@ -12,7 +12,7 @@ extension QuizTabBarController: UIImagePickerControllerDelegate, UINavigationCon
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
             picker.dismiss(animated: true, completion: nil)
-            self.speechRecognition.startSpeechRecognition()
+            self.speechRecognition.startRecognize()
         }
     }
     
@@ -26,7 +26,7 @@ extension QuizTabBarController: UIImagePickerControllerDelegate, UINavigationCon
         quizCategoriesViewModel.CheckText(image: image)
         DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
             picker.dismiss(animated: true, completion: nil)
-            self.speechRecognition.startSpeechRecognition()
+            self.speechRecognition.startRecognize()
         }
     }
 }

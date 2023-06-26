@@ -5,7 +5,6 @@
 //  Created by Марк Киричко on 03.01.2023.
 //
 
-import Foundation
 import Speech
 
 class SpeechRecognitionManager: SpeechRecognitionManagerProtocol {
@@ -14,11 +13,27 @@ class SpeechRecognitionManager: SpeechRecognitionManagerProtocol {
     private let speechRecognizer = SFSpeechRecognizer(locale: Locale(identifier: "ru_RU"))
     private let request = SFSpeechAudioBufferRecognitionRequest()
     private var recognitionTask: SFSpeechRecognitionTask?
-    private var text = ""
     private var speechRecognitionHandler: ((String)->Void)?
     
     func registerSpeechRecognitionHandler(block: @escaping(String)->Void) {
         self.speechRecognitionHandler = block
+    }
+    
+    func startRecognize() {
+        if startRecording() {
+            startSpeechRecognition()
+        } else {}
+    }
+    
+    func startRecording() -> Bool {
+        do {
+            try? AVAudioSession.sharedInstance().setCategory(.playAndRecord, mode: .default,
+            policy: .default, options: .defaultToSpeaker)
+            return true
+        } catch {
+            print(error)
+            return false
+        }
     }
     
     func startSpeechRecognition() {
@@ -39,31 +54,22 @@ class SpeechRecognitionManager: SpeechRecognitionManagerProtocol {
         }
         
         recognitionTask = speechRecognizer?.recognitionTask(with: request, resultHandler: {
-            [unowned self] (result, error) in
+            [weak self] (result, error) in
             if let res = result?.bestTranscription {
                 DispatchQueue.main.async {
-                    self.text = res.formattedString
-                    self.speechRecognitionHandler?(self.text)
-                }
-                
-            } else if let error = error {
-                print("\(error.localizedDescription)")
-            }
+                    self?.speechRecognitionHandler?(res.formattedString)
+                    print(res.formattedString.lowercased())
+             }
+          } else if let error = error {
+              print("\(error.localizedDescription)")
+          }
         })
     }
     
-    func cancelSpeechRecognition(){
+    func cancelSpeechRecognition() {
         audioEngine.stop()
         recognitionTask?.cancel()
         request.endAudio()
         audioEngine.inputNode.removeTap(onBus: 0)
-    }
-    
-    func configureAudioSession() {
-        do {
-            try? AVAudioSession.sharedInstance().setCategory(.playAndRecord, mode: .default, policy: .default, options: .defaultToSpeaker)
-        } catch {
-            print(error)
-        }
     }
 }
