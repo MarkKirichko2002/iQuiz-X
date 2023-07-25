@@ -397,7 +397,6 @@
 		8294095427CECE1900AFF603 /* geography5.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 8294094A27CECE1900AFF603 /* geography5.jpeg */; };
 		8295F1942950AB25000E033E /* QuizCategoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8295F1932950AB25000E033E /* QuizCategoryViewModel.swift */; };
 		8295F1962950AB3A000E033E /* QuizTaskViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8295F1952950AB3A000E033E /* QuizTaskViewModel.swift */; };
-		8295F19B2950B68A000E033E /* QuizCategoriesSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8295F19A2950B68A000E033E /* QuizCategoriesSection.swift */; };
 		8295F1A92950B70B000E033E /* underwater2.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 8295F19C2950B709000E033E /* underwater2.jpeg */; };
 		8295F1AA2950B70B000E033E /* underwater10.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 8295F19D2950B709000E033E /* underwater10.jpeg */; };
 		8295F1AB2950B70B000E033E /* underwater6.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 8295F19E2950B709000E033E /* underwater6.jpeg */; };
@@ -1099,7 +1098,6 @@
 		8294094A27CECE1900AFF603 /* geography5.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = geography5.jpeg; sourceTree = "<group>"; };
 		8295F1932950AB25000E033E /* QuizCategoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizCategoryViewModel.swift; sourceTree = "<group>"; };
 		8295F1952950AB3A000E033E /* QuizTaskViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizTaskViewModel.swift; sourceTree = "<group>"; };
-		8295F19A2950B68A000E033E /* QuizCategoriesSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizCategoriesSection.swift; sourceTree = "<group>"; };
 		8295F19C2950B709000E033E /* underwater2.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = underwater2.jpeg; sourceTree = "<group>"; };
 		8295F19D2950B709000E033E /* underwater10.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = underwater10.jpeg; sourceTree = "<group>"; };
 		8295F19E2950B709000E033E /* underwater6.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = underwater6.jpeg; sourceTree = "<group>"; };
@@ -1509,7 +1507,7 @@
 				82D35BDD296312D1000EB277 /* Protocols */,
 				8295F1912950AA9F000E033E /* Services */,
 				8295F1992950B5F7000E033E /* Clean Architecture */,
-				82DF98E427BCE73700548B38 /* Other Modules */,
+				82DF98E427BCE73700548B38 /* No Architecture */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -2006,6 +2004,31 @@
 			path = Chemistry;
 			sourceTree = "<group>";
 		};
+		8267D1F92A5A456500BA1F5C /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				828E93FB2A12CE6700CD7A0C /* PlayerInfoTableViewCell.swift */,
+				828E93FC2A12CE6700CD7A0C /* PlayerInfoTableViewCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		8267D1FA2A5A456700BA1F5C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				828E93F72A12C7A900CD7A0C /* PlayerDetailView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		8267D1FB2A5A457300BA1F5C /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				828E93FF2A12D57D00CD7A0C /* PlayerDetailViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
 		826E2E4A2A1A5223009FA1DC /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -2438,7 +2461,6 @@
 			children = (
 				828E93F62A12C74100CD7A0C /* View */,
 				828E93F52A12C73F00CD7A0C /* ViewModel */,
-				82FA04442A476CF6009F04E6 /* Extensions */,
 			);
 			name = "Player Detail MVVM";
 			path = "../Players Module/Player Detail MVVM";
@@ -2455,10 +2477,10 @@
 		828E93F62A12C74100CD7A0C /* View */ = {
 			isa = PBXGroup;
 			children = (
-				828E93FF2A12D57D00CD7A0C /* PlayerDetailViewController.swift */,
-				828E93F72A12C7A900CD7A0C /* PlayerDetailView.swift */,
-				828E93FB2A12CE6700CD7A0C /* PlayerInfoTableViewCell.swift */,
-				828E93FC2A12CE6700CD7A0C /* PlayerInfoTableViewCell.xib */,
+				8267D1FB2A5A457300BA1F5C /* ViewController */,
+				8267D1FA2A5A456700BA1F5C /* View */,
+				8267D1F92A5A456500BA1F5C /* Cell */,
+				82FA04442A476CF6009F04E6 /* Extensions */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -3138,7 +3160,6 @@
 				82CBAEBD29CFA8DB00AA9569 /* Model */,
 				82CBAEBC29CFA8D900AA9569 /* View */,
 				82CBAEBB29CFA8D600AA9569 /* ViewModel */,
-				829C49AA2A4869A50007976B /* Extensions */,
 			);
 			path = "Quiz Achievements";
 			sourceTree = "<group>";
@@ -3156,6 +3177,7 @@
 			children = (
 				82CBAECC29CFAF4900AA9569 /* ViewController */,
 				82CBAECD29CFAF5600AA9569 /* Cell */,
+				829C49AA2A4869A50007976B /* Extensions */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -3278,7 +3300,6 @@
 		82CBE7F72870A8770045616B /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				8295F19A2950B68A000E033E /* QuizCategoriesSection.swift */,
 				82CBAEB829CFA72600AA9569 /* QuizCategoryModel.swift */,
 				828E94012A12E2CD00CD7A0C /* QuizCategories.swift */,
 			);
@@ -3291,7 +3312,6 @@
 				82CBE8002870D3CC0045616B /* Model */,
 				82CBE8012870D4530045616B /* View */,
 				82CBE7FE2870D3C20045616B /* ViewModel */,
-				82FA04402A476B57009F04E6 /* Extensions */,
 			);
 			path = "Quiz Tasks List MVVM";
 			sourceTree = "<group>";
@@ -3320,6 +3340,7 @@
 				826E2E7B2A1A9D0C009FA1DC /* ViewController */,
 				826E2E7A2A1A9D0A009FA1DC /* View */,
 				826E2E792A1A9D08009FA1DC /* Cell */,
+				82FA04402A476B57009F04E6 /* Extensions */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -3330,7 +3351,6 @@
 				82CBE8092870DE370045616B /* Model */,
 				82CBE8082870DE350045616B /* View */,
 				821C69E528739E1A004FD9E1 /* ViewModel */,
-				82FA04412A476BF0009F04E6 /* Extensions */,
 			);
 			path = "Players List MVVM";
 			sourceTree = "<group>";
@@ -3341,6 +3361,7 @@
 				826E2E702A1A981A009FA1DC /* ViewController */,
 				826E2E732A1A983E009FA1DC /* View */,
 				826E2E712A1A9821009FA1DC /* Cell */,
+				82FA04412A476BF0009F04E6 /* Extensions */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -3828,7 +3849,7 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		82DF98E427BCE73700548B38 /* Other Modules */ = {
+		82DF98E427BCE73700548B38 /* No Architecture */ = {
 			isa = PBXGroup;
 			children = (
 				829C49C12A48A8D90007976B /* Wallpapers */,
@@ -3844,7 +3865,7 @@
 				823CFF6D27FA10DC001FF6D9 /* Settings */,
 				8261BC1F27E10EF30089CC94 /* Statistic */,
 			);
-			path = "Other Modules";
+			path = "No Architecture";
 			sourceTree = "<group>";
 		};
 		82E0EC7D28AC5A8E004AA2E3 /* Event */ = {
@@ -4653,7 +4674,6 @@
 				82D35BDF2963130A000EB277 /* CustomViewCellDelegate.swift in Sources */,
 				8243F16B27C266F800CD9CE4 /* QuizBaseViewController.swift in Sources */,
 				828E93F32A12BF0D00CD7A0C /* PlayersListViewController.swift in Sources */,
-				8295F19B2950B68A000E033E /* QuizCategoriesSection.swift in Sources */,
 				82FA04432A476C2D009F04E6 /* PlayersListViewViewModel + Extensions.swift in Sources */,
 				823BD74A2977518A008D9967 /* QuizSectionsTableViewCell.swift in Sources */,
 				82FA04372A4764EB009F04E6 /* QuizTabBarController + Extensions.swift in Sources */,

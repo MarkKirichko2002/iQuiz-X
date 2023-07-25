@@ -34,25 +34,15 @@ class TimerTableViewCell: UITableViewCell {
             userDefaults.set(false, forKey: "onstatustimer")
             player.PlaySound(resource: "click sound.wav")
         }
-        
     }
 
-    
     override func awakeFromNib() {
         super.awakeFromNib()
         mySwitch.isOn = userDefaults.bool(forKey: "ontimer")
         mySwitch.isOn = userDefaults.bool(forKey: "offtimer")
-        //userDefaults.object(forKey: "off")
-        
-        
-        //mySwitch.isOn = userDefaults.bool(forKey: "on")
-        //mySwitch.isOn = userDefaults.bool(forKey: "on")
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
-
 }

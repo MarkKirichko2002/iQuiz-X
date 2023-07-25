@@ -39,7 +39,7 @@ class FirebaseManager: FirebaseManagerProtocol {
                         let UnCorrectAnswersCounter = category["UnCorrectAnswersCounter"] as? Int ?? 0
                         let CorrectAnswersCounter = category["CorrectAnswersCounter"] as? Int ?? 0
                         let voiceCommand = category["voiceCommand"] as? String ?? ""
-                        let bestscore = category["bestscore"] as? Int ?? 0
+                        let bestscore = category["score"] as? Int ?? 0
                         let music = category["music"] as? String ?? ""
                         let date = category["date"] as? String ?? ""
                         let complete = category["complete"] as? Bool ?? false
@@ -244,9 +244,7 @@ class FirebaseManager: FirebaseManagerProtocol {
                 music: result.music,
                 voiceCommand: text
             )
-        }
-        
-        if voicecommand.id == id {
+            
             DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
                 ref.updateData([
                     voicecommand.path: category.asDictionary()
