@@ -35,14 +35,10 @@ final class QuizWallpaperCollectionViewCell: UICollectionViewCell {
     private func setUpLayer() {
         contentView.layer.cornerRadius = 8
         contentView.layer.shadowColor = UIColor.label.cgColor
-        contentView.layer.cornerRadius = 4
-        contentView.layer.shadowOffset = CGSize(width: -4, height: -4)
-        contentView.layer.shadowOpacity = 0.3
     }
     
     private func addConstaints() {
         NSLayoutConstraint.activate([
-            // изображение категории
             imageView.topAnchor.constraint(equalTo: contentView.topAnchor),
             imageView.leftAnchor.constraint(equalTo: contentView.leftAnchor),
             imageView.rightAnchor.constraint(equalTo: contentView.rightAnchor),

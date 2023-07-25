@@ -26,7 +26,7 @@ final class QuizSplashScreenController: UIViewController {
     private let QuizTitleLabel: UILabel = {
         let label = UILabel()
         label.textColor = UIColor.white
-        label.font = .systemFont(ofSize: 33, weight: .black)
+        label.font = .systemFont(ofSize: 25, weight: .black)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -35,13 +35,14 @@ final class QuizSplashScreenController: UIViewController {
     private let AnniversaryLabel: UILabel = {
         let label = UILabel()
         label.textColor = UIColor.white
-        label.font = .systemFont(ofSize: 30, weight: .black)
+        label.font = .systemFont(ofSize: 25, weight: .black)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = .systemBackground
         view.addSubviews(QuizIcon, QuizTitleLabel, AnniversaryLabel)
         SetUpConstraints()
         DisplayLastQuizCategory()
@@ -62,8 +63,8 @@ final class QuizSplashScreenController: UIViewController {
         NSLayoutConstraint.activate([
             // иконка
             QuizIcon.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            QuizIcon.widthAnchor.constraint(equalToConstant: 200),
-            QuizIcon.heightAnchor.constraint(equalToConstant: 200),
+            QuizIcon.widthAnchor.constraint(equalToConstant: 180),
+            QuizIcon.heightAnchor.constraint(equalToConstant: 180),
             // название
             QuizTitleLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             QuizTitleLabel.centerYAnchor.constraint(equalTo: view.centerYAnchor),
@@ -83,12 +84,12 @@ final class QuizSplashScreenController: UIViewController {
                 self.QuizIcon.sound = lastquiz.sound
                 if let background = UIImage(named: lastquiz.background) {
                     self.view.backgroundColor = UIColor(patternImage: background)
-                } else {}
+                } else {
+                    self.ShowSplashScreen()
+                }
+                self.ShowSplashScreen()
             }
         })
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
-            self.ShowSplashScreen()
-        }
     }
    
     private func ShowSplashScreen() {

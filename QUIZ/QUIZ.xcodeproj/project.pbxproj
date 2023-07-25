@@ -3852,11 +3852,11 @@
 		82DF98E427BCE73700548B38 /* No Architecture */ = {
 			isa = PBXGroup;
 			children = (
-				829C49C12A48A8D90007976B /* Wallpapers */,
-				826E2E822A1A9EF9009FA1DC /* Quiz Detail Modules */,
 				8209F79A2847F2390093147A /* Splash Screen */,
 				822B1F0F29F999730007957C /* Auth  */,
 				823CFF7027FA1117001FF6D9 /* Start  */,
+				829C49C12A48A8D90007976B /* Wallpapers */,
+				826E2E822A1A9EF9009FA1DC /* Quiz Detail Modules */,
 				826E2E8D2A1AA63E009FA1DC /* Pause */,
 				829A5164296874DB0056A7DB /* Daily Quiz */,
 				82D35C1C2963336F000EB277 /* Onboarding */,
