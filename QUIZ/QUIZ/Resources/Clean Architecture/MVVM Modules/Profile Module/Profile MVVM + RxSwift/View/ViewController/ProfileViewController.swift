@@ -29,10 +29,11 @@ final class ProfileViewController: UIViewController {
     
     @IBAction func ShowSettings() {
         let vc = SettingsTableViewController()
+        let navVC = UINavigationController(rootViewController: vc)
         animation.RotateAnimation(view: SettingsButton.imageView!)
         player.PlaySound(resource: "settings.mp3")
         DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-            self.present(vc, animated: true)
+            self.present(navVC, animated: true)
         }
     }
         

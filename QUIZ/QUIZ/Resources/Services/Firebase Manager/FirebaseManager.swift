@@ -263,18 +263,13 @@ class FirebaseManager: FirebaseManagerProtocol {
     // загрузить голосовые команды
     func LoadVoiceCommands(command: String, completion: @escaping(String)->()) {
         
-        let docRef = db.collection("users").document(Auth.auth().currentUser?.email ?? "")
-        
-        docRef.getDocument { document, error in
-            if let error = error as NSError? {
-                print("Error getting document: \(error.localizedDescription)")
-            } else {
-                if let document = document {
-                    if let category = document[command] as? [String: Any] {
-                        let voicecommand = category["voicecommand"] as? String ?? ""
-                        completion(voicecommand)
-                    }
+        for category in QuizCategories.categories {
+            
+            if category.name == command {
+                LoadQuizCategoriesData(quizpath: category.quizpath) { category in
+                    completion(category.voiceCommand)
                 }
+                break
             }
         }
     }
