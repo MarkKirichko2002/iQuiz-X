@@ -20,7 +20,6 @@ class FirebaseManager: FirebaseManagerProtocol {
         let docRef = db.collection("users")
         
         docRef.addSnapshotListener { snapshot, error in
-            
             block()
         }
     }
@@ -234,6 +233,7 @@ class FirebaseManager: FirebaseManagerProtocol {
         let ref = db.collection("users").document(email)
         
         LoadQuizCategoriesData(quizpath: voicecommand.path) { result in
+            
             category = QuizCategoryViewModel(
                 category: result.category,
                 score: result.score,
@@ -245,16 +245,14 @@ class FirebaseManager: FirebaseManagerProtocol {
                 voiceCommand: text
             )
             
-            DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
-                ref.updateData([
-                    voicecommand.path: category.asDictionary()
-                ]) { err in
-                    if let err = err {
-                        print("Error writing document: \(err)")
-                    } else {
-                        print("success")
-                        print(ref)
-                    }
+            ref.updateData([
+                voicecommand.path: category.asDictionary()
+            ]) { err in
+                if let err = err {
+                    print("Error writing document: \(err)")
+                } else {
+                    print("success")
+                    print(ref)
                 }
             }
         }
