@@ -20,5 +20,5 @@ struct QuizCategoryModel {
     var complete: Bool
     var score: Int
     let sound: String
-    let music: String
+    var music: String
 }

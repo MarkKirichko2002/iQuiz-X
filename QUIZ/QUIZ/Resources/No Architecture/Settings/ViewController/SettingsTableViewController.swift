@@ -21,6 +21,7 @@ final class SettingsTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationItem.title = "Настройки iQuiz X"
         // настройки
         settingsManager.view = self.view
         settingsManager.vc = self
