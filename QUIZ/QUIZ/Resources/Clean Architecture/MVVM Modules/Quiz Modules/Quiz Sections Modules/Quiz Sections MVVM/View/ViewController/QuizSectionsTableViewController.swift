@@ -17,21 +17,33 @@ class QuizSectionsTableViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "Викторина"
+        SetUpNavigation()
+        SetUpTable()
+        BindViewModel()
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        tableView.frame = view.bounds
+    }
+    
+    private func SetUpNavigation() {
+        navigationItem.title = "Викторина"
+    }
+    
+    private func SetUpTable() {
         view.addSubview(tableView)
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(UINib(nibName: QuizSectionsTableViewCell.identifier, bundle: nil), forCellReuseIdentifier: QuizSectionsTableViewCell.identifier)
+    }
+    
+    private func BindViewModel() {
         quizSectionsViewModel.$sections.sink { [weak self] _ in
             DispatchQueue.main.async {
                 self?.tableView.reloadData()
             }
         }.store(in: &cancellation)
         quizSectionsViewModel.GetQuizSectionData()
-    }
-    
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-        tableView.frame = view.bounds
     }
 }

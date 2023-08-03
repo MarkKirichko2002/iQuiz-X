@@ -13,8 +13,16 @@ class QuizAchievementsTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        quizAchievementsViewModel.delegate = self
+        SetUpTable()
+        BindViewModel()
+    }
+    
+    private func SetUpTable() {
         tableView.register(UINib(nibName: QuizAchievementsTableViewCell.identifier, bundle: nil), forCellReuseIdentifier: QuizAchievementsTableViewCell.identifier)
+    }
+    
+    private func BindViewModel() {
+        quizAchievementsViewModel.delegate = self
         quizAchievementsViewModel.GetAchievementsData()
     }
     

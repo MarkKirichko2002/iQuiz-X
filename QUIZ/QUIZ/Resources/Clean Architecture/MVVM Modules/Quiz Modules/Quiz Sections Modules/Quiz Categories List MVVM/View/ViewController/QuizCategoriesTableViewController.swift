@@ -19,19 +19,17 @@ final class QuizCategoriesTableViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.addSubview(refreshControl)
-        refreshControl.addTarget(self, action: #selector(refresh), for: .valueChanged)
+        SetUpRefreshControl()
         SetUpTable()
-        quizCategoriesViewModel.view = self.view
-        quizCategoriesViewModel.$quizcategories.sink { [weak self] category in
-            DispatchQueue.main.async {
-                self?.tableView.reloadData()
-            }
-        }.store(in: &cancellation)
-        self.quizCategoriesViewModel.ShowLoading()
+        BindViewModel()
     }
     
-    @objc func refresh() {
+    private func SetUpRefreshControl() {
+        tableView.addSubview(refreshControl)
+        refreshControl.addTarget(self, action: #selector(refresh), for: .valueChanged)
+    }
+    
+    @objc private func refresh() {
         DispatchQueue.main.async {
             self.quizCategoriesViewModel.quizcategories = []
             self.tableView.reloadData()
@@ -46,5 +44,15 @@ final class QuizCategoriesTableViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         self.tableView.register(UINib(nibName: QuizCategoriesTableViewCell.identifier, bundle: nil), forCellReuseIdentifier: QuizCategoriesTableViewCell.identifier)
+    }
+    
+    func BindViewModel() {
+        quizCategoriesViewModel.view = self.view
+        quizCategoriesViewModel.$quizcategories.sink { [weak self] category in
+            DispatchQueue.main.async {
+                self?.tableView.reloadData()
+            }
+        }.store(in: &cancellation)
+        self.quizCategoriesViewModel.ShowLoading()
     }
 }
